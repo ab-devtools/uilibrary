@@ -12,7 +12,7 @@ const data: any[] = [
     visits: [7, 8, 9],
     progress: 'fdfsdfsdfsd',
     status: 'Active'
-  },
+  }
   // ...Array(33).fill({
   //   user: 'John Doe',
   //   age: 30,

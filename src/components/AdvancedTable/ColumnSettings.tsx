@@ -10,12 +10,12 @@ interface ColumnSettingsProps<T> {
 }
 
 export function ColumnSettings<T>({ table }: ColumnSettingsProps<T>) {
-  const [ref, setRef] = useState<HTMLDivElement | null>(null);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [ref, setRef] = useState<HTMLDivElement | null>(null)
+  const [isOpen, setIsOpen] = useState<boolean>(false)
 
   const closeUserMenu = () => {
-    setIsOpen(false);
-  };
+    setIsOpen(false)
+  }
 
   return (
     <div ref={setRef}>
@@ -38,9 +38,7 @@ export function ColumnSettings<T>({ table }: ColumnSettingsProps<T>) {
             <div key={column.id} className={'settings-menu__dropdown__option'}>
               <Switcher
                 label={
-                  typeof column.columnDef.header === 'string'
-                    ? column.columnDef.header
-                    : column.id
+                  typeof column.columnDef.header === 'string' ? column.columnDef.header : column.id
                 }
                 selectedValue={column.getIsVisible()}
                 onClick={() => {
