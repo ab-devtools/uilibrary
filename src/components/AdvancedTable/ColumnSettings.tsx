@@ -1,5 +1,5 @@
+import type { Column, Table } from '@tanstack/react-table'
 import React, { useState } from 'react'
-import type { Table } from '@tanstack/react-table'
 import { Button } from '../Button'
 import { IconSettings } from '../SVGIcons'
 import { Switcher } from '../Switcher'
@@ -15,6 +15,13 @@ export function ColumnSettings<T>({ table }: ColumnSettingsProps<T>) {
 
   const closeUserMenu = () => {
     setIsOpen(false)
+  }
+
+  const handleClick = (column:  Column<T>) => {
+    const toggle = column.getToggleVisibilityHandler()
+    if (toggle) {
+      toggle({ target: { checked: !column.getIsVisible() } })
+    }
   }
 
   return (
@@ -41,12 +48,7 @@ export function ColumnSettings<T>({ table }: ColumnSettingsProps<T>) {
                   typeof column.columnDef.header === 'string' ? column.columnDef.header : column.id
                 }
                 selectedValue={column.getIsVisible()}
-                onClick={() => {
-                  const toggle = column.getToggleVisibilityHandler()
-                  if (toggle) {
-                    toggle({ target: { checked: !column.getIsVisible() } })
-                  }
-                }}
+                onClick={() => handleClick(column)}
                 disabled={!column.getCanHide()}
                 inlineType={true}
                 size={'small'}
