@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/ab-devtools/uilibrary/compare/1.0.6...1.0.7) (2025-03-24)
+
+
+### Bug Fixes
+
+* added id for popover and changed capsLock state functionality ([4ed3a7b](https://github.com/ab-devtools/uilibrary/commit/4ed3a7b5bab4eef6b3dd975ca43086ad01c1af24))
+
 ## [1.0.6](https://github.com/ab-devtools/uilibrary/compare/1.0.5...1.0.6) (2025-03-24)
 
 
