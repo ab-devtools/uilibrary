@@ -90,7 +90,6 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
           <Button buttonText="Add" />
         </>
       ),
-      meta: { sticky: 'right' }
     }
   ]
 
