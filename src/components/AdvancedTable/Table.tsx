@@ -91,9 +91,9 @@ export function Table<TData>({
                           items={headerGroup.headers.map((header) => header.id)}
                           strategy={horizontalListSortingStrategy}
                         >
-                          {headerGroup.headers.map((header) => {
-                            return <ColumnHeader key={header.id} header={header} />
-                          })}
+                          {headerGroup.headers.map((header) => (
+                            <ColumnHeader key={header.id} header={header} />
+                          ))}
                         </SortableContext>
                       </tr>
                     ))}
