@@ -57,9 +57,6 @@ export function Table<TData>({
     >
       {header}
       <div className="advanced-table__inner scrollbar scrollbar--horizontal">
-        <div className="custom-scrollbar">
-          <div className="scroll-thumb"></div>
-        </div>
         <DndContext
           sensors={sensors}
           collisionDetection={closestCenter}
@@ -68,7 +65,7 @@ export function Table<TData>({
           onDragCancel={handleDragCancel}
         >
           <div>
-            <table style={{ minWidth: table.getCenterTotalSize() }}>
+            <table style={{ minWidth: data?.length && table.getCenterTotalSize() }}>
               {!data?.length && !hasError ? (
                 <Empty mainMessage={emptyTitle} illustration={emptyIllustration} />
               ) : hasError ? (
