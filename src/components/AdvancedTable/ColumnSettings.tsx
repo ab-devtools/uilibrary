@@ -17,7 +17,7 @@ export function ColumnSettings<T>({ table }: ColumnSettingsProps<T>) {
     setIsOpen(false)
   }
 
-  const handleClick = (column:  Column<T>) => {
+  const handleClick = (column: Column<T>) => {
     const toggle = column.getToggleVisibilityHandler()
     if (toggle) {
       toggle({ target: { checked: !column.getIsVisible() } })
