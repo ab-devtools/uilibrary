@@ -12,31 +12,31 @@ const data: any[] = [
     visits: [7, 8, 9],
     progress: 'fdfsdfsdfsd',
     status: 'Active'
+  },
+  ...Array(33).fill({
+    user: 'John Doe',
+    age: 30,
+    id: 'dsfsdf',
+    visits: [4, 5, 6],
+    progress: 'divv',
+    status: 'Active'
+  }),
+  {
+    user: 'John Doe',
+    age: 30,
+    id: 'dsfsdf',
+    visits: [4, 5, 6],
+    progress: 'divv',
+    status: 'Active'
+  },
+  {
+    user: 'Bruce wayne',
+    id: 'fffffffeeeee',
+    age: 29,
+    visits: [1, 2, 3],
+    progress: 'diff',
+    status: 'Active'
   }
-  // ...Array(33).fill({
-  //   user: 'John Doe',
-  //   age: 30,
-  //   id: 'dsfsdf',
-  //   visits: [4, 5, 6],
-  //   progress: 'divv',
-  //   status: 'Active'
-  // }),
-  // {
-  //   user: 'John Doe',
-  //   age: 30,
-  //   id: 'dsfsdf',
-  //   visits: [4, 5, 6],
-  //   progress: 'divv',
-  //   status: 'Active'
-  // },
-  // {
-  //   user: 'Bruce wayne',
-  //   id: 'fffffffeeeee',
-  //   age: 29,
-  //   visits: [1, 2, 3],
-  //   progress: 'diff',
-  //   status: 'Active'
-  // }
 ]
 
 const Template: StoryFn<TTableProps<any>> = (args) => {
