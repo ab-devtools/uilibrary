@@ -90,7 +90,7 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
           <Button buttonText="Add" />
         </>
       ),
-      meta: { sticky: 'right' },
+      meta: { sticky: 'right' }
     }
   ]
 
@@ -104,10 +104,7 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
         emptySubTitle="Please try to reload the page or use another keyword."
         renderHeader={(table) => (
           <div className="advanced-table__header justify-content--end">
-            <ColumnSettings
-              hiddenColumnSettings={['select', 'actions']}
-              table={table}
-            />
+            <ColumnSettings hiddenColumnSettings={['select', 'actions']} table={table} />
           </div>
         )}
         renderFooter={(table) => (

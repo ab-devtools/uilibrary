@@ -40,7 +40,7 @@ export function useTable<TData>({
   })
 
   const memoizedColumns = useMemo(() => {
-    const columnsList: Column<TData>[] = [...columns];
+    const columnsList: Column<TData>[] = [...columns]
     if (withSelect) {
       columnsList.unshift({
         id: 'select',
@@ -64,7 +64,7 @@ export function useTable<TData>({
         )
       })
     }
-    return columnsList;
+    return columnsList
   }, [columns])
 
   const [columnOrder, setColumnOrder] = useState<string[]>(() =>
@@ -127,11 +127,6 @@ export function useTable<TData>({
       minSize: 200,
       size: 150,
       maxSize: 400
-    },
-    initialState: {
-      columnPinning: {
-        right: ['actions-column']
-      }
     },
     onPaginationChange: handlePaginationChange,
     onColumnSizingChange: handleColumnSizingChange,

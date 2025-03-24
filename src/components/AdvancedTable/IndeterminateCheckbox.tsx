@@ -27,13 +27,15 @@ export const IndeterminateCheckbox = forwardRef(
       onChange({ target: { checked: v } })
     }
 
-    return <Checkbox
-      className={classNames('checkbox', { 'active-checkbox': checked })}
-      value={checked}
-      disabled={disabled}
-      onClick={handleChange}
-      ref={resolvedRef}
-    />
+    return (
+      <Checkbox
+        className={classNames('checkbox', { 'active-checkbox': checked })}
+        value={checked}
+        disabled={disabled}
+        onClick={handleChange}
+        ref={resolvedRef}
+      />
+    )
   }
 )
 

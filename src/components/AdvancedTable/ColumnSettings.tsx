@@ -55,7 +55,8 @@ export function ColumnSettings<T>({ table, hiddenColumnSettings }: ColumnSetting
                     size={'small'}
                   />
                 </div>
-              )}
+              )
+            }
           })}
         </div>
       </Menu>
