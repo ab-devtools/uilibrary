@@ -18,7 +18,6 @@ const getTextType = (password: string, isValid: boolean, isFocused: boolean) => 
   if (isValid) return 'success'
   return isFocused ? 'disabled' : 'danger'
 }
-
 const getIconType = (password: string, isValid: boolean, isFocused: boolean) => {
   if (password.length === 0) return <IconDismissCircle size={'xsmall'} type="tertiary" />
   if (isValid) return <IconCheckmarkCircleFilled size={'xsmall'} type={'success'} />
@@ -46,6 +45,7 @@ const IconEyeOffTooltip = (props: ISVGIconProps) => {
     </>
   )
 }
+
 export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordsProps>(
   (props, ref): JSX.Element => {
     const {
@@ -62,28 +62,30 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordsPr
       onFocus,
       tooltipAddons,
       capsLockText,
+      isCapsLockOn,
+      setIsCapsLockOn,
+      id,
       ...rest
     } = props
     const inputRef = useRef<HTMLInputElement>(null)
     const combinedRef = (ref || inputRef) as React.RefObject<HTMLInputElement>
     const [password, setPassword] = useState<string>('')
-    const [showPassword, setShowPassword] = useState<boolean>(false)
+    const [isShowPassword, setIsShowPassword] = useState<boolean>(false)
     const [validationResults, setValidationResults] = useState<Record<string, boolean>>({})
     const [isFocused, setIsFocused] = useState<boolean>(false)
-    const [capsLockOn, setCapsLockOn] = useState<boolean>(false)
 
     const eyeIcon = {
-      Component: !showPassword ? IconEyeOnWithTooltip : IconEyeOffTooltip,
+      Component: !isShowPassword ? IconEyeOnWithTooltip : IconEyeOffTooltip,
       onMouseDown: (e: React.MouseEvent) => {
         e.preventDefault()
       },
       onClick: () => {
-        setShowPassword((prev) => !prev)
-        onPasswordShow?.(!showPassword)
+        setIsShowPassword((prev) => !prev)
+        onPasswordShow?.(!isShowPassword)
       }
     }
     const handleCapsLockDetection = (event: React.KeyboardEvent<HTMLInputElement>) => {
-      setCapsLockOn(event.getModifierState('CapsLock'))
+      setIsCapsLockOn?.(event.getModifierState('CapsLock'))
     }
 
     useEffect(() => {
@@ -106,25 +108,20 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordsPr
           combinedRef.current?.setSelectionRange(length, length)
         })
       }
-    }, [showPassword, password])
+    }, [isShowPassword, setIsShowPassword])
 
     return (
       <div className={'input-password'}>
-        {capsLockOn && !showPassword ? (
-          <Popover
-            text={capsLockText}
-            id={'caps-lock'}
-            clicked={true}
-            position={Positions?.MIDDLE_LEFT}
-          />
+        {isCapsLockOn && !isShowPassword ? (
+          <Popover text={capsLockText} id={id} clicked={true} position={Positions?.MIDDLE_RIGHT} />
         ) : null}
         <Input
           {...rest}
-          id={'caps-lock'}
+          id={id}
           ref={combinedRef}
           dataId={dataId}
           label={label}
-          type={showPassword ? 'text' : 'password'}
+          type={isShowPassword ? 'text' : 'password'}
           onChange={(e) => {
             setPassword(e.target.value)
             if (onChange) {
