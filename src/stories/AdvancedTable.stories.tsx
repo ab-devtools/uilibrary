@@ -1,5 +1,5 @@
 import React from 'react'
-import { AdvancedTable as _Table, AdvancedPagination, ColumnSettings } from '../index'
+import { AdvancedTable as _Table, AdvancedPagination, ColumnSettings, Button } from '../index'
 import { StoryFn } from '@storybook/react'
 import { TTableProps } from '../components/AdvancedTable/types'
 import { ColumnDef } from '@tanstack/react-table'
@@ -62,9 +62,35 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
       accessorKey: 'progress'
     },
     {
+      header: 'Test 1',
+      id: 'test_1',
+      accessorKey: 'visits'
+    },
+    {
+      header: 'Test 2',
+      id: 'test 2',
+      accessorKey: 'visits'
+    },
+    {
+      header: 'Test 3',
+      id: 'test_3',
+      accessorKey: 'visits'
+    },
+    {
       header: 'Visits',
       id: 'visits',
       accessorKey: 'visits'
+    },
+    {
+      header: 'Actions',
+      id: 'actions',
+      accessorKey: 'actions',
+      cell: () => (
+        <>
+          <Button buttonText="Add" />
+        </>
+      ),
+      meta: { sticky: 'right' },
     }
   ]
 
@@ -78,7 +104,10 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
         emptySubTitle="Please try to reload the page or use another keyword."
         renderHeader={(table) => (
           <div className="advanced-table__header justify-content--end">
-            <ColumnSettings table={table} />
+            <ColumnSettings
+              hiddenColumnSettings={['select', 'actions']}
+              table={table}
+            />
           </div>
         )}
         renderFooter={(table) => (
@@ -102,6 +131,7 @@ AdvancedTable.args = {
   withSelect: true,
   data: [],
   columns: [],
+  withBorder: false,
   onSortChange: (state) => console.log(state),
   onRowSelection: (state) => console.log(state),
   onPaginationChange: (state) => console.log(state)

@@ -40,33 +40,31 @@ export function useTable<TData>({
   })
 
   const memoizedColumns = useMemo(() => {
+    const columnsList: Column<TData>[] = [...columns];
     if (withSelect) {
-      return [
-        {
-          id: 'select',
-          enableHiding: false,
-          enableColumnDragging: false,
-          enablePinning: true,
-          header: ({ table }: IHeaderProps<TData>) => (
-            <IndeterminateCheckbox
-              checked={table.getIsAllRowsSelected()}
-              indeterminate={table.getIsSomeRowsSelected()}
-              onChange={table.getToggleAllRowsSelectedHandler()}
-            />
-          ),
-          cell: ({ row }: ICellProps<TData>) => (
-            <IndeterminateCheckbox
-              checked={row.getIsSelected()}
-              disabled={!row.getCanSelect()}
-              indeterminate={row.getIsSomeSelected()}
-              onChange={row.getToggleSelectedHandler()}
-            />
-          )
-        },
-        ...columns
-      ]
+      columnsList.unshift({
+        id: 'select',
+        enableHiding: false,
+        enableColumnDragging: false,
+        enablePinning: true,
+        header: ({ table }: IHeaderProps<TData>) => (
+          <IndeterminateCheckbox
+            checked={table.getIsAllRowsSelected()}
+            indeterminate={table.getIsSomeRowsSelected()}
+            onChange={table.getToggleAllRowsSelectedHandler()}
+          />
+        ),
+        cell: ({ row }: ICellProps<TData>) => (
+          <IndeterminateCheckbox
+            checked={row.getIsSelected()}
+            disabled={!row.getCanSelect()}
+            indeterminate={row.getIsSomeSelected()}
+            onChange={row.getToggleSelectedHandler()}
+          />
+        )
+      })
     }
-    return columns
+    return columnsList;
   }, [columns])
 
   const [columnOrder, setColumnOrder] = useState<string[]>(() =>
@@ -129,6 +127,11 @@ export function useTable<TData>({
       minSize: 200,
       size: 150,
       maxSize: 400
+    },
+    initialState: {
+      columnPinning: {
+        right: ['actions-column']
+      }
     },
     onPaginationChange: handlePaginationChange,
     onColumnSizingChange: handleColumnSizingChange,

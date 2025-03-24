@@ -14,7 +14,7 @@
 
   max-height: 100%;
   position: relative;
-  border: 1px solid var(--ds-color-border-quintary);
+
   border-radius: var(--ds-border-radius-2xl);
 
   &__header {
@@ -130,13 +130,21 @@
             max-width: var(--ds-space-48);
             width: var(--ds-space-48) !important;
             padding: var(--ds-space-8) var(--ds-space-6) var(--ds-space-8) 22px;
+            .checkbox {
+              display: none;
+            }
+            .active-checkbox {
+              display: flex;
+            }
           }
         }
-
         &:hover {
           td {
             cursor: pointer;
             background-color: var(--ds-table-td-bg-hover);
+            .checkbox {
+              display: flex;
+            }
           }
         }
 
@@ -200,6 +208,9 @@
       }
     }
   }
+}
+.with-border {
+  border: 1px solid var(--ds-color-border-quintary);
 }
 
 .settings-menu {

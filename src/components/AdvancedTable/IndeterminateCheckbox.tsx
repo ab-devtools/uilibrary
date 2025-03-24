@@ -2,6 +2,7 @@
 import type { ForwardedRef } from 'react'
 import React, { forwardRef, useEffect, useRef } from 'react'
 import { Checkbox } from '../Checkbox'
+import classNames from 'classnames'
 
 type IndeterminateCheckboxProps = {
   indeterminate: boolean
@@ -26,7 +27,13 @@ export const IndeterminateCheckbox = forwardRef(
       onChange({ target: { checked: v } })
     }
 
-    return <Checkbox value={checked} disabled={disabled} onClick={handleChange} ref={resolvedRef} />
+    return <Checkbox
+      className={classNames('checkbox', { 'active-checkbox': checked })}
+      value={checked}
+      disabled={disabled}
+      onClick={handleChange}
+      ref={resolvedRef}
+    />
   }
 )
 

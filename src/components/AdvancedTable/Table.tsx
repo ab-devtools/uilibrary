@@ -9,6 +9,7 @@ import type { TTableProps } from './types'
 import { Text } from '../Text'
 import classnames from 'classnames'
 import { Empty } from '../Empty'
+import classNames from 'classnames'
 
 export function Table<TData>({
   data,
@@ -19,6 +20,8 @@ export function Table<TData>({
   emptySubTitle,
   emptyIllustration,
   withSelect = false,
+  withBorder = true,
+  withFixedActions = true,
   reloadAction,
   reloadButtonText,
   reloadButtonIcon,
@@ -29,7 +32,7 @@ export function Table<TData>({
   onSortChange,
   onRowSelection,
   onColumnSizing,
-  onPaginationChange
+  onPaginationChange,
 }: TTableProps<TData>) {
   const { table, sensors, handleDragStart, handleDragEnd, handleDragCancel, activeHeader } =
     useTable({
@@ -47,9 +50,12 @@ export function Table<TData>({
   const header = renderHeader?.(table)
   const footer = renderFooter?.(table)
   return (
-    <div className="advanced-table scrollbar scrollbar--vertical">
+    <div className={classNames('advanced-table scrollbar scrollbar--vertical', { 'with-border': withBorder })}>
       {header}
       <div className="advanced-table__inner scrollbar scrollbar--horizontal">
+        <div className="custom-scrollbar">
+          <div className="scroll-thumb"></div>
+        </div>
         <DndContext
           sensors={sensors}
           collisionDetection={closestCenter}
@@ -75,29 +81,33 @@ export function Table<TData>({
               ) : (
                 <>
                   <thead>
-                    {table.getHeaderGroups().map((headerGroup) => (
-                      <tr key={headerGroup.id}>
-                        <SortableContext
-                          items={headerGroup.headers.map((header) => header.id)}
-                          strategy={horizontalListSortingStrategy}
-                        >
-                          {headerGroup.headers.map((header) => (
+                  {table.getHeaderGroups().map((headerGroup) => (
+                    <tr key={headerGroup.id}>
+                      <SortableContext
+                        items={headerGroup.headers.map((header) => header.id)}
+                        strategy={horizontalListSortingStrategy}
+                      >
+                        {headerGroup.headers.map((header) => {
+                          return (
                             <ColumnHeader key={header.id} header={header} />
-                          ))}
-                        </SortableContext>
-                      </tr>
-                    ))}
+                          )
+                        })}
+                      </SortableContext>
+                    </tr>
+                  ))}
                   </thead>
                   <tbody>
-                    {table.getRowModel().rows.map((row) => (
-                      <tr
-                        className={classnames({ ['selected']: row.getIsSelected() })}
-                        key={row.id}
-                      >
-                        {row.getVisibleCells().map((cell) => (
+                  {table.getRowModel().rows.map((row) => (
+                    <tr
+                      className={classnames({ ['selected']: row.getIsSelected() })}
+                      key={row.id}
+                    >
+                      {row.getVisibleCells().map((cell) => {
+                        return (
                           <td
                             className={classnames({
-                              ['with-checkbox']: cell.column.id === 'select'
+                              ['with-checkbox']: cell.column.id === 'select',
+                              ['with-fixed-action']: cell.column.id.includes('action') && withFixedActions,
                             })}
                             key={cell.id}
                             style={{ width: cell.column.getSize() }}
@@ -108,9 +118,10 @@ export function Table<TData>({
                               flexRender(cell.column.columnDef.cell, cell.getContext())
                             )}
                           </td>
-                        ))}
-                      </tr>
-                    ))}
+                        )
+                      })}
+                    </tr>
+                  ))}
                   </tbody>
                 </>
               )}
@@ -120,16 +131,16 @@ export function Table<TData>({
             {activeHeader && (
               <table style={{ width: activeHeader.getSize() }}>
                 <thead>
-                  <tr>
-                    <th className="draggable-col" style={{ width: activeHeader.getSize() }}>
-                      <Text weight={'bold'}>
-                        {flexRender(
-                          activeHeader.column.columnDef.header,
-                          activeHeader.getContext()
-                        )}
-                      </Text>
-                    </th>
-                  </tr>
+                <tr>
+                  <th className="draggable-col" style={{ width: activeHeader.getSize() }}>
+                    <Text weight={'bold'}>
+                      {flexRender(
+                        activeHeader.column.columnDef.header,
+                        activeHeader.getContext()
+                      )}
+                    </Text>
+                  </th>
+                </tr>
                 </thead>
               </table>
             )}
