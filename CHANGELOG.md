@@ -1,3 +1,14 @@
+## [1.0.6](https://github.com/ab-devtools/uilibrary/compare/1.0.5...1.0.6) (2025-03-24)
+
+
+### Bug Fixes
+
+* column settings ([907e6b7](https://github.com/ab-devtools/uilibrary/commit/907e6b7496801d1195563802c903840d83ddcedc))
+* column settings ([61bf690](https://github.com/ab-devtools/uilibrary/commit/61bf6900a7bcfe3fc174535eb9539395e05ff830))
+* column settings ([3026dc2](https://github.com/ab-devtools/uilibrary/commit/3026dc25842f61de6f9eafb958b0b4f8fdcf61ee))
+* column settings ([0654ac5](https://github.com/ab-devtools/uilibrary/commit/0654ac5af29d2295d35af99924ccbad4d820e77a))
+* column settings ([8d512d0](https://github.com/ab-devtools/uilibrary/commit/8d512d062e5660ac5fcf61b0837c7095f63282a8))
+
 ## [1.0.5](https://github.com/ab-devtools/uilibrary/compare/1.0.4...1.0.5) (2025-03-21)
 
 
