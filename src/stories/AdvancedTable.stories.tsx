@@ -97,7 +97,7 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
     <div style={{ height: '95vh' }}>
       <_Table
         {...args}
-        data={data}
+        data={[]}
         columns={columns}
         emptyTitle="Empty title"
         emptySubTitle="Please try to reload the page or use another keyword."
