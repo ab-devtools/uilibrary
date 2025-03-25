@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/ab-devtools/uilibrary/compare/1.1.0...1.1.1) (2025-03-25)
+
+
+### Bug Fixes
+
+* add input icons disabled ([a25348d](https://github.com/ab-devtools/uilibrary/commit/a25348d92e9861570f51cdf5f09226355ccb37c7))
+
 # [1.1.0](https://github.com/ab-devtools/uilibrary/compare/1.0.8...1.1.0) (2025-03-25)
 
 
