@@ -7,9 +7,10 @@ import { Menu } from '../Menu'
 
 interface ColumnSettingsProps<T> {
   table: Table<T>
+  hiddenColumnSettings?: string[]
 }
 
-export function ColumnSettings<T>({ table }: ColumnSettingsProps<T>) {
+export function ColumnSettings<T>({ table, hiddenColumnSettings }: ColumnSettingsProps<T>) {
   const [ref, setRef] = useState<HTMLDivElement | null>(null)
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
@@ -41,20 +42,22 @@ export function ColumnSettings<T>({ table }: ColumnSettingsProps<T>) {
         parentRef={ref}
       >
         <div className="settings-menu__dropdown scrollbar scrollbar--vertical">
-          {table.getAllLeafColumns().map((column) => (
-            <div key={column.id} className={'settings-menu__dropdown__option'}>
-              <Switcher
-                label={
-                  typeof column.columnDef.header === 'string' ? column.columnDef.header : column.id
-                }
-                selectedValue={column.getIsVisible()}
-                onClick={() => handleClick(column)}
-                disabled={!column.getCanHide()}
-                inlineType={true}
-                size={'small'}
-              />
-            </div>
-          ))}
+          {table.getAllLeafColumns().map((column) => {
+            if (!hiddenColumnSettings?.includes(column.id)) {
+              return (
+                <div key={column.id} className={'settings-menu__dropdown__option'}>
+                  <Switcher
+                    label={`${column.columnDef.header}`}
+                    selectedValue={column.getIsVisible()}
+                    onClick={() => handleClick(column)}
+                    disabled={!column.getCanHide()}
+                    inlineType={true}
+                    size={'small'}
+                  />
+                </div>
+              )
+            }
+          })}
         </div>
       </Menu>
     </div>
