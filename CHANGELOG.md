@@ -1,3 +1,19 @@
+# [1.1.0](https://github.com/ab-devtools/uilibrary/compare/1.0.8...1.1.0) (2025-03-25)
+
+
+### Bug Fixes
+
+* fixed hover state for disabled switcher ([e83bf65](https://github.com/ab-devtools/uilibrary/commit/e83bf6514e475863085d155d0a890ab6e20385bf))
+* refactor link component and check disable ([b9122b9](https://github.com/ab-devtools/uilibrary/commit/b9122b9bc6747169a6ad18622057ec2c499fe8ee))
+* refactor link component and check disable ([53c437d](https://github.com/ab-devtools/uilibrary/commit/53c437dbcea7fa3d66c4956f07d015e87b8e69b7))
+* slack notification ([e971ffc](https://github.com/ab-devtools/uilibrary/commit/e971ffc01d9be251957c9009b06d595063407b14))
+
+
+### Features
+
+* added disabled state ui for link component ([b3c3de7](https://github.com/ab-devtools/uilibrary/commit/b3c3de779ba32c06f5ec176b2c96d654c12eb617))
+* added disabled state ui for link component ([f0a9e26](https://github.com/ab-devtools/uilibrary/commit/f0a9e26035250659de379de2b15adc82fa562bca))
+
 ## [1.0.8](https://github.com/ab-devtools/uilibrary/compare/1.0.7...1.0.8) (2025-03-25)
 
 
