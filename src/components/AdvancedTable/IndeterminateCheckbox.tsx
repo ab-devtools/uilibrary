@@ -3,10 +3,6 @@ import type { ForwardedRef } from 'react'
 import React, { forwardRef, useEffect, useRef } from 'react'
 import { Checkbox } from '../Checkbox'
 import classNames from 'classnames'
-import { Button } from '../Button'
-import IconDelete from '../SVGIcons/IconDelete'
-import IconSend from '../SVGIcons/IconSend'
-import IconEdit from '../SVGIcons/IconEdit'
 
 type IndeterminateCheckboxProps = {
   indeterminate: boolean
@@ -40,11 +36,6 @@ export const IndeterminateCheckbox = forwardRef(
           onClick={handleChange}
           ref={resolvedRef}
         />
-        <div className={'actions-list__right'}>
-          <Button iconProps={{ Component: IconDelete }} type={'secondary'} size={'medium'} />
-          <Button iconProps={{ Component: IconSend }} type={'secondary'} size={'medium'} />
-          <Button iconProps={{ Component: IconEdit }} type={'secondary'} size={'medium'} />
-        </div>
       </div>
     )
   }

@@ -1,8 +1,16 @@
 import React from 'react'
-import { AdvancedTable as _Table, AdvancedPagination, ColumnSettings, Button } from '../index'
+import {
+  AdvancedTable as _Table,
+  AdvancedPagination,
+  ColumnSettings,
+  Button,
+  IconDelete,
+  IconSend,
+  IconEdit
+} from '../index'
 import { StoryFn } from '@storybook/react'
-import { TTableProps } from '../components/AdvancedTable/types'
-import { ColumnDef } from '@tanstack/react-table'
+import { ICellProps, TTableProps } from '../components/AdvancedTable/types'
+import { ColumnDef, Row } from '@tanstack/react-table'
 
 const data: any[] = [
   {
@@ -80,24 +88,14 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
       header: 'Visits',
       id: 'visits',
       accessorKey: 'visits'
-    },
-    {
-      header: 'Actions',
-      id: 'actions',
-      accessorKey: 'actions',
-      cell: () => (
-        <>
-          <Button buttonText="Add" />
-        </>
-      )
     }
-  ]
+  ];
 
   return (
     <div style={{ height: '95vh' }}>
       <_Table
         {...args}
-        data={[]}
+        data={data}
         columns={columns}
         emptyTitle="Empty title"
         emptySubTitle="Please try to reload the page or use another keyword."

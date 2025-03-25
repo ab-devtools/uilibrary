@@ -21,7 +21,6 @@ export function Table<TData>({
   emptyIllustration,
   withSelect = false,
   withBorder = true,
-  withFixedActions = true,
   reloadAction,
   reloadButtonText,
   reloadButtonIcon,
@@ -89,8 +88,9 @@ export function Table<TData>({
                           strategy={horizontalListSortingStrategy}
                         >
                           {headerGroup.headers.map((header) => (
-                            <ColumnHeader key={header.id} header={header} />
-                          ))}
+                              <ColumnHeader key={header.id} header={header} />
+                            )
+                          )}
                         </SortableContext>
                       </tr>
                     ))}
@@ -101,25 +101,22 @@ export function Table<TData>({
                         className={classnames({ ['selected']: row.getIsSelected() })}
                         key={row.id}
                       >
-                        {row.getVisibleCells().map((cell) => {
-                          return (
-                            <td
-                              className={classnames({
-                                ['with-checkbox']: cell.column.id === 'select',
-                                ['with-fixed-action']:
-                                  cell.column.id.includes('action') && withFixedActions
-                              })}
-                              key={cell.id}
-                              style={{ width: cell.column.getSize() }}
-                            >
-                              {isLoading ? (
-                                <Skeleton />
-                              ) : (
-                                flexRender(cell.column.columnDef.cell, cell.getContext())
-                              )}
-                            </td>
-                          )
-                        })}
+                        {row.getVisibleCells().map((cell) => (
+                          <td
+                            className={classnames({
+                              ['with-checkbox']: cell.column.id === 'select',
+                            })}
+                            id={cell.id}
+                            key={cell.id}
+                            style={{ width: cell.column.getSize() }}
+                          >
+                            {isLoading ? (
+                              <Skeleton />
+                            ) : (
+                              flexRender(cell.column.columnDef.cell, cell.getContext())
+                            )}
+                          </td>
+                        ))}
                       </tr>
                     ))}
                   </tbody>
@@ -131,16 +128,16 @@ export function Table<TData>({
             {activeHeader && (
               <table style={{ width: activeHeader.getSize() }}>
                 <thead>
-                  <tr>
-                    <th className="draggable-col" style={{ width: activeHeader.getSize() }}>
-                      <Text weight={'bold'}>
-                        {flexRender(
-                          activeHeader.column.columnDef.header,
-                          activeHeader.getContext()
-                        )}
-                      </Text>
-                    </th>
-                  </tr>
+                <tr>
+                  <th className="draggable-col" style={{ width: activeHeader.getSize() }}>
+                    <Text weight={'bold'}>
+                      {flexRender(
+                        activeHeader.column.columnDef.header,
+                        activeHeader.getContext()
+                      )}
+                    </Text>
+                  </th>
+                </tr>
                 </thead>
               </table>
             )}
