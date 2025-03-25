@@ -18,9 +18,16 @@ const getTextType = (password: string, isValid: boolean, isFocused: boolean) => 
   if (isValid) return 'success'
   return isFocused ? 'disabled' : 'danger'
 }
-const getIconType = (password: string, isValid: boolean, isFocused: boolean) => {
+
+const getIconType = (
+  password: string,
+  isValid: boolean,
+  isFocused: boolean,
+  disabled: boolean | undefined
+) => {
   if (password.length === 0) return <IconDismissCircle size={'xsmall'} type="tertiary" />
-  if (isValid) return <IconCheckmarkCircleFilled size={'xsmall'} type={'success'} />
+  if (isValid)
+    return <IconCheckmarkCircleFilled size={'xsmall'} type={disabled ? 'disabled' : 'success'} />
   return isFocused ? (
     <IconDismissCircle size={'xsmall'} type={'tertiary'} />
   ) : (
@@ -156,7 +163,7 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordsPr
         <div className={'input-password__validation mt-8'}>
           {validations.map((rule) => (
             <div className={'input-password__validation__item'} key={rule?.label}>
-              {getIconType(password, validationResults[rule.label], isFocused)}
+              {getIconType(password, validationResults[rule.label], isFocused, props?.disabled)}
               <Text
                 size={'small'}
                 className={'pl-4'}
