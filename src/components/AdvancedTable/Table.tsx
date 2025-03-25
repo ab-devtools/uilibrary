@@ -88,9 +88,8 @@ export function Table<TData>({
                           strategy={horizontalListSortingStrategy}
                         >
                           {headerGroup.headers.map((header) => (
-                              <ColumnHeader key={header.id} header={header} />
-                            )
-                          )}
+                            <ColumnHeader key={header.id} header={header} />
+                          ))}
                         </SortableContext>
                       </tr>
                     ))}
@@ -104,7 +103,7 @@ export function Table<TData>({
                         {row.getVisibleCells().map((cell) => (
                           <td
                             className={classnames({
-                              ['with-checkbox']: cell.column.id === 'select',
+                              ['with-checkbox']: cell.column.id === 'select'
                             })}
                             id={cell.id}
                             key={cell.id}
@@ -128,16 +127,16 @@ export function Table<TData>({
             {activeHeader && (
               <table style={{ width: activeHeader.getSize() }}>
                 <thead>
-                <tr>
-                  <th className="draggable-col" style={{ width: activeHeader.getSize() }}>
-                    <Text weight={'bold'}>
-                      {flexRender(
-                        activeHeader.column.columnDef.header,
-                        activeHeader.getContext()
-                      )}
-                    </Text>
-                  </th>
-                </tr>
+                  <tr>
+                    <th className="draggable-col" style={{ width: activeHeader.getSize() }}>
+                      <Text weight={'bold'}>
+                        {flexRender(
+                          activeHeader.column.columnDef.header,
+                          activeHeader.getContext()
+                        )}
+                      </Text>
+                    </th>
+                  </tr>
                 </thead>
               </table>
             )}

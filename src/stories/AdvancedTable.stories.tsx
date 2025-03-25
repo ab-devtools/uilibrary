@@ -89,7 +89,7 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
       id: 'visits',
       accessorKey: 'visits'
     }
-  ];
+  ]
 
   return (
     <div style={{ height: '95vh' }}>
