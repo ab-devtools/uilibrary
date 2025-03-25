@@ -1,3 +1,19 @@
+## [1.0.8](https://github.com/ab-devtools/uilibrary/compare/1.0.7...1.0.8) (2025-03-25)
+
+
+### Bug Fixes
+
+* actions column ([3d2122b](https://github.com/ab-devtools/uilibrary/commit/3d2122b24fa634c71cdafc6591d2df345e56b44d))
+* actions column ([1fd146f](https://github.com/ab-devtools/uilibrary/commit/1fd146fb330b5f21e92c2a6092b84b61f7a6e4c2))
+* added actions list ([5303bd8](https://github.com/ab-devtools/uilibrary/commit/5303bd8b206d7df9b34b219e24419a1b7179b9b7))
+* added actions list ([1b8235e](https://github.com/ab-devtools/uilibrary/commit/1b8235e3d4054fe810983828def1c0956cfb2aea))
+* table border ([a70033f](https://github.com/ab-devtools/uilibrary/commit/a70033fa55a4fab3a4cb7c162046fb3ee829cee8))
+* table border ([3d37ae1](https://github.com/ab-devtools/uilibrary/commit/3d37ae10d5ee027481e7ac3d25fe670f2a45d51b))
+* table border ([2324a0f](https://github.com/ab-devtools/uilibrary/commit/2324a0feb513581ee33e9da323f952d7246c3ee5))
+* table border ([12854ac](https://github.com/ab-devtools/uilibrary/commit/12854aceea6eeaf2ff31465363cb661a43d5d36b))
+* table border ([85dd0a7](https://github.com/ab-devtools/uilibrary/commit/85dd0a71982d953fda65795658e925e8d27b390e))
+* table border ([0130338](https://github.com/ab-devtools/uilibrary/commit/0130338219fc82fe53dde68af3f41c68fad21965))
+
 ## [1.0.7](https://github.com/ab-devtools/uilibrary/compare/1.0.6...1.0.7) (2025-03-24)
 
 
