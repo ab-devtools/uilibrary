@@ -33,6 +33,7 @@ export type TTableProps<TData> = {
   }
   className?: string
   withSelect?: boolean
+  withBorder?: boolean
   customHeader?: ReactNode
   defaultPageIndex?: number
   defaultPageSize?: number

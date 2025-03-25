@@ -67,9 +67,31 @@ const InputPasswordTemplate: StoryFn<InputPasswordsProps> = (args) => {
       }
 
   // @ts-ignore
+
+  const [isCapsLockOn, setCapsLockState] = useState<boolean>(false)
+  const [isCapsLockOn1, setCapsLockState1] = useState<boolean>(false)
+
   return (
     <div style={{ marginLeft: 100, maxWidth: 400 }}>
       <_InputPassword
+        id="sk,"
+        name="pass"
+        isCapsLockOn={isCapsLockOn}
+        setIsCapsLockOn={setCapsLockState}
+        capsLockText={'Caps Lock is On'}
+        validations={passwordValidations}
+        onValidationChange={setIsPasswordValid}
+        label={'Password'}
+        placeholder={'Create password'}
+        hasError={false}
+        tooltipAddons={tooltipAddons}
+        onPasswordShow={setShowPassword}
+      />
+      <_InputPassword
+        id="4"
+        name="pass-1"
+        isCapsLockOn={isCapsLockOn1}
+        setIsCapsLockOn={setCapsLockState1}
         capsLockText={'Caps Lock is On'}
         validations={passwordValidations}
         onValidationChange={setIsPasswordValid}

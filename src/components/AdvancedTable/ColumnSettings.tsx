@@ -1,66 +1,65 @@
-import React, { useId, useRef, useState } from 'react'
-import type { Table } from '@tanstack/react-table'
+import type { Column, Table } from '@tanstack/react-table'
+import React, { useState } from 'react'
 import { Button } from '../Button'
 import { IconSettings } from '../SVGIcons'
 import { Switcher } from '../Switcher'
-import { useOnOutsideClick } from '../../hooks'
+import { Menu } from '../Menu'
 
 interface ColumnSettingsProps<T> {
   table: Table<T>
+  hiddenColumnSettings?: string[]
 }
 
-export function ColumnSettings<T>({ table }: ColumnSettingsProps<T>) {
-  const menuRef = useRef<HTMLButtonElement | null>(null)
+export function ColumnSettings<T>({ table, hiddenColumnSettings }: ColumnSettingsProps<T>) {
+  const [ref, setRef] = useState<HTMLDivElement | null>(null)
   const [isOpen, setIsOpen] = useState<boolean>(false)
-  const [dropdownRef, setDropdownRef] = useState<HTMLDivElement | null>(null)
 
-  const handleOutsideClick = () => {
+  const closeUserMenu = () => {
     setIsOpen(false)
   }
 
-  useOnOutsideClick([menuRef.current, dropdownRef], handleOutsideClick, isOpen, useId())
+  const handleClick = (column: Column<T>) => {
+    const toggle = column.getToggleVisibilityHandler()
+    if (toggle) {
+      toggle({ target: { checked: !column.getIsVisible() } })
+    }
+  }
+
   return (
-    <div className="settings-menu-wrapper">
-      <div className="settings-menu">
-        <Button
-          refHandler={menuRef}
-          type={'secondary'}
-          iconProps={{
-            Component: IconSettings
-          }}
-          onClick={() => setIsOpen((prev: boolean) => !prev)}
-        />
-        {isOpen && (
-          <div
-            ref={(ref) => {
-              setDropdownRef(ref)
-            }}
-            className="settings-menu__dropdown scrollbar scrollbar--vertical"
-          >
-            {table.getAllLeafColumns().map((column) => (
-              <div key={column.id} className={'settings-menu__dropdown__option'}>
-                <Switcher
-                  label={
-                    typeof column.columnDef.header === 'string'
-                      ? column.columnDef.header
-                      : column.id
-                  }
-                  selectedValue={column.getIsVisible()}
-                  onClick={() => {
-                    const toggle = column.getToggleVisibilityHandler()
-                    if (toggle) {
-                      toggle({ target: { checked: !column.getIsVisible() } })
-                    }
-                  }}
-                  disabled={!column.getCanHide()}
-                  inlineType={true}
-                  size={'small'}
-                />
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+    <div ref={setRef}>
+      <Button
+        type={'secondary'}
+        iconProps={{
+          Component: IconSettings
+        }}
+        onClick={() => setIsOpen((prev: boolean) => !prev)}
+      />
+      <Menu
+        className="settings-menu"
+        position="top-left"
+        onClose={closeUserMenu}
+        isOpen={isOpen}
+        parentRef={ref}
+      >
+        <div className="settings-menu__dropdown scrollbar scrollbar--vertical">
+          {table.getAllLeafColumns().map((column) => {
+            if (!hiddenColumnSettings?.includes(column.id)) {
+              return (
+                <div key={column.id} className={'settings-menu__dropdown__option'}>
+                  <Switcher
+                    label={`${column.columnDef.header}`}
+                    selectedValue={column.getIsVisible()}
+                    onClick={() => handleClick(column)}
+                    disabled={!column.getCanHide()}
+                    inlineType={true}
+                    size={'small'}
+                  />
+                </div>
+              )
+            }
+          })}
+        </div>
+      </Menu>
     </div>
   )
 }

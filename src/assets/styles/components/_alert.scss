@@ -30,10 +30,15 @@
     border-radius: var(--ds-alert-border-radius);
 
     #{$this}__content {
-      @include mixin.align-items(flex-start);
+      &__inner {
+        @include mixin.flex-direction(column);
+        @include mixin.align-items(flex-start);
+      }
     }
+
     #{$this}__actions {
       margin-top: var(--ds-space-12);
+      padding-left: var(--ds-space-32);
     }
   }
 
@@ -41,11 +46,7 @@
     #{$this}__content {
       @include mixin.align-items(center);
     }
-    #{$this}__text {
-      @include mixin.flexbox;
-      @include mixin.justify-content(space-between);
-      @include mixin.align-items(center);
-    }
+
     #{$this}__actions {
       margin-left: var(--ds-space-8);
       white-space: nowrap;
@@ -84,9 +85,17 @@
 
   &__content {
     @include mixin.flexbox;
-  }
 
-  &__text {
-    flex: 1;
+    &__inner {
+      @include mixin.flexbox;
+      @include mixin.align-items(center);
+      flex: 1;
+    }
+
+    &__left {
+      @include mixin.flexbox;
+      @include mixin.align-items(flex-start);
+      flex: 1;
+    }
   }
 }

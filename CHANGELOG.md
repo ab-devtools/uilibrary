@@ -1,3 +1,61 @@
+# [1.1.0](https://github.com/ab-devtools/uilibrary/compare/1.0.8...1.1.0) (2025-03-25)
+
+
+### Bug Fixes
+
+* fixed hover state for disabled switcher ([e83bf65](https://github.com/ab-devtools/uilibrary/commit/e83bf6514e475863085d155d0a890ab6e20385bf))
+* refactor link component and check disable ([b9122b9](https://github.com/ab-devtools/uilibrary/commit/b9122b9bc6747169a6ad18622057ec2c499fe8ee))
+* refactor link component and check disable ([53c437d](https://github.com/ab-devtools/uilibrary/commit/53c437dbcea7fa3d66c4956f07d015e87b8e69b7))
+* slack notification ([e971ffc](https://github.com/ab-devtools/uilibrary/commit/e971ffc01d9be251957c9009b06d595063407b14))
+
+
+### Features
+
+* added disabled state ui for link component ([b3c3de7](https://github.com/ab-devtools/uilibrary/commit/b3c3de779ba32c06f5ec176b2c96d654c12eb617))
+* added disabled state ui for link component ([f0a9e26](https://github.com/ab-devtools/uilibrary/commit/f0a9e26035250659de379de2b15adc82fa562bca))
+
+## [1.0.8](https://github.com/ab-devtools/uilibrary/compare/1.0.7...1.0.8) (2025-03-25)
+
+
+### Bug Fixes
+
+* actions column ([3d2122b](https://github.com/ab-devtools/uilibrary/commit/3d2122b24fa634c71cdafc6591d2df345e56b44d))
+* actions column ([1fd146f](https://github.com/ab-devtools/uilibrary/commit/1fd146fb330b5f21e92c2a6092b84b61f7a6e4c2))
+* added actions list ([5303bd8](https://github.com/ab-devtools/uilibrary/commit/5303bd8b206d7df9b34b219e24419a1b7179b9b7))
+* added actions list ([1b8235e](https://github.com/ab-devtools/uilibrary/commit/1b8235e3d4054fe810983828def1c0956cfb2aea))
+* table border ([a70033f](https://github.com/ab-devtools/uilibrary/commit/a70033fa55a4fab3a4cb7c162046fb3ee829cee8))
+* table border ([3d37ae1](https://github.com/ab-devtools/uilibrary/commit/3d37ae10d5ee027481e7ac3d25fe670f2a45d51b))
+* table border ([2324a0f](https://github.com/ab-devtools/uilibrary/commit/2324a0feb513581ee33e9da323f952d7246c3ee5))
+* table border ([12854ac](https://github.com/ab-devtools/uilibrary/commit/12854aceea6eeaf2ff31465363cb661a43d5d36b))
+* table border ([85dd0a7](https://github.com/ab-devtools/uilibrary/commit/85dd0a71982d953fda65795658e925e8d27b390e))
+* table border ([0130338](https://github.com/ab-devtools/uilibrary/commit/0130338219fc82fe53dde68af3f41c68fad21965))
+
+## [1.0.7](https://github.com/ab-devtools/uilibrary/compare/1.0.6...1.0.7) (2025-03-24)
+
+
+### Bug Fixes
+
+* added id for popover and changed capsLock state functionality ([4ed3a7b](https://github.com/ab-devtools/uilibrary/commit/4ed3a7b5bab4eef6b3dd975ca43086ad01c1af24))
+
+## [1.0.6](https://github.com/ab-devtools/uilibrary/compare/1.0.5...1.0.6) (2025-03-24)
+
+
+### Bug Fixes
+
+* column settings ([907e6b7](https://github.com/ab-devtools/uilibrary/commit/907e6b7496801d1195563802c903840d83ddcedc))
+* column settings ([61bf690](https://github.com/ab-devtools/uilibrary/commit/61bf6900a7bcfe3fc174535eb9539395e05ff830))
+* column settings ([3026dc2](https://github.com/ab-devtools/uilibrary/commit/3026dc25842f61de6f9eafb958b0b4f8fdcf61ee))
+* column settings ([0654ac5](https://github.com/ab-devtools/uilibrary/commit/0654ac5af29d2295d35af99924ccbad4d820e77a))
+* column settings ([8d512d0](https://github.com/ab-devtools/uilibrary/commit/8d512d062e5660ac5fcf61b0837c7095f63282a8))
+
+## [1.0.5](https://github.com/ab-devtools/uilibrary/compare/1.0.4...1.0.5) (2025-03-21)
+
+
+### Bug Fixes
+
+* fixed alert ui icon alignment ([a690e9b](https://github.com/ab-devtools/uilibrary/commit/a690e9bf6f35708242ee7748ea866cbd6b72d65e))
+* fixed alert ui icon alignment ([02f21bd](https://github.com/ab-devtools/uilibrary/commit/02f21bd3345997d4c06f0486807c99f639f60f35))
+
 ## [1.0.4](https://github.com/ab-devtools/uilibrary/compare/1.0.3...1.0.4) (2025-03-21)
 
 

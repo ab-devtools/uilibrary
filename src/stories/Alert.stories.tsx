@@ -18,25 +18,21 @@ export default {
   }
 }
 
-const Template: StoryFn<TAlertProps> = (args) => (
-  <AlertComp
-    {...args}
-    buttonProps={{
-      confirm: {
-        buttonText: 'Register',
-        buttonActionType: 'submit'
-      },
-      cancel: { buttonText: 'Cancel' }
-    }}
-  />
-)
+const Template: StoryFn<TAlertProps> = (args) => <AlertComp {...args} />
 
 export const Alert = Template.bind({})
 
 Alert.args = {
   type: 'information',
-  position: 'inline',
+  position: 'sticky',
   text: 'Alert line which displays the main function or reason of the alert.',
   subtext: 'Become a legendary UX/UI designer through real world and practical courses.',
-  closeIcon: true
+  closeIcon: true,
+  buttonProps: {
+    confirm: {
+      buttonText: 'Register',
+      buttonActionType: 'submit'
+    },
+    cancel: { buttonText: 'Cancel' }
+  }
 }

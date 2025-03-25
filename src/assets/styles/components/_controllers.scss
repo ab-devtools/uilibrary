@@ -296,7 +296,7 @@
       }
 
       &:disabled {
-        #{$this}__icon {
+        & + #{$this}__icon {
           background-color: var(--ds-controller-bg-disabled);
           color: var(--ds-controller-icon-disabled);
         }

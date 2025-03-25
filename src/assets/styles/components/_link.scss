@@ -14,6 +14,8 @@
   --ds-link-secondary-color-pressed: var(--ds-color-text-tertiary);
   --ds-link-secondary-color-focused: var(--ds-color-text-primary);
 
+  --ds-link-disabled-color: var(--ds-color-text-disabled);
+
   --ds-link-shadown-focused: var(--ds-shadow-brand-2);
 
   --ds-link-icon-space: var(--ds-space-4);
@@ -25,75 +27,89 @@
   text-decoration: underline;
   transition: var(--ds-link-transition);
 
-  &:focus {
-    box-shadow: var(--ds-link-shadown-focused);
-    border-radius: var(--ds-border-radius-xs);
+  &:not(&--disabled) {
+    &:focus {
+      box-shadow: var(--ds-link-shadown-focused);
+      border-radius: var(--ds-border-radius-xs);
+    }
+
+    &#{$this}--primary {
+      color: var(--ds-link-primary-color);
+
+      &:hover {
+        color: var(--ds-link-primary-color-hover);
+
+        #{$this}__icon {
+          path {
+            fill: var(--ds-link-primary-color-hover);
+          }
+        }
+      }
+
+      &:active {
+        color: var(--ds-link-primary-color-pressed);
+
+        #{$this}__icon {
+          path {
+            fill: var(--ds-link-primary-color-pressed);
+          }
+        }
+      }
+
+      &:focus {
+        color: var(--ds-link-primary-color-focused);
+
+        #{$this}__icon {
+          path {
+            fill: var(--ds-link-primary-color-focused);
+          }
+        }
+      }
+    }
+
+    &#{$this}--secondary {
+      color: var(--ds-link-secondary-color);
+
+      &:hover {
+        color: var(--ds-link-secondary-color-hover);
+
+        #{$this}__icon {
+          path {
+            fill: var(--ds-link-secondary-color-hover);
+          }
+        }
+      }
+
+      &:active {
+        color: var(--ds-link-secondary-color-pressed);
+
+        #{$this}__icon {
+          path {
+            fill: var(--ds-link-secondary-color-pressed);
+          }
+        }
+      }
+
+      &:focus {
+        color: var(--ds-link-secondary-color-focused);
+
+        #{$this}__icon {
+          path {
+            fill: var(--ds-link-secondary-color-focused);
+          }
+        }
+      }
+    }
   }
 
-  &--primary {
-    color: var(--ds-link-primary-color);
 
-    &:hover {
-      color: var(--ds-link-primary-color-hover);
 
-      #{$this}__icon {
-        path {
-          fill: var(--ds-link-primary-color-hover);
-        }
-      }
-    }
+  &--disabled {
+    color: var(--ds-link-disabled-color);
 
-    &:active {
-      color: var(--ds-link-primary-color-pressed);
-
-      #{$this}__icon {
-        path {
-          fill: var(--ds-link-primary-color-pressed);
-        }
-      }
-    }
-
-    &:focus {
-      color: var(--ds-link-primary-color-focused);
-
-      #{$this}__icon {
-        path {
-          fill: var(--ds-link-primary-color-focused);
-        }
-      }
-    }
-  }
-
-  &--secondary {
-    color: var(--ds-link-secondary-color);
-
-    &:hover {
-      color: var(--ds-link-secondary-color-hover);
-
-      #{$this}__icon {
-        path {
-          fill: var(--ds-link-secondary-color-hover);
-        }
-      }
-    }
-
-    &:active {
-      color: var(--ds-link-secondary-color-pressed);
-
-      #{$this}__icon {
-        path {
-          fill: var(--ds-link-secondary-color-pressed);
-        }
-      }
-    }
-
-    &:focus {
-      color: var(--ds-link-secondary-color-focused);
-
-      #{$this}__icon {
-        path {
-          fill: var(--ds-link-secondary-color-focused);
-        }
+    #{$this}__icon {
+      path {
+        fill: var(--ds-link-disabled-color);
       }
     }
   }

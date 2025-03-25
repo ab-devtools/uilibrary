@@ -9,6 +9,7 @@ import type { TTableProps } from './types'
 import { Text } from '../Text'
 import classnames from 'classnames'
 import { Empty } from '../Empty'
+import classNames from 'classnames'
 
 export function Table<TData>({
   data,
@@ -19,6 +20,7 @@ export function Table<TData>({
   emptySubTitle,
   emptyIllustration,
   withSelect = false,
+  withBorder = true,
   reloadAction,
   reloadButtonText,
   reloadButtonIcon,
@@ -47,7 +49,11 @@ export function Table<TData>({
   const header = renderHeader?.(table)
   const footer = renderFooter?.(table)
   return (
-    <div className="advanced-table scrollbar scrollbar--vertical">
+    <div
+      className={classNames('advanced-table scrollbar scrollbar--vertical', {
+        'with-border': withBorder
+      })}
+    >
       {header}
       <div className="advanced-table__inner scrollbar scrollbar--horizontal">
         <DndContext
@@ -58,7 +64,7 @@ export function Table<TData>({
           onDragCancel={handleDragCancel}
         >
           <div>
-            <table style={{ minWidth: table.getCenterTotalSize() }}>
+            <table style={{ minWidth: data?.length && table.getCenterTotalSize() }}>
               {!data?.length && !hasError ? (
                 <Empty mainMessage={emptyTitle} illustration={emptyIllustration} />
               ) : hasError ? (
@@ -99,6 +105,7 @@ export function Table<TData>({
                             className={classnames({
                               ['with-checkbox']: cell.column.id === 'select'
                             })}
+                            id={cell.id}
                             key={cell.id}
                             style={{ width: cell.column.getSize() }}
                           >

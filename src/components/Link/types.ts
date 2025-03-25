@@ -9,6 +9,7 @@ export interface LinkPropTypes {
   url?: string
   dataId?: string
   target?: string
+  disabled?: boolean
   beforeLink?: string | JSX.Element
   afterLink?: string | JSX.Element
   onclick?: () => void
