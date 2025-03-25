@@ -41,7 +41,7 @@ export const Switcher = forwardRef((props: TSwitcherProps, ref): JSX.Element => 
           text={label}
           disabled={disabled}
           labelAddons={labelAddons}
-          size={inlineType ? 'standard' : size}
+          size={inlineType ? 'standard' : 'small'}
           className="switcher__label"
         />
       )}
