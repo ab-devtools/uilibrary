@@ -1,3 +1,11 @@
+## [1.1.3](https://github.com/ab-devtools/uilibrary/compare/1.1.2...1.1.3) (2025-03-26)
+
+
+### Bug Fixes
+
+* table actions column ([ede0d74](https://github.com/ab-devtools/uilibrary/commit/ede0d74a810b7a7a9467657b7bc0286dce87c395))
+* table actions column ([107b331](https://github.com/ab-devtools/uilibrary/commit/107b331839b4861526ec9f83c9003e5c0c3a9fba))
+
 ## [1.1.2](https://github.com/ab-devtools/uilibrary/compare/1.1.1...1.1.2) (2025-03-26)
 
 
