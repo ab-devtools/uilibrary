@@ -132,7 +132,7 @@ export function Table<TData>({
                             className={classnames({
                               ['with-checkbox']: cell.column.id === 'select',
                               ['pinned-cell']: cell.column.getIsPinned(),
-                              ['action-column']: cell.column.id.includes('action'),
+                              ['action-column']: cell.column.id.includes('action')
                             })}
                             id={cell.id}
                             key={cell.id}
@@ -140,13 +140,12 @@ export function Table<TData>({
                           >
                             {isLoading ? (
                               <Skeleton />
-                            ) : (cell.column.id.includes('action') ? (
-                                  <div className="actions-list__right">
-                                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                                  </div>
-                                ) : (
-                                  flexRender(cell.column.columnDef.cell, cell.getContext())
-                                )
+                            ) : cell.column.id.includes('action') ? (
+                              <div className="actions-list__right">
+                                {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                              </div>
+                            ) : (
+                              flexRender(cell.column.columnDef.cell, cell.getContext())
                             )}
                           </td>
                         ))}

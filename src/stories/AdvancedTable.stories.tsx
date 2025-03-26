@@ -103,12 +103,12 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
       header: 'Actions',
       id: 'actions',
       accessorKey: 'actions',
-      cell: ({ row }) => (
-       <div className="flexbox align-items--center">
-         <Button className="mr-8" iconProps={{ Component: IconAdd }} type="secondary" />
-         <Button className="mr-8" iconProps={{ Component: IconEdit }} type="secondary" />
-         <Button iconProps={{ Component: IconDelete }} type="secondary" />
-       </div>
+      cell: () => (
+        <div className="flexbox align-items--center">
+          <Button className="mr-8" iconProps={{ Component: IconAdd }} type="secondary" />
+          <Button className="mr-8" iconProps={{ Component: IconEdit }} type="secondary" />
+          <Button iconProps={{ Component: IconDelete }} type="secondary" />
+        </div>
       )
     }
   ]

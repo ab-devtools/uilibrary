@@ -124,7 +124,7 @@ export function useTable<TData>({
       rowSelection,
       columnPinning: {
         left: ['select'],
-        right: ['actions'],
+        right: ['actions']
       }
     },
     defaultColumn: {
