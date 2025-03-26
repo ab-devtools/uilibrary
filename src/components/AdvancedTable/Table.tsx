@@ -19,7 +19,6 @@ export function Table<TData>({
   isLoading,
   hasError,
   tableHeight = '70vh',
-  columnPinning,
   emptyTitle,
   emptySubTitle,
   emptyIllustration,
@@ -42,7 +41,6 @@ export function Table<TData>({
       data,
       columns,
       withSelect,
-      columnPinning,
       defaultPageIndex,
       defaultPageSize,
       onSortChange,
@@ -108,13 +106,17 @@ export function Table<TData>({
                           items={headerGroup.headers.map((header) => header.id)}
                           strategy={horizontalListSortingStrategy}
                         >
-                          {headerGroup.headers.map((header) => (
-                            <ColumnHeader
-                              pinnedStyles={{ ...getCommonPinningStyles(header.column) }}
-                              key={header.id}
-                              header={header}
-                            />
-                          ))}
+                          {headerGroup.headers.map((header) => {
+                            if (!header.id.includes('action')) {
+                              return (
+                                <ColumnHeader
+                                  pinnedStyles={{ ...getCommonPinningStyles(header.column) }}
+                                  key={header.id}
+                                  header={header}
+                                />
+                              )
+                            }
+                          })}
                         </SortableContext>
                       </tr>
                     ))}
@@ -129,7 +131,8 @@ export function Table<TData>({
                           <td
                             className={classnames({
                               ['with-checkbox']: cell.column.id === 'select',
-                              ['pinned-cell']: cell.column.getIsPinned()
+                              ['pinned-cell']: cell.column.getIsPinned(),
+                              ['action-column']: cell.column.id.includes('action')
                             })}
                             id={cell.id}
                             key={cell.id}
@@ -137,6 +140,10 @@ export function Table<TData>({
                           >
                             {isLoading ? (
                               <Skeleton />
+                            ) : cell.column.id.includes('action') ? (
+                              <div className="actions-list__right">
+                                {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                              </div>
                             ) : (
                               flexRender(cell.column.columnDef.cell, cell.getContext())
                             )}

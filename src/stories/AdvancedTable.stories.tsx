@@ -1,5 +1,13 @@
 import React from 'react'
-import { AdvancedTable as _Table, AdvancedPagination, ColumnSettings } from '../index'
+import {
+  AdvancedTable as _Table,
+  AdvancedPagination,
+  ColumnSettings,
+  Button,
+  IconDelete,
+  IconEdit,
+  IconAdd
+} from '../index'
 import { StoryFn } from '@storybook/react'
 import { TTableProps } from '../components/AdvancedTable/types'
 import { ColumnDef } from '@tanstack/react-table'
@@ -90,6 +98,18 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
       header: 'Visits',
       id: 'visits',
       accessorKey: 'visits'
+    },
+    {
+      header: 'Actions',
+      id: 'actions',
+      accessorKey: 'actions',
+      cell: () => (
+        <div className="flexbox align-items--center">
+          <Button className="mr-8" iconProps={{ Component: IconAdd }} type="secondary" />
+          <Button className="mr-8" iconProps={{ Component: IconEdit }} type="secondary" />
+          <Button iconProps={{ Component: IconDelete }} type="secondary" />
+        </div>
+      )
     }
   ]
 
@@ -99,7 +119,6 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
         {...args}
         data={data}
         columns={columns}
-        columnPinning={{ left: ['select'] }}
         emptyTitle="Empty title"
         emptySubTitle="Please try to reload the page or use another keyword."
         renderHeader={(table) => (

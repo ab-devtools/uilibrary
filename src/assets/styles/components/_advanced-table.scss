@@ -142,16 +142,28 @@
             }
           }
         }
+        .action-column {
+          padding: var(--ds-space-0);
+          width: var(--ds-space-0) !important;
+          @include mixin.flexbox;
+          @include mixin.align-items(center);
+        }
+
         &:hover {
           td {
             cursor: pointer;
             background-color: var(--ds-table-td-bg-hover);
 
             .actions-list {
-              &__checkbox {
+              &__checkbox, &__right {
                 @include mixin.flexbox;
               }
             }
+          }
+          .action-column {
+            padding: var(--ds-space-0);
+            @include mixin.flexbox;
+            @include mixin.align-items(center);
           }
           .pinned-cell {
             background-color: var(--ds-table-td-bg-hover) !important;
@@ -161,6 +173,9 @@
         &.selected {
           td {
             background-color: var(--ds-table-td-bg-selected);
+          }
+          .pinned-cell {
+            background-color: var(--ds-table-td-bg-hover) !important;
           }
         }
 
@@ -224,29 +239,29 @@
   border: 1px solid var(--ds-color-border-quintary);
 }
 
-//.actions-list {
-//  @include mixin.flexbox;
-//  @include mixin.align-items(center);
-//  height: 100%;
-//
-//  &__right {
-//    @include mixin.absolute(unset, 0, unset, unset);
-//    @include mixin.align-items(center);
-//    display: none;
-//    padding: var(--ds-space-12) var(--ds-space-16);
-//    gap: var(--ds-space-8);
-//    background-color: var(--grey-40);
-//
-//    &:before {
-//      content: '';
-//      position: absolute;
-//      left: -24px;
-//      width: 24px;
-//      height: 100%;
-//      background: linear-gradient(90deg, rgba(242, 242, 242, 0) 0%, #F2F2F2 100%);
-//    }
-//  }
-//}
+.actions-list {
+  @include mixin.flexbox;
+  @include mixin.align-items(center);
+  height: 100%;
+
+  &__right {
+    @include mixin.absolute(unset, 0, unset, unset);
+    @include mixin.align-items(center);
+    display: none;
+    padding: var(--ds-space-10) var(--ds-space-16);
+    gap: var(--ds-space-8);
+    background-color: var(--grey-40);
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -24px;
+      width: 24px;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(242, 242, 242, 0) 0%, #F2F2F2 100%);
+    }
+  }
+}
 
 .settings-menu {
   box-shadow: var(--shadow-2);
