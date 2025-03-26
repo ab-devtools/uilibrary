@@ -23,7 +23,6 @@ export function useTable<TData>({
   withSelect,
   columns,
   data,
-  columnPinning,
   defaultPageSize = 10,
   defaultPageIndex = 0,
   onSortChange,
@@ -123,7 +122,10 @@ export function useTable<TData>({
       columnOrder,
       columnSizing,
       rowSelection,
-      columnPinning: columnPinning || {}
+      columnPinning: {
+        left: ['select'],
+        right: ['actions'],
+      }
     },
     defaultColumn: {
       minSize: 200,
