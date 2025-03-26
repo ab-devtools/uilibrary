@@ -1,5 +1,5 @@
-import type { CSSProperties } from 'react';
-import type { Column} from '@tanstack/react-table';
+import type { CSSProperties } from 'react'
+import type { Column } from '@tanstack/react-table'
 import type { TTableProps } from './types'
 import React from 'react'
 import { flexRender } from '@tanstack/react-table'
