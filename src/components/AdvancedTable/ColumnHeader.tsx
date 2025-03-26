@@ -12,9 +12,10 @@ import classnames from 'classnames'
 interface DraggableColumnHeaderProps<TData> {
   header: Header<TData, unknown>
   isPinned?: boolean
+  pinnedStyles: CSSProperties
 }
 
-export function ColumnHeader<TData>({ header }: DraggableColumnHeaderProps<TData>) {
+export function ColumnHeader<TData>({ header, pinnedStyles }: DraggableColumnHeaderProps<TData>) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id: header.id
   })
@@ -36,7 +37,7 @@ export function ColumnHeader<TData>({ header }: DraggableColumnHeaderProps<TData
   return (
     <th
       ref={setNodeRef}
-      style={style}
+      style={{ ...style, ...pinnedStyles }}
       className={classnames('select-none', {
         ['with-checkbox']: header.column.id === 'select',
         ['cursor-pointer']: header.column.getCanSort()

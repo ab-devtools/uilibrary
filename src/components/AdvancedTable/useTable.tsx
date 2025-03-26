@@ -23,6 +23,7 @@ export function useTable<TData>({
   withSelect,
   columns,
   data,
+  columnPinning,
   defaultPageSize = 10,
   defaultPageIndex = 0,
   onSortChange,
@@ -121,7 +122,8 @@ export function useTable<TData>({
       pagination,
       columnOrder,
       columnSizing,
-      rowSelection
+      rowSelection,
+      columnPinning: columnPinning || {}
     },
     defaultColumn: {
       minSize: 200,

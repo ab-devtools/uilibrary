@@ -140,7 +140,6 @@
                 }
               }
             }
-
           }
         }
         &:hover {
@@ -153,6 +152,9 @@
                 @include mixin.flexbox;
               }
             }
+          }
+          .pinned-cell {
+            background-color: var(--ds-table-td-bg-hover) !important;
           }
         }
 

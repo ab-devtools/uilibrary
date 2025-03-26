@@ -1,3 +1,6 @@
+import type { CSSProperties } from 'react'
+import type { Column } from '@tanstack/react-table'
+import type { TTableProps } from './types'
 import React from 'react'
 import { flexRender } from '@tanstack/react-table'
 import { DndContext, DragOverlay, closestCenter } from '@dnd-kit/core'
@@ -5,7 +8,6 @@ import { SortableContext, horizontalListSortingStrategy } from '@dnd-kit/sortabl
 import { ColumnHeader } from './ColumnHeader'
 import Skeleton from 'react-loading-skeleton'
 import { useTable } from './useTable'
-import type { TTableProps } from './types'
 import { Text } from '../Text'
 import classnames from 'classnames'
 import { Empty } from '../Empty'
@@ -16,6 +18,8 @@ export function Table<TData>({
   columns,
   isLoading,
   hasError,
+  tableHeight = '70vh',
+  columnPinning,
   emptyTitle,
   emptySubTitle,
   emptyIllustration,
@@ -38,6 +42,7 @@ export function Table<TData>({
       data,
       columns,
       withSelect,
+      columnPinning,
       defaultPageIndex,
       defaultPageSize,
       onSortChange,
@@ -48,14 +53,30 @@ export function Table<TData>({
 
   const header = renderHeader?.(table)
   const footer = renderFooter?.(table)
+
+  const getCommonPinningStyles = (column: Column<TData>): CSSProperties => {
+    const isPinned = column.getIsPinned()
+
+    return {
+      left: isPinned === 'left' ? `${column.getStart('left')}px` : undefined,
+      right: isPinned === 'right' ? `${column.getAfter('right')}px` : undefined,
+      position: isPinned ? 'sticky' : 'relative',
+      backgroundColor: isPinned ? 'white' : undefined,
+      width: column.getSize(),
+      zIndex: isPinned ? 1 : 0
+    }
+  }
   return (
     <div
-      className={classNames('advanced-table scrollbar scrollbar--vertical', {
+      className={classNames('advanced-table', {
         'with-border': withBorder
       })}
     >
       {header}
-      <div className="advanced-table__inner scrollbar scrollbar--horizontal">
+      <div
+        style={{ height: tableHeight }}
+        className="advanced-table__inner scrollbar scrollbar--horizontal scrollbar--vertical"
+      >
         <DndContext
           sensors={sensors}
           collisionDetection={closestCenter}
@@ -88,7 +109,11 @@ export function Table<TData>({
                           strategy={horizontalListSortingStrategy}
                         >
                           {headerGroup.headers.map((header) => (
-                            <ColumnHeader key={header.id} header={header} />
+                            <ColumnHeader
+                              pinnedStyles={{ ...getCommonPinningStyles(header.column) }}
+                              key={header.id}
+                              header={header}
+                            />
                           ))}
                         </SortableContext>
                       </tr>
@@ -103,11 +128,12 @@ export function Table<TData>({
                         {row.getVisibleCells().map((cell) => (
                           <td
                             className={classnames({
-                              ['with-checkbox']: cell.column.id === 'select'
+                              ['with-checkbox']: cell.column.id === 'select',
+                              ['pinned-cell']: cell.column.getIsPinned()
                             })}
                             id={cell.id}
                             key={cell.id}
-                            style={{ width: cell.column.getSize() }}
+                            style={{ ...getCommonPinningStyles(cell.column) }}
                           >
                             {isLoading ? (
                               <Skeleton />

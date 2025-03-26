@@ -1,16 +1,8 @@
 import React from 'react'
-import {
-  AdvancedTable as _Table,
-  AdvancedPagination,
-  ColumnSettings,
-  Button,
-  IconDelete,
-  IconSend,
-  IconEdit
-} from '../index'
+import { AdvancedTable as _Table, AdvancedPagination, ColumnSettings } from '../index'
 import { StoryFn } from '@storybook/react'
-import { ICellProps, TTableProps } from '../components/AdvancedTable/types'
-import { ColumnDef, Row } from '@tanstack/react-table'
+import { TTableProps } from '../components/AdvancedTable/types'
+import { ColumnDef } from '@tanstack/react-table'
 
 const data: any[] = [
   {
@@ -85,6 +77,16 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
       accessorKey: 'visits'
     },
     {
+      header: 'Test 4',
+      id: 'test_4',
+      accessorKey: 'visits'
+    },
+    {
+      header: 'Test 5',
+      id: 'test_5',
+      accessorKey: 'visits'
+    },
+    {
       header: 'Visits',
       id: 'visits',
       accessorKey: 'visits'
@@ -97,6 +99,7 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
         {...args}
         data={data}
         columns={columns}
+        columnPinning={{ left: ['select'] }}
         emptyTitle="Empty title"
         emptySubTitle="Please try to reload the page or use another keyword."
         renderHeader={(table) => (
