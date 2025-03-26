@@ -1,3 +1,11 @@
+## [1.1.2](https://github.com/ab-devtools/uilibrary/compare/1.1.1...1.1.2) (2025-03-26)
+
+
+### Bug Fixes
+
+* pinned columns ([770ede2](https://github.com/ab-devtools/uilibrary/commit/770ede24b89a6993b38eb626f4f565b82e8603dd))
+* pinned columns ([54d7b90](https://github.com/ab-devtools/uilibrary/commit/54d7b9084f7b45657b2bdba1b94edb861d376bf1))
+
 ## [1.1.1](https://github.com/ab-devtools/uilibrary/compare/1.1.0...1.1.1) (2025-03-25)
 
 
