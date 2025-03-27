@@ -1,3 +1,11 @@
+## [1.1.9](https://github.com/ab-devtools/uilibrary/compare/1.1.8...1.1.9) (2025-03-27)
+
+
+### Bug Fixes
+
+* fixed capslock info popover position for input password ([a028296](https://github.com/ab-devtools/uilibrary/commit/a0282969131843ce6cbddb9e55a9c830826d7651))
+* fixed space ([31b24c4](https://github.com/ab-devtools/uilibrary/commit/31b24c4f672eb9f1771ad4fe13bf809e255ce2f0))
+
 ## [1.1.8](https://github.com/ab-devtools/uilibrary/compare/1.1.7...1.1.8) (2025-03-27)
 
 
