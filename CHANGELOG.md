@@ -1,3 +1,11 @@
+## [1.1.7](https://github.com/ab-devtools/uilibrary/compare/1.1.6...1.1.7) (2025-03-27)
+
+
+### Bug Fixes
+
+* add sign icon ([b3523cd](https://github.com/ab-devtools/uilibrary/commit/b3523cd2fbdda60636391df5eb3dfcfb9c7c1493))
+* add sign icon ([6be79af](https://github.com/ab-devtools/uilibrary/commit/6be79afe17f366841fda75040d9c5806001dbfb7))
+
 ## [1.1.6](https://github.com/ab-devtools/uilibrary/compare/1.1.5...1.1.6) (2025-03-27)
 
 
