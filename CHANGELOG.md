@@ -1,3 +1,10 @@
+## [1.1.8](https://github.com/ab-devtools/uilibrary/compare/1.1.7...1.1.8) (2025-03-27)
+
+
+### Bug Fixes
+
+* table height ([1e988b1](https://github.com/ab-devtools/uilibrary/commit/1e988b14d5a0b36cdcb237ec52bb9a5c61378e13))
+
 ## [1.1.7](https://github.com/ab-devtools/uilibrary/compare/1.1.6...1.1.7) (2025-03-27)
 
 
