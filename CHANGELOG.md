@@ -1,3 +1,11 @@
+## [1.1.6](https://github.com/ab-devtools/uilibrary/compare/1.1.5...1.1.6) (2025-03-27)
+
+
+### Bug Fixes
+
+* add crow click event on table ([d9aa9a3](https://github.com/ab-devtools/uilibrary/commit/d9aa9a33ec3c1f11e84a38ef9772d46cbeef466d))
+* add crow click event on table ([2845479](https://github.com/ab-devtools/uilibrary/commit/2845479a208c24ee5229f470ceda8c6753fbc3dc))
+
 ## [1.1.5](https://github.com/ab-devtools/uilibrary/compare/1.1.4...1.1.5) (2025-03-27)
 
 
