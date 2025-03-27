@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/ab-devtools/uilibrary/compare/1.1.4...1.1.5) (2025-03-27)
+
+
+### Bug Fixes
+
+* table sticky header ([aecb623](https://github.com/ab-devtools/uilibrary/commit/aecb62372f718c58e6eba22a45f7b7e0480ba2f2))
+
 ## [1.1.4](https://github.com/ab-devtools/uilibrary/compare/1.1.3...1.1.4) (2025-03-27)
 
 
