@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react'
-import type { Column } from '@tanstack/react-table'
+import type { Column, Row } from '@tanstack/react-table'
 import type { TTableProps } from './types'
 import React from 'react'
 import { flexRender } from '@tanstack/react-table'
@@ -12,6 +12,11 @@ import { Text } from '../Text'
 import classnames from 'classnames'
 import { Empty } from '../Empty'
 import classNames from 'classnames'
+
+enum ColumnId {
+  Select = 'select',
+  Actions = 'actions',
+}
 
 export function Table<TData>({
   data,
@@ -32,6 +37,7 @@ export function Table<TData>({
   renderHeader,
   renderFooter,
   onSortChange,
+  onRowClick,
   onRowSelection,
   onColumnSizing,
   onPaginationChange
@@ -62,6 +68,16 @@ export function Table<TData>({
       backgroundColor: isPinned ? 'white' : undefined,
       width: column.getSize(),
       zIndex: isPinned ? 1 : 0
+    }
+  }
+
+  const handleRowClick = (column: Column<TData>, row: Row<TData>) => {
+    if (
+      column.id !== ColumnId.Actions &&
+      column.id !== ColumnId.Select &&
+      onRowClick
+    ) {
+      onRowClick(row);
     }
   }
   return (
@@ -107,7 +123,7 @@ export function Table<TData>({
                           strategy={horizontalListSortingStrategy}
                         >
                           {headerGroup.headers.map((header) => {
-                            if (header.id !== 'actions') {
+                            if (header.id !== ColumnId.Actions) {
                               return (
                                 <ColumnHeader
                                   pinnedStyles={{ ...getCommonPinningStyles(header.column) }}
@@ -130,17 +146,18 @@ export function Table<TData>({
                         {row.getVisibleCells().map((cell) => (
                           <td
                             className={classnames({
-                              ['with-checkbox']: cell.column.id === 'select',
+                              ['with-checkbox']: cell.column.id === ColumnId.Select,
                               ['pinned-cell']: cell.column.getIsPinned(),
-                              ['action-column']: cell.column.id === 'actions'
+                              ['action-column']: cell.column.id === ColumnId.Actions,
                             })}
                             id={cell.id}
                             key={cell.id}
+                            onClick={() => handleRowClick(cell.column, row)}
                             style={{ ...getCommonPinningStyles(cell.column) }}
                           >
                             {isLoading ? (
                               <Skeleton />
-                            ) : cell.column.id === 'actions' ? (
+                            ) : cell.column.id === ColumnId.Actions ? (
                               <div className="actions-list__right">
                                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
                               </div>
