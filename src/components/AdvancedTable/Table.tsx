@@ -15,7 +15,7 @@ import classNames from 'classnames'
 
 enum ColumnId {
   Select = 'select',
-  Actions = 'actions',
+  Actions = 'actions'
 }
 
 export function Table<TData>({
@@ -72,12 +72,8 @@ export function Table<TData>({
   }
 
   const handleRowClick = (column: Column<TData>, row: Row<TData>) => {
-    if (
-      column.id !== ColumnId.Actions &&
-      column.id !== ColumnId.Select &&
-      onRowClick
-    ) {
-      onRowClick(row);
+    if (column.id !== ColumnId.Actions && column.id !== ColumnId.Select && onRowClick) {
+      onRowClick(row)
     }
   }
   return (
@@ -148,7 +144,7 @@ export function Table<TData>({
                             className={classnames({
                               ['with-checkbox']: cell.column.id === ColumnId.Select,
                               ['pinned-cell']: cell.column.getIsPinned(),
-                              ['action-column']: cell.column.id === ColumnId.Actions,
+                              ['action-column']: cell.column.id === ColumnId.Actions
                             })}
                             id={cell.id}
                             key={cell.id}
