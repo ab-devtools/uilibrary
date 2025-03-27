@@ -21,7 +21,7 @@
     @include mixin.flexbox;
     @include mixin.align-items(center);
     @include mixin.sticky(0, unset, unset, unset);
-    z-index: 2;
+    z-index: 3;
     background-color: var(--ds-color-bg-white);
     height: var(--ds-size-72);
     padding: 0 var(--ds-space-24);
@@ -39,6 +39,13 @@
 
   &__inner {
     overflow-x: auto;
+  }
+
+  &__thead {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--ds-color-bg-white);
   }
 
   .draggable-col {
