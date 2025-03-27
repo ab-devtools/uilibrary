@@ -99,7 +99,7 @@ export function Table<TData>({
                 />
               ) : (
                 <>
-                  <thead>
+                  <thead className="advanced-table__thead">
                     {table.getHeaderGroups().map((headerGroup) => (
                       <tr key={headerGroup.id}>
                         <SortableContext
