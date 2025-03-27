@@ -40,6 +40,7 @@ export type TTableProps<TData> = {
   defaultPageSize?: number
   renderHeader?: (table: TTable<TData>) => ReactNode
   renderFooter?: (table: Table<TData>) => ReactNode
+  onRowClick?: (row: Row<TData>) => void
   onSortChange?: (state: SortingUpdateEvent) => void
   onRowSelection?: (state: TRowSelectionState) => void
   onColumnSizing?: (state: TColumnSizingState) => void
