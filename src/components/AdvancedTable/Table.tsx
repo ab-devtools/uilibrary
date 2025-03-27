@@ -83,10 +83,7 @@ export function Table<TData>({
       })}
     >
       {header}
-      <div
-        style={{ height: tableHeight }}
-        className="advanced-table__inner scrollbar scrollbar--horizontal scrollbar--vertical"
-      >
+      <div className="advanced-table__inner scrollbar scrollbar--horizontal scrollbar--vertical">
         <DndContext
           sensors={sensors}
           collisionDetection={closestCenter}
@@ -94,7 +91,7 @@ export function Table<TData>({
           onDragEnd={handleDragEnd}
           onDragCancel={handleDragCancel}
         >
-          <div>
+          <div style={{ height: tableHeight }}>
             <table style={{ minWidth: data?.length && table.getCenterTotalSize() }}>
               {!data?.length && !hasError ? (
                 <Empty mainMessage={emptyTitle} illustration={emptyIllustration} />
