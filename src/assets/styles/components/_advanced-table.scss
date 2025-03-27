@@ -24,7 +24,8 @@
     z-index: 3;
     background-color: var(--ds-color-bg-white);
     height: var(--ds-size-72);
-    padding: 0 var(--ds-space-24);
+    padding: 0 var(--ds-space-12);
+    margin: 0 var(--ds-space-12);
     border-bottom: 1px solid var(--ds-color-border-quintary);
   }
 
@@ -33,7 +34,8 @@
     z-index: 1;
     background-color: var(--ds-color-bg-white);
     height: 60px;
-    padding: 0 var(--ds-space-24);
+    padding: 0 var(--ds-space-12);
+    margin: 0 var(--ds-space-12);
     border-top: 1px solid var(--ds-color-border-quintary);
   }
 
