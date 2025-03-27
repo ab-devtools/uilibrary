@@ -120,7 +120,7 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordsPr
     return (
       <div className={'input-password'}>
         {isCapsLockOn && !isShowPassword ? (
-          <Popover text={capsLockText} id={id} clicked={true} position={Positions?.MIDDLE_RIGHT} />
+          <Popover text={capsLockText} id={id} clicked={true} position={Positions?.MIDDLE_LEFT} />
         ) : null}
         <Input
           {...rest}
