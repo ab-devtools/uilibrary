@@ -235,4 +235,10 @@
       @include mixin.align-items(center);
     }
   }
+
+  .popover {
+    &--middle-left {
+      margin-left: calc(var(--ds-space-8)*-1);
+    }
+  }
 }
