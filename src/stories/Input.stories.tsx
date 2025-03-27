@@ -72,7 +72,7 @@ const InputPasswordTemplate: StoryFn<InputPasswordsProps> = (args) => {
   const [isCapsLockOn1, setCapsLockState1] = useState<boolean>(false)
 
   return (
-    <div style={{ marginLeft: 100, maxWidth: 400 }}>
+    <div style={{ marginLeft: 200, maxWidth: 400 }}>
       <_InputPassword
         id="sk,"
         name="pass"
