@@ -19,6 +19,7 @@ export type TTableProps<TData> = {
   isLoading?: boolean
   columns: ColumnDef<TData>[]
   wi?: boolean
+  totalCount: number
   tableHeight?: string
   hasError?: boolean
   emptyTitle?: string

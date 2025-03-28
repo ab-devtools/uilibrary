@@ -23,6 +23,7 @@ export function useTable<TData>({
   withSelect,
   columns,
   data,
+  totalCount,
   defaultPageSize = 10,
   defaultPageIndex = 0,
   onSortChange,
@@ -116,6 +117,7 @@ export function useTable<TData>({
   const table = useReactTable({
     data,
     columns: reorderedColumns,
+    pageCount: Math.ceil(totalCount / pagination.pageSize),
     state: {
       sorting,
       pagination,

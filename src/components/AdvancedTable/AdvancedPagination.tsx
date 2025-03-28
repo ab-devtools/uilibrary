@@ -54,6 +54,12 @@ export function AdvancedPagination<TData>({ table, totalCount }: PaginationProps
     table.setPageIndex(page)
   }
 
+  const onRowCountChange = (value?: TItemValue) => {
+    if (value) {
+      table.setPageSize(Number(value))
+    }
+  }
+
   const getVisiblePageNumbers = () => {
     const currentPage = pageIndex
     const totalPages = table.getPageCount()
@@ -86,7 +92,7 @@ export function AdvancedPagination<TData>({ table, totalCount }: PaginationProps
   return (
     <div className="advanced-table__pagination">
       <Select
-        setSelectedItem={(value) => table.setPageSize(Number(value))}
+        setSelectedItem={(value) => onRowCountChange(value)}
         selectedItem={`${pageSize}`}
         className={'no-border'}
         options={OPTIONS}
