@@ -1,3 +1,10 @@
+## [1.1.10](https://github.com/ab-devtools/uilibrary/compare/1.1.9...1.1.10) (2025-03-28)
+
+
+### Bug Fixes
+
+* fixed modal content height ([ac0b4f8](https://github.com/ab-devtools/uilibrary/commit/ac0b4f81c77a764d1f2d85ca80b7547ecef2e2bc))
+
 ## [1.1.9](https://github.com/ab-devtools/uilibrary/compare/1.1.8...1.1.9) (2025-03-27)
 
 
