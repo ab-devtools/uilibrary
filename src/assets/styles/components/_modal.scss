@@ -42,7 +42,7 @@
     @include mixin.flexbox;
     @include mixin.flex-direction(column);
     width: 100%;
-    max-height: calc(100vh - calc(var(--ds-modal-overlay-padding) * 2));
+    max-height: calc(100% - calc(var(--ds-modal-overlay-padding) * 2));
     border-radius: var(--ds-modal-border-radius);
     background-color: var(--ds-modal-bg);
     box-shadow: var(--ds-modal-shadow);
