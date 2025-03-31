@@ -23,7 +23,7 @@ export function useTable<TData>({
   withSelect,
   columns,
   data,
-  totalCount,
+  totalCount = 0,
   defaultPageSize = 10,
   defaultPageIndex = 0,
   onSortChange,
