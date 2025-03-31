@@ -114,7 +114,7 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
   ]
 
   return (
-    <div style={{ height: '95vh' }}>
+    <div>
       <_Table
         {...args}
         data={data}

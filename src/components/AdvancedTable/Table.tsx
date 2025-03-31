@@ -93,7 +93,7 @@ export function Table<TData>({
           onDragEnd={handleDragEnd}
           onDragCancel={handleDragCancel}
         >
-          <div style={{ height: tableHeight }}>
+          <div style={{ maxHeight: '100%' }}>
             <table style={{ minWidth: data?.length && table.getCenterTotalSize() }}>
               {!data?.length && !hasError ? (
                 <Empty mainMessage={emptyTitle} illustration={emptyIllustration} />
