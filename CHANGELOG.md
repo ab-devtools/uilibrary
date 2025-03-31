@@ -1,3 +1,10 @@
+## [1.1.12](https://github.com/ab-devtools/uilibrary/compare/1.1.11...1.1.12) (2025-03-31)
+
+
+### Bug Fixes
+
+* table total count not mandatory ([0255b0b](https://github.com/ab-devtools/uilibrary/commit/0255b0b414cb59602d8564045ca69e1cc57e5310))
+
 ## [1.1.11](https://github.com/ab-devtools/uilibrary/compare/1.1.10...1.1.11) (2025-03-31)
 
 
