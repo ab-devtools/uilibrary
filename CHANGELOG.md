@@ -1,3 +1,11 @@
+## [1.1.11](https://github.com/ab-devtools/uilibrary/compare/1.1.10...1.1.11) (2025-03-31)
+
+
+### Bug Fixes
+
+* table pagination ([020a501](https://github.com/ab-devtools/uilibrary/commit/020a5015329e90c471297c5ad6869dd72122e337))
+* table pagination ([05d92e8](https://github.com/ab-devtools/uilibrary/commit/05d92e8a2432de5f56edf90e83c4ae3a33c6903a))
+
 ## [1.1.10](https://github.com/ab-devtools/uilibrary/compare/1.1.9...1.1.10) (2025-03-28)
 
 
