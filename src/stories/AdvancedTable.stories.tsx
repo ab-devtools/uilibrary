@@ -119,7 +119,6 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
         {...args}
         data={data}
         columns={columns}
-        totalCount={1000}
         emptyTitle="Empty title"
         emptySubTitle="Please try to reload the page or use another keyword."
         renderHeader={(table) => (

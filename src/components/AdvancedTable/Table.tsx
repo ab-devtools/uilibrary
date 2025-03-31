@@ -23,7 +23,7 @@ export function Table<TData>({
   columns,
   isLoading,
   hasError,
-  totalCount,
+  totalCount = 0,
   tableHeight = '70vh',
   emptyTitle,
   emptySubTitle,
