@@ -1,3 +1,11 @@
+## [1.1.13](https://github.com/ab-devtools/uilibrary/compare/1.1.12...1.1.13) (2025-03-31)
+
+
+### Bug Fixes
+
+* table header and footer border radius ([b3d6c53](https://github.com/ab-devtools/uilibrary/commit/b3d6c5310b223f12a107596345b19834c25ed411))
+* table header and footer border radius ([37a4856](https://github.com/ab-devtools/uilibrary/commit/37a485647fee116d5bd1351b5374cbb18acaf348))
+
 ## [1.1.12](https://github.com/ab-devtools/uilibrary/compare/1.1.11...1.1.12) (2025-03-31)
 
 
