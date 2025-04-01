@@ -24,7 +24,6 @@ export function Table<TData>({
   isLoading,
   hasError,
   totalCount = 0,
-  tableHeight = '70vh',
   emptyTitle,
   emptySubTitle,
   emptyIllustration,
@@ -68,7 +67,7 @@ export function Table<TData>({
       right: isPinned === 'right' ? `${column.getAfter('right')}px` : undefined,
       position: isPinned ? 'sticky' : 'relative',
       backgroundColor: isPinned ? 'white' : undefined,
-      width: column.getSize(),
+      minWidth: column.getSize(),
       zIndex: isPinned ? 1 : 0
     }
   }
@@ -93,7 +92,7 @@ export function Table<TData>({
           onDragEnd={handleDragEnd}
           onDragCancel={handleDragCancel}
         >
-          <div style={{ height: tableHeight }}>
+          <div>
             <table style={{ minWidth: data?.length && table.getCenterTotalSize() }}>
               {!data?.length && !hasError ? (
                 <Empty mainMessage={emptyTitle} illustration={emptyIllustration} />
