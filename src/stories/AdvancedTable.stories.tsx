@@ -6,7 +6,9 @@ import {
   Button,
   IconDelete,
   IconEdit,
-  IconAdd, Status, Chips
+  IconAdd,
+  Status,
+  Chips
 } from '../index'
 import { StoryFn } from '@storybook/react'
 import { TTableProps } from '../components/AdvancedTable/types'
@@ -58,9 +60,7 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
       header: 'Status',
       id: 'status',
       accessorKey: 'status',
-      cell: (row) => (
-         <Chips text={'Created'} type={'accent'} color={'information'}/>
-      )
+      cell: (row) => <Chips text={'Created'} type={'accent'} color={'information'} />
     },
     {
       id: 'age',
