@@ -1,3 +1,12 @@
+## [1.1.16](https://github.com/ab-devtools/uilibrary/compare/1.1.15...1.1.16) (2025-04-01)
+
+
+### Bug Fixes
+
+* table ui fixes ([b5f25cb](https://github.com/ab-devtools/uilibrary/commit/b5f25cb7afdd31087688e1a183cc782950a26648))
+* table ui fixes ([599d34b](https://github.com/ab-devtools/uilibrary/commit/599d34ba5e711450b006f11f9fac9bdaff83de1f))
+* ui fixes ([7f49e4e](https://github.com/ab-devtools/uilibrary/commit/7f49e4eb3df8d3358c47fee3fe15e84b0aa112e1))
+
 ## [1.1.15](https://github.com/ab-devtools/uilibrary/compare/1.1.14...1.1.15) (2025-04-01)
 
 
