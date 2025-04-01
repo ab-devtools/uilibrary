@@ -1,3 +1,10 @@
+## [1.1.15](https://github.com/ab-devtools/uilibrary/compare/1.1.14...1.1.15) (2025-04-01)
+
+
+### Bug Fixes
+
+* advanced pagination button text not mandatory ([d2336f2](https://github.com/ab-devtools/uilibrary/commit/d2336f24eb3f68c2931943316f1bd2cf0e91ea28))
+
 ## [1.1.14](https://github.com/ab-devtools/uilibrary/compare/1.1.13...1.1.14) (2025-04-01)
 
 
