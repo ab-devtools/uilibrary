@@ -24,7 +24,6 @@ export function Table<TData>({
   isLoading,
   hasError,
   totalCount = 0,
-  tableHeight = '70vh',
   emptyTitle,
   emptySubTitle,
   emptyIllustration,
@@ -68,7 +67,7 @@ export function Table<TData>({
       right: isPinned === 'right' ? `${column.getAfter('right')}px` : undefined,
       position: isPinned ? 'sticky' : 'relative',
       backgroundColor: isPinned ? 'white' : undefined,
-      // minWidth: column.getSize(),
+      minWidth: column.getSize(),
       zIndex: isPinned ? 1 : 0
     }
   }
