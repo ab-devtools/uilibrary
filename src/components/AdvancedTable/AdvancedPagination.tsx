@@ -13,6 +13,7 @@ import classnames from 'classnames'
 interface PaginationProps<T> {
   table: Table<T>
   totalCount: number
+  buttonText?: string
 }
 
 const OPTIONS: TSelectOptions = [
@@ -38,7 +39,11 @@ const OPTIONS: TSelectOptions = [
   }
 ]
 
-export function AdvancedPagination<TData>({ table, totalCount }: PaginationProps<TData>) {
+export function AdvancedPagination<TData>({
+  table,
+  totalCount,
+  buttonText
+}: PaginationProps<TData>) {
   const [navigatePage, setNavigatePage] = useState<string>('1')
   const pageIndex = table.getState().pagination.pageIndex
   const pageSize = table.getState().pagination.pageSize
@@ -99,7 +104,7 @@ export function AdvancedPagination<TData>({ table, totalCount }: PaginationProps
       />
       <div className={'advanced-table__pagination__right'}>
         <Text type={'tertiary'}>
-          Showing {pageIndex * pageSize + 1} - {(pageIndex + 1) * pageSize} of {totalCount}
+          {pageIndex * pageSize + 1} - {(pageIndex + 1) * pageSize} / {totalCount}
         </Text>
         <div className="flexbox align-items--center">
           <Input
@@ -108,7 +113,12 @@ export function AdvancedPagination<TData>({ table, totalCount }: PaginationProps
             onChange={(e) => onNavigateToPage(e.target.value)}
             className="advanced-table__pagination__right__input mr-8"
           />
-          <Button onClick={onGoToPage} type="secondary" size="medium" buttonText="Go to page" />
+          <Button
+            onClick={onGoToPage}
+            type="secondary"
+            size="medium"
+            buttonText={buttonText ?? 'Go to page'}
+          />
         </div>
         <div className="advanced-table__pagination__counts">
           <Button
