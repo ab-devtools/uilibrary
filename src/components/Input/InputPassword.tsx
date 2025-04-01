@@ -12,7 +12,7 @@ import { Tooltip } from '../Tooltip'
 import type { ISVGIconProps } from '../SVGIcons/types'
 import { Popover } from '../Popover'
 import { Positions } from '../Tooltip/types'
-import classNames from "classnames";
+import classNames from 'classnames'
 
 const getTextType = (password: string, isValid: boolean, isFocused: boolean) => {
   if (password.length === 0) return 'tertiary'
@@ -176,7 +176,9 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordsPr
               </Text>
             </div>
           ))}
-          {hasError && validations?.length ? <Divider type={'primary'} color={'light'} isHorizontal={true} /> : null}
+          {hasError && validations?.length ? (
+            <Divider type={'primary'} color={'light'} isHorizontal={true} />
+          ) : null}
         </div>
       </div>
     )
