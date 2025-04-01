@@ -24,12 +24,12 @@ export function ColumnHeader<TData>({ header, pinnedStyles }: DraggableColumnHea
     ? {
         transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
         transition,
-        width: header.getSize(),
+        // minWidth: header.getSize(),
         position: 'relative' as CSSProperties['position'],
         zIndex: isDragging ? 1 : 0
       }
     : {
-        width: header.getSize(),
+        // minWidth: header.getSize(),
         position: 'relative' as CSSProperties['position'],
         zIndex: isDragging ? 1 : 0
       }
