@@ -1,3 +1,11 @@
+## [1.1.14](https://github.com/ab-devtools/uilibrary/compare/1.1.13...1.1.14) (2025-04-01)
+
+
+### Bug Fixes
+
+* fixed password validation divider issue ([55e6962](https://github.com/ab-devtools/uilibrary/commit/55e69620cd04c2f3966cdf7a3075f8f44e47ff03))
+* fixed password validation divider issue ([daeb751](https://github.com/ab-devtools/uilibrary/commit/daeb75179ff6ab5e8af7a9bca1d067d4d38a2281))
+
 ## [1.1.13](https://github.com/ab-devtools/uilibrary/compare/1.1.12...1.1.13) (2025-03-31)
 
 
