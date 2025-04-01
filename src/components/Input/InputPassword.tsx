@@ -12,6 +12,7 @@ import { Tooltip } from '../Tooltip'
 import type { ISVGIconProps } from '../SVGIcons/types'
 import { Popover } from '../Popover'
 import { Positions } from '../Tooltip/types'
+import classNames from "classnames";
 
 const getTextType = (password: string, isValid: boolean, isFocused: boolean) => {
   if (password.length === 0) return 'tertiary'
@@ -56,6 +57,7 @@ const IconEyeOffTooltip = (props: ISVGIconProps) => {
 export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordsProps>(
   (props, ref): JSX.Element => {
     const {
+      className,
       validations,
       onValidationChange,
       onPasswordShow,
@@ -118,7 +120,7 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordsPr
     }, [isShowPassword, setIsShowPassword])
 
     return (
-      <div className={'input-password'}>
+      <div className={classNames('input-password', className)}>
         {isCapsLockOn && !isShowPassword ? (
           <Popover text={capsLockText} id={id} clicked={true} position={Positions?.MIDDLE_LEFT} />
         ) : null}
@@ -174,7 +176,7 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordsPr
               </Text>
             </div>
           ))}
-          {hasError ? <Divider type={'primary'} color={'light'} isHorizontal={true} /> : null}
+          {hasError && validations?.length ? <Divider type={'primary'} color={'light'} isHorizontal={true} /> : null}
         </div>
       </div>
     )

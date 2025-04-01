@@ -62,4 +62,5 @@ export interface InputPasswordsProps extends InputCustomProps {
   isCapsLockOn?: boolean
   setIsCapsLockOn?: (event: boolean) => void
   id: string
+  className?: string
 }

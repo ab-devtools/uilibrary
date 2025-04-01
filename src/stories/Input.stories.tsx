@@ -74,6 +74,7 @@ const InputPasswordTemplate: StoryFn<InputPasswordsProps> = (args) => {
   return (
     <div style={{ marginLeft: 200, maxWidth: 400 }}>
       <_InputPassword
+        className={'mb-24'}
         id="sk,"
         name="pass"
         isCapsLockOn={isCapsLockOn}
