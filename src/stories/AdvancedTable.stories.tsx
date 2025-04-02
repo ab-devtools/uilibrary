@@ -96,7 +96,7 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
       header: 'Test 5',
       id: 'test_5',
       accessorKey: 'visits',
-      enableHiding: false,
+      enableHiding: false
     },
     {
       header: 'Visits',

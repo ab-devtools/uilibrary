@@ -13,7 +13,11 @@ interface ColumnSettingsProps<T> {
   tooltipText?: string
 }
 
-export function ColumnSettings<T>({ table, hiddenColumnSettings, tooltipText }: ColumnSettingsProps<T>) {
+export function ColumnSettings<T>({
+  table,
+  hiddenColumnSettings,
+  tooltipText
+}: ColumnSettingsProps<T>) {
   const [ref, setRef] = useState<HTMLDivElement | null>(null)
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
@@ -47,9 +51,10 @@ export function ColumnSettings<T>({ table, hiddenColumnSettings, tooltipText }: 
         <div className="settings-menu__dropdown scrollbar scrollbar--vertical">
           {table.getAllLeafColumns().map((column) => {
             if (!hiddenColumnSettings?.includes(column.id)) {
-              const label = typeof column.columnDef.header === 'string' ?
-                column.columnDef.header :
-                column.columnDef.id;
+              const label =
+                typeof column.columnDef.header === 'string'
+                  ? column.columnDef.header
+                  : column.columnDef.id
               return (
                 <div key={column.id} className={'settings-menu__dropdown__option'}>
                   {tooltipText && !column.getCanHide() && (
