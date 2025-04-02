@@ -95,7 +95,8 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
     {
       header: 'Test 5',
       id: 'test_5',
-      accessorKey: 'visits'
+      accessorKey: 'visits',
+      enableHiding: false,
     },
     {
       header: 'Visits',
@@ -126,7 +127,11 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
         emptySubTitle="Please try to reload the page or use another keyword."
         renderHeader={(table) => (
           <div className="advanced-table__header justify-content--end">
-            <ColumnSettings hiddenColumnSettings={['select', 'actions']} table={table} />
+            <ColumnSettings
+              tooltipText="Column is disabled"
+              hiddenColumnSettings={['select', 'actions']}
+              table={table}
+            />
           </div>
         )}
         renderFooter={(table) => (
