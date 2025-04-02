@@ -1,3 +1,11 @@
+## [1.1.18](https://github.com/ab-devtools/uilibrary/compare/1.1.17...1.1.18) (2025-04-02)
+
+
+### Bug Fixes
+
+* column settings tooltip ([28fc598](https://github.com/ab-devtools/uilibrary/commit/28fc598c9a4e7e8d132349cc0e2d84fc41ee8268))
+* column settings tooltip ([79b1a8a](https://github.com/ab-devtools/uilibrary/commit/79b1a8a13b3fb5752b23eff28a2aa89b73947271))
+
 ## [1.1.17](https://github.com/ab-devtools/uilibrary/compare/1.1.16...1.1.17) (2025-04-02)
 
 
