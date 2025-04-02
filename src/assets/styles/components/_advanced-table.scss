@@ -121,6 +121,7 @@
           &.with-checkbox {
             max-width: var(--ds-space-48);
             width: var(--ds-space-48) !important;
+            min-width: initial !important;
             padding: var(--ds-space-8) var(--ds-space-6) var(--ds-space-8) 22px;
 
             .resize-icon {
@@ -142,6 +143,7 @@
           &.with-checkbox {
             max-width: var(--ds-space-48);
             width: var(--ds-space-48) !important;
+            min-width: initial !important;
             padding: var(--ds-space-8) var(--ds-space-6) var(--ds-space-8) 22px;
 
             .actions-list {
