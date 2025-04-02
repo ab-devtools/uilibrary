@@ -4,13 +4,20 @@ import { Button } from '../Button'
 import { IconSettings } from '../SVGIcons'
 import { Switcher } from '../Switcher'
 import { Menu } from '../Menu'
+import { Tooltip } from '../Tooltip'
+import { Positions } from '../Tooltip/types'
 
 interface ColumnSettingsProps<T> {
   table: Table<T>
   hiddenColumnSettings?: string[]
+  tooltipText?: string
 }
 
-export function ColumnSettings<T>({ table, hiddenColumnSettings }: ColumnSettingsProps<T>) {
+export function ColumnSettings<T>({
+  table,
+  hiddenColumnSettings,
+  tooltipText
+}: ColumnSettingsProps<T>) {
   const [ref, setRef] = useState<HTMLDivElement | null>(null)
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
@@ -44,10 +51,22 @@ export function ColumnSettings<T>({ table, hiddenColumnSettings }: ColumnSetting
         <div className="settings-menu__dropdown scrollbar scrollbar--vertical">
           {table.getAllLeafColumns().map((column) => {
             if (!hiddenColumnSettings?.includes(column.id)) {
+              const label =
+                typeof column.columnDef.header === 'string'
+                  ? column.columnDef.header
+                  : column.columnDef.id
               return (
                 <div key={column.id} className={'settings-menu__dropdown__option'}>
+                  {tooltipText && !column.getCanHide() && (
+                    <Tooltip
+                      position={Positions.TOP_CENTER}
+                      text={tooltipText}
+                      id={column.columnDef.id}
+                    />
+                  )}
                   <Switcher
-                    label={`${column.columnDef.header}`}
+                    label={label}
+                    id={column.columnDef.id}
                     selectedValue={column.getIsVisible()}
                     onClick={() => handleClick(column)}
                     disabled={!column.getCanHide()}
