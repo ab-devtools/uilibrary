@@ -1,3 +1,10 @@
+## [1.1.17](https://github.com/ab-devtools/uilibrary/compare/1.1.16...1.1.17) (2025-04-02)
+
+
+### Bug Fixes
+
+* fixed table column width with-checkbox issue ([09c3e81](https://github.com/ab-devtools/uilibrary/commit/09c3e81bd3157ee720314d6d2aa2dd73a2135ba3))
+
 ## [1.1.16](https://github.com/ab-devtools/uilibrary/compare/1.1.15...1.1.16) (2025-04-01)
 
 
