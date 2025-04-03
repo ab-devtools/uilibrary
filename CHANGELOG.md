@@ -1,3 +1,10 @@
+## [1.1.19](https://github.com/ab-devtools/uilibrary/compare/1.1.18...1.1.19) (2025-04-03)
+
+
+### Bug Fixes
+
+* column align ([492118f](https://github.com/ab-devtools/uilibrary/commit/492118f25ffaa3bc7f52bff8c3d6a252a14b3622))
+
 ## [1.1.18](https://github.com/ab-devtools/uilibrary/compare/1.1.17...1.1.18) (2025-04-02)
 
 
