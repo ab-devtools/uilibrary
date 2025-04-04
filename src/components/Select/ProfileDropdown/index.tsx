@@ -34,6 +34,7 @@ export const ProfileDropdown = (props: TProfileDropdownProps): JSX.Element => {
                 <li key={index}>
                   {item.text ? (
                     <Link
+                      target={item?.target}
                       url={item.url}
                       onclick={item.onclick}
                       className={'profile-dropdown__nav__link'}
