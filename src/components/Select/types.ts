@@ -233,7 +233,8 @@ export type TProfileDropdownBodyItems = {
   icon?: TSVGIconComponent
   url?: string
   onclick?: () => void
-  rightInfoProps?: ReactElement
+  rightInfoProps?: ReactElement,
+  target?:string
 }
 export interface TProfileDropdownBodyItemsWithText extends TProfileDropdownBodyItems {
   text: string
