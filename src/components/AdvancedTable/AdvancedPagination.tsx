@@ -61,7 +61,10 @@ export function AdvancedPagination<TData>({
 
   const onRowCountChange = (value?: TItemValue) => {
     if (value) {
-      table.setPageSize(Number(value))
+      table.setPagination({
+        pageIndex: 0,
+        pageSize: Number(value)
+      })
     }
   }
 

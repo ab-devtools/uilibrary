@@ -122,6 +122,7 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
       <_Table
         {...args}
         data={data}
+        totalCount={100}
         columns={columns}
         emptyTitle="Empty title"
         emptySubTitle="Please try to reload the page or use another keyword."
