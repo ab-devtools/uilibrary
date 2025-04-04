@@ -39,8 +39,8 @@ const IconEyeOnWithTooltip = (props: ISVGIconProps) => {
   const { tooltipAddons } = props
   return (
     <>
-      <Tooltip text={tooltipAddons?.text as string} {...tooltipAddons} />
-      <IconEyeOn {...props} id={tooltipAddons?.id as string} />
+      <Tooltip dataId={'eye-on-tooltip'} text={tooltipAddons?.text as string} {...tooltipAddons} />
+      <IconEyeOn {...props} dataId={'eye-on-icon'} id={tooltipAddons?.id as string} />
     </>
   )
 }
@@ -48,8 +48,8 @@ const IconEyeOffTooltip = (props: ISVGIconProps) => {
   const { tooltipAddons } = props
   return (
     <>
-      <Tooltip text={tooltipAddons?.text as string} {...tooltipAddons} />
-      <IconEyeOff {...props} id={tooltipAddons?.id as string} />
+      <Tooltip dataId={'eye-off-tooltip'} text={tooltipAddons?.text as string} {...tooltipAddons} />
+      <IconEyeOff {...props} dataId={'eye-off-icon'} id={tooltipAddons?.id as string} />
     </>
   )
 }
@@ -122,7 +122,13 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordsPr
     return (
       <div className={classNames('input-password', className)}>
         {isCapsLockOn && !isShowPassword ? (
-          <Popover text={capsLockText} id={id} clicked={true} position={Positions?.MIDDLE_LEFT} />
+          <Popover
+            dataId={'caps-lock-popover'}
+            text={capsLockText}
+            id={id}
+            clicked={true}
+            position={Positions?.MIDDLE_LEFT}
+          />
         ) : null}
         <Input
           {...rest}
