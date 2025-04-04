@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/ab-devtools/uilibrary/compare/1.1.19...1.2.0) (2025-04-04)
+
+
+### Features
+
+* add data ids ([29eca9a](https://github.com/ab-devtools/uilibrary/commit/29eca9a1204c68f6511e63372361ac16379c7c1b))
+* add target for link ([44fc0ab](https://github.com/ab-devtools/uilibrary/commit/44fc0ab7ec5f8e5d6dbd218794afebe33d658e81))
+
 ## [1.1.19](https://github.com/ab-devtools/uilibrary/compare/1.1.18...1.1.19) (2025-04-03)
 
 
