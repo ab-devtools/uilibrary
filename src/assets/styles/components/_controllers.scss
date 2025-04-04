@@ -25,7 +25,7 @@
   --ds-controller-selected-bg-disabled: var(--ds-color-bg-disabled);
 
   --ds-controller-mark-light: var(--ds-color-icon-inverse);
-  --ds-controller-mark-dark: var(--ds-color-bg-disabled);
+  --ds-controller-mark-dark: var(--ds-color-icon-disabled);
 
   --ds-controller-border-color-default: var(--ds-color-border-primary);
   --ds-controller-border-color-focused: var(--grey-500);
@@ -287,7 +287,7 @@
            #{$this}__icon__inner {
              .svg-icon {
                path {
-                 fill: var(--ds-controller-mark-dark);
+                 fill: var(--grey-50);
                }
              }
            }
@@ -298,7 +298,7 @@
       &:disabled {
         & + #{$this}__icon {
           background-color: var(--ds-controller-bg-disabled);
-          color: var(--ds-controller-icon-disabled);
+          color: var(--grey-50);
         }
       }
     }
