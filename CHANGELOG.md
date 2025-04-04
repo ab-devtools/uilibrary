@@ -1,3 +1,11 @@
+## [1.2.2](https://github.com/ab-devtools/uilibrary/compare/1.2.1...1.2.2) (2025-04-04)
+
+
+### Bug Fixes
+
+* fixed radio disabled ui ([d12d32f](https://github.com/ab-devtools/uilibrary/commit/d12d32f5ee453af05a276674d5c3c3f13254fcbc))
+* fixed radio disabled ui ([f2ce4f0](https://github.com/ab-devtools/uilibrary/commit/f2ce4f08941ca31f58af64b578d83c4ddaafc0dc))
+
 ## [1.2.1](https://github.com/ab-devtools/uilibrary/compare/1.2.0...1.2.1) (2025-04-04)
 
 
