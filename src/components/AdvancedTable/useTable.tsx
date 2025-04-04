@@ -143,7 +143,6 @@ export function useTable<TData>({
     getPaginationRowModel: getPaginationRowModel(),
     columnResizeMode: 'onChange',
     manualSorting: !!onSortChange,
-    manualPagination: !!onPaginationChange,
     enableRowSelection: true,
     enableColumnResizing: true
   })
