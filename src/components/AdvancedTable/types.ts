@@ -24,14 +24,6 @@ export type TTableProps<TData> = {
   emptyTitle?: string
   emptySubTitle?: string
   emptyIllustration?: string
-  reloadAction?: () => void
-  reloadButtonText?: string
-  reloadButtonIcon?: {
-    size?: TIconSize
-    type?: TSVGIconType
-    alignment?: string
-    Component?: TSVGIconComponent
-  }
   className?: string
   withSelect?: boolean
   withBorder?: boolean
