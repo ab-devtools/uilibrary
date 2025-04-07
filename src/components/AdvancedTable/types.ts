@@ -7,7 +7,6 @@ import type {
   Row
 } from '@tanstack/react-table'
 import type { ReactNode } from 'react'
-import type { TSVGIconType } from '../SVGIcons/types'
 
 export type TTable<TData> = Table<TData>
 export type TRowSelectionState = RowSelectionState
