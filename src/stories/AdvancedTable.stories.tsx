@@ -128,10 +128,7 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
         emptySubTitle="Please try to reload the page or use another keyword."
         renderHeader={(table) => (
           <div className="advanced-table__header justify-content--end">
-            <ColumnSettings
-              tooltipText="Column is disabled"
-              table={table}
-            />
+            <ColumnSettings tooltipText="Column is disabled" table={table} />
           </div>
         )}
         renderFooter={(table) => (

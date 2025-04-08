@@ -48,10 +48,10 @@ export function useTable<TData>({
           enableColumnDragging: false,
           enableSorting: false,
           enableResizing: false,
-          enableHiding: false,
+          enableHiding: false
         }
       }
-      return col;
+      return col
     })
 
     if (withSelect) {

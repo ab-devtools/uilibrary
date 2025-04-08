@@ -14,10 +14,7 @@ interface ColumnSettingsProps<T> {
 
 const hiddenColumnSettings = ['select', 'actions']
 
-export function ColumnSettings<T>({
-  table,
-  tooltipText
-}: ColumnSettingsProps<T>) {
+export function ColumnSettings<T>({ table, tooltipText }: ColumnSettingsProps<T>) {
   const [ref, setRef] = useState<HTMLDivElement | null>(null)
   const [isOpen, setIsOpen] = useState<boolean>(false)
 

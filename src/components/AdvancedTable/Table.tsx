@@ -108,7 +108,7 @@ export function Table<TData>({
                           strategy={horizontalListSortingStrategy}
                         >
                           {headerGroup.headers.map((header) => {
-                            if (header.id === ColumnId.Actions && !isActionsVisible) return;
+                            if (header.id === ColumnId.Actions && !isActionsVisible) return
                             return (
                               <ColumnHeader
                                 pinnedStyles={{ ...getCommonPinningStyles(header.column) }}
@@ -132,7 +132,8 @@ export function Table<TData>({
                             className={classnames({
                               ['with-checkbox']: cell.column.id === ColumnId.Select,
                               ['pinned-cell']: cell.column.getIsPinned(),
-                              ['action-column']: cell.column.id === ColumnId.Actions && !isActionsVisible
+                              ['action-column']:
+                                cell.column.id === ColumnId.Actions && !isActionsVisible
                             })}
                             id={cell.id}
                             key={cell.id}
