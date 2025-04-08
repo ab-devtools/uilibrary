@@ -12,6 +12,7 @@ import { Text } from '../Text'
 import classnames from 'classnames'
 import { Empty } from '../Empty'
 import classNames from 'classnames'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 enum ColumnId {
   Select = 'select',
