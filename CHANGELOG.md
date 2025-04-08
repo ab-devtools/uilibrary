@@ -1,3 +1,12 @@
+## [1.2.5](https://github.com/ab-devtools/uilibrary/compare/1.2.4...1.2.5) (2025-04-08)
+
+
+### Bug Fixes
+
+* table actions collumn, add functionaliti to pin column ([707e982](https://github.com/ab-devtools/uilibrary/commit/707e9824a953426c5c8bb3e30ab18e0edcc80d22))
+* table actions collumn, add functionaliti to pin column ([5072448](https://github.com/ab-devtools/uilibrary/commit/50724489645b5a049067d03fbae281e17909afd7))
+* table pagination go page issue ([e9ee349](https://github.com/ab-devtools/uilibrary/commit/e9ee349c52153edf664c455aabeca5b4fcb8d64d))
+
 ## [1.2.4](https://github.com/ab-devtools/uilibrary/compare/1.2.3...1.2.4) (2025-04-08)
 
 
