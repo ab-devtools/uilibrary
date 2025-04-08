@@ -1,3 +1,10 @@
+## [1.2.6](https://github.com/ab-devtools/uilibrary/compare/1.2.5...1.2.6) (2025-04-08)
+
+
+### Bug Fixes
+
+* skeleton styles ([265c5fa](https://github.com/ab-devtools/uilibrary/commit/265c5fa4fc5d3f9f4e354cbe913d02d663d96786))
+
 ## [1.2.5](https://github.com/ab-devtools/uilibrary/compare/1.2.4...1.2.5) (2025-04-08)
 
 
