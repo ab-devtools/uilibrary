@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import IconChevronLeft from '../SVGIcons/IconChevronLeft'
 import IconChevronRight from '../SVGIcons/IconChevronRight'
 import type { Table } from '@tanstack/react-table'
@@ -96,6 +96,12 @@ export function AdvancedPagination<TData>({
 
     return visiblePages
   }
+
+  useEffect(() => {
+    if (table.getPageCount() < Number(navigatePage)) {
+      setNavigatePage('1');
+    }
+  }, [pageIndex]);
 
   return (
     <div className="advanced-table__pagination">
