@@ -1,3 +1,11 @@
+## [1.2.8](https://github.com/ab-devtools/uilibrary/compare/1.2.7...1.2.8) (2025-04-08)
+
+
+### Bug Fixes
+
+* pagination go page issue ([27fdcdc](https://github.com/ab-devtools/uilibrary/commit/27fdcdc6f53152d31c8112e5f75a09cb2e90057e))
+* pagination go page issue ([9254a98](https://github.com/ab-devtools/uilibrary/commit/9254a98aca19340507713e5992930ed4e74b77e5))
+
 ## [1.2.7](https://github.com/ab-devtools/uilibrary/compare/1.2.6...1.2.7) (2025-04-08)
 
 
