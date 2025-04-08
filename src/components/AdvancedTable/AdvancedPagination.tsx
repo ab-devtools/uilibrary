@@ -99,9 +99,9 @@ export function AdvancedPagination<TData>({
 
   useEffect(() => {
     if (table.getPageCount() < Number(navigatePage)) {
-      setNavigatePage('1');
+      setNavigatePage('1')
     }
-  }, [pageIndex]);
+  }, [pageIndex])
 
   return (
     <div className="advanced-table__pagination">
