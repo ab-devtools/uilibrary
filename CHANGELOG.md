@@ -1,3 +1,11 @@
+## [1.2.7](https://github.com/ab-devtools/uilibrary/compare/1.2.6...1.2.7) (2025-04-08)
+
+
+### Bug Fixes
+
+* styles mixins warnings ([e6cf4c8](https://github.com/ab-devtools/uilibrary/commit/e6cf4c85afb3e1678c9fb8dccd9956de11435dbc))
+* styles mixins warnings ([5b8ee70](https://github.com/ab-devtools/uilibrary/commit/5b8ee704a652fbdaccc4dd49dab64dc9c7bcd574))
+
 ## [1.2.6](https://github.com/ab-devtools/uilibrary/compare/1.2.5...1.2.6) (2025-04-08)
 
 
