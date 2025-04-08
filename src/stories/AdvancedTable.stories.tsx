@@ -154,6 +154,7 @@ AdvancedTable.args = {
   columns: [],
   withBorder: false,
   isActionsVisible: false,
+  isLoading: false,
   onSortChange: (state) => console.log(state),
   onRowSelection: (state) => console.log(state),
   onPaginationChange: (state) => console.log(state),
