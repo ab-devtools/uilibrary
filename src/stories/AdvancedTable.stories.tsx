@@ -130,7 +130,6 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
           <div className="advanced-table__header justify-content--end">
             <ColumnSettings
               tooltipText="Column is disabled"
-              hiddenColumnSettings={['select', 'actions']}
               table={table}
             />
           </div>
@@ -157,6 +156,7 @@ AdvancedTable.args = {
   data: [],
   columns: [],
   withBorder: false,
+  isActionsVisible: false,
   onSortChange: (state) => console.log(state),
   onRowSelection: (state) => console.log(state),
   onPaginationChange: (state) => console.log(state),

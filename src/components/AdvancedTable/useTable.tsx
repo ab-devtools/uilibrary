@@ -41,7 +41,19 @@ export function useTable<TData>({
   })
 
   const memoizedColumns = useMemo(() => {
-    const columnsList: Column<TData>[] = [...columns]
+    const columnsList: Column<TData>[] = [...columns].map((col: Column<TData>) => {
+      if (col.id === 'actions') {
+        return {
+          ...col,
+          enableColumnDragging: false,
+          enableSorting: false,
+          enableResizing: false,
+          enableHiding: false,
+        }
+      }
+      return col;
+    })
+
     if (withSelect) {
       columnsList.unshift({
         id: 'select',

@@ -9,13 +9,13 @@ import { Positions } from '../Tooltip/types'
 
 interface ColumnSettingsProps<T> {
   table: Table<T>
-  hiddenColumnSettings?: string[]
   tooltipText?: string
 }
 
+const hiddenColumnSettings = ['select', 'actions']
+
 export function ColumnSettings<T>({
   table,
-  hiddenColumnSettings,
   tooltipText
 }: ColumnSettingsProps<T>) {
   const [ref, setRef] = useState<HTMLDivElement | null>(null)
