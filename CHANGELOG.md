@@ -1,3 +1,13 @@
+## [1.2.4](https://github.com/ab-devtools/uilibrary/compare/1.2.3...1.2.4) (2025-04-08)
+
+
+### Bug Fixes
+
+* table error and empty contents ([bfb70d8](https://github.com/ab-devtools/uilibrary/commit/bfb70d8e2a2d42a0ed683461710e83f0147373cd))
+* table error and empty contents ([3ccedd7](https://github.com/ab-devtools/uilibrary/commit/3ccedd7254a487a448273178cfab8f658d720d46))
+* table error and empty contents ([56552aa](https://github.com/ab-devtools/uilibrary/commit/56552aa5d6eaab78c87fbbc429bad0093205683a))
+* table error and empty contents ([7a5b19a](https://github.com/ab-devtools/uilibrary/commit/7a5b19ad113fd7796d9218cce5466f0425cbd92c))
+
 ## [1.2.3](https://github.com/ab-devtools/uilibrary/compare/1.2.2...1.2.3) (2025-04-07)
 
 
