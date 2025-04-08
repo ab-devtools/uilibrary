@@ -29,11 +29,8 @@ export function Table<TData>({
   emptyIllustration,
   withSelect = false,
   withBorder = true,
-  reloadButtonText,
-  reloadButtonIcon,
   defaultPageIndex,
   defaultPageSize,
-  reloadAction,
   renderHeader,
   renderFooter,
   onSortChange,
@@ -94,18 +91,11 @@ export function Table<TData>({
         >
           <div>
             <table style={{ minWidth: data?.length && table.getCenterTotalSize() }}>
-              {!data?.length && !hasError ? (
-                <Empty mainMessage={emptyTitle} illustration={emptyIllustration} />
-              ) : hasError ? (
+              {!data?.length || hasError ? (
                 <Empty
                   mainMessage={emptyTitle}
                   paragraphMessage={emptySubTitle}
                   illustration={emptyIllustration}
-                  buttonProps={{
-                    buttonText: reloadButtonText,
-                    iconProps: reloadButtonIcon,
-                    onClick: reloadAction
-                  }}
                 />
               ) : (
                 <>
