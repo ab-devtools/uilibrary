@@ -40,6 +40,7 @@ export function ColumnHeader<TData>({ header, pinnedStyles }: DraggableColumnHea
       style={{ ...style, ...pinnedStyles }}
       className={classnames('select-none', {
         ['with-checkbox']: header.column.id === 'select',
+        ['actions-header']: header.column.id === 'actions',
         ['cursor-pointer']: header.column.getCanSort()
       })}
       {...attributes}

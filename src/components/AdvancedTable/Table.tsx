@@ -23,6 +23,7 @@ export function Table<TData>({
   columns,
   isLoading,
   hasError,
+  isActionsVisible = false,
   totalCount = 0,
   emptyTitle,
   emptySubTitle,
@@ -107,15 +108,14 @@ export function Table<TData>({
                           strategy={horizontalListSortingStrategy}
                         >
                           {headerGroup.headers.map((header) => {
-                            if (header.id !== ColumnId.Actions) {
-                              return (
-                                <ColumnHeader
-                                  pinnedStyles={{ ...getCommonPinningStyles(header.column) }}
-                                  key={header.id}
-                                  header={header}
-                                />
-                              )
-                            }
+                            if (header.id === ColumnId.Actions && !isActionsVisible) return
+                            return (
+                              <ColumnHeader
+                                pinnedStyles={{ ...getCommonPinningStyles(header.column) }}
+                                key={header.id}
+                                header={header}
+                              />
+                            )
                           })}
                         </SortableContext>
                       </tr>
@@ -132,7 +132,8 @@ export function Table<TData>({
                             className={classnames({
                               ['with-checkbox']: cell.column.id === ColumnId.Select,
                               ['pinned-cell']: cell.column.getIsPinned(),
-                              ['action-column']: cell.column.id === ColumnId.Actions
+                              ['action-column']:
+                                cell.column.id === ColumnId.Actions && !isActionsVisible
                             })}
                             id={cell.id}
                             key={cell.id}
@@ -141,7 +142,7 @@ export function Table<TData>({
                           >
                             {isLoading ? (
                               <Skeleton />
-                            ) : cell.column.id === ColumnId.Actions ? (
+                            ) : cell.column.id === ColumnId.Actions && !isActionsVisible ? (
                               <div className="actions-list__right">
                                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
                               </div>

@@ -9,15 +9,12 @@ import { Positions } from '../Tooltip/types'
 
 interface ColumnSettingsProps<T> {
   table: Table<T>
-  hiddenColumnSettings?: string[]
   tooltipText?: string
 }
 
-export function ColumnSettings<T>({
-  table,
-  hiddenColumnSettings,
-  tooltipText
-}: ColumnSettingsProps<T>) {
+const hiddenColumnSettings = ['select', 'actions']
+
+export function ColumnSettings<T>({ table, tooltipText }: ColumnSettingsProps<T>) {
   const [ref, setRef] = useState<HTMLDivElement | null>(null)
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
