@@ -1,5 +1,6 @@
 @use "sass:map";
 @use "sass:meta";
+@use "sass:list";
 
 
 $fontFamilyMap: (
@@ -179,8 +180,8 @@ $tokens: (
 /********SPACE******/
 /*******************/
 @function getSize($size) {
-        $spaceTokens: map-get($tokens, 'space');
-        @return map-get($spaceTokens, $size);
+        $spaceTokens: map.get($tokens, 'space');
+        @return map.get($spaceTokens, $size);
 }
 
 /**padding**/
@@ -236,9 +237,9 @@ $tokens: (
 /********COLOR******/
 /*******************/
 @function getColor($color, $size: 'base') {
-        $colorTokens: map-get($tokens, 'color');
-        $selected: map-get($colorTokens, $color);
-        @return map-get($selected, $size)
+        $colorTokens: map.get($tokens, 'color');
+        $selected: map.get($colorTokens, $color);
+        @return map.get($selected, $size)
 }
 
 /**color**/
@@ -257,16 +258,16 @@ $tokens: (
 
 /**font-size**/
 @function getFontSize($size) {
-        $fontSizeTokens: map-get($tokens, 'fontSize');
-        @return map-get($fontSizeTokens, $size);
+        $fontSizeTokens: map.get($tokens, 'fontSize');
+        @return map.get($fontSizeTokens, $size);
 }
 @mixin font($size) {
         font-size: getFontSize($size);
 }
 /**font-weight**/
 @function getFontWeight($size) {
-        $fontWeightTokens: map-get($tokens, 'fontWeight');
-        @return map-get($fontWeightTokens, $size);
+        $fontWeightTokens: map.get($tokens, 'fontWeight');
+        @return map.get($fontWeightTokens, $size);
 }
 @mixin font-weight($size) {
         font-weight: getFontWeight($size);
@@ -359,17 +360,17 @@ div.logo {
 @function parseDirections($directions){
         $top: 0; $bottom: 0; $left: 0; $right: 0;
 
-        @if length($directions) > 0{
-                $d1: nth($directions,1);
+        @if list.length($directions) > 0{
+                $d1: list.nth($directions,1);
                 $top: $d1; $bottom: $d1; $left: $d1; $right: $d1;
-        }@if length($directions) > 1 {
-        $d2: nth($directions,2);
+        }@if list.length($directions) > 1 {
+        $d2: list.nth($directions,2);
         $left: $d2; $right: $d2;
-}@if length($directions) > 2 {
-        $d3: nth($directions,3);
+}@if list.length($directions) > 2 {
+        $d3: list.nth($directions,3);
         $bottom: $d3;
-}@if length($directions) > 3 {
-        $d4: nth($directions,4);
+}@if list.length($directions) > 3 {
+        $d4: list.nth($directions,4);
         $left: $d4
 }
 
@@ -383,10 +384,10 @@ div.logo {
 
 @mixin position($positions...){
         $positions: parseDirections($positions);
-        top: map-get($positions,'top');
-        right: map-get($positions,'right');
-        bottom: map-get($positions,'bottom');
-        left: map-get($positions,'left');
+        top: map.get($positions,'top');
+        right: map.get($positions,'right');
+        bottom: map.get($positions,'bottom');
+        left: map.get($positions,'left');
 }
 @mixin absolute($positions...){
         position: absolute;
@@ -532,7 +533,7 @@ $breakpoints: (
         // Box-Flex only supports a flex-grow value so lets grab the
         // first item in the list and just return that.
         @if type-of($fg) == 'list' {
-                $fg-boxflex: nth($fg, 1);
+                $fg-boxflex: list.nth($fg, 1);
         }
 
         -webkit-box: $fg-boxflex;

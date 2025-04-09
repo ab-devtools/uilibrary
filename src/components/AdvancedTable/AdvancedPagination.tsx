@@ -101,7 +101,7 @@ export function AdvancedPagination<TData>({
     if (table.getPageCount() < Number(navigatePage)) {
       setNavigatePage('1')
     }
-  }, [pageIndex])
+  }, [table.getPageCount(), table.getState().pagination])
 
   return (
     <div className="advanced-table__pagination">
