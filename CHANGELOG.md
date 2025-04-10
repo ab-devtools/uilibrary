@@ -1,3 +1,12 @@
+## [1.2.10](https://github.com/ab-devtools/uilibrary/compare/1.2.9...1.2.10) (2025-04-10)
+
+
+### Bug Fixes
+
+* fixed conflict ([f077dd0](https://github.com/ab-devtools/uilibrary/commit/f077dd0283d7e6c4d321cbf616bdd494214ee3cc))
+* fixes for copy component ([f75d976](https://github.com/ab-devtools/uilibrary/commit/f75d97613f30cc69d0a15b57e268d588b9d9d947))
+* fixes for copy component ([109655b](https://github.com/ab-devtools/uilibrary/commit/109655b7883df32d859d53174d97e7c85caf877e))
+
 ## [1.2.9](https://github.com/ab-devtools/uilibrary/compare/1.2.8...1.2.9) (2025-04-10)
 
 
