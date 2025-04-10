@@ -319,7 +319,7 @@ SideSheet.args = {
       iconProps: {
         Component: IconDismissFilled
       }
-    },
+    }
     // back: {
     //   iconProps: {
     //     Component: IconArrowLeft
