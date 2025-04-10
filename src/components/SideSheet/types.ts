@@ -28,13 +28,9 @@ export interface TSideSheetPropTypes {
   tabItemsProps?: TTabProps
   children?: ReactNode
   className?: string
-  headerButtons?: {
-    close?: TButtonIconPropTypes
-    pin?: TButtonIconPropTypes
-    back?: TButtonIconPropTypes
-  }
   scrollToTopOptions?: {
     onPixel: number
   }
   checkboxInfo?: TCheckboxInfo
+  headerContent?:ReactNode
 }
