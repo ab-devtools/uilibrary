@@ -110,6 +110,7 @@
     height: var(--ds-side-sheet-footer-height);
     padding: var(--ds-side-sheet-footer-padding);
     border-top: var(--ds-side-sheet-footer-border);
+    gap: var(--ds-space-12);
 
     &__buttons {
       @include mixin.flexbox;

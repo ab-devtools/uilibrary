@@ -37,9 +37,7 @@ export const Footer = ({
   return (
     <div className="side-sheet__footer">
       {checkboxInfo ? (
-        <div className="side-sheet__footer__checkbox">
-          <Checkbox label={checkboxInfo.label} selectedValue={isSelected} onClick={setIsSelected} />
-        </div>
+        <Checkbox label={checkboxInfo.label} selectedValue={isSelected} onClick={setIsSelected} />
       ) : null}
 
       <div className="side-sheet__footer__buttons">

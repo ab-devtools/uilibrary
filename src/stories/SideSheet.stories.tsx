@@ -320,16 +320,16 @@ SideSheet.args = {
         Component: IconDismissFilled
       }
     },
-    back: {
-      iconProps: {
-        Component: IconArrowLeft
-      }
-    },
-    pin: {
-      iconProps: {
-        Component: IconAttach
-      }
-    }
+    // back: {
+    //   iconProps: {
+    //     Component: IconArrowLeft
+    //   }
+    // },
+    // pin: {
+    //   iconProps: {
+    //     Component: IconAttach
+    //   }
+    // }
   },
   footerButtons: {
     confirm: {
