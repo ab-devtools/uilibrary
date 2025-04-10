@@ -28,6 +28,7 @@ const CARDS = [
   {
     value: 1,
     title: 'Card Select',
+    dataId: '1',
     icon: {
       Component: IconQuestion
     },

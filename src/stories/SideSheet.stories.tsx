@@ -180,6 +180,7 @@ const Template: StoryFn<TSideSheetPropTypes> = (args) => {
         isOpen={isOpen}
         shouldRemoveCallback={false}
         onSubmit={onSubmit}
+        headerContent={<p>Lorem ipsum dolor sit amet consectetu </p>}
         scrollToTopOptions={{
           onPixel: 200
         }}
@@ -314,23 +315,6 @@ export const SideSheet = Template.bind({})
 
 SideSheet.args = {
   title: 'Side sheet title',
-  headerButtons: {
-    close: {
-      iconProps: {
-        Component: IconDismissFilled
-      }
-    }
-    // back: {
-    //   iconProps: {
-    //     Component: IconArrowLeft
-    //   }
-    // },
-    // pin: {
-    //   iconProps: {
-    //     Component: IconAttach
-    //   }
-    // }
-  },
   footerButtons: {
     confirm: {
       buttonText: 'Save'
