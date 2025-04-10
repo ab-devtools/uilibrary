@@ -24,7 +24,8 @@ export const CardSelect = (props: TCardSelectProps): ReactElement => {
     value,
     cardValue,
     illustration,
-    icon
+    icon,
+      dataId
   } = props
   const selected = cardValue === value
   const cardSelectStyle = classNames(
@@ -45,7 +46,7 @@ export const CardSelect = (props: TCardSelectProps): ReactElement => {
   }
 
   return (
-    <div className={cardSelectStyle} onClick={handleCardSelect}>
+    <div className={cardSelectStyle} onClick={handleCardSelect} data-id={dataId}>
       {illustration ? (
         <div className={'card-select__image mr-16'}>
           <Image imagePath={illustration} />
