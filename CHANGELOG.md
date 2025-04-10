@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/ab-devtools/uilibrary/compare/1.2.10...1.3.0) (2025-04-10)
+
+
+### Bug Fixes
+
+* made copy size props optional ([b1afcdf](https://github.com/ab-devtools/uilibrary/commit/b1afcdf043f79d1f31c601c6087b969ef88e2da5))
+
+
+### Features
+
+* added vpos, hdm icons ([a04afa4](https://github.com/ab-devtools/uilibrary/commit/a04afa49fef503f2f1d3a6d3ed419ccae3d073fc))
+
 ## [1.2.10](https://github.com/ab-devtools/uilibrary/compare/1.2.9...1.2.10) (2025-04-10)
 
 
