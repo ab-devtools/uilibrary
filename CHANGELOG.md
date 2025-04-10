@@ -1,3 +1,13 @@
+## [1.3.1](https://github.com/ab-devtools/uilibrary/compare/1.3.0...1.3.1) (2025-04-10)
+
+
+### Bug Fixes
+
+* added dataID for cardSelectGroup ([4005c5f](https://github.com/ab-devtools/uilibrary/commit/4005c5f2fdb9b987d8309aa753fb6128f173eeeb))
+* added dataID for cardSelectGroup ([9077cd7](https://github.com/ab-devtools/uilibrary/commit/9077cd7df6ad2a57ad0b5a2202a42bbe570a6dcc))
+* fixes for side sheet component ([3bc23fb](https://github.com/ab-devtools/uilibrary/commit/3bc23fb3cebd5e566fdcd187b6f6a4b3be3481ac))
+* fixes for side sheet component ([9243740](https://github.com/ab-devtools/uilibrary/commit/92437402ce54856908ed05381df216f1c7f589b2))
+
 # [1.3.0](https://github.com/ab-devtools/uilibrary/compare/1.2.10...1.3.0) (2025-04-10)
 
 
