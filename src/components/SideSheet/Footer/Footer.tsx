@@ -37,23 +37,15 @@ export const Footer = ({
   return (
     <div className="side-sheet__footer">
       {checkboxInfo ? (
-        <div className="side-sheet__footer_checkbox">
+        <div className="side-sheet__footer__checkbox">
           <Checkbox label={checkboxInfo.label} selectedValue={isSelected} onClick={setIsSelected} />
         </div>
       ) : null}
 
-      <div className="side-sheet__footer_buttons">
-        {extraButton ? (
-          <Button size="large" type="secondary" {...footerButtons.extraButton} className="mr-12" />
-        ) : null}
-        {<Button type="secondary" size="large" className="mr-12" onClick={onClose} {...cancel} />}
-        <Button
-          type="primary"
-          size="large"
-          onClick={handleSubmit}
-          disabled={isLoading}
-          {...confirm}
-        />
+      <div className="side-sheet__footer__buttons">
+        {extraButton ? <Button type="secondary" {...footerButtons.extraButton} /> : null}
+        {<Button type="secondary" onClick={onClose} {...cancel} />}
+        <Button onClick={handleSubmit} disabled={isLoading} {...confirm} />
       </div>
     </div>
   )

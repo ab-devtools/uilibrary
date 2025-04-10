@@ -341,6 +341,20 @@ SideSheet.args = {
   checkboxInfo: {
     label: 'Agree to terms',
     isChecked: false
+  },
+  tabItemsProps: {
+    tabItems: [
+      {
+        label: 'tab 1',
+        value: 'tab1'
+      },
+      {
+        label: 'tab 2',
+        value: 'tab2'
+      }
+    ],
+    selectedValue: 'tab1',
+    onSelect: (value) => 'tab1'
   }
   // position: 'left'
 }

@@ -5,12 +5,14 @@ import classnames from 'classnames'
 import { useHideBodyScroll, useOnOutsideClick } from '../../hooks'
 import { AnimatePresenceWrapper } from '../../helperComponents/AnimatePresenceWrapper'
 import { Button } from '../Button'
-import { Text } from '../Text'
 import type { TSideSheetPropTypes } from './types'
 import { useDispatchEventOnScroll } from '../../hooks/useDispatchEventOnScroll'
 import { Footer } from './Footer/Footer'
 import IconCaretUp from '../SVGIcons/IconCaretUp'
-import IconDismissFilled from '../SVGIcons/IconDismissFilled'
+import IconDismiss from '../SVGIcons/IconDismiss'
+import { Heading } from '../Heading'
+import { ButtonIcon } from '../ButtonIcon'
+import { Tab } from '../Tab'
 
 export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
   const {
@@ -23,6 +25,7 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
     position = 'right',
     shouldRemoveCallback,
     className = '',
+    tabItemsProps,
     headerButtons,
     footerButtons,
     scrollToTopOptions,
@@ -33,6 +36,7 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
   const [containerRef, setContainerRef] = useState<HTMLDivElement | null>(null)
   const [isShownScrollIcon, setIsShownScrollIcon] = useState<boolean>(false)
   const scrollbarContainerRef = useRef<HTMLDivElement>(null)
+
   useOnOutsideClick(
     containerRef,
     onClose,
@@ -103,50 +107,59 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
             transition={{ duration: 0.5 }}
             className={classnames(
               'side-sheet__container',
-              `side-sheet__${position}`,
+              `side-sheet__container--${position}`,
               `side-sheet__container--${size}`,
               className
             )}
             ref={setContainerRef}
           >
             <div className="side-sheet__header">
-              <div className="side-sheet__header__left pr-16">
-                {headerButtons?.back ? (
-                  <Button size="small" type="tertiary" {...headerButtons.back} className="mr-8" />
-                ) : null}
-                <Text
-                  className="side-sheet__title"
-                  weight="bolder"
-                  lineHeight="large"
-                  size="medium"
-                >
-                  {title}
-                </Text>
-              </div>
-              <div className="side-sheet__header__right">
-                {headerButtons?.pin ? (
-                  <Button size="small" type="tertiary" {...headerButtons.pin} className="mr-8" />
-                ) : null}
-                {headerButtons?.close ? (
-                  <Button size="small" type="tertiary" {...headerButtons.close} onClick={onClose} />
-                ) : (
+              <div className="side-sheet__header__inner">
+                <div className="side-sheet__header__left pr-16">
+                  {headerButtons?.back ? (
+                    <ButtonIcon size="medium" {...headerButtons.back} className="mr-8" />
+                  ) : null}
+                  <Heading
+                    className="side-sheet__title"
+                    weight="bold"
+                    lineHeight="medium"
+                    size="xsmall"
+                  >
+                    {title}
+                  </Heading>
+                </div>
+                <div className="side-sheet__header__right">
+                  {headerButtons?.pin ? (
+                    <ButtonIcon size="medium" {...headerButtons.pin} className="mr-8" />
+                  ) : null}
+                  {headerButtons?.close ? (
+                    <ButtonIcon size="medium" {...headerButtons.close} onClick={onClose} />
+                  ) : (
+                    <ButtonIcon
+                      size="medium"
+                      iconProps={{ Component: IconDismiss }}
+                      onClick={onClose}
+                    />
+                  )}
+                </div>
+                {isShownScrollIcon && (
                   <Button
-                    size="small"
-                    type="tertiary"
-                    iconProps={{ Component: IconDismissFilled }}
-                    onClick={onClose}
+                    size="large"
+                    type="secondary"
+                    iconProps={{ Component: IconCaretUp }}
+                    className={`side-sheet__header__scroll-top side-sheet__header__scroll-top__${size}`}
+                    onClick={handleScrollToTop}
                   />
                 )}
               </div>
-              {isShownScrollIcon && (
-                <Button
-                  size="large"
-                  type="secondary"
-                  iconProps={{ Component: IconCaretUp }}
-                  className={`side-sheet__header__scroll-top side-sheet__header__scroll-top__${size}`}
-                  onClick={handleScrollToTop}
+              {tabItemsProps?.tabItems ? (
+                <Tab
+                  type={'primary'}
+                  size={'small'}
+                  {...tabItemsProps}
+                  className={'side-sheet__tabs'}
                 />
-              )}
+              ) : null}
             </div>
             <div
               className="side-sheet__content scrollbar scrollbar--vertical"
@@ -154,13 +167,15 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
             >
               {children}
             </div>
-            <Footer
-              footerButtons={footerButtons}
-              isLoading={isLoading}
-              onClose={onClose}
-              onSubmit={onSubmit}
-              checkboxInfo={checkboxInfo}
-            />
+            {footerButtons ? (
+              <Footer
+                footerButtons={footerButtons}
+                isLoading={isLoading}
+                onClose={onClose}
+                onSubmit={onSubmit}
+                checkboxInfo={checkboxInfo}
+              />
+            ) : null}
           </motion.div>
         </motion.div>
       ) : null}
