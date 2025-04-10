@@ -7,12 +7,7 @@ import {
   MultiSelect as _MultiSelect
 } from '../index'
 import * as yup from 'yup'
-import IconDismissFilled from '../components/SVGIcons/IconDismissFilled'
-import IconArrowLeft from '../components/SVGIcons/IconArrowLeft'
-import IconAttach from '../components/SVGIcons/IconAttach'
 import IconMore from '../components/SVGIcons/IconMore'
-import IconCaretDownFilled from '../components/SVGIcons/IconCaretDownFilled'
-import IconSelectAllOff from '../components/SVGIcons/IconSelectAllOff'
 import IconPerson from '../components/SVGIcons/IconPerson'
 import IconInfo from '../components/SVGIcons/IconInfo'
 import { StoryFn } from '@storybook/react'
