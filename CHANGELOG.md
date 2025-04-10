@@ -1,3 +1,13 @@
+## [1.2.9](https://github.com/ab-devtools/uilibrary/compare/1.2.8...1.2.9) (2025-04-10)
+
+
+### Bug Fixes
+
+* ui changes for side-sheet component ([27ed30f](https://github.com/ab-devtools/uilibrary/commit/27ed30f0e41f244991be4b5b4de6b15b6ea9ebc1))
+* ui fix ([45f43a5](https://github.com/ab-devtools/uilibrary/commit/45f43a50d2e6f3d13171e3fc78632f639260563b))
+* ui fix ([b7c72c9](https://github.com/ab-devtools/uilibrary/commit/b7c72c9d9ec0163237bf197977530c7dad11a6d9))
+* ui fix ([23be8d6](https://github.com/ab-devtools/uilibrary/commit/23be8d6e847bd7a8c549808a09ed633d1fa6933a))
+
 ## [1.2.8](https://github.com/ab-devtools/uilibrary/compare/1.2.7...1.2.8) (2025-04-08)
 
 
