@@ -33,4 +33,6 @@ export interface TSideSheetPropTypes {
   }
   checkboxInfo?: TCheckboxInfo
   headerContent?: ReactNode
+  isPositioned?: boolean
+  withOverlay?: boolean
 }

@@ -22,34 +22,55 @@
   --ds-side-sheet-footer-height: 88px;
   --ds-side-sheet-footer-border: 1px solid var(--ds-color-border-quintary);
   --ds-side-sheet-footer-padding: var(--ds-space-8) var(--ds-space-24);
-  
-  @include mixin.fixed(0,0,0,0);
-  z-index: 999;
-  background-color: var(--ds-side-sheet-overlay-bg);
+
+  &--with-overlay {
+    background-color: var(--ds-side-sheet-overlay-bg);
+  }
+
+  &:not(#{$this}--positioned) {
+    width: fit-content;
+    height: 100vh;
+
+    #{$this}__container {
+      height: 100%;
+      border-left: var(--ds-side-sheet-border);
+    }
+  }
+
+  &--positioned {
+    @include mixin.fixed(0,0,0,0);
+    z-index: 999;
+    width: 100%;
+
+    #{$this}__container {
+      position: absolute;
+      top: var(--ds-space-16);
+      bottom: var(--ds-space-16);
+      box-shadow: var(--ds-side-sheet-shadow);
+      border-radius: var(--ds-side-sheet-border-radius);
+      border: var(--ds-side-sheet-border);
+
+      &--right {
+        margin-right: var(--ds-space-16);
+      }
+      &--left {
+        margin-left: var(--ds-space-16);
+      }
+    }
+  }
 
   &__container {
     @include mixin.flexbox;
     @include mixin.flex-direction(column);
-    position: absolute;
-    top: var(--ds-space-16);
-    bottom: var(--ds-space-16);
     width: 100%;
+    position: relative;
     background-color: var(--ds-side-sheet-bg);
-    border: var(--ds-side-sheet-border);
-    border-radius: var(--ds-side-sheet-border-radius);
-    box-shadow: var(--ds-side-sheet-shadow);
 
     &--small {
       max-width: var(--ds-side-sheet-width-sm);
     }
     &--large {
       max-width: var(--ds-side-sheet-width-lg);
-    }
-    &--right {
-      margin-right: var(--ds-space-16);
-    }
-    &--left {
-      margin-left: var(--ds-space-16);
     }
   }
 

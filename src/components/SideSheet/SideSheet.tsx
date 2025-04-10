@@ -31,7 +31,9 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
     children,
     closeOnOutsideClick = true,
     checkboxInfo,
-    headerContent
+    headerContent,
+    isPositioned = false,
+    withOverlay = false
   } = props
   const [containerRef, setContainerRef] = useState<HTMLDivElement | null>(null)
   const [isShownScrollIcon, setIsShownScrollIcon] = useState<boolean>(false)
@@ -79,7 +81,10 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
     <AnimatePresenceWrapper>
       {isOpen ? (
         <motion.div
-          className="side-sheet"
+          className={classnames('side-sheet', {
+            'side-sheet--positioned': isPositioned,
+            'side-sheet--with-overlay': withOverlay,
+          })}
           initial={{
             opacity: 0
           }}

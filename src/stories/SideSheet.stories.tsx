@@ -171,8 +171,11 @@ const Template: StoryFn<TSideSheetPropTypes> = (args) => {
   }
 
   return (
-    <div>
-      <button onClick={handleOpenSheet}>Open Side Sheet</button>
+    <div className={'flexbox'} style={{overflow: 'hidden'}}>
+      <div style={{flex: 1, border: '1px solid grey'}}>
+        Lorem ipsum dolor sit amet consectetu
+        <button onClick={handleOpenSheet}>Open Side Sheet</button>
+      </div>
       <_SideSheet
         {...args}
         size="small"
@@ -339,6 +342,8 @@ SideSheet.args = {
     ],
     selectedValue: 'tab1',
     onSelect: (value) => 'tab1'
-  }
+  },
   // position: 'left'
+  isPositioned: false,
+  withOverlay: false
 }
