@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react'
 import type { TButtonPropTypes } from '../Button/types'
+import type { TButtonIconPropTypes } from '../ButtonIcon/types'
+import type { TTabProps } from '../Tab/types'
 
 export type TSideSheet = 'small' | 'large'
 
@@ -23,12 +25,13 @@ export interface TSideSheetPropTypes {
     confirm: TButtonPropTypes
     extraButton?: TButtonPropTypes
   }
+  tabItemsProps?: TTabProps
   children?: ReactNode
   className?: string
   headerButtons?: {
-    close?: TButtonPropTypes
-    pin?: TButtonPropTypes
-    back?: TButtonPropTypes
+    close?: TButtonIconPropTypes
+    pin?: TButtonIconPropTypes
+    back?: TButtonIconPropTypes
   }
   scrollToTopOptions?: {
     onPixel: number
