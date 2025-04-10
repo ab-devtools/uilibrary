@@ -127,9 +127,9 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
                 </div>
                 <div>
                   <ButtonIcon
-                      size="medium"
-                      iconProps={{ Component: IconDismiss }}
-                      onClick={onClose}
+                    size="medium"
+                    iconProps={{ Component: IconDismiss }}
+                    onClick={onClose}
                   />
                 </div>
                 {isShownScrollIcon && (
@@ -142,9 +142,9 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
                   />
                 )}
               </div>
-              {
-                headerContent ? <div className="side-sheet__header__content"> {headerContent} </div> : null
-              }
+              {headerContent ? (
+                <div className="side-sheet__header__content"> {headerContent} </div>
+              ) : null}
               {tabItemsProps?.tabItems ? (
                 <Tab
                   type={'primary'}

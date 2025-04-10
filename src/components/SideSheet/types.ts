@@ -32,5 +32,5 @@ export interface TSideSheetPropTypes {
     onPixel: number
   }
   checkboxInfo?: TCheckboxInfo
-  headerContent?:ReactNode
+  headerContent?: ReactNode
 }
