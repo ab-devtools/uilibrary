@@ -5,7 +5,6 @@
 
   --ds-side-sheet-width-sm: 640px;
   --ds-side-sheet-width-lg: 740px;
-  
 
   --ds-side-sheet-overlay-bg: var(--ds-overlay-9);
   --ds-side-sheet-overlay-padding: var(--ds-space-16);
@@ -122,9 +121,4 @@
   &__close {
     cursor: pointer;
   }
-}
-
-.animated_content {
-  width: 100%;
-  overflow: hidden;
 }
