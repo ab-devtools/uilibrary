@@ -83,7 +83,7 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
         <motion.div
           className={classnames('side-sheet', {
             'side-sheet--positioned': isPositioned,
-            'side-sheet--with-overlay': withOverlay,
+            'side-sheet--with-overlay': withOverlay
           })}
           initial={{
             opacity: 0
