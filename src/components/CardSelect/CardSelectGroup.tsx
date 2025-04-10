@@ -23,12 +23,12 @@ export const CardSelectGroup = (props: TCardSelectGroupProps): JSX.Element => {
             additionalInfo,
             id,
             disabled,
-              dataId
+            dataId
           },
           index
         ) => (
           <CardSelect
-              dataId={dataId}
+            dataId={dataId}
             className={'card-select-group__item'}
             name={name}
             key={id || index}

@@ -25,7 +25,7 @@ export const CardSelect = (props: TCardSelectProps): ReactElement => {
     cardValue,
     illustration,
     icon,
-      dataId
+    dataId
   } = props
   const selected = cardValue === value
   const cardSelectStyle = classNames(
