@@ -339,6 +339,6 @@ SideSheet.args = {
     onSelect: (value) => 'tab1'
   },
   // position: 'left'
-  isPositioned: false,
-  withOverlay: false
+  withOverlay: false,
+  isPositioned: false
 }
