@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react'
 import type { TButtonPropTypes } from '../Button/types'
-import type { TButtonIconPropTypes } from '../ButtonIcon/types'
 import type { TTabProps } from '../Tab/types'
 
 export type TSideSheet = 'small' | 'large'
@@ -33,4 +32,6 @@ export interface TSideSheetPropTypes {
   }
   checkboxInfo?: TCheckboxInfo
   headerContent?: ReactNode
+  isPositioned?: boolean
+  withOverlay?: boolean
 }
