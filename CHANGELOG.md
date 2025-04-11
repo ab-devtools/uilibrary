@@ -1,3 +1,13 @@
+## [1.3.2](https://github.com/ab-devtools/uilibrary/compare/1.3.1...1.3.2) (2025-04-11)
+
+
+### Bug Fixes
+
+* added side-sheet positioning and without overlay cases ([2274f40](https://github.com/ab-devtools/uilibrary/commit/2274f405f570950792cfa4e376dd882ffac5b91b))
+* added side-sheet positioning and without overlay cases ([1ed2407](https://github.com/ab-devtools/uilibrary/commit/1ed24076d96281545e71d33b4ff0ed0b1c7b21a1))
+* added side-sheet positioning and without overlay cases ([39c4e99](https://github.com/ab-devtools/uilibrary/commit/39c4e993b83f52ecbca54ece72de5a1654ced239))
+* ui fix ([7ba1c9a](https://github.com/ab-devtools/uilibrary/commit/7ba1c9ae429673093dd715c19a8d0b871430d4c6))
+
 ## [1.3.1](https://github.com/ab-devtools/uilibrary/compare/1.3.0...1.3.1) (2025-04-10)
 
 
