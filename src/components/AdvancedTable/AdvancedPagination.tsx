@@ -81,7 +81,7 @@ export function AdvancedPagination<TData>({
 
     if (currentPage <= 3) {
       visiblePages.push(2, 3, 4, 5, '...', totalPages)
-    } else if (currentPage >= totalPages - 5) {
+    } else if (currentPage > totalPages - 5) {
       visiblePages.push(
         '...',
         totalPages - 4,
