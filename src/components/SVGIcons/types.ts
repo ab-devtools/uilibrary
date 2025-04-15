@@ -15,6 +15,7 @@ export type TSVGIconType =
   | 'primary'
   | 'secondary'
   | 'tertiary'
+  | 'quaternary'
   | 'disabled'
   | 'inverse'
   | 'selected'
