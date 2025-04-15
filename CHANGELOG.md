@@ -1,3 +1,10 @@
+## [1.3.3](https://github.com/ab-devtools/uilibrary/compare/1.3.2...1.3.3) (2025-04-15)
+
+
+### Bug Fixes
+
+* pagination issue ([e9e3a56](https://github.com/ab-devtools/uilibrary/commit/e9e3a56477f5ce2d2aa02cffc2482a26109f44b2))
+
 ## [1.3.2](https://github.com/ab-devtools/uilibrary/compare/1.3.1...1.3.2) (2025-04-11)
 
 
