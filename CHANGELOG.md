@@ -1,3 +1,12 @@
+# [1.4.0](https://github.com/ab-devtools/uilibrary/compare/1.3.3...1.4.0) (2025-04-17)
+
+
+### Features
+
+* added color type quaternary ([67fca29](https://github.com/ab-devtools/uilibrary/commit/67fca2938d56fa8f1a822cbdb2c41aa45f16f9dd))
+* added text and icon color quaternary ([42ff9c3](https://github.com/ab-devtools/uilibrary/commit/42ff9c367c49d46a695cbc3b4ffdf54e27686542))
+* added text and icon color quaternary ([20e24ea](https://github.com/ab-devtools/uilibrary/commit/20e24ea9c707bcf49c2680edcf6a18469b493d6d))
+
 ## [1.3.3](https://github.com/ab-devtools/uilibrary/compare/1.3.2...1.3.3) (2025-04-15)
 
 
