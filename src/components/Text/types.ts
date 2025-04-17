@@ -4,6 +4,7 @@ type TTextTypes =
   | 'primary'
   | 'secondary'
   | 'tertiary'
+  | 'quaternary'
   | 'disabled'
   | 'inverse'
   | 'selected'
