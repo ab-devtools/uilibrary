@@ -18,8 +18,7 @@ export const NavigationItem = (props: TNavigationLinkPropTypes): ReactElement =>
     showAction = false,
     actionElm,
     active = false,
-    badgeType = 'green',
-    badgeContent,
+    badgeProps,
     expandIconProps = {
       Component: IconChevronDown,
       size: 'medium'
@@ -54,8 +53,13 @@ export const NavigationItem = (props: TNavigationLinkPropTypes): ReactElement =>
               <IconDynamicComponent componentName={iconName} />
             )}
           </>
-          {showBadge && badgeContent && isOpen && (
-            <Badge type={badgeType} text={badgeContent} size="small" className={'mr-12'} />
+          {showBadge && badgeProps?.text && isOpen && (
+            <Badge
+              type={badgeProps?.type}
+              text={badgeProps?.text}
+              size={badgeProps?.size}
+              className={'mr-12'}
+            />
           )}
           {expandable && isOpen && (
             <span className={classNames('navigation-item__expandable-icon', childOpen && 'opened')}>

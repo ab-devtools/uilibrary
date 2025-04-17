@@ -10,7 +10,7 @@ export const Block = (props: TBlock): ReactElement => {
     <div className="navigation-block">
       <div className="navigation-block__label">
         <>
-          <Text size="standard" type="tertiary" className={'navigation-block__label__text'}>
+          <Text type="tertiary" weight={'semibold'} className={'navigation-block__label__text'}>
             {label}
           </Text>
           <Divider

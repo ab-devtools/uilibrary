@@ -6,67 +6,44 @@
   @include mixin.flexbox;
   @include mixin.flex-direction(column);
   @include mixin.fixed(0,unset, 0, 0);
-  padding: 0 0 var(--ds-space-16) var(--ds-space-2);
-  width: 72px;
+  width: 64px;
   transition: width 0.4s linear, padding-left 0.4s linear;
-  z-index: -1;
-  background-color: var(--ds-color-bg-white);
-  border-right: 1px solid var(--ds-color-border-tertiary);
+  background-color: var(--ds-color-bg-container-lighter);
+  border-right: 1px solid var(--ds-color-border-quintary);
+  box-shadow: 0 0 56px 2px #4E4E4E1F;
 
   &__btn {
-    @include mixin.absolute(var(--ds-space-24), calc(var(--ds-space-12)*-1), unset, unset);
-    border-radius: var(--ds-border-radius-sm);
-    box-shadow: var(--shadow-brand-2) !important;
-    z-index: 2;
+    cursor: pointer;
+    display: none;
+  }
 
-    .svg-icon {
-      transition: transform 0.3s linear;
-    }
+  &--pin {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+    box-shadow: none;
   }
 
   &--opened {
-    min-width: 268px;
-    padding-left: var(--ds-space-12);
+    min-width: 280px;
+
+    #{$this}__btn {
+      display: flex;
+    }
+
+    #{$this}__header {
+      padding: var(--ds-space-16) var(--ds-space-10);
+    }
 
     .navigation-item {
       &__inner {
         > a,  >div:not(.badge, .avatar) {
-          padding-left: var(--ds-space-12);
-
           > .svg-icon + .body {
-            max-width: 100%;
-            padding-left: var(--ds-space-8);
+              max-width: 100%;
+              padding-left: var(--ds-space-10);
           }
-        }
-      }
-
-      &.navigation-item--user {
-        .navigation-item__inner {
-          .avatar + .body {
-            max-width: 100%;
-            padding-left: var(--ds-space-8);
-          }
-        }
-
-        .navigation-item__child {
-          display: none;
-        }
-      }
-
-      &__child {
-        position: relative;
-        width: initial;
-        left: unset;
-        overflow: hidden;
-        transition: max-height 300ms linear;
-        border: 0;
-        border-radius: 0;
-        display: block;
-        max-height: 0;
-
-        &.active {
-          max-height: 1000px;
-          transition: max-height 300ms linear;
         }
       }
     }
@@ -89,63 +66,18 @@
         }
       }
     }
-
-    #{$this}__bottom {
-      text-align: left;
-
-      &__text {
-        max-width: 100%;
-      }
-
-      &__img {
-        min-width: 130px;
-        width: 130px;
-      }
-    }
   }
 
-  &__icon {
-    margin: var(--ds-space-24) 0;
-  }
-
-  &__bottom {
-    padding: var(--ds-space-12);
-
-    &__text {
-      @include mixin.truncate(0);
-      transition: max-width 0.3s linear;
-    }
-
-    &__img {
-      width: 20px;
-      min-width: 20px;
-      height: var(--ds-size-20);
-      overflow: hidden;
-      transition: all 0.3s linear;
-
-      img {
-        max-width: initial;
-      }
-    }
-  }
-
-  header {
+  &__header {
     @include mixin.flexbox;
     @include mixin.align-items(center);
-    min-height: 72px;
-
-    .navigation-item {
-      width: 100%;
-      &__inner {
-        &:hover {
-          background-color: transparent;
-        }
-      }
-    }
+    @include mixin.justify-content(space-between);
+    padding: var(--ds-space-16) var(--ds-space-20);
+    height: var(--ds-size-64);
   }
 
   main {
-    padding-top: var(--ds-space-10);
+    padding: 0 var(--ds-space-10);
   }
 
   footer {
@@ -161,144 +93,70 @@
       @include mixin.flexbox;
       @include mixin.align-items(center);
       width: 100%;
-      border-radius: var(--ds-border-radius-sm);
+      border-radius: var(--ds-border-radius-lg);
 
-      >a, >div:not(.badge, .avatar) {
+      >a, >div:not(.badge) {
         @include mixin.flexbox;
         @include mixin.align-items(center);
         position: relative;
         width: 100%;
         height: var(--ds-size-40);
-        padding: var(--ds-space-4) var(--ds-space-12) var(--ds-space-4) var(--ds-space-24);
+        padding: 0 var(--ds-space-10);
         text-decoration: none;
         transition: padding-left 0.3s linear;
+
+        >.svg-icon {
+          path {
+            fill: var(--ds-color-text-tertiary);
+          }
+        }
 
         >.svg-icon + .body {
           @include mixin.truncate(0);
           padding-left: 0;
+          color: var(--ds-color-text-secondary);
           transition: all 0.3s linear;
         }
       }
 
       .svg-icon {
-        font-size: var(--font-size-20);
-        min-width: var(--ds-size-20);
+        font-size: var(--font-size-24);
+        min-width: var(--ds-size-24);
       }
 
       &:hover {
-        background-color: var(--ds-color-bg-container-lighter);
-      }
-
-      &.active {
         background-color: var(--ds-color-bg-container-light);
-
-        &::after {
-          content: '';
-          position: absolute;
-          top: 50%;
-          right: 0;
-          transform: translateY(-50%);
-          width: var(--ds-size-4);
-          height: var(--ds-size-20);
-          border-radius: var(--ds-border-radius-xs) 0 0 var(--ds-border-radius-xs);
-          background-color: var(--ds-color-text-selected);
-        }
       }
-  }
 
-  &#{$this}--header {
-    @include mixin.flexbox;
-    @include mixin.align-items(center);
-    min-height: 72px;
-    padding: 0 var(--ds-space-12) 0 var(--ds-space-24);
-    transition: padding-left 0.3s linear;
-
-    #{$this}__inner {
-      >div {
-        @include mixin.flexbox;
-        @include mixin.align-items(center);
-
-        .svg-icon {
-          font-size: var(--font-size-20);
-        }
-
-        >.svg-icon + .body {
-          @include mixin.truncate(0);
-          padding-left: 0;
-          transition: all 0.3s linear;
-        }
-      }
-    }
-  }
-
-  &#{$this}--user {
-    #{$this}__inner {
-      .avatar + .body {
-        @include mixin.truncate(0);
-        padding-left: 0;
-        transition: all 0.3s linear;
-      }
-    }
-
-    #{$this}__child {
       &.active {
-        top: unset;
-        bottom: 0;
-      }
-    }
+        background-color: var(--ds-color-bg-container);
 
-    #{$this}__expandable-icon {
-      display: none;
-    }
-  }
+        >a, >div:not(.badge) {
 
-
-  &#{$this}--sub {
-    #{$this}__inner {
-      >a {
-        >.svg-icon + .body {
-          padding-left: var(--ds-space-8);
+          >.svg-icon {
+            path {
+              fill: var(--ds-color-text-primary);
+            }
+          }
+          >.svg-icon + .body {
+            color: var(--ds-color-text-primary);
+          }
         }
       }
-    }
   }
 
   &__child {
-    position: absolute;
-    top: 0;
-    min-width: 160px;
-    left: calc(100% + 4px);
     overflow: hidden;
-    transition: 300ms;
-    border: 1px solid var(--ds-color-border-primary);
-    border-radius: 4px;
-    display: none;
-    background-color: var(--ds-color-bg-white);
+    max-height: 0;
+    transition: max-height 0.3s linear;
 
     &.active {
-      overflow: visible;
-      display: block;
-    }
-
-    &--title {
-      display: none;
-
-      &.active {
-        display: block;
-        padding: var(--space-12);
-      }
-    }
-
-    #{$this}__inner {
-      >a {
-        >.svg-icon + .body {
-          max-width: 100% !important;
-        }
-      }
+      max-height: 1000px;
     }
   }
 
   &__expandable-icon {
+    cursor: pointer;
     .svg-icon {
       transition: all 0.3s linear;
     }
@@ -315,18 +173,19 @@
   $this: &;
   position: relative;
   flex: 1;
-  margin-top: var(--ds-space-16);
+  margin-bottom: var(--ds-space-16);
 
   &__label {
     @include mixin.flexbox;
     @include mixin.align-items(center);
     @include mixin.truncate(100%);
-    min-height: var(--ds-size-20);
-    padding: 0 var(--ds-space-12);
-    margin-bottom: var(--ds-space-12);
+    min-height: var(--ds-size-32);
+    padding: 0 var(--ds-space-10);
+    margin-bottom: var(--ds-space-2);
 
     &__text {
       @include mixin.truncate(0);
+      font-size: 13px;
       transition: max-width 0.3s linear;
     }
 
@@ -335,8 +194,4 @@
       transition: max-width 0.5s linear;
     }
   }
-}
-
-.profile-text {
-  flex: 1;
 }
