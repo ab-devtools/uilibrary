@@ -13,13 +13,13 @@ export const SideNavigation = (props: TSideNavigationPropTypes): JSX.Element => 
   const [isPined, setPined] = useState(true)
 
   const onMouseEnter = () => {
-    if (isPined) {
+    if (!isPined) {
       setOpen?.(true)
     }
   }
 
   const onMouseLeave = () => {
-    if (isPined) {
+    if (!isPined) {
       setOpen?.(false)
     }
   }
@@ -39,7 +39,7 @@ export const SideNavigation = (props: TSideNavigationPropTypes): JSX.Element => 
         className
       )}
     >
-      <div className="side-navigation__header">
+      <header>
         <Image imagePath={isOpen ? logo : logoClosed} isBackgroundImage={false} />
         <ButtonIcon
           iconProps={{ Component: isPined ? IconPanelRight : IconPanelLeft }}
@@ -47,7 +47,7 @@ export const SideNavigation = (props: TSideNavigationPropTypes): JSX.Element => 
           className={'side-navigation__btn'}
           onClick={onPin}
         />
-      </div>
+      </header>
       {children}
     </div>
   )

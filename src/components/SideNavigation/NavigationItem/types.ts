@@ -11,6 +11,11 @@ export enum NavigationItemTypes {
   ACTION = 'action'
 }
 
+
+export type TActionItemProps = {
+  iconProps: TSVGIconComponent
+  onClick?: () => void
+}
 export interface TNavigationLinkPropTypes {
   As: () => JSX.Element
   expandIconProps?: ISVGIconProps
@@ -24,4 +29,5 @@ export interface TNavigationLinkPropTypes {
   active?: boolean
   badgeProps?: TBadgeProps
   children?: ReactNode
+  actionsList?: TActionItemProps[]
 }
