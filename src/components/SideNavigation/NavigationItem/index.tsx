@@ -1,12 +1,12 @@
 import type { ReactElement } from 'react'
 import React, { useState } from 'react'
 import classNames from 'classnames'
-import type {TActionItemProps, TNavigationLinkPropTypes} from './types'
+import type { TActionItemProps, TNavigationLinkPropTypes } from './types'
 import { NavigationItemTypes } from './types'
 import { Badge } from '../../Badge'
 import IconDynamicComponent from '../../../helperComponents/IconDynamicComponent/IconDynamicComponent'
 import IconChevronDown from '../../SVGIcons/IconChevronDown'
-import {ButtonIcon} from '../../ButtonIcon';
+import { ButtonIcon } from '../../ButtonIcon'
 
 export const NavigationItem = (props: TNavigationLinkPropTypes): ReactElement => {
   const {
@@ -43,34 +43,41 @@ export const NavigationItem = (props: TNavigationLinkPropTypes): ReactElement =>
   return (
     <>
       <div
-        className={classNames('navigation-item', `navigation-item--${type}`, `${expandable ? 'navigation-item--expandable' : ''}`)}
+        className={classNames(
+          'navigation-item',
+          `navigation-item--${type}`,
+          `${expandable ? 'navigation-item--expandable' : ''}`
+        )}
         onClick={() => setChildOpen(!childOpen)}
       >
         <div className={classNames('navigation-item__inner', active && 'active')}>
-          {expandable || actionsList?.length ?
+          {expandable || actionsList?.length ? (
             <div className={'navigation-item__actions'}>
               {expandable && (
-                  <span className={classNames('navigation-item__actions__expand', childOpen && 'opened')}>
-                    {expandIconProps.Component && (
-                        <expandIconProps.Component
-                            size={expandIconProps.size || 'small'}
-                            className={'mr-12'}
-                        />
-                    )}
+                <span
+                  className={classNames('navigation-item__actions__expand', childOpen && 'opened')}
+                >
+                  {expandIconProps.Component && (
+                    <expandIconProps.Component
+                      size={expandIconProps.size || 'small'}
+                      className={'mr-12'}
+                    />
+                  )}
                 </span>
               )}
               {actionsList?.length && (
-                  <div className={'navigation-item__actions__right'}>
-                    {
-                      actionsList.map((item: TActionItemProps, index) => {
-                            return <div key={index}><ButtonIcon iconProps={{Component: item.iconProps}} size={'small'}/></div>
-                      })
-                    }
-                  </div>
-                )
-              }
+                <div className={'navigation-item__actions__right'}>
+                  {actionsList.map((item: TActionItemProps, index) => {
+                    return (
+                      <div key={index}>
+                        <ButtonIcon iconProps={{ Component: item.iconProps }} size={'small'} />
+                      </div>
+                    )
+                  })}
+                </div>
+              )}
             </div>
-          :null }
+          ) : null}
           <>
             {displayHeader}
             {displayNavigationItem()}
@@ -86,7 +93,6 @@ export const NavigationItem = (props: TNavigationLinkPropTypes): ReactElement =>
               className={'mr-12'}
             />
           )}
-
         </div>
         {children && (
           <div className={classNames('navigation-item__child', childOpen && 'active')}>
