@@ -1,3 +1,14 @@
+## [1.4.1](https://github.com/ab-devtools/uilibrary/compare/1.4.0...1.4.1) (2025-04-18)
+
+
+### Bug Fixes
+
+* add pin and hover functionality ([ada740f](https://github.com/ab-devtools/uilibrary/commit/ada740f8daf9525bd937440457469f894a71d86a))
+* ui changes for side navigation ([6360fa8](https://github.com/ab-devtools/uilibrary/commit/6360fa83c2fca84af98ea0c361863302a5720dbd))
+* ui fixes ([d28d45c](https://github.com/ab-devtools/uilibrary/commit/d28d45c043cba9b1b72d5e5c5991e98499e68047))
+* ui fixes ([438f37b](https://github.com/ab-devtools/uilibrary/commit/438f37b8f717b29ef98fdb4e9dd311abcbf8591e))
+* ui fixes ([587a53f](https://github.com/ab-devtools/uilibrary/commit/587a53fa22bd36d4dd11d186a5f1c39376e5548b))
+
 # [1.4.0](https://github.com/ab-devtools/uilibrary/compare/1.3.3...1.4.0) (2025-04-17)
 
 
