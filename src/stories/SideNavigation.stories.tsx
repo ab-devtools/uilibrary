@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { ReactElement, useState } from 'react'
-import {ButtonIcon, NavigationItem, SideNavigation as _SideNavigation, Text} from '../index'
+import { ButtonIcon, NavigationItem, SideNavigation as _SideNavigation, Text } from '../index'
 import { Block } from '../components/SideNavigation/Block'
 import { NavigationItemTypes } from '../components/SideNavigation/NavigationItem/types'
 // @ts-ignore
@@ -17,8 +17,8 @@ import IconWallet from '../components/SVGIcons/IconWallet'
 import { StoryFn } from '@storybook/react'
 import { TSideNavigationPropTypes } from '../components/SideNavigation/types'
 import IconDocumentFilled from '../components/SVGIcons/IconDocumentFilled'
-import IconAdd from "../components/SVGIcons/IconAdd";
-import IconMore from "../components/SVGIcons/IconMore";
+import IconAdd from '../components/SVGIcons/IconAdd'
+import IconMore from '../components/SVGIcons/IconMore'
 
 export default {
   title: 'Side Navigation',
@@ -72,12 +72,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
               type={NavigationItemTypes.MAIN}
               isOpen={isOpen}
               expandable
-              actionsList={
-                  [
-                      {iconProps: IconAdd},
-                      {iconProps: IconMore}
-                  ]
-              }
+              actionsList={[{ iconProps: IconAdd }, { iconProps: IconMore }]}
             >
               <>
                 <NavigationItem
@@ -161,7 +156,6 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
 
             <NavigationItem
               As={() => (
-
                 <a href="/https://ameriabank.am">
                   <IconHome />
                   <Text weight={'semibold'}>Mortgage</Text>
@@ -180,12 +174,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
               type={NavigationItemTypes.MAIN}
               isOpen={isOpen}
               expandable
-              actionsList={
-                [
-                    {iconProps: IconAdd},
-                    {iconProps: IconMore}
-                ]
-              }
+              actionsList={[{ iconProps: IconAdd }, { iconProps: IconMore }]}
             >
               <>
                 <NavigationItem

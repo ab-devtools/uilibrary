@@ -11,7 +11,6 @@ export enum NavigationItemTypes {
   ACTION = 'action'
 }
 
-
 export type TActionItemProps = {
   iconProps: TSVGIconComponent
   onClick?: () => void
