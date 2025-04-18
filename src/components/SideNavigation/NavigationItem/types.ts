@@ -29,4 +29,5 @@ export interface TNavigationLinkPropTypes {
   badgeProps?: TBadgeProps
   children?: ReactNode
   actionsList?: TActionItemProps[]
+  className?: string
 }
