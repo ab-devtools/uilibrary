@@ -1,3 +1,11 @@
+## [1.4.3](https://github.com/ab-devtools/uilibrary/compare/1.4.2...1.4.3) (2025-04-21)
+
+
+### Bug Fixes
+
+* navigation classname props ([9f4ff18](https://github.com/ab-devtools/uilibrary/commit/9f4ff183931f7f285a63ff7ec8fadc193550abb5))
+* navigation classname props ([58a1765](https://github.com/ab-devtools/uilibrary/commit/58a17654df713ca2e8ce7566f3fab100dc960c1f))
+
 ## [1.4.2](https://github.com/ab-devtools/uilibrary/compare/1.4.1...1.4.2) (2025-04-21)
 
 
