@@ -25,7 +25,8 @@ export const NavigationItem = (props: TNavigationLinkPropTypes): ReactElement =>
       size: 'medium'
     },
     children,
-    actionsList
+    actionsList,
+    className = ''
   } = props
 
   const [childOpen, setChildOpen] = useState(false)
@@ -46,7 +47,8 @@ export const NavigationItem = (props: TNavigationLinkPropTypes): ReactElement =>
         className={classNames(
           'navigation-item',
           `navigation-item--${type}`,
-          `${expandable ? 'navigation-item--expandable' : ''}`
+          `${expandable ? 'navigation-item--expandable' : ''}`,
+           className
         )}
         onClick={() => setChildOpen(!childOpen)}
       >

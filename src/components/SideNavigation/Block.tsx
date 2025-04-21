@@ -3,11 +3,12 @@ import React from 'react'
 import { Text } from '../Text'
 import type { TBlock } from './types'
 import { Divider } from '../Divider'
+import classNames from 'classnames';
 
 export const Block = (props: TBlock): ReactElement => {
-  const { children, label } = props
+  const { children, label, className = '' } = props
   return (
-    <div className="navigation-block">
+    <div className={classNames('navigation-block', className)}>
       <div className="navigation-block__label">
         <>
           <Text type="tertiary" weight={'semibold'} className={'navigation-block__label__text'}>
