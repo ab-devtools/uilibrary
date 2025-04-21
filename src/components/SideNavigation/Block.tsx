@@ -3,7 +3,7 @@ import React from 'react'
 import { Text } from '../Text'
 import type { TBlock } from './types'
 import { Divider } from '../Divider'
-import classNames from 'classnames';
+import classNames from 'classnames'
 
 export const Block = (props: TBlock): ReactElement => {
   const { children, label, className = '' } = props

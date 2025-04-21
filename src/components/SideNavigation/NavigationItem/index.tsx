@@ -48,7 +48,7 @@ export const NavigationItem = (props: TNavigationLinkPropTypes): ReactElement =>
           'navigation-item',
           `navigation-item--${type}`,
           `${expandable ? 'navigation-item--expandable' : ''}`,
-           className
+          className
         )}
         onClick={() => setChildOpen(!childOpen)}
       >
