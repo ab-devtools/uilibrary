@@ -19,4 +19,5 @@ export interface TBlock {
   children: ReactNode
   label?: string
   isOpen?: boolean
+  className?: string
 }

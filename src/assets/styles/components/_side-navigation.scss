@@ -6,8 +6,9 @@
   @include mixin.flexbox;
   @include mixin.flex-direction(column);
   @include mixin.fixed(0,unset, 0, 0);
+  min-width: 64px;
   width: 64px;
-  transition: width 0.4s linear, padding-left 0.4s linear;
+  transition: width 0.4s linear, min-width 0.4s linear, padding-left 0.4s linear;
   background-color: var(--ds-color-bg-container-lighter);
   border-right: 1px solid var(--ds-color-border-quintary);
   box-shadow: 0 0 56px 2px #4E4E4E1F;
@@ -30,6 +31,7 @@
 
   &--opened {
     width: 280px;
+    min-width: 280px;
 
     #{$this}__btn {
       display: flex;
