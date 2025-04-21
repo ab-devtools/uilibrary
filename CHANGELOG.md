@@ -1,3 +1,12 @@
+## [1.4.2](https://github.com/ab-devtools/uilibrary/compare/1.4.1...1.4.2) (2025-04-21)
+
+
+### Bug Fixes
+
+* added classname props for item and block ([ce59387](https://github.com/ab-devtools/uilibrary/commit/ce59387ec5ec932addab263cacd8b3d8ebd4b5cf))
+* added classname props for item and block ([1be8be7](https://github.com/ab-devtools/uilibrary/commit/1be8be7a3ef326c4f1fbd5ac65277468f2ac04a0))
+* navigation min width ([f72842b](https://github.com/ab-devtools/uilibrary/commit/f72842b6da34d19da4f7879add5b50a2eddd267a))
+
 ## [1.4.1](https://github.com/ab-devtools/uilibrary/compare/1.4.0...1.4.1) (2025-04-18)
 
 
