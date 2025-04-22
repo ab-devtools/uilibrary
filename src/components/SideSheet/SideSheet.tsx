@@ -13,6 +13,7 @@ import IconDismiss from '../SVGIcons/IconDismiss'
 import { Heading } from '../Heading'
 import { ButtonIcon } from '../ButtonIcon'
 import { Tab } from '../Tab'
+import { isMobile } from '../../utils/helpers';
 
 export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
   const {
@@ -82,8 +83,8 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
       {isOpen ? (
         <motion.div
           className={classnames('side-sheet', {
-            'side-sheet--positioned': isPositioned,
-            'side-sheet--with-overlay': withOverlay
+            'side-sheet--positioned': isPositioned || isMobile(),
+            'side-sheet--with-overlay': withOverlay || isMobile()
           })}
           initial={{
             opacity: 0
