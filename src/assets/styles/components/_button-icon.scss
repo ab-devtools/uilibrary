@@ -42,7 +42,7 @@
     }
 
     &:focus {
-      box-shadow: var(--ds-button-icon-shadow-focused);
+      //box-shadow: var(--ds-button-icon-shadow-focused);
       background-color: var(--ds-button-icon-bg-focused);
     }
   }
