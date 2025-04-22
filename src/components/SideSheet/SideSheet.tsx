@@ -13,7 +13,7 @@ import IconDismiss from '../SVGIcons/IconDismiss'
 import { Heading } from '../Heading'
 import { ButtonIcon } from '../ButtonIcon'
 import { Tab } from '../Tab'
-import { isMobile } from '../../utils/helpers';
+import { isMobile } from '../../utils/helpers'
 
 export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
   const {
