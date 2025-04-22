@@ -19,6 +19,8 @@ import { TSideNavigationPropTypes } from '../components/SideNavigation/types'
 import IconDocumentFilled from '../components/SVGIcons/IconDocumentFilled'
 import IconAdd from '../components/SVGIcons/IconAdd'
 import IconMore from '../components/SVGIcons/IconMore'
+import IconNavigation from "../components/SVGIcons/IconNavigation";
+import {isMobile} from "../utils/helpers";
 
 export default {
   title: 'Side Navigation',
@@ -30,61 +32,86 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
   const [isOpen, setIsOpen] = useState<boolean>(true)
 
   return (
-    <_SideNavigation
-      {...args}
-      setOpen={setIsOpen}
-      isOpen={isOpen}
-      logo={logoImg}
-      logoClosed={logoClosedImg}
-    >
-      <main className={'scrollbar scrollbar--vertical'}>
-        <Block isOpen={isOpen} label="Finance">
-          <>
-            <NavigationItem
-              As={() => (
-                <a href="/https://ameriabank.am">
-                  <IconDocumentFilled />
-                  <Text weight={'semibold'}>Accounts</Text>
-                </a>
-              )}
-              type={NavigationItemTypes.MAIN}
-              isOpen={isOpen}
-              active
-            />
-            <NavigationItem
-              As={() => (
-                <a href="/https://ameriabank.am">
-                  <IconLockClosed />
-                  <Text weight={'semibold'}>Test</Text>
-                </a>
-              )}
-              type={NavigationItemTypes.MAIN}
-              isOpen={isOpen}
-              showAction={args.showAction}
-            />
-            <NavigationItem
-              As={() => (
-                <a>
-                  <IconHome />
-                  <Text weight={'semibold'}>Cards</Text>
-                </a>
-              )}
-              type={NavigationItemTypes.MAIN}
-              isOpen={isOpen}
-              expandable
-              actionsList={[{ iconProps: IconAdd }, { iconProps: IconMore }]}
-            >
+      <div>
+        {isMobile() ?  <ButtonIcon iconProps={{Component: IconNavigation}}  onClick={()=>setIsOpen(true)}/> : null}
+
+        <_SideNavigation
+          {...args}
+          setOpen={setIsOpen}
+          isOpen={isOpen}
+          logo={logoImg}
+          logoClosed={logoClosedImg}
+        >
+          <main className={'scrollbar scrollbar--vertical'}>
+            <Block isOpen={isOpen} label="Finance">
               <>
                 <NavigationItem
                   As={() => (
                     <a href="/https://ameriabank.am">
-                      <IconDocument />
+                      <IconDocumentFilled />
                       <Text weight={'semibold'}>Accounts</Text>
                     </a>
                   )}
-                  type={NavigationItemTypes.SUB}
+                  type={NavigationItemTypes.MAIN}
                   isOpen={isOpen}
+                  active
                 />
+                <NavigationItem
+                  As={() => (
+                    <a href="/https://ameriabank.am">
+                      <IconLockClosed />
+                      <Text weight={'semibold'}>Test</Text>
+                    </a>
+                  )}
+                  type={NavigationItemTypes.MAIN}
+                  isOpen={isOpen}
+                  showAction={args.showAction}
+                />
+                <NavigationItem
+                  As={() => (
+                    <a>
+                      <IconHome />
+                      <Text weight={'semibold'}>Cards</Text>
+                    </a>
+                  )}
+                  type={NavigationItemTypes.MAIN}
+                  isOpen={isOpen}
+                  expandable
+                  actionsList={[{ iconProps: IconAdd }, { iconProps: IconMore }]}
+                >
+                  <>
+                    <NavigationItem
+                      As={() => (
+                        <a href="/https://ameriabank.am">
+                          <IconDocument />
+                          <Text weight={'semibold'}>Accounts</Text>
+                        </a>
+                      )}
+                      type={NavigationItemTypes.SUB}
+                      isOpen={isOpen}
+                    />
+                    <NavigationItem
+                      As={() => (
+                        <a href="/https://ameriabank.am">
+                          <IconSavings />
+                          <Text weight={'semibold'}>Savings</Text>
+                        </a>
+                      )}
+                      type={NavigationItemTypes.SUB}
+                      isOpen={isOpen}
+                    />
+                    <NavigationItem
+                      As={() => (
+                        <a href="/https://ameriabank.am">
+                          <IconWallet />
+                          <Text weight={'semibold'}>Overdraft</Text>
+                        </a>
+                      )}
+                      type={NavigationItemTypes.SUB}
+                      isOpen={isOpen}
+                    />
+                  </>
+                </NavigationItem>
                 <NavigationItem
                   As={() => (
                     <a href="/https://ameriabank.am">
@@ -92,7 +119,33 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                       <Text weight={'semibold'}>Savings</Text>
                     </a>
                   )}
-                  type={NavigationItemTypes.SUB}
+                  type={NavigationItemTypes.MAIN}
+                  isOpen={isOpen}
+                  showBadge
+                  badgeProps={{ text: '+999', type: 'transparent', size: 'large' }}
+                />
+              </>
+            </Block>
+            <Block isOpen={isOpen} label="Finance">
+              <>
+                <NavigationItem
+                  As={() => (
+                    <a href="/https://ameriabank.am">
+                      <IconWallet />
+                      <Text weight={'semibold'}>Overdraft</Text>
+                    </a>
+                  )}
+                  type={NavigationItemTypes.MAIN}
+                  isOpen={isOpen}
+                />
+                <NavigationItem
+                  As={() => (
+                    <a href="/https://ameriabank.am">
+                      <IconHome />
+                      <Text weight={'semibold'}>Mortgage</Text>
+                    </a>
+                  )}
+                  type={NavigationItemTypes.MAIN}
                   isOpen={isOpen}
                 />
                 <NavigationItem
@@ -102,108 +155,61 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                       <Text weight={'semibold'}>Overdraft</Text>
                     </a>
                   )}
-                  type={NavigationItemTypes.SUB}
+                  type={NavigationItemTypes.MAIN}
                   isOpen={isOpen}
                 />
-              </>
-            </NavigationItem>
-            <NavigationItem
-              As={() => (
-                <a href="/https://ameriabank.am">
-                  <IconSavings />
-                  <Text weight={'semibold'}>Savings</Text>
-                </a>
-              )}
-              type={NavigationItemTypes.MAIN}
-              isOpen={isOpen}
-              showBadge
-              badgeProps={{ text: '+999', type: 'transparent', size: 'large' }}
-            />
-          </>
-        </Block>
-        <Block isOpen={isOpen} label="Finance">
-          <>
-            <NavigationItem
-              As={() => (
-                <a href="/https://ameriabank.am">
-                  <IconWallet />
-                  <Text weight={'semibold'}>Overdraft</Text>
-                </a>
-              )}
-              type={NavigationItemTypes.MAIN}
-              isOpen={isOpen}
-            />
-            <NavigationItem
-              As={() => (
-                <a href="/https://ameriabank.am">
-                  <IconHome />
-                  <Text weight={'semibold'}>Mortgage</Text>
-                </a>
-              )}
-              type={NavigationItemTypes.MAIN}
-              isOpen={isOpen}
-            />
-            <NavigationItem
-              As={() => (
-                <a href="/https://ameriabank.am">
-                  <IconWallet />
-                  <Text weight={'semibold'}>Overdraft</Text>
-                </a>
-              )}
-              type={NavigationItemTypes.MAIN}
-              isOpen={isOpen}
-            />
 
-            <NavigationItem
-              As={() => (
-                <a href="/https://ameriabank.am">
-                  <IconHome />
-                  <Text weight={'semibold'}>Mortgage</Text>
-                </a>
-              )}
-              type={NavigationItemTypes.MAIN}
-              isOpen={isOpen}
-            />
-            <NavigationItem
-              As={() => (
-                <a>
-                  <IconSavings />
-                  <Text weight={'semibold'}>Car Leon</Text>
-                </a>
-              )}
-              type={NavigationItemTypes.MAIN}
-              isOpen={isOpen}
-              expandable
-              actionsList={[{ iconProps: IconAdd }, { iconProps: IconMore }]}
-            >
-              <>
                 <NavigationItem
                   As={() => (
                     <a href="/https://ameriabank.am">
+                      <IconHome />
+                      <Text weight={'semibold'}>Mortgage</Text>
+                    </a>
+                  )}
+                  type={NavigationItemTypes.MAIN}
+                  isOpen={isOpen}
+                />
+                <NavigationItem
+                  As={() => (
+                    <a>
                       <IconSavings />
-                      <Text weight={'semibold'}>Savings</Text>
+                      <Text weight={'semibold'}>Car Leon</Text>
                     </a>
                   )}
-                  type={NavigationItemTypes.SUB}
+                  type={NavigationItemTypes.MAIN}
                   isOpen={isOpen}
-                />
-                <NavigationItem
-                  As={() => (
-                    <a href="/https://ameriabank.am">
-                      <IconDocument />
-                      <Text weight={'semibold'}>Accounts</Text>
-                    </a>
-                  )}
-                  type={NavigationItemTypes.SUB}
-                  isOpen={isOpen}
-                />
+                  expandable
+                  actionsList={[{ iconProps: IconAdd }, { iconProps: IconMore }]}
+                >
+                  <>
+                    <NavigationItem
+                      As={() => (
+                        <a href="/https://ameriabank.am">
+                          <IconSavings />
+                          <Text weight={'semibold'}>Savings</Text>
+                        </a>
+                      )}
+                      type={NavigationItemTypes.SUB}
+                      isOpen={isOpen}
+                    />
+                    <NavigationItem
+                      As={() => (
+                        <a href="/https://ameriabank.am">
+                          <IconDocument />
+                          <Text weight={'semibold'}>Accounts</Text>
+                        </a>
+                      )}
+                      type={NavigationItemTypes.SUB}
+                      isOpen={isOpen}
+                    />
+                  </>
+                </NavigationItem>
               </>
-            </NavigationItem>
-          </>
-        </Block>
-      </main>
-      {/*<footer></footer>*/}
-    </_SideNavigation>
+            </Block>
+          </main>
+          {/*<footer></footer>*/}
+        </_SideNavigation>
+      </div>
   )
 }
 

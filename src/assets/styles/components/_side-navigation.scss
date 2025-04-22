@@ -18,6 +18,12 @@
   bottom: 0;
   height: 100%;
   z-index: 9999;
+
+  @media (max-width: 1024px) {
+    left: -100%;
+    width: 280px;
+    transition: left 0.3s linear;
+  }
   
   &__btn {
     cursor: pointer;
@@ -33,6 +39,10 @@
     width: 280px;
     min-width: 280px;
 
+    @media (max-width: 1024px) {
+      left: 0;
+    }
+
     #{$this}__btn {
       display: flex;
     }
@@ -41,8 +51,8 @@
       &__inner {
         > a,  >div:not(.badge, .navigation-item__actions) {
           > .svg-icon + .body {
-              max-width: 100%;
-              padding-left: var(--ds-space-10);
+             max-width: 100%;
+             padding-left: var(--ds-space-10);
           }
         }
       }
@@ -115,10 +125,12 @@
         }
 
         >.svg-icon + .body {
-          @include mixin.truncate(0);
-          padding-left: 0;
-          color: var(--ds-color-text-secondary);
-          transition: all 0.3s linear;
+          @media (min-width: 1025px) {
+            @include mixin.truncate(0);
+            padding-left: 0;
+            color: var(--ds-color-text-secondary);
+            transition: all 0.3s linear;
+          }
         }
       }
 
@@ -225,14 +237,20 @@
     margin-bottom: var(--ds-space-2);
 
     &__text {
-      @include mixin.truncate(0);
-      font-size: 13px;
-      transition: max-width 0.3s linear;
+      @media (min-width: 1025px) {
+        @include mixin.truncate(0);
+        font-size: 13px;
+        transition: max-width 0.3s linear;
+      }
     }
 
     &__divider {
       @include mixin.truncate(100%);
       transition: max-width 0.5s linear;
+
+      @media (max-width: 1024px) {
+        display: none;
+      }
     }
   }
 }
