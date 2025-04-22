@@ -30,7 +30,7 @@ export default {
 
 const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
   const { setOpen, isOpen, onClose, onMouseEnter, onMouseLeave, onPin, isPined } =
-    useSideNavigationControls();
+    useSideNavigationControls()
 
   const [siNavItemOpen, setNavItemOpen] = useState(false)
 
