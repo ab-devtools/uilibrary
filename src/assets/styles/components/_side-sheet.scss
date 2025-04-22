@@ -44,17 +44,35 @@
 
     #{$this}__container {
       position: absolute;
-      top: var(--ds-space-16);
-      bottom: var(--ds-space-16);
       box-shadow: var(--ds-side-sheet-shadow);
       border-radius: var(--ds-side-sheet-border-radius);
       border: var(--ds-side-sheet-border);
 
+      @include mixin.screen('phablet', max) {
+        right: initial !important;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        box-shadow: none;
+      }
+
+      @include mixin.screen('phablet', min) {
+        top: var(--ds-space-16);
+        bottom: var(--ds-space-16);
+      }
+
       &--right {
         margin-right: var(--ds-space-16);
+
+        @include mixin.screen('phablet', max) {
+          margin-right: unset;
+        }
       }
       &--left {
         margin-left: var(--ds-space-16);
+
+        @include mixin.screen('phablet', max) {
+          margin-left: unset;
+        }
       }
     }
   }
@@ -65,6 +83,12 @@
     width: 100%;
     position: relative;
     background-color: var(--ds-side-sheet-bg);
+
+    @include mixin.screen('phablet', max) {
+      max-height: 100%;
+      max-width: unset !important;
+      animation: show 0.4s ease-in;
+    }
 
     &--small {
       max-width: var(--ds-side-sheet-width-sm);
@@ -141,4 +165,9 @@
   &__close {
     cursor: pointer;
   }
+}
+
+@include mixin.keyframes(show) {
+  0%   { bottom: -100% }
+  100% { bottom: 0; }
 }
