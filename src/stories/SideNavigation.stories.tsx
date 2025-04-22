@@ -29,22 +29,22 @@ export default {
 }
 
 const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
-  const { setOpen, isOpen, onClose, onMouseEnter, onMouseLeave, onPin, isPined } =
+  const { onOpen, isOpen, onClose, onMouseEnter, onMouseLeave, onPin, isPined } =
     useSideNavigationControls()
 
-  const [siNavItemOpen, setNavItemOpen] = useState(false)
+  const [isNavigationItemOpen, setNavigationItemOpen] = useState(false)
 
   useEffect(() => {
     if (!isMobile()) {
       onPin?.()
-      setOpen?.(true)
+      onOpen?.(true)
     }
   }, [])
 
   return (
     <div>
       {isMobile() ? (
-        <ButtonIcon iconProps={{ Component: IconNavigation }} onClick={() => setOpen?.(true)} />
+        <ButtonIcon iconProps={{ Component: IconNavigation }} onClick={() => onOpen?.(true)} />
       ) : null}
 
       <_SideNavigation
@@ -53,7 +53,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
         isOpen={isOpen}
         logoClosed={logoClosedImg}
         onClose={onClose}
-        setOpen={setOpen}
+        onOpen={onOpen}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         onPin={onPin}
@@ -70,7 +70,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                   </a>
                 )}
                 type={NavigationItemTypes.MAIN}
-                isOpen={siNavItemOpen}
+                isOpen={isNavigationItemOpen}
                 active
               />
               <NavigationItem
@@ -81,7 +81,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                   </a>
                 )}
                 type={NavigationItemTypes.MAIN}
-                isOpen={siNavItemOpen}
+                isOpen={isNavigationItemOpen}
                 showAction={args.showAction}
               />
               <NavigationItem
@@ -92,7 +92,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                   </a>
                 )}
                 type={NavigationItemTypes.MAIN}
-                isOpen={siNavItemOpen}
+                isOpen={isNavigationItemOpen}
                 expandable
                 actionsList={[{ iconProps: IconAdd }, { iconProps: IconMore }]}
               >
@@ -105,7 +105,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                       </a>
                     )}
                     type={NavigationItemTypes.SUB}
-                    isOpen={siNavItemOpen}
+                    isOpen={isNavigationItemOpen}
                   />
                   <NavigationItem
                     As={() => (
@@ -115,7 +115,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                       </a>
                     )}
                     type={NavigationItemTypes.SUB}
-                    isOpen={siNavItemOpen}
+                    isOpen={isNavigationItemOpen}
                   />
                   <NavigationItem
                     As={() => (
@@ -125,7 +125,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                       </a>
                     )}
                     type={NavigationItemTypes.SUB}
-                    isOpen={siNavItemOpen}
+                    isOpen={isNavigationItemOpen}
                   />
                 </>
               </NavigationItem>
@@ -137,7 +137,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                   </a>
                 )}
                 type={NavigationItemTypes.MAIN}
-                isOpen={siNavItemOpen}
+                isOpen={isNavigationItemOpen}
                 showBadge
                 badgeProps={{ text: '+999', type: 'transparent', size: 'large' }}
               />
@@ -153,7 +153,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                   </a>
                 )}
                 type={NavigationItemTypes.MAIN}
-                isOpen={siNavItemOpen}
+                isOpen={isNavigationItemOpen}
               />
               <NavigationItem
                 As={() => (
@@ -163,7 +163,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                   </a>
                 )}
                 type={NavigationItemTypes.MAIN}
-                isOpen={siNavItemOpen}
+                isOpen={isNavigationItemOpen}
               />
               <NavigationItem
                 As={() => (
@@ -173,7 +173,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                   </a>
                 )}
                 type={NavigationItemTypes.MAIN}
-                isOpen={siNavItemOpen}
+                isOpen={isNavigationItemOpen}
               />
 
               <NavigationItem
@@ -184,7 +184,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                   </a>
                 )}
                 type={NavigationItemTypes.MAIN}
-                isOpen={siNavItemOpen}
+                isOpen={isNavigationItemOpen}
               />
               <NavigationItem
                 As={() => (
@@ -194,7 +194,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                   </a>
                 )}
                 type={NavigationItemTypes.MAIN}
-                isOpen={siNavItemOpen}
+                isOpen={isNavigationItemOpen}
                 expandable
                 actionsList={[{ iconProps: IconAdd }, { iconProps: IconMore }]}
               >
@@ -207,7 +207,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                       </a>
                     )}
                     type={NavigationItemTypes.SUB}
-                    isOpen={siNavItemOpen}
+                    isOpen={isNavigationItemOpen}
                   />
                   <NavigationItem
                     As={() => (
@@ -217,7 +217,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                       </a>
                     )}
                     type={NavigationItemTypes.SUB}
-                    isOpen={siNavItemOpen}
+                    isOpen={isNavigationItemOpen}
                   />
                 </>
               </NavigationItem>

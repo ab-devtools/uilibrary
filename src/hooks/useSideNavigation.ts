@@ -5,38 +5,38 @@ export const useSideNavigationControls = (): SideNavigationControls => {
   const [isPined, setPined] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
 
-  const setOpen = useCallback((open: boolean) => {
+  const onOpen = useCallback((open: boolean) => {
     setIsOpen(open)
   }, [])
 
   const onMouseEnter = useCallback(() => {
     if (!isPined) {
-      setOpen(true)
+      onOpen(true)
     }
-  }, [isPined, setOpen])
+  }, [isPined, onOpen])
 
   const onMouseLeave = useCallback(() => {
     if (!isPined) {
-      setOpen(false)
+      onOpen(false)
     }
-  }, [isPined, setOpen])
+  }, [isPined, onOpen])
 
   const onPin = useCallback(() => {
     setPined((prev) => {
       const newState = !prev
-      if (!newState) setOpen(false)
+      if (!newState) onOpen(false)
       return newState
     })
-  }, [setOpen])
+  }, [onOpen])
 
   const onClose = useCallback(() => {
-    setOpen(false)
-  }, [setOpen])
+    onOpen(false)
+  }, [onOpen])
 
   return {
     isPined,
     isOpen,
-    setOpen,
+    onOpen,
     onMouseEnter,
     onMouseLeave,
     onPin,

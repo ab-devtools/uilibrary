@@ -4,7 +4,7 @@ import type { ISVGIconProps } from '../SVGIcons/types'
 export interface SideNavigationControls {
   isPined?: boolean
   isOpen?: boolean
-  setOpen?: (open: boolean) => void
+  onOpen?: (open: boolean) => void
   onMouseEnter?: () => void
   onMouseLeave?: () => void
   onPin?: () => void
