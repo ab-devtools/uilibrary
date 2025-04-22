@@ -1,3 +1,11 @@
+## [1.4.4](https://github.com/ab-devtools/uilibrary/compare/1.4.3...1.4.4) (2025-04-22)
+
+
+### Bug Fixes
+
+* side navigation mobile view ([bc40979](https://github.com/ab-devtools/uilibrary/commit/bc40979fd6f154f17d6a806f31a0697231c7e0c1))
+* side navigation mobile view ([f276132](https://github.com/ab-devtools/uilibrary/commit/f276132fc80caf7c0fb9a5fdc7b3657708a255c8))
+
 ## [1.4.3](https://github.com/ab-devtools/uilibrary/compare/1.4.2...1.4.3) (2025-04-21)
 
 
