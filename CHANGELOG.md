@@ -1,3 +1,11 @@
+## [1.4.6](https://github.com/ab-devtools/uilibrary/compare/1.4.5...1.4.6) (2025-04-22)
+
+
+### Bug Fixes
+
+* side sheet mobile view ([a08370e](https://github.com/ab-devtools/uilibrary/commit/a08370e4a8511591c2fd14d0bc98a85593d68ee7))
+* side sheet mobile view ([7cad354](https://github.com/ab-devtools/uilibrary/commit/7cad354859581ac7df6a4ecf93acb738591f4353))
+
 ## [1.4.5](https://github.com/ab-devtools/uilibrary/compare/1.4.4...1.4.5) (2025-04-22)
 
 
