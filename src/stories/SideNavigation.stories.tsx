@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import React, { ReactElement, useState } from 'react'
+import React, { ReactElement, useEffect, useState } from 'react'
 import { ButtonIcon, NavigationItem, SideNavigation as _SideNavigation, Text } from '../index'
 import { Block } from '../components/SideNavigation/Block'
 import { NavigationItemTypes } from '../components/SideNavigation/NavigationItem/types'
@@ -7,8 +7,7 @@ import { NavigationItemTypes } from '../components/SideNavigation/NavigationItem
 import logoImg from '../assets/images/logo.svg'
 // @ts-ignore
 import logoClosedImg from '../assets/images/logo-closed.svg'
-// @ts-ignore
-import avatar from '../assets/images/avatar.jpg'
+
 import IconDocument from '../components/SVGIcons/IconDocument'
 import IconLockClosed from '../components/SVGIcons/IconLockClosed'
 import IconHome from '../components/SVGIcons/IconHome'
@@ -21,6 +20,7 @@ import IconAdd from '../components/SVGIcons/IconAdd'
 import IconMore from '../components/SVGIcons/IconMore'
 import IconNavigation from '../components/SVGIcons/IconNavigation'
 import { isMobile } from '../utils/helpers'
+import { useSideNavigationControls } from '../hooks/useSideNavigation'
 
 export default {
   title: 'Side Navigation',
@@ -29,20 +29,35 @@ export default {
 }
 
 const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
-  const [isOpen, setIsOpen] = useState<boolean>(true)
+  const { setOpen, isOpen, onClose, onMouseEnter, onMouseLeave, onPin, isPined } =
+    useSideNavigationControls();
+
+  const [siNavItemOpen, setNavItemOpen] = useState(false)
+
+  useEffect(() => {
+    if (!isMobile()) {
+      onPin?.()
+      setOpen?.(true)
+    }
+  }, [])
 
   return (
     <div>
       {isMobile() ? (
-        <ButtonIcon iconProps={{ Component: IconNavigation }} onClick={() => setIsOpen(true)} />
+        <ButtonIcon iconProps={{ Component: IconNavigation }} onClick={() => setOpen?.(true)} />
       ) : null}
 
       <_SideNavigation
         {...args}
-        setOpen={setIsOpen}
-        isOpen={isOpen}
         logo={logoImg}
+        isOpen={isOpen}
         logoClosed={logoClosedImg}
+        onClose={onClose}
+        setOpen={setOpen}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        onPin={onPin}
+        isPined={isPined}
       >
         <main className={'scrollbar scrollbar--vertical'}>
           <Block isOpen={isOpen} label="Finance">
@@ -55,7 +70,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                   </a>
                 )}
                 type={NavigationItemTypes.MAIN}
-                isOpen={isOpen}
+                isOpen={siNavItemOpen}
                 active
               />
               <NavigationItem
@@ -66,7 +81,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                   </a>
                 )}
                 type={NavigationItemTypes.MAIN}
-                isOpen={isOpen}
+                isOpen={siNavItemOpen}
                 showAction={args.showAction}
               />
               <NavigationItem
@@ -77,7 +92,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                   </a>
                 )}
                 type={NavigationItemTypes.MAIN}
-                isOpen={isOpen}
+                isOpen={siNavItemOpen}
                 expandable
                 actionsList={[{ iconProps: IconAdd }, { iconProps: IconMore }]}
               >
@@ -90,7 +105,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                       </a>
                     )}
                     type={NavigationItemTypes.SUB}
-                    isOpen={isOpen}
+                    isOpen={siNavItemOpen}
                   />
                   <NavigationItem
                     As={() => (
@@ -100,7 +115,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                       </a>
                     )}
                     type={NavigationItemTypes.SUB}
-                    isOpen={isOpen}
+                    isOpen={siNavItemOpen}
                   />
                   <NavigationItem
                     As={() => (
@@ -110,7 +125,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                       </a>
                     )}
                     type={NavigationItemTypes.SUB}
-                    isOpen={isOpen}
+                    isOpen={siNavItemOpen}
                   />
                 </>
               </NavigationItem>
@@ -122,7 +137,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                   </a>
                 )}
                 type={NavigationItemTypes.MAIN}
-                isOpen={isOpen}
+                isOpen={siNavItemOpen}
                 showBadge
                 badgeProps={{ text: '+999', type: 'transparent', size: 'large' }}
               />
@@ -138,7 +153,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                   </a>
                 )}
                 type={NavigationItemTypes.MAIN}
-                isOpen={isOpen}
+                isOpen={siNavItemOpen}
               />
               <NavigationItem
                 As={() => (
@@ -148,7 +163,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                   </a>
                 )}
                 type={NavigationItemTypes.MAIN}
-                isOpen={isOpen}
+                isOpen={siNavItemOpen}
               />
               <NavigationItem
                 As={() => (
@@ -158,7 +173,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                   </a>
                 )}
                 type={NavigationItemTypes.MAIN}
-                isOpen={isOpen}
+                isOpen={siNavItemOpen}
               />
 
               <NavigationItem
@@ -169,7 +184,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                   </a>
                 )}
                 type={NavigationItemTypes.MAIN}
-                isOpen={isOpen}
+                isOpen={siNavItemOpen}
               />
               <NavigationItem
                 As={() => (
@@ -179,7 +194,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                   </a>
                 )}
                 type={NavigationItemTypes.MAIN}
-                isOpen={isOpen}
+                isOpen={siNavItemOpen}
                 expandable
                 actionsList={[{ iconProps: IconAdd }, { iconProps: IconMore }]}
               >
@@ -192,7 +207,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                       </a>
                     )}
                     type={NavigationItemTypes.SUB}
-                    isOpen={isOpen}
+                    isOpen={siNavItemOpen}
                   />
                   <NavigationItem
                     As={() => (
@@ -202,7 +217,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                       </a>
                     )}
                     type={NavigationItemTypes.SUB}
-                    isOpen={isOpen}
+                    isOpen={siNavItemOpen}
                   />
                 </>
               </NavigationItem>

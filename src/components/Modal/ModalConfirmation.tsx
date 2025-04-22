@@ -72,7 +72,7 @@ export const ModalConfirmation = (props: TModalConfirmationPropTypes): ReactElem
               ) : null}
               {title ? (
                 <Text
-                  weight="bolder"
+                  weight="bold"
                   lineHeight="large"
                   size="large"
                   dataId={dataIdPrefix ? `${dataIdPrefix}-modal-title` : ''}
