@@ -1,3 +1,12 @@
+## [1.4.5](https://github.com/ab-devtools/uilibrary/compare/1.4.4...1.4.5) (2025-04-22)
+
+
+### Bug Fixes
+
+* added hook for control sidebar ([868ebe9](https://github.com/ab-devtools/uilibrary/commit/868ebe9e9b50f0acdeeb7a0b04116d1475577a1e))
+* added hook for control sidebar ([00fb5a5](https://github.com/ab-devtools/uilibrary/commit/00fb5a55f52ce9c5eae096eff14e0b5bc084e558))
+* fixed PR comments ([eaff780](https://github.com/ab-devtools/uilibrary/commit/eaff780ce877a34436414e48f01a554e42a27af7))
+
 ## [1.4.4](https://github.com/ab-devtools/uilibrary/compare/1.4.3...1.4.4) (2025-04-22)
 
 
