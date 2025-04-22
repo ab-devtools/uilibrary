@@ -6,9 +6,12 @@ import { ButtonIcon } from '../ButtonIcon'
 import IconPanelRight from '../SVGIcons/IconPanelRight'
 import IconPanelLeft from '../SVGIcons/IconPanelLeft'
 import { Image } from '../Image'
+import { Link } from '../Link'
+import { isMobile } from '../../utils/helpers'
+import IconDismiss from '../SVGIcons/IconDismiss'
 
 export const SideNavigation = (props: TSideNavigationPropTypes): JSX.Element => {
-  const { children, isOpen = true, setOpen, className = '', logo, logoClosed } = props
+  const { children, isOpen = true, setOpen, className = '', logo, logoClosed, logoUrl } = props
 
   const [isPined, setPined] = useState(true)
 
@@ -27,6 +30,9 @@ export const SideNavigation = (props: TSideNavigationPropTypes): JSX.Element => 
   const onPin = () => {
     setPined(!isPined)
   }
+  const onClose = () => {
+    setOpen?.(false)
+  }
 
   return (
     <div
@@ -35,17 +41,21 @@ export const SideNavigation = (props: TSideNavigationPropTypes): JSX.Element => 
       className={classNames(
         'side-navigation',
         isOpen ? 'side-navigation--opened' : null,
-        isPined ? 'side-navigation--pin' : null,
+        !isMobile() && isPined ? 'side-navigation--pin' : null,
         className
       )}
     >
       <header>
-        <Image imagePath={isOpen ? logo : logoClosed} isBackgroundImage={false} />
+        <Link url={logoUrl} className={'side-navigation__logo'}>
+          <Image imagePath={isOpen ? logo : logoClosed} isBackgroundImage={false} />
+        </Link>
         <ButtonIcon
-          iconProps={{ Component: isPined ? IconPanelRight : IconPanelLeft }}
+          iconProps={{
+            Component: isMobile() ? IconDismiss : isPined ? IconPanelLeft : IconPanelRight
+          }}
           size={'large'}
           className={'side-navigation__btn'}
-          onClick={onPin}
+          onClick={isMobile() ? onClose : onPin}
         />
       </header>
       {children}

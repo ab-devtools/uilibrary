@@ -4,6 +4,7 @@ import type { ISVGIconProps } from '../SVGIcons/types'
 export interface TSideNavigationPropTypes {
   className?: string
   logo?: string
+  logoUrl?: string
   logoClosed?: string
   actionElm?: JSX.Element
   showAction?: boolean
