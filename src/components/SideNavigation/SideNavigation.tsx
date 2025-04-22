@@ -6,9 +6,9 @@ import { ButtonIcon } from '../ButtonIcon'
 import IconPanelRight from '../SVGIcons/IconPanelRight'
 import IconPanelLeft from '../SVGIcons/IconPanelLeft'
 import { Image } from '../Image'
-import {Link} from "../Link";
-import {isMobile} from "../../utils/helpers";
-import IconDismiss from "../SVGIcons/IconDismiss";
+import { Link } from '../Link'
+import { isMobile } from '../../utils/helpers'
+import IconDismiss from '../SVGIcons/IconDismiss'
 
 export const SideNavigation = (props: TSideNavigationPropTypes): JSX.Element => {
   const { children, isOpen = true, setOpen, className = '', logo, logoClosed, logoUrl } = props
@@ -50,8 +50,9 @@ export const SideNavigation = (props: TSideNavigationPropTypes): JSX.Element => 
           <Image imagePath={isOpen ? logo : logoClosed} isBackgroundImage={false} />
         </Link>
         <ButtonIcon
-          iconProps={{ Component: isMobile() ? IconDismiss :
-                                  isPined ? IconPanelLeft : IconPanelRight }}
+          iconProps={{
+            Component: isMobile() ? IconDismiss : isPined ? IconPanelLeft : IconPanelRight
+          }}
           size={'large'}
           className={'side-navigation__btn'}
           onClick={isMobile() ? onClose : onPin}

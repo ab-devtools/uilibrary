@@ -30,6 +30,11 @@
     display: none;
   }
 
+  &__logo.link:not(.link--disabled):focus {
+      box-shadow: none;
+      outline: none;
+  }
+
   &--pin {
     position: relative;
     box-shadow: none;
