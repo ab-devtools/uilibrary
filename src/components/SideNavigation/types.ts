@@ -1,7 +1,17 @@
 import type { JSX, ReactNode } from 'react'
 import type { ISVGIconProps } from '../SVGIcons/types'
 
-export interface TSideNavigationPropTypes {
+export interface SideNavigationControls {
+  isPined?: boolean
+  isOpen?: boolean
+  onOpen?: (open: boolean) => void
+  onMouseEnter?: () => void
+  onMouseLeave?: () => void
+  onPin?: () => void
+  onClose?: () => void
+}
+
+export interface TSideNavigationPropTypes extends SideNavigationControls {
   className?: string
   logo?: string
   logoUrl?: string
@@ -10,8 +20,6 @@ export interface TSideNavigationPropTypes {
   showAction?: boolean
   children: ReactNode
   pinSidebar?: boolean
-  isOpen?: boolean
-  setOpen?: (arg: boolean) => void
   sidebarOpenIconProps?: ISVGIconProps
   sidebarCloseIconProps?: ISVGIconProps
 }

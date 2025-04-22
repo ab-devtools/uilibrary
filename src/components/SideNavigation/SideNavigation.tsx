@@ -1,6 +1,5 @@
+import React from 'react'
 import type { TSideNavigationPropTypes } from './types'
-import type { JSX } from 'react'
-import React, { useState } from 'react'
 import classNames from 'classnames'
 import { ButtonIcon } from '../ButtonIcon'
 import IconPanelRight from '../SVGIcons/IconPanelRight'
@@ -11,28 +10,19 @@ import { isMobile } from '../../utils/helpers'
 import IconDismiss from '../SVGIcons/IconDismiss'
 
 export const SideNavigation = (props: TSideNavigationPropTypes): JSX.Element => {
-  const { children, isOpen = true, setOpen, className = '', logo, logoClosed, logoUrl } = props
-
-  const [isPined, setPined] = useState(true)
-
-  const onMouseEnter = () => {
-    if (!isPined) {
-      setOpen?.(true)
-    }
-  }
-
-  const onMouseLeave = () => {
-    if (!isPined) {
-      setOpen?.(false)
-    }
-  }
-
-  const onPin = () => {
-    setPined(!isPined)
-  }
-  const onClose = () => {
-    setOpen?.(false)
-  }
+  const {
+    children,
+    className = '',
+    logo,
+    logoClosed,
+    logoUrl,
+    isOpen,
+    isPined,
+    onMouseEnter,
+    onMouseLeave,
+    onPin,
+    onClose
+  } = props
 
   return (
     <div

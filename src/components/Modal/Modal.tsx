@@ -73,7 +73,7 @@ export const Modal = (props: TModalPropTypes): ReactElement => {
                   <Text
                     lineHeight="large"
                     size="large"
-                    weight={'bolder'}
+                    weight={'bold'}
                     dataId={dataIdPrefix ? `${dataIdPrefix}-modal-title` : ''}
                   >
                     {title}
@@ -92,6 +92,7 @@ export const Modal = (props: TModalPropTypes): ReactElement => {
                 {closeIcon ? (
                   <ButtonIcon
                     className={'modal__close ml-16'}
+                    size={'large'}
                     dataId={dataIdPrefix ? `${dataIdPrefix}-modal-close-button` : ''}
                     iconProps={{ Component: IconDismiss }}
                     onClick={onClose}
