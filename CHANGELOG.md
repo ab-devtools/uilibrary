@@ -1,3 +1,10 @@
+## [1.4.7](https://github.com/ab-devtools/uilibrary/compare/1.4.6...1.4.7) (2025-04-23)
+
+
+### Bug Fixes
+
+* remove button icon shadow ([2467f01](https://github.com/ab-devtools/uilibrary/commit/2467f016ca0f23e3c780090c1ab6f778326f451b))
+
 ## [1.4.6](https://github.com/ab-devtools/uilibrary/compare/1.4.5...1.4.6) (2025-04-22)
 
 
