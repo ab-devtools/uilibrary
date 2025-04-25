@@ -27,6 +27,7 @@ export interface TTabProps extends IFormCompProps {
   disabled?: boolean
   selectedValue: number | string
   onSelect: (value: string | number) => void
+  isLoading?: boolean
 }
 
 export type TTabItemProps = {

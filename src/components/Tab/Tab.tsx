@@ -3,6 +3,7 @@ import React from 'react'
 import type { TTabProps } from './types'
 import { TabItem } from './TabItem'
 import classNames from 'classnames'
+
 export const Tab = (props: TTabProps): ReactElement => {
   const {
     selectedValue,
@@ -12,6 +13,7 @@ export const Tab = (props: TTabProps): ReactElement => {
     className,
     type = 'primary',
     color,
+    isLoading,
     ...rest
   } = props
 
@@ -22,11 +24,16 @@ export const Tab = (props: TTabProps): ReactElement => {
         `tabs-container--${type}`,
         `${color ? 'tabs-container--' + color : null}`,
         `tabs-container--${size}`,
+        {
+          'tabs-container--skeleton': isLoading
+        },
         className
       )}
     >
       {tabItems.map((tabInfo) => {
-        return (
+        return isLoading ? (
+          <div className={'tab-skeleton'} />
+        ) : (
           <TabItem
             label={tabInfo.label}
             size={size}
