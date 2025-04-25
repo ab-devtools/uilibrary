@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/ab-devtools/uilibrary/compare/1.4.7...1.5.0) (2025-04-25)
+
+
+### Features
+
+* create tab skeleton ui ([5090790](https://github.com/ab-devtools/uilibrary/commit/509079074952367e427b76dec1d825c231d6fd25))
+
 ## [1.4.7](https://github.com/ab-devtools/uilibrary/compare/1.4.6...1.4.7) (2025-04-23)
 
 
