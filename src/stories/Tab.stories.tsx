@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react'
+import React, { useState } from 'react'
 import { Tab as _Tab } from '../index'
 import IconDismissCircle from '../components/SVGIcons/IconDismissCircle'
 import { StoryFn } from '@storybook/react'
@@ -77,5 +77,6 @@ Tab.args = {
         Component: IconApple
       }
     }
-  ]
+  ],
+  isLoading: false
 }

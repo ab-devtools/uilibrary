@@ -143,7 +143,7 @@
   &--large {
     min-height: var(--ds-tabs-size-lg);
 
-    .tab {
+    .tab, .tab-skeleton {
       border-radius: var(--ds-tab-border-radius-lg);
     }
   }
@@ -151,7 +151,7 @@
   &--medium {
     min-height: var(--ds-tabs-size-md);
 
-    .tab {
+    .tab, .tab-skeleton {
       border-radius: var(--ds-tab-border-radius-md);
     }
   }
@@ -159,7 +159,7 @@
   &--small {
     min-height: var(--ds-tabs-size-sm);
 
-    .tab {
+    .tab, .tab-skeleton {
       border-radius: var(--ds-tab-border-radius-sm);
     }
   }
@@ -269,5 +269,22 @@
         padding: var(--ds-tab-spacing-sm);
       }
     }
+  }
+
+  &--skeleton {
+    width: 100%;
+  }
+}
+
+.tab-skeleton {
+  width: 100%;
+  max-width: 130px;
+  background: linear-gradient(-60deg, var(--ds-color-bg-container) 33%, #f4f4f4, var(--ds-color-bg-container) 66%) right/300% 100%;
+  animation: move 1s linear infinite;
+}
+
+@keyframes move {
+  to {
+    background-position: left
   }
 }
