@@ -8,6 +8,8 @@ export interface InputCustomProps
       'size' | 'onFocus' | 'value' | 'onChange' | 'autoComplete'
     > {
   mask?: string
+  format?: string
+  prefix?: string
   maskChar?: string | null
   maskPlaceholder?: string | null
   className?: string

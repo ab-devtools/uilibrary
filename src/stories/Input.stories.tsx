@@ -66,8 +66,6 @@ const InputPasswordTemplate: StoryFn<InputPasswordsProps> = (args) => {
         timer: 1000
       }
 
-  // @ts-ignore
-
   const [isCapsLockOn, setCapsLockState] = useState<boolean>(false)
   const [isCapsLockOn1, setCapsLockState1] = useState<boolean>(false)
 
