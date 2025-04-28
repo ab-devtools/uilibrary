@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/ab-devtools/uilibrary/compare/1.5.0...1.5.1) (2025-04-28)
+
+
+### Bug Fixes
+
+* buttonSelect disabled issue ([639370c](https://github.com/ab-devtools/uilibrary/commit/639370c11a9d168a9a69b6c110a0f34ed8ac5d0c))
+
 # [1.5.0](https://github.com/ab-devtools/uilibrary/compare/1.4.7...1.5.0) (2025-04-25)
 
 
