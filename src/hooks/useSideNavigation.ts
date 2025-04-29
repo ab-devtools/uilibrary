@@ -24,10 +24,15 @@ export const useSideNavigationControls = (): SideNavigationControls => {
   const onPin = useCallback(() => {
     setPined((prev) => {
       const newState = !prev
-      if (!newState) onOpen(false)
+
+      if (!newState) {
+        onOpen(false)
+        if (isOpen) setTimeout(onClose, 0)
+      }
+
       return newState
     })
-  }, [onOpen])
+  }, [onOpen, isOpen])
 
   const onClose = useCallback(() => {
     onOpen(false)
