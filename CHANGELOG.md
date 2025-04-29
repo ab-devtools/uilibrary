@@ -1,3 +1,10 @@
+## [1.5.3](https://github.com/ab-devtools/uilibrary/compare/1.5.2...1.5.3) (2025-04-29)
+
+
+### Bug Fixes
+
+* added functionality unpin ([4a27417](https://github.com/ab-devtools/uilibrary/commit/4a2741746e92c9e279059314af9a8fb6c8662409))
+
 ## [1.5.2](https://github.com/ab-devtools/uilibrary/compare/1.5.1...1.5.2) (2025-04-29)
 
 
