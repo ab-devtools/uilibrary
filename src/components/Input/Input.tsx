@@ -2,7 +2,7 @@ import type { JSX } from 'react'
 import React, { useMemo } from 'react'
 import InputMask from 'react-input-mask'
 import classNames from 'classnames'
-import { NumericFormat } from 'react-number-format'
+import { NumericFormat, PatternFormat } from 'react-number-format'
 import type { InputCustomProps } from './types'
 import { Label, ErrorMessage } from '../../helperComponents'
 import { Text } from '../Text'
@@ -20,6 +20,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
       label,
       mask,
       maskChar,
+      format,
       maskPlaceholder,
       currentValue,
       name,
@@ -50,6 +51,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
   ): JSX.Element => {
     const isErrorVisible = hasError !== undefined ? hasError : !!error
     const placeHolder = label === placeholder ? '' : placeholder || datePlaceHolderText
+
     const changeHandler = (event: TChangeEventType) => {
       const eventValue = event.target.value
       const valueWithoutSeparator =
@@ -79,7 +81,23 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
       return 0
     }, [rest, currentValue])
 
-    const input = mask ? (
+
+    const input = format ? (
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      <PatternFormat
+        {...rest}
+        format={format}
+        name={name}
+        onChange={changeHandler}
+        placeholder={placeHolder}
+        readOnly={readonly}
+        data-id={dataId}
+        disabled={disabled}
+        maxLength={maxCount}
+        {...(currentValue ? { value: currentValue } : {})}
+      />
+    ) : mask ? (
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       <InputMask
