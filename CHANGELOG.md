@@ -1,3 +1,11 @@
+## [1.5.2](https://github.com/ab-devtools/uilibrary/compare/1.5.1...1.5.2) (2025-04-29)
+
+
+### Bug Fixes
+
+* added pattern input ([543fdb5](https://github.com/ab-devtools/uilibrary/commit/543fdb5368232d9e707bbc49fb35e3b7f529194e))
+* added pattern input ([2e32ae7](https://github.com/ab-devtools/uilibrary/commit/2e32ae759f914829cbdac95a3b636038f366f135))
+
 ## [1.5.1](https://github.com/ab-devtools/uilibrary/compare/1.5.0...1.5.1) (2025-04-28)
 
 
