@@ -106,6 +106,10 @@
   $this: &;
   position: relative;
 
+  &:not(&:last-child) {
+    margin-bottom: var(--ds-space-2);
+  }
+
   &__inner {
       @include mixin.flexbox;
       @include mixin.align-items(center);

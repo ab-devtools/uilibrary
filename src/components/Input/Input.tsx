@@ -81,7 +81,6 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
       return 0
     }, [rest, currentValue])
 
-
     const input = format ? (
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
