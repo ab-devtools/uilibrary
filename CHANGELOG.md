@@ -1,3 +1,10 @@
+## [1.5.4](https://github.com/ab-devtools/uilibrary/compare/1.5.3...1.5.4) (2025-04-30)
+
+
+### Bug Fixes
+
+* added new icons , and adde spasing for nav items ([e270cdd](https://github.com/ab-devtools/uilibrary/commit/e270cddbf3438b86fee27b64656b7e55a01540d8))
+
 ## [1.5.3](https://github.com/ab-devtools/uilibrary/compare/1.5.2...1.5.3) (2025-04-29)
 
 
