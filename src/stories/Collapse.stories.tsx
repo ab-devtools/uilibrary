@@ -4,7 +4,7 @@ import { StoryFn } from '@storybook/react'
 import { TCollapseGroupProps, TCollapseProps } from '../components/Collapse/types'
 import { Status } from '../components/Status'
 import { Chips } from '../components/Chips'
-import IconHeart from "../components/SVGIcons/IconHeart";
+import IconHeart from '../components/SVGIcons/IconHeart'
 
 export default {
   title: 'Collapse',
@@ -23,7 +23,14 @@ const Template: StoryFn<TCollapseProps> = (args) => {
       {...args}
       isOpen={isOpen}
       toggle={isOpen ? close : open}
-      additionalInfo={<Status type={'success'} text={'Additional info'} size={'medium'} rightIconProps={<IconHeart size={'xsmall'} className={'ml-8'}/>}/>}
+      additionalInfo={
+        <Status
+          type={'success'}
+          text={'Additional info'}
+          size={'medium'}
+          rightIconProps={<IconHeart size={'xsmall'} className={'ml-8'} />}
+        />
+      }
     >
       <div>My Accordion content</div>
     </_CollapseItem>
@@ -50,7 +57,9 @@ const CollapseItems = [
   },
   {
     title: 'collapse2',
-    additionalInfo: <Chips type={'accent'} color={'success'} size={'small'} text={'Additional info'}/>,
+    additionalInfo: (
+      <Chips type={'accent'} color={'success'} size={'small'} text={'Additional info'} />
+    ),
     value: 2,
     content: <div style={{ height: 100 }}>collapse2 content</div>,
     isOpen: false,

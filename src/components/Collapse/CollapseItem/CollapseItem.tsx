@@ -22,15 +22,19 @@ export const CollapseItem = (props: TCollapseProps): JSX.Element => {
     id
   } = props
 
-   const toggleCollapseItem = () => {
+  const toggleCollapseItem = () => {
     if (!disabled) {
-      toggle();
+      toggle()
     }
   }
 
   return (
     <div
-      className={classNames('collapse', { 'collapse--opened': isOpen, 'collapse--disabled': disabled }, className)}
+      className={classNames(
+        'collapse',
+        { 'collapse--opened': isOpen, 'collapse--disabled': disabled },
+        className
+      )}
       id={`${id || ''}`}
     >
       <div
@@ -54,7 +58,9 @@ export const CollapseItem = (props: TCollapseProps): JSX.Element => {
               {subtext}
             </Text>
           ) : null}
-          {additionalInfo ? <div className={'collapse__additional mt-8'}>{additionalInfo}</div> : null}
+          {additionalInfo ? (
+            <div className={'collapse__additional mt-8'}>{additionalInfo}</div>
+          ) : null}
         </div>
       </div>
       <AnimatePresenceWrapper initial={false}>
