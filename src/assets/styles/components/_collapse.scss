@@ -5,6 +5,7 @@
 
     --ds-collapse-border-width: 0 0 1px;
     --ds-collapse-border-color: var(--ds-color-border-secondary);
+    --ds-collapse-border-color-disabled: var(--ds-color-border-disabled);
     --ds-collapse-space: var(--ds-space-16);
     --ds-collapse-size: var(--ds-space-56);
 
@@ -23,6 +24,18 @@
                 transition: transform 300ms ease 0s, color 300ms ease-in-out 0s;
                 transform: rotate(180deg);
             }
+        }
+    }
+
+    &--disabled {
+        border-color: var(--ds-collapse-border-color-disabled);
+
+        #{$this}__header {
+            cursor: not-allowed;
+        }
+
+        #{$this}__additional {
+            opacity: 0.5;
         }
     }
 

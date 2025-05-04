@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { CollapseItem as _CollapseItem, CollapseGroup as _CollapseGroup } from '../index'
 import { StoryFn } from '@storybook/react'
 import { TCollapseGroupProps, TCollapseProps } from '../components/Collapse/types'
+import { Status } from '../components/Status'
+import { Chips } from '../components/Chips'
+import IconHeart from "../components/SVGIcons/IconHeart";
 
 export default {
   title: 'Collapse',
@@ -20,7 +23,7 @@ const Template: StoryFn<TCollapseProps> = (args) => {
       {...args}
       isOpen={isOpen}
       toggle={isOpen ? close : open}
-      additionalInfo={<div className="mt-8">Additional info</div>}
+      additionalInfo={<Status type={'success'} text={'Additional info'} size={'medium'} rightIconProps={<IconHeart size={'xsmall'} className={'ml-8'}/>}/>}
     >
       <div>My Accordion content</div>
     </_CollapseItem>
@@ -32,7 +35,8 @@ export const CollapseItem = Template.bind({})
 CollapseItem.args = {
   title: 'Collapse',
   subtext: 'Sub text',
-  reverse: false
+  reverse: false,
+  disabled: false
 }
 
 const CollapseItems = [
@@ -46,17 +50,19 @@ const CollapseItems = [
   },
   {
     title: 'collapse2',
-    additionalInfo: <div className="mt-8">Additional info</div>,
+    additionalInfo: <Chips type={'accent'} color={'success'} size={'small'} text={'Additional info'}/>,
     value: 2,
     content: <div style={{ height: 100 }}>collapse2 content</div>,
-    isOpen: false
+    isOpen: false,
+    id: 2
   },
   {
     title: 'collapse3',
     value: 3,
     content: <div style={{ height: 200 }}>collapse3 content</div>,
     isOpen: false,
-    id: 3
+    id: 3,
+    disabled: true
   }
 ]
 

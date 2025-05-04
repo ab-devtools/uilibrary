@@ -9,6 +9,7 @@ export type TCollapseProps = {
   additionalInfo?: ReactNode
   iconProps?: TSelectIconProps
   reverse?: boolean
+  disabled?: boolean
   id?: string | number
   className?: string
 }
@@ -23,6 +24,7 @@ export type TCollapseGroupItem = {
   content?: ReactElement | null
   iconProps?: TSelectIconProps
   isOpen?: boolean
+  disabled?: boolean
   id?: string | number
 }
 

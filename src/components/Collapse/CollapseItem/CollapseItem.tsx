@@ -16,38 +16,45 @@ export const CollapseItem = (props: TCollapseProps): JSX.Element => {
     toggle,
     children,
     reverse = false,
+    disabled = false,
     additionalInfo,
     iconProps = { Component: IconChevronDown },
     id
   } = props
 
+   const toggleCollapseItem = () => {
+    if (!disabled) {
+      toggle();
+    }
+  }
+
   return (
     <div
-      className={classNames('collapse', { 'collapse--opened': isOpen }, className)}
+      className={classNames('collapse', { 'collapse--opened': isOpen, 'collapse--disabled': disabled }, className)}
       id={`${id || ''}`}
     >
       <div
         className={classNames('collapse__header', { 'collapse__header--reverse': reverse })}
-        onClick={toggle}
+        onClick={toggleCollapseItem}
       >
         {iconProps?.Component ? (
           <iconProps.Component
             size="small"
-            type="tertiary"
+            type={disabled ? 'disabled' : 'tertiary'}
             className={'collapse__header__icon'}
             {...iconProps}
           />
         ) : null}
         <div className={'collapse__header__inner'}>
-          <Text size={'medium'} weight={'semibold'}>
+          <Text type={disabled ? 'disabled' : 'primary'} size={'medium'} weight={'semibold'}>
             {title}
           </Text>
           {subtext ? (
-            <Text type={'secondary'} className={'mt-8'}>
+            <Text type={disabled ? 'disabled' : 'secondary'} className={'mt-8'}>
               {subtext}
             </Text>
           ) : null}
-          {additionalInfo ? additionalInfo : null}
+          {additionalInfo ? <div className={'collapse__additional mt-8'}>{additionalInfo}</div> : null}
         </div>
       </div>
       <AnimatePresenceWrapper initial={false}>
