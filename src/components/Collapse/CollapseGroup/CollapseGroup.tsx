@@ -7,8 +7,7 @@ import classNames from 'classnames'
 
 export const CollapseGroup = forwardRef(
   (props: TCollapseGroupProps, ref: ForwardedRef<HTMLDivElement>): ReactElement => {
-    const { items, singleSelection, titleProps = {}, className } = props
-    const { size, color } = titleProps
+    const { items, singleSelection, className } = props
     const [openValues, setOpenValues] = useState<TCollapseValue[]>(
       items.filter((item: TCollapseItem) => item.isOpen).map((item) => item.value)
     )
@@ -26,7 +25,7 @@ export const CollapseGroup = forwardRef(
 
     return (
       <div className={classNames('collapse-group', className)} ref={ref}>
-        {items.map(({ id, title, value, content, dataId, iconProps }) => {
+        {items.map(({ id, title, value, content, iconProps }) => {
           const isOpen = openValues.indexOf(value) !== -1
           return (
             <CollapseItem
@@ -34,10 +33,9 @@ export const CollapseGroup = forwardRef(
               id={id}
               isOpen={isOpen}
               key={value}
-              dataId={dataId}
-              title={{ size, color, text: title }}
+              title={title}
               toggle={() => (isOpen ? onCollapseDeselect(value) : onCollapseSelect(value))}
-              labelLeftIconProps={iconProps}
+              iconProps={iconProps}
             >
               {content}
             </CollapseItem>

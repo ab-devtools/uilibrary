@@ -11,61 +11,38 @@ import IconChevronDown from '../../SVGIcons/IconChevronDown'
 
 export const CollapseItem = (props: TCollapseProps): JSX.Element => {
   const {
-    title: { text, size = 'medium', color },
+    title,
+    subtext,
     className,
     isOpen,
     toggle,
-    dataId,
     children,
     reverse = false,
     additionalInfo,
-    labelLeftIconProps,
+    iconProps = {Component: IconChevronDown},
     id
   } = props
 
-  const title =
-    typeof text === 'string' ? (
-      <Text size={size} type={color} weight="bolder" dataId={dataId}>
-        {text}
-      </Text>
-    ) : (
-      text
-    )
 
   return (
     <div
       className={classNames('collapse', { 'collapse--opened': isOpen }, className)}
       id={`${id || ''}`}
     >
-      <div className="collapse__header flexbox justify-content--between" onClick={toggle}>
-        {reverse ? (
-          <>
-            <div className="collapse__header__inner flexbox align-items--center">
-              <IconChevronDown className={'collapse__header__icon'} size={'small'} />
-              {additionalInfo}
-            </div>
-            {title}
-          </>
-        ) : (
-          <>
-            <div className="flexbox align-items--center">
-              {labelLeftIconProps?.Component ? (
-                <labelLeftIconProps.Component
-                  size="small"
-                  type="primary"
-                  className="mr-16"
-                  {...labelLeftIconProps}
-                />
-              ) : null}
-              {title}
-            </div>
-
-            <div className="collapse__header__inner flexbox align-items--center">
-              {additionalInfo}
-              <IconChevronRight className={'collapse__header__icon'} size={'small'} />
-            </div>
-          </>
-        )}
+      <div className={classNames('collapse__header', {'collapse__header--reverse' : reverse})} onClick={toggle}>
+        {iconProps?.Component ? (
+          <iconProps.Component
+            size="small"
+            type="tertiary"
+            className={'collapse__header__icon'}
+            {...iconProps}
+          />
+        ) : null}
+        <div className={'collapse__header__inner'} >
+          <Text size={'medium'} weight={'semibold'}>{title}</Text>
+          {subtext ? <Text type={'secondary'} className={'mt-8'}>{subtext}</Text> : null }
+          {additionalInfo ? additionalInfo : null }
+        </div>
       </div>
       <AnimatePresenceWrapper initial={false}>
         {isOpen && (
@@ -76,7 +53,6 @@ export const CollapseItem = (props: TCollapseProps): JSX.Element => {
             transition={{ type: 'spring', duration: 0.5, bounce: 0 }}
           >
             <div className="collapse__content">
-              <Divider type="primary" isHorizontal className={'collapse__divider'} />
               {children}
             </div>
           </motion.div>

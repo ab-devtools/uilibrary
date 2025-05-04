@@ -4,6 +4,7 @@ import IconChevronDown from '../components/SVGIcons/IconChevronDown'
 import { StoryFn } from '@storybook/react'
 import { TCollapseGroupProps, TCollapseProps } from '../components/Collapse/types'
 import { str } from 'ajv'
+import IconDismiss from "../components/SVGIcons/IconDismiss";
 
 export default {
   title: 'Collapse',
@@ -11,7 +12,7 @@ export default {
   argTypes: {}
 }
 
-const Template: StoryFn<TCollapseProps & { textTitle: string }> = (args) => {
+const Template: StoryFn<TCollapseProps> = (args) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const open = () => setIsOpen(true)
@@ -20,11 +21,9 @@ const Template: StoryFn<TCollapseProps & { textTitle: string }> = (args) => {
   return (
     <_CollapseItem
       {...args}
-      reverse={true}
-      title={{ text: args.textTitle }}
       isOpen={isOpen}
       toggle={isOpen ? close : open}
-      additionalInfo={<div>COMPONENT</div>}
+      additionalInfo={<div className='mt-8'>Additional info</div>}
     >
       <div>My Accordion content</div>
     </_CollapseItem>
@@ -34,7 +33,9 @@ const Template: StoryFn<TCollapseProps & { textTitle: string }> = (args) => {
 export const CollapseItem = Template.bind({})
 
 CollapseItem.args = {
-  textTitle: 'Collapse'
+  title: 'Collapse',
+  subtext: 'Sub text',
+  reverse: false
 }
 
 const CollapseItems = [
@@ -43,7 +44,7 @@ const CollapseItems = [
     value: 1,
     content: <div>collapse1 content</div>,
     isOpen: true,
-    id: 1
+    id: 1,
   },
   {
     title: 'collapse2',
@@ -61,7 +62,7 @@ const CollapseItems = [
 ]
 
 const Template1: StoryFn<TCollapseGroupProps> = (args: any) => {
-  return <_CollapseGroup {...args} items={CollapseItems} titleColor="selected" />
+  return <_CollapseGroup {...args} items={CollapseItems} />
 }
 
 export const CollapseGroup = Template1.bind({})

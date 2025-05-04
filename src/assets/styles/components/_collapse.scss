@@ -3,60 +3,67 @@
 .collapse {
     $this: &;
 
-    --ds-collapse-border-radius: var(--ds-border-radius-xs);
-    --ds-collapse-border: 1px solid var(--ds-color-border-tertiary);
-    --ds-collapse-bg: var(--ds-color-bg-white);
+    --ds-collapse-border-width: 0 0 1px;
+    --ds-collapse-border-color: var(--ds-color-border-secondary);
+    --ds-collapse-space: var(--ds-space-16);
+    --ds-collapse-size: var(--ds-space-56);
 
-    --ds-collapse-header-size: var(--ds-space-56);
-    --ds-collapse-header-space: var(--ds-space-16) var(--ds-space-24);
+    --ds-collapse-content-space: var(--ds-space-16) 0 0;
 
-    --ds-collapse-content-space: 0 var(--ds-space-16) var(--ds-space-24);
-
-    --ds-collapse-divider-space: 0 0 var(--ds-space-16);
-
-    border-radius: var(--ds-collapse-border-radius);
-    border: var(--ds-collapse-border);
-    background-color: var(--ds-collapse-bg);
+    border-width: var(--ds-collapse-border-width);
+    border-color: var(--ds-collapse-border-color);
+    border-style: solid;
+    padding: var(--ds-collapse-space);
     overflow: hidden;
+    min-height: var(--ds-collapse-size);
 
     &--opened {
         #{$this}__header{
             &__icon {
                 transition: transform 300ms ease 0s, color 300ms ease-in-out 0s;
-                transform: rotate(90deg);
+                transform: rotate(180deg);
             }
         }
     }
 
-    &__header{
-        height: var(--ds-collapse-header-size);
-        padding: var(--ds-collapse-header-space);
+    &__header {
+        @include mixin.flexbox;
+        @include mixin.justify-content(space-between);
         cursor: pointer;
         width: 100%;
 
         &__icon {
             transition: transform 300ms ease 0s, color 300ms ease-in-out 0s;
             transform: rotate(0);
+            order: 1;
+        }
+
+        &__inner {
+            flex: 1;
+            padding-right: var(--ds-space-8);
+        }
+
+        &--reverse {
+            #{$this}__header__icon {
+                order: -1;
+            }
+
+            #{$this}__header__inner {
+                padding-right: 0;
+                padding-left: var(--ds-space-8);
+            }
         }
     }
 
     &__content {
         padding: var(--ds-collapse-content-space);
     }
-
-    &__divider {
-        margin: var(--ds-collapse-divider-space);
-    }
 }
 
 .collapse-group {
-    --ds-collapse-group-item-space: var(--ds-space-8);
+    --ds-collapse-group-item-space: var(--ds-space-24);
 
-    &__item {
+    &__item:not(&:last-child) {
         margin-bottom: var(--ds-collapse-group-item-space);
-
-        &:last-child {
-            margin-bottom: 0;
-        }
     }
 }
