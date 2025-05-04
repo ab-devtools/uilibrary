@@ -1,6 +1,5 @@
 import type { ReactElement, ReactNode } from 'react'
 
-
 export type TCollapseProps = {
   isOpen: boolean
   toggle: () => void

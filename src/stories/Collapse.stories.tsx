@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
 import { CollapseItem as _CollapseItem, CollapseGroup as _CollapseGroup } from '../index'
-import IconChevronDown from '../components/SVGIcons/IconChevronDown'
 import { StoryFn } from '@storybook/react'
 import { TCollapseGroupProps, TCollapseProps } from '../components/Collapse/types'
-import { str } from 'ajv'
-import IconDismiss from "../components/SVGIcons/IconDismiss";
 
 export default {
   title: 'Collapse',
@@ -23,7 +20,7 @@ const Template: StoryFn<TCollapseProps> = (args) => {
       {...args}
       isOpen={isOpen}
       toggle={isOpen ? close : open}
-      additionalInfo={<div className='mt-8'>Additional info</div>}
+      additionalInfo={<div className="mt-8">Additional info</div>}
     >
       <div>My Accordion content</div>
     </_CollapseItem>
@@ -44,7 +41,7 @@ const CollapseItems = [
     value: 1,
     content: <div>collapse1 content</div>,
     isOpen: true,
-    id: 1,
+    id: 1
   },
   {
     title: 'collapse2',
