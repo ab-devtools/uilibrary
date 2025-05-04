@@ -38,6 +38,7 @@ CollapseItem.args = {
 const CollapseItems = [
   {
     title: 'collapse1',
+    subtext: 'sub text',
     value: 1,
     content: <div>collapse1 content</div>,
     isOpen: true,
@@ -45,6 +46,7 @@ const CollapseItems = [
   },
   {
     title: 'collapse2',
+    additionalInfo: <div className="mt-8">Additional info</div>,
     value: 2,
     content: <div style={{ height: 100 }}>collapse2 content</div>,
     isOpen: false
@@ -53,7 +55,7 @@ const CollapseItems = [
     title: 'collapse3',
     value: 3,
     content: <div style={{ height: 200 }}>collapse3 content</div>,
-    isOpen: true,
+    isOpen: false,
     id: 3
   }
 ]

@@ -5,18 +5,20 @@ export type TCollapseProps = {
   toggle: () => void
   children: ReactNode
   title: string
-  reverse?: boolean
-  additionalInfo?: ReactNode
   subtext?: string
+  additionalInfo?: ReactNode
   iconProps?: TSelectIconProps
+  reverse?: boolean
   id?: string | number
   className?: string
 }
 
 export type TCollapseValue = string | number
 
-export type TCollapseItem = {
+export type TCollapseGroupItem = {
   title: string
+  subtext?: string
+  additionalInfo?: ReactNode
   value: TCollapseValue
   content?: ReactElement | null
   iconProps?: TSelectIconProps
@@ -25,7 +27,7 @@ export type TCollapseItem = {
 }
 
 export type TCollapseGroupProps = {
-  items: TCollapseItem[]
+  items: TCollapseGroupItem[]
   singleSelection?: boolean
   className?: string
 }
