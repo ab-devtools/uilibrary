@@ -178,12 +178,12 @@ const Template: StoryFn<TSideSheetPropTypes> = (args) => {
         onClose={closeSideSheet}
         topLeftActions={
           <div>
-            <Button type='tertiary' iconProps={{ Component: IconEdit }} />
+            <Button type="tertiary" iconProps={{ Component: IconEdit }} />
           </div>
         }
         topRightActions={
           <div>
-            <Button type='tertiary' iconProps={{ Component: IconEdit }} />
+            <Button type="tertiary" iconProps={{ Component: IconEdit }} />
           </div>
         }
         isOpen={isOpen}

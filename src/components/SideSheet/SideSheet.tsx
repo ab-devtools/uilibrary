@@ -135,7 +135,7 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
                   </Heading>
                   {topLeftActions}
                 </div>
-                <div className='flexbox align-items--center'>
+                <div className="flexbox align-items--center">
                   {topRightActions}
                   <ButtonIcon
                     size="medium"
