@@ -2,15 +2,14 @@ import type { ForwardedRef, ReactElement } from 'react'
 import React, { forwardRef, useState } from 'react'
 import { CollapseItem } from '../CollapseItem/CollapseItem'
 
-import type { TCollapseGroupProps, TCollapseItem, TCollapseValue } from '../types'
+import type { TCollapseGroupProps, TCollapseGroupItem, TCollapseValue } from '../types'
 import classNames from 'classnames'
 
 export const CollapseGroup = forwardRef(
   (props: TCollapseGroupProps, ref: ForwardedRef<HTMLDivElement>): ReactElement => {
-    const { items, singleSelection, titleProps = {}, className } = props
-    const { size, color } = titleProps
+    const { items, singleSelection, className } = props
     const [openValues, setOpenValues] = useState<TCollapseValue[]>(
-      items.filter((item: TCollapseItem) => item.isOpen).map((item) => item.value)
+      items.filter((item: TCollapseGroupItem) => item.isOpen).map((item) => item.value)
     )
 
     const onCollapseSelect = (value: TCollapseValue) => {
@@ -26,23 +25,27 @@ export const CollapseGroup = forwardRef(
 
     return (
       <div className={classNames('collapse-group', className)} ref={ref}>
-        {items.map(({ id, title, value, content, dataId, iconProps }) => {
-          const isOpen = openValues.indexOf(value) !== -1
-          return (
-            <CollapseItem
-              className={'collapse-group__item'}
-              id={id}
-              isOpen={isOpen}
-              key={value}
-              dataId={dataId}
-              title={{ size, color, text: title }}
-              toggle={() => (isOpen ? onCollapseDeselect(value) : onCollapseSelect(value))}
-              labelLeftIconProps={iconProps}
-            >
-              {content}
-            </CollapseItem>
-          )
-        })}
+        {items.map(
+          ({ id, title, subtext, additionalInfo, value, content, iconProps, disabled }) => {
+            const isOpen = openValues.indexOf(value) !== -1
+            return (
+              <CollapseItem
+                className={'collapse-group__item'}
+                id={id}
+                isOpen={isOpen}
+                disabled={disabled}
+                key={value}
+                title={title}
+                subtext={subtext}
+                additionalInfo={additionalInfo}
+                toggle={() => (isOpen ? onCollapseDeselect(value) : onCollapseSelect(value))}
+                iconProps={iconProps}
+              >
+                {content}
+              </CollapseItem>
+            )
+          }
+        )}
       </div>
     )
   }

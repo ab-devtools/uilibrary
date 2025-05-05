@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { CollapseItem as _CollapseItem, CollapseGroup as _CollapseGroup } from '../index'
-import IconChevronDown from '../components/SVGIcons/IconChevronDown'
 import { StoryFn } from '@storybook/react'
 import { TCollapseGroupProps, TCollapseProps } from '../components/Collapse/types'
-import { str } from 'ajv'
+import { Status } from '../components/Status'
+import { Chips } from '../components/Chips'
+import IconHeart from '../components/SVGIcons/IconHeart'
 
 export default {
   title: 'Collapse',
@@ -11,7 +12,7 @@ export default {
   argTypes: {}
 }
 
-const Template: StoryFn<TCollapseProps & { textTitle: string }> = (args) => {
+const Template: StoryFn<TCollapseProps> = (args) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const open = () => setIsOpen(true)
@@ -20,11 +21,16 @@ const Template: StoryFn<TCollapseProps & { textTitle: string }> = (args) => {
   return (
     <_CollapseItem
       {...args}
-      reverse={true}
-      title={{ text: args.textTitle }}
       isOpen={isOpen}
       toggle={isOpen ? close : open}
-      additionalInfo={<div>COMPONENT</div>}
+      additionalInfo={
+        <Status
+          type={'success'}
+          text={'Additional info'}
+          size={'medium'}
+          rightIconProps={<IconHeart size={'xsmall'} className={'ml-8'} />}
+        />
+      }
     >
       <div>My Accordion content</div>
     </_CollapseItem>
@@ -34,12 +40,16 @@ const Template: StoryFn<TCollapseProps & { textTitle: string }> = (args) => {
 export const CollapseItem = Template.bind({})
 
 CollapseItem.args = {
-  textTitle: 'Collapse'
+  title: 'Collapse',
+  subtext: 'Sub text',
+  reverse: false,
+  disabled: false
 }
 
 const CollapseItems = [
   {
     title: 'collapse1',
+    subtext: 'sub text',
     value: 1,
     content: <div>collapse1 content</div>,
     isOpen: true,
@@ -47,21 +57,26 @@ const CollapseItems = [
   },
   {
     title: 'collapse2',
+    additionalInfo: (
+      <Chips type={'accent'} color={'success'} size={'small'} text={'Additional info'} />
+    ),
     value: 2,
     content: <div style={{ height: 100 }}>collapse2 content</div>,
-    isOpen: false
+    isOpen: false,
+    id: 2
   },
   {
     title: 'collapse3',
     value: 3,
     content: <div style={{ height: 200 }}>collapse3 content</div>,
-    isOpen: true,
-    id: 3
+    isOpen: false,
+    id: 3,
+    disabled: true
   }
 ]
 
 const Template1: StoryFn<TCollapseGroupProps> = (args: any) => {
-  return <_CollapseGroup {...args} items={CollapseItems} titleColor="selected" />
+  return <_CollapseGroup {...args} items={CollapseItems} />
 }
 
 export const CollapseGroup = Template1.bind({})

@@ -2,8 +2,6 @@ import type { JSX } from 'react'
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Text } from '../../Text'
-import { IconChevronRight } from '../../SVGIcons/IconChevronRight'
-import { Divider } from '../../Divider'
 import { AnimatePresenceWrapper } from '../../../helperComponents/AnimatePresenceWrapper'
 import type { TCollapseProps } from '../types'
 import classNames from 'classnames'
@@ -11,61 +9,59 @@ import IconChevronDown from '../../SVGIcons/IconChevronDown'
 
 export const CollapseItem = (props: TCollapseProps): JSX.Element => {
   const {
-    title: { text, size = 'medium', color },
+    title,
+    subtext,
     className,
     isOpen,
     toggle,
-    dataId,
     children,
     reverse = false,
+    disabled = false,
     additionalInfo,
-    labelLeftIconProps,
+    iconProps = { Component: IconChevronDown },
     id
   } = props
 
-  const title =
-    typeof text === 'string' ? (
-      <Text size={size} type={color} weight="bolder" dataId={dataId}>
-        {text}
-      </Text>
-    ) : (
-      text
-    )
+  const toggleCollapseItem = () => {
+    if (!disabled) {
+      toggle()
+    }
+  }
 
   return (
     <div
-      className={classNames('collapse', { 'collapse--opened': isOpen }, className)}
+      className={classNames(
+        'collapse',
+        { 'collapse--opened': isOpen, 'collapse--disabled': disabled },
+        className
+      )}
       id={`${id || ''}`}
     >
-      <div className="collapse__header flexbox justify-content--between" onClick={toggle}>
-        {reverse ? (
-          <>
-            <div className="collapse__header__inner flexbox align-items--center">
-              <IconChevronDown className={'collapse__header__icon'} size={'small'} />
-              {additionalInfo}
-            </div>
+      <div
+        className={classNames('collapse__header', { 'collapse__header--reverse': reverse })}
+        onClick={toggleCollapseItem}
+      >
+        {iconProps?.Component ? (
+          <iconProps.Component
+            size="small"
+            type={disabled ? 'disabled' : 'tertiary'}
+            className={'collapse__header__icon'}
+            {...iconProps}
+          />
+        ) : null}
+        <div className={'collapse__header__inner'}>
+          <Text type={disabled ? 'disabled' : 'primary'} size={'medium'} weight={'semibold'}>
             {title}
-          </>
-        ) : (
-          <>
-            <div className="flexbox align-items--center">
-              {labelLeftIconProps?.Component ? (
-                <labelLeftIconProps.Component
-                  size="small"
-                  type="primary"
-                  className="mr-16"
-                  {...labelLeftIconProps}
-                />
-              ) : null}
-              {title}
-            </div>
-
-            <div className="collapse__header__inner flexbox align-items--center">
-              {additionalInfo}
-              <IconChevronRight className={'collapse__header__icon'} size={'small'} />
-            </div>
-          </>
-        )}
+          </Text>
+          {subtext ? (
+            <Text type={disabled ? 'disabled' : 'secondary'} className={'mt-8'}>
+              {subtext}
+            </Text>
+          ) : null}
+          {additionalInfo ? (
+            <div className={'collapse__additional mt-8'}>{additionalInfo}</div>
+          ) : null}
+        </div>
       </div>
       <AnimatePresenceWrapper initial={false}>
         {isOpen && (
@@ -75,10 +71,7 @@ export const CollapseItem = (props: TCollapseProps): JSX.Element => {
             exit={{ height: 0 }}
             transition={{ type: 'spring', duration: 0.5, bounce: 0 }}
           >
-            <div className="collapse__content">
-              <Divider type="primary" isHorizontal className={'collapse__divider'} />
-              {children}
-            </div>
+            <div className="collapse__content">{children}</div>
           </motion.div>
         )}
       </AnimatePresenceWrapper>
