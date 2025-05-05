@@ -4,7 +4,8 @@ import {
   Modal,
   SideSheet as _SideSheet,
   FormContainer,
-  MultiSelect as _MultiSelect
+  MultiSelect as _MultiSelect,
+  IconEdit
 } from '../index'
 import * as yup from 'yup'
 import IconMore from '../components/SVGIcons/IconMore'
@@ -175,6 +176,16 @@ const Template: StoryFn<TSideSheetPropTypes> = (args) => {
         {...args}
         size="small"
         onClose={closeSideSheet}
+        topLeftActions={
+          <div>
+            <Button type='tertiary' iconProps={{ Component: IconEdit }} />
+          </div>
+        }
+        topRightActions={
+          <div>
+            <Button type='tertiary' iconProps={{ Component: IconEdit }} />
+          </div>
+        }
         isOpen={isOpen}
         shouldRemoveCallback={false}
         onSubmit={onSubmit}

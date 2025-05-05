@@ -23,6 +23,8 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
     onClose,
     onSubmit,
     title,
+    topLeftActions,
+    topRightActions,
     position = 'right',
     shouldRemoveCallback,
     className = '',
@@ -34,6 +36,7 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
     checkboxInfo,
     headerContent,
     isPositioned = false,
+    isBodyHidden = true,
     withOverlay = false
   } = props
   const [containerRef, setContainerRef] = useState<HTMLDivElement | null>(null)
@@ -48,7 +51,7 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
     shouldRemoveCallback
   )
 
-  useHideBodyScroll(isOpen)
+  useHideBodyScroll(isOpen && isBodyHidden)
   const dispatchScrollEvent = useDispatchEventOnScroll()
 
   useEffect(() => {
@@ -130,8 +133,10 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
                   >
                     {title}
                   </Heading>
+                  {topLeftActions}
                 </div>
-                <div>
+                <div className='flexbox align-items--center'>
+                  {topRightActions}
                   <ButtonIcon
                     size="medium"
                     iconProps={{ Component: IconDismiss }}

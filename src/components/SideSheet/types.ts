@@ -24,6 +24,8 @@ export interface TSideSheetPropTypes {
     confirm: TButtonPropTypes
     extraButton?: TButtonPropTypes
   }
+  topLeftActions?: ReactNode
+  topRightActions?: ReactNode
   tabItemsProps?: TTabProps
   children?: ReactNode
   className?: string
@@ -33,5 +35,6 @@ export interface TSideSheetPropTypes {
   checkboxInfo?: TCheckboxInfo
   headerContent?: ReactNode
   isPositioned?: boolean
+  isBodyHidden?: boolean
   withOverlay?: boolean
 }
