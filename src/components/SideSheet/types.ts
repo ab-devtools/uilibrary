@@ -36,5 +36,6 @@ export interface TSideSheetPropTypes {
   headerContent?: ReactNode
   isPositioned?: boolean
   isBodyHidden?: boolean
+  isWithDivider?: boolean
   withOverlay?: boolean
 }
