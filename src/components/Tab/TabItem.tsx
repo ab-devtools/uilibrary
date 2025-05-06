@@ -43,7 +43,7 @@ export const TabItem = (props: TTabItemProps): JSX.Element | null => {
         as={'span'}
         weight={'semibold'}
         className={'tab__label'}
-        data-id={dataId}
+        dataId={dataId}
         lineHeight={'xsmall'}
         size={TEXT_SIZE_MAPPING[size]}
       >
