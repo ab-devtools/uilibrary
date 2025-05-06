@@ -166,9 +166,7 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
                   className={'side-sheet__tabs'}
                 />
               ) : null}
-              {isWithDivider && (
-                <Divider isHorizontal />
-              )}
+              {isWithDivider && <Divider isHorizontal />}
             </div>
             <div
               className="side-sheet__content scrollbar scrollbar--vertical"

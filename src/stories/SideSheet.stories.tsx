@@ -356,5 +356,5 @@ SideSheet.args = {
   // position: 'left'
   withOverlay: false,
   isPositioned: false,
-  isWithDivider: false,
+  isWithDivider: false
 }
