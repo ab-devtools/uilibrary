@@ -1,3 +1,11 @@
+## [1.5.7](https://github.com/ab-devtools/uilibrary/compare/1.5.6...1.5.7) (2025-05-06)
+
+
+### Bug Fixes
+
+* add divider in side sheet ([a6451c0](https://github.com/ab-devtools/uilibrary/commit/a6451c09ada2f34fcbb0942dd3795d0fcdf0f273))
+* add divider in side sheet ([9915298](https://github.com/ab-devtools/uilibrary/commit/99152984848e672df53f92257dbb394a945b6955))
+
 ## [1.5.6](https://github.com/ab-devtools/uilibrary/compare/1.5.5...1.5.6) (2025-05-06)
 
 
