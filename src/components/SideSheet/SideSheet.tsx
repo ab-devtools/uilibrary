@@ -14,6 +14,7 @@ import { Heading } from '../Heading'
 import { ButtonIcon } from '../ButtonIcon'
 import { Tab } from '../Tab'
 import { isMobile } from '../../utils/helpers'
+import { Divider } from '../Divider'
 
 export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
   const {
@@ -35,6 +36,7 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
     closeOnOutsideClick = true,
     checkboxInfo,
     headerContent,
+    isWithDivider = false,
     isPositioned = false,
     isBodyHidden = true,
     withOverlay = false
@@ -164,6 +166,9 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
                   className={'side-sheet__tabs'}
                 />
               ) : null}
+              {isWithDivider && (
+                <Divider isHorizontal />
+              )}
             </div>
             <div
               className="side-sheet__content scrollbar scrollbar--vertical"

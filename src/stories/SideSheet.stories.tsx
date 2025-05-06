@@ -21,6 +21,10 @@ export default {
     position: {
       options: ['left', 'right'],
       control: { type: 'radio' }
+    },
+    isWithDivider: {
+      options: [false, true],
+      control: { type: 'radio' }
     }
   }
 }
@@ -351,5 +355,6 @@ SideSheet.args = {
   },
   // position: 'left'
   withOverlay: false,
-  isPositioned: false
+  isPositioned: false,
+  isWithDivider: false,
 }
