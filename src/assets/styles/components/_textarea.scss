@@ -65,12 +65,6 @@
       width: 0;
     }
 
-    &:valid {
-      color: var(--ds-textarea-body-text-validated);
-      background-color: var(--ds-textarea-bg-validatedd);
-      border-color: var(--ds-textarea-border-color-validated);
-    }
-
     &:invalid {
       color: var(--ds-textarea-body-text-invalid);
       background-color: var(--ds-textarea-bg-invalid);
@@ -118,5 +112,20 @@
   &__counter {
     flex: 1;
     text-align: right;
+  }
+
+  &--valid {
+    textarea {
+      color: var(--ds-textarea-body-text-validated);
+      background-color: var(--ds-textarea-bg-validatedd);
+      border-color: var(--ds-textarea-border-color-validated);
+    }
+  }
+  &--invalid {
+    textarea {
+      color: var(--ds-textarea-body-text-invalid);
+      background-color: var(--ds-textarea-bg-invalid);
+      border-color: var(--ds-textarea-border-color-invalid);
+    }
   }
 }
