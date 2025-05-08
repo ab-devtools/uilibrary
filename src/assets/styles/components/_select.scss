@@ -226,6 +226,12 @@
           box-shadow: var(--ds-select-language-shadow-focused);
         }
       }
+
+      &__inner {
+        .input__icon--left {
+          pointer-events: none;
+        }
+      }
     }
 
     &#{$this}--opened {
