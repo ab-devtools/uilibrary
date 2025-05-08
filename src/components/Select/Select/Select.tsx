@@ -258,7 +258,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
                 </div>
               ) : null}
 
-              {filteredData.map((item: TSelectOption) => {
+              {filteredData.map((item: TSelectOption, i: number) => {
                 const isSelected = item.value === currentSelection
                 return (
                   <>
@@ -267,6 +267,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
                         key: item.value as string,
                         onClick: clickHandler(isSelected),
                         data: item,
+                        index: i,
                         disabled: item.disabled,
                         isSelected: isSelected
                       })

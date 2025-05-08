@@ -116,6 +116,7 @@ export interface TButtonSelectPropTypes extends IFormCompProps, TSelectBaseProps
 
 export interface IRenderOptionItemProps extends TSelectItemProps {
   key?: string
+  index: number
 }
 
 export interface TSingleSelectPropTypes extends IFormCompProps, TSelectBaseProps {
