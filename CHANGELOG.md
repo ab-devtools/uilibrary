@@ -1,3 +1,11 @@
+## [1.5.8](https://github.com/ab-devtools/uilibrary/compare/1.5.7...1.5.8) (2025-05-08)
+
+
+### Bug Fixes
+
+* textarea invalid style ([b319067](https://github.com/ab-devtools/uilibrary/commit/b3190675c4ea4c5b4fa02985c71885c996ff37b7))
+* textarea invalid style ([4431889](https://github.com/ab-devtools/uilibrary/commit/44318898fb3141e0ebc5a209579780a1d85820ce))
+
 ## [1.5.7](https://github.com/ab-devtools/uilibrary/compare/1.5.6...1.5.7) (2025-05-06)
 
 
