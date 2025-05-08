@@ -1,3 +1,10 @@
+## [1.5.9](https://github.com/ab-devtools/uilibrary/compare/1.5.8...1.5.9) (2025-05-08)
+
+
+### Bug Fixes
+
+* add index in select render option ([7129303](https://github.com/ab-devtools/uilibrary/commit/71293036abbb2b4e7749d56df1fae9f8f867818d))
+
 ## [1.5.8](https://github.com/ab-devtools/uilibrary/compare/1.5.7...1.5.8) (2025-05-08)
 
 
