@@ -1,3 +1,10 @@
+## [1.5.10](https://github.com/ab-devtools/uilibrary/compare/1.5.9...1.5.10) (2025-05-12)
+
+
+### Bug Fixes
+
+* fixed language select icon click issue ([05e2fa9](https://github.com/ab-devtools/uilibrary/commit/05e2fa97d9e9e92d5af9ffaf95eb68a00f665f4e))
+
 ## [1.5.9](https://github.com/ab-devtools/uilibrary/compare/1.5.8...1.5.9) (2025-05-08)
 
 
