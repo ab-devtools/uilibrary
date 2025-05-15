@@ -1,3 +1,10 @@
+## [1.5.11](https://github.com/ab-devtools/uilibrary/compare/1.5.10...1.5.11) (2025-05-15)
+
+
+### Bug Fixes
+
+* add side sheet xsmall size ([75ed84a](https://github.com/ab-devtools/uilibrary/commit/75ed84a6117d5daa24923c67aed693c0f732628e))
+
 ## [1.5.10](https://github.com/ab-devtools/uilibrary/compare/1.5.9...1.5.10) (2025-05-12)
 
 
