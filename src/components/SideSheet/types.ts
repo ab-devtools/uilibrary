@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 import type { TButtonPropTypes } from '../Button/types'
 import type { TTabProps } from '../Tab/types'
 
-export type TSideSheet = 'small' | 'large'
+export type TSideSheet = 'xsmall' | 'small' | 'large'
 
 export type TCheckboxInfo = {
   label: string
