@@ -20,8 +20,8 @@ export const ItemSelect = (props: TItemSelectProps): ReactElement => {
     itemValue,
     setFieldValue,
     rightIconProps,
-    deSelectable,
-    rightContent
+    rightContent,
+    deSelectable
   } = props
   const selected = itemValue === value
   const itemSelectStyle = classNames(
