@@ -17,7 +17,20 @@ export const ItemSelectGroup = (props: TItemSelectGroupProps): JSX.Element => {
       )}
     >
       {items.map(
-        ({ value: itemValue, title, subtitle, image, leftIconProps, rightContent, id, disabled, deSelectable }, index) => {
+        (
+          {
+            value: itemValue,
+            title,
+            subtitle,
+            image,
+            leftIconProps,
+            rightContent,
+            id,
+            disabled,
+            deSelectable
+          },
+          index
+        ) => {
           return (
             <ItemSelect
               name={name}

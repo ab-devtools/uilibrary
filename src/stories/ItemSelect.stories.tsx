@@ -9,7 +9,7 @@ import IconAmd from '../components/SVGIcons/IconAmd'
 import { TItemSelectGroupProps, TItemSelectProps } from '../components/ItemSelect/types'
 import { StoryFn } from '@storybook/react'
 import IconQuestion from '../components/SVGIcons/IconQuestion'
-import {Text} from "../components/Text";
+import { Text } from '../components/Text'
 
 export default {
   title: 'ItemSelect',

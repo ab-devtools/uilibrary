@@ -13,7 +13,7 @@ export interface TItemSelectProps extends IFormCompProps {
   isSelected?: boolean
   itemValue?: number | string
   rightIconProps?: TSelectIconProps
-  deSelectable?: boolean,
+  deSelectable?: boolean
   rightContent?: ReactElement
 }
 export interface TItemSelectGroupProps extends IFormCompProps {

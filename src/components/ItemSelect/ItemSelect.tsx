@@ -58,21 +58,24 @@ export const ItemSelect = (props: TItemSelectProps): ReactElement => {
       ) : null}
       <div className={'item-select__content text-truncate'}>
         {title ? (
-            <Text type={disabled ? 'disabled' : 'primary'} weight={'bold'} className={'full-width text-truncate'}>
-              {title}
-            </Text>
+          <Text
+            type={disabled ? 'disabled' : 'primary'}
+            weight={'bold'}
+            className={'full-width text-truncate'}
+          >
+            {title}
+          </Text>
         ) : null}
         {subtitle ? (
-            <Text type={disabled ? 'disabled' : 'primary'} className={'full-width text-truncate mt-2'}>
-              {subtitle}
-            </Text>
+          <Text
+            type={disabled ? 'disabled' : 'primary'}
+            className={'full-width text-truncate mt-2'}
+          >
+            {subtitle}
+          </Text>
         ) : null}
       </div>
-      {rightContent ? (
-          <div className={'item-select__right ml-16'}>
-            {rightContent}
-          </div>
-      ) :null }
+      {rightContent ? <div className={'item-select__right ml-16'}>{rightContent}</div> : null}
       {rightIconProps && rightIconProps.Component ? (
         selected ? (
           <rightIconProps.Component {...rightIconProps} />
