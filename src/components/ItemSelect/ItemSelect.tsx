@@ -9,7 +9,8 @@ import classNames from 'classnames'
 export const ItemSelect = (props: TItemSelectProps): ReactElement => {
   const {
     leftIconProps,
-    label,
+    title,
+    subtitle,
     image,
     disabled,
     className,
@@ -18,8 +19,9 @@ export const ItemSelect = (props: TItemSelectProps): ReactElement => {
     value,
     itemValue,
     setFieldValue,
-    icon,
-    deSelectable
+    rightIconProps,
+    deSelectable,
+    rightContent
   } = props
   const selected = itemValue === value
   const itemSelectStyle = classNames(
@@ -42,7 +44,7 @@ export const ItemSelect = (props: TItemSelectProps): ReactElement => {
   return (
     <div className={itemSelectStyle} onClick={handleItemSelect}>
       {image || leftIconProps ? (
-        <div className={'item-select__left mr-12'}>
+        <div className={'item-select__left mr-16'}>
           {image ? (
             <div
               className={'item-select__image flexbox align-items--center justify-content--center'}
@@ -55,13 +57,25 @@ export const ItemSelect = (props: TItemSelectProps): ReactElement => {
         </div>
       ) : null}
       <div className={'item-select__content text-truncate'}>
-        <Text type={disabled ? 'disabled' : 'primary'} className={'full-width text-truncate'}>
-          <>{label}</>
-        </Text>
+        {title ? (
+            <Text type={disabled ? 'disabled' : 'primary'} weight={'bold'} className={'full-width text-truncate'}>
+              {title}
+            </Text>
+        ) : null}
+        {subtitle ? (
+            <Text type={disabled ? 'disabled' : 'primary'} className={'full-width text-truncate mt-2'}>
+              {subtitle}
+            </Text>
+        ) : null}
       </div>
-      {icon && icon.Component ? (
+      {rightContent ? (
+          <div className={'item-select__right ml-16'}>
+            {rightContent}
+          </div>
+      ) :null }
+      {rightIconProps && rightIconProps.Component ? (
         selected ? (
-          <icon.Component {...icon} />
+          <rightIconProps.Component {...rightIconProps} />
         ) : null
       ) : (
         <Radio

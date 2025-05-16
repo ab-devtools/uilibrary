@@ -9,6 +9,7 @@ import IconAmd from '../components/SVGIcons/IconAmd'
 import { TItemSelectGroupProps, TItemSelectProps } from '../components/ItemSelect/types'
 import { StoryFn } from '@storybook/react'
 import IconQuestion from '../components/SVGIcons/IconQuestion'
+import {Text} from "../components/Text";
 
 export default {
   title: 'ItemSelect',
@@ -19,7 +20,7 @@ const ITEMS = [
   {
     value: 1,
     image: imageFile1,
-    label: 'Arca',
+    title: 'Arca',
     disabled: false,
     onClick: (e: any) => {
       console.log(e)
@@ -29,7 +30,8 @@ const ITEMS = [
   {
     value: 2,
     image: imageFile2,
-    label: 'MasterCard',
+    title: 'MasterCard',
+    subtitle: 'Subtitle text',
     disabled: true,
     onClick: (e: any) => {
       console.log(e)
@@ -41,6 +43,7 @@ const ITEMS = [
     image: imageFile3,
     label: 'Visa',
     disabled: false,
+    rightContent: <Text type={'tertiary'}>Right Content</Text>,
     onClick: (e: any) => {
       console.log(e)
     },
@@ -59,12 +62,15 @@ const Template: StoryFn<TItemSelectProps> = (args) => {
 export const ItemSelect = Template.bind({})
 
 ItemSelect.args = {
-  leftIconProps: <IconAmd size={'small'} />,
-  icon: {
-    Component: IconQuestion
+  leftIconProps: <IconAmd />,
+  rightIconProps: {
+    Component: IconQuestion,
+    className: 'ml-16'
   },
   // image: '',
-  label: 'Item Select',
+  title: 'Title',
+  subtitle: 'Subtitle text',
+  rightContent: <Text type={'tertiary'}>Right Content</Text>,
   disabled: false,
   deSelectable: true
   // value: null,
@@ -94,6 +100,7 @@ ItemSelectGroup.args = {
   isHorizontal: false,
   iconGroup: {
     Component: IconCheckmark,
-    type: 'brand'
+    type: 'brand',
+    className: 'ml-16'
   }
 }

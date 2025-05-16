@@ -2,7 +2,8 @@ import type { ReactElement } from 'react'
 export interface TItemSelectProps extends IFormCompProps {
   id?: number | string
   image?: string
-  label: string
+  title?: string
+  subtitle?: string
   leftIconProps?: ReactElement
   className?: string
   disabled?: boolean
@@ -11,8 +12,9 @@ export interface TItemSelectProps extends IFormCompProps {
   handleChange?: (selected: number | string) => void
   isSelected?: boolean
   itemValue?: number | string
-  icon?: TSelectIconProps
-  deSelectable?: boolean
+  rightIconProps?: TSelectIconProps
+  deSelectable?: boolean,
+  rightContent?: ReactElement
 }
 export interface TItemSelectGroupProps extends IFormCompProps {
   isHorizontal?: boolean
