@@ -1,3 +1,10 @@
+## [1.5.12](https://github.com/ab-devtools/uilibrary/compare/1.5.11...1.5.12) (2025-05-16)
+
+
+### Bug Fixes
+
+* update chips sizes ([c798782](https://github.com/ab-devtools/uilibrary/commit/c7987825936a7f857eb28d1770ffb5f4d141ee4d))
+
 ## [1.5.11](https://github.com/ab-devtools/uilibrary/compare/1.5.10...1.5.11) (2025-05-15)
 
 
