@@ -4,16 +4,17 @@
   $this: &;
 
   --ds-chips-height-lg: var(--ds-size-32);
-  --ds-chips-height-md: var(--ds-size-24);
-  --ds-chips-height-sm: var(--ds-size-20);
-  --ds-chips-height-xs: var(--ds-size-16);
+  --ds-chips-height-md: var(--ds-size-28);
+  --ds-chips-height-sm: var(--ds-size-24);
+  --ds-chips-height-xs: var(--ds-size-20);
 
   --ds-chips-border-radius: var(--ds-border-radius-4xl);
 
+  --ds-chips-padding: 0 var(--ds-space-4);
   --ds-chips-padding-lg: 0 var(--ds-space-10);
-  --ds-chips-padding-md: 0 var(--ds-space-6);
-  --ds-chips-padding-sm: 0 var(--ds-space-4);
-  --ds-chips-padding-xs: 0 var(--ds-space-4);
+
+  --ds-chips-icon-spacing: var(--ds-space-4);
+  --ds-chips-icon-spacing-lg: var(--ds-space-6);
 
   --ds-chips-filled-bg-primary: var(--grey-400);
   --ds-chips-filled-bg-primary-hover: var(--grey-500);
@@ -62,6 +63,7 @@
   @include mixin.justify-content(center);
   @include mixin.truncate(100%);
   border-radius: var(--ds-chips-border-radius);
+  padding: var(--ds-chips-padding);
 
   &:not(&#{$this}--disabled) {
     &:hover {
@@ -73,25 +75,30 @@
     cursor: default;
   }
 
+  &__icon {
+    margin-right: var(--ds-chips-icon-spacing);
+  }
+
   &--large {
     height: var(--ds-chips-height-lg);
     min-width: var(--ds-chips-height-lg);
     padding: var(--ds-chips-padding-lg);
+
+    #{$this}__icon {
+      margin-right: var(--ds-chips-icon-spacing-lg);
+    }
   }
   &--medium {
     height: var(--ds-chips-height-md);
     min-width: var(--ds-chips-height-md);
-    padding: var(--ds-chips-padding-md);
   }
   &--small {
     height: var(--ds-chips-height-sm);
     min-width: var(--ds-chips-height-sm);
-    padding: var(--ds-chips-padding-sm);
   }
   &--xsmall {
-    height: var(--ds-chips-height-sm);
-    min-width: var(--ds-chips-height-sm);
-    padding: var(--ds-chips-padding-xs);
+    height: var(--ds-chips-height-xs);
+    min-width: var(--ds-chips-height-xs);
   }
 
   &--filled {

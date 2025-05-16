@@ -5,7 +5,7 @@ import type { TChipsProps } from './types'
 import { ChipCustomType } from './types'
 import classNames from 'classnames'
 import IconDismissCircleFilled from '../SVGIcons/IconDismissCircleFilled'
-import { ICON_SIZE_MAPPING, TEXT_SIZE_MAPPING } from './consts'
+import { LEFT_ICON_SIZE_MAPPING, RIGHT_ICON_SIZE_MAPPING, TEXT_SIZE_MAPPING } from './consts'
 
 export const Chips = (props: TChipsProps): ReactElement => {
   const {
@@ -42,9 +42,9 @@ export const Chips = (props: TChipsProps): ReactElement => {
       {leftIconProps?.Component ? (
         <leftIconProps.Component
           dataId={`${dataId}-icon`}
-          size={ICON_SIZE_MAPPING[size]}
+          size={RIGHT_ICON_SIZE_MAPPING[size]}
           type={customType}
-          className={'mr-6'}
+          className={'chips__icon'}
           {...leftIconProps}
         />
       ) : null}
@@ -61,9 +61,9 @@ export const Chips = (props: TChipsProps): ReactElement => {
       {withAction && (
         <IconDismissCircleFilled
           dataId={`${dataId}-icon`}
-          size={ICON_SIZE_MAPPING[size]}
+          size={LEFT_ICON_SIZE_MAPPING[size]}
           type={customType}
-          className="chips__delete ml-6"
+          className="chips__delete ml-4"
           onClick={handleClick}
         />
       )}
