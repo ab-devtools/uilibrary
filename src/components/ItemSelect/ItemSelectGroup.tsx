@@ -38,9 +38,9 @@ export const ItemSelectGroup = (props: TItemSelectGroupProps): JSX.Element => {
               title={title}
               subtitle={subtitle}
               image={image}
-              rightIconProps={iconGroup}
               leftIconProps={leftIconProps}
               rightContent={rightContent}
+              rightIconProps={iconGroup}
               handleChange={handleChange}
               itemValue={itemValue}
               value={value}
