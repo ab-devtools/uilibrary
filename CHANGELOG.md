@@ -1,3 +1,17 @@
+# [1.6.0](https://github.com/ab-devtools/uilibrary/compare/1.5.12...1.6.0) (2025-05-16)
+
+
+### Bug Fixes
+
+* ui changes for itemSelect component ([e5e2cce](https://github.com/ab-devtools/uilibrary/commit/e5e2cce6d5afcd3b2325832b7838cc2eb21cc1c5))
+* ui changes for itemSelect component ([6ce911d](https://github.com/ab-devtools/uilibrary/commit/6ce911dbe33b956761d111c9d6a4dd9ad7045605))
+
+
+### Features
+
+* change ([29c7b2a](https://github.com/ab-devtools/uilibrary/commit/29c7b2a13fcfd74f9a27ed4cba731491001a3e7f))
+* change ([6bda4d2](https://github.com/ab-devtools/uilibrary/commit/6bda4d21ec924eb82bee09c548f02804977f4e38))
+
 ## [1.5.12](https://github.com/ab-devtools/uilibrary/compare/1.5.11...1.5.12) (2025-05-16)
 
 
