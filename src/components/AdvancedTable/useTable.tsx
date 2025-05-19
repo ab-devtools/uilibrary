@@ -4,7 +4,8 @@ import type {
   SortingState,
   OnChangeFn,
   ColumnSizingState,
-  PaginationState
+  PaginationState,
+  VisibilityState
 } from '@tanstack/react-table'
 import {
   useReactTable,
@@ -26,6 +27,7 @@ export function useTable<TData>({
   totalCount = 0,
   defaultPageSize = 10,
   defaultPageIndex = 0,
+  defaultHiddenColumns = [],
   onSortChange,
   onRowSelection,
   onColumnSizing,
@@ -126,6 +128,11 @@ export function useTable<TData>({
     onPaginationChange?.(newPagination)
   }
 
+  const hiddenColumns = defaultHiddenColumns?.reduce((acc: VisibilityState, key: string) => {
+    acc[key] = false
+    return acc
+  }, {})
+
   const table = useReactTable({
     data,
     columns: reorderedColumns,
@@ -136,6 +143,7 @@ export function useTable<TData>({
       columnOrder,
       columnSizing,
       rowSelection,
+      columnVisibility: hiddenColumns,
       columnPinning: {
         left: ['select'],
         right: ['actions']

@@ -30,6 +30,7 @@ export type TTableProps<TData> = {
   customHeader?: ReactNode
   defaultPageIndex?: number
   defaultPageSize?: number
+  defaultHiddenColumns?: string[]
   renderHeader?: (table: TTable<TData>) => ReactNode
   renderFooter?: (table: Table<TData>) => ReactNode
   onRowClick?: (row: Row<TData>) => void

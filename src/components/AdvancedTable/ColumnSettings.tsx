@@ -10,11 +10,16 @@ import { Positions } from '../Tooltip/types'
 interface ColumnSettingsProps<T> {
   table: Table<T>
   tooltipText?: string
+  hiddenColumns?: string[]
 }
 
-const hiddenColumnSettings = ['select', 'actions']
+const defaultHiddenColumnSettings = ['select', 'actions']
 
-export function ColumnSettings<T>({ table, tooltipText }: ColumnSettingsProps<T>) {
+export function ColumnSettings<T>({
+  table,
+  tooltipText,
+  hiddenColumns = []
+}: ColumnSettingsProps<T>) {
   const [ref, setRef] = useState<HTMLDivElement | null>(null)
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
@@ -28,6 +33,8 @@ export function ColumnSettings<T>({ table, tooltipText }: ColumnSettingsProps<T>
       toggle({ target: { checked: !column.getIsVisible() } })
     }
   }
+
+  const hiddenColumnSettings = defaultHiddenColumnSettings.concat(hiddenColumns)
 
   return (
     <div ref={setRef}>

@@ -124,11 +124,16 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
         data={data}
         totalCount={100}
         columns={columns}
+        defaultHiddenColumns={['user']}
         emptyTitle="Empty title"
         emptySubTitle="Please try to reload the page or use another keyword."
         renderHeader={(table) => (
           <div className="advanced-table__header justify-content--end">
-            <ColumnSettings tooltipText="Column is disabled" table={table} />
+            <ColumnSettings
+              hiddenColumns={['user']}
+              tooltipText="Column is disabled"
+              table={table}
+            />
           </div>
         )}
         renderFooter={(table) => (
