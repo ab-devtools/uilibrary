@@ -146,7 +146,7 @@ export function useTable<TData>({
       rowSelection,
       columnVisibility: {
         ...hiddenColumns,
-        ...columnVisibility,
+        ...columnVisibility
       },
       columnPinning: {
         left: ['select'],
