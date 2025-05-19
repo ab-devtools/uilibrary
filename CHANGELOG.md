@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/ab-devtools/uilibrary/compare/1.6.0...1.6.1) (2025-05-19)
+
+
+### Bug Fixes
+
+* default hidden columns props ([ebc54f3](https://github.com/ab-devtools/uilibrary/commit/ebc54f312e9404c3e424e46b69d2559dc1318d2c))
+
 # [1.6.0](https://github.com/ab-devtools/uilibrary/compare/1.5.12...1.6.0) (2025-05-16)
 
 
