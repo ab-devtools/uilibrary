@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import type {ReactElement, ReactNode} from 'react'
 import type { TButtonPropTypes } from '../Button/types'
 import type { TTabProps } from '../Tab/types'
 
@@ -18,7 +18,7 @@ export interface TSideSheetPropTypes {
   onClose: (e?: TClickEventType | MouseEvent) => void
   onSubmit?: (isCheckboxSelected: boolean) => void
   position?: 'right' | 'left'
-  title?: string
+  title?: string | ReactElement
   footerButtons?: {
     cancel: TButtonPropTypes
     confirm: TButtonPropTypes
