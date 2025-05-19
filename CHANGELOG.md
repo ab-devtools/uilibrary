@@ -1,3 +1,11 @@
+## [1.6.2](https://github.com/ab-devtools/uilibrary/compare/1.6.1...1.6.2) (2025-05-19)
+
+
+### Bug Fixes
+
+* column visibility ([86d12ba](https://github.com/ab-devtools/uilibrary/commit/86d12ba76dc26b24cc4acf08e43509d00298bb33))
+* column visibility ([0df4c07](https://github.com/ab-devtools/uilibrary/commit/0df4c07c8a59ccb6e610739269754f593d2e36f8))
+
 ## [1.6.1](https://github.com/ab-devtools/uilibrary/compare/1.6.0...1.6.1) (2025-05-19)
 
 
