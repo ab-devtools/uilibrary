@@ -1,4 +1,4 @@
-import type { JSX } from 'react';
+import type { JSX } from 'react'
 import React from 'react'
 import type { TSideNavigationPropTypes } from './types'
 import classNames from 'classnames'

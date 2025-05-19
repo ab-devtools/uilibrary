@@ -37,6 +37,7 @@ export function useTable<TData>({
   const [sorting, setSorting] = useState<SortingState>([])
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({})
   const [columnSizing, setColumnSizing] = useState<ColumnSizingState>({})
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({})
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: defaultPageIndex,
     pageSize: defaultPageSize
@@ -143,7 +144,10 @@ export function useTable<TData>({
       columnOrder,
       columnSizing,
       rowSelection,
-      columnVisibility: hiddenColumns,
+      columnVisibility: {
+        ...hiddenColumns,
+        ...columnVisibility
+      },
       columnPinning: {
         left: ['select'],
         right: ['actions']
@@ -158,6 +162,7 @@ export function useTable<TData>({
     onColumnSizingChange: handleColumnSizingChange,
     onSortingChange: handleSortingChange,
     onRowSelectionChange: handleRowSelect,
+    onColumnVisibilityChange: setColumnVisibility,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
