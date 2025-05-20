@@ -1,3 +1,11 @@
+## [1.6.3](https://github.com/ab-devtools/uilibrary/compare/1.6.2...1.6.3) (2025-05-20)
+
+
+### Bug Fixes
+
+* fixed tab skeleton ui for primary type ([7a4bdd3](https://github.com/ab-devtools/uilibrary/commit/7a4bdd30f545b70e07984ce7a1aafb000dcca9bb))
+* fixed tab skeleton ui for primary type ([d73d9fc](https://github.com/ab-devtools/uilibrary/commit/d73d9fc4cf43c346c99b899c5a6afe87573ac449))
+
 ## [1.6.2](https://github.com/ab-devtools/uilibrary/compare/1.6.1...1.6.2) (2025-05-19)
 
 
