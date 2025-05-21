@@ -14,7 +14,7 @@
   @include mixin.flexbox;
 
   &--horizontal {
-    @include mixin.align-items(center);
+    @include mixin.align-items(flex-start);
     width: 100%;
 
     .step {
