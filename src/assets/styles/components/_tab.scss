@@ -175,7 +175,6 @@
     width: fit-content;
 
     &#{$this}--skeleton {
-      border-bottom: 0;
       padding: var(--ds-space-10) 0;
 
       &#{$this}--small {
