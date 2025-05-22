@@ -1,3 +1,11 @@
+## [1.6.4](https://github.com/ab-devtools/uilibrary/compare/1.6.3...1.6.4) (2025-05-22)
+
+
+### Bug Fixes
+
+* fixed for tab ui ([446d09a](https://github.com/ab-devtools/uilibrary/commit/446d09a4951260379396702a07c025ebee5d5d05))
+* fixed progress step items alignment ([9253e6f](https://github.com/ab-devtools/uilibrary/commit/9253e6fe38d9b3feb63aad62fd0750a357450fac))
+
 ## [1.6.3](https://github.com/ab-devtools/uilibrary/compare/1.6.2...1.6.3) (2025-05-20)
 
 
