@@ -2,7 +2,7 @@ import type { ReactElement, ReactNode } from 'react'
 import type { TButtonPropTypes } from '../Button/types'
 import type { TTabProps } from '../Tab/types'
 
-export type TSideSheet = 'xsmall' | 'small' | 'large'
+export type TSideSheetSize = 'small' | 'medium' | 'large'
 
 export type TCheckboxInfo = {
   label: string
@@ -12,7 +12,7 @@ export type TCheckboxInfo = {
 export interface TSideSheetPropTypes {
   closeOnOutsideClick?: boolean
   shouldRemoveCallback?: boolean
-  size?: TSideSheet
+  size?: TSideSheetSize
   isLoading?: boolean
   isOpen: boolean
   onClose: (e?: TClickEventType | MouseEvent) => void

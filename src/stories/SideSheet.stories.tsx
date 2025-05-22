@@ -18,6 +18,10 @@ export default {
   title: 'Side Sheet',
   component: _SideSheet,
   argTypes: {
+    size: {
+      options: ['small', 'medium', 'large'],
+      control: { type: 'radio' }
+    },
     position: {
       options: ['left', 'right'],
       control: { type: 'radio' }
@@ -178,7 +182,6 @@ const Template: StoryFn<TSideSheetPropTypes> = (args) => {
       </div>
       <_SideSheet
         {...args}
-        size="small"
         onClose={closeSideSheet}
         topLeftActions={
           <div>
@@ -328,6 +331,7 @@ export const SideSheet = Template.bind({})
 
 SideSheet.args = {
   title: 'Side sheet title',
+  size: 'small',
   footerButtons: {
     confirm: {
       buttonText: 'Save'
