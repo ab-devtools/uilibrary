@@ -1,3 +1,11 @@
+## [1.6.5](https://github.com/ab-devtools/uilibrary/compare/1.6.4...1.6.5) (2025-05-22)
+
+
+### Bug Fixes
+
+* fix classname ([2ec99cb](https://github.com/ab-devtools/uilibrary/commit/2ec99cb8c29b6c1bb9d853304dc19148aaaaec2d))
+* fixes for side sheet ([5e5d763](https://github.com/ab-devtools/uilibrary/commit/5e5d7634427a4dcff59db47dc290fa849164f95c))
+
 ## [1.6.4](https://github.com/ab-devtools/uilibrary/compare/1.6.3...1.6.4) (2025-05-22)
 
 
