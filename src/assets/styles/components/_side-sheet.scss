@@ -126,11 +126,11 @@
 
       z-index: 999;
 
-      &__xsmall {
+      &__small {
         left: calc(var(--ds-side-sheet-width-sm) / 2  - var(--ds-size-16));
       }
 
-      &__small {
+      &__medium {
         left: calc(var(--ds-side-sheet-width-md) / 2  - var(--ds-size-16));
       }
       &__large {
