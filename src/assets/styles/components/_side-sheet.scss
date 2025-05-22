@@ -3,8 +3,8 @@
 .side-sheet {
   $this: &;
 
-  --ds-side-sheet-width-xsm: 540px;
-  --ds-side-sheet-width-sm: 640px;
+  --ds-side-sheet-width-sm: 540px;
+  --ds-side-sheet-width-md: 640px;
   --ds-side-sheet-width-lg: 740px;
 
   --ds-side-sheet-overlay-bg: var(--ds-overlay-9);
@@ -91,12 +91,12 @@
       animation: show 0.4s ease-in;
     }
 
-    &--xsmall {
-      max-width: var(--ds-side-sheet-width-xsm);
-    }
-
     &--small {
       max-width: var(--ds-side-sheet-width-sm);
+    }
+
+    &--medium {
+      max-width: var(--ds-side-sheet-width-md);
     }
     &--large {
       max-width: var(--ds-side-sheet-width-lg);
@@ -127,11 +127,11 @@
       z-index: 999;
 
       &__xsmall {
-        left: calc(var(--ds-side-sheet-width-xsm) / 2  - var(--ds-size-16));
+        left: calc(var(--ds-side-sheet-width-sm) / 2  - var(--ds-size-16));
       }
 
       &__small {
-        left: calc(var(--ds-side-sheet-width-sm) / 2  - var(--ds-size-16));
+        left: calc(var(--ds-side-sheet-width-md) / 2  - var(--ds-size-16));
       }
       &__large {
         left: calc(var(--ds-side-sheet-width-lg) / 2  - var(--ds-size-16));
