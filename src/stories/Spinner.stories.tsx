@@ -23,9 +23,7 @@ export default {
 }
 
 const Template: StoryFn<TSpinnerProps> = (args) => {
-
   return <_Spinner {...args} />
-
 }
 export const Spinner = Template.bind({})
 
