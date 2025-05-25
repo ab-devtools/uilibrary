@@ -1,5 +1,5 @@
 import type { ElementType, ReactNode } from 'react'
-import type {TTextLineHeight, TTextTypes, TTextWeight} from '../Text/types';
+import type { TTextLineHeight, TTextTypes, TTextWeight } from '../Text/types'
 
 type THeadingSizes = 'xsmall' | 'small' | 'standard' | 'medium' | 'large' | 'xlarge'
 
