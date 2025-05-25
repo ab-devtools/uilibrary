@@ -9,6 +9,7 @@ export const Heading = (props: HeadingPropTypes): ReactElement => {
     children,
     className = '',
     size = 'small',
+    color = 'primary',
     lineHeight = 'large',
     type: As = 'h1',
     weight = 'regular',
@@ -25,6 +26,7 @@ export const Heading = (props: HeadingPropTypes): ReactElement => {
         size && `heading-${size}`,
         weight,
         lineHeight && `lh-${lineHeight}`,
+        color && `color-${color}`,
         className
       )}
     >
