@@ -1,0 +1,95 @@
+@use "../../assets/styles/helpers/mixin";
+
+.spinner-wrapper {
+    --ds-spinner-wrapper-light-bg: transparent;
+    --ds-spinner-wrapper-dark-bg: var(--grey-900);
+
+    @include mixin.flexbox;
+    @include mixin.align-items(center);
+    @include mixin.justify-content(center);
+    height: 100%;
+    width: 100%;
+    padding-bottom: var(--ds-space-40);
+
+    &__inner {
+        text-align: center;
+    }
+
+    &--fullscreen {
+        @include mixin.fixed(0,0,0,0);
+        background-color: var(--ds-color-bg-white);
+    }
+
+    &--light {
+        background-color: var(--ds-spinner-wrapper-light-bg);
+    }
+
+    &--dark {
+        background-color: var(--ds-spinner-wrapper-dark-bg);
+    }
+}
+
+.spinner {
+    --ds-spinner-size-lg: var(--ds-size-80);
+    --ds-spinner-size-md: var(--ds-size-48);
+    --ds-spinner-size-sm: var(--ds-size-24);
+
+    --ds-spinner-border-size-lg: var(--ds-size-8);
+    --ds-spinner-border-size-md: var(--ds-size-4);
+    --ds-spinner-border-size-sm: var(--ds-size-2);
+
+    --ds-spinner-primary: var(--grey-700);
+    --ds-spinner-inverse: var(--grey-40);
+    --ds-spinner-brand: var(--ds-color-border-brand);
+
+    --ds-spinner-default-border-bg: var(--grey-50);
+    --ds-spinner-inverse-border-bg: var(--grey-700);
+
+    @include mixin.animation(rotation 1s linear infinite);
+    border-radius: var(--ds-border-radius-full);
+    display: block;
+    box-sizing: border-box;
+    margin: auto;
+    border-color: var(--ds-spinner-default-border-bg);
+    border-style: solid;
+
+    &--large {
+        width: var(--ds-spinner-size-lg);
+        height: var(--ds-spinner-size-lg);
+        border-width: var(--ds-spinner-border-size-lg);
+    }
+
+    &--medium {
+        width: var(--ds-spinner-size-md);
+        height: var(--ds-spinner-size-md);
+        border-width: var(--ds-spinner-border-size-md);
+    }
+
+    &--small {
+        width: var(--ds-spinner-size-sm);
+        height: var(--ds-spinner-size-sm);
+        border-width: var(--ds-spinner-border-size-sm);
+    }
+
+    &--primary {
+        border-bottom-color: var(--ds-spinner-primary);
+    }
+
+    &--inverse {
+        border-color: var(--ds-spinner-inverse-border-bg);
+        border-bottom-color: var(--ds-spinner-inverse);
+    }
+
+    &--brand {
+        border-bottom-color: var(--ds-spinner-brand);
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

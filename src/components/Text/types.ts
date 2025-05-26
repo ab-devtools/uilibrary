@@ -1,6 +1,6 @@
 import type { ElementType, MouseEvent, ReactNode } from 'react'
 
-type TTextTypes =
+export type TTextTypes =
   | 'primary'
   | 'secondary'
   | 'tertiary'
@@ -16,8 +16,8 @@ type TTextTypes =
   | 'discovery'
 
 type TTextSize = 'xxsmall' | 'xsmall' | 'small' | 'standard' | 'medium' | 'large'
-type TTextWeight = 'regular' | 'semibold' | 'bold' | 'bolder'
-type TTextLineHeight = 'xsmall' | 'small' | 'medium' | 'large'
+export type TTextWeight = 'regular' | 'semibold' | 'bold' | 'bolder'
+export type TTextLineHeight = 'xsmall' | 'small' | 'medium' | 'large'
 
 export interface TextPropTypes {
   id?: string
