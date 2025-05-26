@@ -1,3 +1,12 @@
+# [1.7.0](https://github.com/ab-devtools/uilibrary/compare/1.6.5...1.7.0) (2025-05-26)
+
+
+### Features
+
+* added spinner component, and added color props for Heading component ([ed8410d](https://github.com/ab-devtools/uilibrary/commit/ed8410d637f3acfcb59595b3771dd87aa9554fd4))
+* added spinner component, and added color props for Heading component ([f935657](https://github.com/ab-devtools/uilibrary/commit/f935657d94595a327eda4b071ac860cac488b5ce))
+* added spinner component, and added color props for Heading component ([b227265](https://github.com/ab-devtools/uilibrary/commit/b22726574c11a6c7d9813bcfeea428f05cae5264))
+
 ## [1.6.5](https://github.com/ab-devtools/uilibrary/compare/1.6.4...1.6.5) (2025-05-22)
 
 
