@@ -6,5 +6,5 @@ export type TCopyProps = {
   text: string
   size?: 'small' | 'medium' | 'large'
   dataId?: string
-  type: TSVGIconType
+  type?: TSVGIconType
 }
