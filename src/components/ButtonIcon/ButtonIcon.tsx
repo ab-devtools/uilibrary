@@ -36,7 +36,7 @@ export const ButtonIcon = (props: TButtonIconPropTypes): ReactElement => {
       ) : (
         <iconProps.Component
           size={ICON_SIZE_MAPPING[size]}
-          type={disabled ? 'disabled' : 'tertiary'}
+          type={disabled ? 'disabled' : iconProps.type || 'tertiary'}
         />
       )}
     </button>

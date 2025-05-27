@@ -10,6 +10,24 @@ export default {
     size: {
       options: ['large', 'medium', 'small'],
       control: { type: 'radio' }
+    },
+    type: {
+      options: [
+        'primary',
+        'secondary',
+        'tertiary',
+        'quaternary',
+        'disabled',
+        'inverse',
+        'selected',
+        'brand',
+        'danger',
+        'warning',
+        'success',
+        'information',
+        'discovery'
+      ],
+      control: { type: 'radio' }
     }
   }
 }

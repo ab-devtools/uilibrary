@@ -10,7 +10,8 @@ export const Copy = ({
   className = '',
   text,
   dataId,
-  size = 'medium'
+  size = 'medium',
+  type
 }: TCopyProps): ReactElement => {
   const [isTooltipVisible, setTooltipVisibility] = useState(false)
   const copyIconRef = useRef<HTMLDivElement | null>(null)
@@ -26,7 +27,10 @@ export const Copy = ({
     <div ref={copyIconRef} className="copy-icon">
       <ButtonIcon
         dataId={dataId}
-        iconProps={{ Component: IconCopy }}
+        iconProps={{
+          Component: IconCopy,
+          type
+        }}
         size={size}
         className={className}
         onClick={copy}

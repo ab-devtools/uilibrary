@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes, LegacyRef, PropsWithChildren } from 'react'
+import type { TSVGIconType } from '../SVGIcons/types'
 
 export interface TButtonIconPropTypes
   extends PropsWithChildren<Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type' | 'children'>> {
@@ -10,6 +11,7 @@ export interface TButtonIconPropTypes
   isLoading?: boolean
   iconProps: {
     Component: TSVGIconComponent
+    type?: TSVGIconType
   }
   onClick?: (event: TClickEventType) => void
   formId?: string
