@@ -1,0 +1,35 @@
+import type { ReactElement } from 'react'
+import React from 'react'
+import type { ISVGIconProps } from './types'
+import classNames from 'classnames'
+
+export const IconDocumentFooterFilled = ({
+  size,
+  type,
+  className = '',
+  onClick,
+  refHandler,
+  id,
+  dataId
+}: ISVGIconProps): ReactElement => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className={classNames('svg-icon', {
+      [`svg-icon__size-${size}`]: size,
+      [`svg-icon__type-${type}`]: type,
+      [className]: className
+    })}
+    viewBox="0 0 24 24"
+    onClick={onClick}
+    ref={refHandler}
+    id={id}
+    data-id={dataId ? `${dataId}-svg-icon` : ''}
+  >
+    <path
+      d="M17.745 1.99609C18.9359 1.99609 19.9106 2.92126 19.9898 4.09205L19.995 4.24609V19.7442C19.995 20.935 19.0698 21.9098 17.899 21.989L17.745 21.9942H6.24512C5.05425 21.9942 4.07947 21.069 4.00031 19.8982L3.99512 19.7442V4.24609C3.99512 3.05523 4.92028 2.08045 6.09107 2.00128L6.24512 1.99609H17.745ZM8.50024 16.0003C7.67182 16.0003 7.00024 16.6719 7.00024 17.5003C7.00024 18.3287 7.67182 19.0003 8.50024 19.0003H15.5002C16.3287 19.0003 17.0002 18.3287 17.0002 17.5003C17.0002 16.6719 16.3287 16.0003 15.5002 16.0003H8.50024Z"
+      fill="#222222"
+    />
+  </svg>
+)
+
+export default IconDocumentFooterFilled
