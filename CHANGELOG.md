@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/ab-devtools/uilibrary/compare/1.7.2...1.7.3) (2025-05-27)
+
+
+### Bug Fixes
+
+* fix for side sheet mobile position ([5ac7eb7](https://github.com/ab-devtools/uilibrary/commit/5ac7eb7651029dccf5ceb4e287fbe31c4809a300))
+
 ## [1.7.2](https://github.com/ab-devtools/uilibrary/compare/1.7.1...1.7.2) (2025-05-27)
 
 
