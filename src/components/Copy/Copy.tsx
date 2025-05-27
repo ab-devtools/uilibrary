@@ -11,7 +11,7 @@ export const Copy = ({
   text,
   dataId,
   size = 'medium',
-  type
+  type = 'tertiary'
 }: TCopyProps): ReactElement => {
   const [isTooltipVisible, setTooltipVisibility] = useState(false)
   const copyIconRef = useRef<HTMLDivElement | null>(null)
