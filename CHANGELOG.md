@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/ab-devtools/uilibrary/compare/1.7.0...1.7.1) (2025-05-27)
+
+
+### Bug Fixes
+
+* copy button types ([98f773d](https://github.com/ab-devtools/uilibrary/commit/98f773d39a89db743439e088a20066da0f53af0b))
+
 # [1.7.0](https://github.com/ab-devtools/uilibrary/compare/1.6.5...1.7.0) (2025-05-26)
 
 
