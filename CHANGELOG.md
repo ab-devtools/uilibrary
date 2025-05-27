@@ -1,3 +1,11 @@
+# [1.8.0](https://github.com/ab-devtools/uilibrary/compare/1.7.3...1.8.0) (2025-05-27)
+
+
+### Features
+
+* **iconsSVG:** added BookOpen, Engine and DocumentFooter icons filled versions ([47243c9](https://github.com/ab-devtools/uilibrary/commit/47243c9fd245727af5ed8df50c9e9bc65a4bff91))
+* **iconsSVG:** added IconBookOpen, IconEngine and IconDocumentFooter ([c958a19](https://github.com/ab-devtools/uilibrary/commit/c958a19fdc27c12157b3eeb31a527d91d14c3d31))
+
 ## [1.7.3](https://github.com/ab-devtools/uilibrary/compare/1.7.2...1.7.3) (2025-05-27)
 
 
