@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/ab-devtools/uilibrary/compare/1.7.1...1.7.2) (2025-05-27)
+
+
+### Bug Fixes
+
+* change CopyComponent type props to optional ([3ea51f3](https://github.com/ab-devtools/uilibrary/commit/3ea51f39331c963d69974ead0895b504c3e51eb4))
+
 ## [1.7.1](https://github.com/ab-devtools/uilibrary/compare/1.7.0...1.7.1) (2025-05-27)
 
 
