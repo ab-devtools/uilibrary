@@ -121,8 +121,7 @@ const BUTTON_SELECT_OPTIONS = [
 const OPTIONS: TSelectOptions = [
   {
     value: 1,
-    label:
-      'Armenia',
+    label: 'Armenia',
     meta: 'AM'
   },
   {
@@ -209,20 +208,17 @@ const OPTIONS_YEREVAN: TSelectOptions = [
   {
     value: 1,
     parentId: 59,
-    label:
-      'Kentron',
+    label: 'Kentron'
   }
-];
+]
 
 const OPTIONS_ARMAVIR: TSelectOptions = [
   {
     value: 2,
     parentId: 60,
-    label:
-      'Vagharshapat',
+    label: 'Vagharshapat'
   }
 ]
-
 
 const OPTIONS_TREE: TSelectTreeOptions = [
   {

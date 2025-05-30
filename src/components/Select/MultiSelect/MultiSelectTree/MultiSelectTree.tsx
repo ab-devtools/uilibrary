@@ -70,26 +70,16 @@ export const MultiSelectTree = (props: TMultiSelectTreeProps): JSX.Element | nul
     )
   }, [searchValue, options])
 
-  const selectedOptions = useMemo(() => {
-    return options.reduce((acc: TSelectOption[], option: TSelectTreeOption) => {
-      const { data } = option
-      const selectedItems = data.filter(
-        (item: TSelectOption) => selectedValues.findIndex((s) => s.value === item.value) !== -1
-      )
-      return [...acc, ...selectedItems]
-    }, [])
-  }, [options, selectedValues])
-
   const onDeselect = (item: TSelectedValue) => {
     setAllSelected(false)
     onItemDeselect(item)
   }
 
   const onGroupClick = (index: number) => {
-      setOpenGroups((prev) => ({
-        ...prev,
-        [index]: !prev[index]
-      }))
+    setOpenGroups((prev) => ({
+      ...prev,
+      [index]: !prev[index]
+    }))
   }
 
   const optionProps = useMemo(() => {
@@ -131,41 +121,41 @@ export const MultiSelectTree = (props: TMultiSelectTreeProps): JSX.Element | nul
           {filteredData.map(({ title, data }: TSelectGroupOption, index: number) => {
             const isActive = !!openGroups[index]
 
-            const groupHasSelected = data.some(
-              (item) => selectedValues.find((s) => s.value === item.value)
+            const groupHasSelected = data.some((item) =>
+              selectedValues.find((s) => s.value === item.value)
             )
 
             const handleGroupCheckboxChange = (checked: boolean) => {
               const groupValues = data
                 .filter((item) => !item.disabled)
-                .map((item) => ({ value: item.value, label: item.label, parentId: item.parentId }));
+                .map((item) => ({ value: item.value, label: item.label, parentId: item.parentId }))
 
               if (checked) {
-                const newSelected = [...selectedValues];
+                const newSelected = [...selectedValues]
                 groupValues.forEach((item) => {
                   if (!newSelected.find((s) => s.value === item.value)) {
-                    newSelected.push(item);
+                    newSelected.push(item)
                   }
-                });
-                setSelectedValues(newSelected);
+                })
+                setSelectedValues(newSelected)
               } else {
                 const newSelected = selectedValues.filter(
                   (s) => !data.find((item) => item.value === s.value)
-                );
-                setSelectedValues(newSelected);
+                )
+                setSelectedValues(newSelected)
               }
-            };
+            }
 
             return (
               <div className="select__group group-item" key={`${data[0]?.value}_${index}`}>
                 <div onClick={() => onGroupClick(index)} className="group-item__top">
-                    <Checkbox
-                      className="mr-8"
-                      onClick={(checked) => {
-                        handleGroupCheckboxChange(checked);
-                      }}
-                      selectedValue={groupHasSelected}
-                    />
+                  <Checkbox
+                    className="mr-8"
+                    onClick={(checked) => {
+                      handleGroupCheckboxChange(checked)
+                    }}
+                    selectedValue={groupHasSelected}
+                  />
                   <Text size="xxsmall" type="tertiary" className="group-item__title pr-4">
                     {title}
                   </Text>

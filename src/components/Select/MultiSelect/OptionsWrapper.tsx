@@ -46,7 +46,13 @@ export const OptionsWrapper = (props: TProps): ReactElement => {
 
   const inputRef = useRef<HTMLInputElement | null>(null)
 
-  const SelectComp = isMultiSelectTree ? MultiSelectTree : withTabs ? MultiSelectWithTabs : isGrouped ? MultiSelectGrouped : MultiBase
+  const SelectComp = isMultiSelectTree
+    ? MultiSelectTree
+    : withTabs
+    ? MultiSelectWithTabs
+    : isGrouped
+    ? MultiSelectGrouped
+    : MultiBase
 
   const checkIsValueOverflowed = useCallback(
     (value: string) => {
