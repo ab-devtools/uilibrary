@@ -61,6 +61,7 @@ interface TMultiSelectCompProps extends IFormCompProps, TSelectBaseProps {
   onItemSelect: (item: TSelectedValue) => void
   onItemDeselect: (item: TSelectedValue) => void
   menuOptions?: TMenuItem[]
+  isMultiSelectTree?: boolean
 }
 
 export interface TMultySingleTabPropTypes extends TMultiSelectCompProps {
@@ -69,6 +70,10 @@ export interface TMultySingleTabPropTypes extends TMultiSelectCompProps {
 
 export interface TMultiSelectGroupedProps extends TMultiSelectCompProps {
   options: TSelectGroupOptions
+}
+
+export interface TMultiSelectTreeProps extends TMultiSelectCompProps {
+  options: TSelectTreeOptions
 }
 
 export type TCheckboxInfo = {
@@ -84,6 +89,7 @@ export interface TMultiSelectPropTypes extends IFormCompProps, TSelectBaseProps 
   isSearchAvailable?: boolean
   withTabs?: boolean
   isGrouped?: boolean
+  isMultiSelectTree?: boolean
   checkboxInfo?: TCheckboxInfo
   selectedItems?: TSelectedValue[]
   translations: TSelectTranslations

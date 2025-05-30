@@ -93,6 +93,7 @@ declare type TSelectedValue = {
   value: TItemValue
   label: TItemLabel
   optionLeftIcon?: TSelectIconProps
+  parentId?: TItemValue
 }
 declare type TItemLabel = string | number
 
@@ -114,6 +115,7 @@ declare type TSelectOption = {
   disabled?: boolean
   children?: TSelectOption[]
   dataId?: string
+  parentId?: string | number | null
   optionLeftIcon?: TSelectIconProps
 }
 
@@ -125,7 +127,15 @@ declare type TSelectGroupOption = {
   data: TSelectOptions
 }
 
+declare type TSelectTreeOption = {
+  title: string
+  dataId?: string
+  parentId?: string | number | null
+  data: TSelectOptions
+}
+
 declare type TSelectGroupOptions = TSelectGroupOption[]
+declare type TSelectTreeOptions = TSelectTreeOption[]
 
 declare type TRangePickerValues = [Date | null, Date | null]
 
