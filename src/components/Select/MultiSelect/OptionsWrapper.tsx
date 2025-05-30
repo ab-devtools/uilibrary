@@ -2,6 +2,7 @@ import type { ReactElement } from 'react'
 import React, { useCallback, useMemo, useRef } from 'react'
 import { Loading } from '../SharedComponents'
 import { MultiSelectGrouped } from './MultiSelectGrouped/MultiSelectGrouped'
+import { MultiSelectTree } from './MultiSelectTree/MultiSelectTree'
 import { MultiBase } from './MultiBase/MultiBase'
 import { MultiSelectWithTabs } from './MultiSelectWithTabs/MultiSelectWithTabs'
 import { getStringWidth } from '../../../utils/helpers'
@@ -13,6 +14,7 @@ type TProps = {
   isLoading?: boolean
   withTabs?: boolean
   isGrouped?: boolean
+  isMultiSelectTree?: boolean
   isOpen: boolean
   translations: TSelectTranslations
   containerRef: HTMLDivElement | null
@@ -27,6 +29,7 @@ export const OptionsWrapper = (props: TProps): ReactElement => {
     isLoading,
     withTabs,
     isGrouped,
+    isMultiSelectTree,
     isOpen,
     translations,
     containerRef,
@@ -43,7 +46,7 @@ export const OptionsWrapper = (props: TProps): ReactElement => {
 
   const inputRef = useRef<HTMLInputElement | null>(null)
 
-  const SelectComp = withTabs ? MultiSelectWithTabs : isGrouped ? MultiSelectGrouped : MultiBase
+  const SelectComp = isMultiSelectTree ? MultiSelectTree : withTabs ? MultiSelectWithTabs : isGrouped ? MultiSelectGrouped : MultiBase
 
   const checkIsValueOverflowed = useCallback(
     (value: string) => {
@@ -123,6 +126,7 @@ export const OptionsWrapper = (props: TProps): ReactElement => {
       scrollableContentStyle={{
         ...(!hasBottomSpace && !hasTopSpace ? { maxHeight: bottomSpace - 65 - 56 } : {})
       }} // 65 - height of the top content, 56 - height of the footer
+      isMultiSelectTree={isMultiSelectTree}
       {...rest}
     />
   )
