@@ -33,7 +33,11 @@ interface ExpandColumnProps<TData extends TableData> {
   onToggle: (rowId: string) => void
 }
 
-const ExpandColumn = <TData extends TableData>({ row, expandedRows, onToggle }: ExpandColumnProps<TData>) => {
+const ExpandColumn = <TData extends TableData>({
+  row,
+  expandedRows,
+  onToggle
+}: ExpandColumnProps<TData>) => {
   const hasSubRows = row.original.subRows && row.original.subRows.length > 0
   if (!hasSubRows) return null
 
@@ -81,7 +85,7 @@ export function Table<TData extends TableData>({
   const [expandedRows, setExpandedRows] = useState<Set<string>>(new Set())
 
   const handleToggleRow = useCallback((rowId: string) => {
-    setExpandedRows(prev => {
+    setExpandedRows((prev) => {
       const next = new Set(prev)
       if (next.has(rowId)) {
         next.delete(rowId)
@@ -92,26 +96,25 @@ export function Table<TData extends TableData>({
     })
   }, [])
 
-  const expandColumn: ColumnDef<TData> = useMemo(() => ({
-    id: ColumnId.Expand,
-    header: () => null,
-    size: 50,
-    minSize: 50,
-    maxSize: 50,
-    cell: ({ row }) => (
-      <ExpandColumn
-        row={row}
-        expandedRows={expandedRows}
-        onToggle={handleToggleRow}
-      />
-    ),
-    meta: {
-      enableHiding: false,
-      enableColumnDragging: false,
-      enablePinning: true,
-      enableResizing: false
-    }
-  }), [expandedRows, handleToggleRow])
+  const expandColumn: ColumnDef<TData> = useMemo(
+    () => ({
+      id: ColumnId.Expand,
+      header: () => null,
+      size: 50,
+      minSize: 50,
+      maxSize: 50,
+      cell: ({ row }) => (
+        <ExpandColumn row={row} expandedRows={expandedRows} onToggle={handleToggleRow} />
+      ),
+      meta: {
+        enableHiding: false,
+        enableColumnDragging: false,
+        enablePinning: true,
+        enableResizing: false
+      }
+    }),
+    [expandedRows, handleToggleRow]
+  )
 
   const { table, sensors, handleDragStart, handleDragEnd, handleDragCancel, activeHeader } =
     useTable({
@@ -144,15 +147,21 @@ export function Table<TData extends TableData>({
     }
   }, [])
 
-  const handleRowClick = useCallback((column: Column<TData>, row: Row<TData>) => {
-    if (column.id !== ColumnId.Actions && column.id !== ColumnId.Select && onRowClick) {
-      onRowClick(row)
-    }
-  }, [onRowClick])
+  const handleRowClick = useCallback(
+    (column: Column<TData>, row: Row<TData>) => {
+      if (column.id !== ColumnId.Actions && column.id !== ColumnId.Select && onRowClick) {
+        onRowClick(row)
+      }
+    },
+    [onRowClick]
+  )
 
-  const tableStyle = useMemo(() => ({
-    minWidth: data?.length ? table.getCenterTotalSize() : undefined
-  }), [data?.length, table])
+  const tableStyle = useMemo(
+    () => ({
+      minWidth: data?.length ? table.getCenterTotalSize() : undefined
+    }),
+    [data?.length, table]
+  )
 
   return (
     <div
@@ -209,7 +218,8 @@ export function Table<TData extends TableData>({
                               className={classnames({
                                 'with-checkbox': cell.column.id === ColumnId.Select,
                                 'pinned-cell': cell.column.getIsPinned(),
-                                'action-column': cell.column.id === ColumnId.Actions && !isActionsVisible,
+                                'action-column':
+                                  cell.column.id === ColumnId.Actions && !isActionsVisible,
                                 'expand-column': cell.column.id === ColumnId.Expand
                               })}
                               id={cell.id}
