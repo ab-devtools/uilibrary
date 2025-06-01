@@ -14,7 +14,7 @@ export type TColumnSizingState = ColumnSizingState
 export type TPaginationState = PaginationState
 
 export type TTableProps<TData> = {
-  data: TData[]
+  data: (TData & { subRows?: TData[] })[]
   isLoading?: boolean
   columns: ColumnDef<TData>[]
   wi?: boolean
@@ -31,6 +31,8 @@ export type TTableProps<TData> = {
   defaultPageIndex?: number
   defaultPageSize?: number
   defaultHiddenColumns?: string[]
+  collapsibleRows?: boolean
+  renderExpandedContent?: (row: Row<TData>) => ReactNode
   renderHeader?: (table: TTable<TData>) => ReactNode
   renderFooter?: (table: Table<TData>) => ReactNode
   onRowClick?: (row: Row<TData>) => void

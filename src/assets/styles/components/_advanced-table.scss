@@ -18,7 +18,7 @@
   position: relative;
   border-radius: var(--ds-border-radius-2xl);
 
-  &__header {
+  &__header-wrapper {
     @include mixin.flexbox;
     @include mixin.align-items(center);
     z-index: 3;
@@ -28,6 +28,16 @@
     border-bottom: 1px solid var(--ds-color-border-quintary);
     border-top-left-radius: var(--ds-border-radius-2xl);
     border-top-right-radius: var(--ds-border-radius-2xl);
+  }
+
+  &__collapse-button {
+    margin-right: var(--ds-space-16);
+  }
+
+  &__header {
+    @include mixin.flexbox;
+    @include mixin.align-items(center);
+    flex: 1;
   }
 
   &__footer {
@@ -45,6 +55,12 @@
   &__inner {
     overflow-x: auto;
     height: calc(100% - (var(--ds-size-72) + var(--ds-size-64)));
+    transition: height 0.3s ease-in-out;
+
+    &.is-collapsed {
+      height: 0;
+      overflow: hidden;
+    }
   }
 
   &__thead {
@@ -96,9 +112,11 @@
 
   .column-menu {
     width: 140px;
+
     div {
       padding: 5px 12px;
     }
+
     input {
       margin-right: 8px;
     }
@@ -128,6 +146,7 @@
               display: none;
             }
           }
+
           &.actions-header {
             .resize-icon {
               display: none;
@@ -151,6 +170,10 @@
             min-width: initial !important;
             padding: var(--ds-space-8) var(--ds-space-6) var(--ds-space-8) 22px;
 
+            &.pinned-cell {
+              padding-left: 16px !important;
+            }
+
             .actions-list {
               &__checkbox {
                 display: none;
@@ -161,7 +184,13 @@
               }
             }
           }
+
+          &:not(.with-checkbox) {
+            padding: var(--ds-space-8) var(--ds-space-16) !important;
+            box-sizing: border-box;
+          }
         }
+
         .action-column {
           padding: var(--ds-space-0);
           width: 0 !important;
@@ -176,16 +205,20 @@
             background-color: var(--ds-table-td-bg-hover);
 
             .actions-list {
-              &__checkbox, &__right {
+
+              &__checkbox,
+              &__right {
                 @include mixin.flexbox;
               }
             }
           }
+
           .action-column {
             padding: var(--ds-space-0);
             @include mixin.flexbox;
             @include mixin.align-items(center);
           }
+
           .pinned-cell {
             background-color: var(--ds-table-td-bg-hover) !important;
           }
@@ -195,6 +228,11 @@
           td {
             background-color: var(--ds-table-td-bg-selected);
           }
+
+          &+.advanced-table__expanded-row td {
+            background-color: var(--ds-table-td-bg-selected);
+          }
+
           .pinned-cell {
             background-color: var(--ds-table-td-bg-hover) !important;
           }
@@ -255,6 +293,119 @@
       }
     }
   }
+
+  &__expand-button {
+    padding: var(--ds-space-4);
+    min-width: auto;
+    width: var(--ds-size-32);
+    height: var(--ds-size-32);
+    flex-shrink: 0;
+  }
+
+  &__expanded-row {
+    td {
+      padding: var(--ds-table-td-padding) !important;
+      height: var(--ds-table-td-height);
+      border-bottom: 1px solid var(--ds-table-td-border-color);
+      background-color: inherit;
+      transition: background-color 0.2s ease;
+      vertical-align: middle;
+
+      .advanced-table__expanded-content {
+        padding: 0;
+        background-color: transparent;
+
+        table {
+          border-collapse: separate;
+          border-spacing: 0;
+          width: 100%;
+
+          tbody {
+            tr {
+              td {
+                border-bottom: none;
+                padding: var(--ds-table-td-padding);
+                height: var(--ds-table-td-height);
+                vertical-align: middle;
+                background-color: transparent;
+
+                &.with-checkbox {
+                  max-width: var(--ds-space-48);
+                  width: var(--ds-space-48) !important;
+                  min-width: initial !important;
+                  //padding: var(--ds-space-8) var(--ds-space-6) var(--ds-space-8) 55px !important;
+                  padding: var(--ds-space-8) var(--ds-space-40) var(--ds-space-8) 55px !important;
+                  //border-right: 1px solid var(--ds-table-td-border-color);
+                  background-color: inherit;
+
+                  .actions-list {
+                    &__checkbox {
+                      display: flex !important;
+                    }
+                  }
+
+                  .indeterminate-checkbox {
+                    margin: 0;
+                  }
+                }
+
+                &.pinned-cell {
+                  position: sticky;
+                  background-color: inherit;
+                  z-index: 1;
+                }
+
+                &.expand-column {
+                  //width: 50px !important;
+                  //min-width: 50px !important;
+                  //max-width: 50px !important;
+                  //flex: 0 0 50px !important;
+                  box-sizing: border-box !important;
+                  overflow: hidden !important;
+                  white-space: nowrap !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &:hover td {
+      background-color: var(--ds-table-td-bg-hover);
+
+      .advanced-table__expanded-content table tbody tr td {
+        background-color: var(--ds-table-td-bg-hover);
+
+        &.with-checkbox {
+          background-color: var(--ds-table-td-bg-hover);
+        }
+      }
+    }
+
+    tr.selected & td {
+      background-color: var(--ds-table-td-bg-selected);
+
+      .advanced-table__expanded-content table tbody tr td {
+        background-color: var(--ds-table-td-bg-selected);
+
+        &.with-checkbox {
+          background-color: var(--ds-table-td-bg-selected);
+        }
+      }
+    }
+  }
+
+  .expand-column {
+    //width: 50px !important;
+    //min-width: 50px !important;
+    //max-width: 50px !important;
+    padding: var(--ds-space-8) var(--ds-space-6) !important;
+    flex: 0 0 50px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+  }
 }
 
 .with-border {
@@ -291,8 +442,10 @@
   width: 260px;
   max-height: 300px;
   overflow-y: auto;
+
   &__dropdown {
     padding: var(--ds-space-6) var(--ds-space-16);
+
     &__option {
       border-bottom: 1px solid var(--ds-color-border-tertiary);
       margin-bottom: var(--ds-space-4);
