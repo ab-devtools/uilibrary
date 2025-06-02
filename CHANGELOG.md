@@ -1,3 +1,12 @@
+# [1.10.0](https://github.com/ab-devtools/uilibrary/compare/1.9.0...1.10.0) (2025-06-02)
+
+
+### Features
+
+* implement multi-select tree component ([47061f5](https://github.com/ab-devtools/uilibrary/commit/47061f54efdbb01594ef276649a81f44ebc640cd))
+* implement multi-select tree component ([b34aa18](https://github.com/ab-devtools/uilibrary/commit/b34aa18c2e7e2f391c0507ec934dc5d847f6470e))
+* remove unnecessary code ([cedb697](https://github.com/ab-devtools/uilibrary/commit/cedb697f2943d47a5c06fa84639760124e276f59))
+
 # [1.9.0](https://github.com/ab-devtools/uilibrary/compare/1.8.0...1.9.0) (2025-06-02)
 
 
