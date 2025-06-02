@@ -39,6 +39,7 @@ type TSelectOption = {
   label: TItemLabel
   meta?: string
   disabled?: boolean
+  parentId?: string | number | null
   children?: TSelectOption[]
 }
 
@@ -120,8 +121,7 @@ const BUTTON_SELECT_OPTIONS = [
 const OPTIONS: TSelectOptions = [
   {
     value: 1,
-    label:
-      'Armeniaaasdasdasdasdlkashdkjlashdkjasdkjashkdjhaskjdhdaskjdhaskjhdkajsdkjasdkjashdjkashdkjhaskdhaskjdhaskjdhaskjdhaskjhdkjas',
+    label: 'Armenia',
     meta: 'AM'
   },
   {
@@ -202,6 +202,34 @@ const OPTIONS_GROUPED: TSelectGroupOptions = [
   {
     title: 'Cities',
     data: OPTIONS_CITIES
+  }
+]
+const OPTIONS_YEREVAN: TSelectOptions = [
+  {
+    value: 1,
+    parentId: 59,
+    label: 'Kentron'
+  }
+]
+
+const OPTIONS_ARMAVIR: TSelectOptions = [
+  {
+    value: 2,
+    parentId: 60,
+    label: 'Vagharshapat'
+  }
+]
+
+const OPTIONS_TREE: TSelectTreeOptions = [
+  {
+    title: 'Yerevan',
+    parentId: null,
+    data: OPTIONS_YEREVAN
+  },
+  {
+    title: 'Armavir',
+    parentId: null,
+    data: OPTIONS_ARMAVIR
   }
 ]
 
@@ -396,6 +424,7 @@ const MultiSelectTemplate: StoryFn<TMultiSelectPropTypes> = (args) => {
       <_MultiSelect
         {...args}
         isGrouped={true}
+        isSearchAvailable={true}
         isButtonSelect={true}
         dropdownWidth={400}
         align="right"
@@ -429,10 +458,12 @@ export const MultiSelect = MultiSelectTemplate.bind({})
 MultiSelect.args = {
   isLoading: false,
   label: 'Select',
-  options: OPTIONS_GROUPED,
-  avatar: image.src,
+  // options: OPTIONS_GROUPED,
+  options: OPTIONS_TREE,
+  // avatar: image.src,
   placeHolder: 'Select country',
-  helperText: 'To be filled in only for USA, Canada and European countries.',
+  isMultiSelectTree: true,
+  // helperText: 'To be filled in only for USA, Canada and European countries.',
   labelAddons: <IconInfo size={'xsmall'} type={'information'} className={'ml-4'} />
   // disabled: true
   // labelRightIconComponent: <IconPerson size="xsmall" className="mr-4" />,
