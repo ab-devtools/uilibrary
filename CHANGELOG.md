@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/ab-devtools/uilibrary/compare/1.8.0...1.9.0) (2025-06-02)
+
+
+### Features
+
+* added building-home icon ([4c124e2](https://github.com/ab-devtools/uilibrary/commit/4c124e2f39c4f8932a4d6e5e5b627b1a65a2ad0d))
+
 # [1.8.0](https://github.com/ab-devtools/uilibrary/compare/1.7.3...1.8.0) (2025-05-27)
 
 
