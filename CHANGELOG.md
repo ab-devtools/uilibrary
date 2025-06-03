@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/ab-devtools/uilibrary/compare/1.10.0...1.11.0) (2025-06-03)
+
+
+### Features
+
+* make buttons optional ([c139585](https://github.com/ab-devtools/uilibrary/commit/c1395853598d8ad165e4f382a2e7fb58b72fa3dc))
+
 # [1.10.0](https://github.com/ab-devtools/uilibrary/compare/1.9.0...1.10.0) (2025-06-02)
 
 
