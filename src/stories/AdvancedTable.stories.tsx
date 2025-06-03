@@ -319,8 +319,6 @@ export default meta
 export const AdvancedTable = Template.bind({})
 AdvancedTable.args = {
   withSelect: true,
-  data: data,
-  columns: [],
   withBorder: true,
   isActionsVisible: false,
   isLoading: false,

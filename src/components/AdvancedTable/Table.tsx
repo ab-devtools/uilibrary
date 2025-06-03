@@ -99,7 +99,8 @@ export function Table<TData extends TableData>({
   const expandColumn: ColumnDef<TData> = useMemo(
     () => ({
       id: ColumnId.Expand,
-      header: () => null,
+      accessorKey: 'expand',
+      header: () => <span style={{ display: 'none' }}>Expand</span>,
       size: 50,
       minSize: 50,
       maxSize: 50,
@@ -110,7 +111,9 @@ export function Table<TData extends TableData>({
         enableHiding: false,
         enableColumnDragging: false,
         enablePinning: true,
-        enableResizing: false
+        enableResizing: false,
+        headerVisible: false,
+        enableSorting: false
       }
     }),
     [expandedRows, handleToggleRow]
