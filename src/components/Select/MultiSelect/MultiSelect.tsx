@@ -62,7 +62,7 @@ export const MultiSelect = (props: TMultiSelectPropTypes): ReactElement => {
   }, [selectedValues, initialSelected])
 
   useEffect(() => {
-    if (!isOpen && autoApplyOnClose) {
+    if (selectedValues.length && !isOpen && autoApplyOnClose) {
       submitSelectedValue(selectedValues, false)
     }
   }, [isOpen])
