@@ -99,6 +99,7 @@ export interface TMultiSelectPropTypes extends IFormCompProps, TSelectBaseProps 
     cancel: TButtonPropTypes
     confirm: TButtonPropTypes
   }
+  autoApplyOnClose?: boolean;
   labelAddons?: JSX.Element
   className?: string
   isButtonSelect?: boolean

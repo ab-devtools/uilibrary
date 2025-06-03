@@ -170,7 +170,6 @@ export const MultiSelectTree = (props: TMultiSelectTreeProps): JSX.Element | nul
                         disabled={
                           item.disabled || (!isSelected && selectedValues.length === maxSelectCount)
                         }
-                        // onClick={isSelected ? onDeselect : onItemSelect}
                         onClick={isSelected ? () => onDeselect(item) : () => onItemSelect(item)}
                         {...optionProps}
                       />

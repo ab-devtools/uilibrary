@@ -34,6 +34,7 @@ export const MultiSelect = (props: TMultiSelectPropTypes): ReactElement => {
     checkboxInfo,
     translations,
     hasError,
+    autoApplyOnClose = false,
     ...rest
   } = props
 
@@ -61,6 +62,12 @@ export const MultiSelect = (props: TMultiSelectPropTypes): ReactElement => {
   }, [selectedValues, initialSelected])
 
   useEffect(() => {
+    if (!isOpen && autoApplyOnClose) {
+      submitSelectedValue(selectedValues, false)
+    }
+  }, [isOpen])
+
+  useEffect(() => {
     setSelectedValues((value as TSelectedValue[]) || [])
   }, [value])
 
@@ -75,7 +82,12 @@ export const MultiSelect = (props: TMultiSelectPropTypes): ReactElement => {
     closeDropdown()
   }
 
-  useOnOutsideClick(containerRef.current, cancelSelectedItems, isOpen, useId())
+  useOnOutsideClick(
+    containerRef.current,
+    autoApplyOnClose ? closeDropdown : cancelSelectedItems,
+    isOpen,
+    useId()
+  )
 
   const submitSelectedValue = (selections: TSelectedValue[], isChecked: boolean) => {
     if (setSelectedItems) {
@@ -133,7 +145,7 @@ export const MultiSelect = (props: TMultiSelectPropTypes): ReactElement => {
           containerRef={containerRef?.current}
           {...rest}
         />
-        {options.length ? (
+        {!autoApplyOnClose && options.length ? (
           <Footer
             checkboxInfo={checkboxInfo}
             hasChange={hasChange}
