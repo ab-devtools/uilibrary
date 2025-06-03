@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/ab-devtools/uilibrary/compare/1.11.0...1.11.1) (2025-06-03)
+
+
+### Bug Fixes
+
+* update values issue ([23fe5e7](https://github.com/ab-devtools/uilibrary/commit/23fe5e75e165aeafd47b3c529f1ba2885f8ead75))
+
 # [1.11.0](https://github.com/ab-devtools/uilibrary/compare/1.10.0...1.11.0) (2025-06-03)
 
 
