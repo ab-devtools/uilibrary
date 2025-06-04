@@ -18,7 +18,7 @@ export const CardItem = (props: TCardItemProps): ReactElement => {
           <icon.Component {...icon} />
         ) : null}
         <div
-          className={`card-item__content text-truncate ${
+          className={`card-item__content ${
             (image || (icon && icon?.Component)) && 'pl-12'
           }`}
         >
