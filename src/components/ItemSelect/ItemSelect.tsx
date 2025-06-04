@@ -58,18 +58,12 @@ export const ItemSelect = (props: TItemSelectProps): ReactElement => {
       ) : null}
       <div className={'item-select__content'}>
         {title ? (
-          <Text
-            type={disabled ? 'disabled' : 'primary'}
-            weight={'bold'}
-          >
+          <Text type={disabled ? 'disabled' : 'primary'} weight={'bold'}>
             {title}
           </Text>
         ) : null}
         {subtitle ? (
-          <Text
-            type={disabled ? 'disabled' : 'primary'}
-            className={'mt-2'}
-          >
+          <Text type={disabled ? 'disabled' : 'primary'} className={'mt-2'}>
             {subtitle}
           </Text>
         ) : null}
