@@ -29,7 +29,7 @@ const ITEMS = [
   },
   {
     value: 2,
-    image: imageFile2,
+    leftIconProps: <IconAmd size={'medium'} />,
     title: 'MasterCard',
     subtitle: 'Subtitle text',
     disabled: true,
