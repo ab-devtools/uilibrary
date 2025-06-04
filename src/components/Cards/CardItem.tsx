@@ -17,11 +17,7 @@ export const CardItem = (props: TCardItemProps): ReactElement => {
         ) : icon && icon.Component ? (
           <icon.Component {...icon} />
         ) : null}
-        <div
-          className={`card-item__content ${
-            (image || (icon && icon?.Component)) && 'pl-12'
-          }`}
-        >
+        <div className={`card-item__content ${(image || (icon && icon?.Component)) && 'pl-12'}`}>
           <Text weight={'semibold'}>{title}</Text>
           <Text type={'tertiary'} className={'flexbox align-items--center mt-2'}>
             <>
