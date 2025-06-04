@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/ab-devtools/uilibrary/compare/1.11.1...1.12.0) (2025-06-04)
+
+
+### Features
+
+* added lock-multiple icon ([6bcac0c](https://github.com/ab-devtools/uilibrary/commit/6bcac0c1919dd32290cf411f7071bf300f68bd24))
+
 ## [1.11.1](https://github.com/ab-devtools/uilibrary/compare/1.11.0...1.11.1) (2025-06-03)
 
 
