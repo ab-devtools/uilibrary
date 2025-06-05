@@ -33,18 +33,19 @@
 
   &__type {
     $types: (
-        primary: var(--ds-color-text-primary),
-        secondary: var(--ds-color-text-secondary),
-        tertiary: var(--ds-color-text-tertiary),
-        disabled: var(--ds-color-text-disabled),
-        selected: var(--ds-color-text-selected),
-        inverse: var(--ds-color-text-inverse),
-        brand: var(--ds-color-text-brand),
-        success: var(--ds-color-text-success),
-        information: var(--ds-color-text-info),
-        warning: var(--ds-color-text-warning),
-        danger: var(--ds-color-text-danger),
-        discovery: var(--ds-color-text-discovery),
+        primary: var(--ds-color-icon-primary),
+        secondary: var(--ds-color-icon-secondary),
+        tertiary: var(--ds-color-icon-tertiary),
+        quaternary: var(--ds-color-icon-quaternary),
+        disabled: var(--ds-color-icon-disabled),
+        selected: var(--ds-color-icon-selected),
+        inverse: var(--ds-color-icon-inverse),
+        brand: var(--ds-color-icon-brand),
+        success: var(--ds-color-icon-success),
+        information: var(--ds-color-icon-info),
+        warning: var(--ds-color-icon-warning),
+        danger: var(--ds-color-icon-danger),
+        discovery: var(--ds-color-icon-discovery),
     );
     @each $key, $value in $types {
       &-#{$key} path[fill] {

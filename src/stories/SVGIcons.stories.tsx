@@ -16,6 +16,7 @@ export default {
         'primary',
         'secondary',
         'tertiary',
+        'quaternary',
         'disabled',
         'inverse',
         'selected',
