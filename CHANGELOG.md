@@ -1,3 +1,11 @@
+## [1.12.3](https://github.com/ab-devtools/uilibrary/compare/1.12.2...1.12.3) (2025-06-05)
+
+
+### Bug Fixes
+
+* fixed icon quaternary color ([5ad2788](https://github.com/ab-devtools/uilibrary/commit/5ad2788b8100856c3db4261561bbb33edf3fc66c))
+* fixed icon quaternary color ([a912c2e](https://github.com/ab-devtools/uilibrary/commit/a912c2ec0997d3d09e06ed959adbb7cfe74adbf3))
+
 ## [1.12.2](https://github.com/ab-devtools/uilibrary/compare/1.12.1...1.12.2) (2025-06-05)
 
 
