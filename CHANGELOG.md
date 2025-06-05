@@ -1,3 +1,11 @@
+## [1.12.2](https://github.com/ab-devtools/uilibrary/compare/1.12.1...1.12.2) (2025-06-05)
+
+
+### Bug Fixes
+
+* change icon and text disabled color ([993fe41](https://github.com/ab-devtools/uilibrary/commit/993fe41844c605677c7dd5f9be8046389da0e48b))
+* fixed side sheet radius ([715f53e](https://github.com/ab-devtools/uilibrary/commit/715f53e6d52b3554c9ce99bcbf7310ee2fb33de1))
+
 ## [1.12.1](https://github.com/ab-devtools/uilibrary/compare/1.12.0...1.12.1) (2025-06-05)
 
 
