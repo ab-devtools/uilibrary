@@ -1,3 +1,13 @@
+## [1.12.1](https://github.com/ab-devtools/uilibrary/compare/1.12.0...1.12.1) (2025-06-05)
+
+
+### Bug Fixes
+
+* fixed card info ui ([b97c9b1](https://github.com/ab-devtools/uilibrary/commit/b97c9b1ffb7bb29b25e65b8ee6a580dff3cf881a))
+* fixed card info ui ([617857e](https://github.com/ab-devtools/uilibrary/commit/617857e46013a9864aea9d824f92fcc7461c1570))
+* fixed item select info ui ([3606456](https://github.com/ab-devtools/uilibrary/commit/360645640d27bf620f41c4be7e32d32bc1e58bae))
+* fixed item select info ui ([449992d](https://github.com/ab-devtools/uilibrary/commit/449992d1b64e0ad5221424673a21c9d3df8a4d2f))
+
 # [1.12.0](https://github.com/ab-devtools/uilibrary/compare/1.11.1...1.12.0) (2025-06-04)
 
 
