@@ -148,7 +148,7 @@ export const MultiSelectTree = (props: TMultiSelectTreeProps): JSX.Element | nul
                     }}
                     selectedValue={groupHasSelected}
                   />
-                  <Text size="xxsmall" type="tertiary" className="group-item__title pr-4">
+                  <Text className="group-item__title pr-4">
                     {title}
                   </Text>
                   {isActive ? (
@@ -157,24 +157,29 @@ export const MultiSelectTree = (props: TMultiSelectTreeProps): JSX.Element | nul
                     <IconCaretDownFilled size="xxsmall" className="group-item__icon" />
                   )}
                 </div>
-                {isActive &&
-                  data.map((item: TSelectOption) => {
-                    const isSelected =
-                      selectedValues.findIndex((s) => s.value === item.value) !== -1
-                    return (
-                      <OptionItem
-                        data={item}
-                        dataId={item.dataId}
-                        key={item.value}
-                        isSelected={isSelected}
-                        disabled={
-                          item.disabled || (!isSelected && selectedValues.length === maxSelectCount)
-                        }
-                        onClick={isSelected ? () => onDeselect(item) : () => onItemSelect(item)}
-                        {...optionProps}
-                      />
-                    )
-                  })}
+                {
+                  isActive ? (
+                      <div  className="group-item__content">
+                        {data.map((item: TSelectOption) => {
+                            const isSelected =
+                                selectedValues.findIndex((s) => s.value === item.value) !== -1
+                            return (
+                                <OptionItem
+                                    data={item}
+                                    dataId={item.dataId}
+                                    key={item.value}
+                                    isSelected={isSelected}
+                                    disabled={
+                                        item.disabled || (!isSelected && selectedValues.length === maxSelectCount)
+                                    }
+                                    onClick={isSelected ? () => onDeselect(item) : () => onItemSelect(item)}
+                                    {...optionProps}
+                                />
+                            )
+                          })}
+                      </div>
+                  ) : null
+                }
               </div>
             )
           })}
