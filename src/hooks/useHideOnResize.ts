@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react'
 import { CUSTOM_RESIZE_NAME, CUSTOM_RESIZE_MESSAGE } from '../consts'
 
