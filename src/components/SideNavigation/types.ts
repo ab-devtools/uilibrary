@@ -16,6 +16,7 @@ export interface TSideNavigationPropTypes extends SideNavigationControls {
   logo?: string
   logoUrl?: string
   logoClosed?: string
+  customLogoComponent?: React.ComponentType<{ isOpen: boolean }>
   actionElm?: JSX.Element
   showAction?: boolean
   children: ReactNode

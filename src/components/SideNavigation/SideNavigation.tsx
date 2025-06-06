@@ -17,7 +17,8 @@ export const SideNavigation = (props: TSideNavigationPropTypes): JSX.Element => 
     logo,
     logoClosed,
     logoUrl,
-    isOpen,
+    customLogoComponent: CustomLogoComponent,
+    isOpen = false,
     isPined,
     onMouseEnter,
     onMouseLeave,
@@ -38,7 +39,11 @@ export const SideNavigation = (props: TSideNavigationPropTypes): JSX.Element => 
     >
       <header>
         <Link url={logoUrl} className={'side-navigation__logo'}>
-          <Image imagePath={isOpen ? logo : logoClosed} isBackgroundImage={false} />
+          {CustomLogoComponent ? (
+            <CustomLogoComponent isOpen={isOpen} />
+          ) : (
+            <Image imagePath={isOpen ? logo : logoClosed} isBackgroundImage={false} />
+          )}
         </Link>
         <ButtonIcon
           iconProps={{
