@@ -260,6 +260,7 @@
 .group-item {
   --ds-select-group-item-top-padding: var(--ds-space-8) var(--ds-space-16);
   cursor: pointer;
+
   &__top {
     @include mixin.flexbox;
     @include mixin.align-items(center);
@@ -270,6 +271,9 @@
     flex: 1;
   }
 
+  &__content {
+    padding-left: var(--ds-space-24);
+  }
   
   &__icon {
     font-size: var(--ds-select-group-item-icon-size) !important;
