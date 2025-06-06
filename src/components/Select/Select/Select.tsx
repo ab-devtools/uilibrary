@@ -6,7 +6,8 @@ import {
   useGetElemPositions,
   useGetElemSizes,
   useGetHasBottomSpace,
-  useGetHasTopSpace
+  useGetHasTopSpace,
+  useHideOnResize
 } from '../../../hooks'
 import { Input } from '../../Input'
 import { Text } from '../../Text'
@@ -195,6 +196,8 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
     childElement: dropdownRef,
     hasBottomSpace
   })
+
+  useHideOnResize(closeDropdown)
 
   return (
     <div
