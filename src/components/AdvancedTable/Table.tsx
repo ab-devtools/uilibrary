@@ -137,8 +137,8 @@ export function Table<TData extends TableData>({
   const header = renderHeader?.(table)
   const footer = renderFooter?.(table)
 
-  const getCommonPinningStyles = useCallback((column: Column<TData>): CSSProperties => {
-    const isPinned = column.getIsPinned()
+  function getCommonPinningStyles(column: Column<TData>): CSSProperties {
+    const isPinned = column.getIsPinned();
 
     return {
       left: isPinned === 'left' ? `${column.getStart('left')}px` : undefined,
@@ -146,18 +146,15 @@ export function Table<TData extends TableData>({
       position: isPinned ? 'sticky' : 'relative',
       backgroundColor: isPinned ? 'white' : undefined,
       minWidth: column.getSize(),
-      zIndex: isPinned ? 1 : 0
-    }
-  }, [])
+      zIndex: isPinned ? 1 : 0,
+    };
+  }
 
-  const handleRowClick = useCallback(
-    (column: Column<TData>, row: Row<TData>) => {
-      if (column.id !== ColumnId.Actions && column.id !== ColumnId.Select && onRowClick) {
-        onRowClick(row)
-      }
-    },
-    [onRowClick]
-  )
+  function handleRowClick(column: Column<TData>, row: Row<TData>) {
+    if (column.id !== ColumnId.Actions && column.id !== ColumnId.Select && onRowClick) {
+      onRowClick(row);
+    }
+  }
 
   const tableStyle = useMemo(
     () => ({
