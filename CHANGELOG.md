@@ -1,3 +1,12 @@
+## [1.12.4](https://github.com/ab-devtools/uilibrary/compare/1.12.3...1.12.4) (2025-06-06)
+
+
+### Bug Fixes
+
+* added play icon ([5e35127](https://github.com/ab-devtools/uilibrary/commit/5e351273962bd909ed067be3518e81bfb83df804))
+* fixed multi select tree view ([a055dd0](https://github.com/ab-devtools/uilibrary/commit/a055dd03f143d6fbdd0ec3e33a92b4b5ec9e6417))
+* fixed multi select tree view ([f7935ce](https://github.com/ab-devtools/uilibrary/commit/f7935ce5894f88ec3f949b9ef662ce34c7de6433))
+
 ## [1.12.3](https://github.com/ab-devtools/uilibrary/compare/1.12.2...1.12.3) (2025-06-05)
 
 
