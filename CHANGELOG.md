@@ -1,3 +1,11 @@
+## [1.12.5](https://github.com/ab-devtools/uilibrary/compare/1.12.4...1.12.5) (2025-06-06)
+
+
+### Bug Fixes
+
+* add resize hook to trigger on resize, close select options on resize ([225e234](https://github.com/ab-devtools/uilibrary/commit/225e23475f3b424e005d77b3c01459e29ff957f6))
+* add resize hook to trigger on resize, close select options on resize ([625e8bf](https://github.com/ab-devtools/uilibrary/commit/625e8bf16c3f2627446c37bd021862ed883d9919))
+
 ## [1.12.4](https://github.com/ab-devtools/uilibrary/compare/1.12.3...1.12.4) (2025-06-06)
 
 
