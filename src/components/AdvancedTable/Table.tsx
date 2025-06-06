@@ -137,7 +137,7 @@ export function Table<TData extends TableData>({
   const header = renderHeader?.(table)
   const footer = renderFooter?.(table)
 
-  function getCommonPinningStyles(column: Column<TData>): CSSProperties {
+  const getCommonPinningStyles = (column: Column<TData>): CSSProperties => {
     const isPinned = column.getIsPinned();
 
     return {
@@ -148,13 +148,13 @@ export function Table<TData extends TableData>({
       minWidth: column.getSize(),
       zIndex: isPinned ? 1 : 0,
     };
-  }
+  };
 
-  function handleRowClick(column: Column<TData>, row: Row<TData>) {
+  const handleRowClick = (column: Column<TData>, row: Row<TData>) => {
     if (column.id !== ColumnId.Actions && column.id !== ColumnId.Select && onRowClick) {
       onRowClick(row);
     }
-  }
+  };
 
   const tableStyle = useMemo(
     () => ({
