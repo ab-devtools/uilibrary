@@ -1,3 +1,15 @@
+# [1.15.0](https://github.com/ab-devtools/uilibrary/compare/1.14.0...1.15.0) (2025-06-09)
+
+
+### Features
+
+* implement collapsed table functionality ([01b4c66](https://github.com/ab-devtools/uilibrary/commit/01b4c66a636b72d6b7ddc53ff27c38cd30aa2477))
+* implement collapsed table functionality (1.1) ([937629e](https://github.com/ab-devtools/uilibrary/commit/937629eda02b50cb76007c4ce2d67a03dce2905e))
+* implement collapsed table functionality (1.1) ([1cc9f70](https://github.com/ab-devtools/uilibrary/commit/1cc9f7037862eb264591992bb908bdf0586cdccb))
+* implement collapsed table functionality (1) ([b3b66c3](https://github.com/ab-devtools/uilibrary/commit/b3b66c3211fe37a55d4efbaf9d9384a489cf3c55))
+* implement collapsed table functionality / beta ([d7c4835](https://github.com/ab-devtools/uilibrary/commit/d7c48357bb774083cd38681a26f7670892d0a4f1))
+* implement collapsed table functionality / beta ([f0225c7](https://github.com/ab-devtools/uilibrary/commit/f0225c7f8a05cecc142771c67b7f8223a7b0e830))
+
 # [1.14.0](https://github.com/ab-devtools/uilibrary/compare/1.13.0...1.14.0) (2025-06-09)
 
 
