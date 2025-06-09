@@ -1,3 +1,11 @@
+# [1.13.0](https://github.com/ab-devtools/uilibrary/compare/1.12.5...1.13.0) (2025-06-09)
+
+
+### Features
+
+* implement side navigation dynamic component ([b7df013](https://github.com/ab-devtools/uilibrary/commit/b7df0135b6ad457ef7010a4d3c2cb2bfaf40880f))
+* implement side navigation dynamic component ([1cac09b](https://github.com/ab-devtools/uilibrary/commit/1cac09b395a3ac1f6f58aa6f05e11f750297ad98))
+
 ## [1.12.5](https://github.com/ab-devtools/uilibrary/compare/1.12.4...1.12.5) (2025-06-06)
 
 
