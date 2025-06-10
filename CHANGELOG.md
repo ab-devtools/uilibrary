@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/ab-devtools/uilibrary/compare/1.15.1...1.16.0) (2025-06-10)
+
+
+### Features
+
+* **iconsSVG:** added AppsListDetail, CheckmarkStarburst Grid and XboxConsole icons filled versions ([1fb27be](https://github.com/ab-devtools/uilibrary/commit/1fb27be354a678a35f765c9737a39d57c10fb8f5))
+
 ## [1.15.1](https://github.com/ab-devtools/uilibrary/compare/1.15.0...1.15.1) (2025-06-10)
 
 
