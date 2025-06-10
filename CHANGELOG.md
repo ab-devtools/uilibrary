@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/ab-devtools/uilibrary/compare/1.15.0...1.15.1) (2025-06-10)
+
+
+### Bug Fixes
+
+* remove popover min-width ([6d6c71c](https://github.com/ab-devtools/uilibrary/commit/6d6c71c25cd6fa649c7289da473d76688c2358c5))
+
 # [1.15.0](https://github.com/ab-devtools/uilibrary/compare/1.14.0...1.15.0) (2025-06-09)
 
 
