@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/ab-devtools/uilibrary/compare/1.16.0...1.17.0) (2025-06-11)
+
+
+### Features
+
+* added IconDocumentOnePage IconFunnel IconViber and IconWhatsapp icons filled versions ([a43c6fd](https://github.com/ab-devtools/uilibrary/commit/a43c6fd9210e1e3a2320e6954858699804876d76))
+
 # [1.16.0](https://github.com/ab-devtools/uilibrary/compare/1.15.1...1.16.0) (2025-06-10)
 
 
