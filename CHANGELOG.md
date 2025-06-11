@@ -1,3 +1,11 @@
+## [1.17.1](https://github.com/ab-devtools/uilibrary/compare/1.17.0...1.17.1) (2025-06-11)
+
+
+### Bug Fixes
+
+* fixed pattern input empty string case ([19df130](https://github.com/ab-devtools/uilibrary/commit/19df13036d0e960211fc50056654997bc769106d))
+* fixed pattern input empty string case ([fed4ddb](https://github.com/ab-devtools/uilibrary/commit/fed4ddb609d7c55f5c5744254215f9581f44d327))
+
 # [1.17.0](https://github.com/ab-devtools/uilibrary/compare/1.16.0...1.17.0) (2025-06-11)
 
 
