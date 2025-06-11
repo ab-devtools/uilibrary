@@ -44,6 +44,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
       hideCounter = false,
       labelAddons,
       witUpperCase = false,
+      allowEmptyFormatting,
       isAllowed,
       ...rest
     },
@@ -94,7 +95,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
         data-id={dataId}
         disabled={disabled}
         maxLength={maxCount}
-        {...(currentValue ? { value: currentValue } : {})}
+        allowEmptyFormatting={allowEmptyFormatting}
+        {...(currentValue ? { value: currentValue } : { value: '' })}
       />
     ) : mask ? (
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
