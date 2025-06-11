@@ -41,6 +41,7 @@ export interface InputCustomProps
   labelAddons?: ReactElement
   autoComplete?: string
   witUpperCase?: boolean
+  allowEmptyFormatting?: boolean
   isAllowed?: (values: {
     formattedValue: string
     value: string
