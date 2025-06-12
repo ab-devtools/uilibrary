@@ -620,3 +620,7 @@ $space-prefixes: (
     cursor: not-allowed;
   }
 }
+
+.pointer-events-none {
+  pointer-events: none;
+}
