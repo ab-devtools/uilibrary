@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/ab-devtools/uilibrary/compare/1.17.1...1.18.0) (2025-06-12)
+
+
+### Features
+
+* add point event class for button ([ca453df](https://github.com/ab-devtools/uilibrary/commit/ca453df3d37d7cfe0a117379ac35e6eb0b666462))
+
 ## [1.17.1](https://github.com/ab-devtools/uilibrary/compare/1.17.0...1.17.1) (2025-06-11)
 
 
