@@ -79,7 +79,7 @@ $space-prefixes: (
   @each $attr-short, $attr-long in $space-prefixes {
     @each $value in $space-values {
       .#{$attr-short}-#{$value} {
-        @if type-of($attr-long) == 'list' {
+        @if meta.type-of($attr-long) == 'list' {
           @each $prop in $attr-long {
             @if $value == 'auto' {
               #{$prop}: #{$value};
