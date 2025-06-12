@@ -58,27 +58,41 @@ $space-values: (
 
 //shorthands
 $space-prefixes: (
-         m : margin,
+        m : margin,
         mt : margin-top,
         mr : margin-right,
         mb : margin-bottom,
         ml : margin-left,
+        mx : (margin-left, margin-right),
+        my : (margin-top, margin-bottom),
 
-         p : padding,
+        p : padding,
         pt : padding-top,
         pr : padding-right,
         pb : padding-bottom,
-        pl : padding-left
+        pl : padding-left,
+        px : (padding-left, padding-right),
+        py : (padding-top, padding-bottom)
 ) !default;
 
 @mixin make-spaces() {
   @each $attr-short, $attr-long in $space-prefixes {
     @each $value in $space-values {
       .#{$attr-short}-#{$value} {
-        @if $value == 'auto' { /*add the @if loop*/
-          #{$attr-long}: #{$value};
+        @if type-of($attr-long) == 'list' {
+          @each $prop in $attr-long {
+            @if $value == 'auto' {
+              #{$prop}: #{$value};
+            } @else {
+              #{$prop}: #{$value}px;
+            }
+          }
         } @else {
-          #{$attr-long}: #{$value}#{'px'};
+          @if $value == 'auto' {
+            #{$attr-long}: #{$value};
+          } @else {
+            #{$attr-long}: #{$value}px;
+          }
         }
       }
     }

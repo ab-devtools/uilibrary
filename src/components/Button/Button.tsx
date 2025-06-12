@@ -39,7 +39,7 @@ export const Button = (props: TButtonPropTypes): ReactElement => {
           'btn--icon': justIcon,
           [`btn--icon-${iconProps?.alignment || 'left'}`]:
             !isLoading && !justIcon && iconProps?.Component,
-          'pointer-events-none' :isLoading
+          'pointer-events-none': isLoading
         },
         className
       )}
