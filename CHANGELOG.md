@@ -1,3 +1,10 @@
+## [1.18.2](https://github.com/ab-devtools/uilibrary/compare/1.18.1...1.18.2) (2025-06-12)
+
+
+### Bug Fixes
+
+* make space classes improvement ([5cac5c6](https://github.com/ab-devtools/uilibrary/commit/5cac5c62c74c702db0cd75677f3d7c8f0caef256))
+
 ## [1.18.1](https://github.com/ab-devtools/uilibrary/compare/1.18.0...1.18.1) (2025-06-12)
 
 
