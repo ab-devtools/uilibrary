@@ -410,19 +410,7 @@ Select.args = {
 
 // -----------MULTISELECT---------
 const MultiSelectTemplate: StoryFn<TMultiSelectPropTypes> = (args) => {
-  // const [selectedValues, setSelectedValues] = useState<TSelectedValue[]>([])
-  const [selectedValues, setSelectedValues] = useState<TSelectedValue[]>([
-    {
-      "value": 1,
-      "parentId": 59,
-      "label": "Kentron"
-    },
-    {
-      "value": 2,
-      "parentId": 60,
-      "label": "Vagharshapat"
-    }
-  ])
+  const [selectedValues, setSelectedValues] = useState<TSelectedValue[]>([])
 
   const set = (value: TSelectedValue[], isChecked: boolean) => {
     setSelectedValues(value)
