@@ -1,3 +1,11 @@
+## [1.18.3](https://github.com/ab-devtools/uilibrary/compare/1.18.2...1.18.3) (2025-06-16)
+
+
+### Bug Fixes
+
+* multiselect selected issue ([799981e](https://github.com/ab-devtools/uilibrary/commit/799981e661b6eaf8bc13cb8ab3c42d8ce3e59e4b))
+* remove comment ([784a503](https://github.com/ab-devtools/uilibrary/commit/784a503f22caeab85499d5e8368f11bf16a99e27))
+
 ## [1.18.2](https://github.com/ab-devtools/uilibrary/compare/1.18.1...1.18.2) (2025-06-12)
 
 
