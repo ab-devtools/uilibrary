@@ -61,11 +61,11 @@ export interface IHeaderProps<TData> {
 }
 
 export interface TableData {
-  subRows?: TableData[]
+  subRows: TableData[]
   [key: string]: unknown
 }
 
-export interface ExpandColumnProps<TData extends TableData> {
+export interface ExpandColumnProps<TData> {
   row: Row<TData>
   expandedRows: Set<string>
   onToggle: (rowId: string) => void
