@@ -54,21 +54,27 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
     const placeHolder = label === placeholder ? '' : placeholder || datePlaceHolderText
 
     const changeHandler = (event: TChangeEventType) => {
-      const eventValue = event.target.value
+      const eventValue = event.target.value.trim() // remove spaces from beginning and end
+
       const valueWithoutSeparator =
         type === 'numeric' ? eventValue.replace(new RegExp(thousandSeparator, 'g'), '') : eventValue
 
-      if (eventValue.length - 1 === maxCount) {
+      const formatedValue = witUpperCase
+        ? valueWithoutSeparator.toUpperCase()
+        : valueWithoutSeparator
+
+      if (formatedValue.length - 1 === maxCount) {
         return
       }
+
+      event.target.value = formatedValue
+
       if (setFieldValue && name) {
-        setFieldValue(name, valueWithoutSeparator)
+        setFieldValue(name, formatedValue)
       }
+
       if (handleChange) {
-        handleChange(
-          event,
-          !witUpperCase ? valueWithoutSeparator : valueWithoutSeparator.toUpperCase()
-        )
+        handleChange(event, formatedValue)
       }
     }
 
