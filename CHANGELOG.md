@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/ab-devtools/uilibrary/compare/1.18.4...1.19.0) (2025-06-17)
+
+
+### Features
+
+* trim input value and fix uppercase functionality ([3992c23](https://github.com/ab-devtools/uilibrary/commit/3992c23c196ed3f9452343f2563a7ca3abb275f0))
+
 ## [1.18.4](https://github.com/ab-devtools/uilibrary/compare/1.18.3...1.18.4) (2025-06-17)
 
 
