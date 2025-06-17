@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react'
 import type { Column, Row, ColumnDef } from '@tanstack/react-table'
-import type { TableData, TTableProps } from './types'
+import type { TableData, TTableProps, ExpandColumnProps } from './types'
 import React, { useState, useCallback, useMemo } from 'react'
 import { flexRender } from '@tanstack/react-table'
 import { DndContext, DragOverlay, closestCenter } from '@dnd-kit/core'
@@ -20,12 +20,6 @@ enum ColumnId {
   Select = 'select',
   Actions = 'actions',
   Expand = 'expand'
-}
-
-interface ExpandColumnProps<TData extends TableData> {
-  row: Row<TData>
-  expandedRows: Set<string>
-  onToggle: (rowId: string) => void
 }
 
 const ExpandColumn = <TData extends TableData>({
