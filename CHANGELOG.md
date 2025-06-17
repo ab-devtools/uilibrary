@@ -1,3 +1,11 @@
+## [1.18.4](https://github.com/ab-devtools/uilibrary/compare/1.18.3...1.18.4) (2025-06-17)
+
+
+### Bug Fixes
+
+* add TableData interface ([e61e585](https://github.com/ab-devtools/uilibrary/commit/e61e5856e484c531e719e441e286acd4d95fc3df))
+* add TableData interface ([d354630](https://github.com/ab-devtools/uilibrary/commit/d3546308cef75b143cc3d73faa8d7936da502de6))
+
 ## [1.18.3](https://github.com/ab-devtools/uilibrary/compare/1.18.2...1.18.3) (2025-06-16)
 
 
