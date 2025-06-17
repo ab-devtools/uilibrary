@@ -1,3 +1,11 @@
+## [1.19.1](https://github.com/ab-devtools/uilibrary/compare/1.19.0...1.19.1) (2025-06-17)
+
+
+### Bug Fixes
+
+* advanced table component ([5a9cc2d](https://github.com/ab-devtools/uilibrary/commit/5a9cc2d314be2577140ed34fb8da27188110a19c))
+* advanced table component ([6386378](https://github.com/ab-devtools/uilibrary/commit/6386378bfbd12e484e46b5b0da1d83dd6e89f6dd))
+
 # [1.19.0](https://github.com/ab-devtools/uilibrary/compare/1.18.4...1.19.0) (2025-06-17)
 
 
