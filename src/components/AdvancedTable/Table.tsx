@@ -22,12 +22,9 @@ enum ColumnId {
   Expand = 'expand'
 }
 
-const ExpandColumn = <TData,>({
-  row,
-  expandedRows,
-  onToggle
-}: ExpandColumnProps<TData>) => {
-  const hasSubRows = (row.original as TableData)?.subRows && (row.original as TableData)?.subRows?.length > 0
+const ExpandColumn = <TData,>({ row, expandedRows, onToggle }: ExpandColumnProps<TData>) => {
+  const hasSubRows =
+    (row.original as TableData)?.subRows && (row.original as TableData)?.subRows?.length > 0
   if (!hasSubRows) return null
 
   return (
