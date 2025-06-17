@@ -59,3 +59,8 @@ export interface ICellProps<TData> {
 export interface IHeaderProps<TData> {
   table: Table<TData>
 }
+
+export interface TableData {
+  subRows?: TableData[]
+  [key: string]: unknown
+}
