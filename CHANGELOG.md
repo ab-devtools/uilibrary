@@ -1,3 +1,15 @@
+# [1.20.0](https://github.com/ab-devtools/uilibrary/compare/1.19.2...1.20.0) (2025-06-18)
+
+
+### Bug Fixes
+
+* remove unused code ([d710a3e](https://github.com/ab-devtools/uilibrary/commit/d710a3e504830969aba83c15002a4dec949b7b87))
+
+
+### Features
+
+* create radiogroupselect component ([c65f127](https://github.com/ab-devtools/uilibrary/commit/c65f1274f409125168f3b1d989bd314f12d604f1))
+
 ## [1.19.2](https://github.com/ab-devtools/uilibrary/compare/1.19.1...1.19.2) (2025-06-18)
 
 
