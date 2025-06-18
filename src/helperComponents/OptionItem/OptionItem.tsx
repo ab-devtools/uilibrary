@@ -57,9 +57,7 @@ export const OptionItem = (props: TSelectItemProps): JSX.Element => {
       {isCheckbox ? (
         <Checkbox className="mr-8" selectedValue={isSelected} disabled={disabled} />
       ) : null}
-      {isRadio ? (
-        <Radio className="mr-8" isSelected={isSelected} disabled={disabled} />
-      ) : null}
+      {isRadio ? <Radio className="mr-8" isSelected={isSelected} disabled={disabled} /> : null}
       {!isCheckbox && !isRadio && isSelected ? (
         <IconCheckmark size="xsmall" type={disabled ? 'disabled' : 'brand'} className="mr-8" />
       ) : null}

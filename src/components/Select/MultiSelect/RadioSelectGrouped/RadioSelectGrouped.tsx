@@ -2,31 +2,26 @@ import type { JSX } from 'react'
 import React, { useCallback, useMemo, useState } from 'react'
 import { Text } from '../../../Text'
 import { Empty } from '../../../Empty'
-import { useGetElemSizes } from '../../../../hooks'
 import { OptionItem } from '../../../../helperComponents'
 import type { TMultiSelectGroupedProps } from '../../types'
-import { DROPDOWN_MAX_HEIGHT } from '../../constants'
 import IconCaretUpFilled from '../../../SVGIcons/IconCaretUpFilled'
 import IconCaretDownFilled from '../../../SVGIcons/IconCaretDownFilled'
 
 export const RadioSelectGrouped = ({
-                                     avatar,
-                                     options,
-                                     translations,
-                                     selectedValues,
-                                     setSelectedValues,
-                                     labelLeftIconProps,
-                                     scrollableContentStyle,
-                                     optionRightIconComponent,
-                                     labelRightIconComponent,
-                                     maxSelectCount
-                                   }: TMultiSelectGroupedProps): JSX.Element | null => {
+  avatar,
+  options,
+  translations,
+  selectedValues,
+  setSelectedValues,
+  labelLeftIconProps,
+  scrollableContentStyle,
+  optionRightIconComponent,
+  labelRightIconComponent,
+  maxSelectCount
+}: TMultiSelectGroupedProps): JSX.Element | null => {
   const { emptyListMainMessage, emptyListSecondaryMessage } = translations
 
   const [openGroups, setOpenGroups] = useState<Record<number, boolean>>({ 0: true })
-  const [contentContainerRef, setContentContainerRef] = useState<HTMLDivElement | null>(null)
-
-  const { scrollHeight } = useGetElemSizes(contentContainerRef)
 
   const filteredData = useMemo(() => options, [options])
 
@@ -57,8 +52,7 @@ export const RadioSelectGrouped = ({
       const parentId = parentItem?.parentId || null
 
       const filteredSelected = selectedValues.filter(
-        (selectedItem) =>
-          !groupData.some((groupItem) => groupItem.value === selectedItem.value)
+        (selectedItem) => !groupData.some((groupItem) => groupItem.value === selectedItem.value)
       )
 
       const newSelected = [
@@ -77,10 +71,7 @@ export const RadioSelectGrouped = ({
   return (
     <>
       <div
-        ref={setContentContainerRef}
-        className={`select__options__scroll scrollbar scrollbar--vertical ${
-          scrollHeight > DROPDOWN_MAX_HEIGHT ? 'mr-6' : ''
-        }`}
+        className={'select__options__scroll scrollbar scrollbar--vertical'}
         style={scrollableContentStyle}
       >
         <div>
