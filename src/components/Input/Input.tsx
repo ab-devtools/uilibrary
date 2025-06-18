@@ -50,11 +50,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
     },
     ref
   ): JSX.Element => {
+    const { onChange, ...cleanRest } = rest
+
     const isErrorVisible = hasError !== undefined ? hasError : !!error
     const placeHolder = label === placeholder ? '' : placeholder || datePlaceHolderText
-
     const changeHandler = (event: TChangeEventType) => {
-      const eventValue = event.target.value.trim() // remove spaces from beginning and end
+      const eventValue = event.target.value.trim()
 
       const valueWithoutSeparator =
         type === 'numeric' ? eventValue.replace(new RegExp(thousandSeparator, 'g'), '') : eventValue
@@ -75,6 +76,9 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
 
       if (handleChange) {
         handleChange(event, formatedValue)
+      }
+      if (onChange) {
+        onChange(event)
       }
     }
 
@@ -153,7 +157,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
         placeholder={placeHolder}
         onChange={changeHandler}
         data-id={dataId}
-        {...rest}
+        {...cleanRest}
         {...(currentValue !== undefined ? { value: currentValue } : {})}
       />
     )

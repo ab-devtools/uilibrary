@@ -160,25 +160,10 @@ const Template = (): JSX.Element => {
         initialValues={INITIAL_VALUES}
       >
         <>
-          <FormField name="firstname" As={(props) => <Input {...props} />} />
-          {/*<FormField*/}
-          {/*  name="multiselect"*/}
-          {/*  As={(props) => (*/}
-          {/*    <MultiSelect*/}
-          {/*      {...props}*/}
-          {/*      isGrouped*/}
-          {/*      translations={{*/}
-          {/*        innerLabel: 'Selected employees',*/}
-          {/*        clearAllLabel: 'Clear All',*/}
-          {/*        overflowText: '%s selected',*/}
-          {/*        emptyListMainMessage: "Sorry, we couldn't find any results"*/}
-          {/*      }}*/}
-          {/*      helperText="helperText"*/}
-          {/*      options={OPTIONS_GROUPED}*/}
-          {/*      isSearchAvailable*/}
-          {/*    />*/}
-          {/*  )}*/}
-          {/*/>*/}
+          <FormField name="firstname" As={(props) => <Input {...props}  type={'numeric'} witUpperCase={false}         isAllowed={(values) => {
+            const { formattedValue } = values;
+            return !formattedValue.includes('.');
+          }}/>} />
           <Button buttonActionType="submit" buttonText={'Ok'} />
         </>
       </_FormContainer>
