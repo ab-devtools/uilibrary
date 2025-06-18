@@ -160,10 +160,20 @@ const Template = (): JSX.Element => {
         initialValues={INITIAL_VALUES}
       >
         <>
-          <FormField name="firstname" As={(props) => <Input {...props}  type={'numeric'} witUpperCase={false}         isAllowed={(values) => {
-            const { formattedValue } = values;
-            return !formattedValue.includes('.');
-          }}/>} />
+          <FormField
+            name="firstname"
+            As={(props) => (
+              <Input
+                {...props}
+                type={'numeric'}
+                witUpperCase={false}
+                isAllowed={(values) => {
+                  const { formattedValue } = values
+                  return !formattedValue.includes('.')
+                }}
+              />
+            )}
+          />
           <Button buttonActionType="submit" buttonText={'Ok'} />
         </>
       </_FormContainer>
