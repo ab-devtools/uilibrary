@@ -6,6 +6,7 @@ import { Tooltip } from '../../components/Tooltip'
 import type { TSelectItemProps } from './types'
 import classNames from 'classnames'
 import { IconCheckmark } from '../../components/SVGIcons/IconCheckmark'
+import { Radio } from '../../components/Radio'
 
 export const OptionItem = (props: TSelectItemProps): JSX.Element => {
   const {
@@ -19,6 +20,7 @@ export const OptionItem = (props: TSelectItemProps): JSX.Element => {
     LabelRightIconComponent,
     OptionRightIconComponent,
     isCheckbox,
+    isRadio,
     className = '',
     tooltipAddons,
     dataId = ''
@@ -55,7 +57,10 @@ export const OptionItem = (props: TSelectItemProps): JSX.Element => {
       {isCheckbox ? (
         <Checkbox className="mr-8" selectedValue={isSelected} disabled={disabled} />
       ) : null}
-      {!isCheckbox && isSelected ? (
+      {isRadio ? (
+        <Radio className="mr-8" isSelected={isSelected} disabled={disabled} />
+      ) : null}
+      {!isCheckbox && !isRadio && isSelected ? (
         <IconCheckmark size="xsmall" type={disabled ? 'disabled' : 'brand'} className="mr-8" />
       ) : null}
       <div className="select__option__inner">
