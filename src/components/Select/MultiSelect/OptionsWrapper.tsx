@@ -5,6 +5,7 @@ import { MultiSelectGrouped } from './MultiSelectGrouped/MultiSelectGrouped'
 import { MultiSelectTree } from './MultiSelectTree/MultiSelectTree'
 import { MultiBase } from './MultiBase/MultiBase'
 import { MultiSelectWithTabs } from './MultiSelectWithTabs/MultiSelectWithTabs'
+import { RadioSelectGrouped } from './RadioSelectGrouped/RadioSelectGrouped'
 import { getStringWidth } from '../../../utils/helpers'
 import { SELECTED_VISIBLE_MIN_COUNT, TRANSLATIONS_DEFAULT_VALUES } from '../constants'
 import { useGetElemSizes, useGetHasBottomSpace, useGetHasTopSpace } from '../../../hooks'
@@ -15,6 +16,7 @@ type TProps = {
   withTabs?: boolean
   isGrouped?: boolean
   isMultiSelectTree?: boolean
+  isRadioGrouped?: boolean
   isOpen: boolean
   translations: TSelectTranslations
   containerRef: HTMLDivElement | null
@@ -30,6 +32,7 @@ export const OptionsWrapper = (props: TProps): ReactElement => {
     withTabs,
     isGrouped,
     isMultiSelectTree,
+    isRadioGrouped,
     isOpen,
     translations,
     containerRef,
@@ -50,6 +53,8 @@ export const OptionsWrapper = (props: TProps): ReactElement => {
     ? MultiSelectTree
     : withTabs
     ? MultiSelectWithTabs
+    : isRadioGrouped
+    ? RadioSelectGrouped
     : isGrouped
     ? MultiSelectGrouped
     : MultiBase

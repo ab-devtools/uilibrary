@@ -209,12 +209,17 @@ const OPTIONS_YEREVAN: TSelectOptions = [
     value: 1,
     parentId: 59,
     label: 'Kentron'
+  },
+  {
+    value: 2,
+    parentId: 59,
+    label: 'Nor Nork'
   }
 ]
 
 const OPTIONS_ARMAVIR: TSelectOptions = [
   {
-    value: 2,
+    value: 3,
     parentId: 60,
     label: 'Vagharshapat'
   }
@@ -462,7 +467,8 @@ MultiSelect.args = {
   options: OPTIONS_TREE,
   // avatar: image.src,
   placeHolder: 'Select country',
-  isMultiSelectTree: true,
+  // isMultiSelectTree: true,
+  isRadioGrouped: true,
   autoApplyOnClose: true,
   // helperText: 'To be filled in only for USA, Canada and European countries.',
   labelAddons: <IconInfo size={'xsmall'} type={'information'} className={'ml-4'} />

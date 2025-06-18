@@ -13,6 +13,7 @@ export type TSelectItemProps = {
   avatar?: string
   disabled?: boolean
   isCheckbox?: boolean
+  isRadio?: boolean
   tooltipAddons?: TTooltipProps
   dataId?: string
 }

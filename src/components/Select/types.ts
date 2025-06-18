@@ -90,6 +90,7 @@ export interface TMultiSelectPropTypes extends IFormCompProps, TSelectBaseProps 
   withTabs?: boolean
   isGrouped?: boolean
   isMultiSelectTree?: boolean
+  isRadioGrouped?: boolean
   checkboxInfo?: TCheckboxInfo
   selectedItems?: TSelectedValue[]
   translations: TSelectTranslations
