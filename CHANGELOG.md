@@ -1,3 +1,11 @@
+## [1.19.2](https://github.com/ab-devtools/uilibrary/compare/1.19.1...1.19.2) (2025-06-18)
+
+
+### Bug Fixes
+
+* onChange wrap from rest ([61ca444](https://github.com/ab-devtools/uilibrary/commit/61ca4449a3455f3228ec355d1522b55ddba6ea6a))
+* onChange wrap from rest ([d8d61d8](https://github.com/ab-devtools/uilibrary/commit/d8d61d88329f7a73140efea0756cce0223deaad2))
+
 ## [1.19.1](https://github.com/ab-devtools/uilibrary/compare/1.19.0...1.19.1) (2025-06-17)
 
 
