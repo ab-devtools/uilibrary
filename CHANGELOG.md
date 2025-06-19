@@ -1,3 +1,10 @@
+# [1.21.0](https://github.com/ab-devtools/uilibrary/compare/1.20.0...1.21.0) (2025-06-19)
+
+
+### Features
+
+* added IconColor IconUs IconMoney and IconPersonNote icons filled versions ([daa18a7](https://github.com/ab-devtools/uilibrary/commit/daa18a7aeb8eb003f4b655d1b309883b662bbb9f))
+
 # [1.20.0](https://github.com/ab-devtools/uilibrary/compare/1.19.2...1.20.0) (2025-06-18)
 
 
