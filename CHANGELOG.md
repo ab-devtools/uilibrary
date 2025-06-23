@@ -1,3 +1,11 @@
+# [1.22.0](https://github.com/ab-devtools/uilibrary/compare/1.21.1...1.22.0) (2025-06-23)
+
+
+### Features
+
+* card select popover ([6936987](https://github.com/ab-devtools/uilibrary/commit/6936987cc77afa2c35eac4337f11a7d99094ac34))
+* remove empty string ([0c4011e](https://github.com/ab-devtools/uilibrary/commit/0c4011edf4cd4da65aed0df5f57dd05e8460ba3a))
+
 ## [1.21.1](https://github.com/ab-devtools/uilibrary/compare/1.21.0...1.21.1) (2025-06-23)
 
 
