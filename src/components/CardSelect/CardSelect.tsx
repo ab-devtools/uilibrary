@@ -7,6 +7,8 @@ import { CardAdditionalInfo, CardChips, CardDescription, CardInput } from './com
 import { CARD_SELECT_TYPES } from '../../consts'
 import { Radio } from '../Radio'
 import { Image } from '../Image'
+import { Popover } from '../Popover'
+import { Positions } from '../Tooltip/types'
 
 export const CardSelect = (props: TCardSelectProps): ReactElement => {
   const {
@@ -25,7 +27,8 @@ export const CardSelect = (props: TCardSelectProps): ReactElement => {
     cardValue,
     illustration,
     icon,
-    dataId
+    dataId,
+    popoverAddons
   } = props
   const selected = cardValue === value
   const cardSelectStyle = classNames(
@@ -46,30 +49,46 @@ export const CardSelect = (props: TCardSelectProps): ReactElement => {
   }
 
   return (
-    <div className={cardSelectStyle} onClick={handleCardSelect} data-id={dataId}>
-      {illustration ? (
-        <div className={'card-select__image mr-16'}>
-          <Image imagePath={illustration} />
+    <>
+      <div
+        id={`${popoverAddons?.id}`}
+        className={cardSelectStyle}
+        onClick={handleCardSelect}
+        data-id={dataId}
+      >
+        {popoverAddons ? (
+          <Popover
+            dataId={popoverAddons?.dataId}
+            text={popoverAddons?.text}
+            id={`${popoverAddons?.id}`}
+            clicked={popoverAddons?.clicked}
+            position={Positions?.MIDDLE_RIGHT}
+          />
+        ) : null}
+        {illustration ? (
+          <div className={'card-select__image mr-16'}>
+            <Image imagePath={illustration} />
+          </div>
+        ) : icon && icon.Component ? (
+          <div className={'card-select__icon mr-16'}>
+            <icon.Component {...icon} />
+          </div>
+        ) : null}
+        <div className={'card-select__content'}>
+          <div className="flexbox justify-content--between align-items--start">
+            <Text type={disabled ? 'disabled' : 'primary'} size={'medium'} weight={'bold'}>
+              <>{title}</>
+            </Text>
+            {type === CARD_SELECT_TYPES.cardRadio ? (
+              <Radio name={name} isSelected={selected} disabled={disabled} className={'ml-16'} />
+            ) : null}
+          </div>
+          {chips.length ? <CardChips chips={chips} disabled={disabled} /> : null}
+          <CardInput inputProps={inputProps} disabled={disabled} />
+          <CardDescription description={description} disabled={disabled} />
+          <CardAdditionalInfo additionalInfo={additionalInfo} disabled={disabled} />
         </div>
-      ) : icon && icon.Component ? (
-        <div className={'card-select__icon mr-16'}>
-          <icon.Component {...icon} />
-        </div>
-      ) : null}
-      <div className={'card-select__content'}>
-        <div className="flexbox justify-content--between align-items--start">
-          <Text type={disabled ? 'disabled' : 'primary'} size={'medium'} weight={'bold'}>
-            <>{title}</>
-          </Text>
-          {type === CARD_SELECT_TYPES.cardRadio ? (
-            <Radio name={name} isSelected={selected} disabled={disabled} className={'ml-16'} />
-          ) : null}
-        </div>
-        {chips.length ? <CardChips chips={chips} disabled={disabled} /> : null}
-        <CardInput inputProps={inputProps} disabled={disabled} />
-        <CardDescription description={description} disabled={disabled} />
-        <CardAdditionalInfo additionalInfo={additionalInfo} disabled={disabled} />
       </div>
-    </div>
+    </>
   )
 }
