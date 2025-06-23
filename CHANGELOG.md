@@ -1,3 +1,11 @@
+# [1.23.0](https://github.com/ab-devtools/uilibrary/compare/1.22.0...1.23.0) (2025-06-23)
+
+
+### Features
+
+* add popover addons prop ([13fabf1](https://github.com/ab-devtools/uilibrary/commit/13fabf1cf0c351b045b14a6271e9b0572bef1b09))
+* disable onclick ([27c7591](https://github.com/ab-devtools/uilibrary/commit/27c759169b28cff86955b1a10cf3cc6697873314))
+
 # [1.22.0](https://github.com/ab-devtools/uilibrary/compare/1.21.1...1.22.0) (2025-06-23)
 
 
