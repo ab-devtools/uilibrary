@@ -51,7 +51,7 @@ export const CardSelect = (props: TCardSelectProps): ReactElement => {
   return (
     <>
       <div
-        id={`${popoverAddons?.id}` || ''}
+        id={`${popoverAddons?.id}`}
         className={cardSelectStyle}
         onClick={handleCardSelect}
         data-id={dataId}
