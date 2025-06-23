@@ -45,27 +45,29 @@ export const MultiSelect = (props: TMultiSelectPropTypes): ReactElement => {
   const [isOpen, setIsOpen] = useState(false)
   const [selectedValues, setSelectedValues] = useState<TSelectedValue[]>(initialSelected)
   const containerRef = useRef<HTMLDivElement | null>(null)
+  const hasOpenedRef = useRef(false);
 
   const closeDropdown = () => setIsOpen(false)
   const openDropdown = () => setIsOpen(true)
 
   const hasChange = useMemo(() => {
-    if (selectedValues?.length !== initialSelected?.length) {
-      return true
-    }
+    const initial = (initialSelected || []).map((i) => i.value).sort();
+    const current = (selectedValues || []).map((i) => i.value).sort();
 
-    return (
-      selectedValues?.findIndex(
-        (value) => initialSelected?.findIndex((i: TSelectOption) => i.value === value.value) === -1
-      ) !== -1
-    )
-  }, [selectedValues, initialSelected])
+    if (initial.length !== current.length) return true;
+
+    return initial.some((val, index) => val !== current[index]);
+  }, [initialSelected, selectedValues]);
 
   useEffect(() => {
-    if (!isOpen && autoApplyOnClose) {
-      submitSelectedValue(selectedValues, false)
+    if (isOpen) {
+      hasOpenedRef.current = true;
     }
-  }, [isOpen])
+
+    if (!isOpen && autoApplyOnClose && hasOpenedRef.current && hasChange) {
+      submitSelectedValue(selectedValues, false);
+    }
+  }, [isOpen, autoApplyOnClose, hasChange]);
 
   useEffect(() => {
     setSelectedValues((value as TSelectedValue[]) || [])

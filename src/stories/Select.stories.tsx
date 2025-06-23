@@ -467,9 +467,9 @@ MultiSelect.args = {
   options: OPTIONS_TREE,
   // avatar: image.src,
   placeHolder: 'Select country',
-  // isMultiSelectTree: true,
-  isRadioGrouped: true,
-  autoApplyOnClose: true,
+  isMultiSelectTree: true,
+  // isRadioGrouped: true,
+  // autoApplyOnClose: true,
   // helperText: 'To be filled in only for USA, Canada and European countries.',
   labelAddons: <IconInfo size={'xsmall'} type={'information'} className={'ml-4'} />
   // disabled: true
