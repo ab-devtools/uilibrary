@@ -1,3 +1,10 @@
+## [1.21.1](https://github.com/ab-devtools/uilibrary/compare/1.21.0...1.21.1) (2025-06-23)
+
+
+### Bug Fixes
+
+* dropdown selected values issue ([6e25b60](https://github.com/ab-devtools/uilibrary/commit/6e25b606e4514b97131d1f38c50a2d4ea7295637))
+
 # [1.21.0](https://github.com/ab-devtools/uilibrary/compare/1.20.0...1.21.0) (2025-06-19)
 
 
