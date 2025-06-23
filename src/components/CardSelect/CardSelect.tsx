@@ -36,14 +36,16 @@ export const CardSelect = (props: TCardSelectProps): ReactElement => {
     className
   )
   const handleCardSelectValue = (selected: number | string) => {
-    if (name && setFieldValue) {
-      setFieldValue(name, selected, { shouldValidate: true })
+    if (!disabled) {
+      if (name && setFieldValue) {
+        setFieldValue(name, selected, { shouldValidate: true })
+      }
+      handleChange?.(selected)
     }
-    handleChange?.(selected)
   }
 
   const handleCardSelect = () => {
-    if (cardValue) {
+    if (!disabled && cardValue) {
       handleCardSelectValue(cardValue)
     }
   }
