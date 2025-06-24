@@ -11,7 +11,7 @@ export interface TModalPropTypes {
   onSubmit: () => void
   titleProps?: {
     title?: string
-    size: 'large' | 'small'
+    size?: 'large' | 'small'
   }
   subtitle?: string
   size?: 'small' | 'medium' | 'large' | 'xlarge'
