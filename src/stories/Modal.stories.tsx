@@ -38,6 +38,7 @@ const Template: StoryFn<TModalPropTypes> = (args) => {
           },
           cancel: { buttonText: 'Cancel' }
         }}
+        checkProps={{ label: 'Check Label' }}
       >
         <div>Modal content</div>
       </_Modal>
@@ -48,10 +49,12 @@ export const Modal = Template.bind({})
 
 Modal.args = {
   size: 'medium',
-  title: 'Title',
+  titleProps: {
+    title: 'Title',
+    size: 'small'
+  },
   subtitle: 'Subtitle',
   closeIcon: true,
-  withFooter: true,
   confirmBtnTooltipText: 'Confirm'
 }
 
@@ -79,7 +82,8 @@ const ModalConfirmationTemplate: StoryFn<TModalConfirmationPropTypes> = (args) =
             buttonText: 'Delete the card',
             buttonActionType: 'submit'
           },
-          cancel: { buttonText: 'Cancel' }
+          deactivate: { buttonText: 'Deactivate' },
+          cancel: { buttonText: 'Cancel', type: 'tertiary' }
         }}
       />
     </div>
@@ -90,5 +94,6 @@ export const ModalConfirmation = ModalConfirmationTemplate.bind({})
 ModalConfirmation.args = {
   size: 'small',
   title: 'Title text',
-  subtitle: 'This is your subtitle that will give you more context'
+  subtitle: 'This is your subtitle that will give you more context',
+  isFooterInline: true
 }

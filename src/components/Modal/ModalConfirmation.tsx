@@ -36,6 +36,7 @@ export const ModalConfirmation = (props: TModalConfirmationPropTypes): ReactElem
     className = '',
     size = 'small',
     buttonProps,
+    isFooterInline = true,
     dataIdPrefix,
     closeOnOutsideClick = true,
     iconProps,
@@ -83,14 +84,27 @@ export const ModalConfirmation = (props: TModalConfirmationPropTypes): ReactElem
               {subtitle ? <Text className={'mt-12'}>{subtitle}</Text> : null}
 
               {buttonProps ? (
-                <div className="modal__footer mt-32">
+                <div
+                  className={`modal__footer mt-32 ${
+                    isFooterInline ? 'modal__footer-inline' : 'modal__footer-block'
+                  }`}
+                >
                   <Button
                     type="secondary"
-                    className="modal__footer__btn mr-16"
+                    className="modal__footer__btn"
                     onClick={onClose}
                     dataId={dataIdPrefix ? `${dataIdPrefix}-modal-cancel-button` : ''}
-                    {...(buttonProps.cancel || {})}
+                    {...(buttonProps?.cancel || {})}
                   />
+                  {buttonProps?.deactivate ? (
+                    <Button
+                      type="secondary"
+                      className={'modal__footer__btn'}
+                      onClick={onSubmit}
+                      dataId={dataIdPrefix ? `${dataIdPrefix}-modal-confirm-button` : ''}
+                      {...buttonProps?.deactivate}
+                    />
+                  ) : null}
                   <Button
                     type="danger"
                     className={'modal__footer__btn'}

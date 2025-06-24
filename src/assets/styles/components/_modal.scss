@@ -11,22 +11,25 @@
   --ds-modal-overlay-bg: var(--overlay-10);
   --ds-modal-overlay-padding: var(--ds-space-20);
   --ds-modal-bg: var(--ds-color-bg-white);
-  --ds-modal-border-radius: var(--ds-border-radius-2xl);
+  --ds-modal-border-radius: var(--ds-border-radius-3xl);
   --ds-modal-shadow: var(--shadow-7);
 
-  --ds-modal-header-padding-lg: var(--ds-space-32) var(--ds-space-32) 0;
+  --ds-modal-header-padding-lg: var(--ds-space-28) var(--ds-space-28) 0;
   --ds-modal-header-padding-sm: var(--ds-space-24) var(--ds-space-24) 0;
 
-  --ds-modal-content-padding-lg: var(--ds-space-32) var(--ds-space-32);
-  --ds-modal-content-padding-sm: var(--ds-space-24);
+  --ds-modal-content-padding-lg: var(--ds-space-28) var(--ds-space-14) var(--ds-space-28) var(--ds-space-28);
+  --ds-modal-content-padding-sm: var(--ds-space-24) var(--ds-space-10) var(--ds-space-24) var(--ds-space-24);
 
-  --ds-modal-footer-padding-lg: var(--ds-space-20) var(--ds-space-32);
-  --ds-modal-footer-padding-sm: var(--ds-space-20) var(--ds-space-24);
+  --ds-modal-footer-padding-lg: var(--ds-space-20) var(--ds-space-28);
+  --ds-modal-footer-padding-sm: var(--ds-space-16) var(--ds-space-24);
   --ds-modal-footer-border-width: var(--ds-border-thin);
-  --ds-modal-footer-border-color: var(--ds-color-divider);
+  --ds-modal-footer-border-color: var(--ds-color-border-quintary);
 
   --ds-modal-icon-size: var(--ds-size-48);
   --ds-modal-icon-border-radius: var(--ds-border-radius-sm);
+
+
+  --ds-modal-confirm-content-padding: var(--ds-space-32);
 
   @include mixin.fixed(0,0,0,0);
   @include mixin.flexbox;
@@ -61,6 +64,13 @@
   &__title {
     @include mixin.truncate(100%);
     flex: 1;
+
+    &-large {
+      font-size: var(--font-size-24);
+    }
+    &-small {
+      font-size: var(--font-size-20);
+    }
   }
 
   &__content {
@@ -74,7 +84,6 @@
   &__footer {
     @include mixin.flexbox;
     @include mixin.align-items(center);
-    @include mixin.justify-content(flex-end);
     padding: var(--ds-modal-footer-padding-lg);
     border-top: var(--ds-modal-footer-border-width) solid var(--ds-modal-footer-border-color);
 
@@ -130,6 +139,11 @@
       }
     }
 
+    #{$this}__content {
+      overflow-y: scroll;
+      margin-right: var(--ds-space-10);
+    }
+
     &#{$this}--small {
       #{$this}__header {
         padding: var(--ds-modal-header-padding-sm);
@@ -160,12 +174,21 @@
 
   &--confirmation {
     #{$this}__footer {
-      @include mixin.justify-content(space-between);
       padding: 0;
       border-top: 0;
+      gap: var(--ds-space-16);
 
       &__btn {
         width: 100%;
+      }
+
+      &-inline {
+        @include mixin.justify-content(space-between);
+      }
+
+      &-block {
+        @include mixin.flex-wrap(wrap-reverse);
+
       }
     }
 
@@ -179,6 +202,10 @@
       #{$this}__container {
         max-width: var(--ds-modal-size-sm);
       }
+    }
+
+    #{$this}__content {
+      padding: var(--ds-modal-confirm-content-padding);
     }
   }
 }
