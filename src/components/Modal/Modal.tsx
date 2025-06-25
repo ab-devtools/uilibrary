@@ -11,6 +11,7 @@ import IconDismiss from '../SVGIcons/IconDismiss'
 import { ButtonIcon } from '../ButtonIcon'
 import { Tooltip } from '../Tooltip'
 import { Positions } from '../Tooltip/types'
+import { Checkbox } from '../Checkbox'
 
 const DESKTOP_ANIMATION = {
   initial: { opacity: 0.5, scale: 0.65 },
@@ -35,13 +36,15 @@ export const Modal = (props: TModalPropTypes): ReactElement => {
     isOpen,
     onClose,
     onSubmit,
-    title,
+    titleProps = {
+      size: 'small'
+    },
     subtitle,
     closeIcon,
     className = '',
     size = 'medium',
-    withFooter = true,
     buttonProps,
+    checkProps,
     children,
     dataIdPrefix,
     closeOnOutsideClick = true,
@@ -51,6 +54,35 @@ export const Modal = (props: TModalPropTypes): ReactElement => {
   const [containerRef, setContainerRef] = useState<HTMLDivElement | null>(null)
   useOnOutsideClick(containerRef, onClose, closeOnOutsideClick && isOpen, useId())
   useHideBodyScroll(isOpen)
+
+  const buttons = buttonProps ? (
+    <div className={'flexbox'}>
+      <Button
+        type="tertiary"
+        className="modal__footer__btn mr-16"
+        onClick={onClose}
+        dataId={dataIdPrefix ? `${dataIdPrefix}-modal-cancel-button` : ''}
+        {...(buttonProps.cancel || {})}
+      />
+      {confirmBtnTooltipText ? (
+        <Tooltip
+          text={confirmBtnTooltipText as string}
+          id={'confirm-btn-tooltip'}
+          position={Positions.TOP_CENTER}
+        />
+      ) : null}
+      <Button
+        id={'confirm-btn-tooltip'}
+        className={'modal__footer__btn'}
+        type="primary"
+        onClick={onSubmit}
+        dataId={dataIdPrefix ? `${dataIdPrefix}-modal-confirm-button` : ''}
+        {...buttonProps.confirm}
+      />
+    </div>
+  ) : null
+
+  const checkbox = checkProps ? <Checkbox {...checkProps} /> : null
 
   return (
     <AnimatePresenceWrapper>
@@ -67,16 +99,17 @@ export const Modal = (props: TModalPropTypes): ReactElement => {
           transition={{ duration: 0.4 }}
         >
           <div className="modal__container" ref={setContainerRef} {...DESKTOP_ANIMATION}>
-            {title ? (
+            {titleProps?.title ? (
               <div className="modal__header">
                 <div>
                   <Text
                     lineHeight="large"
-                    size="large"
+                    size={titleProps.size}
+                    className={`modal__title-${titleProps.size}`}
                     weight={'bold'}
                     dataId={dataIdPrefix ? `${dataIdPrefix}-modal-title` : ''}
                   >
-                    {title}
+                    {titleProps.title}
                   </Text>
                   {subtitle ? (
                     <Text
@@ -102,30 +135,14 @@ export const Modal = (props: TModalPropTypes): ReactElement => {
             ) : null}
 
             <div className="modal__content scrollbar scrollbar--vertical">{children}</div>
-            {withFooter && buttonProps ? (
-              <div className="modal__footer">
-                <Button
-                  type="tertiary"
-                  className="modal__footer__btn mr-16"
-                  onClick={onClose}
-                  dataId={dataIdPrefix ? `${dataIdPrefix}-modal-cancel-button` : ''}
-                  {...(buttonProps.cancel || {})}
-                />
-                {confirmBtnTooltipText ? (
-                  <Tooltip
-                    text={confirmBtnTooltipText as string}
-                    id={'confirm-btn-tooltip'}
-                    position={Positions.TOP_CENTER}
-                  />
-                ) : null}
-                <Button
-                  id={'confirm-btn-tooltip'}
-                  className={'modal__footer__btn'}
-                  type="primary"
-                  onClick={onSubmit}
-                  dataId={dataIdPrefix ? `${dataIdPrefix}-modal-confirm-button` : ''}
-                  {...buttonProps.confirm}
-                />
+            {buttons || checkbox ? (
+              <div
+                className={`modal__footer ${
+                  checkbox ? 'justify-content--between' : 'justify-content--end'
+                }`}
+              >
+                {checkbox}
+                {buttons}
               </div>
             ) : null}
           </div>

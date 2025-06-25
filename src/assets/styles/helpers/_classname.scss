@@ -504,7 +504,7 @@ $space-prefixes: (
       margin: var(--ds-space-8) 0;
     }
     &::-webkit-scrollbar {
-      width: var(--ds-size-4);
+      width: var(--ds-size-6);
     }
   }
 
@@ -516,7 +516,7 @@ $space-prefixes: (
       margin: 0 var(--ds-space-8);
     }
     &::-webkit-scrollbar {
-      height: var(--ds-size-4);
+      height: var(--ds-size-6);
     }
   }
 }
