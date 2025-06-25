@@ -1,3 +1,10 @@
+## [1.23.2](https://github.com/ab-devtools/uilibrary/compare/1.23.1...1.23.2) (2025-06-25)
+
+
+### Bug Fixes
+
+* delete input trim fuctional ([476dbf1](https://github.com/ab-devtools/uilibrary/commit/476dbf115b29b5a420e8288bedbcaecb73b923c1))
+
 ## [1.23.1](https://github.com/ab-devtools/uilibrary/compare/1.23.0...1.23.1) (2025-06-25)
 
 
