@@ -55,7 +55,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
     const isErrorVisible = hasError !== undefined ? hasError : !!error
     const placeHolder = label === placeholder ? '' : placeholder || datePlaceHolderText
     const changeHandler = (event: TChangeEventType) => {
-      const eventValue = event.target.value.trim()
+      const eventValue = event.target.value
 
       const valueWithoutSeparator =
         type === 'numeric' ? eventValue.replace(new RegExp(thousandSeparator, 'g'), '') : eventValue
