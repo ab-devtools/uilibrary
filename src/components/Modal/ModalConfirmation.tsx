@@ -89,13 +89,15 @@ export const ModalConfirmation = (props: TModalConfirmationPropTypes): ReactElem
                     isFooterInline ? 'modal__footer-inline' : 'modal__footer-block'
                   }`}
                 >
-                  <Button
-                    type="secondary"
-                    className="modal__footer__btn"
-                    onClick={onClose}
-                    dataId={dataIdPrefix ? `${dataIdPrefix}-modal-cancel-button` : ''}
-                    {...(buttonProps?.cancel || {})}
-                  />
+                  {buttonProps?.cancel ? (
+                    <Button
+                      type="secondary"
+                      className="modal__footer__btn"
+                      onClick={onClose}
+                      dataId={dataIdPrefix ? `${dataIdPrefix}-modal-cancel-button` : ''}
+                      {...(buttonProps?.cancel || {})}
+                    />
+                  ) : null}
                   {buttonProps?.deactivate ? (
                     <Button
                       type="secondary"
@@ -105,13 +107,15 @@ export const ModalConfirmation = (props: TModalConfirmationPropTypes): ReactElem
                       {...buttonProps?.deactivate}
                     />
                   ) : null}
-                  <Button
-                    type="danger"
-                    className={'modal__footer__btn'}
-                    onClick={onSubmit}
-                    dataId={dataIdPrefix ? `${dataIdPrefix}-modal-confirm-button` : ''}
-                    {...buttonProps.confirm}
-                  />
+                  {buttonProps?.confirm ? (
+                    <Button
+                      type="danger"
+                      className={'modal__footer__btn'}
+                      onClick={onSubmit}
+                      dataId={dataIdPrefix ? `${dataIdPrefix}-modal-confirm-button` : ''}
+                      {...buttonProps.confirm}
+                    />
+                  ) : null}
                 </div>
               ) : null}
             </div>
