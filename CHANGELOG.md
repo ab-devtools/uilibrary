@@ -1,3 +1,11 @@
+# [1.24.0](https://github.com/ab-devtools/uilibrary/compare/1.23.2...1.24.0) (2025-06-26)
+
+
+### Features
+
+* check modal buttons ([8092cb2](https://github.com/ab-devtools/uilibrary/commit/8092cb24c52f652d1d456ccb596ec35b6c3c04b5))
+* check modal buttons ([aff6179](https://github.com/ab-devtools/uilibrary/commit/aff6179d1d650bc9e498025f298e3e72a47f46b7))
+
 ## [1.23.2](https://github.com/ab-devtools/uilibrary/compare/1.23.1...1.23.2) (2025-06-25)
 
 
