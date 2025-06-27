@@ -1,3 +1,10 @@
+## [1.25.2](https://github.com/ab-devtools/uilibrary/compare/1.25.1...1.25.2) (2025-06-27)
+
+
+### Bug Fixes
+
+* table ui improvement ([018c4d3](https://github.com/ab-devtools/uilibrary/commit/018c4d332fad5bbddf0aad1499664e0c2b3ba5f7))
+
 ## [1.25.1](https://github.com/ab-devtools/uilibrary/compare/1.25.0...1.25.1) (2025-06-27)
 
 
