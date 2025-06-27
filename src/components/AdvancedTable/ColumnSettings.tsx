@@ -41,7 +41,7 @@ export function ColumnSettings<T>({
   return (
     <div ref={setRef}>
       <Button
-        type='secondary'
+        type="secondary"
         iconProps={{
           Component: IconSettings
         }}
@@ -55,7 +55,7 @@ export function ColumnSettings<T>({
         parentRef={ref}
       >
         <div className="settings-menu__dropdown">
-          <div className='relative'>
+          <div className="relative">
             <div className="settings-menu__dropdown__option sticky">
               <Switcher
                 label={allToggleText}

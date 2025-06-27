@@ -211,8 +211,8 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
         data={data}
         totalCount={100}
         tableSettings={{
-          tableName: "advancedTable",
-          persistColumnSettings: "localStorage",
+          tableName: 'advancedTable',
+          persistColumnSettings: 'localStorage'
         }}
         columns={columns}
         defaultHiddenColumns={['user']}
