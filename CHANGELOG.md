@@ -1,3 +1,10 @@
+# [1.25.0](https://github.com/ab-devtools/uilibrary/compare/1.24.0...1.25.0) (2025-06-27)
+
+
+### Features
+
+* column settings save on local storage or in to the be ([3375f5a](https://github.com/ab-devtools/uilibrary/commit/3375f5abd2264db50049ea0b77053271b497cff3))
+
 # [1.24.0](https://github.com/ab-devtools/uilibrary/compare/1.23.2...1.24.0) (2025-06-26)
 
 
