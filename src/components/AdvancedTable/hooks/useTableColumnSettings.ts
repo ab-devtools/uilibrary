@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 export const useTableColumnSettings = <T>(
   table: Table<T>,
   tableName: string,
-  shouldPersistToStorage: boolean,
+  shouldPersistToStorage: boolean
 ) => {
   const prevSettings = useRef<string | null>(null)
 
