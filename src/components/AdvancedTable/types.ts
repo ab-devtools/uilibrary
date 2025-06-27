@@ -12,6 +12,7 @@ export type TTable<TData> = Table<TData>
 export type TRowSelectionState = RowSelectionState
 export type TColumnSizingState = ColumnSizingState
 export type TPaginationState = PaginationState
+export type TPersistColumnSettings = 'localStorage' | 'external'
 
 export type TTableProps<TData> = {
   data: (TData & { subRows?: TData[] })[]
@@ -32,6 +33,11 @@ export type TTableProps<TData> = {
   defaultPageSize?: number
   defaultHiddenColumns?: string[]
   collapsibleRows?: boolean
+  tableSettings?: {
+    tableName: string
+    persistColumnSettings?: TPersistColumnSettings
+    onColumnSettingsChange?: (settings: ColumnSettings) => void
+  }
   renderExpandedContent?: (row: Row<TData>) => ReactNode
   renderHeader?: (table: TTable<TData>) => ReactNode
   renderFooter?: (table: Table<TData>) => ReactNode
@@ -69,4 +75,10 @@ export interface ExpandColumnProps<TData> {
   row: Row<TData>
   expandedRows: Set<string>
   onToggle: (rowId: string) => void
+}
+
+export interface ColumnSettings {
+  columnVisibility: Record<string, boolean>
+  columnOrder: string[]
+  columnSizing: Record<string, number>
 }

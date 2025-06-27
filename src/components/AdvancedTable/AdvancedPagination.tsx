@@ -9,35 +9,13 @@ import IconChevronDoubleLeft from '../SVGIcons/IconChevronDoubleLeft'
 import IconChevronDoubleRight from '../SVGIcons/IconChevronDoubleRight'
 import { Text } from '../Text'
 import classnames from 'classnames'
+import { OPTIONS } from './constants'
 
 interface PaginationProps<T> {
   table: Table<T>
   totalCount: number
   buttonText?: string
 }
-
-const OPTIONS: TSelectOptions = [
-  {
-    value: '10',
-    label: '10'
-  },
-  {
-    value: '20',
-    label: '20'
-  },
-  {
-    value: '30',
-    label: '30'
-  },
-  {
-    value: '40',
-    label: '40'
-  },
-  {
-    value: '50',
-    label: '50'
-  }
-]
 
 export function AdvancedPagination<TData>({
   table,

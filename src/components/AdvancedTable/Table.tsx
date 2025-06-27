@@ -7,7 +7,7 @@ import { DndContext, DragOverlay, closestCenter } from '@dnd-kit/core'
 import { SortableContext, horizontalListSortingStrategy } from '@dnd-kit/sortable'
 import { ColumnHeader } from './ColumnHeader'
 import Skeleton from 'react-loading-skeleton'
-import { useTable } from './useTable'
+import { useTableControl } from './hooks/useTableControl'
 import { Text } from '../Text'
 import classnames from 'classnames'
 import { Empty } from '../Empty'
@@ -64,6 +64,7 @@ export function Table<TData>({
   renderFooter,
   onSortChange,
   onRowClick,
+  tableSettings,
   onRowSelection,
   onColumnSizing,
   onPaginationChange
@@ -106,8 +107,9 @@ export function Table<TData>({
   )
 
   const { table, sensors, handleDragStart, handleDragEnd, handleDragCancel, activeHeader } =
-    useTable({
+    useTableControl({
       data,
+      tableSettings,
       columns: collapsibleRows ? [expandColumn, ...columns] : columns,
       withSelect,
       totalCount,

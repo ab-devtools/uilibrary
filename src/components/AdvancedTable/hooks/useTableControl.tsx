@@ -15,15 +15,26 @@ import {
 } from '@tanstack/react-table'
 import type { DragEndEvent, DragStartEvent } from '@dnd-kit/core'
 import { MouseSensor, TouchSensor, useSensor, useSensors } from '@dnd-kit/core'
-import React, { useState, useMemo } from 'react'
-import { IndeterminateCheckbox } from './IndeterminateCheckbox'
+import React, { useState, useMemo, useEffect } from 'react'
+import { IndeterminateCheckbox } from '../IndeterminateCheckbox'
 import { arrayMove } from '@dnd-kit/sortable'
-import type { Column, ICellProps, IHeaderProps, SortingUpdateEvent, TTableProps } from './types'
+import type {
+  Column,
+  ColumnSettings,
+  ICellProps,
+  IHeaderProps,
+  SortingUpdateEvent,
+  TTableProps
+} from '../types'
+import { loadTableSettings } from '../loadTableSettings'
+import { useTableColumnSettings } from './useTableColumnSettings'
+import { STORAGE_TYPE, TABLE_NAME_PREFIX } from '../constants'
 
-export function useTable<TData>({
+export function useTableControl<TData>({
   withSelect,
   columns,
   data,
+  tableSettings,
   totalCount = 0,
   defaultPageSize = 10,
   defaultPageIndex = 0,
@@ -33,11 +44,25 @@ export function useTable<TData>({
   onColumnSizing,
   onPaginationChange
 }: TTableProps<TData>) {
+  const shouldPersistToStorage = tableSettings?.persistColumnSettings === STORAGE_TYPE.LOCAL;
+  const shouldEmitExternal = tableSettings?.persistColumnSettings === STORAGE_TYPE.EXTERNAL;
+  const tableName = `${TABLE_NAME_PREFIX}-${tableSettings?.tableName}`;
+  const savedSettings =
+    shouldPersistToStorage && tableName
+      ? loadTableSettings(tableName)
+      : { columnVisibility: {}, columnSizing: {}, columnOrder: [] };
+
   const [activeId, setActiveId] = useState<string | null>(null)
   const [sorting, setSorting] = useState<SortingState>([])
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({})
-  const [columnSizing, setColumnSizing] = useState<ColumnSizingState>({})
-  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({})
+  const [columnSizing, setColumnSizing] = useState<ColumnSizingState>(savedSettings.columnSizing ?? {});
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({
+    ...defaultHiddenColumns.reduce((acc, key) => {
+      acc[key] = false;
+      return acc;
+    }, {} as VisibilityState),
+    ...savedSettings.columnVisibility,
+  });
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: defaultPageIndex,
     pageSize: defaultPageSize
@@ -83,8 +108,10 @@ export function useTable<TData>({
     return columnsList
   }, [columns])
 
-  const [columnOrder, setColumnOrder] = useState<string[]>(() =>
-    memoizedColumns.map((column) => column.id as string)
+  const [columnOrder, setColumnOrder] = useState<string[]>(
+    savedSettings.columnOrder?.length
+      ? savedSettings.columnOrder
+      : memoizedColumns.map((column) => column.id as string)
   )
 
   const reorderedColumns = columnOrder.map((columnId) =>
@@ -173,6 +200,8 @@ export function useTable<TData>({
     enableColumnResizing: true
   })
 
+  useTableColumnSettings(table, tableName);
+
   const sensors = useSensors(
     useSensor(MouseSensor, {
       activationConstraint: {
@@ -217,6 +246,23 @@ export function useTable<TData>({
   const activeHeader = activeId
     ? table.getHeaderGroups()[0].headers.find((header) => header.id === activeId)
     : null
+
+  useEffect(() => {
+    const settings: ColumnSettings = {
+      columnVisibility,
+      columnOrder,
+      columnSizing,
+    };
+
+    if (shouldPersistToStorage && tableName) {
+      const serialized = JSON.stringify(settings);
+      localStorage.setItem(tableName, serialized);
+    }
+
+    if (shouldEmitExternal) {
+      tableSettings?.onColumnSettingsChange?.(settings);
+    }
+  }, [columnVisibility, columnOrder, columnSizing]);
 
   return {
     table,

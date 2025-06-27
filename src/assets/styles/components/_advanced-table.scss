@@ -440,11 +440,32 @@
   box-shadow: var(--shadow-2);
   border-radius: var(--ds-border-radius-lg);
   width: 260px;
-  max-height: 300px;
-  overflow-y: auto;
 
   &__dropdown {
-    padding: var(--ds-space-6) var(--ds-space-16);
+    padding: var(--ds-space-6) 0;
+
+    .relative {
+      position: relative;
+    }
+
+    .sticky {
+      position: sticky;
+      top: 0;
+      background: white;
+      z-index: 1;
+      border-bottom: 1px solid var(--ds-color-border-tertiary) !important;
+      padding: 0 var(--ds-space-16);
+    }
+
+    .scrollbar--content {
+      overflow-y: auto;
+      max-height: 300px;
+      padding: 0 var(--ds-space-16);
+      box-sizing: border-box;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
 
     &__option {
       border-bottom: 1px solid var(--ds-color-border-tertiary);
