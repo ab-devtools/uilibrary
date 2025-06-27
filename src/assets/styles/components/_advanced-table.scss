@@ -170,10 +170,6 @@
             min-width: initial !important;
             padding: var(--ds-space-8) var(--ds-space-6) var(--ds-space-8) 22px;
 
-            &.pinned-cell {
-              padding-left: 16px !important;
-            }
-
             .actions-list {
               &__checkbox {
                 display: none;
