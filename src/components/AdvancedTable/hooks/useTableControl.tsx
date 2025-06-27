@@ -44,25 +44,27 @@ export function useTableControl<TData>({
   onColumnSizing,
   onPaginationChange
 }: TTableProps<TData>) {
-  const shouldPersistToStorage = tableSettings?.persistColumnSettings === STORAGE_TYPE.LOCAL;
-  const shouldEmitExternal = tableSettings?.persistColumnSettings === STORAGE_TYPE.EXTERNAL;
-  const tableName = `${TABLE_NAME_PREFIX}-${tableSettings?.tableName}`;
+  const shouldPersistToStorage = tableSettings?.persistColumnSettings === STORAGE_TYPE.LOCAL
+  const shouldEmitExternal = tableSettings?.persistColumnSettings === STORAGE_TYPE.EXTERNAL
+  const tableName = `${TABLE_NAME_PREFIX}-${tableSettings?.tableName}`
   const savedSettings =
     shouldPersistToStorage && tableName
       ? loadTableSettings(tableName)
-      : { columnVisibility: {}, columnSizing: {}, columnOrder: [] };
+      : { columnVisibility: {}, columnSizing: {}, columnOrder: [] }
 
   const [activeId, setActiveId] = useState<string | null>(null)
   const [sorting, setSorting] = useState<SortingState>([])
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({})
-  const [columnSizing, setColumnSizing] = useState<ColumnSizingState>(savedSettings.columnSizing ?? {});
+  const [columnSizing, setColumnSizing] = useState<ColumnSizingState>(
+    savedSettings.columnSizing ?? {}
+  )
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({
     ...defaultHiddenColumns.reduce((acc, key) => {
-      acc[key] = false;
-      return acc;
+      acc[key] = false
+      return acc
     }, {} as VisibilityState),
-    ...savedSettings.columnVisibility,
-  });
+    ...savedSettings.columnVisibility
+  })
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: defaultPageIndex,
     pageSize: defaultPageSize
@@ -200,7 +202,7 @@ export function useTableControl<TData>({
     enableColumnResizing: true
   })
 
-  useTableColumnSettings(table, tableName);
+  useTableColumnSettings(table, tableName, shouldPersistToStorage)
 
   const sensors = useSensors(
     useSensor(MouseSensor, {
@@ -251,18 +253,18 @@ export function useTableControl<TData>({
     const settings: ColumnSettings = {
       columnVisibility,
       columnOrder,
-      columnSizing,
-    };
+      columnSizing
+    }
 
-    if (shouldPersistToStorage && tableName) {
-      const serialized = JSON.stringify(settings);
-      localStorage.setItem(tableName, serialized);
+    if (shouldPersistToStorage && tableSettings.tableName) {
+      const serialized = JSON.stringify(settings)
+      localStorage.setItem(tableName, serialized)
     }
 
     if (shouldEmitExternal) {
-      tableSettings?.onColumnSettingsChange?.(settings);
+      tableSettings?.onColumnSettingsChange?.(settings)
     }
-  }, [columnVisibility, columnOrder, columnSizing]);
+  }, [columnVisibility, columnOrder, columnSizing])
 
   return {
     table,

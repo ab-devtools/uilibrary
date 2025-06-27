@@ -1,6 +1,6 @@
 export const STORAGE_TYPE = {
   LOCAL: 'localStorage',
-  EXTERNAL: 'external',
+  EXTERNAL: 'external'
 }
 
 export const TABLE_NAME_PREFIX = 'table-settings'
