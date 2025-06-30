@@ -1,3 +1,10 @@
+## [1.26.1](https://github.com/ab-devtools/uilibrary/compare/1.26.0...1.26.1) (2025-06-30)
+
+
+### Bug Fixes
+
+* breadcrumb component onclick ([5d4e7df](https://github.com/ab-devtools/uilibrary/commit/5d4e7df4ba5bc8c82ccdc337e0d6052b715dd3ab))
+
 # [1.26.0](https://github.com/ab-devtools/uilibrary/compare/1.25.2...1.26.0) (2025-06-30)
 
 
