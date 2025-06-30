@@ -1,3 +1,10 @@
+# [1.26.0](https://github.com/ab-devtools/uilibrary/compare/1.25.2...1.26.0) (2025-06-30)
+
+
+### Features
+
+* added new icons ([af54aa3](https://github.com/ab-devtools/uilibrary/commit/af54aa3fa2a173d85a3a0eb65472ef24762a43eb))
+
 ## [1.25.2](https://github.com/ab-devtools/uilibrary/compare/1.25.1...1.25.2) (2025-06-27)
 
 
