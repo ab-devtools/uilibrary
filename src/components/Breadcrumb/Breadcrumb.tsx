@@ -14,7 +14,10 @@ export const Breadcrumb = (props: TBreadCrumbProps): ReactElement | null => {
               className={`breadcrumb__item__inner ${
                 selectedValue === itemInfo.value ? 'selected' : ''
               }`}
-              onClick={() => onSelect(itemInfo.value)}
+              onClick={() => {
+                onSelect(itemInfo.value)
+                itemInfo.onClick()
+              }}
             >
               {itemInfo.label}
             </span>
