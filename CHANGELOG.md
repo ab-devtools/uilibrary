@@ -1,3 +1,10 @@
+## [1.27.1](https://github.com/ab-devtools/uilibrary/compare/1.27.0...1.27.1) (2025-07-01)
+
+
+### Bug Fixes
+
+* fix for collapse titles ([18e2a89](https://github.com/ab-devtools/uilibrary/commit/18e2a89da43579d39a283bce68c800430565d231))
+
 # [1.27.0](https://github.com/ab-devtools/uilibrary/compare/1.26.1...1.27.0) (2025-07-01)
 
 
