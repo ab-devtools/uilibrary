@@ -2,6 +2,7 @@ import type { InputCustomProps } from '../Input/types'
 import type { TChipsProps } from '../Chips/types'
 import type { CARD_SELECT_TYPES } from '../../consts'
 import type { TPopoverProps } from '../Popover/types'
+import type { TTooltipProps } from '../Tooltip/types'
 
 export interface TCardSelectProps extends IFormCompProps {
   id?: number | string
@@ -23,6 +24,7 @@ export interface TCardSelectProps extends IFormCompProps {
   illustration?: string
   icon?: TSelectIconProps
   popoverAddons?: TPopoverProps
+  tooltipAddons?: TTooltipProps
 }
 export interface TCardSelectGroupProps extends IFormCompProps {
   cards: TCardSelectProps[]

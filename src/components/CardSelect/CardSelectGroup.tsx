@@ -24,7 +24,8 @@ export const CardSelectGroup = (props: TCardSelectGroupProps): JSX.Element => {
             id,
             disabled,
             dataId,
-            popoverAddons
+            popoverAddons,
+            tooltipAddons
           },
           index
         ) => (
@@ -45,6 +46,7 @@ export const CardSelectGroup = (props: TCardSelectGroupProps): JSX.Element => {
             illustration={illustration}
             icon={icon}
             popoverAddons={popoverAddons}
+            tooltipAddons={tooltipAddons}
             disabled={cardsGroupDisable || disabled}
           />
         )

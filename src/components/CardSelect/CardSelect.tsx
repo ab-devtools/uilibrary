@@ -9,6 +9,7 @@ import { Radio } from '../Radio'
 import { Image } from '../Image'
 import { Popover } from '../Popover'
 import { Positions } from '../Tooltip/types'
+import { Tooltip } from '../Tooltip'
 
 export const CardSelect = (props: TCardSelectProps): ReactElement => {
   const {
@@ -28,8 +29,10 @@ export const CardSelect = (props: TCardSelectProps): ReactElement => {
     illustration,
     icon,
     dataId,
-    popoverAddons
+    popoverAddons,
+    tooltipAddons
   } = props
+  const elementId = popoverAddons?.id ?? tooltipAddons?.id ?? ''
   const selected = cardValue === value
   const cardSelectStyle = classNames(
     `card-select ${disabled ? 'card-select--disabled' : selected ? 'card-select--selected' : ''}`,
@@ -52,8 +55,9 @@ export const CardSelect = (props: TCardSelectProps): ReactElement => {
 
   return (
     <>
+      {tooltipAddons ? <Tooltip {...tooltipAddons} /> : null}
       <div
-        id={`${popoverAddons?.id}`}
+        id={`${elementId}`}
         className={cardSelectStyle}
         onClick={handleCardSelect}
         data-id={dataId}
