@@ -1,3 +1,10 @@
+# [1.27.0](https://github.com/ab-devtools/uilibrary/compare/1.26.1...1.27.0) (2025-07-01)
+
+
+### Features
+
+* add tooltip props to card select ([69a678b](https://github.com/ab-devtools/uilibrary/commit/69a678b1509188f6482ef6dae4e31cc00428a74c))
+
 ## [1.26.1](https://github.com/ab-devtools/uilibrary/compare/1.26.0...1.26.1) (2025-06-30)
 
 
