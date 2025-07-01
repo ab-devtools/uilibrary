@@ -1,3 +1,10 @@
+# [1.28.0](https://github.com/ab-devtools/uilibrary/compare/1.27.1...1.28.0) (2025-07-01)
+
+
+### Features
+
+* added IconCompareCar icon and its filled version ([7753e3a](https://github.com/ab-devtools/uilibrary/commit/7753e3a028be31a8ac8f74bbdc9557820adb103d))
+
 ## [1.27.1](https://github.com/ab-devtools/uilibrary/compare/1.27.0...1.27.1) (2025-07-01)
 
 
