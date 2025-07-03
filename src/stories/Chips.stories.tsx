@@ -36,5 +36,6 @@ Chips.args = {
     Component: IconPerson
   },
   disabled: false,
-  withAction: false
+  withAction: false,
+  isReadOnly: false
 }
