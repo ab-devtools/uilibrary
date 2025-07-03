@@ -18,6 +18,7 @@ export const Chips = (props: TChipsProps): ReactElement => {
     leftIconProps,
     withAction,
     onClick,
+    isReadOnly = false,
     dataId = ''
   } = props
 
@@ -38,6 +39,7 @@ export const Chips = (props: TChipsProps): ReactElement => {
         `chips chips--${type} chips--${disabled ? 'disabled' : color} chips--${size}`,
         className
       )}
+      aria-readonly={isReadOnly}
     >
       {leftIconProps?.Component ? (
         <leftIconProps.Component
