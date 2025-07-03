@@ -1,3 +1,10 @@
+## [1.28.1](https://github.com/ab-devtools/uilibrary/compare/1.28.0...1.28.1) (2025-07-03)
+
+
+### Bug Fixes
+
+* added readonly props for chips ([a8425ec](https://github.com/ab-devtools/uilibrary/commit/a8425ec6735ebdec14cb62ff7d0d6a803e236854))
+
 # [1.28.0](https://github.com/ab-devtools/uilibrary/compare/1.27.1...1.28.0) (2025-07-01)
 
 
