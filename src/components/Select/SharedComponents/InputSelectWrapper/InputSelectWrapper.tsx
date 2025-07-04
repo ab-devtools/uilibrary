@@ -32,7 +32,6 @@ export const InputSelectWrapper = (props: TSelectWrapperProps): ReactElement | n
     dropdownRef,
     setDropdownRef,
     containerRef,
-    setIsOpen,
     isOpen,
     selectedValues,
     setContainerRef,
@@ -52,19 +51,13 @@ export const InputSelectWrapper = (props: TSelectWrapperProps): ReactElement | n
     [width]
   )
 
-  const toggleDropdown = (e?: TClickEventType) => {
-    const clickedElement = e?.target as HTMLDivElement
-    const className = clickedElement?.getAttribute('class')
-    if (
-      e &&
-      className &&
-      (className.indexOf('icon-') !== -1 || className.indexOf('svg-icon') !== -1)
-    ) {
-      setIsOpen(!isOpen)
-      e.preventDefault()
-    } else {
-      setIsOpen(true)
+  const toggleDropdown = (e?: React.MouseEvent<HTMLElement>) => {
+    const clickedElement = e?.target as HTMLElement
+    const className = clickedElement?.getAttribute('class') || ''
+    if (className.includes('icon-') || className.includes('svg-icon')) {
+      e?.preventDefault()
     }
+    props.toggleDropdown?.()
   }
 
   const selectedItemsLabels = useMemo(() => {

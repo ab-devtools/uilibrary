@@ -50,6 +50,10 @@ export const MultiSelect = (props: TMultiSelectPropTypes): ReactElement => {
   const closeDropdown = () => setIsOpen(false)
   const openDropdown = () => setIsOpen(true)
 
+  const toggleDropdown = () => {
+    setIsOpen((prev) => !prev)
+  }
+
   const hasChange = useMemo(() => {
     const initial = (initialSelected || []).map((i) => i.value).sort()
     const current = (selectedValues || []).map((i) => i.value).sort()
@@ -116,6 +120,7 @@ export const MultiSelect = (props: TMultiSelectPropTypes): ReactElement => {
       dropdownRef={dropdownRef}
       isOpen={isOpen}
       setIsOpen={setIsOpen}
+      toggleDropdown={toggleDropdown}
       containerRef={containerRef?.current}
       setContainerRef={containerRef}
       dropdownWidth={dropdownWidth}
