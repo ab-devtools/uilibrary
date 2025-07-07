@@ -11,12 +11,7 @@ export const CardChips = (props: TCardChips): ReactElement => {
   return (
     <div className={'card-select__chips mt-16'}>
       {chips.map((chip) => (
-        <Chips
-          {...chip}
-          key={chip.id}
-          onClick={chip.onClick}
-          withAction={chip.withAction}
-        />
+        <Chips {...chip} key={chip.id} onClick={chip.onClick} withAction={chip.withAction} />
       ))}
     </div>
   )
