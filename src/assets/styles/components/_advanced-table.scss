@@ -181,7 +181,7 @@
             }
           }
 
-          &:not(.with-checkbox) {
+          &:not(.with-checkbox, .action-column) {
             padding: var(--ds-space-8) var(--ds-space-16) !important;
             box-sizing: border-box;
           }
