@@ -1,3 +1,10 @@
+## [1.28.2](https://github.com/ab-devtools/uilibrary/compare/1.28.1...1.28.2) (2025-07-07)
+
+
+### Bug Fixes
+
+* fix dropdown open close issue ([3b31f48](https://github.com/ab-devtools/uilibrary/commit/3b31f48a43155b1fac4d09ca2a44842787a11a97))
+
 ## [1.28.1](https://github.com/ab-devtools/uilibrary/compare/1.28.0...1.28.1) (2025-07-03)
 
 
