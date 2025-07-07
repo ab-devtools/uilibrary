@@ -1,3 +1,12 @@
+## [1.28.5](https://github.com/ab-devtools/uilibrary/compare/1.28.4...1.28.5) (2025-07-07)
+
+
+### Bug Fixes
+
+* added subtext props to cardSelectGroup component ([ded4bf7](https://github.com/ab-devtools/uilibrary/commit/ded4bf7b10a8ef2ff9d4b5c8a66e382335b82908))
+* remove disabled state from chips ([3b88599](https://github.com/ab-devtools/uilibrary/commit/3b8859925a1a8a08932ec8018c95c20129f7a304))
+* remove disabled state from chips ([176d8f0](https://github.com/ab-devtools/uilibrary/commit/176d8f047d0946f3f4a543097391d1da56dcce6d))
+
 ## [1.28.4](https://github.com/ab-devtools/uilibrary/compare/1.28.3...1.28.4) (2025-07-07)
 
 
