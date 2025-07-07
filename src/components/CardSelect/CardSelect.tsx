@@ -15,6 +15,7 @@ export const CardSelect = (props: TCardSelectProps): ReactElement => {
   const {
     type = CARD_SELECT_TYPES.cardRadio,
     title,
+    subtext,
     description,
     inputProps,
     chips = [],
@@ -82,9 +83,14 @@ export const CardSelect = (props: TCardSelectProps): ReactElement => {
         ) : null}
         <div className={'card-select__content'}>
           <div className="flexbox justify-content--between align-items--start">
-            <Text type={disabled ? 'disabled' : 'primary'} size={'medium'} weight={'bold'}>
-              <>{title}</>
-            </Text>
+            <div className={'card-select__content__left'}>
+              <Text type={disabled ? 'disabled' : 'primary'} size={'medium'} weight={'bold'}>
+                <>{title}</>
+              </Text>
+              {subtext ? <Text type={disabled ? 'disabled' : 'secondary'} className={'mt-8'}>
+                <>{subtext}</>
+              </Text> : null}
+            </div>
             {type === CARD_SELECT_TYPES.cardRadio ? (
               <Radio name={name} isSelected={selected} disabled={disabled} className={'ml-16'} />
             ) : null}

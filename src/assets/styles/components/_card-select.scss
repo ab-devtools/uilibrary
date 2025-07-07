@@ -26,6 +26,8 @@
   --ds-card-select-icon-bg: var(--ds-color-bg-container);
   --ds-card-select-icon-border-radius: var(--ds-border-radius-xl);
 
+  --ds-card-select-chips-gap: var(--ds-space-8);
+
   border-radius: var(--ds-card-select-border-radius);
   padding: var(--ds-card-select-padding);
   background-color: var(--ds-card-select-bg-default);
@@ -80,6 +82,16 @@
 
   &__content {
     flex: 1;
+
+    &__left {
+      flex: 1;
+    }
+  }
+
+  &__chips {
+    @include mixin.flexbox;
+    @include mixin.flex-wrap(wrap);
+    gap: var(--ds-card-select-chips-gap)
   }
 }
 
