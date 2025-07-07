@@ -220,6 +220,7 @@ export type TSelectWrapperProps = {
     left?: number
     right?: number
   }
+  toggleDropdown?: () => void
   isOpen: boolean
   setIsOpen: (isOpen: boolean) => void
   containerRef: HTMLDivElement | null
