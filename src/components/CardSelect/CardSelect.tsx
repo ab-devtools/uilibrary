@@ -87,9 +87,11 @@ export const CardSelect = (props: TCardSelectProps): ReactElement => {
               <Text type={disabled ? 'disabled' : 'primary'} size={'medium'} weight={'bold'}>
                 <>{title}</>
               </Text>
-              {subtext ? <Text type={disabled ? 'disabled' : 'secondary'} className={'mt-8'}>
-                <>{subtext}</>
-              </Text> : null}
+              {subtext ? (
+                <Text type={disabled ? 'disabled' : 'secondary'} className={'mt-8'}>
+                  <>{subtext}</>
+                </Text>
+              ) : null}
             </div>
             {type === CARD_SELECT_TYPES.cardRadio ? (
               <Radio name={name} isSelected={selected} disabled={disabled} className={'ml-16'} />
