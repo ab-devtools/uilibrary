@@ -1,3 +1,10 @@
+## [1.28.3](https://github.com/ab-devtools/uilibrary/compare/1.28.2...1.28.3) (2025-07-07)
+
+
+### Bug Fixes
+
+* table action column ui fix ([b882d48](https://github.com/ab-devtools/uilibrary/commit/b882d48cd731d74ffb437f145be99012a847a662))
+
 ## [1.28.2](https://github.com/ab-devtools/uilibrary/compare/1.28.1...1.28.2) (2025-07-07)
 
 
