@@ -17,6 +17,7 @@ export const CardSelectGroup = (props: TCardSelectGroupProps): JSX.Element => {
             icon,
             value: cardValue,
             title,
+            subtext,
             description,
             chips,
             inputProps,
@@ -36,6 +37,7 @@ export const CardSelectGroup = (props: TCardSelectGroupProps): JSX.Element => {
             key={id || index}
             type={cardsGroupType || type}
             title={title}
+            subtext={subtext}
             description={description}
             chips={chips}
             inputProps={inputProps}
