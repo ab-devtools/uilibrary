@@ -10,13 +10,12 @@ interface TCardChips {
 export const CardChips = (props: TCardChips): ReactElement => {
   const { chips, disabled } = props
   return (
-    <div>
+    <div className={'card-select__chips mt-16'}>
       {chips.map((chip) => (
         <Chips
           {...chip}
           key={chip.id}
           disabled={disabled}
-          className={'mt-8 mr-8'}
           onClick={chip.onClick}
           withAction={chip.withAction}
         />

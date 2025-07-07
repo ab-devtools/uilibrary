@@ -151,6 +151,7 @@ CardSelect.args = {
     Component: IconQuestion
   },
   title: 'Card Select',
+  subtext: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
   chips: [
     {
       text: 'Chip 1',

@@ -8,7 +8,8 @@ export interface TCardSelectProps extends IFormCompProps {
   id?: number | string
   type?: CARD_SELECT_TYPES
   title: string
-  description: string
+  subtext?: string
+  description?: string
   chips?: TChipsProps[]
   inputProps?: InputCustomProps
   className?: string
