@@ -97,7 +97,7 @@ export const CardSelect = (props: TCardSelectProps): ReactElement => {
               <Radio name={name} isSelected={selected} disabled={disabled} className={'ml-16'} />
             ) : null}
           </div>
-          {chips.length ? <CardChips chips={chips} disabled={disabled} /> : null}
+          {chips.length ? <CardChips chips={chips} /> : null}
           <CardInput inputProps={inputProps} disabled={disabled} />
           <CardDescription description={description} disabled={disabled} />
           <CardAdditionalInfo additionalInfo={additionalInfo} disabled={disabled} />
