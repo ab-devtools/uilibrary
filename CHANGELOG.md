@@ -1,3 +1,11 @@
+## [1.28.4](https://github.com/ab-devtools/uilibrary/compare/1.28.3...1.28.4) (2025-07-07)
+
+
+### Bug Fixes
+
+* added subtext props for cardSelect component ([baea406](https://github.com/ab-devtools/uilibrary/commit/baea406f7fa9e6c285292d0ee095f0f406d3f9aa))
+* added subtext props for cardSelect component ([28da6be](https://github.com/ab-devtools/uilibrary/commit/28da6be89152bf3985ec3513d25b75466b618366))
+
 ## [1.28.3](https://github.com/ab-devtools/uilibrary/compare/1.28.2...1.28.3) (2025-07-07)
 
 
