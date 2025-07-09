@@ -168,7 +168,7 @@ export function Table<TData>({
         >
           <div>
             <table style={tableStyle}>
-              {!data?.length || hasError ? (
+              {!isLoading && (!data?.length || hasError) ? (
                 <Empty
                   mainMessage={emptyTitle}
                   paragraphMessage={emptySubTitle}
