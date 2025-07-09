@@ -1,3 +1,10 @@
+# [1.29.0](https://github.com/ab-devtools/uilibrary/compare/1.28.5...1.29.0) (2025-07-09)
+
+
+### Features
+
+* update pagination ui ([8998177](https://github.com/ab-devtools/uilibrary/commit/8998177d77a7db00ca649a29da309b65df472462))
+
 ## [1.28.5](https://github.com/ab-devtools/uilibrary/compare/1.28.4...1.28.5) (2025-07-07)
 
 
