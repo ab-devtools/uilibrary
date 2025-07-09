@@ -151,6 +151,10 @@ export function Table<TData>({
     [data?.length, table]
   )
 
+  const skeletonRowSize = useMemo(() => {
+    return Array.from({ length: table.getState().pagination.pageSize })
+  }, [table.getState().pagination.pageSize])
+
   return (
     <div
       className={classnames('advanced-table', {
@@ -198,7 +202,27 @@ export function Table<TData>({
                     ))}
                   </thead>
                   <tbody>
-                    {table.getRowModel().rows.map((row) => (
+                    {isLoading ? (
+                      skeletonRowSize.map((_, i) => (
+                        <tr key={`skeleton-row-${i}`}>
+                          {table.getVisibleFlatColumns().map((column) => (
+                            <td
+                              className={classnames({
+                                'with-checkbox': column.id === ColumnId.Select,
+                                'pinned-cell': column.getIsPinned(),
+                                'action-column':
+                                  column.id === ColumnId.Actions && !isActionsVisible,
+                              })}
+                              key={column.id}
+                              style={{ ...getCommonPinningStyles(column) }}
+                            >
+                              <Skeleton />
+                            </td>
+                          ))}
+                        </tr>
+                      ))
+                    ) : (
+                      table.getRowModel().rows.map((row) => (
                       <React.Fragment key={row.id}>
                         <tr className={classnames({ selected: row.getIsSelected() })}>
                           {row.getVisibleCells().map((cell) => (
@@ -215,9 +239,7 @@ export function Table<TData>({
                               onClick={() => handleRowClick(cell.column, row)}
                               style={{ ...getCommonPinningStyles(cell.column) }}
                             >
-                              {isLoading ? (
-                                <Skeleton />
-                              ) : cell.column.id === ColumnId.Actions && !isActionsVisible ? (
+                              {cell.column.id === ColumnId.Actions && !isActionsVisible ? (
                                 <div className="actions-list__right">
                                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                                 </div>
@@ -235,7 +257,7 @@ export function Table<TData>({
                           </tr>
                         )}
                       </React.Fragment>
-                    ))}
+                    )))}
                   </tbody>
                 </>
               )}
