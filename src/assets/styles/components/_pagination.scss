@@ -5,30 +5,24 @@
   --ds-pagination-item-size-md: var(--ds-size-32);
   --ds-pagination-item-size-sm: var(--ds-size-24);
 
-  --ds-pagination-item-space: var(--ds-space-2);
+  --ds-pagination-item-space: var(--ds-space-4);
 
   --ds-pagination-item-font-size-lg: var(--ds-size-14);
   --ds-pagination-item-font-size-md: var(--ds-size-14);
   --ds-pagination-item-font-size-sm: var(--ds-size-12);
 
-  --ds-pagination-item-color: var(--ds-color-text-secondary);
-  --ds-pagination-item-color-selected: var(--ds-color-text-inverse);
+  --ds-pagination-item-color: var(--ds-color-text-tertiary);
+  --ds-pagination-item-color-selected: var(--ds-color-text-primary);
   --ds-pagination-item-color-disabled: var(--ds-color-text-disabled);
-  --ds-pagination-item-bg: var(--ds-color-bg-white);
-  --ds-pagination-item-bg-hover: var(--ds-color-bg-container-light);
-  --ds-pagination-item-bg-selected: var(--ds-color-bg-brand);
-  --ds-pagination-item-bg-disabled: var(--ds-color-bg-container-lighter);
-  --ds-pagination-item-border: 1px solid var(--ds-color-border-tertiary);
-  --ds-pagination-item-border-selected: var(--ds-color-border-brand);
-  --ds-pagination-item-border-disabled: var(--ds-color-bg-disabled);
+  --ds-pagination-item-bg-hover: var(--ds-color-bg-container-lighter);
+  --ds-pagination-item-bg-selected: var(--ds-color-bg-container);
 
-  --ds-pagination-item-border-radius: var(--ds-border-radius-xxs);
+  --ds-pagination-item-border-radius: var(--ds-border-radius-md);
 
   @include mixin.flexbox;
   @include mixin.align-items(center);
   list-style-type: none;
-  margin-left: calc(var(--ds-pagination-item-space) * -1);
-  margin-right: calc(var(--ds-pagination-item-space) * -1);
+  gap: var(--ds-pagination-item-space);
 
   &--large {
     li {
@@ -61,18 +55,13 @@
   }
 
   li {
-    padding: 0 var(--ds-pagination-item-space);
-
     a {
-      color: var(--ds-pagination-item-color);
-      border: var(--ds-pagination-item-border);
-      border-radius: var(--ds-pagination-item-border-radius);
-      cursor: pointer;
       @include mixin.flexbox;
       @include mixin.align-items(center);
       @include mixin.justify-content(center);
-
-
+      color: var(--ds-pagination-item-color);
+      border-radius: var(--ds-pagination-item-border-radius);
+      cursor: pointer;
 
       &:focus {
         outline: none !important;
@@ -85,7 +74,7 @@
       }
     }
 
-    &:not(&.active) {
+    &:not(&.active, &.disabled) {
       a {
         &:hover {
           background-color: var(--ds-pagination-item-bg-hover);
@@ -96,8 +85,8 @@
     &.active {
       a {
         cursor: default;
+        font-weight: var(--font-weight-500);
         background-color: var(--ds-pagination-item-bg-selected);
-        border-color: var(--ds-pagination-item-border-selected);
         color: var(--ds-pagination-item-color-selected);
 
         svg {
@@ -111,13 +100,7 @@
     &.disabled {
       a {
         cursor: default;
-        background-color: var(--ds-pagination-item-bg-disabled);
-        border-color: var(--ds-pagination-item-border-disabled);
         color: var(--ds-pagination-item-color-disabled);
-
-        &:hover {
-          background-color: var(--ds-pagination-item-bg-disabled) !important;
-        }
 
         svg {
           path {
