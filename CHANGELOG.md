@@ -1,3 +1,10 @@
+## [1.29.1](https://github.com/ab-devtools/uilibrary/compare/1.29.0...1.29.1) (2025-07-09)
+
+
+### Bug Fixes
+
+* table loading issue ([a113e5a](https://github.com/ab-devtools/uilibrary/commit/a113e5ae822726b1dbff6eb9f413e0a76f3d5d87))
+
 # [1.29.0](https://github.com/ab-devtools/uilibrary/compare/1.28.5...1.29.0) (2025-07-09)
 
 
