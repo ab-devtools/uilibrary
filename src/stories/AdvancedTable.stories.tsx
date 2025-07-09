@@ -208,8 +208,7 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
     <div style={{ height: '95vh' }}>
       <_Table
         {...args}
-        isLoading={true}
-        data={[]}
+        data={data}
         totalCount={100}
         tableSettings={{
           tableName: 'advancedTable',
