@@ -59,10 +59,10 @@ export function AdvancedPagination<TData>({
     visiblePages.push(1)
 
     if (currentPage <= 3) {
-      visiblePages.push(2, 3, 4, 5, '...', totalPages)
+      visiblePages.push(2, 3, 4, 5, '+++', totalPages)
     } else if (currentPage > totalPages - 5) {
       visiblePages.push(
-        '...',
+        '---',
         totalPages - 4,
         totalPages - 3,
         totalPages - 2,
@@ -70,7 +70,7 @@ export function AdvancedPagination<TData>({
         totalPages
       )
     } else {
-      visiblePages.push('...', currentPage, currentPage + 1, currentPage + 2, '...', totalPages)
+      visiblePages.push('---', currentPage, currentPage + 1, currentPage + 2, '+++', totalPages)
     }
 
     return visiblePages
@@ -121,9 +121,15 @@ export function AdvancedPagination<TData>({
           </li>
 
           {getVisiblePageNumbers().map((pageNumber, index) =>
-            pageNumber === '...' ? (
+            pageNumber === '---' ? (
               <li key={`ellipsis-${index}`} className={'pagination__more'}>
-                <a role={'button'}>
+                <a role={'button'} onClick={() => table.setPageIndex(+pageIndex - 3)}>
+                  <IconMore size={'small'} />
+                </a>
+              </li>
+            ) :  pageNumber === '+++' ? (
+              <li key={`ellipsis-${index}`} className={'pagination__more'}>
+                <a role={'button'} onClick={() => table.setPageIndex(+pageIndex + 3)}>
                   <IconMore size={'small'} />
                 </a>
               </li>
