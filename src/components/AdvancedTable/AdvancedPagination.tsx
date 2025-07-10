@@ -127,7 +127,7 @@ export function AdvancedPagination<TData>({
                   <IconMore size={'small'} />
                 </a>
               </li>
-            ) :  pageNumber === '+++' ? (
+            ) : pageNumber === '+++' ? (
               <li key={`ellipsis-${index}`} className={'pagination__more'}>
                 <a role={'button'} onClick={() => table.setPageIndex(+pageIndex + 3)}>
                   <IconMore size={'small'} />
