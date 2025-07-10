@@ -1,3 +1,11 @@
+## [1.30.2](https://github.com/ab-devtools/uilibrary/compare/1.30.1...1.30.2) (2025-07-10)
+
+
+### Bug Fixes
+
+* table column settings fix ([c24850f](https://github.com/ab-devtools/uilibrary/commit/c24850f19a14508df4eb771ce9a7b6fe9dac2141))
+* table column settings fix ([a91e2d2](https://github.com/ab-devtools/uilibrary/commit/a91e2d26ed5280c0f24b0e63092ee9f974b52e2c))
+
 ## [1.30.1](https://github.com/ab-devtools/uilibrary/compare/1.30.0...1.30.1) (2025-07-10)
 
 
