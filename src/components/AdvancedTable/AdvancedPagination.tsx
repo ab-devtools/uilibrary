@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import IconChevronLeft from '../SVGIcons/IconChevronLeft'
-import IconChevronRight from '../SVGIcons/IconChevronRight'
 import type { Table } from '@tanstack/react-table'
 import { Input } from '../Input'
 import { Button } from '../Button'
 import { Select } from '../Select'
-import IconChevronDoubleLeft from '../SVGIcons/IconChevronDoubleLeft'
-import IconChevronDoubleRight from '../SVGIcons/IconChevronDoubleRight'
 import { Text } from '../Text'
 import classnames from 'classnames'
 import { OPTIONS } from './constants'
+import IconChevronLeft from '../SVGIcons/IconChevronLeft'
+import IconChevronRight from '../SVGIcons/IconChevronRight'
+import IconChevronDoubleLeft from '../SVGIcons/IconChevronDoubleLeft'
+import IconChevronDoubleRight from '../SVGIcons/IconChevronDoubleRight'
+import IconMore from '../SVGIcons/IconMore'
 
 interface PaginationProps<T> {
   table: Table<T>
@@ -107,63 +108,50 @@ export function AdvancedPagination<TData>({
             buttonText={buttonText ?? 'Go to page'}
           />
         </div>
-        <div className="advanced-table__pagination__counts">
-          <Button
-            onClick={() => table.firstPage()}
-            type="tertiary"
-            size="medium"
-            iconProps={{
-              Component: IconChevronDoubleLeft
-            }}
-            disabled={!table.getCanPreviousPage()}
-          />
-          <Button
-            onClick={() => table.previousPage()}
-            size="medium"
-            type="tertiary"
-            iconProps={{
-              Component: IconChevronLeft
-            }}
-            disabled={!table.getCanPreviousPage()}
-          />
+        <ul className="pagination">
+          <li className={`previous ${!table.getCanPreviousPage() ? 'disabled' : ''}`}>
+            <a rel={'prev'} role={'button'} onClick={() => table.firstPage()}>
+              <IconChevronDoubleLeft size={'small'} />
+            </a>
+          </li>
+          <li className={`previous ${!table.getCanPreviousPage() ? 'disabled' : ''}`}>
+            <a rel={'prev'} role={'button'} onClick={() => table.previousPage()}>
+              <IconChevronLeft size={'small'} />
+            </a>
+          </li>
+
           {getVisiblePageNumbers().map((pageNumber, index) =>
             pageNumber === '...' ? (
-              <p key={`ellipsis-${index}`} className="ellipsis">
-                ...
-              </p>
+              <li key={`ellipsis-${index}`} className={'pagination__more'}>
+                <a role={'button'}>
+                  <IconMore size={'small'} />
+                </a>
+              </li>
             ) : (
-              <Button
-                key={pageNumber}
-                size="medium"
-                type="tertiary"
+              <li
                 className={classnames({
-                  ['active-page']: pageNumber === pageIndex + 1
+                  ['active']: pageNumber === pageIndex + 1
                 })}
-                onClick={() => table.setPageIndex(+pageNumber - 1)}
+                key={pageNumber}
               >
-                {pageNumber}
-              </Button>
+                <a role={'button'} onClick={() => table.setPageIndex(+pageNumber - 1)}>
+                  {pageNumber}
+                </a>
+              </li>
             )
           )}
-          <Button
-            onClick={() => table.nextPage()}
-            size="medium"
-            type="tertiary"
-            iconProps={{
-              Component: IconChevronRight
-            }}
-            disabled={!table.getCanNextPage()}
-          />
-          <Button
-            onClick={() => table.lastPage()}
-            size="medium"
-            type="tertiary"
-            iconProps={{
-              Component: IconChevronDoubleRight
-            }}
-            disabled={!table.getCanNextPage()}
-          />
-        </div>
+
+          <li className={`next ${!table.getCanNextPage() ? 'disabled' : ''}`}>
+            <a rel={'next'} role={'button'} onClick={() => table.nextPage()}>
+              <IconChevronRight size={'small'} />
+            </a>
+          </li>
+          <li className={`next ${!table.getCanNextPage() ? 'disabled' : ''}`}>
+            <a rel={'next'} role={'button'} onClick={() => table.lastPage()}>
+              <IconChevronDoubleRight size={'small'} />
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   )

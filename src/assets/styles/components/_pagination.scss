@@ -1,9 +1,7 @@
 @use "../helpers/mixin";
 
 .pagination {
-  --ds-pagination-item-size-lg: var(--ds-size-40);
-  --ds-pagination-item-size-md: var(--ds-size-32);
-  --ds-pagination-item-size-sm: var(--ds-size-24);
+  --ds-pagination-item-size: var(--ds-size-32);
 
   --ds-pagination-item-space: var(--ds-space-4);
 
@@ -27,35 +25,6 @@
   list-style-type: none;
   gap: var(--ds-pagination-item-space);
 
-  &--large {
-    li {
-      a {
-        min-width: var(--ds-pagination-item-size-lg);
-        height: var(--ds-pagination-item-size-lg);
-        font: var(--ds-font-weight-default) var(--ds-pagination-item-font-size-lg) var(--ds-font-family);
-      }
-    }
-  }
-
-  &--medium {
-    li {
-      a {
-        min-width: var(--ds-pagination-item-size-md);
-        height: var(--ds-pagination-item-size-md);
-        font: var(--ds-font-weight-default) var(--ds-pagination-item-font-size-md) var(--ds-font-family);
-      }
-    }
-  }
-
-  &--small {
-    li {
-      a {
-        min-width: var(--ds-pagination-item-size-sm);
-        height: var(--ds-pagination-item-size-sm);
-        font: var(--ds-font-weight-default) var(--ds-pagination-item-font-size-sm) var(--ds-font-family);
-      }
-    }
-  }
 
   li {
     a {
@@ -66,13 +35,12 @@
       border-radius: var(--ds-pagination-item-border-radius);
       cursor: pointer;
       border: 1px solid var(--ds-pagination-item-border-color);
+      min-width: var(--ds-pagination-item-size);
+      height: var(--ds-pagination-item-size);
+      font: var(--ds-font-weight-default) var(--ds-pagination-item-font-size-lg) var(--ds-font-family);
 
       &:focus {
         outline: none !important;
-      }
-
-      &:active {
-        border-color: var(--ds-pagination-item-border-color-pressed);
       }
 
       svg {
@@ -86,6 +54,10 @@
       a {
         &:hover {
           background-color: var(--ds-pagination-item-bg-hover);
+        }
+
+        &:active {
+          border-color: var(--ds-pagination-item-border-color-pressed);
         }
       }
     }
@@ -122,5 +94,9 @@
         }
       }
     }
+  }
+
+  &__more {
+    font-size: 0;
   }
 }

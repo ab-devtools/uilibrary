@@ -7,21 +7,19 @@ import classNames from 'classnames'
 import IconChevronRight from '../SVGIcons/IconChevronRight'
 import IconChevronLeft from '../SVGIcons/IconChevronLeft'
 import IconMore from '../SVGIcons/IconMore'
-import { ICON_SIZE_MAPPING } from './consts'
 
 export const Pagination = (props: TPaginationProps): JSX.Element | null => {
   const {
     totalCount,
     handleChangePage,
     classname = '',
-    size = 'large',
     pageSize,
     disableInitialCallback = false,
     page,
-    breakLabel = <IconMore size={ICON_SIZE_MAPPING[size]} />,
+    breakLabel = <IconMore size={'small'} />,
     labels = {
-      previous: <IconChevronLeft size={ICON_SIZE_MAPPING[size]} />,
-      next: <IconChevronRight size={ICON_SIZE_MAPPING[size]} />
+      previous: <IconChevronLeft size={'small'} />,
+      next: <IconChevronRight size={'small'} />
     }
   } = props
 
@@ -37,7 +35,7 @@ export const Pagination = (props: TPaginationProps): JSX.Element | null => {
         pageRangeDisplayed={PAGE_RANGE_DISPLAYED}
         marginPagesDisplayed={1}
         onPageChange={handlePageChange}
-        containerClassName={classNames(`pagination pagination--${size}`, classname)}
+        containerClassName={classNames('pagination', classname)}
         activeClassName={'active'}
         previousLabel={labels?.previous}
         nextLabel={labels?.next}

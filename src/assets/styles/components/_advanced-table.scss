@@ -17,6 +17,7 @@
   height: 100%;
   position: relative;
   border-radius: var(--ds-border-radius-2xl);
+  font-size: var(--font-size-14);
 
   &__header-wrapper {
     @include mixin.flexbox;
@@ -261,21 +262,6 @@
         input {
           text-align: center;
         }
-      }
-    }
-
-    &__counts {
-      @include mixin.flexbox;
-      gap: var(--ds-space-4);
-
-      .ellipsis {
-        @include mixin.flexbox;
-        @include mixin.align-items(center);
-        height: var(--ds-size-32);
-      }
-
-      .active-page {
-        background: var(--ds-color-bg-grey-lighter);
       }
     }
 
