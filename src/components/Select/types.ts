@@ -26,6 +26,7 @@ interface TSelectBaseProps {
   size?: 'small' | 'large' | 'medium'
   className?: string
 }
+
 export interface TNestedSelectProps {
   options: TSelectOptions
   isRequiredField?: boolean
@@ -246,10 +247,12 @@ export type TProfileDropdownBodyItems = {
   rightInfoProps?: ReactElement
   target?: string
 }
+
 export interface TProfileDropdownBodyItemsWithText extends TProfileDropdownBodyItems {
   text: string
   children?: never
 }
+
 export interface TProfileDropdownBodyItemsWithChildren extends TProfileDropdownBodyItems {
   text?: never
   children: ReactNode
@@ -263,5 +266,6 @@ export type TProfileDropdownProps = {
   name: string
   bodyItems: TNavItemValue[]
   footerItems: TNavItemValue[]
+  headerContent?: ReactNode
   className?: string
 }

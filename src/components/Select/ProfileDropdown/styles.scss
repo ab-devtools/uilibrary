@@ -14,6 +14,12 @@
     padding: var(--ds-space-16);
     border-bottom: 1px solid var(--grey-50);
   }
+  &__header {
+    @include mixin.flexbox;
+    @include mixin.align-items(center);
+    padding: var(--ds-space-16);
+    border-bottom: 1px solid var(--grey-50);
+  }
 
   &__nav {
     list-style: none;
