@@ -151,6 +151,10 @@ export function Table<TData>({
     [data?.length, table]
   )
 
+  const skeletonRowSize = useMemo(() => {
+    return Array.from({ length: table.getState().pagination.pageSize })
+  }, [table.getState().pagination.pageSize])
+
   return (
     <div
       className={classnames('advanced-table', {
@@ -198,44 +202,63 @@ export function Table<TData>({
                     ))}
                   </thead>
                   <tbody>
-                    {table.getRowModel().rows.map((row) => (
-                      <React.Fragment key={row.id}>
-                        <tr className={classnames({ selected: row.getIsSelected() })}>
-                          {row.getVisibleCells().map((cell) => (
-                            <td
-                              className={classnames({
-                                'with-checkbox': cell.column.id === ColumnId.Select,
-                                'pinned-cell': cell.column.getIsPinned(),
-                                'action-column':
-                                  cell.column.id === ColumnId.Actions && !isActionsVisible,
-                                'expand-column': cell.column.id === ColumnId.Expand
-                              })}
-                              id={cell.id}
-                              key={cell.id}
-                              onClick={() => handleRowClick(cell.column, row)}
-                              style={{ ...getCommonPinningStyles(cell.column) }}
-                            >
-                              {isLoading ? (
+                    {isLoading
+                      ? skeletonRowSize.map((_, i) => (
+                          <tr key={`skeleton-row-${i}`}>
+                            {table.getVisibleFlatColumns().map((column) => (
+                              <td
+                                className={classnames({
+                                  'with-checkbox': column.id === ColumnId.Select,
+                                  'pinned-cell': column.getIsPinned(),
+                                  'action-column':
+                                    column.id === ColumnId.Actions && !isActionsVisible
+                                })}
+                                key={column.id}
+                                style={{ ...getCommonPinningStyles(column) }}
+                              >
                                 <Skeleton />
-                              ) : cell.column.id === ColumnId.Actions && !isActionsVisible ? (
-                                <div className="actions-list__right">
-                                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                                </div>
-                              ) : (
-                                flexRender(cell.column.columnDef.cell, cell.getContext())
-                              )}
-                            </td>
-                          ))}
-                        </tr>
-                        {collapsibleRows && expandedRows.has(row.id) && renderExpandedContent && (
-                          <tr className="advanced-table__expanded-row">
-                            <td colSpan={row.getVisibleCells().length}>
-                              {renderExpandedContent(row)}
-                            </td>
+                              </td>
+                            ))}
                           </tr>
-                        )}
-                      </React.Fragment>
-                    ))}
+                        ))
+                      : table.getRowModel().rows.map((row) => (
+                          <React.Fragment key={row.id}>
+                            <tr className={classnames({ selected: row.getIsSelected() })}>
+                              {row.getVisibleCells().map((cell) => (
+                                <td
+                                  className={classnames({
+                                    'with-checkbox': cell.column.id === ColumnId.Select,
+                                    'pinned-cell': cell.column.getIsPinned(),
+                                    'action-column':
+                                      cell.column.id === ColumnId.Actions && !isActionsVisible,
+                                    'expand-column': cell.column.id === ColumnId.Expand
+                                  })}
+                                  id={cell.id}
+                                  key={cell.id}
+                                  onClick={() => handleRowClick(cell.column, row)}
+                                  style={{ ...getCommonPinningStyles(cell.column) }}
+                                >
+                                  {cell.column.id === ColumnId.Actions && !isActionsVisible ? (
+                                    <div className="actions-list__right">
+                                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                    </div>
+                                  ) : (
+                                    flexRender(cell.column.columnDef.cell, cell.getContext())
+                                  )}
+                                </td>
+                              ))}
+                            </tr>
+                            {collapsibleRows &&
+                              expandedRows.has(row.id) &&
+                              renderExpandedContent && (
+                                <tr className="advanced-table__expanded-row">
+                                  <td colSpan={row.getVisibleCells().length}>
+                                    {renderExpandedContent(row)}
+                                  </td>
+                                </tr>
+                              )}
+                          </React.Fragment>
+                        ))}
                   </tbody>
                 </>
               )}
