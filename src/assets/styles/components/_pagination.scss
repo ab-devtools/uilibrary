@@ -12,11 +12,14 @@
   --ds-pagination-item-font-size-sm: var(--ds-size-12);
 
   --ds-pagination-item-color: var(--ds-color-text-tertiary);
-  --ds-pagination-item-color-selected: var(--ds-color-text-primary);
+  --ds-pagination-item-color-active: var(--ds-color-text-primary);
   --ds-pagination-item-color-disabled: var(--ds-color-text-disabled);
-  --ds-pagination-item-bg-hover: var(--ds-color-bg-container-lighter);
-  --ds-pagination-item-bg-selected: var(--ds-color-bg-container);
+  --ds-pagination-item-bg-hover: var(--ds-color-bg-container-light);
+  --ds-pagination-item-bg-active: var(--ds-color-bg-container);
 
+  --ds-pagination-item-border-color: transparent;
+  --ds-pagination-item-border-color-disabeled: var(--ds-color-border-disabled);
+  --ds-pagination-item-border-color-pressed: var(--ds-color-border-tertiary);
   --ds-pagination-item-border-radius: var(--ds-border-radius-md);
 
   @include mixin.flexbox;
@@ -62,9 +65,14 @@
       color: var(--ds-pagination-item-color);
       border-radius: var(--ds-pagination-item-border-radius);
       cursor: pointer;
+      border: 1px solid var(--ds-pagination-item-border-color);
 
       &:focus {
         outline: none !important;
+      }
+
+      &:active {
+        border-color: var(--ds-pagination-item-border-color-pressed);
       }
 
       svg {
@@ -86,12 +94,12 @@
       a {
         cursor: default;
         font-weight: var(--font-weight-500);
-        background-color: var(--ds-pagination-item-bg-selected);
-        color: var(--ds-pagination-item-color-selected);
+        background-color: var(--ds-pagination-item-bg-active);
+        color: var(--ds-pagination-item-color-active);
 
         svg {
           path {
-            fill: var(--ds-pagination-item-color-selected);
+            fill: var(--ds-pagination-item-color-active);
           }
         }
       }
@@ -101,11 +109,16 @@
       a {
         cursor: default;
         color: var(--ds-pagination-item-color-disabled);
+        border-color: var(--ds-pagination-item-border-color-disabeled);
 
         svg {
           path {
             fill: var(--ds-pagination-item-color-disabled);
           }
+        }
+
+        &[rel="prev"], &[rel="next"] {
+          border-color: var(--ds-pagination-item-border-color);
         }
       }
     }
