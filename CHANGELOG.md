@@ -1,3 +1,10 @@
+## [1.30.1](https://github.com/ab-devtools/uilibrary/compare/1.30.0...1.30.1) (2025-07-10)
+
+
+### Bug Fixes
+
+* advanced pagination code and ui fix ([3b13bc6](https://github.com/ab-devtools/uilibrary/commit/3b13bc6081bb72c20d2527ac0ac99a4a63cacdb8))
+
 # [1.30.0](https://github.com/ab-devtools/uilibrary/compare/1.29.2...1.30.0) (2025-07-10)
 
 
