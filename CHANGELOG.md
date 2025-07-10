@@ -1,3 +1,10 @@
+# [1.30.0](https://github.com/ab-devtools/uilibrary/compare/1.29.2...1.30.0) (2025-07-10)
+
+
+### Features
+
+* add profile dropdown header content ([9a53cc2](https://github.com/ab-devtools/uilibrary/commit/9a53cc241e459aa5d2dfd351a7d131bfdee51488))
+
 ## [1.29.2](https://github.com/ab-devtools/uilibrary/compare/1.29.1...1.29.2) (2025-07-10)
 
 
