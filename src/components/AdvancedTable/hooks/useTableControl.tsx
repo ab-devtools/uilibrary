@@ -111,7 +111,7 @@ export function useTableControl<TData>({
   }, [columns])
 
   const [columnOrder, setColumnOrder] = useState<string[]>(
-    savedSettings.columnOrder?.length
+    savedSettings.columnOrder?.length && savedSettings.columnOrder.length === memoizedColumns.length
       ? savedSettings.columnOrder
       : memoizedColumns.map((column) => column.id as string)
   )
