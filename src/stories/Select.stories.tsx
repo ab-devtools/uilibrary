@@ -559,7 +559,7 @@ const ProfileDropdownTemplate = (args: any): JSX.Element => {
       }}
     >
       <div style={{ position: 'absolute', left: 300 }}>
-        <_ProfileDropdown {...args} />
+        <_ProfileDropdown {...args} headerContent={<h1>test</h1>}/>
       </div>
     </div>
   )

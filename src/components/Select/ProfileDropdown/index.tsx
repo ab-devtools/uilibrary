@@ -8,7 +8,7 @@ import { Link } from '../../Link'
 
 export const ProfileDropdown = (props: TProfileDropdownProps): JSX.Element => {
   const menuRef = useRef<HTMLDivElement>(null)
-  const { avatar, name, email, bodyItems, footerItems, className } = props
+  const { avatar, name, email, bodyItems, footerItems, className, headerContent } = props
   const [isOpen, setIsOpen] = React.useState(false)
 
   const closeDropdown = () => setIsOpen(false)
@@ -28,6 +28,7 @@ export const ProfileDropdown = (props: TProfileDropdownProps): JSX.Element => {
               <Text type={'tertiary'}>{email}</Text>
             </div>
           </div>
+          {headerContent ? <div className="profile-dropdown__header">{headerContent}</div> : null}
           <div className="profile-dropdown__menu">
             <ul className={'profile-dropdown__nav'}>
               {bodyItems?.map((item, index) => (
