@@ -1,3 +1,13 @@
+## [1.29.2](https://github.com/ab-devtools/uilibrary/compare/1.29.1...1.29.2) (2025-07-10)
+
+
+### Bug Fixes
+
+* added pagination item states ([dfa51e4](https://github.com/ab-devtools/uilibrary/commit/dfa51e41bf82f1c78523ff416c0b50cb606511bb))
+* table loading on page index change not works correct ([f193263](https://github.com/ab-devtools/uilibrary/commit/f193263c07b397b8fd6732e70add7a8925296714))
+* table loading on page index change not works correct ([5ab941d](https://github.com/ab-devtools/uilibrary/commit/5ab941d673c15daed767826f3305617139ca22c1))
+* table loading on page index change not works correct ([b499807](https://github.com/ab-devtools/uilibrary/commit/b4998075fbe587e8606119e2e30ef2e206c2d9b0))
+
 ## [1.29.1](https://github.com/ab-devtools/uilibrary/compare/1.29.0...1.29.1) (2025-07-09)
 
 
