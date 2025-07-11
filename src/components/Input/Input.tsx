@@ -46,11 +46,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
       witUpperCase = false,
       allowEmptyFormatting,
       isAllowed,
+      isTrimValues = false,
       ...rest
     },
     ref
   ): JSX.Element => {
-    const { onChange, ...cleanRest } = rest
+    const { onChange, onBlur, ...cleanRest } = rest
 
     const isErrorVisible = hasError !== undefined ? hasError : !!error
     const placeHolder = label === placeholder ? '' : placeholder || datePlaceHolderText
@@ -82,6 +83,19 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
       }
     }
 
+    const blurHandler = (event: React.FocusEvent<HTMLInputElement>) => {
+      if (isTrimValues) {
+        const trimmedValue = event.target.value.trim()
+        if (trimmedValue !== event.target.value) {
+          event.target.value = trimmedValue
+          changeHandler(event)
+        }
+      }
+      if (onBlur) {
+        onBlur(event)
+      }
+    }
+
     const currentLength = useMemo(() => {
       if (currentValue) {
         return currentValue.length
@@ -96,9 +110,10 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       <PatternFormat
-        {...rest}
+        {...cleanRest}
         format={format}
         name={name}
+        onBlur={blurHandler}
         onChange={changeHandler}
         placeholder={placeHolder}
         readOnly={readonly}
@@ -117,8 +132,9 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         ref={() => ref && ref()}
-        {...rest}
+        {...cleanRest}
         placeholder={placeHolder}
+        onBlur={blurHandler}
         onChange={changeHandler}
         disabled={disabled}
         data-id={dataId}
@@ -131,8 +147,9 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       <NumericFormat
-        {...rest}
+        {...cleanRest}
         name={name}
+        onBlur={blurHandler}
         onChange={changeHandler}
         placeholder={placeHolder}
         readOnly={readonly}
@@ -155,6 +172,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
         ref={ref}
         type={type}
         placeholder={placeHolder}
+        onBlur={blurHandler}
         onChange={changeHandler}
         data-id={dataId}
         {...cleanRest}

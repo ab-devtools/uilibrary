@@ -42,6 +42,7 @@ export interface InputCustomProps
   autoComplete?: string
   witUpperCase?: boolean
   allowEmptyFormatting?: boolean
+  isTrimValues?: boolean
   isAllowed?: (values: {
     formattedValue: string
     value: string
