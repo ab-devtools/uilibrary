@@ -3,7 +3,7 @@ import React from 'react'
 import type { TBlock } from './types'
 import { Divider } from '../Divider'
 import classNames from 'classnames'
-import {Label} from '../../helperComponents/Label';
+import { Label } from '../../helperComponents/Label'
 
 export const Block = (props: TBlock): ReactElement => {
   const { children, label, className = '' } = props
@@ -11,7 +11,13 @@ export const Block = (props: TBlock): ReactElement => {
     <div className={classNames('navigation-block', className)}>
       <div className="navigation-block__label">
         <>
-          <Label type="tertiary" size={'small'} weight={'semibold'} className={'navigation-block__label__text'} text={label} />
+          <Label
+            type="tertiary"
+            size={'small'}
+            weight={'semibold'}
+            className={'navigation-block__label__text'}
+            text={label}
+          />
           <Divider
             type={'primary'}
             isHorizontal={true}

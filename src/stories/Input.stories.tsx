@@ -72,7 +72,7 @@ const InputPasswordTemplate: StoryFn<InputPasswordsProps> = (args) => {
   return (
     <div style={{ marginLeft: 200, maxWidth: 400 }}>
       <_InputPassword
-          {...args}
+        {...args}
         className={'mb-24'}
         id="sk,"
         name="pass"
@@ -88,7 +88,7 @@ const InputPasswordTemplate: StoryFn<InputPasswordsProps> = (args) => {
         onPasswordShow={setShowPassword}
       />
       <_InputPassword
-          {...args}
+        {...args}
         id="4"
         name="pass-1"
         isCapsLockOn={isCapsLockOn1}
