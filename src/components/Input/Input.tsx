@@ -147,7 +147,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       <NumericFormat
-        {...rest}
+        {...cleanRest}
         name={name}
         onBlur={blurHandler}
         onChange={changeHandler}
