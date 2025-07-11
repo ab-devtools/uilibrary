@@ -1,3 +1,12 @@
+# [1.31.0](https://github.com/ab-devtools/uilibrary/compare/1.30.4...1.31.0) (2025-07-11)
+
+
+### Features
+
+* change rest to clean rest ([bd134f7](https://github.com/ab-devtools/uilibrary/commit/bd134f7c3c7c1f097475ab63df376f7414b14b8a))
+* check trim with prop ([5000bf6](https://github.com/ab-devtools/uilibrary/commit/5000bf64379b9dd1f7d95a45b239236dbe9dda6e))
+* trim values in onBlur ([130772d](https://github.com/ab-devtools/uilibrary/commit/130772d8687504a75bb35e75fe91853953250416))
+
 ## [1.30.4](https://github.com/ab-devtools/uilibrary/compare/1.30.3...1.30.4) (2025-07-11)
 
 
