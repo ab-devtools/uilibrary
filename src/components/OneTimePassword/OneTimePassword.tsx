@@ -59,6 +59,16 @@ export const OneTimePassword = React.forwardRef<HTMLInputElement, OtpCustomProps
     const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>, index: number) => {
       if (event.key === 'Backspace' && !otp[index] && index > 0) {
         inputRefs.current[index - 1]?.focus()
+        const newOtp = [...otp]
+        newOtp[index - 1] = ''
+        setOtp(newOtp)
+      }
+
+      if (event.key === 'ArrowLeft' && index > 0) {
+        inputRefs.current[index - 1]?.focus()
+      }
+      if (event.key === 'ArrowRight' && index < count - 1) {
+        inputRefs.current[index + 1]?.focus()
       }
     }
 
