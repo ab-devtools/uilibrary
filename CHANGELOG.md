@@ -1,3 +1,14 @@
+## [1.30.4](https://github.com/ab-devtools/uilibrary/compare/1.30.3...1.30.4) (2025-07-11)
+
+
+### Bug Fixes
+
+* added userInfoAlignment props for profile dropdown top info ([0aa07c5](https://github.com/ab-devtools/uilibrary/commit/0aa07c5e27debcdfcdbea3a916167648029d0407))
+* added userInfoAlignment props for profile dropdown top info ([15d3cf9](https://github.com/ab-devtools/uilibrary/commit/15d3cf9f678e13d488ca4e1f8c5b6923a6d6f582))
+* otp navigate with right and left arows ([7cda0a5](https://github.com/ab-devtools/uilibrary/commit/7cda0a55cc78ec123c3038c6ac401062c1c7e071))
+* otp navigate with right and left arows ([83b3026](https://github.com/ab-devtools/uilibrary/commit/83b3026ebfde49e36e29dcaf598f81ae6f794efe))
+* otp navigate with right and left arows ([74f97ad](https://github.com/ab-devtools/uilibrary/commit/74f97ad101f183de7701ce5fe78f31cd4c91adb1))
+
 ## [1.30.3](https://github.com/ab-devtools/uilibrary/compare/1.30.2...1.30.3) (2025-07-10)
 
 
