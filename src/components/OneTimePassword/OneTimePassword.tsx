@@ -67,8 +67,7 @@ export const OneTimePassword = React.forwardRef<HTMLInputElement, OtpCustomProps
       if (event.key === 'ArrowLeft' && index > 0) {
         inputRefs.current[index - 1]?.focus()
       }
-
-      if (event.key === 'ArrowRight' && index < count) {
+      if (event.key === 'ArrowRight' && index < count - 1) {
         inputRefs.current[index + 1]?.focus()
       }
     }
