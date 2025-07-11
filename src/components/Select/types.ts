@@ -268,4 +268,5 @@ export type TProfileDropdownProps = {
   footerItems: TNavItemValue[]
   headerContent?: ReactNode
   className?: string
+  userInfoAlignment?: 'left' | 'center'
 }

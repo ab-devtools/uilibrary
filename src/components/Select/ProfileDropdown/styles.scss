@@ -13,7 +13,14 @@
     @include mixin.align-items(center);
     padding: var(--ds-space-16);
     border-bottom: 1px solid var(--grey-50);
+    gap: var(--ds-space-12);
+
+    &--center {
+      @include mixin.flex-direction(column);
+      text-align: center;
+    }
   }
+
   &__header {
     @include mixin.flexbox;
     @include mixin.align-items(center);
