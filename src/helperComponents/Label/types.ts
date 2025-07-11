@@ -1,6 +1,11 @@
 import type { JSX, ReactNode } from 'react'
-import type {ElementType} from 'react';
-import type {TTextLineHeight, TTextTypes, TTextWeight, TTextSize} from '../../components/Text/types';
+import type { ElementType } from 'react'
+import type {
+  TTextLineHeight,
+  TTextTypes,
+  TTextWeight,
+  TTextSize
+} from '../../components/Text/types'
 
 export interface LabelPropTypes {
   required?: boolean

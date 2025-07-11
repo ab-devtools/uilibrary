@@ -395,7 +395,7 @@ $space-prefixes: (
 
   font-family: var(--ds-font-family);
 
-  @each $type, $size in label-type {
+  @each $type, $size in $label-type {
     &-#{$type} {
       font-size: $size;
     }
