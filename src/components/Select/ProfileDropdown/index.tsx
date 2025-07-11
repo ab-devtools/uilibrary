@@ -5,11 +5,20 @@ import './styles.scss'
 import { Text } from '../../Text'
 import { useOnOutsideClick } from '../../../hooks'
 import { Link } from '../../Link'
-import classNames from 'classnames';
+import classNames from 'classnames'
 
 export const ProfileDropdown = (props: TProfileDropdownProps): JSX.Element => {
   const menuRef = useRef<HTMLDivElement>(null)
-  const { avatar, name, email, bodyItems, footerItems, className, headerContent, userInfoAlignment = 'left'} = props
+  const {
+    avatar,
+    name,
+    email,
+    bodyItems,
+    footerItems,
+    className,
+    headerContent,
+    userInfoAlignment = 'left'
+  } = props
   const [isOpen, setIsOpen] = React.useState(false)
 
   const closeDropdown = () => setIsOpen(false)
@@ -20,7 +29,11 @@ export const ProfileDropdown = (props: TProfileDropdownProps): JSX.Element => {
       <div onClick={() => setIsOpen(!isOpen)}>{avatar}</div>
       {isOpen && (
         <div className="profile-dropdown">
-          <div className={ classNames(`profile-dropdown__top profile-dropdown__top--${userInfoAlignment}`) }>
+          <div
+            className={classNames(
+              `profile-dropdown__top profile-dropdown__top--${userInfoAlignment}`
+            )}
+          >
             {avatar}
             <div>
               <Text size={'medium'} weight={'bold'} lineHeight={'large'}>
