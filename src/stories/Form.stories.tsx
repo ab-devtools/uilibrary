@@ -165,12 +165,6 @@ const Template = (): JSX.Element => {
             As={(props) => (
               <Input
                 {...props}
-                type={'numeric'}
-                witUpperCase={false}
-                isAllowed={(values) => {
-                  const { formattedValue } = values
-                  return !formattedValue.includes('.')
-                }}
               />
             )}
           />

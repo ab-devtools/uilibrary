@@ -50,7 +50,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
     },
     ref
   ): JSX.Element => {
-    const { onChange, ...cleanRest } = rest
+    const { onChange, onBlur, ...cleanRest } = rest
 
     const isErrorVisible = hasError !== undefined ? hasError : !!error
     const placeHolder = label === placeholder ? '' : placeholder || datePlaceHolderText
@@ -82,6 +82,26 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
       }
     }
 
+    const blurHandler = (event: React.FocusEvent<HTMLInputElement>) => {
+      const trimmedValue = event.target.value.trim()
+      console.log(trimmedValue)
+      if (trimmedValue !== event.target.value) {
+        event.target.value = trimmedValue
+        if (setFieldValue && name) {
+          setFieldValue(name, trimmedValue)
+        }
+        if (handleChange) {
+          handleChange(event as any, trimmedValue)
+        }
+        if (onChange) {
+          onChange(event as any)
+        }
+      }
+      if (onBlur) {
+        onBlur(event)
+      }
+    }
+
     const currentLength = useMemo(() => {
       if (currentValue) {
         return currentValue.length
@@ -99,6 +119,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
         {...rest}
         format={format}
         name={name}
+        onBlur={blurHandler}
         onChange={changeHandler}
         placeholder={placeHolder}
         readOnly={readonly}
@@ -119,6 +140,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
         ref={() => ref && ref()}
         {...rest}
         placeholder={placeHolder}
+        onBlur={blurHandler}
         onChange={changeHandler}
         disabled={disabled}
         data-id={dataId}
@@ -133,6 +155,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
       <NumericFormat
         {...rest}
         name={name}
+        onBlur={blurHandler}
         onChange={changeHandler}
         placeholder={placeHolder}
         readOnly={readonly}
@@ -155,6 +178,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
         ref={ref}
         type={type}
         placeholder={placeHolder}
+        onBlur={blurHandler}
         onChange={changeHandler}
         data-id={dataId}
         {...cleanRest}
