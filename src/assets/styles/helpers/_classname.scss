@@ -381,6 +381,27 @@ $space-prefixes: (
   }
 }
 
+//label text
+
+.label {
+  $label-type: (
+    large: var(--ds-label-lg),
+    medium: var(--ds-label-md),
+    standard: var(--ds-label-std),
+    small: var(--ds-label-sm),
+    xsmall: var(--ds-label-xs),
+    xxsmall: var(--ds-label-xs),
+  );
+
+  font-family: var(--ds-font-family);
+
+  @each $type, $size in $label-type {
+    &-#{$type} {
+      font-size: $size;
+    }
+  }
+}
+
 //weight
 
 .regular { font-weight: var(--ds-font-weight-default); }
@@ -390,15 +411,51 @@ $space-prefixes: (
 
 //line height
 
-.lh {
-  $lineHeight-type: (
-    large: var(--ds-line-height-heading),
-    medium: var(--ds-line-height-caption),
-    small: var(--ds-line-height-tight),
-    xsmall: var(--ds-line-height-default),
+.lh-heading {
+  $lineHeightHeading-type: (
+    xlarge: var(--ds-line-height-heading-xl),
+    large: var(--ds-line-height-heading-lg),
+    medium: var(--ds-line-height-heading-md),
+    standard: var(--ds-line-height-heading-std),
+    small: var(--ds-line-height-heading-sm),
+    xsmall: var(--ds-line-height-heading-xs),
   );
 
-  @each $type, $size in $lineHeight-type {
+  @each $type, $size in $lineHeightHeading-type {
+    &-#{$type} {
+      line-height: $size;
+    }
+  }
+}
+
+.lh-body {
+  $lineHeightBody-type: (
+    large: var(--ds-line-height-paragraph-lg),
+    medium: var(--ds-line-height-paragraph-md),
+    standard: var(--ds-line-height-paragraph-std),
+    small: var(--ds-line-height-paragraph-sm),
+    xsmall: var(--ds-line-height-paragraph-xs),
+    xxsmall: var(--ds-line-height-paragraph-xs),
+  );
+
+  @each $type, $size in $lineHeightBody-type {
+    &-#{$type} {
+      line-height: $size;
+    }
+  }
+}
+
+.lh-label {
+  $lineHeightLabel-type: (
+    large: var(--ds-line-height-label-lg),
+    medium: var(--ds-line-height-label-md),
+    standard: var(--ds-line-height-label-std),
+    small: var(--ds-line-height-label-sm),
+    xsmall: var(--ds-line-height-label-xs),
+    xxsmall: var(--ds-line-height-label-xs),
+  );
+
+  @each $type, $size in $lineHeightLabel-type {
     &-#{$type} {
       line-height: $size;
     }

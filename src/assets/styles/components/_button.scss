@@ -13,13 +13,16 @@
   --ds-button-padding-md: 0 var(--ds-space-12);
   --ds-button-padding-sm: 0 var(--ds-space-12);
 
-  --ds-button-font-size-lg: var(--ds-paragraph-std);
-  --ds-button-font-size-md: var(--ds-paragraph-std);
-  --ds-button-font-size-sm: var(--ds-paragraph-sm);
+  --ds-button-font-size-lg: var(--font-size-14);
+  --ds-button-font-size-md: var(--font-size-14);
+  --ds-button-font-size-sm: var(--font-size-12);
+
+  --ds-button-line-height-lg: var(--line-height-20);
+  --ds-button-line-height-md: var(--line-height-20);
+  --ds-button-line-height-sm: var(--line-height-16);
 
   --ds-button-font-family: var(--ds-font-family);
   --ds-button-font-weight: var(--ds-font-weight-active);
-  --ds-button-line-height: var(--ds-line-height-default);
 
   --ds-button-primary-bg: var(--ds-color-bg-brand);
   --ds-button-primary-bg-hover: var(--brand-300);
@@ -89,7 +92,6 @@
   white-space: nowrap;
   font-family: var(--ds-button-font-family);
   font-weight: var(--ds-button-font-weight);
-  line-height: var(--ds-button-line-height);
 
   &[disabled] {
     cursor: default;
@@ -100,6 +102,7 @@
     padding: var(--ds-button-padding-lg);
     font-size: var(--ds-button-font-size-lg);
     border-radius: var(--ds-button-border-radius-lg);
+    line-height: var(--ds-button-line-height-lg);
   }
 
   &--medium {
@@ -107,6 +110,7 @@
     padding: var(--ds-button-padding-md);
     font-size: var(--ds-button-font-size-md);
     border-radius: var(--ds-button-border-radius-md);
+    line-height: var(--ds-button-line-height-md);
   }
 
   &--small {
@@ -114,6 +118,7 @@
     padding: var(--ds-button-padding-sm);
     font-size: var(--ds-button-font-size-sm);
     border-radius: var(--ds-button-border-radius-sm);
+    line-height: var(--ds-button-line-height-sm);
   }
 
   &--primary {

@@ -29,7 +29,7 @@ export const Text = (props: TextPropTypes): ReactElement => {
         size && `body-${size}`,
         type && `color-${type}`,
         weight,
-        lineHeight && `lh-${lineHeight}`,
+        lineHeight && `lh-body-${lineHeight}`,
         className
       )}
     >

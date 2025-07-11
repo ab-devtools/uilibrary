@@ -13,7 +13,7 @@
   --ds-popover-arrow-border-radius: 3px;
   --ds-popover-arrow-position: var(--ds-space-20);
   --ds-popover-arrow-bg: var(--ds-color-bg-white);
-  --ds-popover-font: 400 var(--ds-size-12)/var(--ds-line-height-caption) var(--ds-font-family);
+  --ds-popover-font: 400 var(--ds-paragraph-sm)/var(--ds-line-height-paragraph-sm) var(--ds-font-family);
 
   @include mixin.flexbox;
   position: fixed;
