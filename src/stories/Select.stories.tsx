@@ -64,6 +64,10 @@ export default {
     size: {
       options: ['large', 'small'],
       control: { type: 'radio' }
+    },
+    userInfoAlignment: {
+      options: ['left', 'center'],
+      control: { type: 'radio' }
     }
   }
 }
@@ -573,6 +577,7 @@ ProfileDropdown.args = {
   name: 'Mariam Yeghiazaryan',
   email: 'mariam.yeghiazaryan@gmail.com',
   isCreatable: false,
+  userInfoAlignment: 'left',
   bodyItems: [
     {
       icon: <IconQuestion size={'small'} className={'mr-8'} />,
