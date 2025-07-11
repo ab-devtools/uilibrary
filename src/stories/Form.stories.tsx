@@ -160,14 +160,7 @@ const Template = (): JSX.Element => {
         initialValues={INITIAL_VALUES}
       >
         <>
-          <FormField
-            name="firstname"
-            As={(props) => (
-              <Input
-                {...props}
-              />
-            )}
-          />
+          <FormField name="firstname" As={(props) => <Input {...props} />} />
           <Button buttonActionType="submit" buttonText={'Ok'} />
         </>
       </_FormContainer>

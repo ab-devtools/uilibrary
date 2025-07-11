@@ -46,6 +46,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
       witUpperCase = false,
       allowEmptyFormatting,
       isAllowed,
+      isTrimValues = false,
       ...rest
     },
     ref
@@ -83,18 +84,11 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
     }
 
     const blurHandler = (event: React.FocusEvent<HTMLInputElement>) => {
-      const trimmedValue = event.target.value.trim()
-      console.log(trimmedValue)
-      if (trimmedValue !== event.target.value) {
-        event.target.value = trimmedValue
-        if (setFieldValue && name) {
-          setFieldValue(name, trimmedValue)
-        }
-        if (handleChange) {
-          handleChange(event as any, trimmedValue)
-        }
-        if (onChange) {
-          onChange(event as any)
+      if (isTrimValues) {
+        const trimmedValue = event.target.value.trim()
+        if (trimmedValue !== event.target.value) {
+          event.target.value = trimmedValue
+          changeHandler(event)
         }
       }
       if (onBlur) {
@@ -116,7 +110,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       <PatternFormat
-        {...rest}
+        {...cleanRest}
         format={format}
         name={name}
         onBlur={blurHandler}
@@ -138,7 +132,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         ref={() => ref && ref()}
-        {...rest}
+        {...cleanRest}
         placeholder={placeHolder}
         onBlur={blurHandler}
         onChange={changeHandler}
