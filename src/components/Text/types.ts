@@ -15,9 +15,9 @@ export type TTextTypes =
   | 'information'
   | 'discovery'
 
-type TTextSize = 'xxsmall' | 'xsmall' | 'small' | 'standard' | 'medium' | 'large'
+export type TTextSize = 'xxsmall' | 'xsmall' | 'small' | 'standard' | 'medium' | 'large'
 export type TTextWeight = 'regular' | 'semibold' | 'bold' | 'bolder'
-export type TTextLineHeight = 'xsmall' | 'small' | 'medium' | 'large'
+export type TTextLineHeight = 'xxsmall' | 'xsmall' | 'small' | 'standard' | 'medium' | 'large'
 
 export interface TextPropTypes {
   id?: string

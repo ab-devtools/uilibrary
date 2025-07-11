@@ -33,7 +33,7 @@ export default {
       control: { type: 'radio' }
     },
     lineHeight: {
-      options: ['xsmall', 'small', 'medium', 'large'],
+      options: ['xxsmall', 'xsmall', 'small', 'standard', 'medium', 'large'],
       control: { type: 'radio' }
     },
     weight: {
