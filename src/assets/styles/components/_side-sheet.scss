@@ -76,6 +76,13 @@
           margin-left: unset;
         }
       }
+      &--bottom {
+        margin-bottom: var(--ds-space-16);
+
+        @include mixin.screen('phablet', max) {
+          margin-bottom: unset;
+        }
+      }
     }
   }
 
