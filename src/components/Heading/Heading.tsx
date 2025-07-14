@@ -25,7 +25,7 @@ export const Heading = (props: HeadingPropTypes): ReactElement => {
         'heading',
         size && `heading-${size}`,
         weight,
-        lineHeight && `lh-${lineHeight}`,
+        lineHeight && `lh-heading-${lineHeight}`,
         color && `color-${color}`,
         className
       )}

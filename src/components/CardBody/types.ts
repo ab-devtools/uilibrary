@@ -1,4 +1,5 @@
 import type { TButtonPropTypes } from '../Button/types'
+import type { ReactNode } from 'react'
 
 export interface TCardBodyProps {
   className?: string
@@ -9,4 +10,5 @@ export interface TCardBodyProps {
     secondary: TButtonPropTypes
   }
   illustration?: string
+  children?: ReactNode
 }

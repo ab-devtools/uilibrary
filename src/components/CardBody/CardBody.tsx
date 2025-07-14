@@ -7,7 +7,7 @@ import type { TCardBodyProps } from './types'
 import classNames from 'classnames'
 
 export const CardBody = (props: TCardBodyProps): JSX.Element => {
-  const { title, description, buttonProps, className, illustration } = props
+  const { title, description, children, buttonProps, className, illustration } = props
 
   return (
     <div className={classNames('card-body', className)}>
@@ -18,6 +18,7 @@ export const CardBody = (props: TCardBodyProps): JSX.Element => {
         {title}
       </Text>
       {description ? <Text className={'mt-12'}>{description}</Text> : null}
+      {children}
       {buttonProps ? (
         <div className="body__buttons mt-32">
           <Button className="full-width" {...(buttonProps.primary || {})} />

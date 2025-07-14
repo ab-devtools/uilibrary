@@ -43,6 +43,11 @@
         background-color: var(--grey-20);
         color: var(--ds-color-text-primary)
       }
+
+      &:focus {
+        box-shadow: none !important;
+        outline: none;
+      }
     }
   }
 
