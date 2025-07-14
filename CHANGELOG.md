@@ -1,3 +1,19 @@
+# [1.32.0](https://github.com/ab-devtools/uilibrary/compare/1.31.1...1.32.0) (2025-07-14)
+
+
+### Bug Fixes
+
+* added children props for carBody component ([944e540](https://github.com/ab-devtools/uilibrary/commit/944e540355fdd6720b928870107099037873ea6b))
+* added children props for carBody component ([a92c0bb](https://github.com/ab-devtools/uilibrary/commit/a92c0bbaa609608e7a9ed46e56b5ca63b163d63e))
+
+
+### Features
+
+* changes for Label component, and added new tokens for line height sizes ([9a52dc5](https://github.com/ab-devtools/uilibrary/commit/9a52dc57289fd398a50e8ccadd93c9b2a1f7a544))
+* fix dropdown items focus ui ([7acc6e1](https://github.com/ab-devtools/uilibrary/commit/7acc6e15bd721158578e5589a89381b42dad50cf))
+* fixes for labels ([bbad68f](https://github.com/ab-devtools/uilibrary/commit/bbad68fe9acd324396dcdf6693e615bb1726431a))
+* fixes for labels ([81623fa](https://github.com/ab-devtools/uilibrary/commit/81623faf2ea872829ec94cfb612689b5b54b5dcb))
+
 ## [1.31.1](https://github.com/ab-devtools/uilibrary/compare/1.31.0...1.31.1) (2025-07-14)
 
 
