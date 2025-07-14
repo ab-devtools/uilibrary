@@ -1,3 +1,10 @@
+## [1.32.1](https://github.com/ab-devtools/uilibrary/compare/1.32.0...1.32.1) (2025-07-14)
+
+
+### Bug Fixes
+
+* ui fix for cardBody buttons ([bb44f2b](https://github.com/ab-devtools/uilibrary/commit/bb44f2b9e0374759be3dfae47079cf5552c2b527))
+
 # [1.32.0](https://github.com/ab-devtools/uilibrary/compare/1.31.1...1.32.0) (2025-07-14)
 
 
