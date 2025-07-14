@@ -52,6 +52,7 @@ Text.args = {
   type: 'primary',
   as: 'p',
   size: 'standard',
+  lineHeight: 'large',
   weight: 'regular',
   text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
 }

@@ -7,6 +7,7 @@ export const Label: React.FC<LabelPropTypes> = (props: LabelPropTypes) => {
     text,
     className = '',
     size = 'standard',
+    lineHeight = size,
     weight = 'semibold',
     type = 'primary',
     required = false,
@@ -24,9 +25,10 @@ export const Label: React.FC<LabelPropTypes> = (props: LabelPropTypes) => {
       type={disabled ? 'disabled' : 'primary'}
       className={classNames(
         'label flexbox align-items--start mb-8',
-        size && `label-${size} lh-label-${size}`,
+        size && `label-${size}`,
         type && `color-${type}`,
         weight,
+        `lh-label-${lineHeight}`,
         className
       )}
     >

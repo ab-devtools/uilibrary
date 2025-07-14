@@ -51,5 +51,6 @@ Heading.args = {
   color: 'primary',
   size: 'large',
   weight: 'regular',
-  text: 'heading'
+  text: 'heading',
+  lineHeight: 'xsmall'
 }
