@@ -32,10 +32,6 @@ export default {
       options: ['p', 'span', 'div', 'h1'],
       control: { type: 'radio' }
     },
-    lineHeight: {
-      options: ['xxsmall', 'xsmall', 'small', 'standard', 'medium', 'large'],
-      control: { type: 'radio' }
-    },
     weight: {
       options: ['regular', 'semibold', 'bold', 'bolder'],
       control: { type: 'radio' }

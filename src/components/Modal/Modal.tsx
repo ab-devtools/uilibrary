@@ -103,7 +103,6 @@ export const Modal = (props: TModalPropTypes): ReactElement => {
               <div className="modal__header">
                 <div>
                   <Text
-                    lineHeight="large"
                     size={titleProps.size}
                     className={`modal__title-${titleProps.size}`}
                     weight={'bold'}
@@ -114,7 +113,6 @@ export const Modal = (props: TModalPropTypes): ReactElement => {
                   {subtitle ? (
                     <Text
                       className={'mt-12'}
-                      lineHeight={'large'}
                       type={'secondary'}
                       dataId={dataIdPrefix ? `${dataIdPrefix}-modal-title` : ''}
                     >

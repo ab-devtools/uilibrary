@@ -108,10 +108,20 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
           transition={{ duration: 0.2 }}
         >
           <motion.div
-            initial={isFromLeft ? { left: '-100%' } : isFromRight ? { right: '-100%' } : { bottom: '-100%' }}
+            initial={
+              isFromLeft
+                ? { left: '-100%' }
+                : isFromRight
+                ? { right: '-100%' }
+                : { bottom: '-100%' }
+            }
             animate={isFromLeft ? { left: 0 } : isFromRight ? { right: 0 } : { bottom: 0 }}
             exit={{
-              ...(isFromLeft ? { left: '-100%' } : isFromRight ? { right: '-100%' } : { bottom: '-100%' }),
+              ...(isFromLeft
+                ? { left: '-100%' }
+                : isFromRight
+                ? { right: '-100%' }
+                : { bottom: '-100%' }),
               transition: {
                 duration: 0.5
               }
@@ -128,12 +138,7 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
             <div className="side-sheet__header">
               <div className="side-sheet__header__top">
                 <div className="side-sheet__header__top__left pr-16">
-                  <Heading
-                    className="side-sheet__title"
-                    weight="bold"
-                    lineHeight="medium"
-                    size="xsmall"
-                  >
+                  <Heading className="side-sheet__title" weight="bold" size="xsmall">
                     {title}
                   </Heading>
                   {topLeftActions}

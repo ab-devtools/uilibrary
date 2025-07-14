@@ -36,7 +36,7 @@ export const ProfileDropdown = (props: TProfileDropdownProps): JSX.Element => {
           >
             {avatar}
             <div>
-              <Text size={'medium'} weight={'bold'} lineHeight={'large'}>
+              <Text size={'medium'} weight={'bold'}>
                 {name}
               </Text>
               <Text type={'tertiary'}>{email}</Text>

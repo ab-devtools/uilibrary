@@ -7,7 +7,7 @@ export const Label: React.FC<LabelPropTypes> = (props: LabelPropTypes) => {
     text,
     className = '',
     size = 'standard',
-    lineHeight = 'standard',
+    lineHeight = size,
     weight = 'semibold',
     type = 'primary',
     required = false,
@@ -28,7 +28,7 @@ export const Label: React.FC<LabelPropTypes> = (props: LabelPropTypes) => {
         size && `label-${size}`,
         type && `color-${type}`,
         weight,
-        lineHeight && `lh-label-${lineHeight}`,
+        `lh-label-${lineHeight}`,
         className
       )}
     >
