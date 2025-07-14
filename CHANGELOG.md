@@ -1,3 +1,10 @@
+## [1.31.1](https://github.com/ab-devtools/uilibrary/compare/1.31.0...1.31.1) (2025-07-14)
+
+
+### Bug Fixes
+
+* side sheet position bottom ([72e5711](https://github.com/ab-devtools/uilibrary/commit/72e5711d9b07f25b413aba9e57db3d548a4fb259))
+
 # [1.31.0](https://github.com/ab-devtools/uilibrary/compare/1.30.4...1.31.0) (2025-07-11)
 
 
