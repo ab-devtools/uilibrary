@@ -21,8 +21,12 @@ export const CardBody = (props: TCardBodyProps): JSX.Element => {
       {children}
       {buttonProps ? (
         <div className="card-body__buttons mt-32">
-          <Button className="full-width" {...(buttonProps.primary || {})} />
-          <Button type="text" className="full-width" {...buttonProps.secondary} />
+            {buttonProps.primary && (
+                <Button className="full-width" {...(buttonProps.primary || {})} />
+            )}
+            {buttonProps.secondary && (
+                <Button type="text" className="full-width" {...buttonProps.secondary} />
+            )}
         </div>
       ) : null}
     </div>
