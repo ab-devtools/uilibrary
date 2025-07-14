@@ -34,17 +34,12 @@ export const Alert = (props: TAlertProps): ReactElement => {
             />
             <div className="alert__text pl-12">
               {text ? (
-                <Text type="primary" weight="regular" >
+                <Text type="primary" weight="regular">
                   {text}
                 </Text>
               ) : null}
               {subtext ? (
-                <Text
-                  className={'mt-4'}
-                  type="secondary"
-                  size="small"
-                  weight="regular"
-                >
+                <Text className={'mt-4'} type="secondary" size="small" weight="regular">
                   {subtext}
                 </Text>
               ) : null}

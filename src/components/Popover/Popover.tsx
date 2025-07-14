@@ -71,12 +71,7 @@ export const Popover = (props: TPopoverProps): JSX.Element | null => {
                 {text}
               </Link>
             ) : (
-              <Text
-                dataId={`${dataId}-text`}
-                type="primary"
-                weight="regular"
-                size="small"
-              >
+              <Text dataId={`${dataId}-text`} type="primary" weight="regular" size="small">
                 {text}
               </Text>
             )}

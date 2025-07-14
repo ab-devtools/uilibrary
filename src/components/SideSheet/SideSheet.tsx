@@ -138,11 +138,7 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
             <div className="side-sheet__header">
               <div className="side-sheet__header__top">
                 <div className="side-sheet__header__top__left pr-16">
-                  <Heading
-                    className="side-sheet__title"
-                    weight="bold"
-                    size="xsmall"
-                  >
+                  <Heading className="side-sheet__title" weight="bold" size="xsmall">
                     {title}
                   </Heading>
                   {topLeftActions}

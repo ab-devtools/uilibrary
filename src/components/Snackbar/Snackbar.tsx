@@ -18,12 +18,7 @@ const CustomToast = ({ actionProps, toastId, type = 'information', text }: TToas
           type={TYPE_MAPPING[type]}
           size="medium"
         />
-        <Text
-          className="snackbar__text pl-16 pr-8"
-          type="primary"
-          size="standard"
-          weight="regular"
-        >
+        <Text className="snackbar__text pl-16 pr-8" type="primary" size="standard" weight="regular">
           {text}
         </Text>
       </div>
