@@ -17,7 +17,7 @@ export interface TSideSheetPropTypes {
   isOpen: boolean
   onClose: (e?: TClickEventType | MouseEvent) => void
   onSubmit?: (isCheckboxSelected: boolean) => void
-  position?: 'right' | 'left'
+  position?: 'right' | 'left' | 'bottom'
   title?: string | ReactElement
   footerButtons?: {
     cancel: TButtonPropTypes

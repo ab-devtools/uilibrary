@@ -23,7 +23,7 @@ export default {
       control: { type: 'radio' }
     },
     position: {
-      options: ['left', 'right'],
+      options: ['left', 'right', 'bottom'],
       control: { type: 'radio' }
     },
     isWithDivider: {
