@@ -1,5 +1,5 @@
 import type { TButtonPropTypes } from '../Button/types'
-import type {ReactNode} from 'react';
+import type { ReactNode } from 'react'
 
 export interface TCardBodyProps {
   className?: string
