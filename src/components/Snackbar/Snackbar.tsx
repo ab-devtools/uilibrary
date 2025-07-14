@@ -23,7 +23,6 @@ const CustomToast = ({ actionProps, toastId, type = 'information', text }: TToas
           type="primary"
           size="standard"
           weight="regular"
-          lineHeight="large"
         >
           {text}
         </Text>

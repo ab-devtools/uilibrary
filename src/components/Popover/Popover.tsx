@@ -75,7 +75,6 @@ export const Popover = (props: TPopoverProps): JSX.Element | null => {
                 dataId={`${dataId}-text`}
                 type="primary"
                 weight="regular"
-                lineHeight="medium"
                 size="small"
               >
                 {text}

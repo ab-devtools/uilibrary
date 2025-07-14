@@ -8,9 +8,8 @@ export const Heading = (props: HeadingPropTypes): ReactElement => {
   const {
     children,
     className = '',
-    size = 'small',
+    size,
     color = 'primary',
-    lineHeight = 'large',
     type: As = 'h1',
     weight = 'regular',
     onClick = noop,
@@ -23,9 +22,8 @@ export const Heading = (props: HeadingPropTypes): ReactElement => {
       onClick={onClick}
       className={classNames(
         'heading',
-        size && `heading-${size}`,
+        size && `heading-${size} lh-heading-${size}`,
         weight,
-        lineHeight && `lh-heading-${lineHeight}`,
         color && `color-${color}`,
         className
       )}

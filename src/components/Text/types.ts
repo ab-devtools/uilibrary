@@ -17,7 +17,6 @@ export type TTextTypes =
 
 export type TTextSize = 'xxsmall' | 'xsmall' | 'small' | 'standard' | 'medium' | 'large'
 export type TTextWeight = 'regular' | 'semibold' | 'bold' | 'bolder'
-export type TTextLineHeight = 'xxsmall' | 'xsmall' | 'small' | 'standard' | 'medium' | 'large'
 
 export interface TextPropTypes {
   id?: string
@@ -27,7 +26,6 @@ export interface TextPropTypes {
   type?: TTextTypes
   size?: TTextSize
   weight?: TTextWeight
-  lineHeight?: TTextLineHeight
   className?: string
   dataId?: string
   onClick?: (event: MouseEvent<HTMLElement>) => void

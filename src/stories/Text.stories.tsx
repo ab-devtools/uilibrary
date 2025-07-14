@@ -32,10 +32,6 @@ export default {
       options: ['p', 'span', 'div', 'h1'],
       control: { type: 'radio' }
     },
-    lineHeight: {
-      options: ['xxsmall', 'xsmall', 'small', 'standard', 'medium', 'large'],
-      control: { type: 'radio' }
-    },
     weight: {
       options: ['regular', 'semibold', 'bold', 'bolder'],
       control: { type: 'radio' }
@@ -56,7 +52,6 @@ Text.args = {
   type: 'primary',
   as: 'p',
   size: 'standard',
-  lineHeight: 'large',
   weight: 'regular',
   text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
 }

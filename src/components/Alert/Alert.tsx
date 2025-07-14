@@ -34,7 +34,7 @@ export const Alert = (props: TAlertProps): ReactElement => {
             />
             <div className="alert__text pl-12">
               {text ? (
-                <Text type="primary" weight="regular" lineHeight="large">
+                <Text type="primary" weight="regular" >
                   {text}
                 </Text>
               ) : null}
@@ -44,7 +44,6 @@ export const Alert = (props: TAlertProps): ReactElement => {
                   type="secondary"
                   size="small"
                   weight="regular"
-                  lineHeight="large"
                 >
                   {subtext}
                 </Text>

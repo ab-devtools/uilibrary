@@ -40,7 +40,7 @@ export const Spinner = (props: TSpinnerProps): ReactElement => {
           </Heading>
         ) : null}
         {text ? (
-          <Text lineHeight={'large'} className={'mt-12'} type={TEXT_TYPE_MAPPING[mode]}>
+          <Text className={'mt-12'} type={TEXT_TYPE_MAPPING[mode]}>
             {text}
           </Text>
         ) : null}

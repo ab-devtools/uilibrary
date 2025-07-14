@@ -28,7 +28,6 @@ export const UploadItems = (props: IUploadItemPropTypes): JSX.Element => {
                 <div className="upload-item__content__inner pr-8">
                   <Text
                     size="small"
-                    lineHeight="medium"
                     className="upload-item__text"
                     onClick={(e) =>
                       withFilePreview &&

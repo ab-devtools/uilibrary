@@ -11,7 +11,6 @@ export const Text = (props: TextPropTypes): ReactElement => {
     type = 'primary',
     size = 'standard',
     weight = 'regular',
-    lineHeight = 'medium',
     as: As = 'p',
     dataId = '',
     onClick = noop,
@@ -26,10 +25,9 @@ export const Text = (props: TextPropTypes): ReactElement => {
       onClick={onClick}
       className={classNames(
         'body',
-        size && `body-${size}`,
+        size && `body-${size} lh-body-${size}`,
         type && `color-${type}`,
         weight,
-        lineHeight && `lh-body-${lineHeight}`,
         className
       )}
     >
