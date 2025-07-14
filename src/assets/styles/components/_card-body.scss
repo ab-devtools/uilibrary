@@ -10,6 +10,8 @@
 
   --ds-card-body-image-size: 200px;
 
+  --ds-card-body-buttons-space: var(--ds-space-24);
+
   background-color: var(--ds-card-body-bg);
   padding: var(--ds-card-body-padding);
   border: var(--ds-card-body-border);
@@ -23,5 +25,11 @@
     width: var(--ds-card-body-image-size);
     height: var(--ds-card-body-image-size);
     margin: auto;
+  }
+
+  &__buttons {
+    @include mixin.flexbox;
+    @include mixin.flex-direction(column);
+    gap: var(--ds-card-body-buttons-space)
   }
 }
