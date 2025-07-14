@@ -1,3 +1,14 @@
+## [1.32.2](https://github.com/ab-devtools/uilibrary/compare/1.32.1...1.32.2) (2025-07-14)
+
+
+### Bug Fixes
+
+* fix for card-body button ([4522f75](https://github.com/ab-devtools/uilibrary/commit/4522f7507806a711f1d9bbe5b431ce3916f09197))
+* fix for card-body button ([19c75c8](https://github.com/ab-devtools/uilibrary/commit/19c75c8ed7a6bdd14741cc8d180dcbc4e4d2655c))
+* typography fix ([c2b19d1](https://github.com/ab-devtools/uilibrary/commit/c2b19d1b58da8ab262b7360693b5cd64d53f2710))
+* typography fix ([62a00bb](https://github.com/ab-devtools/uilibrary/commit/62a00bbb5c44965031d80be35fe079b258236d04))
+* typography fix ([404c3a6](https://github.com/ab-devtools/uilibrary/commit/404c3a6c0240e0195c4ac7e2e6d4db50e406c224))
+
 ## [1.32.1](https://github.com/ab-devtools/uilibrary/compare/1.32.0...1.32.1) (2025-07-14)
 
 
