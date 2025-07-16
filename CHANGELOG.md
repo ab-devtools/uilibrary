@@ -1,3 +1,12 @@
+# [1.33.0](https://github.com/ab-devtools/uilibrary/compare/1.32.2...1.33.0) (2025-07-16)
+
+
+### Features
+
+* add onInput prop to select component to capture input … ([7e24a52](https://github.com/ab-devtools/uilibrary/commit/7e24a52d556d7d1ee7aedf3f4edf53bfc5bc1411))
+* **IPA-721:** add onInput prop to select component to capture input value changes ([2e06433](https://github.com/ab-devtools/uilibrary/commit/2e0643353e2c3b72f410834518f99853e065c164))
+* **IPA-721:** resolved comment - change onInput prop name to onInputChange ([3408c94](https://github.com/ab-devtools/uilibrary/commit/3408c9407b3a2a294c607a071d7368bed2346f50))
+
 ## [1.32.2](https://github.com/ab-devtools/uilibrary/compare/1.32.1...1.32.2) (2025-07-14)
 
 
