@@ -144,7 +144,9 @@ const OPTIONS_COUNTRIES: TSelectOptions = [
 
 const VALIDATION_SCHEME = yup.object({
   // conditions: yup.string().required('validation').nullable()
-  firstname: yup.string().required('validation').nullable()
+  TIN: yup.string()
+    .matches(/^\d{8}$/, 'validations.tin-max-8')
+    .required('validations.mandatory-field').nullable(),
 })
 
 const Template = (): JSX.Element => {
@@ -155,12 +157,34 @@ const Template = (): JSX.Element => {
   return (
     <div style={{ maxWidth: 300 }}>
       <_FormContainer
+        mode={'onBlur'}
+        reValidateMode={'onBlur'}
+        shouldUnregister={false}
+        shouldFocusError={false}
         onSubmit={(data) => console.log('data', data)}
         validationScheme={VALIDATION_SCHEME}
         initialValues={INITIAL_VALUES}
       >
         <>
-          <FormField name="firstname" As={(props) => <Input {...props} />} />
+          <FormField
+            className={'mb-32 text-left'}
+            name={'TIN'}
+            As={(props) => (
+              <Input
+                {...props}
+                isTrimValues={true}
+                type={'text'}
+                inputMode={'numeric'}
+                placeholder={'check-user-tin.tin-input-placeholder'}
+                label={'check-user-tin.tin-input-label'}
+                onInput={(e) => {
+                  const target = e.target as HTMLInputElement;
+                  target.value = target.value.replace(/[^0-9]/g, '');
+                }}
+              />
+            )}
+          />
+          {/*<FormField name="firstname" As={(props) => <Input {...props} />} />*/}
           <Button buttonActionType="submit" buttonText={'Ok'} />
         </>
       </_FormContainer>

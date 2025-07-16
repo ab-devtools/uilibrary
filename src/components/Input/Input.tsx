@@ -71,10 +71,6 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
 
       event.target.value = formatedValue
 
-      if (setFieldValue && name) {
-        setFieldValue(name, formatedValue)
-      }
-
       if (handleChange) {
         handleChange(event, formatedValue)
       }
