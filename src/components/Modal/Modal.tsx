@@ -12,7 +12,6 @@ import { ButtonIcon } from '../ButtonIcon'
 import { Tooltip } from '../Tooltip'
 import { Positions } from '../Tooltip/types'
 import { Checkbox } from '../Checkbox'
-import {isMobile} from "../../utils/helpers";
 
 const DESKTOP_ANIMATION = {
   initial: { opacity: 0.5, scale: 0.65 },
@@ -84,7 +83,6 @@ export const Modal = (props: TModalPropTypes): ReactElement => {
       />
     </div>
   ) : null
-
 
   return (
     <AnimatePresenceWrapper>
