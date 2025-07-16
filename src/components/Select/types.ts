@@ -1,4 +1,4 @@
-import type { JSX, LegacyRef, ReactElement, ReactNode } from 'react'
+import type { FormEvent, JSX, LegacyRef, ReactElement, ReactNode } from 'react'
 import type { TButtonPropTypes } from '../Button/types'
 import type { TTooltipProps } from '../Tooltip/types'
 import type { TMenuItem } from '../Menu/types'
@@ -132,6 +132,7 @@ export interface TSingleSelectPropTypes extends IFormCompProps, TSelectBaseProps
   options: TSelectOptions
   selectedItem?: TItemValue
   setSelectedItem?: (items: TItemValue | undefined) => void
+  onInput?: (event: FormEvent<HTMLInputElement>) => void
   withSearch?: boolean
   outerHelperText?: string
   innerHelperText?: string
