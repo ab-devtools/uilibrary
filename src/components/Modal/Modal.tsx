@@ -12,6 +12,7 @@ import { ButtonIcon } from '../ButtonIcon'
 import { Tooltip } from '../Tooltip'
 import { Positions } from '../Tooltip/types'
 import { Checkbox } from '../Checkbox'
+import {isMobile} from "../../utils/helpers";
 
 const DESKTOP_ANIMATION = {
   initial: { opacity: 0.5, scale: 0.65 },
@@ -55,8 +56,10 @@ export const Modal = (props: TModalPropTypes): ReactElement => {
   useOnOutsideClick(containerRef, onClose, closeOnOutsideClick && isOpen, useId())
   useHideBodyScroll(isOpen)
 
+  const checkbox = checkProps ? <Checkbox {...checkProps} /> : null
+
   const buttons = buttonProps ? (
-    <div className={'flexbox'}>
+    <div className={`flexbox ${checkProps ? '' : 'full-width justify-content--end'}`}>
       <Button
         type="tertiary"
         className="modal__footer__btn mr-16"
@@ -82,7 +85,6 @@ export const Modal = (props: TModalPropTypes): ReactElement => {
     </div>
   ) : null
 
-  const checkbox = checkProps ? <Checkbox {...checkProps} /> : null
 
   return (
     <AnimatePresenceWrapper>
