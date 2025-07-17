@@ -55,8 +55,10 @@ export const Modal = (props: TModalPropTypes): ReactElement => {
   useOnOutsideClick(containerRef, onClose, closeOnOutsideClick && isOpen, useId())
   useHideBodyScroll(isOpen)
 
+  const checkbox = checkProps ? <Checkbox {...checkProps} /> : null
+
   const buttons = buttonProps ? (
-    <div className={'flexbox'}>
+    <div className={`flexbox ${checkProps ? '' : 'full-width justify-content--end'}`}>
       <Button
         type="tertiary"
         className="modal__footer__btn mr-16"
@@ -81,8 +83,6 @@ export const Modal = (props: TModalPropTypes): ReactElement => {
       />
     </div>
   ) : null
-
-  const checkbox = checkProps ? <Checkbox {...checkProps} /> : null
 
   return (
     <AnimatePresenceWrapper>
