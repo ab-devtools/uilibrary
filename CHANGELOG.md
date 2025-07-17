@@ -1,3 +1,11 @@
+## [1.33.1](https://github.com/ab-devtools/uilibrary/compare/1.33.0...1.33.1) (2025-07-17)
+
+
+### Bug Fixes
+
+* fix for modal buttons ui ([eb98993](https://github.com/ab-devtools/uilibrary/commit/eb98993fa9cf732f633031f872e42f8b35435c81))
+* fix for modal buttons ui ([b484c78](https://github.com/ab-devtools/uilibrary/commit/b484c780cc1453c9490a3ac458359fc3781c5291))
+
 # [1.33.0](https://github.com/ab-devtools/uilibrary/compare/1.32.2...1.33.0) (2025-07-16)
 
 
