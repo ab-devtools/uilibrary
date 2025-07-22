@@ -25,6 +25,7 @@ export type TCollapseGroupItem = {
   iconProps?: TSelectIconProps
   isOpen?: boolean
   disabled?: boolean
+  reverse?: boolean
   id?: string | number
 }
 
