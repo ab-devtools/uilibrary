@@ -5,7 +5,7 @@ import { TCollapseGroupProps, TCollapseProps } from '../components/Collapse/type
 import { Status } from '../components/Status'
 import { Chips } from '../components/Chips'
 import IconHeart from '../components/SVGIcons/IconHeart'
-import IconCaretDownFilled from "../components/SVGIcons/IconCaretDownFilled";
+import IconCaretDownFilled from '../components/SVGIcons/IconCaretDownFilled'
 
 export default {
   title: 'Collapse',
@@ -45,7 +45,7 @@ CollapseItem.args = {
   subtext: 'Sub text',
   reverse: false,
   disabled: false,
-  iconProps: {Component: IconCaretDownFilled},
+  iconProps: { Component: IconCaretDownFilled }
 }
 
 const CollapseItems = [
@@ -54,7 +54,6 @@ const CollapseItems = [
     subtext: 'sub text',
     value: 1,
     content: <div>collapse1 content</div>,
-    iconProps: <IconCaretDownFilled />,
     isOpen: true,
     id: 1
   },
@@ -76,7 +75,7 @@ const CollapseItems = [
     id: 3,
     disabled: true,
     reverse: true,
-    iconProps: {Component: IconCaretDownFilled},
+    iconProps: { Component: IconCaretDownFilled }
   }
 ]
 
