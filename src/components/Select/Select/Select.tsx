@@ -110,8 +110,10 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
     if (!searchValue) {
       setCurrentSelectedLabel()
     } else if (isCreatable) {
-      setSelectedOption({ label: searchValue, value: searchValue })
-      onItemSelect(searchValue)
+      const selectedItem = options.find((item) => item.value === currentSelection)
+      setSelectedOption({ label: selectedItem?.label || '', value: selectedItem?.value || '' })
+      onItemSelect(selectedItem?.value || '')
+      setSearchValue(selectedItem?.label?.toString() || '')
     }
     closeDropdown()
   }
@@ -192,6 +194,13 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
     input: inputRef.current
   })
 
+  const inputValue = useMemo(() => {
+    if (searchValue) {
+      return searchValue
+    }
+    return selectedOption?.label || ''
+  }, [searchValue, selectedOption])
+
   useChangePositionsOnScroll({
     parentElement: inputRef?.current,
     childElement: dropdownRef,
@@ -222,7 +231,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
         rightIconProps={isOpen ? selectRightIconOpenedProps : selectRightIconProps}
         readonly={!searchValue && !isWithSearch}
         placeholder={placeHolder}
-        value={selectedOption?.label || searchValue || ''}
+        value={inputValue}
         isValid={isValid}
         disabled={disabled}
         helperText={outerHelperText}
