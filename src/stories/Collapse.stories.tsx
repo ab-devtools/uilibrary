@@ -71,7 +71,8 @@ const CollapseItems = [
     content: <div style={{ height: 200 }}>collapse3 content</div>,
     isOpen: false,
     id: 3,
-    disabled: true
+    disabled: true,
+    reverse: true
   }
 ]
 
