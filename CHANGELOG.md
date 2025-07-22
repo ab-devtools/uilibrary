@@ -1,3 +1,10 @@
+## [1.33.3](https://github.com/ab-devtools/uilibrary/compare/1.33.2...1.33.3) (2025-07-22)
+
+
+### Bug Fixes
+
+* **IPA-721:** fix search value of select on outside click ([ccdee0c](https://github.com/ab-devtools/uilibrary/commit/ccdee0c8ff795b8a710efd5f132a4e233f03db13))
+
 ## [1.33.2](https://github.com/ab-devtools/uilibrary/compare/1.33.1...1.33.2) (2025-07-22)
 
 
