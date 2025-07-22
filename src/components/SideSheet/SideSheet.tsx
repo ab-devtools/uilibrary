@@ -151,15 +151,6 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
                     onClick={onClose}
                   />
                 </div>
-                {isShownScrollIcon && (
-                  <Button
-                    size="large"
-                    type="secondary"
-                    iconProps={{ Component: IconCaretUp }}
-                    className={`side-sheet__header__scroll-top side-sheet__header__scroll-top__${size}`}
-                    onClick={handleScrollToTop}
-                  />
-                )}
               </div>
               {headerContent ? (
                 <div className="side-sheet__header__content"> {headerContent} </div>

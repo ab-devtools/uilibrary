@@ -127,25 +127,6 @@
       }
     }
 
-    &__scroll-top {
-      position: absolute;
-      bottom: calc(var(--ds-size-16) * -1);
-      border-radius: 50%;
-
-      z-index: 999;
-
-      &__small {
-        left: calc(var(--ds-side-sheet-width-sm) / 2  - var(--ds-size-16));
-      }
-
-      &__medium {
-        left: calc(var(--ds-side-sheet-width-md) / 2  - var(--ds-size-16));
-      }
-      &__large {
-        left: calc(var(--ds-side-sheet-width-lg) / 2  - var(--ds-size-16));
-      }
-    }
-
     &__content {
       padding: var(--ds-side-sheet-header-content-padding);
     }
