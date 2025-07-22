@@ -1,3 +1,12 @@
+## [1.33.2](https://github.com/ab-devtools/uilibrary/compare/1.33.1...1.33.2) (2025-07-22)
+
+
+### Bug Fixes
+
+* fix for collapse group ([0a25173](https://github.com/ab-devtools/uilibrary/commit/0a25173c823d8446ad5cb9d954bbe489877da872))
+* ui fix ([aef0aac](https://github.com/ab-devtools/uilibrary/commit/aef0aac36d622c3fca7c69daa80854177335ecd3))
+* ui fix ([4a3bb90](https://github.com/ab-devtools/uilibrary/commit/4a3bb90afa0639e4203821c060c6e44a6eaddd50))
+
 ## [1.33.1](https://github.com/ab-devtools/uilibrary/compare/1.33.0...1.33.1) (2025-07-17)
 
 
