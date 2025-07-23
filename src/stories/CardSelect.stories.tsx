@@ -7,7 +7,7 @@ import imageFile from '../assets/images/illustrations.svg'
 import IconInfo from '../components/SVGIcons/IconInfo'
 import type { StoryFn } from '@storybook/react'
 import { TCardSelectGroupProps, TCardSelectProps } from '../components/CardSelect/types'
-import IconQuestion from '../components/SVGIcons/IconQuestion'
+import IconQuestionCircle from '../components/SVGIcons/IconQuestionCircle'
 
 export default {
   title: 'CardSelect',
@@ -30,7 +30,7 @@ const CARDS = [
     title: 'Card Select',
     dataId: '1',
     icon: {
-      Component: IconQuestion
+      Component: IconQuestionCircle
     },
     chips: [
       {
@@ -87,7 +87,7 @@ const CARDS = [
     value: 2,
     title: 'Card Select 2',
     icon: {
-      Component: IconQuestion
+      Component: IconQuestionCircle
     },
     chips: [
       {
@@ -148,7 +148,7 @@ CardSelect.args = {
   type: CARD_SELECT_TYPES.card,
   illustration: imageFile,
   icon: {
-    Component: IconQuestion
+    Component: IconQuestionCircle
   },
   title: 'Card Select',
   subtext: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
