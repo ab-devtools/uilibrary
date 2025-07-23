@@ -9,7 +9,7 @@
 
   --ds-table-th-border-color: var(--ds-color-border-quintary);
   --ds-table-td-border-color: var(--ds-color-border-quintary);
-  --ds-table-td-bg-hover: var(--grey-40);
+  --ds-table-td-bg-hover: var(--ds-color-bg-container-lighter);
   --ds-table-td-bg-selected: var(--grey-40);
 
   @include mixin.flexbox;
@@ -400,12 +400,12 @@
   height: 100%;
 
   &__right {
-    @include mixin.absolute(unset, 0, unset, unset);
+    @include mixin.absolute(0, 0, 0, unset);
     @include mixin.align-items(center);
     display: none;
     padding: var(--ds-space-2) var(--ds-space-16);
     gap: var(--ds-space-8);
-    background-color: var(--grey-40);
+    background-color: var(--ds-color-bg-container-lighter);
 
     &:before {
       content: '';
@@ -413,7 +413,8 @@
       left: -24px;
       width: 24px;
       height: 100%;
-      background: linear-gradient(90deg, rgba(242, 242, 242, 0) 0%, #F2F2F2 100%);
+      background: linear-gradient(90deg, rgba(248, 248, 248, 0) 0%, #F8F8F8 92.6%);
+
     }
   }
 }
