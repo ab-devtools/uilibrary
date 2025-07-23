@@ -1,3 +1,10 @@
+# [1.34.0](https://github.com/ab-devtools/uilibrary/compare/1.33.5...1.34.0) (2025-07-23)
+
+
+### Features
+
+* new icons ([dc32300](https://github.com/ab-devtools/uilibrary/commit/dc32300fcffcd86f1cb1df0d85ee92a7f6c8aae5))
+
 ## [1.33.5](https://github.com/ab-devtools/uilibrary/compare/1.33.4...1.33.5) (2025-07-23)
 
 
