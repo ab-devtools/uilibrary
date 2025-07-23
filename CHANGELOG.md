@@ -1,3 +1,11 @@
+## [1.33.4](https://github.com/ab-devtools/uilibrary/compare/1.33.3...1.33.4) (2025-07-23)
+
+
+### Bug Fixes
+
+* advanced table actions ui fix ([0099140](https://github.com/ab-devtools/uilibrary/commit/0099140ca705829846ab7b3afc05024125d4e334))
+* ui fix ([8815dcc](https://github.com/ab-devtools/uilibrary/commit/8815dcc554d5469b0512b95170bfa59eb0f0e692))
+
 ## [1.33.3](https://github.com/ab-devtools/uilibrary/compare/1.33.2...1.33.3) (2025-07-22)
 
 
