@@ -1,3 +1,10 @@
+## [1.33.5](https://github.com/ab-devtools/uilibrary/compare/1.33.4...1.33.5) (2025-07-23)
+
+
+### Bug Fixes
+
+* remove additional scroll arrow ([220db89](https://github.com/ab-devtools/uilibrary/commit/220db89818381b85032500fdeff4df92e9f3e3a9))
+
 ## [1.33.4](https://github.com/ab-devtools/uilibrary/compare/1.33.3...1.33.4) (2025-07-23)
 
 
