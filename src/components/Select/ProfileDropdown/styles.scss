@@ -31,7 +31,7 @@
 
   &__nav {
     list-style: none;
-    padding: var(--ds-space-4) 0;
+    padding: var(--ds-space-4);
 
     li {
       &:not(&:last-child) {
@@ -44,12 +44,14 @@
       @include mixin.align-items(center);
       color: var(--ds-color-text-primary);
       text-decoration: none;
-      padding: var(--ds-space-8) var(--ds-space-16);
       cursor: pointer;
+      padding: var(--ds-space-8) var(--ds-space-12);
+      min-height: var(--ds-size-40);
+      border-radius: var(--ds-border-radius-lg);
 
       &:hover {
-        background-color: var(--grey-20);
-        color: var(--ds-color-text-primary)
+        background-color: var(--ds-color-bg-container-light);
+        color: var(--ds-color-text-primary);
       }
 
       &:focus {
