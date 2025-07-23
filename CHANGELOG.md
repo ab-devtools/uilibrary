@@ -1,3 +1,11 @@
+## [1.34.1](https://github.com/ab-devtools/uilibrary/compare/1.34.0...1.34.1) (2025-07-23)
+
+
+### Bug Fixes
+
+* profile dropdown ui fix ([db55560](https://github.com/ab-devtools/uilibrary/commit/db555602d846deffe85f493c4645e3d286ab9d6c))
+* ui fix ([be79058](https://github.com/ab-devtools/uilibrary/commit/be79058ea0cb86f51583c59b97a8f386bccac853))
+
 # [1.34.0](https://github.com/ab-devtools/uilibrary/compare/1.33.5...1.34.0) (2025-07-23)
 
 
