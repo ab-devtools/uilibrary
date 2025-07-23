@@ -8,8 +8,8 @@ import IconCheckmark from '../components/SVGIcons/IconCheckmark'
 import IconAmd from '../components/SVGIcons/IconAmd'
 import { TItemSelectGroupProps, TItemSelectProps } from '../components/ItemSelect/types'
 import { StoryFn } from '@storybook/react'
-import IconQuestion from '../components/SVGIcons/IconQuestion'
 import { Text } from '../components/Text'
+import IconQuestionCircle from '../components/SVGIcons/IconQuestionCircle'
 
 export default {
   title: 'ItemSelect',
@@ -64,7 +64,7 @@ export const ItemSelect = Template.bind({})
 ItemSelect.args = {
   leftIconProps: <IconAmd />,
   rightIconProps: {
-    Component: IconQuestion,
+    Component: IconQuestionCircle,
     className: 'ml-16'
   },
   // image: '',

@@ -24,12 +24,12 @@ import {
 } from '../components/Select/types'
 import { Positions } from '../components/Tooltip/types'
 import IconSignOut from '../components/SVGIcons/IconSignOut'
-import IconQuestion from '../components/SVGIcons/IconQuestion'
 import IconChatMultiple from '../components/SVGIcons/IconChatMultiple'
 import IconAm from '../components/SVGIcons/IconAm'
 import IconGb from '../components/SVGIcons/IconGb'
 import IconChevronDown from '../components/SVGIcons/IconChevronDown'
 import IconChevronUp from '../components/SVGIcons/IconChevronUp'
+import IconQuestionCircle from '../components/SVGIcons/IconQuestionCircle'
 
 type TItemValue = string | number | null
 declare type TItemLabel = string
@@ -580,7 +580,7 @@ ProfileDropdown.args = {
   userInfoAlignment: 'left',
   bodyItems: [
     {
-      icon: <IconQuestion size={'small'} className={'mr-8'} />,
+      icon: <IconQuestionCircle size={'small'} className={'mr-8'} />,
       text: 'Հաճախ տրվող հարցեր',
       url: '#s',
       rightInfoProps: <Badge text={'5'} type={'green'} className={'ml-12'} />
