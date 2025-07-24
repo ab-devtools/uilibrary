@@ -1,3 +1,11 @@
+## [1.34.3](https://github.com/ab-devtools/uilibrary/compare/1.34.2...1.34.3) (2025-07-24)
+
+
+### Bug Fixes
+
+* added rightContent props for sideNavigation ([ff3b5b2](https://github.com/ab-devtools/uilibrary/commit/ff3b5b24eebba51d3c3a5fec4d85c3570e9ead5a))
+* added rightContent props for sideNavigation ([f5d2fb2](https://github.com/ab-devtools/uilibrary/commit/f5d2fb2798e629284a61f0b458c72ccd11ff0b07))
+
 ## [1.34.2](https://github.com/ab-devtools/uilibrary/compare/1.34.1...1.34.2) (2025-07-24)
 
 
