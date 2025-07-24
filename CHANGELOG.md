@@ -1,3 +1,11 @@
+## [1.34.2](https://github.com/ab-devtools/uilibrary/compare/1.34.1...1.34.2) (2025-07-24)
+
+
+### Bug Fixes
+
+* fix for modal titles default size ([54308a1](https://github.com/ab-devtools/uilibrary/commit/54308a139b95ecf7aac10fca2a7d65dd7dc21073))
+* fix for modal titles default size ([9ea289f](https://github.com/ab-devtools/uilibrary/commit/9ea289f1d31ab0275716c013bb83d0fe5fe8ed83))
+
 ## [1.34.1](https://github.com/ab-devtools/uilibrary/compare/1.34.0...1.34.1) (2025-07-23)
 
 
