@@ -1,3 +1,11 @@
+## [1.34.8](https://github.com/ab-devtools/uilibrary/compare/1.34.7...1.34.8) (2025-07-24)
+
+
+### Bug Fixes
+
+* fixes for side navigation ui ([9728d2b](https://github.com/ab-devtools/uilibrary/commit/9728d2bd6643eedfb512b35430a7588552951c3b))
+* fixes for side navigation ui ([276d3bc](https://github.com/ab-devtools/uilibrary/commit/276d3bc9a5ff029d3c847ba4ecb1ca2b1cd21a9c))
+
 ## [1.34.7](https://github.com/ab-devtools/uilibrary/compare/1.34.6...1.34.7) (2025-07-24)
 
 
