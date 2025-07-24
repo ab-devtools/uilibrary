@@ -1,3 +1,10 @@
+# [1.35.0](https://github.com/ab-devtools/uilibrary/compare/1.34.8...1.35.0) (2025-07-24)
+
+
+### Features
+
+* added circle-off icon ([4fe2f4c](https://github.com/ab-devtools/uilibrary/commit/4fe2f4c995714b8ed993ee922dd256251bffd897))
+
 ## [1.34.8](https://github.com/ab-devtools/uilibrary/compare/1.34.7...1.34.8) (2025-07-24)
 
 
