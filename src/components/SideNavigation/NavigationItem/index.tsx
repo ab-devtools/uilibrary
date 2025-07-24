@@ -85,7 +85,9 @@ export const NavigationItem = (props: TNavigationLinkPropTypes): ReactElement =>
               <IconDynamicComponent componentName={iconName} />
             )}
           </>
-          {rightContent ? <div className={'navigation-item__right-content'}>{rightContent}</div> : null}
+          {rightContent ? (
+            <div className={'navigation-item__right-content'}>{rightContent}</div>
+          ) : null}
         </div>
         {children && (
           <div className={classNames('navigation-item__child', childOpen && 'active')}>
