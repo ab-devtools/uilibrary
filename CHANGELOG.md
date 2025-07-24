@@ -1,3 +1,11 @@
+## [1.34.4](https://github.com/ab-devtools/uilibrary/compare/1.34.3...1.34.4) (2025-07-24)
+
+
+### Bug Fixes
+
+* fix ([ddcd462](https://github.com/ab-devtools/uilibrary/commit/ddcd462008732cb80967179f8b018f1201f29db4))
+* fix chips styling issue in navigation ([eda57d0](https://github.com/ab-devtools/uilibrary/commit/eda57d00ed91ed6b41815ca7c456b4051f516ff9))
+
 ## [1.34.3](https://github.com/ab-devtools/uilibrary/compare/1.34.2...1.34.3) (2025-07-24)
 
 
