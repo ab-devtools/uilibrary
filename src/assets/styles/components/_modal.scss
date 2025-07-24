@@ -67,9 +67,11 @@
 
     &-large {
       font-size: var(--font-size-24);
+      line-height: var(--font-size-32);
     }
     &-small {
       font-size: var(--font-size-20);
+      line-height: var(--font-size-28);
     }
   }
 

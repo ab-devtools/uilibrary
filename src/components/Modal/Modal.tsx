@@ -36,9 +36,7 @@ export const Modal = (props: TModalPropTypes): ReactElement => {
     isOpen,
     onClose,
     onSubmit,
-    titleProps = {
-      size: 'small'
-    },
+    titleProps,
     subtitle,
     closeIcon,
     className = '',
@@ -84,6 +82,8 @@ export const Modal = (props: TModalPropTypes): ReactElement => {
     </div>
   ) : null
 
+  console.log(titleProps , 'ksks')
+
   return (
     <AnimatePresenceWrapper>
       {isOpen ? (
@@ -104,7 +104,7 @@ export const Modal = (props: TModalPropTypes): ReactElement => {
                 <div>
                   <Text
                     size={titleProps.size}
-                    className={`modal__title-${titleProps.size}`}
+                    className={`modal__title-${titleProps.size || 'small'}`}
                     weight={'bold'}
                     dataId={dataIdPrefix ? `${dataIdPrefix}-modal-title` : ''}
                   >
