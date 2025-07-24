@@ -202,7 +202,7 @@ export function useTableControl<TData>({
     enableColumnResizing: true
   })
 
-  useTableColumnSettings(table, tableName, shouldPersistToStorage)
+  useTableColumnSettings(table, tableName, shouldPersistToStorage, tableSettings?.tableName)
 
   const sensors = useSensors(
     useSensor(MouseSensor, {

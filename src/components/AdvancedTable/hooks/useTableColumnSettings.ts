@@ -4,7 +4,8 @@ import { useEffect, useRef } from 'react'
 export const useTableColumnSettings = <T>(
   table: Table<T>,
   tableName: string,
-  shouldPersistToStorage: boolean
+  shouldPersistToStorage: boolean,
+  uniqueName?: string
 ) => {
   const prevSettings = useRef<string | null>(null)
 
@@ -19,7 +20,7 @@ export const useTableColumnSettings = <T>(
 
     const serialized = JSON.stringify(settings)
 
-    if (prevSettings.current !== serialized && shouldPersistToStorage) {
+    if (prevSettings.current !== serialized && shouldPersistToStorage && !!uniqueName) {
       localStorage.setItem(tableName, serialized)
       prevSettings.current = serialized
     }
