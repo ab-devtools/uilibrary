@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import classNames from 'classnames'
 import type { TActionItemProps, TNavigationLinkPropTypes } from './types'
 import { NavigationItemTypes } from './types'
-import { Badge } from '../../Badge'
 import IconDynamicComponent from '../../../helperComponents/IconDynamicComponent/IconDynamicComponent'
 import IconChevronDown from '../../SVGIcons/IconChevronDown'
 import { ButtonIcon } from '../../ButtonIcon'
@@ -14,19 +13,18 @@ export const NavigationItem = (props: TNavigationLinkPropTypes): ReactElement =>
     type,
     isOpen,
     iconName,
-    showBadge,
     expandable = false,
     showAction = false,
     actionElm,
     active = false,
-    badgeProps,
     expandIconProps = {
       Component: IconChevronDown,
       size: 'medium'
     },
     children,
     actionsList,
-    className = ''
+    className = '',
+    rightContent
   } = props
 
   const [childOpen, setChildOpen] = useState(false)
@@ -87,14 +85,7 @@ export const NavigationItem = (props: TNavigationLinkPropTypes): ReactElement =>
               <IconDynamicComponent componentName={iconName} />
             )}
           </>
-          {showBadge && badgeProps?.text && isOpen && (
-            <Badge
-              type={badgeProps?.type}
-              text={badgeProps?.text}
-              size={badgeProps?.size}
-              className={'mr-12'}
-            />
-          )}
+          {rightContent ? rightContent : null}
         </div>
         {children && (
           <div className={classNames('navigation-item__child', childOpen && 'active')}>
