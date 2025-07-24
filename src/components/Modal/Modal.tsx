@@ -82,7 +82,7 @@ export const Modal = (props: TModalPropTypes): ReactElement => {
     </div>
   ) : null
 
-  console.log(titleProps , 'ksks')
+  console.log(titleProps, 'ksks')
 
   return (
     <AnimatePresenceWrapper>
