@@ -1,6 +1,12 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { ReactElement, useEffect, useState } from 'react'
-import {Badge, ButtonIcon, NavigationItem, SideNavigation as _SideNavigation, Text} from '../index'
+import {
+  Badge,
+  ButtonIcon,
+  NavigationItem,
+  SideNavigation as _SideNavigation,
+  Text
+} from '../index'
 import { Block } from '../components/SideNavigation/Block'
 import { NavigationItemTypes } from '../components/SideNavigation/NavigationItem/types'
 // @ts-ignore
@@ -138,7 +144,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                 )}
                 type={NavigationItemTypes.MAIN}
                 isOpen={isNavigationItemOpen}
-                rightContent={<Badge type={'red'} size={'small'} text={'+999'} /> }
+                rightContent={<Badge type={'red'} size={'small'} text={'+999'} />}
               />
             </>
           </Block>

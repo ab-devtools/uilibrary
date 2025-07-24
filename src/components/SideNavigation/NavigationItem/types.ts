@@ -1,6 +1,6 @@
 import type { JSX, ReactNode } from 'react'
 import type { ISVGIconProps } from '../../SVGIcons/types'
-import type {ReactElement} from 'react';
+import type { ReactElement } from 'react'
 
 export enum NavigationItemTypes {
   MAIN = 'main',
@@ -28,6 +28,6 @@ export interface TNavigationLinkPropTypes {
   active?: boolean
   children?: ReactNode
   actionsList?: TActionItemProps[]
-  className?: string,
+  className?: string
   rightContent?: ReactElement
 }
