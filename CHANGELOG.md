@@ -1,3 +1,10 @@
+## [1.34.6](https://github.com/ab-devtools/uilibrary/compare/1.34.5...1.34.6) (2025-07-24)
+
+
+### Bug Fixes
+
+* tablename set issue ([171c78f](https://github.com/ab-devtools/uilibrary/commit/171c78f9e3f36c21673f2a63e79e7557d2b82fdf))
+
 ## [1.34.5](https://github.com/ab-devtools/uilibrary/compare/1.34.4...1.34.5) (2025-07-24)
 
 
