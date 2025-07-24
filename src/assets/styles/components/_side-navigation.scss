@@ -54,12 +54,16 @@
 
     .navigation-item {
       &__inner {
-        > a,  >div:not(.badge, .chips, .navigation-item__actions) {
+        > a,  >div:not(.navigation-item__right-content, .navigation-item__actions) {
           > .svg-icon + .body {
              max-width: 100%;
              padding-left: var(--ds-space-8);
           }
         }
+      }
+
+      &__right-content {
+        display: block;
       }
     }
 
@@ -118,7 +122,7 @@
       position: relative;
       padding: 0 var(--ds-space-8);
 
-      >a, >div:not(.badge, .chips, .navigation-item__actions) {
+      >a, >div:not(.navigation-item__right-content, .navigation-item__actions) {
         @include mixin.flexbox;
         @include mixin.align-items(center);
         position: relative;
@@ -126,6 +130,7 @@
         height: var(--ds-size-40);
         text-decoration: none;
         transition: padding-left 0.3s linear;
+        padding-left: var(--ds-space-6);
 
         >.svg-icon {
           path {
@@ -159,7 +164,7 @@
       &.active {
         background-color: var(--ds-color-bg-container);
 
-        >a, >div:not(.badge, .chips, .navigation-item__actions) {
+        >a, >div:not(.navigation-item__right-content, .navigation-item__actions) {
 
           >.svg-icon {
             path {
@@ -176,7 +181,7 @@
   &--expandable {
     > #{$this}__inner {
       &:hover {
-        > a, > div:not(.badge, .chips, .navigation-item__actions) {
+        > a, > div:not(.navigation-item__right-content, .navigation-item__actions) {
           > .svg-icon {
             opacity: 0;
           }
@@ -230,6 +235,10 @@
       gap: var(--ds-space-8);
     }
   }
+
+  &__right-content {
+    display: none;
+  }
 }
 
 .navigation-block {
@@ -243,7 +252,7 @@
     @include mixin.align-items(center);
     @include mixin.truncate(100%);
     min-height: var(--ds-size-32);
-    padding: 0 var(--ds-space-10);
+    padding: 0 var(--ds-space-12);
     margin-bottom: var(--ds-space-2);
 
     &__text {
