@@ -1,6 +1,6 @@
 import type { JSX, ReactNode } from 'react'
 import type { ISVGIconProps } from '../../SVGIcons/types'
-import type { TBadgeProps } from '../../Badge/types'
+import type {ReactElement} from 'react';
 
 export enum NavigationItemTypes {
   MAIN = 'main',
@@ -26,8 +26,8 @@ export interface TNavigationLinkPropTypes {
   showAction?: boolean
   actionElm?: JSX.Element
   active?: boolean
-  badgeProps?: TBadgeProps
   children?: ReactNode
   actionsList?: TActionItemProps[]
-  className?: string
+  className?: string,
+  rightContent?: ReactElement
 }
