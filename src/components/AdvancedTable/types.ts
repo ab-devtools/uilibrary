@@ -34,7 +34,7 @@ export type TTableProps<TData> = {
   defaultHiddenColumns?: string[]
   collapsibleRows?: boolean
   tableSettings?: {
-    tableName: string
+    tableName?: string
     persistColumnSettings?: TPersistColumnSettings
     onColumnSettingsChange?: (settings: ColumnSettings) => void
   }
