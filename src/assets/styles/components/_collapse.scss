@@ -78,7 +78,7 @@
 .collapse-group {
     --ds-collapse-group-item-space: var(--ds-space-24);
 
-    &__item:not(&:last-child) {
+    &__item:not(:last-child) {
         margin-bottom: var(--ds-collapse-group-item-space);
     }
 }

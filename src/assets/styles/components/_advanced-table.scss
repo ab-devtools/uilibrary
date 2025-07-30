@@ -1,6 +1,8 @@
 @use "../helpers/mixin";
 
 .advanced-table {
+  $this: &;
+
   --ds-table-th-height: var(--ds-size-56);
   --ds-table-td-height: var(--ds-size-56);
 
@@ -153,6 +155,10 @@
               display: none;
             }
           }
+
+          &.sorting {
+            padding: 0 var(--ds-space-4) !important;
+          }
         }
       }
     }
@@ -182,7 +188,7 @@
             }
           }
 
-          &:not(.with-checkbox, .action-column) {
+          &:not(.with-checkbox, .action-column, .expand-column) {
             padding: var(--ds-space-8) var(--ds-space-16) !important;
             box-sizing: border-box;
           }
@@ -231,13 +237,19 @@
           }
 
           .pinned-cell {
-            background-color: var(--ds-table-td-bg-hover) !important;
+            background-color: var(--ds-table-td-bg-selected) !important;
           }
         }
 
         &:last-child {
           td {
             border-bottom: 0;
+          }
+        }
+
+        &#{$this}__expanded-row {
+          >td {
+            padding: 0 !important;
           }
         }
       }
@@ -286,13 +298,6 @@
 
   &__expanded-row {
     td {
-      padding: var(--ds-table-td-padding) !important;
-      height: var(--ds-table-td-height);
-      border-bottom: 1px solid var(--ds-table-td-border-color);
-      background-color: inherit;
-      transition: background-color 0.2s ease;
-      vertical-align: middle;
-
       .advanced-table__expanded-content {
         padding: 0;
         background-color: transparent;
@@ -305,19 +310,11 @@
           tbody {
             tr {
               td {
-                border-bottom: none;
-                padding: var(--ds-table-td-padding);
-                height: var(--ds-table-td-height);
-                vertical-align: middle;
-                background-color: transparent;
-
                 &.with-checkbox {
                   max-width: var(--ds-space-48);
                   width: var(--ds-space-48) !important;
                   min-width: initial !important;
-                  //padding: var(--ds-space-8) var(--ds-space-6) var(--ds-space-8) 55px !important;
-                  padding: var(--ds-space-8) var(--ds-space-40) var(--ds-space-8) 55px !important;
-                  //border-right: 1px solid var(--ds-table-td-border-color);
+                  padding: var(--ds-space-8) var(--ds-space-40) var(--ds-space-8) var(--ds-space-56) !important;
                   background-color: inherit;
 
                   .actions-list {
@@ -338,10 +335,10 @@
                 }
 
                 &.expand-column {
-                  //width: 50px !important;
-                  //min-width: 50px !important;
-                  //max-width: 50px !important;
-                  //flex: 0 0 50px !important;
+                  width: 40px !important;
+                  min-width: 40px !important;
+                  max-width: 40px !important;
+                  padding: 0 !important;
                   box-sizing: border-box !important;
                   overflow: hidden !important;
                   white-space: nowrap !important;
@@ -379,11 +376,10 @@
   }
 
   .expand-column {
-    //width: 50px !important;
-    //min-width: 50px !important;
-    //max-width: 50px !important;
-    padding: var(--ds-space-8) var(--ds-space-6) !important;
-    flex: 0 0 50px !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    max-width: 40px !important;
+    padding: 0 !important;
     box-sizing: border-box !important;
     overflow: hidden !important;
     white-space: nowrap !important;
