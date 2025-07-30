@@ -1,3 +1,10 @@
+## [1.35.1](https://github.com/ab-devtools/uilibrary/compare/1.35.0...1.35.1) (2025-07-30)
+
+
+### Bug Fixes
+
+* ui fixes for advanced table expandable part ([05ac3dc](https://github.com/ab-devtools/uilibrary/commit/05ac3dc423abd497d8cf1ba19452210a30875e96))
+
 # [1.35.0](https://github.com/ab-devtools/uilibrary/compare/1.34.8...1.35.0) (2025-07-24)
 
 
