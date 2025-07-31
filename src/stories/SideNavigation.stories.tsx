@@ -33,7 +33,6 @@ export default {
   component: _SideNavigation,
   argTypes: {}
 }
-
 const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
   const { onOpen, isOpen, onClose, onMouseEnter, onMouseLeave, onPin, isPined } =
     useSideNavigationControls()
