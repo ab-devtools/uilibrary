@@ -27,7 +27,7 @@
   --ds-controller-mark-light: var(--ds-color-icon-inverse);
   --ds-controller-mark-dark: var(--ds-color-icon-disabled);
 
-  --ds-controller-border-color-default: var(--ds-color-border-primary);
+  --ds-controller-border-color-default: var(--ds-color-border-primary-light);
   --ds-controller-border-color-focused: var(--grey-500);
   --ds-controller-border-color-disabled: var(--ds-color-border-disabled);
 
@@ -44,8 +44,8 @@
   --ds-controller-transition: background-color .3s linear, border .3s linear;
 
   --ds-controller-error-bg-color: var(--ds-color-bg-danger-dark);
-  --ds-controller-error-border-color: var(--ds-color-border-danger);
-  --ds-controller-error-text-color: var(--ds-color-text-danger);
+  --ds-controller-error-border-color: var(--ds-color-border-danger-dark);
+  --ds-controller-error-text-color: var(--ds-color-text-danger-light);
 
   --ds-radio-border-width: 6px;
 
