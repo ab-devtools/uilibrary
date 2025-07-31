@@ -100,7 +100,7 @@ ItemSelectGroup.args = {
   isHorizontal: false,
   iconGroup: {
     Component: IconCheckmark,
-    type: 'brand',
+    type: 'brand-light',
     className: 'ml-16'
   }
 }

@@ -1,14 +1,11 @@
 import type { JSX } from 'react'
-import React, { useCallback, useEffect, useId, useRef, useState } from 'react'
+import React, { useId, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import classnames from 'classnames'
 import { useHideBodyScroll, useOnOutsideClick } from '../../hooks'
 import { AnimatePresenceWrapper } from '../../helperComponents/AnimatePresenceWrapper'
-import { Button } from '../Button'
 import type { TSideSheetPropTypes } from './types'
-import { useDispatchEventOnScroll } from '../../hooks/useDispatchEventOnScroll'
 import { Footer } from './Footer/Footer'
-import IconCaretUp from '../SVGIcons/IconCaretUp'
 import IconDismiss from '../SVGIcons/IconDismiss'
 import { Heading } from '../Heading'
 import { ButtonIcon } from '../ButtonIcon'
@@ -31,7 +28,6 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
     className = '',
     tabItemsProps,
     footerButtons,
-    scrollToTopOptions,
     children,
     closeOnOutsideClick = true,
     checkboxInfo,
@@ -42,7 +38,6 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
     withOverlay = false
   } = props
   const [containerRef, setContainerRef] = useState<HTMLDivElement | null>(null)
-  const [isShownScrollIcon, setIsShownScrollIcon] = useState<boolean>(false)
   const scrollbarContainerRef = useRef<HTMLDivElement>(null)
 
   useOnOutsideClick(
@@ -54,32 +49,6 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
   )
 
   useHideBodyScroll(isOpen && isBodyHidden)
-  const dispatchScrollEvent = useDispatchEventOnScroll()
-
-  useEffect(() => {
-    if (isOpen && scrollToTopOptions) {
-      const handleOnScroll = (e: Event) => {
-        dispatchScrollEvent()
-        if (isOpen) {
-          setIsShownScrollIcon(
-            (e.currentTarget as HTMLDivElement).scrollTop > scrollToTopOptions.onPixel
-          )
-        }
-      }
-      scrollbarContainerRef.current?.addEventListener('scroll', handleOnScroll)
-    }
-    if (!isOpen) {
-      handleScrollToTop()
-    }
-  }, [isOpen, scrollToTopOptions])
-
-  const handleScrollToTop = useCallback(() => {
-    setIsShownScrollIcon(false)
-    scrollbarContainerRef.current?.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    })
-  }, [])
 
   const isFromLeft = position === 'left'
   const isFromRight = position === 'right'

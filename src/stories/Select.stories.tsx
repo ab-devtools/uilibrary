@@ -413,7 +413,7 @@ Select.args = {
   label: 'country',
   avatar: image.src,
   placeHolder: 'Select country',
-  labelAddons: <IconInfo size={'xsmall'} type={'information'} className={'ml-4'} />,
+  labelAddons: <IconInfo size={'xsmall'} type={'information-light'} className={'ml-4'} />,
   isCreatable: false
 }
 
@@ -475,7 +475,7 @@ MultiSelect.args = {
   // isRadioGrouped: true,
   // autoApplyOnClose: true,
   // helperText: 'To be filled in only for USA, Canada and European countries.',
-  labelAddons: <IconInfo size={'xsmall'} type={'information'} className={'ml-4'} />
+  labelAddons: <IconInfo size={'xsmall'} type={'information-light'} className={'ml-4'} />
   // disabled: true
   // labelRightIconComponent: <IconPerson size="xsmall" className="mr-4" />,
   // optionRightIconComponent: <IconPerson size="xsmall" />
@@ -519,7 +519,7 @@ NestedSelect.args = {
       }}
     />
   ),
-  labelAddons: <IconInfo size={'xsmall'} type={'information'} className={'ml-4'} />
+  labelAddons: <IconInfo size={'xsmall'} type={'information-light'} className={'ml-4'} />
 }
 
 // ----------LANGUAGE-SELECT----------------

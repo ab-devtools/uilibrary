@@ -197,9 +197,6 @@ const Template: StoryFn<TSideSheetPropTypes> = (args) => {
         shouldRemoveCallback={false}
         onSubmit={onSubmit}
         headerContent={<p>Lorem ipsum dolor sit amet consectetu </p>}
-        scrollToTopOptions={{
-          onPixel: 200
-        }}
       >
         <>
           <div>
@@ -272,7 +269,9 @@ const Template: StoryFn<TSideSheetPropTypes> = (args) => {
                 options={OPTIONS_GROUPED}
                 placeHolder="Select country"
                 helperText="To be filled in only for USA, Canada and European countries."
-                labelAddons={<IconInfo size={'xsmall'} type={'information'} className={'ml-4'} />}
+                labelAddons={
+                  <IconInfo size={'xsmall'} type={'information-light'} className={'ml-4'} />
+                }
                 isGrouped={true}
                 isButtonSelect={true}
                 dropdownWidth={400}

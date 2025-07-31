@@ -18,7 +18,7 @@ export default {
 
 const Template: StoryFn<TButtonIconPropTypes> = (args) => (
   <div>
-    <_FramedIcon {...args} iconProps={{ Component: IconDelete, type: 'warning' }} />
+    <_FramedIcon {...args} iconProps={{ Component: IconDelete, type: 'warning-light' }} />
   </div>
 )
 

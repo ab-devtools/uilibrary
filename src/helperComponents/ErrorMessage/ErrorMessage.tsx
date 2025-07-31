@@ -10,7 +10,7 @@ export const ErrorMessage = (props: TErrorMessageProps): JSX.Element => {
     <Text
       className={`error-message ${className}`}
       size="small"
-      type="danger"
+      type="danger-light"
       dataId={dataId ? `${dataId}-error-message` : ''}
     >
       <>

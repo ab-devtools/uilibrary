@@ -1,4 +1,5 @@
 import type { TSVGIconSize, TTextSize } from '../SVGIcons/types'
+import type { TTextTypes } from '../Text/types'
 
 export const RIGHT_ICON_SIZE_MAPPING: { [key: string]: TSVGIconSize } = {
   large: 'small',
@@ -19,4 +20,14 @@ export const TEXT_SIZE_MAPPING: { [key: string]: TTextSize } = {
   medium: 'standard',
   small: 'standard',
   xsmall: 'small'
+}
+export const COLOR_MAPPING: { [key: string]: TTextTypes } = {
+  primary: 'primary',
+  disabled: 'disabled',
+  brand: 'brand-light',
+  danger: 'danger-light',
+  warning: 'warning-light',
+  success: 'success-light',
+  information: 'information-light',
+  discovery: 'discovery-light'
 }

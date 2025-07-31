@@ -29,9 +29,6 @@ export interface TSideSheetPropTypes {
   tabItemsProps?: TTabProps
   children?: ReactNode
   className?: string
-  scrollToTopOptions?: {
-    onPixel: number
-  }
   checkboxInfo?: TCheckboxInfo
   headerContent?: ReactNode
   isPositioned?: boolean

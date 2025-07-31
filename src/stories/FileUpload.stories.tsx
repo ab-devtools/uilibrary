@@ -39,5 +39,5 @@ FileUpload.args = {
   label: 'Label',
   buttonText: 'Attach file',
   isFileUploaded: false,
-  labelAddons: <IconInfo size={'xsmall'} type={'information'} className={'ml-4'} />
+  labelAddons: <IconInfo size={'xsmall'} type={'information-light'} className={'ml-4'} />
 }

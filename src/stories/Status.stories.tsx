@@ -38,7 +38,7 @@ const Template: StoryFn<TStatusProps> = (args) => {
         </Text>
       </_Status>
       <_Status {...args} type={'information'}>
-        <Text type={'information'} size={'small'}>
+        <Text type={'information-light'} size={'small'}>
           Status subtext
         </Text>
       </_Status>
@@ -64,7 +64,7 @@ Status.args = {
       position="top-center"
     >
       <div id="beneficiary-tooltip">
-        <IconInfo type="information" size="xsmall" className={'ml-4 pointer'} />
+        <IconInfo type="information-light" size="xsmall" className={'ml-4 pointer'} />
       </div>
     </Popover>
   )

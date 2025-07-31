@@ -106,9 +106,9 @@ export const OneTimePassword = React.forwardRef<HTMLInputElement, OtpCustomProps
               <ErrorMessage message={error} icon="infoFilled" dataId={dataId} />
             ) : null}
             {successMessage ? (
-              <Text size="small" type="success" className="flexbox align-items--center">
+              <Text size="small" type="success-light" className="flexbox align-items--center">
                 <>
-                  <IconCheckmarkCircleFilled type="success" size="xsmall" />
+                  <IconCheckmarkCircleFilled type="success-light" size="xsmall" />
                   <span className="ml-4">{successMessage}</span>
                 </>
               </Text>
