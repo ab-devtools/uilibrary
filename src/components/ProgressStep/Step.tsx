@@ -27,7 +27,7 @@ export const Step = (props: TStepProps): ReactElement => {
 
   const textType = useMemo(() => {
     if (isActive && !isRejected) {
-      return 'brand'
+      return 'brand-light'
     }
     if (isCompleted || isRejected) {
       return 'inverse'

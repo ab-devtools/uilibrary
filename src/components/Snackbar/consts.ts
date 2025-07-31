@@ -1,10 +1,10 @@
 import type { TSVGIconType } from '../SVGIcons/types'
 
 export const TYPE_MAPPING: { [key: string]: TSVGIconType } = {
-  warning: 'warning',
-  success: 'success',
-  error: 'danger',
-  information: 'information'
+  warning: 'warning-light',
+  success: 'success-light',
+  error: 'danger-light',
+  information: 'information-light'
 }
 
 export const ICONS_MAPPING: { [key: string]: string } = {

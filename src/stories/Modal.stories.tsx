@@ -69,7 +69,7 @@ const ModalConfirmationTemplate: StoryFn<TModalConfirmationPropTypes> = (args) =
         {...args}
         iconProps={{
           Component: IconDelete,
-          type: 'warning'
+          type: 'warning-light'
         }}
         onClose={closeModal}
         isOpen={isOpen}

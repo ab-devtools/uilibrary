@@ -53,5 +53,5 @@ RadioGroup.args = {
   disabled: false,
   required: false,
   name: 'option',
-  labelAddons: <IconInfo size={'xsmall'} type={'information'} className={'ml-4'} />
+  labelAddons: <IconInfo size={'xsmall'} type={'information-light'} className={'ml-4'} />
 }

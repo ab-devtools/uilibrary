@@ -5,7 +5,12 @@ import type { TChipsProps } from './types'
 import { ChipCustomType } from './types'
 import classNames from 'classnames'
 import IconDismissCircleFilled from '../SVGIcons/IconDismissCircleFilled'
-import { LEFT_ICON_SIZE_MAPPING, RIGHT_ICON_SIZE_MAPPING, TEXT_SIZE_MAPPING } from './consts'
+import {
+  COLOR_MAPPING,
+  LEFT_ICON_SIZE_MAPPING,
+  RIGHT_ICON_SIZE_MAPPING,
+  TEXT_SIZE_MAPPING
+} from './consts'
 
 export const Chips = (props: TChipsProps): ReactElement => {
   const {
@@ -45,7 +50,7 @@ export const Chips = (props: TChipsProps): ReactElement => {
         <leftIconProps.Component
           dataId={`${dataId}-icon`}
           size={RIGHT_ICON_SIZE_MAPPING[size]}
-          type={customType}
+          type={type == ChipCustomType.filled ? 'inverse' : COLOR_MAPPING[customType]}
           className={'chips__icon'}
           {...leftIconProps}
         />
@@ -53,7 +58,7 @@ export const Chips = (props: TChipsProps): ReactElement => {
       {text ? (
         <Text
           dataId={`${dataId}-text`}
-          type={customType}
+          type={type == ChipCustomType.filled ? 'inverse' : COLOR_MAPPING[customType]}
           size={TEXT_SIZE_MAPPING[size]}
           className="chips__label text-truncate"
         >
@@ -64,7 +69,7 @@ export const Chips = (props: TChipsProps): ReactElement => {
         <IconDismissCircleFilled
           dataId={`${dataId}-icon`}
           size={LEFT_ICON_SIZE_MAPPING[size]}
-          type={customType}
+          type={type == ChipCustomType.filled ? 'inverse' : COLOR_MAPPING[customType]}
           className="chips__delete ml-4"
           onClick={handleClick}
         />

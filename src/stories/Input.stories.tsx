@@ -132,7 +132,7 @@ Input.args = {
       position="top-center"
     >
       <div id="beneficiary-tooltip">
-        <IconInfo type="information" size="xsmall" className={'ml-4 pointer'} />
+        <IconInfo type="information-light" size="xsmall" className={'ml-4 pointer'} />
       </div>
     </Popover>
   ),
