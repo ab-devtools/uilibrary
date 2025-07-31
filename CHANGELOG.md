@@ -1,3 +1,12 @@
+## [1.35.2](https://github.com/ab-devtools/uilibrary/compare/1.35.1...1.35.2) (2025-07-31)
+
+
+### Bug Fixes
+
+* color tokens updates ([52da322](https://github.com/ab-devtools/uilibrary/commit/52da322dc769c8656ba99462f15e54ff1a6bf6a3))
+* color tokens updates ([74e625f](https://github.com/ab-devtools/uilibrary/commit/74e625f888568ef3ad2f9e0dfdc75db18d323616))
+* fix for expandable row hover ui ([006dc05](https://github.com/ab-devtools/uilibrary/commit/006dc055eed823a6c58b6227000648b778a5e115))
+
 ## [1.35.1](https://github.com/ab-devtools/uilibrary/compare/1.35.0...1.35.1) (2025-07-30)
 
 
