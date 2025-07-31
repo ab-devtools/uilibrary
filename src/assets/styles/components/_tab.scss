@@ -167,7 +167,7 @@
   &--primary {
     --ds-tab-border-color-default: var(--ds-color-border-tertiary);
     --ds-tab-border-color-hover: var(--ds-color-border-tertiary);
-    --ds-tab-border-color-selected: var(--ds-color-border-selected);
+    --ds-tab-border-color-selected: var(--ds-color-border-brand-light);
     --ds-tab-border-color-disabled: var(--ds-color-border-tertiary);
 
     gap: var(--ds-tabs-primary-gap);
