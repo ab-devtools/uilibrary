@@ -202,7 +202,7 @@
           @include mixin.align-items(center);
         }
 
-        &:hover {
+        &:not(.advanced-table__expanded-row):hover {
           td {
             cursor: pointer;
             background-color: var(--ds-table-td-bg-hover);
@@ -344,20 +344,16 @@
                   white-space: nowrap !important;
                 }
               }
+
+              &:hover {
+                td {
+                  &.with-checkbox {
+                    background-color: var(--ds-table-td-bg-hover);
+                  }
+                }
+              }
             }
           }
-        }
-      }
-    }
-
-    &:hover td {
-      background-color: var(--ds-table-td-bg-hover);
-
-      .advanced-table__expanded-content table tbody tr td {
-        background-color: var(--ds-table-td-bg-hover);
-
-        &.with-checkbox {
-          background-color: var(--ds-table-td-bg-hover);
         }
       }
     }
