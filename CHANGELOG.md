@@ -1,3 +1,10 @@
+## [1.35.3](https://github.com/ab-devtools/uilibrary/compare/1.35.2...1.35.3) (2025-07-31)
+
+
+### Bug Fixes
+
+* fix for sidenavigation header additional info ([a7aaee5](https://github.com/ab-devtools/uilibrary/commit/a7aaee5a5a4e4e535eabac7e77b58632a75bd10d))
+
 ## [1.35.2](https://github.com/ab-devtools/uilibrary/compare/1.35.1...1.35.2) (2025-07-31)
 
 
