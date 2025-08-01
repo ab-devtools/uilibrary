@@ -65,15 +65,27 @@ export const NavigationItem = (props: TNavigationLinkPropTypes): ReactElement =>
                   )}
                 </span>
               )}
-              {actionsList?.length && (
+              {(actionsList?.length || expandable) && (
                 <div className={'navigation-item__actions__right'}>
-                  {actionsList.map((item: TActionItemProps, index) => {
+                  {actionsList?.map((item: TActionItemProps, index) => {
                     return (
                       <div key={index}>
                         <ButtonIcon iconProps={{ Component: item.iconProps }} size={'small'} />
                       </div>
                     )
                   })}
+                  {expandable && (
+                    <span
+                      className={classNames('navigation-item__actions__expand_mobile', childOpen && 'opened')}
+                    >
+                      {expandIconProps.Component && (
+                        <expandIconProps.Component
+                          size={expandIconProps.size || 'small'}
+                          className={'mr-12'}
+                        />
+                      )}
+                    </span>
+                  )}
                 </div>
               )}
             </div>
