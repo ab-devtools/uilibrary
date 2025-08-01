@@ -1,3 +1,13 @@
+## [1.35.5](https://github.com/ab-devtools/uilibrary/compare/1.35.4...1.35.5) (2025-08-01)
+
+
+### Bug Fixes
+
+* sidebar navigation item tablet and mobile ui fix ([5194fc6](https://github.com/ab-devtools/uilibrary/commit/5194fc6d082c5c7ed39f84622cf5ee3fd265acd9))
+* sidebar navigation item tablet and mobile ui fix ([d54f3d4](https://github.com/ab-devtools/uilibrary/commit/d54f3d4147e568f5e59e2524fa6cc81cbaa86020))
+* sidebar navigation item tablet and mobile ui fix ([c350d1c](https://github.com/ab-devtools/uilibrary/commit/c350d1cd944ffa4e2119d76039b82fb7f372b2ab))
+* sidebar navigation item tablet and mobile ui fix ([8084564](https://github.com/ab-devtools/uilibrary/commit/80845645b6e895dfdec3edf6fe685b719483e43e))
+
 ## [1.35.4](https://github.com/ab-devtools/uilibrary/compare/1.35.3...1.35.4) (2025-08-01)
 
 
