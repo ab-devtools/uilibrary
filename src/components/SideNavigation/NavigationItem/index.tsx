@@ -76,7 +76,10 @@ export const NavigationItem = (props: TNavigationLinkPropTypes): ReactElement =>
                   })}
                   {expandable && (
                     <span
-                      className={classNames('navigation-item__actions__expand_mobile', childOpen && 'opened')}
+                      className={classNames(
+                        'navigation-item__actions__expand_mobile',
+                        childOpen && 'opened'
+                      )}
                     >
                       {expandIconProps.Component && (
                         <expandIconProps.Component
