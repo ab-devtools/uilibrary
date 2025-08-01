@@ -41,7 +41,7 @@ export const SideNavigation = (props: TSideNavigationPropTypes): JSX.Element => 
         <Link url={logoUrl} className={'side-navigation__logo'}>
           <Image imagePath={isOpen ? logo : logoClosed} isBackgroundImage={false} />
         </Link>
-        {HeaderChildren ? <HeaderChildren isOpen={!!isOpen} /> : null}
+        {HeaderChildren && isOpen ? <HeaderChildren isOpen={!!isOpen} /> : null}
         <ButtonIcon
           iconProps={{
             Component: isMobile() ? IconDismiss : isPined ? IconPanelLeft : IconPanelRight
