@@ -99,7 +99,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                 type={NavigationItemTypes.MAIN}
                 isOpen={isNavigationItemOpen}
                 expandable
-                actionsList={[{ iconProps: IconAdd }, { iconProps: IconMore }]}
+                actionsList={[{ iconProps: IconMore }]}
               >
                 <>
                   <NavigationItem
@@ -200,7 +200,7 @@ const Template: StoryFn<TSideNavigationPropTypes> = (args) => {
                 type={NavigationItemTypes.MAIN}
                 isOpen={isNavigationItemOpen}
                 expandable
-                actionsList={[{ iconProps: IconAdd }, { iconProps: IconMore }]}
+                actionsList={[{ iconProps: IconMore }]}
               >
                 <>
                   <NavigationItem
