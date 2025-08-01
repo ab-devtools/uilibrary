@@ -1,3 +1,15 @@
+## [1.35.4](https://github.com/ab-devtools/uilibrary/compare/1.35.3...1.35.4) (2025-08-01)
+
+
+### Bug Fixes
+
+* fix for avatar text color ([cc7feef](https://github.com/ab-devtools/uilibrary/commit/cc7feef83e72350f2ab00ec67a2678d282833f40))
+* fix for avatar text color ([57096a9](https://github.com/ab-devtools/uilibrary/commit/57096a927bcbb53524c42510a6cf2a1d8d4d64b6))
+* fix for avatar text color ([2ba0575](https://github.com/ab-devtools/uilibrary/commit/2ba0575c1205fd209553f65497f51a29d66ddb03))
+* fix for sidenavigation header dropdown ([77bbef8](https://github.com/ab-devtools/uilibrary/commit/77bbef84e341596c044f970ca128228dde285f18))
+* ui fix ([080fce5](https://github.com/ab-devtools/uilibrary/commit/080fce5d2b335d303ae6bb485afa61d3afbfbc97))
+* ui fix ([ccdeb10](https://github.com/ab-devtools/uilibrary/commit/ccdeb109230045ae01b792de84b7b3e983195a6e))
+
 ## [1.35.3](https://github.com/ab-devtools/uilibrary/compare/1.35.2...1.35.3) (2025-07-31)
 
 
