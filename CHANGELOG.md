@@ -1,3 +1,10 @@
+## [1.35.6](https://github.com/ab-devtools/uilibrary/compare/1.35.5...1.35.6) (2025-08-05)
+
+
+### Bug Fixes
+
+* select uniq key ([88716c3](https://github.com/ab-devtools/uilibrary/commit/88716c331c71d85870548c42459d7c4361e2b41f))
+
 ## [1.35.5](https://github.com/ab-devtools/uilibrary/compare/1.35.4...1.35.5) (2025-08-01)
 
 
