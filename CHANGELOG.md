@@ -1,3 +1,10 @@
+## [1.35.7](https://github.com/ab-devtools/uilibrary/compare/1.35.6...1.35.7) (2025-08-05)
+
+
+### Bug Fixes
+
+* column settings text elipsis ([b2169b3](https://github.com/ab-devtools/uilibrary/commit/b2169b32fdba737e3d7683e9a97c212202ab9dfa))
+
 ## [1.35.6](https://github.com/ab-devtools/uilibrary/compare/1.35.5...1.35.6) (2025-08-05)
 
 
