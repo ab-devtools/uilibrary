@@ -1,4 +1,4 @@
-import type { JSX } from 'react';
+import type { JSX } from 'react'
 import { Fragment } from 'react'
 import React, { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react'
 import classNames from 'classnames'

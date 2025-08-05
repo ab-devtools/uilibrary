@@ -459,6 +459,13 @@
           font-size: var(--font-size-12);
           font-weight: var(--font-weight-400);
           text-transform: capitalize;
+          width: 80%;
+          span {
+            white-space: nowrap;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
         }
       }
     }
