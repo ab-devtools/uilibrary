@@ -1,4 +1,5 @@
-import type { JSX } from 'react'
+import type { JSX } from 'react';
+import { Fragment } from 'react'
 import React, { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react'
 import classNames from 'classnames'
 import {
@@ -275,10 +276,9 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
               {filteredData.map((item: TSelectOption, i: number) => {
                 const isSelected = item.value === currentSelection
                 return (
-                  <>
+                  <Fragment key={item.value}>
                     {renderOptions ? (
                       renderOptions({
-                        key: item.value as string,
                         onClick: clickHandler(isSelected),
                         data: item,
                         index: i,
@@ -289,7 +289,6 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
                       <OptionItem
                         tooltipAddons={tooltipAddons}
                         data={item}
-                        key={item.value}
                         onClick={clickHandler(isSelected)}
                         optionLeftIcon={item?.optionLeftIcon}
                         labelLeftIconProps={labelLeftIconProps}
@@ -300,7 +299,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
                         isSelected={isSelected}
                       />
                     )}
-                  </>
+                  </Fragment>
                 )
               })}
             </div>
