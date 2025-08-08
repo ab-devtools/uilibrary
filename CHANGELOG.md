@@ -1,3 +1,10 @@
+# [1.37.0](https://github.com/ab-devtools/uilibrary/compare/1.36.0...1.37.0) (2025-08-08)
+
+
+### Features
+
+* add new border styles ([51aac23](https://github.com/ab-devtools/uilibrary/commit/51aac2362372344737bb2694627ddd30b6d72ff4))
+
 # [1.36.0](https://github.com/ab-devtools/uilibrary/compare/1.35.7...1.36.0) (2025-08-07)
 
 
