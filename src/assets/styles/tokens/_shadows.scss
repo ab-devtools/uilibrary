@@ -12,10 +12,12 @@
   --shadow-9: 0px 16px 24px rgba(34, 34, 34, 0.12), 0px 6px 30px rgba(34, 34, 34, 0.08), 0px 8px 10px rgba(34, 34, 34, 0.16);
   --shadow-10: 0px 24px 38px rgba(34, 34, 34, 0.12), 0px 9px 46px rgba(34, 34, 34, 0.08), 0px 11px 15px rgba(34, 34, 34, 0.16);
 
+
   --shadow-brand-1: 0px 0px 0px 1px rgb(114, 191, 68);
   --shadow-brand-2: 0px 0px 0px 4px rgba(202, 231, 185, 0.80);
   --shadow-success: 0px 0px 0px 4px rgba(197, 229, 204, 0.80);
   --shadow-warning: 0px 0px 0px 4px rgba(250, 235, 185, 0.80);
+  --shadow-secondary: 0 0 0 4px rgba(213, 213, 213, 0.80);
   --shadow-danger: 0px 0px 0px 4px rgba(255, 181, 171, 0.80);
   --shadow-info: 0px 0px 0px 4px rgba(193, 222, 252, 0.80);
   --shadow-discovery: 0px 0px 0px 4px rgba(203, 196, 237, 0.80);
@@ -38,10 +40,12 @@
   --ds-shadow-8: var(--shadow-8);
   --ds-shadow-9: var(--shadow-9);
   --ds-shadow-10: var(--shadow-10);
+  --ds-shadow-11: var(--shadow-11);
 
   --ds-shadow-brand-1: var(--shadow-brand-1);
   --ds-shadow-brand-2: var(--shadow-brand-2);
   --ds-shadow-success: var(--shadow-success);
+  --ds-shadow-secondary: var(--shadow-secondary);
   --ds-shadow-warning: var(--shadow-warning);
   --ds-shadow-danger: var(--shadow-danger);
   --ds-shadow-info: var(--shadow-info);
