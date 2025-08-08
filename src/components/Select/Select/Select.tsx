@@ -37,7 +37,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
     disabled,
     dataId = '',
     placeHolder,
-    isCreatable,
+    isCreateOnOutsideClick,
     selectedItem = null,
     setFieldValue,
     setSelectedItem,
@@ -81,7 +81,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
   const currentSelection = (value as TItemValue) || selectedItem
   const [selectedOption, setSelectedOption] = useState<TSelectOption | null>(null)
 
-  const isWithSearch = (withSearch && isDynamicSearchEnabled) || isCreatable
+  const isWithSearch = (withSearch && isDynamicSearchEnabled) || isCreateOnOutsideClick
 
   const setCurrentSelectedLabel = useCallback(() => {
     const selectedItem = options.find((item) => item.value === currentSelection) as TSelectOption
@@ -101,7 +101,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
   const openDropdown = () => setIsOpen(true)
   const closeDropdown = () => {
     setIsOpen(false)
-    if (!isCreatable) {
+    if (!isCreateOnOutsideClick) {
       setSearchValue('')
       setCurrentSelectedLabel()
     }
@@ -110,11 +110,9 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
   const handleOutsideClick = () => {
     if (!searchValue) {
       setCurrentSelectedLabel()
-    } else if (isCreatable) {
-      const selectedItem = options.find((item) => item.value === currentSelection)
-      setSelectedOption({ label: selectedItem?.label || '', value: selectedItem?.value || '' })
-      onItemSelect(selectedItem?.value || '')
-      setSearchValue(selectedItem?.label?.toString() || '')
+    } else if (isCreateOnOutsideClick) {
+      setSelectedOption({ label: searchValue, value: searchValue })
+      onItemSelect(searchValue)
     }
     closeDropdown()
   }
@@ -195,13 +193,6 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
     input: inputRef.current
   })
 
-  const inputValue = useMemo(() => {
-    if (searchValue) {
-      return searchValue
-    }
-    return selectedOption?.label || ''
-  }, [searchValue, selectedOption])
-
   useChangePositionsOnScroll({
     parentElement: inputRef?.current,
     childElement: dropdownRef,
@@ -232,7 +223,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
         rightIconProps={isOpen ? selectRightIconOpenedProps : selectRightIconProps}
         readonly={!searchValue && !isWithSearch}
         placeholder={placeHolder}
-        value={inputValue}
+        value={selectedOption?.label || searchValue || ''}
         isValid={isValid}
         disabled={disabled}
         helperText={outerHelperText}

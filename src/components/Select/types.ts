@@ -138,7 +138,7 @@ export interface TSingleSelectPropTypes extends IFormCompProps, TSelectBaseProps
   innerHelperText?: string
   labelAddons?: JSX.Element
   tooltipAddons?: TTooltipProps
-  isCreatable?: boolean
+  isCreateOnOutsideClick?: boolean
   renderOptions?: (props: IRenderOptionItemProps) => JSX.Element
 }
 

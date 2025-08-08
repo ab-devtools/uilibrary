@@ -414,7 +414,7 @@ Select.args = {
   avatar: image.src,
   placeHolder: 'Select country',
   labelAddons: <IconInfo size={'xsmall'} type={'information-light'} className={'ml-4'} />,
-  isCreatable: false
+  isCreateOnOutsideClick: false
 }
 
 // -----------MULTISELECT---------
@@ -576,8 +576,8 @@ ProfileDropdown.args = {
   avatar: <Avatar size={'medium'} initials={'RG'} />,
   name: 'Mariam Yeghiazaryan',
   email: 'mariam.yeghiazaryan@gmail.com',
-  isCreatable: false,
   userInfoAlignment: 'left',
+  isCreateOnOutsideClick: false,
   bodyItems: [
     {
       icon: <IconQuestionCircle size={'small'} className={'mr-8'} />,
