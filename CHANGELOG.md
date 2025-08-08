@@ -1,3 +1,10 @@
+## [1.37.1](https://github.com/ab-devtools/uilibrary/compare/1.37.0...1.37.1) (2025-08-08)
+
+
+### Bug Fixes
+
+* create on outside click ([9fbcf44](https://github.com/ab-devtools/uilibrary/commit/9fbcf44863fa2b9775bc6c51e4c63efb34647b7a))
+
 # [1.37.0](https://github.com/ab-devtools/uilibrary/compare/1.36.0...1.37.0) (2025-08-08)
 
 
