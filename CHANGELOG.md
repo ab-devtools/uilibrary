@@ -1,3 +1,11 @@
+## [1.37.2](https://github.com/ab-devtools/uilibrary/compare/1.37.1...1.37.2) (2025-08-08)
+
+
+### Bug Fixes
+
+* input error icon color ([6264929](https://github.com/ab-devtools/uilibrary/commit/626492910ad30889158c4ffaf8812b7b1652b887))
+* input error icon color ([7309b30](https://github.com/ab-devtools/uilibrary/commit/7309b30adca8de4027ca9bcb3b852a003a3452c9))
+
 ## [1.37.1](https://github.com/ab-devtools/uilibrary/compare/1.37.0...1.37.1) (2025-08-08)
 
 
