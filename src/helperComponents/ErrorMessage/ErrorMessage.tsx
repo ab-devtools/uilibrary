@@ -15,7 +15,12 @@ export const ErrorMessage = (props: TErrorMessageProps): JSX.Element => {
     >
       <>
         {icon && (
-          <IconDynamicComponent componentName={icon} className="mr-4" size="xsmall" type="danger" />
+          <IconDynamicComponent
+            componentName={icon}
+            className="mr-4"
+            size="xsmall"
+            type="danger-light"
+          />
         )}
         <span>{message}</span>
       </>
