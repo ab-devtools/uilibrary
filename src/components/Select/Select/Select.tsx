@@ -33,7 +33,8 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
     hasError,
     isLoading,
     isValid,
-    withSearch,
+    isSearchable = false,
+    isDynamicSearchable = false,
     disabled,
     dataId = '',
     placeHolder,
@@ -69,7 +70,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
   const [dropdownRef, setDropdownRef] = useState<HTMLDivElement | null>(null)
 
   const isDynamicSearchEnabled = useMemo(() => {
-    if (isOpen) {
+    if (isOpen && isDynamicSearchable) {
       const scrollHeight = scrollRef.current?.scrollHeight || 0
       const optionsContentHeight = dropdownRef?.offsetHeight || 0
 
@@ -81,7 +82,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
   const currentSelection = (value as TItemValue) || selectedItem
   const [selectedOption, setSelectedOption] = useState<TSelectOption | null>(null)
 
-  const isWithSearch = (withSearch && isDynamicSearchEnabled) || isCreateOnOutsideClick
+  const isWithSearch = isSearchable || isDynamicSearchEnabled || isCreateOnOutsideClick
 
   const setCurrentSelectedLabel = useCallback(() => {
     const selectedItem = options.find((item) => item.value === currentSelection) as TSelectOption
@@ -223,7 +224,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
         rightIconProps={isOpen ? selectRightIconOpenedProps : selectRightIconProps}
         readonly={!searchValue && !isWithSearch}
         placeholder={placeHolder}
-        value={selectedOption?.label || searchValue || ''}
+        value={searchValue || selectedOption?.label || ''}
         isValid={isValid}
         disabled={disabled}
         helperText={outerHelperText}
