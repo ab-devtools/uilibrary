@@ -1,3 +1,10 @@
+## [1.37.4](https://github.com/ab-devtools/uilibrary/compare/1.37.3...1.37.4) (2025-08-11)
+
+
+### Bug Fixes
+
+* modal title line height ([e3493ef](https://github.com/ab-devtools/uilibrary/commit/e3493ef4a24f3a9bcf5e1f2c0e6f96f5b1900791))
+
 ## [1.37.3](https://github.com/ab-devtools/uilibrary/compare/1.37.2...1.37.3) (2025-08-11)
 
 
