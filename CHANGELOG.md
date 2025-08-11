@@ -1,3 +1,11 @@
+## [1.37.3](https://github.com/ab-devtools/uilibrary/compare/1.37.2...1.37.3) (2025-08-11)
+
+
+### Bug Fixes
+
+* add 28 px line height ([0c9ee02](https://github.com/ab-devtools/uilibrary/commit/0c9ee027db0ce2053ba8676fc5a2f6133342e57d))
+* **IPA-790:** add separate logic for isSearchable & isDynamicSearchable ([5be4135](https://github.com/ab-devtools/uilibrary/commit/5be41351a9875b1cda53b4da78e184b5a21fdebf))
+
 ## [1.37.2](https://github.com/ab-devtools/uilibrary/compare/1.37.1...1.37.2) (2025-08-08)
 
 
