@@ -1,3 +1,10 @@
+## [1.37.5](https://github.com/ab-devtools/uilibrary/compare/1.37.4...1.37.5) (2025-08-13)
+
+
+### Bug Fixes
+
+* spinner type from brand-light to brand ([762b90a](https://github.com/ab-devtools/uilibrary/commit/762b90a5c458652fd5b52e2e960faf85c68a400e))
+
 ## [1.37.4](https://github.com/ab-devtools/uilibrary/compare/1.37.3...1.37.4) (2025-08-11)
 
 
