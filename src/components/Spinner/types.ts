@@ -1,4 +1,4 @@
-export type TSpinnerTypes = 'primary' | 'inverse' | 'brand-light'
+export type TSpinnerTypes = 'primary' | 'inverse' | 'brand'
 export interface TSpinnerProps {
   mode?: 'light' | 'dark'
   type?: TSpinnerTypes
