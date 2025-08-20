@@ -140,6 +140,12 @@ export interface TSingleSelectPropTypes extends IFormCompProps, TSelectBaseProps
   labelAddons?: JSX.Element
   tooltipAddons?: TTooltipProps
   isCreateOnOutsideClick?: boolean
+  inputType?: 'text' | 'number' | 'time' | 'password' | 'email' | 'file' | 'tel' | 'date' | 'numeric'
+  isAllowed?: (values: {
+    formattedValue: string
+    value: string
+    floatValue: number | undefined
+  }) => boolean
   renderOptions?: (props: IRenderOptionItemProps) => JSX.Element
 }
 

@@ -59,7 +59,9 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
     },
     labelAddons,
     tooltipAddons,
-    renderOptions
+    renderOptions,
+    inputType = 'text',
+    isAllowed
   } = props
 
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -226,9 +228,11 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
         placeholder={placeHolder}
         value={searchValue || selectedOption?.label || ''}
         isValid={isValid}
+        type={inputType}
         disabled={disabled}
         helperText={outerHelperText}
         ref={inputRef}
+        isAllowed={isAllowed}
         labelAddons={labelAddons}
         autoComplete="false"
       />
