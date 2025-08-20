@@ -1,3 +1,11 @@
+# [1.38.0](https://github.com/ab-devtools/uilibrary/compare/1.37.8...1.38.0) (2025-08-20)
+
+
+### Features
+
+* disable search input foxus ([2eb1ebb](https://github.com/ab-devtools/uilibrary/commit/2eb1ebbd7e937f32ff72c1e69146ba03d2e09019))
+* remove unused imports ([3df2db3](https://github.com/ab-devtools/uilibrary/commit/3df2db3dc45abd5ff2bd5cf7b4cfdd868c373ef2))
+
 ## [1.37.8](https://github.com/ab-devtools/uilibrary/compare/1.37.7...1.37.8) (2025-08-20)
 
 
