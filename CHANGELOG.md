@@ -1,3 +1,11 @@
+## [1.37.6](https://github.com/ab-devtools/uilibrary/compare/1.37.5...1.37.6) (2025-08-20)
+
+
+### Bug Fixes
+
+* add select input type ([0a5cec5](https://github.com/ab-devtools/uilibrary/commit/0a5cec5a93801e5756ae6feb9f8010c39a1a1b82))
+* add select input type ([f33d208](https://github.com/ab-devtools/uilibrary/commit/f33d2087096b85926f86512ec622c832ce517e9e))
+
 ## [1.37.5](https://github.com/ab-devtools/uilibrary/compare/1.37.4...1.37.5) (2025-08-13)
 
 
