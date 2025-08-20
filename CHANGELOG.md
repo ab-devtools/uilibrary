@@ -1,3 +1,11 @@
+## [1.37.7](https://github.com/ab-devtools/uilibrary/compare/1.37.6...1.37.7) (2025-08-20)
+
+
+### Bug Fixes
+
+* add select input change hendler ([ed11e64](https://github.com/ab-devtools/uilibrary/commit/ed11e64982631a55f7fa65af3efad363d684c12f))
+* add select input change hendler ([d20020e](https://github.com/ab-devtools/uilibrary/commit/d20020e581e6618464b4aa510ff5ce156ec25d49))
+
 ## [1.37.6](https://github.com/ab-devtools/uilibrary/compare/1.37.5...1.37.6) (2025-08-20)
 
 
