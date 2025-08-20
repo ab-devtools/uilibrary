@@ -410,6 +410,7 @@ Select.args = {
   disabled: false,
   isLoading: false,
   options: OPTIONS,
+  inputType: 'numeric',
   label: 'country',
   avatar: image.src,
   placeHolder: 'Select country',
