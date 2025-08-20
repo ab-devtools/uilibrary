@@ -43,7 +43,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
     setFieldValue,
     setSelectedItem,
     onInputChange,
-    handleInputChange,
+    onInputFormatting,
     outerHelperText,
     innerHelperText,
     isRequiredField,
@@ -61,7 +61,6 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
     labelAddons,
     tooltipAddons,
     renderOptions,
-    inputType = 'text',
     isAllowed
   } = props
 
@@ -87,9 +86,16 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
 
   const isWithSearch = isSearchable || isDynamicSearchEnabled || isCreateOnOutsideClick
 
+  const getFormatedValue = (value: string) => {
+    if (onInputFormatting && value) {
+      return onInputFormatting(value)
+    }
+    return value
+  }
+
   const setCurrentSelectedLabel = useCallback(() => {
     const selectedItem = options.find((item) => item.value === currentSelection) as TSelectOption
-    setSelectedOption(selectedItem)
+    setSelectedOption({ ...selectedItem, label: getFormatedValue(selectedItem?.label as string) })
   }, [currentSelection, options])
 
   const leftIconProps = selectedOption?.optionLeftIcon?.Component
@@ -185,7 +191,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
 
   const onSearch = (e: TChangeEventType) => {
     setSelectedOption(null)
-    setSearchValue(e.target.value)
+    setSearchValue(getFormatedValue(e.target.value))
   }
   const { hasBottomSpace } = useGetHasBottomSpace({
     element: dropdownRef,
@@ -222,7 +228,6 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
         label={label}
         onChange={onSearch}
         onInput={onInputChange}
-        handleChange={handleInputChange}
         required={isRequiredField}
         leftIconProps={leftIconProps}
         rightIconProps={isOpen ? selectRightIconOpenedProps : selectRightIconProps}
@@ -230,7 +235,6 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
         placeholder={placeHolder}
         value={searchValue || selectedOption?.label || ''}
         isValid={isValid}
-        type={inputType}
         disabled={disabled}
         helperText={outerHelperText}
         ref={inputRef}
