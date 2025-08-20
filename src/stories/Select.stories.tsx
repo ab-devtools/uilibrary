@@ -411,7 +411,6 @@ Select.args = {
   isLoading: false,
   options: OPTIONS,
   label: 'country',
-  inputType: 'numeric',
   avatar: image.src,
   placeHolder: 'Select country',
   labelAddons: <IconInfo size={'xsmall'} type={'information-light'} className={'ml-4'} />,
