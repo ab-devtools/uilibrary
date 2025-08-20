@@ -160,6 +160,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
         inputMode={'numeric'}
         disabled={disabled}
         isAllowed={isAllowed}
+        getInputRef={ref}
         {...(currentValue !== undefined ? { value: currentValue } : {})}
       />
     ) : (
