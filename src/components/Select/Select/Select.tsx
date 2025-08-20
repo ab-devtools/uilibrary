@@ -91,11 +91,11 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
       return onInputFormatting(value)
     }
     return value
-  };
+  }
 
   const setCurrentSelectedLabel = useCallback(() => {
     const selectedItem = options.find((item) => item.value === currentSelection) as TSelectOption
-    setSelectedOption({...selectedItem, label: getFormatedValue(selectedItem?.label as string)})
+    setSelectedOption({ ...selectedItem, label: getFormatedValue(selectedItem?.label as string) })
   }, [currentSelection, options])
 
   const leftIconProps = selectedOption?.optionLeftIcon?.Component
@@ -191,7 +191,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
 
   const onSearch = (e: TChangeEventType) => {
     setSelectedOption(null)
-    setSearchValue(getFormatedValue(e.target.value));
+    setSearchValue(getFormatedValue(e.target.value))
   }
   const { hasBottomSpace } = useGetHasBottomSpace({
     element: dropdownRef,
