@@ -1,3 +1,12 @@
+## [1.37.8](https://github.com/ab-devtools/uilibrary/compare/1.37.7...1.37.8) (2025-08-20)
+
+
+### Bug Fixes
+
+* select input formatting ([846f2b9](https://github.com/ab-devtools/uilibrary/commit/846f2b974a257133d3beefcbd39377fad2a0b472))
+* select input formatting ([5a1d4e7](https://github.com/ab-devtools/uilibrary/commit/5a1d4e7dfc9042d45b3e8ebc36da2cc424d639a2))
+* select input formatting ([3631de6](https://github.com/ab-devtools/uilibrary/commit/3631de63773975fb3922e9330b414735fe34b8aa))
+
 ## [1.37.7](https://github.com/ab-devtools/uilibrary/compare/1.37.6...1.37.7) (2025-08-20)
 
 
