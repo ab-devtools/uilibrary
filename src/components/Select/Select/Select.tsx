@@ -43,6 +43,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
     setFieldValue,
     setSelectedItem,
     onInputChange,
+    handleInputChange,
     outerHelperText,
     innerHelperText,
     isRequiredField,
@@ -221,6 +222,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
         label={label}
         onChange={onSearch}
         onInput={onInputChange}
+        handleChange={handleInputChange}
         required={isRequiredField}
         leftIconProps={leftIconProps}
         rightIconProps={isOpen ? selectRightIconOpenedProps : selectRightIconProps}
