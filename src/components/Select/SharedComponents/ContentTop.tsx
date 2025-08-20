@@ -1,5 +1,5 @@
 import type { JSX } from 'react'
-import React, { useEffect, useMemo, useRef } from 'react'
+import React, { useMemo } from 'react'
 import { Text } from '../../Text'
 import { Input } from '../../Input'
 import type { TMenuItem } from '../../Menu/types'
