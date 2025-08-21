@@ -328,10 +328,9 @@ const Template: StoryFn<TSingleSelectPropTypes> = (args) => {
           dataId={'single-select'}
           tooltipAddons={{ position: Positions.BOTTOM_LEFT, text: '' }}
           isRequiredField
-          isCreateOnOutsideClick
           options={OPTIONS}
           outerHelperText="helper text"
-          value={selectedValue}
+          selectedItem={selectedValue}
           setSelectedItem={setSelectedValue}
           isSearchable={true}
           optionRightIconComponent={(value) => <>{value}</>}
