@@ -98,7 +98,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
   }
 
   const setCurrentSelectedLabel = useCallback(() => {
-    const selectedItem = getSelectedOption();
+    const selectedItem = getSelectedOption()
     setSelectedOption({ ...selectedItem, label: getFormatedValue(selectedItem?.label as string) })
   }, [currentSelection, options])
 
@@ -122,7 +122,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
   }
 
   const handleOutsideClick = () => {
-    const selected = getSelectedOption();
+    const selected = getSelectedOption()
     if (!searchValue && selected) {
       setCurrentSelectedLabel()
     } else if (isCreateOnOutsideClick) {
