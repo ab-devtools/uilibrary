@@ -1,3 +1,12 @@
+## [1.38.1](https://github.com/ab-devtools/uilibrary/compare/1.38.0...1.38.1) (2025-08-22)
+
+
+### Bug Fixes
+
+* deselect select if search is empty and ther is no selected option ([ffcdde5](https://github.com/ab-devtools/uilibrary/commit/ffcdde5665e5372f3ce51fa6f8f51578ac8db12a))
+* deselect select if search is empty and ther is no selected option ([8cb0be3](https://github.com/ab-devtools/uilibrary/commit/8cb0be35c6d8da0a93102f343c66e3b5cbfd6723))
+* deselect select if search is empty and ther is no selected option ([aa3c4f6](https://github.com/ab-devtools/uilibrary/commit/aa3c4f6ed17363518ae6243aaf360eded57f11f9))
+
 # [1.38.0](https://github.com/ab-devtools/uilibrary/compare/1.37.8...1.38.0) (2025-08-20)
 
 
