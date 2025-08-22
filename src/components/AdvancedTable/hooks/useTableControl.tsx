@@ -38,6 +38,7 @@ export function useTableControl<TData>({
   totalCount = 0,
   defaultPageSize = 10,
   defaultPageIndex = 0,
+  syncDefaultPageIndex = false,
   defaultHiddenColumns = [],
   onSortChange,
   onRowSelection,
@@ -265,6 +266,15 @@ export function useTableControl<TData>({
       tableSettings?.onColumnSettingsChange?.(settings)
     }
   }, [columnVisibility, columnOrder, columnSizing])
+
+  useEffect(() => {
+    if (syncDefaultPageIndex) {
+      setPagination((prev) => ({
+        ...prev,
+        pageIndex: defaultPageIndex
+      }))
+    }
+  }, [defaultPageIndex, syncDefaultPageIndex])
 
   return {
     table,

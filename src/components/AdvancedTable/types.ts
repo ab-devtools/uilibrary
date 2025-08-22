@@ -31,6 +31,7 @@ export type TTableProps<TData> = {
   customHeader?: ReactNode
   defaultPageIndex?: number
   defaultPageSize?: number
+  syncDefaultPageIndex?: boolean
   defaultHiddenColumns?: string[]
   collapsibleRows?: boolean
   tableSettings?: {
