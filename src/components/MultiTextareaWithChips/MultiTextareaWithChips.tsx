@@ -64,7 +64,7 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
   useEffect(() => {
     console.log('chips', localChips)
     if (formProps?.setFieldValue) {
-      formProps.setFieldValue('skills', localChips)
+      formProps.setFieldValue('skills', localChips as TFormValue)
     }
   }, [localChips])
 
@@ -193,7 +193,7 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
           const newChips = [...localChips, item]
           setLocalChips(newChips)
           if (formProps?.setFieldValue) {
-            formProps.setFieldValue('skills', newChips)
+            formProps.setFieldValue('skills', newChips as TFormValue)
           }
           if (setValue) {
             const validChips = newChips.filter((chip) => !(chip as TChipItem).hasError)
@@ -207,7 +207,7 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
             console.log(newChips, 'newChips - INVALID')
             setLocalChips(newChips)
             if (formProps?.setFieldValue) {
-              formProps?.setFieldValue('skills', newChips)
+              formProps?.setFieldValue('skills', newChips as TFormValue)
             }
             if (setValue) {
               const validChips = newChips.filter((chip) => !(chip as TChipItem).hasError)
