@@ -50,6 +50,7 @@ export * from './components/Tooltip'
 export * from './components/SVGIcons'
 export * from './components/OneTimePassword'
 export * from './helperComponents/OptionItem'
+export * from './components/MultiTextareaWithChips'
 
 export { FormContext } from './context'
 export { useFormProps } from './hooks'
