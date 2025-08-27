@@ -1,3 +1,15 @@
+# [1.39.0](https://github.com/ab-devtools/uilibrary/compare/1.38.1...1.39.0) (2025-08-27)
+
+
+### Bug Fixes
+
+* fix some types ([e826a95](https://github.com/ab-devtools/uilibrary/commit/e826a954cf6ce2803190cc4ad08713d438b6a198))
+
+
+### Features
+
+* multitextarea with chips ([a4b867d](https://github.com/ab-devtools/uilibrary/commit/a4b867d67034a15b253768ee48eb8e6ac0bcbfe2))
+
 ## [1.38.1](https://github.com/ab-devtools/uilibrary/compare/1.38.0...1.38.1) (2025-08-22)
 
 
