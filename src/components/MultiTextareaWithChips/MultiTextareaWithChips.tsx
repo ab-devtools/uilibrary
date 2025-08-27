@@ -21,6 +21,7 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
   chipValidationSchema,
   chipValidationErrorMessage,
   allowInvalidChips = false,
+  fieldName = 'skills',
   // Customizable placeholder messages
   searchPlaceholderText = 'Search and select...',
   typeAndEnterPlaceholderText = 'Type and press Enter...',
@@ -36,7 +37,6 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
   const inputRef = useRef<HTMLInputElement>(null)
 
   const { errors, setValue } = useFormProps()
-  console.log(errors)
 
   // Memoize chip texts for performance optimization
   const chipTexts = useMemo(
@@ -62,11 +62,10 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
   // }, [inputValue, availableOptions, chipTexts])
 
   useEffect(() => {
-    console.log('chips', localChips)
     if (formProps?.setFieldValue) {
-      formProps.setFieldValue('skills', localChips as TFormValue)
+      formProps.setFieldValue(fieldName, localChips as TFormValue)
     }
-  }, [localChips])
+  }, [localChips, fieldName])
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (disabled) return
@@ -133,7 +132,7 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
     // Sync with form state - only valid chips (strings)
     if (setValue) {
       const validChips = newChips.filter((chip) => typeof chip === 'string')
-      setValue('skills', validChips)
+      setValue(fieldName, validChips)
     }
     setChipError('')
   }
@@ -153,7 +152,7 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
             // Sync with form state - only valid chips (strings)
             if (setValue) {
               const validChips = newChips.filter((chip) => typeof chip === 'string')
-              setValue('skills', validChips)
+              setValue(fieldName, validChips)
             }
             setInputValue('')
             setShowDropdown(false)
@@ -172,7 +171,7 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
       // Sync with form state - only valid chips (strings)
       if (setValue) {
         const validChips = newChips.filter((chip) => typeof chip === 'string')
-        setValue('skills', validChips)
+        setValue(fieldName, validChips)
       }
       setInputValue('')
       setShowDropdown(false)
@@ -193,25 +192,24 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
           const newChips = [...localChips, item]
           setLocalChips(newChips)
           if (formProps?.setFieldValue) {
-            formProps.setFieldValue('skills', newChips as TFormValue)
+            formProps.setFieldValue(fieldName, newChips as TFormValue)
           }
           if (setValue) {
             const validChips = newChips.filter((chip) => !(chip as TChipItem).hasError)
-            setValue('skills', validChips)
+            setValue(fieldName, validChips)
           }
         } catch (e) {
           const message = chipValidationErrorMessage || (e as Error).message || 'Invalid value'
           if (allowInvalidChips) {
             const item: TChipItem = { text: value, hasError: true, errorMessage: message }
             const newChips = [...localChips, item]
-            console.log(newChips, 'newChips - INVALID')
             setLocalChips(newChips)
             if (formProps?.setFieldValue) {
-              formProps?.setFieldValue('skills', newChips as TFormValue)
+              formProps?.setFieldValue(fieldName, newChips as TFormValue)
             }
             if (setValue) {
               const validChips = newChips.filter((chip) => !(chip as TChipItem).hasError)
-              setValue('skills', validChips)
+              setValue(fieldName, validChips)
             }
           } else {
             setChipError(message)
@@ -222,7 +220,7 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
         const newChips = [...localChips, value]
         setLocalChips(newChips)
         if (setValue) {
-          setValue('skills', newChips)
+          setValue(fieldName, newChips)
         }
       }
 
