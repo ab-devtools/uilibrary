@@ -1,3 +1,10 @@
+## [1.39.1](https://github.com/ab-devtools/uilibrary/compare/1.39.0...1.39.1) (2025-08-27)
+
+
+### Bug Fixes
+
+* make fieldName is dynamic and remove all console.logs ([ff6db49](https://github.com/ab-devtools/uilibrary/commit/ff6db49e2d7ecb10eade3177667048b3eb8aaa96))
+
 # [1.39.0](https://github.com/ab-devtools/uilibrary/compare/1.38.1...1.39.0) (2025-08-27)
 
 
