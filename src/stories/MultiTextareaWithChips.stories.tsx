@@ -46,7 +46,7 @@ export const Default = (): JSX.Element => {
         onAddChip={handleAddChip}
         onRemoveChip={handleRemoveChip}
         allowCustomValues={true}
-        fieldName='skills'
+        fieldName="skills"
       />
     </div>
   )
