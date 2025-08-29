@@ -32,7 +32,7 @@ export function ColumnHeader<TData>({ header, pinnedStyles }: DraggableColumnHea
         minWidth: header.getSize(),
         position: 'relative' as CSSProperties['position'],
         zIndex: isDragging ? 1 : 0,
-        cursor: 'grab',
+        cursor: 'grab'
       }
 
   return (
