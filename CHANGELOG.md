@@ -1,3 +1,12 @@
+## [1.39.3](https://github.com/ab-devtools/uilibrary/compare/1.39.2...1.39.3) (2025-08-29)
+
+
+### Bug Fixes
+
+* otp type ([8546806](https://github.com/ab-devtools/uilibrary/commit/854680681067dea0c41362baf1587068c4d4cc17))
+* otp type ([17899d5](https://github.com/ab-devtools/uilibrary/commit/17899d526a6cd85b92d5e99a069983f5e35548bf))
+* otp type ([052e61c](https://github.com/ab-devtools/uilibrary/commit/052e61c13b02014f2472ce91e889941d17c2ac3c))
+
 ## [1.39.2](https://github.com/ab-devtools/uilibrary/compare/1.39.1...1.39.2) (2025-08-29)
 
 
