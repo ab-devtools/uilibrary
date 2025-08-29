@@ -1,3 +1,11 @@
+## [1.39.2](https://github.com/ab-devtools/uilibrary/compare/1.39.1...1.39.2) (2025-08-29)
+
+
+### Bug Fixes
+
+* column header cursor styles ([867b184](https://github.com/ab-devtools/uilibrary/commit/867b18481993da4c5b152a31ba69d10241cc5792))
+* column header cursor styles ([f941147](https://github.com/ab-devtools/uilibrary/commit/f9411474dc1023519028911db146cc17ba71b9d0))
+
 ## [1.39.1](https://github.com/ab-devtools/uilibrary/compare/1.39.0...1.39.1) (2025-08-27)
 
 
