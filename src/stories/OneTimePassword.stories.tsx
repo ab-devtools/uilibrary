@@ -37,6 +37,7 @@ OneTimePassword.args = {
   type: 'number',
   size: 'large',
   count: 5,
+  pattern: '[0-9]*',
   label: 'One Time Password',
   hasError: true,
   error: 'error text',

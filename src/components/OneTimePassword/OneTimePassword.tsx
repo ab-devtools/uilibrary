@@ -20,6 +20,7 @@ export const OneTimePassword = React.forwardRef<HTMLInputElement, OtpCustomProps
     required,
     placeholder,
     type,
+    pattern,
     setFieldValue,
     handleChange,
     dataId = '',
@@ -87,6 +88,7 @@ export const OneTimePassword = React.forwardRef<HTMLInputElement, OtpCustomProps
               ref={(el) => setInputRef(el, index)}
               max={1}
               type={type}
+              pattern={pattern}
               hasError={hasError}
               isValid={isValid}
               readonly={disabled}
