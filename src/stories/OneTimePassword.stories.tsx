@@ -8,7 +8,7 @@ export default {
   component: _OneTimePassword,
   argTypes: {
     type: {
-      options: ['text', 'password'],
+      options: ['text', 'password', 'number'],
       control: { type: 'radio' }
     },
     size: {
@@ -34,7 +34,7 @@ export const OneTimePassword = Template.bind({})
 
 // @ts-ignore
 OneTimePassword.args = {
-  type: 'text',
+  type: 'number',
   size: 'large',
   count: 5,
   label: 'One Time Password',
