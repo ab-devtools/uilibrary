@@ -1,3 +1,10 @@
+## [1.39.4](https://github.com/ab-devtools/uilibrary/compare/1.39.3...1.39.4) (2025-09-01)
+
+
+### Bug Fixes
+
+* event for table row ([d0aa8c6](https://github.com/ab-devtools/uilibrary/commit/d0aa8c63c8ba94db6cabcfc5d72c56aa40312c2f))
+
 ## [1.39.3](https://github.com/ab-devtools/uilibrary/compare/1.39.2...1.39.3) (2025-08-29)
 
 
