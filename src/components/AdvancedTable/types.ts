@@ -6,7 +6,7 @@ import type {
   Table,
   Row
 } from '@tanstack/react-table'
-import type { ReactNode } from 'react'
+import type { HTMLAttributes, ReactNode } from 'react'
 
 export type TTable<TData> = Table<TData>
 export type TRowSelectionState = RowSelectionState
@@ -43,6 +43,7 @@ export type TTableProps<TData> = {
   renderFooter?: (table: Table<TData>) => ReactNode
   onRowClick?: (row: Row<TData>) => void
   onSortChange?: (state: SortingUpdateEvent) => void
+  rowEventsProps?: HTMLAttributes<HTMLTableRowElement>
   onRowSelection?: (state: TRowSelectionState) => void
   onColumnSizing?: (state: TColumnSizingState) => void
   onPaginationChange?: (state: TPaginationState) => void
