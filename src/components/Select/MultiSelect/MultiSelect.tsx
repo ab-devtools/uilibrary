@@ -6,6 +6,7 @@ import { Footer, InputSelectWrapper, ButtonSelectWrapper } from '../SharedCompon
 import { useOnOutsideClick } from '../../../hooks'
 import { TRANSLATIONS_DEFAULT_VALUES } from '../constants'
 import type { TMultiSelectPropTypes } from '../types'
+import { bool } from 'yup'
 
 export const MultiSelect = (props: TMultiSelectPropTypes): ReactElement => {
   const {
@@ -66,7 +67,7 @@ export const MultiSelect = (props: TMultiSelectPropTypes): ReactElement => {
 
   useEffect(() => {
     if (autoApplyOnChooseItem) {
-      submitSelectedValue(selectedValues, false)
+      submitSelectedValue(selectedValues, false, false)
     }
   }, [selectedValues, autoApplyOnChooseItem])
 
@@ -102,7 +103,7 @@ export const MultiSelect = (props: TMultiSelectPropTypes): ReactElement => {
     useId()
   )
 
-  const submitSelectedValue = (selections: TSelectedValue[], isChecked: boolean) => {
+  const submitSelectedValue = (selections: TSelectedValue[], isChecked: boolean, closeDropdownOnApply = true) => {
     if (setSelectedItems) {
       setSelectedItems(selections, isChecked)
     }
@@ -110,7 +111,9 @@ export const MultiSelect = (props: TMultiSelectPropTypes): ReactElement => {
       setFieldValue(name, selections)
     }
 
-    closeDropdown()
+    if(closeDropdownOnApply) {
+      closeDropdown()
+    }
   }
 
   const applySelectedItems = (isChecked: boolean) => {

@@ -475,7 +475,6 @@ MultiSelect.args = {
   // isRadioGrouped: true,
   // autoApplyOnClose: true,
   // helperText: 'To be filled in only for USA, Canada and European countries.',
-  // autoApplyOnChooseItem: true,
   labelAddons: <IconInfo size={'xsmall'} type={'information-light'} className={'ml-4'} />
   // disabled: true
   // labelRightIconComponent: <IconPerson size="xsmall" className="mr-4" />,
