@@ -137,6 +137,7 @@ export interface TSingleSelectPropTypes extends IFormCompProps, TSelectBaseProps
   onInputFormatting?: (value: string) => string
   isSearchable?: boolean
   isDynamicSearchable?: boolean
+  trimSearchValue?: boolean
   outerHelperText?: string
   innerHelperText?: string
   labelAddons?: JSX.Element
