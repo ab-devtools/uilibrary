@@ -1,3 +1,10 @@
+# [1.40.0](https://github.com/ab-devtools/uilibrary/compare/1.39.4...1.40.0) (2025-09-08)
+
+
+### Features
+
+* add option for autoapply Multiselect items on item change ([8cbbb84](https://github.com/ab-devtools/uilibrary/commit/8cbbb84f5d0d8f6ef4537f4db885934c57043bdc))
+
 ## [1.39.4](https://github.com/ab-devtools/uilibrary/compare/1.39.3...1.39.4) (2025-09-01)
 
 
