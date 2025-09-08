@@ -35,6 +35,7 @@ export const MultiSelect = (props: TMultiSelectPropTypes): ReactElement => {
     translations,
     hasError,
     autoApplyOnClose = false,
+    autoApplyOnChooseItem = false,
     ...rest
   } = props
 
@@ -62,6 +63,12 @@ export const MultiSelect = (props: TMultiSelectPropTypes): ReactElement => {
 
     return initial.some((val, index) => val !== current[index])
   }, [initialSelected, selectedValues])
+
+  useEffect(() => {
+    if (autoApplyOnChooseItem) {
+      submitSelectedValue(selectedValues, false)
+    }
+  }, [selectedValues, autoApplyOnChooseItem])
 
   useEffect(() => {
     if (isOpen) {
