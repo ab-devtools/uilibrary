@@ -66,7 +66,7 @@ export const MultiSelect = (props: TMultiSelectPropTypes): ReactElement => {
 
   useEffect(() => {
     if (autoApplyOnChooseItem) {
-      submitSelectedValue(selectedValues, false)
+      submitSelectedValue(selectedValues, false, false)
     }
   }, [selectedValues, autoApplyOnChooseItem])
 
