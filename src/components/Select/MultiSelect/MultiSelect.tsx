@@ -102,7 +102,11 @@ export const MultiSelect = (props: TMultiSelectPropTypes): ReactElement => {
     useId()
   )
 
-  const submitSelectedValue = (selections: TSelectedValue[], isChecked: boolean) => {
+  const submitSelectedValue = (
+    selections: TSelectedValue[],
+    isChecked: boolean,
+    closeDropdownOnApply = true
+  ) => {
     if (setSelectedItems) {
       setSelectedItems(selections, isChecked)
     }
@@ -110,7 +114,9 @@ export const MultiSelect = (props: TMultiSelectPropTypes): ReactElement => {
       setFieldValue(name, selections)
     }
 
-    closeDropdown()
+    if (closeDropdownOnApply) {
+      closeDropdown()
+    }
   }
 
   const applySelectedItems = (isChecked: boolean) => {
