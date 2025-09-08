@@ -1,3 +1,11 @@
+# [1.41.0](https://github.com/ab-devtools/uilibrary/compare/1.40.0...1.41.0) (2025-09-08)
+
+
+### Features
+
+* conditional closeDropdown for multiselect ([962d6d5](https://github.com/ab-devtools/uilibrary/commit/962d6d534c3d1a7eb4db05ad2f915d8adfdaba13))
+* conditional closeDropdown for multiselect ([040d9c8](https://github.com/ab-devtools/uilibrary/commit/040d9c8fe3639eeb808d07138538692641bbb9ed))
+
 # [1.40.0](https://github.com/ab-devtools/uilibrary/compare/1.39.4...1.40.0) (2025-09-08)
 
 
