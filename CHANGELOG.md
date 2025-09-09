@@ -1,3 +1,10 @@
+## [1.41.1](https://github.com/ab-devtools/uilibrary/compare/1.41.0...1.41.1) (2025-09-09)
+
+
+### Bug Fixes
+
+* **IPA-849:** fix search filtering with leading/trailing spaces in options ([7fc47c8](https://github.com/ab-devtools/uilibrary/commit/7fc47c8a58beed77f9fd221509538850ccc9ff65))
+
 # [1.41.0](https://github.com/ab-devtools/uilibrary/compare/1.40.0...1.41.0) (2025-09-08)
 
 
