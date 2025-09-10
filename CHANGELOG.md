@@ -1,3 +1,10 @@
+# [1.39.0-alpha.3](https://github.com/ab-devtools/uilibrary/compare/1.39.0-alpha.2...1.39.0-alpha.3) (2025-09-10)
+
+
+### Bug Fixes
+
+* add fieldName prop ([2c5208b](https://github.com/ab-devtools/uilibrary/commit/2c5208b981acfcf852f75af3886b7e3b4423a526))
+
 # [1.39.0-alpha.2](https://github.com/ab-devtools/uilibrary/compare/1.39.0-alpha.1...1.39.0-alpha.2) (2025-09-10)
 
 
