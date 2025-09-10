@@ -600,17 +600,38 @@ const InsideForm = () => {
         name="skills"
         As={(formProps: any) => (
           <div>
-              <MultiTextareaWithChips
-                formProps={formProps}
-                fieldName="skills"
-                label="HDM Serial Numbers *"
-                placeholder="Type HDM serial number and press Enter"
-                chips={formProps.value || []}
-                allowCustomValues={true}
-                chipValidationSchema={hdmChipValidationSchema}
-                chipValidationErrorMessage=""
-                allowInvalidChips={true}
-              />
+            <MultiTextareaWithChips
+              formProps={formProps}
+              fieldName="skills"
+              label="HDM Serial Numbers *"
+              placeholder="Type HDM serial number and press Enter"
+              chips={formProps.value || []}
+              allowCustomValues={true}
+              chipValidationSchema={hdmChipValidationSchema}
+              chipValidationErrorMessage=""
+              allowInvalidChips={true}
+              availableOptions={[
+                '55000001',
+                '55000002', 
+                '55000003',
+                'PB1234567890123',
+                'PB9876543210987',
+                '0007101234567',
+                '0002401234567',
+                '00002412345678',
+                '125123456789',
+                'NCB123456789',
+                'NCC987654321',
+                '123456789012345678901234',
+                '234567890123456789012345',
+                'J971234567890',
+                'J991234567890',
+                'J9B1234567890'
+              ]}
+              searchPlaceholderText="Search available HDM serial numbers..."
+              typeAndEnterPlaceholderText="Type custom HDM serial number and press Enter..."
+              noOptionsPlaceholderText="No more HDM serial numbers available"
+            />
           </div>
         )}
       />
