@@ -612,7 +612,7 @@ const InsideForm = () => {
               allowInvalidChips={true}
               availableOptions={[
                 '55000001',
-                '55000002', 
+                '55000002',
                 '55000003',
                 'PB1234567890123',
                 'PB9876543210987',

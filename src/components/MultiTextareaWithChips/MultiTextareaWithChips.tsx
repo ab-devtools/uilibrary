@@ -56,16 +56,21 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
   }, [localChips, fieldName])
 
   // Helper function to filter options
-  const filterOptions = useCallback((value: string) => {
-    if (availableOptions.length > 0) {
-      const currentChipTexts = localChips.map((chip) => (typeof chip === 'string' ? chip : chip.text))
-      const filtered = availableOptions.filter(option => 
-        option.toLowerCase().includes(value.toLowerCase()) &&
-        !currentChipTexts.includes(option)
-      )
-      setFilteredOptions(filtered)
-    }
-  }, [availableOptions, localChips])
+  const filterOptions = useCallback(
+    (value: string) => {
+      if (availableOptions.length > 0) {
+        const currentChipTexts = localChips.map((chip) =>
+          typeof chip === 'string' ? chip : chip.text
+        )
+        const filtered = availableOptions.filter(
+          (option) =>
+            option.toLowerCase().includes(value.toLowerCase()) && !currentChipTexts.includes(option)
+        )
+        setFilteredOptions(filtered)
+      }
+    },
+    [availableOptions, localChips]
+  )
 
   // Handle click outside to close dropdown
   useEffect(() => {
@@ -135,7 +140,7 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
     const value = e.target.value
     setInputValue(value)
     setSelectedOption('')
-    
+
     // Filter available options based on input
     filterOptions(value)
     setShowDropdown(availableOptions.length > 0 && value.trim().length > 0)
@@ -162,7 +167,7 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
     })
     setLocalChips(newChips)
     onRemoveChip?.(chipToRemove)
-    
+
     // Update form values consistently
     if (formProps?.setFieldValue) {
       formProps.setFieldValue(fieldName, newChips as TFormValue)
@@ -170,9 +175,9 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
     if (setValue) {
       setValue(fieldName, newChips)
     }
-    
+
     setChipError('')
-    
+
     // Refresh filtered options when chip is removed
     if (showDropdown) {
       filterOptions(inputValue)
@@ -191,7 +196,7 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
             const item: TChipItem = { text: option, hasError: true, errorMessage: message }
             const newChips = [...localChips, item]
             setLocalChips(newChips)
-            
+
             // Update form values consistently
             if (formProps?.setFieldValue) {
               formProps.setFieldValue(fieldName, newChips as TFormValue)
@@ -199,7 +204,7 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
             if (setValue) {
               setValue(fieldName, newChips)
             }
-            
+
             setInputValue('')
             setShowDropdown(false)
             setSelectedOption('')
@@ -212,12 +217,12 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
       }
 
       onAddChip?.(option)
-      
+
       // Create consistent chip item structure
       const item: TChipItem = { text: option, hasError: false, errorMessage: '' }
       const newChips = [...localChips, item]
       setLocalChips(newChips)
-      
+
       // Update form values consistently
       if (formProps?.setFieldValue) {
         formProps.setFieldValue(fieldName, newChips as TFormValue)
@@ -225,7 +230,7 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
       if (setValue) {
         setValue(fieldName, newChips)
       }
-      
+
       setInputValue('')
       setShowDropdown(false)
       setSelectedOption('')
@@ -243,7 +248,7 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
           const item: TChipItem = { text: value, hasError: false, errorMessage: '' }
           const newChips = [...localChips, item]
           setLocalChips(newChips)
-          
+
           // Update form values consistently
           if (formProps?.setFieldValue) {
             formProps.setFieldValue(fieldName, newChips as TFormValue)
@@ -271,7 +276,7 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
       } else {
         const newChips = [...localChips, value]
         setLocalChips(newChips)
-        
+
         // Update form values consistently
         if (formProps?.setFieldValue) {
           formProps.setFieldValue(fieldName, newChips as TFormValue)
@@ -336,6 +341,7 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
           <div className="multi-textarea-chips__input-container">
             <input
               {...formProps}
+              autoComplete="off"
               ref={inputRef}
               type="text"
               value={inputValue}
