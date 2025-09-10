@@ -1,3 +1,10 @@
+# [1.39.0-alpha.4](https://github.com/ab-devtools/uilibrary/compare/1.39.0-alpha.3...1.39.0-alpha.4) (2025-09-10)
+
+
+### Features
+
+* add select option in MultipleTextarea component ([69662fe](https://github.com/ab-devtools/uilibrary/commit/69662fe67fe5d1e74d33eeac627778fcd00b3357))
+
 # [1.39.0-alpha.3](https://github.com/ab-devtools/uilibrary/compare/1.39.0-alpha.2...1.39.0-alpha.3) (2025-09-10)
 
 
