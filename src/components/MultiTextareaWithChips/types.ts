@@ -28,6 +28,7 @@ export interface TMultiTextareaWithChipsProps extends IFormCompProps {
   typeAndEnterPlaceholderText?: string
   noOptionsPlaceholderText?: string
   autoFormIntegration?: boolean
+  fieldName?: string
   formProps?: {
     setFieldValue?: (
       fieldName: string,
@@ -35,13 +36,13 @@ export interface TMultiTextareaWithChipsProps extends IFormCompProps {
       shouldValidate?: { shouldValidate: boolean }
     ) => void
     [key: string]:
-      | TFormValue
-      | ((
-          fieldName: string,
-          value: TFormValue,
-          shouldValidate?: { shouldValidate: boolean }
-        ) => void)
-      | undefined
+    | TFormValue
+    | ((
+      fieldName: string,
+      value: TFormValue,
+      shouldValidate?: { shouldValidate: boolean }
+    ) => void)
+    | undefined
   }
 }
 

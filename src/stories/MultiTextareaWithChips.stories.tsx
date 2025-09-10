@@ -600,16 +600,17 @@ const InsideForm = () => {
         name="skills"
         As={(formProps: any) => (
           <div>
-            <MultiTextareaWithChips
-              formProps={formProps}
-              label="HDM Serial Numbers *"
-              placeholder="Type HDM serial number and press Enter"
-              chips={formProps.value || []}
-              allowCustomValues={true}
-              chipValidationSchema={hdmChipValidationSchema}
-              chipValidationErrorMessage=""
-              allowInvalidChips={true}
-            />
+              <MultiTextareaWithChips
+                formProps={formProps}
+                fieldName="skills"
+                label="HDM Serial Numbers *"
+                placeholder="Type HDM serial number and press Enter"
+                chips={formProps.value || []}
+                allowCustomValues={true}
+                chipValidationSchema={hdmChipValidationSchema}
+                chipValidationErrorMessage=""
+                allowInvalidChips={true}
+              />
           </div>
         )}
       />
