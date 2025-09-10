@@ -585,42 +585,39 @@ const hdmValidationSchema = yup.object({
 //   )
 // }
 
-
 const InsideForm = () => {
-
-  const { reset } = useFormProps();
+  const { reset } = useFormProps()
 
   useEffect(() => {
     reset?.({
-      skills: [{ text: '55000001', hasError: false , errorMessage: ''}]
+      skills: [{ text: '55000001', hasError: false, errorMessage: '' }]
     })
-  },[])
-
+  }, [])
 
   return (
     <div>
-     <FormField
-          name="skills"
-          As={(formProps: any) => (
-            <div>
-              <MultiTextareaWithChips
-                formProps={formProps}
-                label="HDM Serial Numbers *"
-                placeholder="Type HDM serial number and press Enter"
-                chips={formProps.value || []}
-                allowCustomValues={true}
-                chipValidationSchema={hdmChipValidationSchema}
-                chipValidationErrorMessage=""
-                allowInvalidChips={true}
-              />
-            </div>
-          )}
-        />
-        <div className="mt-4">
-          <Button buttonActionType="submit" type="primary">
-            Submit Form
-          </Button>
-        </div>
+      <FormField
+        name="skills"
+        As={(formProps: any) => (
+          <div>
+            <MultiTextareaWithChips
+              formProps={formProps}
+              label="HDM Serial Numbers *"
+              placeholder="Type HDM serial number and press Enter"
+              chips={formProps.value || []}
+              allowCustomValues={true}
+              chipValidationSchema={hdmChipValidationSchema}
+              chipValidationErrorMessage=""
+              allowInvalidChips={true}
+            />
+          </div>
+        )}
+      />
+      <div className="mt-4">
+        <Button buttonActionType="submit" type="primary">
+          Submit Form
+        </Button>
+      </div>
     </div>
   )
 }
@@ -633,7 +630,6 @@ export const SimpleFormUsage = (): JSX.Element => {
   const handleSubmit = (values: any) => {
     console.log('values', values)
   }
-
 
   // Create a validation schema that requires at least one valid chip
   const validationSchema = yup.object({
@@ -699,8 +695,6 @@ export const SimpleFormUsage = (): JSX.Element => {
     </div>
   )
 }
-
-
 
 const FormStatus = (): JSX.Element | null => {
   const { errors, isSubmitted, getValues } = useFormProps()

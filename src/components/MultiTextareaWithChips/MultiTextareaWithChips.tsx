@@ -1,5 +1,5 @@
 import type { KeyboardEvent } from 'react'
-import React, { useState, useRef, useEffect, useMemo } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Chips } from '../Chips'
 import type { TChipItem, TMultiTextareaWithChipsProps } from './types'
 import { ErrorMessage } from '../../helperComponents'
@@ -35,7 +35,7 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
   const [localChips, setLocalChips] = useState<Array<string | TChipItem>>(chips)
   const inputRef = useRef<HTMLInputElement>(null)
 
-  const { errors, setValue } = useFormProps()
+  const { setValue } = useFormProps()
 
   const chipTexts = localChips.map((chip) => (typeof chip === 'string' ? chip : chip.text))
 
