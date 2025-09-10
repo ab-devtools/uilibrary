@@ -36,34 +36,19 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
   const inputRef = useRef<HTMLInputElement>(null)
 
   const { errors, setValue } = useFormProps()
-  console.log(errors)
 
-  // Memoize chip texts for performance optimization
-  const chipTexts = useMemo(
-    () => localChips.map((chip) => (typeof chip === 'string' ? chip : chip.text)),
-    [localChips]
-  )
+  const chipTexts = localChips.map((chip) => (typeof chip === 'string' ? chip : chip.text))
 
-  // useEffect(() => {
-  //   if (inputValue.trim() && availableOptions.length > 0) {
-  //     // Use memoized chipTexts for O(1) lookup performance
-  //     const chipTextsSet = new Set(chipTexts)
-
-  //     const filtered = availableOptions.filter(option =>
-  //       option.toLowerCase().includes(inputValue.toLowerCase()) &&
-  //       !chipTextsSet.has(option)
-  //     )
-  //     setFilteredOptions(filtered)
-  //     setShowDropdown(filtered.length > 0)
-  //   } else {
-  //     setShowDropdown(false)
-  //     setFilteredOptions([])
-  //   }
-  // }, [inputValue, availableOptions, chipTexts])
+  const isUserInteraction = useRef(false)
 
   useEffect(() => {
-    console.log('chips', localChips)
-    if (formProps?.setFieldValue) {
+    if (!isUserInteraction.current) {
+      setLocalChips(chips)
+    }
+  }, [chips])
+
+  useEffect(() => {
+    if (isUserInteraction.current && formProps?.setFieldValue) {
       formProps.setFieldValue('skills', localChips as TFormValue)
     }
   }, [localChips])
@@ -127,13 +112,13 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
 
   const handleRemoveChip = (chipToRemove: string) => {
     if (disabled) return
+    isUserInteraction.current = true
     const newChips = localChips.filter((c: string | TChipItem) => {
       const chipText = typeof c === 'string' ? c : c.text
       return chipText !== chipToRemove
     })
     setLocalChips(newChips)
     onRemoveChip?.(chipToRemove)
-    // Sync with form state - only valid chips (strings)
     if (setValue) {
       const validChips = newChips.filter((chip) => typeof chip === 'string')
       setValue('skills', validChips)
@@ -142,7 +127,7 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
   }
 
   const handleSelectOption = (option: string) => {
-    // Check if option already exists in chips using memoized chipTexts
+    isUserInteraction.current = true
     if (!chipTexts.includes(option)) {
       if (chipValidationSchema) {
         try {
@@ -153,7 +138,6 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
             const item: TChipItem = { text: option, hasError: true, errorMessage: message }
             const newChips = [...localChips, item]
             setLocalChips(newChips)
-            // Sync with form state - only valid chips (strings)
             if (setValue) {
               const validChips = newChips.filter((chip) => typeof chip === 'string')
               setValue('skills', validChips)
@@ -172,7 +156,6 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
       onAddChip?.(option)
       const newChips = [...localChips, option]
       setLocalChips(newChips)
-      // Sync with form state - only valid chips (strings)
       if (setValue) {
         const validChips = newChips.filter((chip) => typeof chip === 'string')
         setValue('skills', validChips)
@@ -185,10 +168,9 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
   }
 
   const handleAddCustomValue = (value: string) => {
-    // Check if value already exists in chips
+    isUserInteraction.current = true
     const chipTexts = localChips.map((chip) => (typeof chip === 'string' ? chip : chip.text))
     if (!chipTexts.includes(value)) {
-      // validate value if schema provided
       if (chipValidationSchema) {
         try {
           chipValidationSchema.validateSync(value)
@@ -207,7 +189,6 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
           if (allowInvalidChips) {
             const item: TChipItem = { text: value, hasError: true, errorMessage: message }
             const newChips = [...localChips, item]
-            console.log(newChips, 'newChips - INVALID')
             setLocalChips(newChips)
             if (formProps?.setFieldValue) {
               formProps?.setFieldValue('skills', newChips as TFormValue)
@@ -234,20 +215,17 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
     }
   }
 
-  // Check if there are any error chips
   const hasErrorChips = localChips.some((chip) => {
     return typeof chip === 'object' && chip.hasError
   })
 
-  // Get a single error message from error chips
   const getErrorMessage = () => {
     const errorChips = localChips.filter((chip) => {
       return typeof chip === 'object' && chip.hasError
     }) as TChipItem[]
-    
-    // Return the first error message found, or a generic message
+
     const firstError = errorChips.find((chip) => chip.errorMessage)
-    return firstError?.errorMessage || 'Please fix invalid chips'
+    return firstError?.errorMessage || ''
   }
 
   const getInputPlaceholder = () => {
@@ -262,8 +240,8 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
       {label && <div className="multi-textarea-chips__label">{label}</div>}
 
       <div
-        className={classNames('multi-textarea-input-wrapper', { 
-          'with-error-styles': !!chipError || hasErrorChips 
+        className={classNames('multi-textarea-input-wrapper', {
+          'with-error-styles': !!chipError || hasErrorChips
         })}
       >
         <div className="multi-textarea-chips__content">
@@ -323,13 +301,9 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
         </div>
       </div>
 
-      {/* Show chip error or validation errors */}
       {!!chipError && <ErrorMessage message={chipError} />}
-      
-      {/* Show error message from invalid chips */}
-      {hasErrorChips && !chipError && (
-        <ErrorMessage message={getErrorMessage()} />
-      )}
+
+      {hasErrorChips && !chipError && <ErrorMessage message={getErrorMessage()} />}
 
       {helperText && !chipError && !hasErrorChips && (
         <div className="multi-textarea-chips__helper">{helperText}</div>
