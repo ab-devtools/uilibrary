@@ -1,3 +1,10 @@
+# [1.39.0-alpha.5](https://github.com/ab-devtools/uilibrary/compare/1.39.0-alpha.4...1.39.0-alpha.5) (2025-09-10)
+
+
+### Bug Fixes
+
+* autocomplete off input ([1def172](https://github.com/ab-devtools/uilibrary/commit/1def172d8816aa7ea59a138651900fe533c035f5))
+
 # [1.39.0-alpha.4](https://github.com/ab-devtools/uilibrary/compare/1.39.0-alpha.3...1.39.0-alpha.4) (2025-09-10)
 
 
