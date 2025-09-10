@@ -84,6 +84,9 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
     } else if (e.key === ',' && allowCustomValues && inputValue.trim()) {
       e.preventDefault()
       handleAddCustomValue(inputValue.trim())
+    } else if ((e.key === ' ' || e.code === 'Space') && allowCustomValues && inputValue.trim()) {
+      e.preventDefault()
+      handleAddCustomValue(inputValue.trim())
     } else if (e.key === 'Escape') {
       setShowDropdown(false)
       setSelectedOption('')
@@ -231,6 +234,22 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
     }
   }
 
+  // Check if there are any error chips
+  const hasErrorChips = localChips.some((chip) => {
+    return typeof chip === 'object' && chip.hasError
+  })
+
+  // Get a single error message from error chips
+  const getErrorMessage = () => {
+    const errorChips = localChips.filter((chip) => {
+      return typeof chip === 'object' && chip.hasError
+    }) as TChipItem[]
+    
+    // Return the first error message found, or a generic message
+    const firstError = errorChips.find((chip) => chip.errorMessage)
+    return firstError?.errorMessage || 'Please fix invalid chips'
+  }
+
   const getInputPlaceholder = () => {
     if (localChips.length === 0) return placeholder
     if (availableOptions.length > 0) return searchPlaceholder || searchPlaceholderText
@@ -243,7 +262,9 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
       {label && <div className="multi-textarea-chips__label">{label}</div>}
 
       <div
-        className={classNames('multi-textarea-input-wrapper', { 'with-error-styles': !!chipError })}
+        className={classNames('multi-textarea-input-wrapper', { 
+          'with-error-styles': !!chipError || hasErrorChips 
+        })}
       >
         <div className="multi-textarea-chips__content">
           {localChips.map((chip: string | TChipItem, index: number) => {
@@ -302,9 +323,17 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
         </div>
       </div>
 
+      {/* Show chip error or validation errors */}
       {!!chipError && <ErrorMessage message={chipError} />}
+      
+      {/* Show error message from invalid chips */}
+      {hasErrorChips && !chipError && (
+        <ErrorMessage message={getErrorMessage()} />
+      )}
 
-      {helperText && !chipError && <div className="multi-textarea-chips__helper">{helperText}</div>}
+      {helperText && !chipError && !hasErrorChips && (
+        <div className="multi-textarea-chips__helper">{helperText}</div>
+      )}
     </div>
   )
 }

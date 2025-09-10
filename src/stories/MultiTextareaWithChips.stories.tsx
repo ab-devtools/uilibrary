@@ -592,11 +592,41 @@ export const SimpleFormUsage = (): JSX.Element => {
     console.log('values', values)
   }
 
+  // Create a validation schema that requires at least one valid chip
+  const validationSchema = yup.object({
+    skills: yup.array()
+      .of(
+        yup.object({
+          text: yup.string().test('hdm-format', 'Invalid HDM serial number format', (value) => {
+            if (!value) return false
+            const serialNumber = value.trim()
+            // Valid HDM serial number formats
+            if (serialNumber.startsWith('55') && serialNumber.length === 8) return true
+            if (serialNumber.startsWith('PB') && serialNumber.length === 13) return true
+            if (serialNumber.startsWith('000710') && serialNumber.length === 11) return true
+            if (serialNumber.startsWith('00024') && serialNumber.length === 11) return true
+            if (serialNumber.startsWith('000024') && serialNumber.length === 12) return true
+            if (serialNumber.startsWith('125') && serialNumber.length === 12) return true
+            if ((serialNumber.startsWith('NCB') || serialNumber.startsWith('NCC')) && serialNumber.length === 12) return true
+            if ((serialNumber.startsWith('1') || serialNumber.startsWith('2')) && serialNumber.length === 24) return true
+            if ((serialNumber.startsWith('J97') || serialNumber.startsWith('J99') || serialNumber.startsWith('J9B')) && serialNumber.length === 12) return true
+            if ((serialNumber.startsWith('0002') || serialNumber.startsWith('00002')) && (serialNumber.length === 11 || serialNumber.length === 12)) return true
+            return false
+          })
+        })
+      )
+      .min(1, 'At least one HDM serial number is required')
+      .test('no-invalid-chips', 'Please fix invalid chips before submitting', (chips) => {
+        if (!chips || chips.length === 0) return true
+        return !chips.some((chip: any) => chip.hasError)
+      })
+  })
+
   return (
     <div className="max-w-md p-6" style={{ maxWidth: 500, padding: 20 }}>
       <FormContainer
-        initialValues={{}}
-        validationScheme={hdmValidationSchema}
+        initialValues={{ skills: [] }}
+        validationScheme={validationSchema}
         onSubmit={(values, props) => {
           console.log('values', values)
         }}
@@ -623,7 +653,44 @@ export const SimpleFormUsage = (): JSX.Element => {
             Submit Form
           </Button>
         </div>
+        {/* Status block below form */}
+        <FormStatus  />
       </FormContainer>
     </div>
   )
+}
+
+const FormStatus = (): JSX.Element | null => {
+  const { errors, isSubmitted, getValues } = useFormProps()
+  const values = getValues?.() as any
+  const skills = values?.skills as any[] | undefined
+  const hasNoValues = !Array.isArray(skills) || skills.length === 0
+
+  // Only show status after form submission
+  if (!isSubmitted) return null
+
+  // Show success with values only if no errors and has values
+  if (!errors?.skills && !hasNoValues) {
+    return (
+      <div className="mt-3">
+        <div style={{ color: 'green', marginBottom: '8px' }}>
+          ✅ Form submitted successfully!
+        </div>
+        <div style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '4px' }}>
+          Submitted Values:
+        </div>
+        <ul style={{ margin: 0, paddingLeft: '20px' }}>
+          {skills.map((skill: any, index: number) => {
+            const text = typeof skill === 'string' ? skill : skill.text
+            const hasError = typeof skill === 'object' && skill.hasError
+            return (
+              <li key={index} style={{ color: hasError ? 'red' : 'black', marginBottom: '2px' }}>
+                {text} {hasError && '(Invalid)'}
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+    )
+  }
 }
