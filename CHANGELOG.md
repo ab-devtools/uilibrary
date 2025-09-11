@@ -1,3 +1,10 @@
+# [1.39.0-alpha.6](https://github.com/ab-devtools/uilibrary/compare/1.39.0-alpha.5...1.39.0-alpha.6) (2025-09-11)
+
+
+### Features
+
+* add functional to create one chip ([56deca9](https://github.com/ab-devtools/uilibrary/commit/56deca94141ba5d2991f6d958b850fc236d8d83c))
+
 # [1.39.0-alpha.5](https://github.com/ab-devtools/uilibrary/compare/1.39.0-alpha.4...1.39.0-alpha.5) (2025-09-10)
 
 
