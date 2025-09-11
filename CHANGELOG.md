@@ -1,3 +1,68 @@
+## [1.41.1](https://github.com/ab-devtools/uilibrary/compare/1.41.0...1.41.1) (2025-09-09)
+
+
+### Bug Fixes
+
+* **IPA-849:** fix search filtering with leading/trailing spaces in options ([7fc47c8](https://github.com/ab-devtools/uilibrary/commit/7fc47c8a58beed77f9fd221509538850ccc9ff65))
+
+# [1.41.0](https://github.com/ab-devtools/uilibrary/compare/1.40.0...1.41.0) (2025-09-08)
+
+
+### Features
+
+* conditional closeDropdown for multiselect ([962d6d5](https://github.com/ab-devtools/uilibrary/commit/962d6d534c3d1a7eb4db05ad2f915d8adfdaba13))
+* conditional closeDropdown for multiselect ([040d9c8](https://github.com/ab-devtools/uilibrary/commit/040d9c8fe3639eeb808d07138538692641bbb9ed))
+
+# [1.40.0](https://github.com/ab-devtools/uilibrary/compare/1.39.4...1.40.0) (2025-09-08)
+
+
+### Features
+
+* add option for autoapply Multiselect items on item change ([8cbbb84](https://github.com/ab-devtools/uilibrary/commit/8cbbb84f5d0d8f6ef4537f4db885934c57043bdc))
+
+## [1.39.4](https://github.com/ab-devtools/uilibrary/compare/1.39.3...1.39.4) (2025-09-01)
+
+
+### Bug Fixes
+
+* event for table row ([d0aa8c6](https://github.com/ab-devtools/uilibrary/commit/d0aa8c63c8ba94db6cabcfc5d72c56aa40312c2f))
+
+## [1.39.3](https://github.com/ab-devtools/uilibrary/compare/1.39.2...1.39.3) (2025-08-29)
+
+
+### Bug Fixes
+
+* otp type ([8546806](https://github.com/ab-devtools/uilibrary/commit/854680681067dea0c41362baf1587068c4d4cc17))
+* otp type ([17899d5](https://github.com/ab-devtools/uilibrary/commit/17899d526a6cd85b92d5e99a069983f5e35548bf))
+* otp type ([052e61c](https://github.com/ab-devtools/uilibrary/commit/052e61c13b02014f2472ce91e889941d17c2ac3c))
+
+## [1.39.2](https://github.com/ab-devtools/uilibrary/compare/1.39.1...1.39.2) (2025-08-29)
+
+
+### Bug Fixes
+
+* column header cursor styles ([867b184](https://github.com/ab-devtools/uilibrary/commit/867b18481993da4c5b152a31ba69d10241cc5792))
+* column header cursor styles ([f941147](https://github.com/ab-devtools/uilibrary/commit/f9411474dc1023519028911db146cc17ba71b9d0))
+
+## [1.39.1](https://github.com/ab-devtools/uilibrary/compare/1.39.0...1.39.1) (2025-08-27)
+
+
+### Bug Fixes
+
+* make fieldName is dynamic and remove all console.logs ([ff6db49](https://github.com/ab-devtools/uilibrary/commit/ff6db49e2d7ecb10eade3177667048b3eb8aaa96))
+
+# [1.39.0](https://github.com/ab-devtools/uilibrary/compare/1.38.1...1.39.0) (2025-08-27)
+
+
+### Bug Fixes
+
+* fix some types ([e826a95](https://github.com/ab-devtools/uilibrary/commit/e826a954cf6ce2803190cc4ad08713d438b6a198))
+
+
+### Features
+
+* multitextarea with chips ([a4b867d](https://github.com/ab-devtools/uilibrary/commit/a4b867d67034a15b253768ee48eb8e6ac0bcbfe2))
+
 ## [1.38.1](https://github.com/ab-devtools/uilibrary/compare/1.38.0...1.38.1) (2025-08-22)
 
 
