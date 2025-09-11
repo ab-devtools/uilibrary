@@ -226,8 +226,5 @@ const FormStatus = (): JSX.Element | null => {
     )
   }
 
-  return (
-    <div className="mt-3" style={{ color: 'red' }}>
-    </div>
-  )
+  return <div className="mt-3" style={{ color: 'red' }}></div>
 }

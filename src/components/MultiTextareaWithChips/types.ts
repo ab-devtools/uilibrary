@@ -1,14 +1,22 @@
 import type { AnySchema } from 'yup'
 
+export interface TChipItem {
+  text: string
+  hasError?: boolean
+  errorMessage?: string
+  id?: string | number
+  [key: string]: unknown
+}
+
+export type ChipValue = string | TChipItem
+
 export interface TMultiTextareaWithChipsProps extends IFormCompProps {
   label: string
   placeholder: string
   helperText?: string
-  chips?: Array<string | TChipItem>
+  chips?: ChipValue[]
   onAddChip?: (chip: string) => void
   onRemoveChip?: (chip: string) => void
-  onAddChipItem?: (chip: TChipItem) => void
-  onRemoveChipItem?: (chip: TChipItem) => void
   className?: string
   disabled?: boolean
   availableOptions?: string[]
@@ -17,17 +25,11 @@ export interface TMultiTextareaWithChipsProps extends IFormCompProps {
   chipValidationSchema?: AnySchema
   chipValidationErrorMessage?: string
   allowInvalidChips?: boolean
-  error?: string
-  required?: boolean
-  minChips?: number
-  maxChips?: number
   minChipLength?: number
   maxChipLength?: number
-  validateChip?: (chip: string) => void
   searchPlaceholderText?: string
   typeAndEnterPlaceholderText?: string
   noOptionsPlaceholderText?: string
-  autoFormIntegration?: boolean
   fieldName?: string
   formProps?: {
     setFieldValue?: (
@@ -44,11 +46,4 @@ export interface TMultiTextareaWithChipsProps extends IFormCompProps {
     ) => void)
     | undefined
   }
-}
-
-export type TChipItem = {
-  text: string
-  hasError?: boolean
-  errorMessage?: string
-  id?: string | number
 }
