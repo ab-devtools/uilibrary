@@ -35,6 +35,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
     isValid,
     isSearchable = false,
     isDynamicSearchable = false,
+    trimSearchValue = false,
     disabled,
     dataId = '',
     placeHolder,
@@ -142,10 +143,14 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
       return options
     }
 
+    const processedSearchValue = trimSearchValue
+      ? searchValue.trim().toLowerCase()
+      : searchValue.toLowerCase()
+
     return options.filter((dataItem) => {
       return (
         typeof dataItem.label === 'string' &&
-        dataItem.label.toLowerCase().includes(searchValue.toLowerCase())
+        dataItem.label.toLowerCase().includes(processedSearchValue)
       )
     })
   }, [searchValue, options])

@@ -102,6 +102,7 @@ export interface TMultiSelectPropTypes extends IFormCompProps, TSelectBaseProps 
     confirm: TButtonPropTypes
   }
   autoApplyOnClose?: boolean
+  autoApplyOnChooseItem?: boolean
   labelAddons?: JSX.Element
   className?: string
   isButtonSelect?: boolean
@@ -136,6 +137,7 @@ export interface TSingleSelectPropTypes extends IFormCompProps, TSelectBaseProps
   onInputFormatting?: (value: string) => string
   isSearchable?: boolean
   isDynamicSearchable?: boolean
+  trimSearchValue?: boolean
   outerHelperText?: string
   innerHelperText?: string
   labelAddons?: JSX.Element
