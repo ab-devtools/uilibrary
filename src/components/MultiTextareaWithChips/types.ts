@@ -44,7 +44,6 @@ export interface TMultiTextareaWithChipsProps extends IFormCompProps {
     ) => void)
     | undefined
   }
-  onFormSubmit?: () => void
 }
 
 export type TChipItem = {
