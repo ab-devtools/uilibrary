@@ -26,7 +26,8 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
   typeAndEnterPlaceholderText = 'Type and press Enter...',
   noOptionsPlaceholderText = 'No more options available',
   fieldName = 'skills',
-  formProps
+  formProps,
+  onFormSubmit
 }) => {
   const [inputValue, setInputValue] = useState('')
   const [showDropdown, setShowDropdown] = useState(false)
@@ -37,11 +38,26 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
   const inputRef = useRef<HTMLInputElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
-  const { setValue } = useFormProps()
+  const { setValue, isSubmitting } = useFormProps()
 
   const chipTexts = localChips.map((chip) => (typeof chip === 'string' ? chip : chip.text))
 
   const isUserInteraction = useRef(false)
+
+  // Function to handle form submission - automatically create chip from remaining text
+  const handleFormSubmit = useCallback(() => {
+    if (inputValue.trim() && allowCustomValues) {
+      handleAddCustomValue(inputValue.trim())
+    }
+    onFormSubmit?.()
+  }, [inputValue, allowCustomValues, onFormSubmit])
+
+  // Watch for form submission and automatically create chip from remaining text
+  useEffect(() => {
+    if (isSubmitting && inputValue.trim() && allowCustomValues) {
+      handleAddCustomValue(inputValue.trim())
+    }
+  }, [isSubmitting, inputValue, allowCustomValues])
 
   useEffect(() => {
     if (!isUserInteraction.current) {

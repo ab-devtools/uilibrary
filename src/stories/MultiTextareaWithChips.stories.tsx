@@ -640,6 +640,9 @@ const InsideForm = () => {
           Submit Form
         </Button>
       </div>
+      <div className="mt-2 text-sm text-gray-600">
+        💡 <strong>Tip:</strong> You can type text and submit the form without pressing Enter - it will automatically create a chip!
+      </div>
     </div>
   )
 }
