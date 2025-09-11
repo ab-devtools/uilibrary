@@ -1,3 +1,10 @@
+# [1.39.0-alpha.7](https://github.com/ab-devtools/uilibrary/compare/1.39.0-alpha.6...1.39.0-alpha.7) (2025-09-11)
+
+
+### Bug Fixes
+
+* some bugs and remove comments ([8399fbe](https://github.com/ab-devtools/uilibrary/commit/8399fbe35cf1ce5ee1979f3a1982284028874c48))
+
 # [1.39.0-alpha.6](https://github.com/ab-devtools/uilibrary/compare/1.39.0-alpha.5...1.39.0-alpha.6) (2025-09-11)
 
 
