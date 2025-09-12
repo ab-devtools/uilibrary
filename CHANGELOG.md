@@ -1,3 +1,28 @@
+# [1.42.0](https://github.com/ab-devtools/uilibrary/compare/1.41.1...1.42.0) (2025-09-12)
+
+
+### Bug Fixes
+
+* add fieldName prop ([2c5208b](https://github.com/ab-devtools/uilibrary/commit/2c5208b981acfcf852f75af3886b7e3b4423a526))
+* autocomplete off input ([1def172](https://github.com/ab-devtools/uilibrary/commit/1def172d8816aa7ea59a138651900fe533c035f5))
+* branches for alpha ([5b5e514](https://github.com/ab-devtools/uilibrary/commit/5b5e514022d916d4ef097f8798d659785995ae4e))
+* bug fixing ([e86f8a7](https://github.com/ab-devtools/uilibrary/commit/e86f8a72976481a1a71be2c775c8b1c8409896ae))
+* build issue ([25b8c88](https://github.com/ab-devtools/uilibrary/commit/25b8c8811c56012241c2cd742e26b6e3c4439a92))
+* fixes ([ea2cc6a](https://github.com/ab-devtools/uilibrary/commit/ea2cc6a28edc542fecc2ca12495e487739d3adbe))
+* lib name ([4248cbe](https://github.com/ab-devtools/uilibrary/commit/4248cbe085da30c9cabbe06e8ab310d209ddd24f))
+* merge conflicts ([fe5af47](https://github.com/ab-devtools/uilibrary/commit/fe5af470646e7849b37661dd7633a3f04cff00c4))
+* some bugs and remove comments ([8399fbe](https://github.com/ab-devtools/uilibrary/commit/8399fbe35cf1ce5ee1979f3a1982284028874c48))
+* storybook main.ts ([76590c0](https://github.com/ab-devtools/uilibrary/commit/76590c0136ff8f3588e3f08beed5484942c9a14a))
+* version ([784e025](https://github.com/ab-devtools/uilibrary/commit/784e025ce6cb7f5a08f8eec5dd94292fb193f7bd))
+
+
+### Features
+
+* add functional to create one chip ([56deca9](https://github.com/ab-devtools/uilibrary/commit/56deca94141ba5d2991f6d958b850fc236d8d83c))
+* add select option in MultipleTextarea component ([69662fe](https://github.com/ab-devtools/uilibrary/commit/69662fe67fe5d1e74d33eeac627778fcd00b3357))
+* beta version of multiple textarea component with alpha version ([34d3495](https://github.com/ab-devtools/uilibrary/commit/34d349502b0bf3c73b3b8abb29a9d094bb25f743))
+* create multiple textarea with chips ([bbb2e80](https://github.com/ab-devtools/uilibrary/commit/bbb2e805406ed97d6aebe53814ff8bb473dfebf2))
+
 # [1.39.0-alpha.6](https://github.com/ab-devtools/uilibrary/compare/1.39.0-alpha.5...1.39.0-alpha.6) (2025-09-11)
 
 
