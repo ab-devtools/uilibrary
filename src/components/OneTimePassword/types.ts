@@ -11,7 +11,7 @@ export interface OtpCustomProps
   error?: string | ReactElement
   label?: string | ReactElement
   count: number
-  pattern: string
+  pattern?: string
   disabled?: boolean
   required?: boolean
   ref?: RefObject<HTMLInputElement>
