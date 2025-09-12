@@ -1,66 +1,53 @@
-## [1.41.1](https://github.com/ab-devtools/uilibrary/compare/1.41.0...1.41.1) (2025-09-09)
-
-
-### Bug Fixes
-
-* **IPA-849:** fix search filtering with leading/trailing spaces in options ([7fc47c8](https://github.com/ab-devtools/uilibrary/commit/7fc47c8a58beed77f9fd221509538850ccc9ff65))
-
-# [1.41.0](https://github.com/ab-devtools/uilibrary/compare/1.40.0...1.41.0) (2025-09-08)
+# [1.39.0-alpha.6](https://github.com/ab-devtools/uilibrary/compare/1.39.0-alpha.5...1.39.0-alpha.6) (2025-09-11)
 
 
 ### Features
 
-* conditional closeDropdown for multiselect ([962d6d5](https://github.com/ab-devtools/uilibrary/commit/962d6d534c3d1a7eb4db05ad2f915d8adfdaba13))
-* conditional closeDropdown for multiselect ([040d9c8](https://github.com/ab-devtools/uilibrary/commit/040d9c8fe3639eeb808d07138538692641bbb9ed))
+* add functional to create one chip ([56deca9](https://github.com/ab-devtools/uilibrary/commit/56deca94141ba5d2991f6d958b850fc236d8d83c))
 
-# [1.40.0](https://github.com/ab-devtools/uilibrary/compare/1.39.4...1.40.0) (2025-09-08)
+# [1.39.0-alpha.5](https://github.com/ab-devtools/uilibrary/compare/1.39.0-alpha.4...1.39.0-alpha.5) (2025-09-10)
+
+
+### Bug Fixes
+
+* autocomplete off input ([1def172](https://github.com/ab-devtools/uilibrary/commit/1def172d8816aa7ea59a138651900fe533c035f5))
+
+# [1.39.0-alpha.4](https://github.com/ab-devtools/uilibrary/compare/1.39.0-alpha.3...1.39.0-alpha.4) (2025-09-10)
 
 
 ### Features
 
-* add option for autoapply Multiselect items on item change ([8cbbb84](https://github.com/ab-devtools/uilibrary/commit/8cbbb84f5d0d8f6ef4537f4db885934c57043bdc))
+* add select option in MultipleTextarea component ([69662fe](https://github.com/ab-devtools/uilibrary/commit/69662fe67fe5d1e74d33eeac627778fcd00b3357))
 
-## [1.39.4](https://github.com/ab-devtools/uilibrary/compare/1.39.3...1.39.4) (2025-09-01)
-
-
-### Bug Fixes
-
-* event for table row ([d0aa8c6](https://github.com/ab-devtools/uilibrary/commit/d0aa8c63c8ba94db6cabcfc5d72c56aa40312c2f))
-
-## [1.39.3](https://github.com/ab-devtools/uilibrary/compare/1.39.2...1.39.3) (2025-08-29)
+# [1.39.0-alpha.3](https://github.com/ab-devtools/uilibrary/compare/1.39.0-alpha.2...1.39.0-alpha.3) (2025-09-10)
 
 
 ### Bug Fixes
 
-* otp type ([8546806](https://github.com/ab-devtools/uilibrary/commit/854680681067dea0c41362baf1587068c4d4cc17))
-* otp type ([17899d5](https://github.com/ab-devtools/uilibrary/commit/17899d526a6cd85b92d5e99a069983f5e35548bf))
-* otp type ([052e61c](https://github.com/ab-devtools/uilibrary/commit/052e61c13b02014f2472ce91e889941d17c2ac3c))
+* add fieldName prop ([2c5208b](https://github.com/ab-devtools/uilibrary/commit/2c5208b981acfcf852f75af3886b7e3b4423a526))
 
-## [1.39.2](https://github.com/ab-devtools/uilibrary/compare/1.39.1...1.39.2) (2025-08-29)
+# [1.39.0-alpha.2](https://github.com/ab-devtools/uilibrary/compare/1.39.0-alpha.1...1.39.0-alpha.2) (2025-09-10)
 
 
 ### Bug Fixes
 
-* column header cursor styles ([867b184](https://github.com/ab-devtools/uilibrary/commit/867b18481993da4c5b152a31ba69d10241cc5792))
-* column header cursor styles ([f941147](https://github.com/ab-devtools/uilibrary/commit/f9411474dc1023519028911db146cc17ba71b9d0))
+* storybook main.ts ([76590c0](https://github.com/ab-devtools/uilibrary/commit/76590c0136ff8f3588e3f08beed5484942c9a14a))
 
-## [1.39.1](https://github.com/ab-devtools/uilibrary/compare/1.39.0...1.39.1) (2025-08-27)
-
-
-### Bug Fixes
-
-* make fieldName is dynamic and remove all console.logs ([ff6db49](https://github.com/ab-devtools/uilibrary/commit/ff6db49e2d7ecb10eade3177667048b3eb8aaa96))
-
-# [1.39.0](https://github.com/ab-devtools/uilibrary/compare/1.38.1...1.39.0) (2025-08-27)
+# [1.39.0-alpha.1](https://github.com/ab-devtools/uilibrary/compare/1.38.1...1.39.0-alpha.1) (2025-09-10)
 
 
 ### Bug Fixes
 
-* fix some types ([e826a95](https://github.com/ab-devtools/uilibrary/commit/e826a954cf6ce2803190cc4ad08713d438b6a198))
+* branches for alpha ([5b5e514](https://github.com/ab-devtools/uilibrary/commit/5b5e514022d916d4ef097f8798d659785995ae4e))
+* bug fixing ([e86f8a7](https://github.com/ab-devtools/uilibrary/commit/e86f8a72976481a1a71be2c775c8b1c8409896ae))
+* build issue ([25b8c88](https://github.com/ab-devtools/uilibrary/commit/25b8c8811c56012241c2cd742e26b6e3c4439a92))
+* lib name ([4248cbe](https://github.com/ab-devtools/uilibrary/commit/4248cbe085da30c9cabbe06e8ab310d209ddd24f))
+* version ([784e025](https://github.com/ab-devtools/uilibrary/commit/784e025ce6cb7f5a08f8eec5dd94292fb193f7bd))
 
 
 ### Features
 
+* beta version of multiple textarea component with alpha version ([34d3495](https://github.com/ab-devtools/uilibrary/commit/34d349502b0bf3c73b3b8abb29a9d094bb25f743))
 * multitextarea with chips ([a4b867d](https://github.com/ab-devtools/uilibrary/commit/a4b867d67034a15b253768ee48eb8e6ac0bcbfe2))
 
 ## [1.38.1](https://github.com/ab-devtools/uilibrary/compare/1.38.0...1.38.1) (2025-08-22)

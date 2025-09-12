@@ -1,16 +1,35 @@
 import type { AnySchema } from 'yup'
 
+export interface TChipItem {
+  text: string
+  hasError?: boolean
+  errorMessage?: string
+  id?: string | number
+  [key: string]: unknown
+}
+
+export type ChipValue = string | TChipItem
+
 export interface TMultiTextareaWithChipsProps extends IFormCompProps {
-  allowCustomValues?: boolean
-  allowInvalidChips?: boolean
-  autoFormIntegration?: boolean
-  availableOptions?: string[]
-  chipValidationErrorMessage?: string
-  chipValidationSchema?: AnySchema
-  chips?: Array<string | TChipItem>
+  label: string
+  placeholder: string
+  helperText?: string
+  chips?: ChipValue[]
+  onAddChip?: (chip: string) => void
+  onRemoveChip?: (chip: string) => void
   className?: string
   disabled?: boolean
-  error?: string
+  availableOptions?: string[]
+  allowCustomValues?: boolean
+  searchPlaceholder?: string
+  chipValidationSchema?: AnySchema
+  chipValidationErrorMessage?: string
+  allowInvalidChips?: boolean
+  minChipLength?: number
+  maxChipLength?: number
+  searchPlaceholderText?: string
+  typeAndEnterPlaceholderText?: string
+  noOptionsPlaceholderText?: string
   fieldName?: string
   formProps?: {
     setFieldValue?: (
@@ -27,28 +46,4 @@ export interface TMultiTextareaWithChipsProps extends IFormCompProps {
         ) => void)
       | undefined
   }
-  helperText?: string
-  label: string
-  maxChipLength?: number
-  maxChips?: number
-  minChipLength?: number
-  minChips?: number
-  noOptionsPlaceholderText?: string
-  onAddChip?: (chip: string) => void
-  onAddChipItem?: (chip: TChipItem) => void
-  onRemoveChip?: (chip: string) => void
-  onRemoveChipItem?: (chip: TChipItem) => void
-  placeholder: string
-  required?: boolean
-  searchPlaceholder?: string
-  searchPlaceholderText?: string
-  typeAndEnterPlaceholderText?: string
-  validateChip?: (chip: string) => void
-}
-
-export type TChipItem = {
-  text: string
-  hasError?: boolean
-  errorMessage?: string
-  id?: string | number
 }
