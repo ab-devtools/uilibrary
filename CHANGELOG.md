@@ -1,3 +1,10 @@
+## [1.42.1](https://github.com/ab-devtools/uilibrary/compare/1.42.0...1.42.1) (2025-09-15)
+
+
+### Bug Fixes
+
+* change color ([2aa75f2](https://github.com/ab-devtools/uilibrary/commit/2aa75f25bc3f589c5f17a0d0b4633a0a79a95a1b))
+
 # [1.42.0](https://github.com/ab-devtools/uilibrary/compare/1.41.1...1.42.0) (2025-09-12)
 
 
