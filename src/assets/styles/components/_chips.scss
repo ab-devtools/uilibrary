@@ -31,20 +31,20 @@
   --ds-chips-filled-bg-discovery: var(--purple-300);
   --ds-chips-filled-bg-discovery-hover: var(--purple-500);
 
-  --ds-chips-accent-bg-primary: var(--grey-50);
-  --ds-chips-accent-bg-primary-hover: var(--grey-100);
-  --ds-chips-accent-bg-information: var(--blue-50);
-  --ds-chips-accent-bg-information-hover: var(--blue-100);
+  --ds-chips-accent-bg-primary: var(--grey-20);
+  --ds-chips-accent-bg-primary-hover: var(--grey-50);
+  --ds-chips-accent-bg-information: var(--blue-20);
+  --ds-chips-accent-bg-information-hover: var(--blue-50);
   --ds-chips-accent-bg-brand: var(--brand-20);
   --ds-chips-accent-bg-brand-hover: var(--brand-30);
-  --ds-chips-accent-bg-danger: var(--red-50);
-  --ds-chips-accent-bg-danger-hover: var(--red-100);
-  --ds-chips-accent-bg-warning: var(--yellow-50);
-  --ds-chips-accent-bg-warning-hover: var(--yellow-100);
-  --ds-chips-accent-bg-success: var(--green-50);
-  --ds-chips-accent-bg-success-hover: var(--green-100);
-  --ds-chips-accent-bg-discovery: var(--purple-50);
-  --ds-chips-accent-bg-discovery-hover: var(--purple-100);
+  --ds-chips-accent-bg-danger: var(--red-20);
+  --ds-chips-accent-bg-danger-hover: var(--red-50);
+  --ds-chips-accent-bg-warning: var(--yellow-20);
+  --ds-chips-accent-bg-warning-hover: var(--yellow-50);
+  --ds-chips-accent-bg-success: var(--green-20);
+  --ds-chips-accent-bg-success-hover: var(--green-50);
+  --ds-chips-accent-bg-discovery: var(--purple-20);
+  --ds-chips-accent-bg-discovery-hover: var(--purple-50);
 
   --ds-chips-outlined-bg: var(--white);
   --ds-chips-outlined-bg-primary-hover: var(--grey-50);
@@ -56,7 +56,16 @@
   --ds-chips-outlined-bg-discovery-hover: var(--purple-50);
 
   --ds-chips-bg-disabled: var(--grey-50);
+
+
   --ds-chips-border-color-disabled: var(--ds-color-border-disabled);
+  --ds-chips-border-color-information: var(--blue-100);
+  --ds-chips-border-color-brand: var(--brand-40);
+  --ds-chips-border-color-danger: var(--red-100);
+  --ds-chips-border-color-warning: var(--yellow-100);
+  --ds-chips-border-color-success: var(--green-100);
+  --ds-chips-border-color-discovery: var(--purple-100);
+  --ds-chips-border-color-grey: var(--grey-100);
 
   @include mixin.inline-flex;
   @include mixin.align-items(center);
@@ -164,6 +173,7 @@
     }
   }
   &--accent {
+    border: 1px solid;
     &:not(&#{$this}--disabled) {
       &#{$this}--primary {
         background-color: var(--ds-chips-accent-bg-primary);
@@ -171,8 +181,22 @@
           background-color: var(--ds-chips-accent-bg-primary-hover)
         }
       }
-
+      //--ds-chips-border-color-information: var(--blue-100);
+      //--ds-chips-border-color-brand: var(--brand-40);
+      //--ds-chips-border-color-danger: var(--red-100);
+      //--ds-chips-border-color-warning: var(--yellow-100);
+      //--ds-chips-border-color-success: var(--green-100);
+      //--ds-chips-border-color-discovery: var(--purple-100);
+      //--ds-chips-border-color-grey: var(--grey-100);
+      &#{$this}--primary {
+        border-color: var(--ds-chips-border-color-grey);
+        background-color: var(--ds-chips-accent-bg-primary);
+        &[aria-readonly = false]:hover {
+          background-color: var(--ds-chips-accent-bg-primary-hover)
+        }
+      }
       &#{$this}--information {
+        border-color: var(--ds-chips-border-color-information);
         background-color: var(--ds-chips-accent-bg-information);
         &[aria-readonly = false]:hover {
           background-color: var(--ds-chips-accent-bg-information-hover)
@@ -180,6 +204,7 @@
       }
 
       &#{$this}--brand {
+        border-color: var(--ds-chips-border-color-brand);
         background-color: var(--ds-chips-accent-bg-brand);
         &[aria-readonly = false]:hover {
           background-color: var(--ds-chips-accent-bg-brand-hover)
@@ -187,6 +212,7 @@
       }
 
       &#{$this}--danger {
+        border-color: var(--ds-chips-border-color-danger);
         background-color: var(--ds-chips-accent-bg-danger);
         &[aria-readonly = false]:hover {
           background-color: var(--ds-chips-accent-bg-danger-hover)
@@ -194,6 +220,7 @@
       }
 
       &#{$this}--success {
+        border-color: var(--ds-chips-border-color-success);
         background-color: var(--ds-chips-accent-bg-success);
         &[aria-readonly = false]:hover {
           background-color: var(--ds-chips-accent-bg-success-hover)
@@ -201,6 +228,7 @@
       }
 
       &#{$this}--warning {
+        border-color: var(--ds-chips-border-color-warning);
         background-color: var(--ds-chips-accent-bg-warning);
         &[aria-readonly = false]:hover {
           background-color: var(--ds-chips-accent-bg-warning-hover)
@@ -208,6 +236,7 @@
       }
 
       &#{$this}--discovery {
+        border-color: var(--ds-chips-border-color-discovery);
         background-color: var(--ds-chips-accent-bg-discovery);
         &[aria-readonly = false]:hover {
           background-color: var(--ds-chips-accent-bg-discovery-hover)
