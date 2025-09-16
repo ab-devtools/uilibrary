@@ -1,3 +1,10 @@
+## [1.42.2](https://github.com/ab-devtools/uilibrary/compare/1.42.1...1.42.2) (2025-09-16)
+
+
+### Bug Fixes
+
+* add id for button icon ([f50273d](https://github.com/ab-devtools/uilibrary/commit/f50273d5a263731751f0d2e476e2be879ccafcfc))
+
 ## [1.42.1](https://github.com/ab-devtools/uilibrary/compare/1.42.0...1.42.1) (2025-09-15)
 
 
