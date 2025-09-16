@@ -17,11 +17,13 @@ export const ButtonIcon = (props: TButtonIconPropTypes): ReactElement => {
     dataId = '',
     onClick,
     refHandler = null,
+    id,
     ...rest
   } = props
 
   return (
     <button
+      id={id}
       ref={refHandler}
       data-id={dataId}
       disabled={disabled}
