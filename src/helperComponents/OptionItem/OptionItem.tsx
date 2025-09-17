@@ -23,7 +23,8 @@ export const OptionItem = (props: TSelectItemProps): JSX.Element => {
     isRadio,
     className = '',
     tooltipAddons,
-    dataId = ''
+    dataId = '',
+    withTitleOption = false
   } = props
 
   const { label, meta, value } = data
@@ -43,6 +44,7 @@ export const OptionItem = (props: TSelectItemProps): JSX.Element => {
 
   const optionContent = (
     <div
+      title={withTitleOption ? `${label}` : ''}
       data-id={dataId}
       id={`${value}`}
       className={classNames(

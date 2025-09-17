@@ -20,6 +20,7 @@ export const Menu = (props: TMenuProps): ReactElement | null => {
     isOpen,
     position = 'bottom-right',
     className = '',
+    withTitleOption = false,
     children
   } = props
   const [menuRef, setMenuRef] = useState<HTMLDivElement | null>(null)
@@ -73,6 +74,7 @@ export const Menu = (props: TMenuProps): ReactElement | null => {
                 return (
                   <OptionItem
                     dataId={dataId}
+                    withTitleOption={withTitleOption}
                     disabled={disabled}
                     key={value}
                     data={{
