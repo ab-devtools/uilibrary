@@ -16,4 +16,5 @@ export type TSelectItemProps = {
   isRadio?: boolean
   tooltipAddons?: TTooltipProps
   dataId?: string
+  withTitleOption?: boolean
 }
