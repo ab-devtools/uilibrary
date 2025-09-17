@@ -1,3 +1,13 @@
+## [1.42.3](https://github.com/ab-devtools/uilibrary/compare/1.42.2...1.42.3) (2025-09-17)
+
+
+### Bug Fixes
+
+* add withTitleOption boolean prop to conditionally show HTML title attribute ([0fe1bc7](https://github.com/ab-devtools/uilibrary/commit/0fe1bc7f3ab7f53bf231e30ad6b8466a21b1ea2f))
+* form validation shema option ([12db090](https://github.com/ab-devtools/uilibrary/commit/12db090f805ace10c6e1dc3472d6c5279c310f8c))
+* form validation shema option ([39d7d09](https://github.com/ab-devtools/uilibrary/commit/39d7d09589a821315f4bb1dc883e79a6eb2ce9e7))
+* pattern ([d90cfdd](https://github.com/ab-devtools/uilibrary/commit/d90cfdd7d10d1b641ab7d636028d1b9bba96ede0))
+
 ## [1.42.2](https://github.com/ab-devtools/uilibrary/compare/1.42.1...1.42.2) (2025-09-16)
 
 
