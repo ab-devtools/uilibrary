@@ -1,3 +1,11 @@
+## [1.42.4](https://github.com/ab-devtools/uilibrary/compare/1.42.3...1.42.4) (2025-09-18)
+
+
+### Bug Fixes
+
+* validation shcema option fix ([718c550](https://github.com/ab-devtools/uilibrary/commit/718c550d87557d06a0ed711c3ba2eddedb94c46d))
+* validation shcema option fix ([64132de](https://github.com/ab-devtools/uilibrary/commit/64132de0f531960634f0e0cc456ba6b98cbaa592))
+
 ## [1.42.3](https://github.com/ab-devtools/uilibrary/compare/1.42.2...1.42.3) (2025-09-17)
 
 
