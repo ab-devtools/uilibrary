@@ -11,11 +11,7 @@ export interface FormPropTypes {
   onSubmit?: (data: TFormData, formState: FormState<TFormData>, dirtyFields?: TDirtyFields) => void
   children?: ReactNode
   validationScheme: AnyObjectSchema
-  validationSchemeOptions?: {
-    context?: unknown
-    stripUnknown?: boolean
-    recursive?: boolean
-  }
+  validationContext?: unknown
   initialValues: TFormData
   buttonConfigs?: TButtonPropTypes[]
   shouldUnregister?: boolean
