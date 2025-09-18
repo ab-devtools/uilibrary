@@ -1,3 +1,11 @@
+## [1.42.5](https://github.com/ab-devtools/uilibrary/compare/1.42.4...1.42.5) (2025-09-18)
+
+
+### Bug Fixes
+
+* copy tooltip ([29d5cb1](https://github.com/ab-devtools/uilibrary/commit/29d5cb171322f576464e6cb4857d9729f9f764c1))
+* copy tooltip ([d19f7c0](https://github.com/ab-devtools/uilibrary/commit/d19f7c097987e567164ed6a2216aa15bedbc8f84))
+
 ## [1.42.4](https://github.com/ab-devtools/uilibrary/compare/1.42.3...1.42.4) (2025-09-18)
 
 
