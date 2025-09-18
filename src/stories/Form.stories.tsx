@@ -157,7 +157,6 @@ const Template = (): JSX.Element => {
       <_FormContainer
         onSubmit={(data) => console.log('data', data)}
         validationScheme={VALIDATION_SCHEME}
-        validationSchemeOptions={{ context: { name: "test" } }}
         initialValues={INITIAL_VALUES}
       >
         <>
