@@ -7,7 +7,7 @@ export const useHideOnScroll = (
 ): null => {
   useEffect(() => {
     const scrollTarget = containerRef?.current || document
-    
+
     scrollTarget.addEventListener('scroll', hide)
     const handleCustomScroll = (event: Event) => {
       const customEvent = event as CustomEvent<string>
@@ -21,6 +21,6 @@ export const useHideOnScroll = (
       document.removeEventListener(CUSTOM_SCROLL_NAME, handleCustomScroll)
     }
   }, [])
-  
+
   return null
 }
