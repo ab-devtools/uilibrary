@@ -1,3 +1,10 @@
+## [1.42.6](https://github.com/ab-devtools/uilibrary/compare/1.42.5...1.42.6) (2025-09-18)
+
+
+### Bug Fixes
+
+* validation context ([d4daff8](https://github.com/ab-devtools/uilibrary/commit/d4daff83cd2357c189aa9e10d5fbb3fb62bc62eb))
+
 ## [1.42.5](https://github.com/ab-devtools/uilibrary/compare/1.42.4...1.42.5) (2025-09-18)
 
 
