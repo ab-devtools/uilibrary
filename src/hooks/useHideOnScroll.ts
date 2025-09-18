@@ -1,23 +1,22 @@
 import { useEffect } from 'react'
 import { CUSTOM_SCROLL_NAME, CUSTOM_SCROLL_MESSAGE } from '../consts'
 
-export const useHideOnScroll = (hide: () => void): null => {
+export const useHideOnScroll = (hide: () => void, container?: HTMLElement | Window): null => {
   useEffect(() => {
-    document.addEventListener('scroll', hide)
-    return () => {
-      document.removeEventListener('scroll', hide)
-    }
-  }, [])
+    const scrollTarget = container || document
 
-  useEffect(() => {
-    document.addEventListener(CUSTOM_SCROLL_NAME, (event: Event) => {
+    scrollTarget.addEventListener('scroll', hide)
+    const handleCustomScroll = (event: Event) => {
       const customEvent = event as CustomEvent<string>
-      // Check the event type
       if (customEvent.detail === CUSTOM_SCROLL_MESSAGE) {
-        // Close the menu
         hide()
       }
-    })
+    }
+    document.addEventListener(CUSTOM_SCROLL_NAME, handleCustomScroll)
+    return () => {
+      scrollTarget.removeEventListener('scroll', hide)
+      document.removeEventListener(CUSTOM_SCROLL_NAME, handleCustomScroll)
+    }
   }, [])
 
   return null
