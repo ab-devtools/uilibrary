@@ -17,7 +17,7 @@ export const Copy = ({
   const [isTooltipVisible, setTooltipVisibility] = useState(false)
   const copyIconRef = useRef<HTMLDivElement | null>(null)
 
-  const onCloseTooltip = () => setTooltipVisibility(false);
+  const onCloseTooltip = () => setTooltipVisibility(false)
 
   const copy = (e: TClickEventType) => {
     e.stopPropagation()
