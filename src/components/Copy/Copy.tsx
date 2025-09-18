@@ -4,6 +4,7 @@ import { Popover } from '../Popover'
 import type { TCopyProps } from './types'
 import { IconCopy } from '../SVGIcons/IconCopy'
 import { ButtonIcon } from '../ButtonIcon'
+import { useHideOnScroll } from '../../hooks'
 
 export const Copy = ({
   textAfterCopy,
@@ -16,12 +17,16 @@ export const Copy = ({
   const [isTooltipVisible, setTooltipVisibility] = useState(false)
   const copyIconRef = useRef<HTMLDivElement | null>(null)
 
+  const onCloseTooltip = () => setTooltipVisibility(false)
+
   const copy = (e: TClickEventType) => {
     e.stopPropagation()
     navigator.clipboard.writeText(text)
     setTooltipVisibility(true)
-    setTimeout(() => setTooltipVisibility(false), 3000)
+    setTimeout(() => onCloseTooltip(), 3000)
   }
+
+  useHideOnScroll(onCloseTooltip)
 
   return (
     <div ref={copyIconRef} className="copy-icon">
