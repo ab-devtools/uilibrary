@@ -12,7 +12,8 @@ export const Copy = ({
   text,
   dataId,
   size = 'medium',
-  type = 'tertiary'
+  type = 'tertiary',
+  parentRef
 }: TCopyProps): ReactElement => {
   const [isTooltipVisible, setTooltipVisibility] = useState(false)
   const copyIconRef = useRef<HTMLDivElement | null>(null)
@@ -26,7 +27,7 @@ export const Copy = ({
     setTimeout(() => onCloseTooltip(), 3000)
   }
 
-  useHideOnScroll(onCloseTooltip)
+  useHideOnScroll(onCloseTooltip, parentRef)
 
   return (
     <div ref={copyIconRef} className="copy-icon">
