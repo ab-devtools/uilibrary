@@ -1,3 +1,12 @@
+## [1.42.7](https://github.com/ab-devtools/uilibrary/compare/1.42.6...1.42.7) (2025-09-19)
+
+
+### Bug Fixes
+
+* use scroll hook ([b24fccd](https://github.com/ab-devtools/uilibrary/commit/b24fccd38af3268b298c110007b496277f0821d1))
+* use scroll hook ([066718c](https://github.com/ab-devtools/uilibrary/commit/066718c645aa1edbef755649a87e4e2a331ac736))
+* use scroll hook ([1515fda](https://github.com/ab-devtools/uilibrary/commit/1515fdab99294b960c72d3912d684a4fa51f9926))
+
 ## [1.42.6](https://github.com/ab-devtools/uilibrary/compare/1.42.5...1.42.6) (2025-09-18)
 
 
