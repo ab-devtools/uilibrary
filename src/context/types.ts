@@ -39,5 +39,5 @@ export const FormContext = createContext<TFormContextProps>({
   isSubmitted: false,
   isSubmitting: false,
   dirtyFields: {},
-  isValid: false,
+  isValid: false
 })

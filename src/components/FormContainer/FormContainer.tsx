@@ -35,7 +35,7 @@ export const FormContainer = (props: FormPropTypes): JSX.Element => {
     setError,
     trigger,
     getFieldState,
-    unregister,
+    unregister
   } = useForm({
     mode: mode,
     context: validationContext,
