@@ -31,9 +31,7 @@ export interface TSideSheetPropTypes {
   topLeftActions?: ReactNode
   topRightActions?: ReactNode
   tabItemsProps?: TTabProps
-  children?:
-    | ReactNode
-    | (({ scrollbarContainerRef }: TSideSheetChildren) => ReactNode)
+  children?: ReactNode | (({ scrollbarContainerRef }: TSideSheetChildren) => ReactNode)
   className?: string
   checkboxInfo?: TCheckboxInfo
   headerContent?: ReactNode

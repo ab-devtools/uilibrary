@@ -138,9 +138,7 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
               className="side-sheet__content scrollbar scrollbar--vertical"
               ref={scrollbarContainerRef}
             >
-              {typeof children === 'function'
-                ? children({ scrollbarContainerRef })
-                : children}
+              {typeof children === 'function' ? children({ scrollbarContainerRef }) : children}
             </div>
             {footerButtons ? (
               <Footer
