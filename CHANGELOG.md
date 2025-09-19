@@ -1,3 +1,11 @@
+## [1.42.8](https://github.com/ab-devtools/uilibrary/compare/1.42.7...1.42.8) (2025-09-19)
+
+
+### Bug Fixes
+
+* form validation mode ([370dd56](https://github.com/ab-devtools/uilibrary/commit/370dd56b822809b899b88d9e9cd27444eb91417f))
+* form validation mode ([0e57188](https://github.com/ab-devtools/uilibrary/commit/0e571884d60c9e3de7af215cde1335e6a3a0725e))
+
 ## [1.42.7](https://github.com/ab-devtools/uilibrary/compare/1.42.6...1.42.7) (2025-09-19)
 
 
