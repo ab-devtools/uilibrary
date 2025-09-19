@@ -31,40 +31,49 @@ export const FormContainer = (props: FormPropTypes): JSX.Element => {
     getValues,
     watch,
     reset,
+    trigger,
     clearErrors,
     setError,
-    trigger,
     getFieldState,
     unregister
   } = useForm({
-    mode: mode,
+    mode,
     context: validationContext,
     defaultValues: initialValues,
-
-    shouldFocusError: shouldFocusError,
-    shouldUnregister: shouldUnregister
+    shouldFocusError,
+    shouldUnregister
   })
 
   const { errors, isDirty, isSubmitted, isSubmitting, dirtyFields } = formState
 
-  const customSubmit = async (data: TFormData) => {
-    try {
-      if (validationScheme) {
-        await validationScheme.validate(data, { abortEarly: false })
-      }
+  const validateForm = async (): Promise<boolean> => {
+    if (!validationScheme) return true
 
-      if (onSubmit) {
-        onSubmit(data, formState, dirtyFields)
-      }
+    try {
+      await validationScheme.validate(getValues(), { abortEarly: false })
+      return true
     } catch (error) {
       if (error instanceof yup.ValidationError) {
         error.inner.forEach((err) => {
-          setError(err.path as string, {
-            type: 'manual',
-            message: err.message
-          })
+          if (err.path) {
+            setError(err.path, { type: 'manual', message: err.message })
+          }
         })
       }
+      return false
+    }
+  }
+
+  const customTrigger = async (): Promise<boolean> => {
+    return validateForm()
+  }
+
+  const customSubmit = async (data: TFormData) => {
+    const isValid = await validateForm()
+    if (!isValid) return
+
+    if (onSubmit) {
+      onSubmit(data, formState, dirtyFields)
     }
   }
 
@@ -76,7 +85,7 @@ export const FormContainer = (props: FormPropTypes): JSX.Element => {
     >
       <FormContext.Provider
         value={{
-          trigger,
+          trigger: mode === 'onSubmit' ? customTrigger : trigger,
           register,
           errors,
           control,
