@@ -35,7 +35,7 @@ export const FormContainer = (props: FormPropTypes): JSX.Element => {
     setError,
     trigger,
     getFieldState,
-    unregister
+    unregister,
   } = useForm({
     mode: mode,
     context: validationContext,
@@ -87,6 +87,7 @@ export const FormContainer = (props: FormPropTypes): JSX.Element => {
           isDirty,
           isSubmitted,
           isSubmitting,
+          isValid: formState.isValid,
           clearErrors,
           setError,
           dirtyFields,
