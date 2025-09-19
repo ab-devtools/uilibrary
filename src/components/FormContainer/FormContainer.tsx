@@ -87,6 +87,7 @@ export const FormContainer = (props: FormPropTypes): JSX.Element => {
           isDirty,
           isSubmitted,
           isSubmitting,
+          isValid: formState.isValid,
           clearErrors,
           setError,
           dirtyFields,
