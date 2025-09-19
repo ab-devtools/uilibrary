@@ -1,11 +1,11 @@
 import type { JSX } from 'react'
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup'
 import classnames from 'classnames'
 import { FormContext } from '../../context'
 import type { FormPropTypes } from './types'
 import { Button } from '../Button'
+import * as yup from 'yup'
 
 export const FormContainer = (props: FormPropTypes): JSX.Element => {
   const {
@@ -38,7 +38,6 @@ export const FormContainer = (props: FormPropTypes): JSX.Element => {
     unregister
   } = useForm({
     mode: mode,
-    resolver: yupResolver(validationScheme),
     context: validationContext,
     defaultValues: initialValues,
 
@@ -48,9 +47,24 @@ export const FormContainer = (props: FormPropTypes): JSX.Element => {
 
   const { errors, isDirty, isSubmitted, isSubmitting, dirtyFields } = formState
 
-  const customSubmit = (data: TFormData) => {
-    if (onSubmit) {
-      onSubmit(data, formState, dirtyFields)
+  const customSubmit = async (data: TFormData) => {
+    try {
+      if (validationScheme) {
+        await validationScheme.validate(data, { abortEarly: false })
+      }
+
+      if (onSubmit) {
+        onSubmit(data, formState, dirtyFields)
+      }
+    } catch (error) {
+      if (error instanceof yup.ValidationError) {
+        error.inner.forEach((err) => {
+          setError(err.path as string, {
+            type: 'manual',
+            message: err.message
+          })
+        })
+      }
     }
   }
 
