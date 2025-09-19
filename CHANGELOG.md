@@ -1,3 +1,11 @@
+## [1.42.9](https://github.com/ab-devtools/uilibrary/compare/1.42.8...1.42.9) (2025-09-19)
+
+
+### Bug Fixes
+
+* side sheet children render ([21e20ac](https://github.com/ab-devtools/uilibrary/commit/21e20ac854cdde0b7902ec9292f81617f1d105e5))
+* side sheet children render ([b1661e1](https://github.com/ab-devtools/uilibrary/commit/b1661e1f34c99bcbd8b25b7890a3034ee6b6061c))
+
 ## [1.42.8](https://github.com/ab-devtools/uilibrary/compare/1.42.7...1.42.8) (2025-09-19)
 
 
