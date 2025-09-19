@@ -52,7 +52,7 @@ export const FormContainer = (props: FormPropTypes): JSX.Element => {
       if (validationScheme) {
         await validationScheme.validate(data, { abortEarly: false })
       }
-      
+
       if (onSubmit) {
         onSubmit(data, formState, dirtyFields)
       }
