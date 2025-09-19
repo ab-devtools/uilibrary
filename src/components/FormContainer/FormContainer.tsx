@@ -54,7 +54,7 @@ export const FormContainer = (props: FormPropTypes): JSX.Element => {
       return true
     } catch (error) {
       if (error instanceof yup.ValidationError) {
-        error.inner.forEach(err => {
+        error.inner.forEach((err) => {
           if (err.path) {
             setError(err.path, { type: 'manual', message: err.message })
           }
