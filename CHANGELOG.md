@@ -1,3 +1,11 @@
+## [1.42.10](https://github.com/ab-devtools/uilibrary/compare/1.42.9...1.42.10) (2025-09-19)
+
+
+### Bug Fixes
+
+* form props ([f62c6ed](https://github.com/ab-devtools/uilibrary/commit/f62c6ed4f729936ff284cc3e78ba1ede23ee5615))
+* form props ([9b6ca84](https://github.com/ab-devtools/uilibrary/commit/9b6ca84b9a765e28e546276a4b730f9ff4b7f0d7))
+
 ## [1.42.9](https://github.com/ab-devtools/uilibrary/compare/1.42.8...1.42.9) (2025-09-19)
 
 
