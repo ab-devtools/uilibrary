@@ -1,3 +1,11 @@
+# [1.43.0](https://github.com/ab-devtools/uilibrary/compare/1.42.10...1.43.0) (2025-09-19)
+
+
+### Features
+
+* form custom trigger ([0032447](https://github.com/ab-devtools/uilibrary/commit/0032447da249c3079e88ea4b65039888afff40be))
+* form custom trigger ([08b0ff6](https://github.com/ab-devtools/uilibrary/commit/08b0ff6dbdf5752b7d767e9066fb74d8c1bff41d))
+
 ## [1.42.10](https://github.com/ab-devtools/uilibrary/compare/1.42.9...1.42.10) (2025-09-19)
 
 
