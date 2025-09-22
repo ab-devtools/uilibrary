@@ -1,3 +1,15 @@
+# [1.44.0](https://github.com/ab-devtools/uilibrary/compare/1.43.0...1.44.0) (2025-09-22)
+
+
+### Bug Fixes
+
+* check side sheet buttons ([b568a7d](https://github.com/ab-devtools/uilibrary/commit/b568a7df5e506ea0badbb3981059ccb9487692b3))
+
+
+### Features
+
+* added new Icons ([b03b49e](https://github.com/ab-devtools/uilibrary/commit/b03b49e4d8e614b6e4718ecec57e4e1a5ebdc00f))
+
 # [1.43.0](https://github.com/ab-devtools/uilibrary/compare/1.42.10...1.43.0) (2025-09-19)
 
 
