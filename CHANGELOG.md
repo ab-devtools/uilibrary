@@ -1,3 +1,10 @@
+## [1.44.1](https://github.com/ab-devtools/uilibrary/compare/1.44.0...1.44.1) (2025-09-22)
+
+
+### Bug Fixes
+
+* close table column settings menu on icon click ([2c788c2](https://github.com/ab-devtools/uilibrary/commit/2c788c2bb626da952fadcf96f9a5d8ca71c6496a))
+
 # [1.44.0](https://github.com/ab-devtools/uilibrary/compare/1.43.0...1.44.0) (2025-09-22)
 
 
