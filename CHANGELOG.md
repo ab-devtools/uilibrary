@@ -1,3 +1,10 @@
+## [1.44.2](https://github.com/ab-devtools/uilibrary/compare/1.44.1...1.44.2) (2025-09-22)
+
+
+### Bug Fixes
+
+* add 18 px font size and space ([b15f1d7](https://github.com/ab-devtools/uilibrary/commit/b15f1d77b07553cc77b57cbf1d5b901e0076b618))
+
 ## [1.44.1](https://github.com/ab-devtools/uilibrary/compare/1.44.0...1.44.1) (2025-09-22)
 
 
