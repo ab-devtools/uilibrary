@@ -81,4 +81,18 @@
     &__item:not(:last-child) {
         margin-bottom: var(--ds-collapse-group-item-space);
     }
+
+  .collapse {
+    &--opened {
+      > .collapse__header {
+        .collapse__header__icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .collapse__header__icon {
+      transform: rotate(0deg);
+    }
+  }
 }
