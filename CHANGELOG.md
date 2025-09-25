@@ -1,3 +1,10 @@
+## [1.44.4](https://github.com/ab-devtools/uilibrary/compare/1.44.3...1.44.4) (2025-09-25)
+
+
+### Bug Fixes
+
+* resolve nested component icon rotation conflict - CollapseItem VS CollapseGroup ([4262d2a](https://github.com/ab-devtools/uilibrary/commit/4262d2a6b91f188c999c14176f7448cd444165e8))
+
 ## [1.44.3](https://github.com/ab-devtools/uilibrary/compare/1.44.2...1.44.3) (2025-09-22)
 
 
