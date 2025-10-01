@@ -1,3 +1,10 @@
+## [1.44.5](https://github.com/ab-devtools/uilibrary/compare/1.44.4...1.44.5) (2025-10-01)
+
+
+### Bug Fixes
+
+* fix type of collapse title to accept also react element ([9ffcd75](https://github.com/ab-devtools/uilibrary/commit/9ffcd75da6b92d2e06a24274da35b9b48e66f6c6))
+
 ## [1.44.4](https://github.com/ab-devtools/uilibrary/compare/1.44.3...1.44.4) (2025-09-25)
 
 
