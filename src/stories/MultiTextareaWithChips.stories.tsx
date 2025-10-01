@@ -204,27 +204,5 @@ const FormStatus = (): JSX.Element | null => {
 
   if (!isSubmitted) return null
 
-  if (!errors?.skills && !hasNoValues) {
-    return (
-      <div className="mt-3">
-        <div style={{ color: 'green', marginBottom: '8px' }}>✅ Form submitted successfully!</div>
-        <div style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '4px' }}>
-          Submitted Values:
-        </div>
-        <ul style={{ margin: 0, paddingLeft: '20px' }}>
-          {skills.map((skill: any, index: number) => {
-            const text = typeof skill === 'string' ? skill : skill.text
-            const hasError = typeof skill === 'object' && skill.hasError
-            return (
-              <li key={index} style={{ color: hasError ? 'red' : 'black', marginBottom: '2px' }}>
-                {text} {hasError && '(Invalid)'}
-              </li>
-            )
-          })}
-        </ul>
-      </div>
-    )
-  }
-
   return <div className="mt-3" style={{ color: 'red' }}></div>
 }

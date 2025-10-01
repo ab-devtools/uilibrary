@@ -15,6 +15,16 @@
         flex-wrap: wrap;
         gap: 8px;
         align-items: center;
+        overflow-x: auto;
+        overflow-y: hidden;
+        min-height: 30px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
 
     &__input-container {
@@ -147,8 +157,8 @@
     border: var(--ds-multi-input-border);
     border-radius: var(--ds-multi-input-border-radius);
     background-color: var(--ds-multi-input-bg-default);
-    padding: var(--ds-multi-input-padding);
-    min-height: var(--ds-size-40);
+    padding: 5px;
+    min-height: 30px;
     transition: var(--ds-multi-input-transition);
 
     &:hover {
@@ -159,5 +169,17 @@
     &:focus-within {
         background-color: var(--ds-multi-input-bg-focused);
         border-color: var(--ds-multi-input-border-color-focused);
+    }
+
+    &.with-error-styles {
+        border-color: var(--ds-color-border-danger, #dc2626);
+
+        &:hover {
+            border-color: var(--ds-color-border-danger, #dc2626);
+        }
+
+        &:focus-within {
+            border-color: var(--ds-color-border-danger, #dc2626);
+        }
     }
 }

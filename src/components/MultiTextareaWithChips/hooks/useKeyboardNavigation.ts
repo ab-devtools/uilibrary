@@ -8,7 +8,6 @@ interface UseKeyboardNavigationProps {
   chips: Array<string | { text: string; [key: string]: unknown }>
   filteredOptions: string[]
   selectedOption: string
-  onEnter: () => void
   onAddCustomValue: (value: string) => void
   onNavigateOptions: (direction: 'up' | 'down') => void
   onSelectOption: (option?: string) => void
@@ -24,7 +23,6 @@ export const useKeyboardNavigation = ({
   chips,
   filteredOptions,
   selectedOption,
-  onEnter,
   onAddCustomValue,
   onNavigateOptions,
   onSelectOption,
@@ -47,8 +45,6 @@ export const useKeyboardNavigation = ({
             onSelectOption(filteredOptions[0])
           } else if (allowCustomValues && trimmedInput) {
             onAddCustomValue(trimmedInput)
-          } else {
-            onEnter()
           }
           break
 
@@ -100,7 +96,6 @@ export const useKeyboardNavigation = ({
       chips.length,
       filteredOptions,
       selectedOption,
-      onEnter,
       onAddCustomValue,
       onNavigateOptions,
       onSelectOption,
