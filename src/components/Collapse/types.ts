@@ -4,7 +4,7 @@ export type TCollapseProps = {
   isOpen: boolean
   toggle: () => void
   children: ReactNode
-  title: string
+  title: string | ReactElement
   subtext?: string
   additionalInfo?: ReactNode
   iconProps?: TSelectIconProps
@@ -17,7 +17,7 @@ export type TCollapseProps = {
 export type TCollapseValue = string | number
 
 export type TCollapseGroupItem = {
-  title: string
+  title: string | ReactElement
   subtext?: string
   additionalInfo?: ReactNode
   value: TCollapseValue
