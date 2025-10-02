@@ -1,3 +1,15 @@
+# [1.46.0](https://github.com/ab-devtools/uilibrary/compare/1.45.0...1.46.0) (2025-10-02)
+
+
+### Bug Fixes
+
+* reverse storybook main.ts file (its changes only for my local) ([867cc35](https://github.com/ab-devtools/uilibrary/commit/867cc35b160dd3b8ebf8994b7f3fc178d0472ffc))
+
+
+### Features
+
+* update functionals ([946e75c](https://github.com/ab-devtools/uilibrary/commit/946e75c26e384505717df4cdeca6c7d9717588c2))
+
 # [1.45.0](https://github.com/ab-devtools/uilibrary/compare/1.44.5...1.45.0) (2025-10-02)
 
 
