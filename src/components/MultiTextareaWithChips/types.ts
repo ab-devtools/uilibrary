@@ -10,6 +10,18 @@ export interface TChipItem {
 
 export type ChipValue = string | TChipItem
 
+export type OnBlurBehavior =
+  | 'add-chip'
+  | 'add-if-valid'
+  | 'add-if-available'
+  | 'add-if-min-length'
+  | 'ignore'
+
+export interface OnBlurConfig {
+  behavior: OnBlurBehavior
+  minLength?: number
+}
+
 export interface TMultiTextareaWithChipsProps extends IFormCompProps {
   label: string
   placeholder: string
@@ -31,6 +43,7 @@ export interface TMultiTextareaWithChipsProps extends IFormCompProps {
   typeAndEnterPlaceholderText?: string
   noOptionsPlaceholderText?: string
   fieldName?: string
+  onBlurConfig?: OnBlurConfig
   formProps?: {
     setFieldValue?: (
       fieldName: string,

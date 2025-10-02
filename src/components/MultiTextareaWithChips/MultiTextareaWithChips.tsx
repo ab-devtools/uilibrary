@@ -1,4 +1,4 @@
-import React, { useState, useRef, useMemo, memo } from 'react'
+import React, { useState, useRef, useMemo, memo, useCallback } from 'react'
 import { Chips } from '../Chips'
 import type { TMultiTextareaWithChipsProps, ChipValue } from './types'
 import { ErrorMessage } from '../../helperComponents'
@@ -8,7 +8,8 @@ import {
   useChipManagement,
   useChipValidation,
   useDropdownLogic,
-  useKeyboardNavigation
+  useKeyboardNavigation,
+  useOnBlurLogic
 } from './hooks'
 
 const MultiTextareaWithChipsComponent: React.FC<TMultiTextareaWithChipsProps> = ({
@@ -32,7 +33,8 @@ const MultiTextareaWithChipsComponent: React.FC<TMultiTextareaWithChipsProps> = 
   fieldName = 'skills',
   formProps,
   minChipLength,
-  maxChipLength
+  maxChipLength,
+  onBlurConfig
 }) => {
   const [inputValue, setInputValue] = useState('')
   const [chipError, setChipError] = useState<string>('')
@@ -80,20 +82,36 @@ const MultiTextareaWithChipsComponent: React.FC<TMultiTextareaWithChipsProps> = 
     }
   }
 
-  const handleAddCustomValue = (value: string) => {
-    if (chipManagement.getChipTexts().includes(value)) return
+  const handleAddCustomValue = useCallback(
+    (value: string) => {
+      if (chipManagement.getChipTexts().includes(value)) return
 
-    try {
-      const validatedChip = chipValidation.createValidatedChip(value)
-      chipManagement.addChip(validatedChip)
-      setInputValue('')
-      setChipError('')
-    } catch (error) {
-      if (!allowInvalidChips) {
-        setChipError(error instanceof Error ? error.message : 'Invalid value')
+      try {
+        const validatedChip = chipValidation.createValidatedChip(value)
+        chipManagement.addChip(validatedChip)
+        setInputValue('')
+        setChipError('')
+      } catch (error) {
+        if (!allowInvalidChips) {
+          setChipError(error instanceof Error ? error.message : 'Invalid value')
+        }
       }
-    }
-  }
+    },
+    [chipManagement, chipValidation, allowInvalidChips]
+  )
+
+  const onBlurLogic = useOnBlurLogic({
+    inputValue,
+    disabled,
+    allowCustomValues,
+    availableOptions,
+    minChipLength,
+    maxChipLength,
+    onBlurConfig,
+    onAddCustomValue: handleAddCustomValue,
+    chipValidationSchema,
+    allowInvalidChips
+  })
 
   const handleRemoveLastChip = () => {
     const lastChip = chipManagement.chips[chipManagement.chips.length - 1]
@@ -114,6 +132,8 @@ const MultiTextareaWithChipsComponent: React.FC<TMultiTextareaWithChipsProps> = 
     dropdownLogic.handleInputFocus(inputValue)
   }
 
+  const handleInputBlur = onBlurLogic.handleInputBlur
+
   const keyboardNavigation = useKeyboardNavigation({
     disabled,
     inputValue,
@@ -121,9 +141,6 @@ const MultiTextareaWithChipsComponent: React.FC<TMultiTextareaWithChipsProps> = 
     chips: chipManagement.chips,
     filteredOptions: dropdownLogic.filteredOptions,
     selectedOption: dropdownLogic.selectedOption,
-    onEnter: () => {
-      // Default behavior for Enter key when no options are available
-    },
     onAddCustomValue: handleAddCustomValue,
     onNavigateOptions: dropdownLogic.navigateOptions,
     onSelectOption: (option) => {
@@ -193,7 +210,12 @@ const MultiTextareaWithChipsComponent: React.FC<TMultiTextareaWithChipsProps> = 
                 key={`${text}-${index}`}
                 text={text}
                 withAction={!disabled}
-                onClick={() => chipManagement.removeChip(text)}
+                onClick={() => {
+                  chipManagement.removeChip(text)
+                  setTimeout(() => {
+                    inputRef.current?.focus()
+                  }, 0)
+                }}
                 size="medium"
                 color={hasError ? 'danger' : 'primary'}
                 type="accent"
@@ -214,6 +236,7 @@ const MultiTextareaWithChipsComponent: React.FC<TMultiTextareaWithChipsProps> = 
               onChange={handleInputChange}
               onKeyDown={keyboardNavigation.handleKeyDown}
               onFocus={handleInputFocus}
+              onBlur={handleInputBlur}
               placeholder={inputPlaceholder}
               className="multi-textarea-chips__input"
               disabled={disabled}
@@ -226,7 +249,7 @@ const MultiTextareaWithChipsComponent: React.FC<TMultiTextareaWithChipsProps> = 
               role="combobox"
             />
 
-            {dropdownLogic.showDropdown && (
+            {dropdownLogic.showDropdown && dropdownLogic.filteredOptions.length > 0 && (
               <div
                 className="multi-textarea-chips__dropdown"
                 role="listbox"
