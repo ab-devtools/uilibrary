@@ -1,3 +1,10 @@
+# [1.48.0](https://github.com/ab-devtools/uilibrary/compare/1.47.0...1.48.0) (2025-10-06)
+
+
+### Features
+
+* add title to tabitems ([5eb4a58](https://github.com/ab-devtools/uilibrary/commit/5eb4a58e9f8633be2fb74e54ba67fc8c8a7cc62f))
+
 # [1.47.0](https://github.com/ab-devtools/uilibrary/compare/1.46.0...1.47.0) (2025-10-06)
 
 
