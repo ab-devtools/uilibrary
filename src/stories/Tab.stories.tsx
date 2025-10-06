@@ -38,6 +38,7 @@ Tab.args = {
   size: 'large',
   tabItems: [
     {
+      title: 'Prompt text 1',
       label: 'Prompt text 1',
       value: 1,
       disabled: false,
@@ -57,6 +58,7 @@ Tab.args = {
       }
     },
     {
+      title: 'Prompt text 2Prompt text 2',
       label: 'Prompt text 2Prompt text 2',
       value: 2,
       iconProps: {
@@ -71,6 +73,7 @@ Tab.args = {
       }
     },
     {
+      title: 'Prompt text 3',
       label: 'Prompt text 3',
       value: 3,
       iconProps: {
