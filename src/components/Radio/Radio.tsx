@@ -48,7 +48,11 @@ export const Radio = forwardRef((props: TRadioProps): ReactElement | null => {
       {iconElement}
       {label ? (
         <div className="controller__right">
-          <Text type={disabled ? 'disabled' : 'primary'} className="controller__label">
+          <Text
+            type={disabled ? 'disabled' : 'primary'}
+            className="controller__label"
+            dataId={dataId}
+          >
             {label}
           </Text>
           {helperText ? (
