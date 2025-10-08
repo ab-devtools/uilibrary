@@ -1,3 +1,10 @@
+## [1.48.1](https://github.com/ab-devtools/uilibrary/compare/1.48.0...1.48.1) (2025-10-08)
+
+
+### Bug Fixes
+
+* add data-id attribute to RadioGroup text for test automation ([328db1b](https://github.com/ab-devtools/uilibrary/commit/328db1b5b53ad36de54f093dd35296679b1d201e))
+
 # [1.48.0](https://github.com/ab-devtools/uilibrary/compare/1.47.0...1.48.0) (2025-10-06)
 
 
