@@ -38,7 +38,6 @@ export const FormContainer = (props: FormPropTypes): JSX.Element => {
     unregister
   } = useForm({
     mode,
-    context: validationContext,
     defaultValues: initialValues,
     shouldFocusError,
     shouldUnregister
@@ -50,7 +49,10 @@ export const FormContainer = (props: FormPropTypes): JSX.Element => {
     if (!validationScheme) return true
 
     try {
-      await validationScheme.validate(getValues(), { abortEarly: false })
+      await validationScheme.validate(getValues(), {
+        abortEarly: false,
+        context: validationContext,
+      })
       return true
     } catch (error) {
       if (error instanceof yup.ValidationError) {
