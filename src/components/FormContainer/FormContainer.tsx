@@ -51,7 +51,7 @@ export const FormContainer = (props: FormPropTypes): JSX.Element => {
     try {
       await validationScheme.validate(getValues(), {
         abortEarly: false,
-        context: validationContext,
+        context: validationContext
       })
       return true
     } catch (error) {
