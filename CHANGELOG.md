@@ -1,3 +1,11 @@
+## [1.48.2](https://github.com/ab-devtools/uilibrary/compare/1.48.1...1.48.2) (2025-10-13)
+
+
+### Bug Fixes
+
+* form context ([d75f7d7](https://github.com/ab-devtools/uilibrary/commit/d75f7d7a7bfc74dfb9b3a0b233b7b87e762a3fae))
+* form context ([f700443](https://github.com/ab-devtools/uilibrary/commit/f700443971acb435ff367527f8cf33864d73ee98))
+
 ## [1.48.1](https://github.com/ab-devtools/uilibrary/compare/1.48.0...1.48.1) (2025-10-08)
 
 
