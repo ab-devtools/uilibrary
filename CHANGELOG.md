@@ -1,3 +1,10 @@
+## [1.48.3](https://github.com/ab-devtools/uilibrary/compare/1.48.2...1.48.3) (2025-10-14)
+
+
+### Bug Fixes
+
+* synchronize side sheet exit animations ([76585b3](https://github.com/ab-devtools/uilibrary/commit/76585b3eb341663e04d16720f97a0c3ec45c842b))
+
 ## [1.48.2](https://github.com/ab-devtools/uilibrary/compare/1.48.1...1.48.2) (2025-10-13)
 
 
