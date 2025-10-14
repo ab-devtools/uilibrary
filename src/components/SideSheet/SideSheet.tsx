@@ -62,35 +62,39 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
             'side-sheet--with-overlay': withOverlay || isMobile()
           })}
           initial={{
-            opacity: 0
+            opacity: 0,
+            ...(!isPositioned && !isMobile() && { width: 'auto' })
           }}
           animate={{
-            opacity: 1
+            opacity: 1,
+            ...(!isPositioned && !isMobile() && { width: 'auto' })
           }}
           exit={{
             opacity: 0,
+            ...(!isPositioned && !isMobile() && { width: 0 }),
             transition: {
-              duration: 0.1,
-              delay: 0.3
+              duration: 0.5,
+              ease: "easeInOut"
             }
           }}
           transition={{ duration: 0.2 }}
+          style={{ pointerEvents: 'auto' }}
         >
           <motion.div
             initial={
               isFromLeft
                 ? { left: '-100%' }
                 : isFromRight
-                ? { right: '-100%' }
-                : { bottom: '-100%' }
+                  ? { right: '-100%' }
+                  : { bottom: '-100%' }
             }
             animate={isFromLeft ? { left: 0 } : isFromRight ? { right: 0 } : { bottom: 0 }}
             exit={{
               ...(isFromLeft
                 ? { left: '-100%' }
                 : isFromRight
-                ? { right: '-100%' }
-                : { bottom: '-100%' }),
+                  ? { right: '-100%' }
+                  : { bottom: '-100%' }),
               transition: {
                 duration: 0.5
               }
