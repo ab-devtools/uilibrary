@@ -1,3 +1,10 @@
+## [1.48.4](https://github.com/ab-devtools/uilibrary/compare/1.48.3...1.48.4) (2025-10-20)
+
+
+### Bug Fixes
+
+* hide expend sorting ([a8b1006](https://github.com/ab-devtools/uilibrary/commit/a8b1006e7c6fc5546ac769943b003e910a7a9567))
+
 ## [1.48.3](https://github.com/ab-devtools/uilibrary/compare/1.48.2...1.48.3) (2025-10-14)
 
 
