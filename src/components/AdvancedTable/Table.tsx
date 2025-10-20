@@ -89,6 +89,7 @@ export function Table<TData>({
       id: ColumnId.Expand,
       accessorKey: 'expand',
       header: () => <span style={{ display: 'none' }}>Expand</span>,
+      enableSorting: false,
       size: 50,
       minSize: 50,
       maxSize: 50,
