@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import type { KeyboardEvent } from 'react'
+import type { KeyboardEvent, RefObject } from 'react'
 
 interface UseKeyboardNavigationProps {
   disabled: boolean
@@ -13,7 +13,7 @@ interface UseKeyboardNavigationProps {
   onSelectOption: (option?: string) => void
   onCloseDropdown: () => void
   onRemoveLastChip: () => void
-  inputRef: React.RefObject<HTMLInputElement | null>
+  inputRef: RefObject<HTMLInputElement | null>
 }
 
 export const useKeyboardNavigation = ({

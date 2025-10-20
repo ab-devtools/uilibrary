@@ -221,21 +221,21 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
 
   useHideOnResize(closeDropdown)
 
-  const rightIconOpenedProps =  useMemo(() => {
+  const rightIconOpenedProps = useMemo(() => {
     return {
       ...selectRightIconOpenedProps,
-      className: "cursor-pointer pointer-events-unset",
-      onClick: () => setIsOpen(false),
+      className: 'cursor-pointer pointer-events-unset',
+      onClick: () => setIsOpen(false)
     }
-  }, [selectRightIconOpenedProps]);
+  }, [selectRightIconOpenedProps])
 
-  const rightIconProps =  useMemo(() => {
+  const rightIconProps = useMemo(() => {
     return {
       ...selectRightIconProps,
-      className: "cursor-pointer pointer-events-unset",
-      onClick: () => setIsOpen(true),
+      className: 'cursor-pointer pointer-events-unset',
+      onClick: () => setIsOpen(true)
     }
-  }, [selectRightIconProps]);
+  }, [selectRightIconProps])
 
   return (
     <div
@@ -302,7 +302,6 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
               ) : null}
 
               {filteredData.map((item: TSelectOption, i: number) => {
-
                 const isSelected = item.value === currentSelection
                 return (
                   <Fragment key={item.value}>
