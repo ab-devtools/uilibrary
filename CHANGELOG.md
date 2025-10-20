@@ -1,3 +1,14 @@
+## [1.48.5](https://github.com/ab-devtools/uilibrary/compare/1.48.4...1.48.5) (2025-10-20)
+
+
+### Bug Fixes
+
+* select issue, hide not works correct on resize ([890c266](https://github.com/ab-devtools/uilibrary/commit/890c2669495bdbcc6bb5ea495f19848e13a42429))
+* select issue, hide not works correct on resize ([a55b7aa](https://github.com/ab-devtools/uilibrary/commit/a55b7aa7269ee786dd2a4d72da6d36a57266705a))
+* select issue, hide not works correct on resize ([4a72dd5](https://github.com/ab-devtools/uilibrary/commit/4a72dd53251d4b15e6030c7f494ad385d0e04f23))
+* select issue, hide not works correct on resize ([42fed69](https://github.com/ab-devtools/uilibrary/commit/42fed69357c410e3b620b453f5efc01d163dd8a3))
+* select issue, hide not works correct on resize ([e6dec4a](https://github.com/ab-devtools/uilibrary/commit/e6dec4a386255fc4b32b3314095aa7026e26b46b))
+
 ## [1.48.4](https://github.com/ab-devtools/uilibrary/compare/1.48.3...1.48.4) (2025-10-20)
 
 
