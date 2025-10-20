@@ -177,16 +177,6 @@
             width: var(--ds-space-48) !important;
             min-width: initial !important;
             padding: var(--ds-space-8) var(--ds-space-6) var(--ds-space-8) 22px;
-
-            .actions-list {
-              &__checkbox {
-                display: none;
-
-                &.active-checkbox {
-                  @include mixin.flexbox;
-                }
-              }
-            }
           }
 
           &:not(.with-checkbox, .action-column, .expand-column) {
@@ -210,7 +200,6 @@
 
             .actions-list {
 
-              &__checkbox,
               &__right {
                 @include mixin.flexbox;
               }
