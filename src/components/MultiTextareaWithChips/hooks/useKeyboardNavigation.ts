@@ -1,11 +1,17 @@
 import { useCallback } from 'react'
-import type { KeyboardEvent } from 'react'
+import type { KeyboardEvent, RefObject } from 'react'
 
 interface UseKeyboardNavigationProps {
   disabled: boolean
   inputValue: string
   allowCustomValues: boolean
-  chips: Array<string | { text: string; [key: string]: unknown }>
+  chips: Array<
+    | string
+    | {
+        text: string
+        [key: string]: unknown
+      }
+  >
   filteredOptions: string[]
   selectedOption: string
   onAddCustomValue: (value: string) => void
@@ -13,7 +19,7 @@ interface UseKeyboardNavigationProps {
   onSelectOption: (option?: string) => void
   onCloseDropdown: () => void
   onRemoveLastChip: () => void
-  inputRef: React.RefObject<HTMLInputElement | null>
+  inputRef: RefObject<HTMLInputElement | null>
 }
 
 export const useKeyboardNavigation = ({

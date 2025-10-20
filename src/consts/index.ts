@@ -31,9 +31,6 @@ export enum CARD_SELECT_TYPES {
 export const CUSTOM_SCROLL_MESSAGE = 'Custom scroll event has fired'
 export const CUSTOM_SCROLL_NAME = 'CUSTOM_SCROLL_EVENT'
 
-export const CUSTOM_RESIZE_MESSAGE = 'Custom resize event has fired'
-export const CUSTOM_RESIZE_NAME = 'CUSTOM_RESIZE_EVENT'
-
 export const MONTHS = [
   {
     label: 'January',

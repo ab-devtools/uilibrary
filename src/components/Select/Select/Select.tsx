@@ -221,6 +221,22 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
 
   useHideOnResize(closeDropdown)
 
+  const rightIconOpenedProps = useMemo(() => {
+    return {
+      ...selectRightIconOpenedProps,
+      className: 'cursor-pointer pointer-events-unset',
+      onClick: () => setIsOpen(false)
+    }
+  }, [selectRightIconOpenedProps])
+
+  const rightIconProps = useMemo(() => {
+    return {
+      ...selectRightIconProps,
+      className: 'cursor-pointer pointer-events-unset',
+      onClick: () => setIsOpen(true)
+    }
+  }, [selectRightIconProps])
+
   return (
     <div
       data-id={`${dataId}-content`}
@@ -240,7 +256,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
         onInput={onInputChange}
         required={isRequiredField}
         leftIconProps={leftIconProps}
-        rightIconProps={isOpen ? selectRightIconOpenedProps : selectRightIconProps}
+        rightIconProps={isOpen ? rightIconOpenedProps : rightIconProps}
         readonly={!searchValue && !isWithSearch}
         placeholder={placeHolder}
         value={searchValue || selectedOption?.label || ''}
