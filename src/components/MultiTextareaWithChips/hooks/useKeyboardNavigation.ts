@@ -5,7 +5,10 @@ interface UseKeyboardNavigationProps {
   disabled: boolean
   inputValue: string
   allowCustomValues: boolean
-  chips: Array<string | { text: string; [key: string]: unknown }>
+  chips: Array<string | {
+    text: string
+    [key: string]: unknown
+  }>
   filteredOptions: string[]
   selectedOption: string
   onAddCustomValue: (value: string) => void
