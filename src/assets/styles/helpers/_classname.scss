@@ -703,3 +703,7 @@ $space-prefixes: (
 .pointer-events-none {
   pointer-events: none;
 }
+
+.pointer-events-unset {
+  pointer-events: unset !important;
+}
