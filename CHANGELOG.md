@@ -1,3 +1,12 @@
+## [1.48.6](https://github.com/ab-devtools/uilibrary/compare/1.48.5...1.48.6) (2025-10-21)
+
+
+### Bug Fixes
+
+* hide cancel button if needed ([0816983](https://github.com/ab-devtools/uilibrary/commit/0816983535aad8a96dbc0a25583e8a8e8b128d2b))
+* hide cancel button if needed ([17526d1](https://github.com/ab-devtools/uilibrary/commit/17526d1a64fcac806aa4a2dbdd64d2bb58e4b2c2))
+* hide cancel button if needed ([6e17036](https://github.com/ab-devtools/uilibrary/commit/6e170367f9f1cfa428f0f6c5a25882a1e33cae74))
+
 ## [1.48.5](https://github.com/ab-devtools/uilibrary/compare/1.48.4...1.48.5) (2025-10-20)
 
 
