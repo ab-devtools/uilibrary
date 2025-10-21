@@ -46,7 +46,8 @@ export const Modal = (props: TModalPropTypes): ReactElement => {
     children,
     dataIdPrefix,
     closeOnOutsideClick = true,
-    confirmBtnTooltipText
+    confirmBtnTooltipText,
+    hasCancelBtn = true
   } = props
 
   const [containerRef, setContainerRef] = useState<HTMLDivElement | null>(null)
@@ -57,13 +58,15 @@ export const Modal = (props: TModalPropTypes): ReactElement => {
 
   const buttons = buttonProps ? (
     <div className={`flexbox ${checkProps ? '' : 'full-width justify-content--end'}`}>
-      <Button
-        type="tertiary"
-        className="modal__footer__btn mr-16"
-        onClick={onClose}
-        dataId={dataIdPrefix ? `${dataIdPrefix}-modal-cancel-button` : ''}
-        {...(buttonProps.cancel || {})}
-      />
+      {hasCancelBtn && (
+        <Button
+          type="tertiary"
+          className="modal__footer__btn mr-16"
+          onClick={onClose}
+          dataId={dataIdPrefix ? `${dataIdPrefix}-modal-cancel-button` : ''}
+          {...(buttonProps.cancel || {})}
+        />
+      )}
       {confirmBtnTooltipText ? (
         <Tooltip
           text={confirmBtnTooltipText as string}
