@@ -25,6 +25,7 @@ export interface TModalPropTypes {
   children?: ReactNode
   className?: string
   confirmBtnTooltipText?: string
+  hasCancelBtn?: boolean
 }
 
 export interface TModalConfirmationPropTypes {
