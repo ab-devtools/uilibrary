@@ -194,7 +194,6 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
       header: 'Actions',
       id: 'actions',
       accessorKey: 'actions',
-      meta: { className: 'text-right' },
       cell: () => (
         <div className="flexbox align-items--center">
           <Button className="mr-8" iconProps={{ Component: IconAdd }} type="secondary" />
@@ -211,7 +210,6 @@ const Template: StoryFn<TTableProps<any>> = (args) => {
         {...args}
         data={data}
         totalCount={100}
-        isActionsVisible
         tableSettings={{
           tableName: 'advancedTable',
           persistColumnSettings: 'localStorage'
