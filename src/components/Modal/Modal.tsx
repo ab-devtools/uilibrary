@@ -47,7 +47,7 @@ export const Modal = (props: TModalPropTypes): ReactElement => {
     dataIdPrefix,
     closeOnOutsideClick = true,
     confirmBtnTooltipText,
-    hasCancelBtn = true,
+    hasCancelBtn = true
   } = props
 
   const [containerRef, setContainerRef] = useState<HTMLDivElement | null>(null)
