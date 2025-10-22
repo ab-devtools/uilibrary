@@ -1,3 +1,10 @@
+# [1.49.0](https://github.com/ab-devtools/uilibrary/compare/1.48.6...1.49.0) (2025-10-22)
+
+
+### Features
+
+* add nointernet type in notify ([0361ea3](https://github.com/ab-devtools/uilibrary/commit/0361ea3aecc5635636b32b5d014762a9d9e388a7))
+
 ## [1.48.6](https://github.com/ab-devtools/uilibrary/compare/1.48.5...1.48.6) (2025-10-21)
 
 
