@@ -19,7 +19,7 @@ export type TMenuProps = {
   isOpen: boolean
   withTitleOption?: boolean
   children?: ReactNode
-  additionalRef?: HTMLButtonElement | null
+  additionalRef?: HTMLElement | null
 }
 
 export type TNestedMenuItemProps = {
@@ -36,4 +36,5 @@ export type TNestedMenuProps = {
   className?: string
   position?: TTooltipPosition
   isOpen?: boolean
+  additionalRef?: HTMLElement | null
 }
