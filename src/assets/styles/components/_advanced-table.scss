@@ -78,6 +78,7 @@
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     border-radius: var(--ds-border-radius-md);
     text-align: left;
+    cursor: grabbing;
   }
 
   .resize-icon {
@@ -176,16 +177,6 @@
             width: var(--ds-space-48) !important;
             min-width: initial !important;
             padding: var(--ds-space-8) var(--ds-space-6) var(--ds-space-8) 22px;
-
-            .actions-list {
-              &__checkbox {
-                display: none;
-
-                &.active-checkbox {
-                  @include mixin.flexbox;
-                }
-              }
-            }
           }
 
           &:not(.with-checkbox, .action-column, .expand-column) {
@@ -209,7 +200,6 @@
 
             .actions-list {
 
-              &__checkbox,
               &__right {
                 @include mixin.flexbox;
               }

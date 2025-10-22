@@ -7,4 +7,5 @@ export type TCopyProps = {
   size?: 'small' | 'medium' | 'large'
   dataId?: string
   type?: TSVGIconType
+  parentRef?: RefObject<HTMLElement>
 }

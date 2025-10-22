@@ -1,12 +1,18 @@
-import type { KeyboardEvent } from 'react'
-import React, { useState, useRef, useEffect, useMemo } from 'react'
+import React, { useState, useRef, useMemo, memo, useCallback } from 'react'
 import { Chips } from '../Chips'
-import type { TChipItem, TMultiTextareaWithChipsProps } from './types'
+import type { TMultiTextareaWithChipsProps, ChipValue } from './types'
 import { ErrorMessage } from '../../helperComponents'
 import classNames from 'classnames'
 import { useFormProps } from '../../hooks'
+import {
+  useChipManagement,
+  useChipValidation,
+  useDropdownLogic,
+  useKeyboardNavigation,
+  useOnBlurLogic
+} from './hooks'
 
-export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
+const MultiTextareaWithChipsComponent: React.FC<TMultiTextareaWithChipsProps> = ({
   label,
   placeholder,
   helperText,
@@ -21,273 +27,250 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
   chipValidationSchema,
   chipValidationErrorMessage,
   allowInvalidChips = false,
-  fieldName = 'skills',
-  // Customizable placeholder messages
   searchPlaceholderText = 'Search and select...',
   typeAndEnterPlaceholderText = 'Type and press Enter...',
   noOptionsPlaceholderText = 'No more options available',
-  formProps
+  fieldName = 'skills',
+  formProps,
+  minChipLength,
+  maxChipLength,
+  onBlurConfig
 }) => {
   const [inputValue, setInputValue] = useState('')
-  const [showDropdown, setShowDropdown] = useState(false)
-  const [filteredOptions, setFilteredOptions] = useState<string[]>([])
-  const [selectedOption, setSelectedOption] = useState<string>('')
   const [chipError, setChipError] = useState<string>('')
-  const [localChips, setLocalChips] = useState<Array<string | TChipItem>>(chips)
   const inputRef = useRef<HTMLInputElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
 
-  const { errors, setValue } = useFormProps()
+  const { setValue } = useFormProps()
 
-  // Memoize chip texts for performance optimization
-  const chipTexts = useMemo(
-    () => localChips.map((chip) => (typeof chip === 'string' ? chip : chip.text)),
-    [localChips]
+  const chipManagement = useChipManagement({
+    initialChips: chips,
+    fieldName,
+    formProps,
+    setValue,
+    onAddChip,
+    onRemoveChip
+  })
+
+  const chipValidation = useChipValidation({
+    validationSchema: chipValidationSchema,
+    errorMessage: chipValidationErrorMessage,
+    allowInvalidChips,
+    minChipLength,
+    maxChipLength
+  })
+
+  const dropdownLogic = useDropdownLogic({
+    availableOptions,
+    chipTexts: chipManagement.getChipTexts(),
+    containerRef
+  })
+
+  const handleSelectOption = (option: string) => {
+    if (chipManagement.getChipTexts().includes(option)) return
+
+    try {
+      const validatedChip = chipValidation.createValidatedChip(option)
+      chipManagement.addChip(validatedChip)
+      setInputValue('')
+      dropdownLogic.closeDropdown()
+      setChipError('')
+    } catch (error) {
+      if (!allowInvalidChips) {
+        setChipError(error instanceof Error ? error.message : 'Invalid value')
+      }
+    }
+  }
+
+  const handleAddCustomValue = useCallback(
+    (value: string) => {
+      if (chipManagement.getChipTexts().includes(value)) return
+
+      try {
+        const validatedChip = chipValidation.createValidatedChip(value)
+        chipManagement.addChip(validatedChip)
+        setInputValue('')
+        setChipError('')
+      } catch (error) {
+        if (!allowInvalidChips) {
+          setChipError(error instanceof Error ? error.message : 'Invalid value')
+        }
+      }
+    },
+    [chipManagement, chipValidation, allowInvalidChips]
   )
 
-  // useEffect(() => {
-  //   if (inputValue.trim() && availableOptions.length > 0) {
-  //     // Use memoized chipTexts for O(1) lookup performance
-  //     const chipTextsSet = new Set(chipTexts)
+  const onBlurLogic = useOnBlurLogic({
+    inputValue,
+    disabled,
+    allowCustomValues,
+    availableOptions,
+    minChipLength,
+    maxChipLength,
+    onBlurConfig,
+    onAddCustomValue: handleAddCustomValue,
+    chipValidationSchema,
+    allowInvalidChips
+  })
 
-  //     const filtered = availableOptions.filter(option =>
-  //       option.toLowerCase().includes(inputValue.toLowerCase()) &&
-  //       !chipTextsSet.has(option)
-  //     )
-  //     setFilteredOptions(filtered)
-  //     setShowDropdown(filtered.length > 0)
-  //   } else {
-  //     setShowDropdown(false)
-  //     setFilteredOptions([])
-  //   }
-  // }, [inputValue, availableOptions, chipTexts])
-
-  useEffect(() => {
-    if (formProps?.setFieldValue) {
-      formProps.setFieldValue(fieldName, localChips as TFormValue)
-    }
-  }, [localChips, fieldName])
-
-  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (disabled) return
-
-    if (e.key === 'Enter') {
-      e.preventDefault()
-      if (selectedOption) {
-        handleSelectOption(selectedOption)
-      } else if (filteredOptions.length > 0) {
-        handleSelectOption(filteredOptions[0])
-        setFilteredOptions([])
-      } else if (allowCustomValues && inputValue.trim()) {
-        handleAddCustomValue(inputValue.trim())
-      }
-    } else if (e.key === ',' && allowCustomValues && inputValue.trim()) {
-      e.preventDefault()
-      handleAddCustomValue(inputValue.trim())
-    } else if (e.key === 'Escape') {
-      setShowDropdown(false)
-      setSelectedOption('')
-      inputRef.current?.blur()
-    } else if (e.key === 'ArrowDown') {
-      e.preventDefault()
-      if (filteredOptions.length > 0) {
-        const currentIndex = selectedOption ? filteredOptions.indexOf(selectedOption) : -1
-        const nextIndex = currentIndex < filteredOptions.length - 1 ? currentIndex + 1 : 0
-        setSelectedOption(filteredOptions[nextIndex])
-      }
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault()
-      if (filteredOptions.length > 0) {
-        const currentIndex = selectedOption ? filteredOptions.indexOf(selectedOption) : -1
-        const prevIndex = currentIndex > 0 ? currentIndex - 1 : filteredOptions.length - 1
-        setSelectedOption(filteredOptions[prevIndex])
-      }
-    } else if (e.key === 'Backspace' && !inputValue && localChips.length > 0) {
-      e.preventDefault()
-      const lastChip = localChips[localChips.length - 1]
+  const handleRemoveLastChip = () => {
+    const lastChip = chipManagement.chips[chipManagement.chips.length - 1]
+    if (lastChip) {
       const chipText = typeof lastChip === 'string' ? lastChip : lastChip.text
-      handleRemoveChip(chipText)
+      chipManagement.removeChip(chipText)
     }
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (disabled) return
-    setInputValue(e.target.value)
-    setSelectedOption('')
+    const value = e.target.value
+    setInputValue(value)
+    dropdownLogic.handleInputChange(value)
   }
 
   const handleInputFocus = () => {
-    if (availableOptions.length > 0 && inputValue.trim()) {
-      setShowDropdown(true)
-    }
+    dropdownLogic.handleInputFocus(inputValue)
   }
 
-  const handleRemoveChip = (chipToRemove: string) => {
-    if (disabled) return
-    const newChips = localChips.filter((c: string | TChipItem) => {
-      const chipText = typeof c === 'string' ? c : c.text
-      return chipText !== chipToRemove
-    })
-    setLocalChips(newChips)
-    onRemoveChip?.(chipToRemove)
-    // Sync with form state - only valid chips (strings)
-    if (setValue) {
-      const validChips = newChips.filter((chip) => typeof chip === 'string')
-      setValue(fieldName, validChips)
-    }
-    setChipError('')
-  }
+  const handleInputBlur = onBlurLogic.handleInputBlur
 
-  const handleSelectOption = (option: string) => {
-    // Check if option already exists in chips using memoized chipTexts
-    if (!chipTexts.includes(option)) {
-      if (chipValidationSchema) {
-        try {
-          chipValidationSchema.validateSync(option)
-        } catch (e) {
-          const message = chipValidationErrorMessage || (e as Error).message || 'Invalid value'
-          if (allowInvalidChips) {
-            const item: TChipItem = { text: option, hasError: true, errorMessage: message }
-            const newChips = [...localChips, item]
-            setLocalChips(newChips)
-            // Sync with form state - only valid chips (strings)
-            if (setValue) {
-              const validChips = newChips.filter((chip) => typeof chip === 'string')
-              setValue(fieldName, validChips)
-            }
-            setInputValue('')
-            setShowDropdown(false)
-            setSelectedOption('')
-            return
-          } else {
-            setChipError(message)
-            return
-          }
-        }
+  const keyboardNavigation = useKeyboardNavigation({
+    disabled,
+    inputValue,
+    allowCustomValues,
+    chips: chipManagement.chips,
+    filteredOptions: dropdownLogic.filteredOptions,
+    selectedOption: dropdownLogic.selectedOption,
+    onAddCustomValue: handleAddCustomValue,
+    onNavigateOptions: dropdownLogic.navigateOptions,
+    onSelectOption: (option) => {
+      const selected = dropdownLogic.selectOption(option)
+      if (selected) {
+        handleSelectOption(selected)
       }
+    },
+    onCloseDropdown: dropdownLogic.closeDropdown,
+    onRemoveLastChip: handleRemoveLastChip,
+    inputRef
+  })
 
-      onAddChip?.(option)
-      const newChips = [...localChips, option]
-      setLocalChips(newChips)
-      // Sync with form state - only valid chips (strings)
-      if (setValue) {
-        const validChips = newChips.filter((chip) => typeof chip === 'string')
-        setValue(fieldName, validChips)
-      }
-      setInputValue('')
-      setShowDropdown(false)
-      setSelectedOption('')
-      setChipError('')
-    }
-  }
-
-  const handleAddCustomValue = (value: string) => {
-    // Check if value already exists in chips
-    const chipTexts = localChips.map((chip) => (typeof chip === 'string' ? chip : chip.text))
-    if (!chipTexts.includes(value)) {
-      // validate value if schema provided
-      if (chipValidationSchema) {
-        try {
-          chipValidationSchema.validateSync(value)
-          const item: TChipItem = { text: value, hasError: false, errorMessage: '' }
-          const newChips = [...localChips, item]
-          setLocalChips(newChips)
-          if (formProps?.setFieldValue) {
-            formProps.setFieldValue(fieldName, newChips as TFormValue)
-          }
-          if (setValue) {
-            const validChips = newChips.filter((chip) => !(chip as TChipItem).hasError)
-            setValue(fieldName, validChips)
-          }
-        } catch (e) {
-          const message = chipValidationErrorMessage || (e as Error).message || 'Invalid value'
-          if (allowInvalidChips) {
-            const item: TChipItem = { text: value, hasError: true, errorMessage: message }
-            const newChips = [...localChips, item]
-            setLocalChips(newChips)
-            if (formProps?.setFieldValue) {
-              formProps?.setFieldValue(fieldName, newChips as TFormValue)
-            }
-            if (setValue) {
-              const validChips = newChips.filter((chip) => !(chip as TChipItem).hasError)
-              setValue(fieldName, validChips)
-            }
-          } else {
-            setChipError(message)
-            return
-          }
-        }
-      } else {
-        const newChips = [...localChips, value]
-        setLocalChips(newChips)
-        if (setValue) {
-          setValue(fieldName, newChips)
-        }
-      }
-
-      setInputValue('')
-      setChipError('')
-    }
-  }
-
-  const getInputPlaceholder = () => {
-    if (localChips.length === 0) return placeholder
+  const inputPlaceholder = useMemo(() => {
+    if (chipManagement.chips.length === 0) return placeholder
     if (availableOptions.length > 0) return searchPlaceholder || searchPlaceholderText
     if (allowCustomValues) return typeAndEnterPlaceholderText
     return noOptionsPlaceholderText
-  }
+  }, [
+    chipManagement.chips.length,
+    placeholder,
+    availableOptions.length,
+    searchPlaceholder,
+    searchPlaceholderText,
+    allowCustomValues,
+    typeAndEnterPlaceholderText,
+    noOptionsPlaceholderText
+  ])
+
+  const hasError = chipError || chipManagement.hasErrorChips
+  const errorMessage = chipError || chipManagement.getErrorMessage()
+
+  const containerClassName = useMemo(
+    () =>
+      classNames('multi-textarea-chips', className, {
+        'multi-textarea-chips--disabled': disabled,
+        'multi-textarea-chips--error': hasError
+      }),
+    [className, disabled, hasError]
+  )
+
+  const inputWrapperClassName = useMemo(
+    () =>
+      classNames('multi-textarea-input-wrapper', {
+        'with-error-styles': hasError
+      }),
+    [hasError]
+  )
 
   return (
-    <div className={classNames('multi-textarea-chips', className)}>
-      {label && <div className="multi-textarea-chips__label">{label}</div>}
+    <div className={containerClassName} ref={containerRef}>
+      {label && (
+        <label className="multi-textarea-chips__label" htmlFor={`${fieldName}-input`}>
+          {label}
+        </label>
+      )}
 
-      <div
-        className={classNames('multi-textarea-input-wrapper', { 'with-error-styles': !!chipError })}
-      >
+      <div className={inputWrapperClassName}>
         <div className="multi-textarea-chips__content">
-          {localChips.map((chip: string | TChipItem, index: number) => {
-            const isItem = typeof chip !== 'string'
-            const text = isItem ? (chip as TChipItem).text : (chip as string)
-            const hasError = isItem ? Boolean((chip as TChipItem).hasError) : false
+          {chipManagement.chips.map((chip: ChipValue, index: number) => {
+            const isItem = typeof chip === 'object'
+            const text = isItem ? chip.text : chip
+            const hasError = isItem ? Boolean(chip.hasError) : false
+
             return (
               <Chips
                 key={`${text}-${index}`}
                 text={text}
-                withAction={true}
-                onClick={() => handleRemoveChip(text)}
+                withAction={!disabled}
+                onClick={() => {
+                  chipManagement.removeChip(text)
+                  setTimeout(() => {
+                    inputRef.current?.focus()
+                  }, 0)
+                }}
                 size="medium"
                 color={hasError ? 'danger' : 'primary'}
                 type="accent"
                 disabled={disabled}
+                aria-label={`Remove ${text} chip`}
               />
             )
           })}
+
           <div className="multi-textarea-chips__input-container">
             <input
+              id={`${fieldName}-input`}
               {...formProps}
+              autoComplete="off"
               ref={inputRef}
               type="text"
               value={inputValue}
               onChange={handleInputChange}
-              onKeyDown={handleKeyDown}
+              onKeyDown={keyboardNavigation.handleKeyDown}
               onFocus={handleInputFocus}
-              placeholder={getInputPlaceholder()}
+              onBlur={handleInputBlur}
+              placeholder={inputPlaceholder}
               className="multi-textarea-chips__input"
               disabled={disabled}
+              aria-describedby={
+                hasError ? `${fieldName}-error` : helperText ? `${fieldName}-helper` : undefined
+              }
+              aria-invalid={hasError ? 'true' : 'false'}
+              aria-expanded={dropdownLogic.showDropdown}
+              aria-autocomplete="list"
+              role="combobox"
             />
-            {showDropdown && (
-              <div className="multi-textarea-chips__dropdown">
-                {filteredOptions.map((option) => (
+
+            {dropdownLogic.showDropdown && dropdownLogic.filteredOptions.length > 0 && (
+              <div
+                className="multi-textarea-chips__dropdown"
+                role="listbox"
+                aria-label="Available options"
+              >
+                {dropdownLogic.filteredOptions.map((option) => (
                   <div
                     key={option}
                     className={classNames('multi-textarea-chips__dropdown-item', {
-                      'multi-textarea-chips__dropdown-item--selected': selectedOption === option
+                      'multi-textarea-chips__dropdown-item--selected':
+                        dropdownLogic.selectedOption === option
                     })}
                     onClick={() => handleSelectOption(option)}
+                    role="option"
+                    aria-selected={dropdownLogic.selectedOption === option}
                   >
                     <div className="multi-textarea-chips__radio">
                       <div
                         className={classNames('multi-textarea-chips__radio-button', {
-                          'multi-textarea-chips__radio-button--selected': selectedOption === option
+                          'multi-textarea-chips__radio-button--selected':
+                            dropdownLogic.selectedOption === option
                         })}
                       />
                     </div>
@@ -300,11 +283,17 @@ export const MultiTextareaWithChips: React.FC<TMultiTextareaWithChipsProps> = ({
         </div>
       </div>
 
-      {!!chipError && <ErrorMessage message={chipError} />}
+      {hasError && <ErrorMessage message={errorMessage} />}
 
-      {helperText && !chipError && <div className="multi-textarea-chips__helper">{helperText}</div>}
+      {helperText && !hasError && (
+        <div id={`${fieldName}-helper`} className="multi-textarea-chips__helper">
+          {helperText}
+        </div>
+      )}
     </div>
   )
 }
+
+export const MultiTextareaWithChips = memo(MultiTextareaWithChipsComponent)
 
 MultiTextareaWithChips.displayName = 'MultiTextareaWithChips'

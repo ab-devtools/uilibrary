@@ -16,6 +16,7 @@ body {
 .fs-12 { @include mixin.font('--font-size-12'); }
 .fs-14 { @include mixin.font('--font-size-14'); }
 .fs-16 { @include mixin.font('--font-size-16'); }
+.fs-18 { @include mixin.font('--font-size-18'); }
 .fs-20 { @include mixin.font('--font-size-20'); }
 .fs-24 { @include mixin.font('--font-size-24'); }
 .fs-32 { @include mixin.font('--font-size-32'); }
@@ -43,6 +44,7 @@ $space-values: (
                 10,
                 12,
                 16,
+                18,
                 20,
                 24,
                 28,
@@ -700,4 +702,8 @@ $space-prefixes: (
 
 .pointer-events-none {
   pointer-events: none;
+}
+
+.pointer-events-unset {
+  pointer-events: unset !important;
 }

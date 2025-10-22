@@ -62,19 +62,23 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
             'side-sheet--with-overlay': withOverlay || isMobile()
           })}
           initial={{
-            opacity: 0
+            opacity: 0,
+            ...(!isPositioned && !isMobile() && { width: 'auto' })
           }}
           animate={{
-            opacity: 1
+            opacity: 1,
+            ...(!isPositioned && !isMobile() && { width: 'auto' })
           }}
           exit={{
             opacity: 0,
+            ...(!isPositioned && !isMobile() && { width: 0 }),
             transition: {
-              duration: 0.1,
-              delay: 0.3
+              duration: 0.5,
+              ease: 'easeInOut'
             }
           }}
           transition={{ duration: 0.2 }}
+          style={{ pointerEvents: 'auto' }}
         >
           <motion.div
             initial={
@@ -138,7 +142,7 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
               className="side-sheet__content scrollbar scrollbar--vertical"
               ref={scrollbarContainerRef}
             >
-              {children}
+              {typeof children === 'function' ? children({ scrollbarContainerRef }) : children}
             </div>
             {footerButtons ? (
               <Footer

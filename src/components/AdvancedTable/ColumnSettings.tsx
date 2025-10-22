@@ -12,6 +12,7 @@ interface ColumnSettingsProps<T> {
   tooltipText?: string
   hiddenColumns?: string[]
   allToggleText?: string
+  menuIconTooltipText?: string
 }
 
 const defaultHiddenColumnSettings = ['select', 'actions', 'expand']
@@ -19,9 +20,11 @@ const defaultHiddenColumnSettings = ['select', 'actions', 'expand']
 export function ColumnSettings<T>({
   table,
   tooltipText,
+  menuIconTooltipText,
   hiddenColumns = [],
   allToggleText = 'All'
 }: ColumnSettingsProps<T>) {
+  const [menuButtonRef, setMenuButtonRef] = useState<HTMLButtonElement | null>(null)
   const [ref, setRef] = useState<HTMLDivElement | null>(null)
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
@@ -40,8 +43,17 @@ export function ColumnSettings<T>({
 
   return (
     <div ref={setRef}>
+      {menuIconTooltipText && (
+        <Tooltip
+          position={Positions.TOP_CENTER}
+          text={menuIconTooltipText}
+          id="column-settings-menu-icon"
+        />
+      )}
       <Button
+        refHandler={setMenuButtonRef}
         type="secondary"
+        id="column-settings-menu-icon"
         iconProps={{
           Component: IconSettings
         }}
@@ -53,6 +65,7 @@ export function ColumnSettings<T>({
         onClose={closeUserMenu}
         isOpen={isOpen}
         parentRef={ref}
+        additionalRef={menuButtonRef}
       >
         <div className="settings-menu__dropdown">
           <div className="relative">

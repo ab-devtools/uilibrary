@@ -19,11 +19,13 @@ export const TabItem = (props: TTabItemProps): JSX.Element | null => {
     rightIconProps,
     val,
     onClick,
-    dataId
+    dataId,
+    title
   } = props
 
   return (
     <div
+      title={title}
       onClick={disabled ? noop : onClick}
       className={classNames(
         'tab',

@@ -46,6 +46,7 @@ export const Tab = (props: TTabProps): ReactElement => {
             disabled={tabInfo.disabled}
             iconProps={tabInfo.iconProps}
             rightIconProps={tabInfo.rightIconProps}
+            title={tabInfo.title}
             {...rest}
           />
         )

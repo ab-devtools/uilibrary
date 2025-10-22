@@ -42,8 +42,8 @@ export const Footer = ({
 
       <div className="side-sheet__footer__buttons">
         {extraButton ? <Button type="secondary" {...footerButtons.extraButton} /> : null}
-        {<Button type="secondary" onClick={onClose} {...cancel} />}
-        <Button onClick={handleSubmit} disabled={isLoading} {...confirm} />
+        {cancel ? <Button type="secondary" onClick={onClose} {...cancel} /> : null}
+        {confirm ? <Button onClick={handleSubmit} disabled={isLoading} {...confirm} /> : null}
       </div>
     </div>
   )

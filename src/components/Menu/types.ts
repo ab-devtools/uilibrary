@@ -17,7 +17,9 @@ export type TMenuProps = {
   onClose: TCallBackFn
   position?: TTooltipPosition // 'right' | 'left' | 'top' | 'bottom'
   isOpen: boolean
+  withTitleOption?: boolean
   children?: ReactNode
+  additionalRef?: HTMLButtonElement | null
 }
 
 export type TNestedMenuItemProps = {

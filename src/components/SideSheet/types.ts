@@ -9,6 +9,10 @@ export type TCheckboxInfo = {
   isChecked: boolean
 }
 
+export type TSideSheetChildren = {
+  scrollbarContainerRef?: RefObject<HTMLDivElement>
+}
+
 export interface TSideSheetPropTypes {
   closeOnOutsideClick?: boolean
   shouldRemoveCallback?: boolean
@@ -27,7 +31,7 @@ export interface TSideSheetPropTypes {
   topLeftActions?: ReactNode
   topRightActions?: ReactNode
   tabItemsProps?: TTabProps
-  children?: ReactNode
+  children?: ReactNode | (({ scrollbarContainerRef }: TSideSheetChildren) => ReactNode)
   className?: string
   checkboxInfo?: TCheckboxInfo
   headerContent?: ReactNode

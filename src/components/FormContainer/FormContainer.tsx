@@ -1,11 +1,11 @@
 import type { JSX } from 'react'
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup'
 import classnames from 'classnames'
 import { FormContext } from '../../context'
 import type { FormPropTypes } from './types'
 import { Button } from '../Button'
+import * as yup from 'yup'
 
 export const FormContainer = (props: FormPropTypes): JSX.Element => {
   const {
@@ -16,6 +16,7 @@ export const FormContainer = (props: FormPropTypes): JSX.Element => {
     mode = 'onBlur',
     initialValues,
     validationScheme,
+    validationContext,
     buttonConfigs,
     formId,
     onSubmit
@@ -30,23 +31,49 @@ export const FormContainer = (props: FormPropTypes): JSX.Element => {
     getValues,
     watch,
     reset,
+    trigger,
     clearErrors,
     setError,
-    trigger,
     getFieldState,
     unregister
   } = useForm({
-    mode: mode,
-    resolver: yupResolver(validationScheme),
+    mode,
     defaultValues: initialValues,
-
-    shouldFocusError: shouldFocusError,
-    shouldUnregister: shouldUnregister
+    shouldFocusError,
+    shouldUnregister
   })
 
   const { errors, isDirty, isSubmitted, isSubmitting, dirtyFields } = formState
 
-  const customSubmit = (data: TFormData) => {
+  const validateForm = async (): Promise<boolean> => {
+    if (!validationScheme) return true
+
+    try {
+      await validationScheme.validate(getValues(), {
+        abortEarly: false,
+        context: validationContext
+      })
+      return true
+    } catch (error) {
+      if (error instanceof yup.ValidationError) {
+        error.inner.forEach((err) => {
+          if (err.path) {
+            setError(err.path, { type: 'manual', message: err.message })
+          }
+        })
+      }
+      return false
+    }
+  }
+
+  const customTrigger = async (): Promise<boolean> => {
+    return validateForm()
+  }
+
+  const customSubmit = async (data: TFormData) => {
+    const isValid = await validateForm()
+    if (!isValid) return
+
     if (onSubmit) {
       onSubmit(data, formState, dirtyFields)
     }
@@ -60,7 +87,7 @@ export const FormContainer = (props: FormPropTypes): JSX.Element => {
     >
       <FormContext.Provider
         value={{
-          trigger,
+          trigger: mode === 'onSubmit' ? customTrigger : trigger,
           register,
           errors,
           control,
@@ -71,6 +98,7 @@ export const FormContainer = (props: FormPropTypes): JSX.Element => {
           isDirty,
           isSubmitted,
           isSubmitting,
+          isValid: formState.isValid,
           clearErrors,
           setError,
           dirtyFields,

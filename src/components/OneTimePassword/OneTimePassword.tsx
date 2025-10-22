@@ -20,6 +20,7 @@ export const OneTimePassword = React.forwardRef<HTMLInputElement, OtpCustomProps
     required,
     placeholder,
     type,
+    pattern,
     setFieldValue,
     handleChange,
     dataId = '',
@@ -77,7 +78,7 @@ export const OneTimePassword = React.forwardRef<HTMLInputElement, OtpCustomProps
     }, [])
 
     return (
-      <div className={classNames('otp', className)}>
+      <div className={classNames('otp', className, `otp-${type}`)}>
         <Label text={label} required={required} disabled={disabled} dataId={dataId} />
         <div className="otp__inner flexbox">
           {otp.map((digits, index) => (
@@ -87,6 +88,7 @@ export const OneTimePassword = React.forwardRef<HTMLInputElement, OtpCustomProps
               ref={(el) => setInputRef(el, index)}
               max={1}
               type={type}
+              pattern={pattern}
               hasError={hasError}
               isValid={isValid}
               readonly={disabled}

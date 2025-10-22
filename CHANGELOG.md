@@ -1,20 +1,295 @@
-## [1.39.1](https://github.com/ab-devtools/uilibrary/compare/1.39.0...1.39.1) (2025-08-27)
+## [1.48.6](https://github.com/ab-devtools/uilibrary/compare/1.48.5...1.48.6) (2025-10-21)
 
 
 ### Bug Fixes
 
-* make fieldName is dynamic and remove all console.logs ([ff6db49](https://github.com/ab-devtools/uilibrary/commit/ff6db49e2d7ecb10eade3177667048b3eb8aaa96))
+* hide cancel button if needed ([0816983](https://github.com/ab-devtools/uilibrary/commit/0816983535aad8a96dbc0a25583e8a8e8b128d2b))
+* hide cancel button if needed ([17526d1](https://github.com/ab-devtools/uilibrary/commit/17526d1a64fcac806aa4a2dbdd64d2bb58e4b2c2))
+* hide cancel button if needed ([6e17036](https://github.com/ab-devtools/uilibrary/commit/6e170367f9f1cfa428f0f6c5a25882a1e33cae74))
 
-# [1.39.0](https://github.com/ab-devtools/uilibrary/compare/1.38.1...1.39.0) (2025-08-27)
+## [1.48.5](https://github.com/ab-devtools/uilibrary/compare/1.48.4...1.48.5) (2025-10-20)
 
 
 ### Bug Fixes
 
-* fix some types ([e826a95](https://github.com/ab-devtools/uilibrary/commit/e826a954cf6ce2803190cc4ad08713d438b6a198))
+* select issue, hide not works correct on resize ([890c266](https://github.com/ab-devtools/uilibrary/commit/890c2669495bdbcc6bb5ea495f19848e13a42429))
+* select issue, hide not works correct on resize ([a55b7aa](https://github.com/ab-devtools/uilibrary/commit/a55b7aa7269ee786dd2a4d72da6d36a57266705a))
+* select issue, hide not works correct on resize ([4a72dd5](https://github.com/ab-devtools/uilibrary/commit/4a72dd53251d4b15e6030c7f494ad385d0e04f23))
+* select issue, hide not works correct on resize ([42fed69](https://github.com/ab-devtools/uilibrary/commit/42fed69357c410e3b620b453f5efc01d163dd8a3))
+* select issue, hide not works correct on resize ([e6dec4a](https://github.com/ab-devtools/uilibrary/commit/e6dec4a386255fc4b32b3314095aa7026e26b46b))
+
+## [1.48.4](https://github.com/ab-devtools/uilibrary/compare/1.48.3...1.48.4) (2025-10-20)
+
+
+### Bug Fixes
+
+* hide expend sorting ([a8b1006](https://github.com/ab-devtools/uilibrary/commit/a8b1006e7c6fc5546ac769943b003e910a7a9567))
+
+## [1.48.3](https://github.com/ab-devtools/uilibrary/compare/1.48.2...1.48.3) (2025-10-14)
+
+
+### Bug Fixes
+
+* synchronize side sheet exit animations ([76585b3](https://github.com/ab-devtools/uilibrary/commit/76585b3eb341663e04d16720f97a0c3ec45c842b))
+
+## [1.48.2](https://github.com/ab-devtools/uilibrary/compare/1.48.1...1.48.2) (2025-10-13)
+
+
+### Bug Fixes
+
+* form context ([d75f7d7](https://github.com/ab-devtools/uilibrary/commit/d75f7d7a7bfc74dfb9b3a0b233b7b87e762a3fae))
+* form context ([f700443](https://github.com/ab-devtools/uilibrary/commit/f700443971acb435ff367527f8cf33864d73ee98))
+
+## [1.48.1](https://github.com/ab-devtools/uilibrary/compare/1.48.0...1.48.1) (2025-10-08)
+
+
+### Bug Fixes
+
+* add data-id attribute to RadioGroup text for test automation ([328db1b](https://github.com/ab-devtools/uilibrary/commit/328db1b5b53ad36de54f093dd35296679b1d201e))
+
+# [1.48.0](https://github.com/ab-devtools/uilibrary/compare/1.47.0...1.48.0) (2025-10-06)
 
 
 ### Features
 
+* add title to tabitems ([5eb4a58](https://github.com/ab-devtools/uilibrary/commit/5eb4a58e9f8633be2fb74e54ba67fc8c8a7cc62f))
+
+# [1.47.0](https://github.com/ab-devtools/uilibrary/compare/1.46.0...1.47.0) (2025-10-06)
+
+
+### Features
+
+* new icon ([9aa52da](https://github.com/ab-devtools/uilibrary/commit/9aa52daaa516e2b3711e5124ccb175e72a6b333d))
+
+# [1.46.0](https://github.com/ab-devtools/uilibrary/compare/1.45.0...1.46.0) (2025-10-02)
+
+
+### Bug Fixes
+
+* reverse storybook main.ts file (its changes only for my local) ([867cc35](https://github.com/ab-devtools/uilibrary/commit/867cc35b160dd3b8ebf8994b7f3fc178d0472ffc))
+
+
+### Features
+
+* update functionals ([946e75c](https://github.com/ab-devtools/uilibrary/commit/946e75c26e384505717df4cdeca6c7d9717588c2))
+
+# [1.45.0](https://github.com/ab-devtools/uilibrary/compare/1.44.5...1.45.0) (2025-10-02)
+
+
+### Features
+
+* new icons ([258465f](https://github.com/ab-devtools/uilibrary/commit/258465f2333ae11a32c3179576fde067375e9e4d))
+
+## [1.44.5](https://github.com/ab-devtools/uilibrary/compare/1.44.4...1.44.5) (2025-10-01)
+
+
+### Bug Fixes
+
+* fix type of collapse title to accept also react element ([9ffcd75](https://github.com/ab-devtools/uilibrary/commit/9ffcd75da6b92d2e06a24274da35b9b48e66f6c6))
+
+## [1.44.4](https://github.com/ab-devtools/uilibrary/compare/1.44.3...1.44.4) (2025-09-25)
+
+
+### Bug Fixes
+
+* resolve nested component icon rotation conflict - CollapseItem VS CollapseGroup ([4262d2a](https://github.com/ab-devtools/uilibrary/commit/4262d2a6b91f188c999c14176f7448cd444165e8))
+
+## [1.44.3](https://github.com/ab-devtools/uilibrary/compare/1.44.2...1.44.3) (2025-09-22)
+
+
+### Bug Fixes
+
+* 18 px space ([7e93401](https://github.com/ab-devtools/uilibrary/commit/7e9340180bc143058cb205c1b9bc923d6cb1033b))
+
+## [1.44.2](https://github.com/ab-devtools/uilibrary/compare/1.44.1...1.44.2) (2025-09-22)
+
+
+### Bug Fixes
+
+* add 18 px font size and space ([b15f1d7](https://github.com/ab-devtools/uilibrary/commit/b15f1d77b07553cc77b57cbf1d5b901e0076b618))
+
+## [1.44.1](https://github.com/ab-devtools/uilibrary/compare/1.44.0...1.44.1) (2025-09-22)
+
+
+### Bug Fixes
+
+* close table column settings menu on icon click ([2c788c2](https://github.com/ab-devtools/uilibrary/commit/2c788c2bb626da952fadcf96f9a5d8ca71c6496a))
+
+# [1.44.0](https://github.com/ab-devtools/uilibrary/compare/1.43.0...1.44.0) (2025-09-22)
+
+
+### Bug Fixes
+
+* check side sheet buttons ([b568a7d](https://github.com/ab-devtools/uilibrary/commit/b568a7df5e506ea0badbb3981059ccb9487692b3))
+
+
+### Features
+
+* added new Icons ([b03b49e](https://github.com/ab-devtools/uilibrary/commit/b03b49e4d8e614b6e4718ecec57e4e1a5ebdc00f))
+
+# [1.43.0](https://github.com/ab-devtools/uilibrary/compare/1.42.10...1.43.0) (2025-09-19)
+
+
+### Features
+
+* form custom trigger ([0032447](https://github.com/ab-devtools/uilibrary/commit/0032447da249c3079e88ea4b65039888afff40be))
+* form custom trigger ([08b0ff6](https://github.com/ab-devtools/uilibrary/commit/08b0ff6dbdf5752b7d767e9066fb74d8c1bff41d))
+
+## [1.42.10](https://github.com/ab-devtools/uilibrary/compare/1.42.9...1.42.10) (2025-09-19)
+
+
+### Bug Fixes
+
+* form props ([f62c6ed](https://github.com/ab-devtools/uilibrary/commit/f62c6ed4f729936ff284cc3e78ba1ede23ee5615))
+* form props ([9b6ca84](https://github.com/ab-devtools/uilibrary/commit/9b6ca84b9a765e28e546276a4b730f9ff4b7f0d7))
+
+## [1.42.9](https://github.com/ab-devtools/uilibrary/compare/1.42.8...1.42.9) (2025-09-19)
+
+
+### Bug Fixes
+
+* side sheet children render ([21e20ac](https://github.com/ab-devtools/uilibrary/commit/21e20ac854cdde0b7902ec9292f81617f1d105e5))
+* side sheet children render ([b1661e1](https://github.com/ab-devtools/uilibrary/commit/b1661e1f34c99bcbd8b25b7890a3034ee6b6061c))
+
+## [1.42.8](https://github.com/ab-devtools/uilibrary/compare/1.42.7...1.42.8) (2025-09-19)
+
+
+### Bug Fixes
+
+* form validation mode ([370dd56](https://github.com/ab-devtools/uilibrary/commit/370dd56b822809b899b88d9e9cd27444eb91417f))
+* form validation mode ([0e57188](https://github.com/ab-devtools/uilibrary/commit/0e571884d60c9e3de7af215cde1335e6a3a0725e))
+
+## [1.42.7](https://github.com/ab-devtools/uilibrary/compare/1.42.6...1.42.7) (2025-09-19)
+
+
+### Bug Fixes
+
+* use scroll hook ([b24fccd](https://github.com/ab-devtools/uilibrary/commit/b24fccd38af3268b298c110007b496277f0821d1))
+* use scroll hook ([066718c](https://github.com/ab-devtools/uilibrary/commit/066718c645aa1edbef755649a87e4e2a331ac736))
+* use scroll hook ([1515fda](https://github.com/ab-devtools/uilibrary/commit/1515fdab99294b960c72d3912d684a4fa51f9926))
+
+## [1.42.6](https://github.com/ab-devtools/uilibrary/compare/1.42.5...1.42.6) (2025-09-18)
+
+
+### Bug Fixes
+
+* validation context ([d4daff8](https://github.com/ab-devtools/uilibrary/commit/d4daff83cd2357c189aa9e10d5fbb3fb62bc62eb))
+
+## [1.42.5](https://github.com/ab-devtools/uilibrary/compare/1.42.4...1.42.5) (2025-09-18)
+
+
+### Bug Fixes
+
+* copy tooltip ([29d5cb1](https://github.com/ab-devtools/uilibrary/commit/29d5cb171322f576464e6cb4857d9729f9f764c1))
+* copy tooltip ([d19f7c0](https://github.com/ab-devtools/uilibrary/commit/d19f7c097987e567164ed6a2216aa15bedbc8f84))
+
+## [1.42.4](https://github.com/ab-devtools/uilibrary/compare/1.42.3...1.42.4) (2025-09-18)
+
+
+### Bug Fixes
+
+* validation shcema option fix ([718c550](https://github.com/ab-devtools/uilibrary/commit/718c550d87557d06a0ed711c3ba2eddedb94c46d))
+* validation shcema option fix ([64132de](https://github.com/ab-devtools/uilibrary/commit/64132de0f531960634f0e0cc456ba6b98cbaa592))
+
+## [1.42.3](https://github.com/ab-devtools/uilibrary/compare/1.42.2...1.42.3) (2025-09-17)
+
+
+### Bug Fixes
+
+* add withTitleOption boolean prop to conditionally show HTML title attribute ([0fe1bc7](https://github.com/ab-devtools/uilibrary/commit/0fe1bc7f3ab7f53bf231e30ad6b8466a21b1ea2f))
+* form validation shema option ([12db090](https://github.com/ab-devtools/uilibrary/commit/12db090f805ace10c6e1dc3472d6c5279c310f8c))
+* form validation shema option ([39d7d09](https://github.com/ab-devtools/uilibrary/commit/39d7d09589a821315f4bb1dc883e79a6eb2ce9e7))
+* pattern ([d90cfdd](https://github.com/ab-devtools/uilibrary/commit/d90cfdd7d10d1b641ab7d636028d1b9bba96ede0))
+
+## [1.42.2](https://github.com/ab-devtools/uilibrary/compare/1.42.1...1.42.2) (2025-09-16)
+
+
+### Bug Fixes
+
+* add id for button icon ([f50273d](https://github.com/ab-devtools/uilibrary/commit/f50273d5a263731751f0d2e476e2be879ccafcfc))
+
+## [1.42.1](https://github.com/ab-devtools/uilibrary/compare/1.42.0...1.42.1) (2025-09-15)
+
+
+### Bug Fixes
+
+* change color ([2aa75f2](https://github.com/ab-devtools/uilibrary/commit/2aa75f25bc3f589c5f17a0d0b4633a0a79a95a1b))
+
+# [1.42.0](https://github.com/ab-devtools/uilibrary/compare/1.41.1...1.42.0) (2025-09-12)
+
+
+### Bug Fixes
+
+* add fieldName prop ([2c5208b](https://github.com/ab-devtools/uilibrary/commit/2c5208b981acfcf852f75af3886b7e3b4423a526))
+* autocomplete off input ([1def172](https://github.com/ab-devtools/uilibrary/commit/1def172d8816aa7ea59a138651900fe533c035f5))
+* branches for alpha ([5b5e514](https://github.com/ab-devtools/uilibrary/commit/5b5e514022d916d4ef097f8798d659785995ae4e))
+* bug fixing ([e86f8a7](https://github.com/ab-devtools/uilibrary/commit/e86f8a72976481a1a71be2c775c8b1c8409896ae))
+* build issue ([25b8c88](https://github.com/ab-devtools/uilibrary/commit/25b8c8811c56012241c2cd742e26b6e3c4439a92))
+* fixes ([ea2cc6a](https://github.com/ab-devtools/uilibrary/commit/ea2cc6a28edc542fecc2ca12495e487739d3adbe))
+* lib name ([4248cbe](https://github.com/ab-devtools/uilibrary/commit/4248cbe085da30c9cabbe06e8ab310d209ddd24f))
+* merge conflicts ([fe5af47](https://github.com/ab-devtools/uilibrary/commit/fe5af470646e7849b37661dd7633a3f04cff00c4))
+* some bugs and remove comments ([8399fbe](https://github.com/ab-devtools/uilibrary/commit/8399fbe35cf1ce5ee1979f3a1982284028874c48))
+* storybook main.ts ([76590c0](https://github.com/ab-devtools/uilibrary/commit/76590c0136ff8f3588e3f08beed5484942c9a14a))
+* version ([784e025](https://github.com/ab-devtools/uilibrary/commit/784e025ce6cb7f5a08f8eec5dd94292fb193f7bd))
+
+
+### Features
+
+* add functional to create one chip ([56deca9](https://github.com/ab-devtools/uilibrary/commit/56deca94141ba5d2991f6d958b850fc236d8d83c))
+* add select option in MultipleTextarea component ([69662fe](https://github.com/ab-devtools/uilibrary/commit/69662fe67fe5d1e74d33eeac627778fcd00b3357))
+* beta version of multiple textarea component with alpha version ([34d3495](https://github.com/ab-devtools/uilibrary/commit/34d349502b0bf3c73b3b8abb29a9d094bb25f743))
+* create multiple textarea with chips ([bbb2e80](https://github.com/ab-devtools/uilibrary/commit/bbb2e805406ed97d6aebe53814ff8bb473dfebf2))
+
+# [1.39.0-alpha.6](https://github.com/ab-devtools/uilibrary/compare/1.39.0-alpha.5...1.39.0-alpha.6) (2025-09-11)
+
+
+### Features
+
+* add functional to create one chip ([56deca9](https://github.com/ab-devtools/uilibrary/commit/56deca94141ba5d2991f6d958b850fc236d8d83c))
+
+# [1.39.0-alpha.5](https://github.com/ab-devtools/uilibrary/compare/1.39.0-alpha.4...1.39.0-alpha.5) (2025-09-10)
+
+
+### Bug Fixes
+
+* autocomplete off input ([1def172](https://github.com/ab-devtools/uilibrary/commit/1def172d8816aa7ea59a138651900fe533c035f5))
+
+# [1.39.0-alpha.4](https://github.com/ab-devtools/uilibrary/compare/1.39.0-alpha.3...1.39.0-alpha.4) (2025-09-10)
+
+
+### Features
+
+* add select option in MultipleTextarea component ([69662fe](https://github.com/ab-devtools/uilibrary/commit/69662fe67fe5d1e74d33eeac627778fcd00b3357))
+
+# [1.39.0-alpha.3](https://github.com/ab-devtools/uilibrary/compare/1.39.0-alpha.2...1.39.0-alpha.3) (2025-09-10)
+
+
+### Bug Fixes
+
+* add fieldName prop ([2c5208b](https://github.com/ab-devtools/uilibrary/commit/2c5208b981acfcf852f75af3886b7e3b4423a526))
+
+# [1.39.0-alpha.2](https://github.com/ab-devtools/uilibrary/compare/1.39.0-alpha.1...1.39.0-alpha.2) (2025-09-10)
+
+
+### Bug Fixes
+
+* storybook main.ts ([76590c0](https://github.com/ab-devtools/uilibrary/commit/76590c0136ff8f3588e3f08beed5484942c9a14a))
+
+# [1.39.0-alpha.1](https://github.com/ab-devtools/uilibrary/compare/1.38.1...1.39.0-alpha.1) (2025-09-10)
+
+
+### Bug Fixes
+
+* branches for alpha ([5b5e514](https://github.com/ab-devtools/uilibrary/commit/5b5e514022d916d4ef097f8798d659785995ae4e))
+* bug fixing ([e86f8a7](https://github.com/ab-devtools/uilibrary/commit/e86f8a72976481a1a71be2c775c8b1c8409896ae))
+* build issue ([25b8c88](https://github.com/ab-devtools/uilibrary/commit/25b8c8811c56012241c2cd742e26b6e3c4439a92))
+* lib name ([4248cbe](https://github.com/ab-devtools/uilibrary/commit/4248cbe085da30c9cabbe06e8ab310d209ddd24f))
+* version ([784e025](https://github.com/ab-devtools/uilibrary/commit/784e025ce6cb7f5a08f8eec5dd94292fb193f7bd))
+
+
+### Features
+
+* beta version of multiple textarea component with alpha version ([34d3495](https://github.com/ab-devtools/uilibrary/commit/34d349502b0bf3c73b3b8abb29a9d094bb25f743))
 * multitextarea with chips ([a4b867d](https://github.com/ab-devtools/uilibrary/commit/a4b867d67034a15b253768ee48eb8e6ac0bcbfe2))
 
 ## [1.38.1](https://github.com/ab-devtools/uilibrary/compare/1.38.0...1.38.1) (2025-08-22)

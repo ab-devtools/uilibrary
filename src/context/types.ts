@@ -31,11 +31,13 @@ export type TFormContextProps = {
   trigger?: UseFormTrigger<TFormData>
   getFieldState?: UseFormGetFieldState<TFormData>
   unregister?: UseFormUnregister<TFormData>
+  isValid: boolean
 }
 
 export const FormContext = createContext<TFormContextProps>({
   setValue: noop,
   isSubmitted: false,
   isSubmitting: false,
-  dirtyFields: {}
+  dirtyFields: {},
+  isValid: false
 })
