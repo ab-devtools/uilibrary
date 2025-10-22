@@ -4,14 +4,16 @@ export const TYPE_MAPPING: { [key: string]: TSVGIconType } = {
   warning: 'warning-light',
   success: 'success-light',
   error: 'danger-light',
-  information: 'information-light'
+  information: 'information-light',
+  offline: 'warning-light'
 }
 
 export const ICONS_MAPPING: { [key: string]: string } = {
   warning: 'warningFilled',
   success: 'checkmarkCircleFilled',
   error: 'errorCircleFilled',
-  information: 'infoFilled'
+  information: 'infoFilled',
+  offline: 'wifiOff'
 }
 
 export const DEFAULT_DURATION = 6000

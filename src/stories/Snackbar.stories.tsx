@@ -41,7 +41,7 @@ const Template: StoryFn<{ type: string }> = (args) => {
       const { toastId, message, type } = infoMessages[infoMessages.length - 1]
       notify({
         text: message,
-        type,
+        type: 'offline',
         toastId: toastId,
         actionProps: {
           buttonText: 'close',
@@ -60,7 +60,7 @@ const Template: StoryFn<{ type: string }> = (args) => {
     <div>
       <>
         <Button buttonText={'notify'} onClick={addMessage} />
-        <_Snackbar duration={2000} position="bottom-center" />
+        <_Snackbar duration={2000} position="top-right" />
       </>
     </div>
   )
