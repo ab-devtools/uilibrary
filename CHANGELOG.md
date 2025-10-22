@@ -1,3 +1,10 @@
+## [1.49.1](https://github.com/ab-devtools/uilibrary/compare/1.49.0...1.49.1) (2025-10-22)
+
+
+### Bug Fixes
+
+* fixed imports ([fde1a01](https://github.com/ab-devtools/uilibrary/commit/fde1a01076939a706968f7716901be9589d30d93))
+
 # [1.49.0](https://github.com/ab-devtools/uilibrary/compare/1.48.6...1.49.0) (2025-10-22)
 
 
