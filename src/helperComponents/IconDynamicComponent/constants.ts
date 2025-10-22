@@ -7,6 +7,7 @@ export const IconComponentMapping: { [key: string]: any } = {
     (): any => import('../../components/SVGIcons/IconCheckmarkCircleFilled')
   ),
   errorCircleFilled: lazy((): any => import('../../components/SVGIcons/IconErrorCircleFilled')),
+  wifiOff: lazy((): any => import('../../components/SVGIcons/IconWifiOff')),
   infoFilled: lazy((): any => import('../../components/SVGIcons/IconInfoFilled')),
   checkmark: lazy((): any => import('../../components/SVGIcons/IconCheckmark')),
   subtract: lazy((): any => import('../../components/SVGIcons/IconSubtract')),

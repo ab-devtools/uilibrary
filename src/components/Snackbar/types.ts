@@ -1,7 +1,7 @@
 import type { JSX } from 'react'
 import type { TButtonPropTypes } from '../Button/types'
 
-export type TSnackbarTypes = 'success' | 'error' | 'warning' | 'information'
+export type TSnackbarTypes = 'success' | 'error' | 'warning' | 'information' | 'offline'
 
 export interface TToastProps {
   duration?: number
