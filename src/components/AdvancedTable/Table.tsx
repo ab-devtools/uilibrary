@@ -69,7 +69,7 @@ export function Table<TData>({
   onColumnSizing,
   onPaginationChange,
   rowEventsProps,
-  activeRowId,
+  activeRowId
 }: TTableProps<TData>) {
   const [expandedRows, setExpandedRows] = useState<Set<string>>(new Set())
 
@@ -228,7 +228,10 @@ export function Table<TData>({
                           <React.Fragment key={row.id}>
                             <tr
                               {...rowEventsProps}
-                              className={classnames({ selected: row.getIsSelected(), active: row.id == activeRowId })}
+                              className={classnames({
+                                selected: row.getIsSelected(),
+                                active: row.id == activeRowId
+                              })}
                             >
                               {row.getVisibleCells().map((cell) => (
                                 <td
