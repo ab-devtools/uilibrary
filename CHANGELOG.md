@@ -1,3 +1,10 @@
+## [1.49.4](https://github.com/ab-devtools/uilibrary/compare/1.49.3...1.49.4) (2025-10-23)
+
+
+### Bug Fixes
+
+* add container ref to menu component ([ac31746](https://github.com/ab-devtools/uilibrary/commit/ac3174698b659492e57cb7c7f1fdca5ff498cf64))
+
 ## [1.49.3](https://github.com/ab-devtools/uilibrary/compare/1.49.2...1.49.3) (2025-10-23)
 
 
