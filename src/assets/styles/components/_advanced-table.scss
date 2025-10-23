@@ -192,14 +192,13 @@
           @include mixin.flexbox;
           @include mixin.align-items(center);
         }
-
+        &.active,
         &:not(.advanced-table__expanded-row):hover {
           td {
             cursor: pointer;
             background-color: var(--ds-table-td-bg-hover);
 
             .actions-list {
-
               &__right {
                 @include mixin.flexbox;
               }
@@ -216,7 +215,7 @@
             background-color: var(--ds-table-td-bg-hover) !important;
           }
         }
-
+        &.active,
         &.selected {
           td {
             background-color: var(--ds-table-td-bg-selected);
