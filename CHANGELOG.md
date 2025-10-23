@@ -1,3 +1,11 @@
+## [1.49.3](https://github.com/ab-devtools/uilibrary/compare/1.49.2...1.49.3) (2025-10-23)
+
+
+### Bug Fixes
+
+* table active row ([4acd372](https://github.com/ab-devtools/uilibrary/commit/4acd372f62dce43b49e282e8e24e2cff524bd0d1))
+* table active row ([d06b407](https://github.com/ab-devtools/uilibrary/commit/d06b407dbe58b41ce0da6c1c17ac39732f6398c8))
+
 ## [1.49.2](https://github.com/ab-devtools/uilibrary/compare/1.49.1...1.49.2) (2025-10-23)
 
 
