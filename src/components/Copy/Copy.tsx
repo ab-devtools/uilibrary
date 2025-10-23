@@ -27,7 +27,7 @@ export const Copy = ({
     setTimeout(() => onCloseTooltip(), 3000)
   }
 
-  useHideOnScroll(onCloseTooltip, parentRef)
+  useHideOnScroll(onCloseTooltip, parentRef?.current)
 
   return (
     <div ref={copyIconRef} className="copy-icon">
