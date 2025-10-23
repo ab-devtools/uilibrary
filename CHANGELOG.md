@@ -1,3 +1,10 @@
+## [1.49.2](https://github.com/ab-devtools/uilibrary/compare/1.49.1...1.49.2) (2025-10-23)
+
+
+### Bug Fixes
+
+* menu aditonal ref tpe and add aditional ref in nested menu ([f91088d](https://github.com/ab-devtools/uilibrary/commit/f91088d468f23fae695f92adf4f75466028d60fd))
+
 ## [1.49.1](https://github.com/ab-devtools/uilibrary/compare/1.49.0...1.49.1) (2025-10-22)
 
 
