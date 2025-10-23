@@ -7,16 +7,11 @@ import {
   IconDelete,
   IconEdit,
   IconAdd,
-  IconChevronDown,
-  IconChevronRight,
-  Status,
-  Chips,
-  Text
+  Chips
 } from '../index'
 import { StoryFn } from '@storybook/react'
 import { TTableProps } from '../components/AdvancedTable/types'
 import { ColumnDef, Row } from '@tanstack/react-table'
-import { flexRender } from '@tanstack/react-table'
 import classnames from 'classnames'
 import { IndeterminateCheckbox } from '../components/AdvancedTable/IndeterminateCheckbox'
 
