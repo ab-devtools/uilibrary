@@ -3,6 +3,8 @@ import React from 'react'
 import type { TTabProps } from './types'
 import { TabItem } from './TabItem'
 import classNames from 'classnames'
+import { IconChevronLeft, IconChevronRight } from '../SVGIcons'
+import { useTabScroll } from '../../hooks'
 
 export const Tab = (props: TTabProps): ReactElement => {
   const {
@@ -17,40 +19,59 @@ export const Tab = (props: TTabProps): ReactElement => {
     ...rest
   } = props
 
+  const { containerRef, showLeftArrow, showRightArrow, scrollLeft, scrollRight } = useTabScroll()
+
   return (
-    <div
-      className={classNames(
-        'tabs-container',
-        `tabs-container--${type}`,
-        `${color ? 'tabs-container--' + color : null}`,
-        `tabs-container--${size}`,
-        {
-          'tabs-container--skeleton': isLoading
-        },
-        className
+    <div className={classNames('tabs-wrapper', className)}>
+      {showLeftArrow && (
+        <IconChevronLeft
+          onClick={scrollLeft}
+          className={'tabs-scroll-button tabs-scroll-button--left'}
+        />
       )}
-    >
-      {tabItems.map((tabInfo) => {
-        return isLoading ? (
-          <div className={'tab-skeleton'} />
-        ) : (
-          <TabItem
-            label={tabInfo.label}
-            size={size}
-            badgeProps={tabInfo.badgeProps}
-            onClick={() => onSelect(tabInfo.value)}
-            key={tabInfo.value}
-            val={tabInfo.value}
-            isSelected={selectedValue === tabInfo.value}
-            dataId={tabInfo?.dataId || ''}
-            disabled={tabInfo.disabled}
-            iconProps={tabInfo.iconProps}
-            rightIconProps={tabInfo.rightIconProps}
-            title={tabInfo.title}
-            {...rest}
-          />
-        )
-      })}
+
+      <div
+        ref={containerRef}
+        className={classNames(
+          'tabs-container',
+          `tabs-container--${type}`,
+          `${color ? 'tabs-container--' + color : null}`,
+          `tabs-container--${size}`,
+          {
+            'tabs-container--skeleton': isLoading,
+            'tabs-container--scrollable': showLeftArrow || showRightArrow
+          }
+        )}
+      >
+        {tabItems.map((tabInfo) => {
+          return isLoading ? (
+            <div className={'tab-skeleton'} key={tabInfo.value} />
+          ) : (
+            <TabItem
+              label={tabInfo.label}
+              size={size}
+              badgeProps={tabInfo.badgeProps}
+              onClick={() => onSelect(tabInfo.value)}
+              key={tabInfo.value}
+              val={tabInfo.value}
+              isSelected={selectedValue === tabInfo.value}
+              dataId={tabInfo?.dataId || ''}
+              disabled={tabInfo.disabled}
+              iconProps={tabInfo.iconProps}
+              rightIconProps={tabInfo.rightIconProps}
+              title={tabInfo.title}
+              {...rest}
+            />
+          )
+        })}
+      </div>
+
+      {showRightArrow && (
+        <IconChevronRight
+          onClick={scrollRight}
+          className={'tabs-scroll-button tabs-scroll-button--right'}
+        />
+      )}
     </div>
   )
 }

@@ -36,6 +36,7 @@
   background-color: var(--ds-tab-bg-color-default);
   border: 1px solid;
   border-color: var(--ds-tab-border-color-default);
+  flex-shrink: 0; // Prevent tabs from shrinking when scrolling
 
   &:after {
     position: absolute;
@@ -48,6 +49,7 @@
 
   &__label {
     color: var(--ds-tab-color-default);
+    white-space: nowrap; // Prevent text wrapping
   }
 
   &__icon {
@@ -116,6 +118,59 @@
   }
 }
 
+.tabs-wrapper {
+  position: relative;
+  @include mixin.flexbox;
+  @include mixin.align-items(stretch);
+  width: 100%;
+  max-width: 100%; // Ensure it respects parent width
+  overflow: hidden; // Constrain children
+}
+
+// Scroll arrow buttons
+.tabs-scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  @include mixin.inline-flex;
+  @include mixin.align-items(center);
+  @include mixin.justify-content(center);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 1);
+    border-color: var(--ds-color-border-secondary);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+
+  &--left {
+    left: var(--ds-space-4);
+  }
+
+  &--right {
+    right: var(--ds-space-4);
+  }
+
+  @media (max-width: 768px) {
+    &--left {
+      left: var(--ds-space-2);
+    }
+
+    &--right {
+      right: var(--ds-space-2);
+    }
+  }
+}
+
 .tabs-container {
   $this: &;
 
@@ -139,6 +194,98 @@
 
   @include mixin.flexbox;
   @include mixin.align-items(stretch);
+  position: relative;
+  width: 100%;
+
+  &--scrollable {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // IE/Edge
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    // Gradient overflow indicators
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: var(--ds-space-40);
+      pointer-events: none;
+      z-index: 5;
+
+      @media (max-width: 768px) {
+        width: var(--ds-space-32);
+      }
+    }
+
+    &::before {
+      left: 0;
+      background: linear-gradient(
+                      to right,
+                      rgba(255, 255, 255, 1) 0%,
+                      rgba(255, 255, 255, 0.6) 50%,
+                      rgba(255, 255, 255, 0) 100%
+      );
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(
+                      to left,
+                      rgba(255, 255, 255, 1) 0%,
+                      rgba(255, 255, 255, 0.6) 50%,
+                      rgba(255, 255, 255, 0) 100%
+      );
+    }
+
+    &#{$this}--dark {
+      &::before {
+        background: linear-gradient(
+                        to right,
+                        var(--ds-tabs-dark-bg) 0%,
+                        rgba(249, 249, 249, 0.6) 50%,
+                        transparent 100%
+        );
+      }
+
+      &::after {
+        background: linear-gradient(
+                        to left,
+                        var(--ds-tabs-dark-bg) 0%,
+                        rgba(249, 249, 249, 0.6) 50%,
+                        transparent 100%
+        );
+      }
+    }
+
+    &#{$this}--light {
+      &::before {
+        background: linear-gradient(
+                        to right,
+                        var(--ds-tabs-light-bg) 0%,
+                        rgba(255, 255, 255, 0.6) 50%,
+                        transparent 100%
+        );
+      }
+
+      &::after {
+        background: linear-gradient(
+                        to left,
+                        var(--ds-tabs-light-bg) 0%,
+                        rgba(255, 255, 255, 0.6) 50%,
+                        transparent 100%
+        );
+      }
+    }
+  }
 
   &--large {
     min-height: var(--ds-tabs-size-lg);
@@ -172,7 +319,6 @@
 
     gap: var(--ds-tabs-primary-gap);
     border-bottom: var(--ds-tabs-primary-border);
-    width: fit-content;
 
     &#{$this}--skeleton {
       padding: var(--ds-space-10) 0;
@@ -208,6 +354,12 @@
 
     .tab {
       flex: 1;
+    }
+
+    &#{$this}--scrollable {
+      .tab {
+        flex: 0 0 auto; // Don't flex grow when scrollable
+      }
     }
   }
 
@@ -245,7 +397,7 @@
     --ds-tab-color-disabled: var(--ds-color-text-disabled);
 
     gap: var(--ds-tabs-tertiary-gap);
-    width: fit-content;
+    // Remove width: fit-content to allow overflow detection
 
     &#{$this}--dark {
       --ds-tabs-dark-bg: none;
