@@ -1,3 +1,10 @@
+## [1.49.5](https://github.com/ab-devtools/uilibrary/compare/1.49.4...1.49.5) (2025-10-30)
+
+
+### Bug Fixes
+
+* select icon issue ([a11f026](https://github.com/ab-devtools/uilibrary/commit/a11f0269aae71d5569fee5f6fd55563797b969c3))
+
 ## [1.49.4](https://github.com/ab-devtools/uilibrary/compare/1.49.3...1.49.4) (2025-10-23)
 
 
