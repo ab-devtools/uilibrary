@@ -223,17 +223,17 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
 
   const rightIconOpenedProps = useMemo(() => {
     return {
-      ...selectRightIconOpenedProps,
       className: 'cursor-pointer pointer-events-unset',
-      onClick: () => setIsOpen(false)
+      onClick: () => setIsOpen(false),
+      ...selectRightIconOpenedProps
     }
   }, [selectRightIconOpenedProps])
 
   const rightIconProps = useMemo(() => {
     return {
-      ...selectRightIconProps,
       className: 'cursor-pointer pointer-events-unset',
-      onClick: () => setIsOpen(true)
+      onClick: () => setIsOpen(true),
+      ...selectRightIconProps
     }
   }, [selectRightIconProps])
 
