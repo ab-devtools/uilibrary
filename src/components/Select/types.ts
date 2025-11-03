@@ -149,6 +149,7 @@ export interface TSingleSelectPropTypes extends IFormCompProps, TSelectBaseProps
     floatValue: number | undefined
   }) => boolean
   renderOptions?: (props: IRenderOptionItemProps) => JSX.Element
+  defaultValue?: string
 }
 
 export type TSelectFooterPropTypes = {
