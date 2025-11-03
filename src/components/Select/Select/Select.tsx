@@ -125,7 +125,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
 
   const handleOutsideClick = () => {
     const selected = getSelectedOption()
-    if (!searchValue && selected) {
+    if (!searchValue && selected && !isCreateOnOutsideClick) {
       setCurrentSelectedLabel()
     } else if (isCreateOnOutsideClick) {
       setSelectedOption({ label: searchValue, value: searchValue })
