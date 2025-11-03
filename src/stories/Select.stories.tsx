@@ -318,7 +318,7 @@ const languagesOptions = [
 
 // -----------SINGLE SELECT---------
 const Template: StoryFn<TSingleSelectPropTypes> = (args) => {
-  const [selectedValue, setSelectedValue] = useState<TItemValue | undefined>("1")
+  const [selectedValue, setSelectedValue] = useState<TItemValue | undefined>(null)
 
   return (
     <div style={{ display: 'flex', maxHeight: '100vh', justifyContent: 'center' }}>
@@ -333,8 +333,6 @@ const Template: StoryFn<TSingleSelectPropTypes> = (args) => {
           selectedItem={selectedValue}
           setSelectedItem={setSelectedValue}
           isSearchable={true}
-          isCreateOnOutsideClick
-          defaultValue="1"
           optionRightIconComponent={(value) => <>{value}</>}
         />
       </div>
