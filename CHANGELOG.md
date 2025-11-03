@@ -1,3 +1,10 @@
+## [1.49.6](https://github.com/ab-devtools/uilibrary/compare/1.49.5...1.49.6) (2025-11-03)
+
+
+### Bug Fixes
+
+* select default value ([7605cf0](https://github.com/ab-devtools/uilibrary/commit/7605cf0b28bdde2f690525e3ef652bec21f13699))
+
 ## [1.49.5](https://github.com/ab-devtools/uilibrary/compare/1.49.4...1.49.5) (2025-10-30)
 
 
