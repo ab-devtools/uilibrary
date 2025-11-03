@@ -1,3 +1,11 @@
+## [1.49.8](https://github.com/ab-devtools/uilibrary/compare/1.49.7...1.49.8) (2025-11-03)
+
+
+### Bug Fixes
+
+* select outside click empty value ([dbac1ed](https://github.com/ab-devtools/uilibrary/commit/dbac1ed2fda44cd2d7bf21f39d7c8b78ddc8aa19))
+* select outside click empty value ([44d4492](https://github.com/ab-devtools/uilibrary/commit/44d4492155b6939febf6684d2b955230395fc4ab))
+
 ## [1.49.7](https://github.com/ab-devtools/uilibrary/compare/1.49.6...1.49.7) (2025-11-03)
 
 
