@@ -167,6 +167,10 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
     closeDropdown()
   }
 
+  const isInOptions = (value: string) => {
+    return options.some((item) => `${item.value}` === value)
+  }
+
   const onItemDeselect = () => onItemSelect(null)
 
   const onOpenOptions = (e: TClickEventType): void => {
@@ -239,7 +243,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
   }, [selectRightIconProps])
 
   useEffect(() => {
-    if (defaultValue && isCreateOnOutsideClick) {
+    if (defaultValue && isCreateOnOutsideClick && !isInOptions(defaultValue)) {
       setSelectedOption({ label: defaultValue, value: defaultValue })
       setSearchValue(defaultValue)
       onItemSelect(defaultValue)
