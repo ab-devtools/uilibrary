@@ -62,7 +62,8 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
     labelAddons,
     tooltipAddons,
     renderOptions,
-    isAllowed
+    isAllowed,
+    defaultValue
   } = props
 
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -236,6 +237,14 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
       onClick: () => setIsOpen(true)
     }
   }, [selectRightIconProps])
+
+  useEffect(() => {
+    if (defaultValue && isCreateOnOutsideClick) {
+      setSelectedOption({ label: defaultValue, value: defaultValue })
+      setSearchValue(defaultValue)
+      onItemSelect(defaultValue)
+    }
+  }, [defaultValue, isCreateOnOutsideClick])
 
   return (
     <div
