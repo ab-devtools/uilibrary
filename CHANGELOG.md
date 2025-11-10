@@ -1,3 +1,10 @@
+# [1.50.0](https://github.com/ab-devtools/uilibrary/compare/1.49.8...1.50.0) (2025-11-10)
+
+
+### Features
+
+* add actionAddons support to CardSelect component ([53c6ec0](https://github.com/ab-devtools/uilibrary/commit/53c6ec08f8596870e86fbbe20fa7d6a677bd6b15))
+
 ## [1.49.8](https://github.com/ab-devtools/uilibrary/compare/1.49.7...1.49.8) (2025-11-03)
 
 
