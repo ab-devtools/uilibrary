@@ -1,3 +1,10 @@
+## [1.51.1](https://github.com/ab-devtools/uilibrary/compare/1.51.0...1.51.1) (2025-11-11)
+
+
+### Bug Fixes
+
+* add data-id prop to multiselect component ([1efe02b](https://github.com/ab-devtools/uilibrary/commit/1efe02b52df09561da649f30b68dcb5e63a704f0))
+
 # [1.51.0](https://github.com/ab-devtools/uilibrary/compare/1.50.0...1.51.0) (2025-11-11)
 
 
