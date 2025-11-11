@@ -36,7 +36,8 @@ export const InputSelectWrapper = (props: TSelectWrapperProps): ReactElement | n
     selectedValues,
     setContainerRef,
     overflowText,
-    hasError
+    hasError,
+    dataId
   } = props
 
   const inputRef = useRef<HTMLInputElement | null>(null)
@@ -110,6 +111,7 @@ export const InputSelectWrapper = (props: TSelectWrapperProps): ReactElement | n
           labelAddons={labelAddons}
           disabled={disabled}
           size={size === 'large' ? 'large' : 'small'}
+          dataId={dataId}
         />
       </div>
 
