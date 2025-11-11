@@ -258,17 +258,17 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
       dropdownRef.style.left = `${rect.left}px`
       dropdownRef.style.width = `${rect.width}px`
       dropdownRef.style.top = `${rect.bottom}px`
-    };
+    }
     update()
     let rafId: number
     const loop = () => {
-      update();
+      update()
       rafId = requestAnimationFrame(loop)
-    };
+    }
     loop()
     return () => {
       cancelAnimationFrame(rafId)
-    };
+    }
   }, [isOpen, inputRef.current, dropdownRef])
 
   return (
