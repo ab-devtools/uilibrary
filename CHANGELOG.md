@@ -1,3 +1,10 @@
+## [1.51.2](https://github.com/ab-devtools/uilibrary/compare/1.51.1...1.51.2) (2025-11-11)
+
+
+### Bug Fixes
+
+* add default data id for IconDismiss ([4d05ad0](https://github.com/ab-devtools/uilibrary/commit/4d05ad01ab821581d7c00b761bb4565fcae00206))
+
 ## [1.51.1](https://github.com/ab-devtools/uilibrary/compare/1.51.0...1.51.1) (2025-11-11)
 
 
