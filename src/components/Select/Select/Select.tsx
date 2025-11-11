@@ -250,6 +250,27 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
     }
   }, [defaultValue, isCreateOnOutsideClick])
 
+  useEffect(() => {
+    if (!isOpen) return
+    const update = () => {
+      if (!inputRef.current || !dropdownRef) return
+      const rect = inputRef.current.getBoundingClientRect()
+      dropdownRef.style.left = `${rect.left}px`
+      dropdownRef.style.width = `${rect.width}px`
+      dropdownRef.style.top = `${rect.bottom}px`
+    };
+    update()
+    let rafId: number
+    const loop = () => {
+      update();
+      rafId = requestAnimationFrame(loop)
+    };
+    loop()
+    return () => {
+      cancelAnimationFrame(rafId)
+    };
+  }, [isOpen, inputRef.current, dropdownRef])
+
   return (
     <div
       data-id={`${dataId}-content`}
