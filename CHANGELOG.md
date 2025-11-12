@@ -1,3 +1,14 @@
+## [1.51.3](https://github.com/ab-devtools/uilibrary/compare/1.51.2...1.51.3) (2025-11-12)
+
+
+### Bug Fixes
+
+* detect dropdown position on open ([4283a57](https://github.com/ab-devtools/uilibrary/commit/4283a572a0f0c2121affbaf8dbe92d7d2cbe0615))
+* detect dropdown position on open ([534ce8b](https://github.com/ab-devtools/uilibrary/commit/534ce8b42f475316b6bcedfa42423a00cfe83e4c))
+* detect dropdown position on open ([0dd6968](https://github.com/ab-devtools/uilibrary/commit/0dd6968efb546e97d742a507db6bccdf580d745b))
+* detect dropdown position on open ([c4a9339](https://github.com/ab-devtools/uilibrary/commit/c4a93391f882b084f60910be418b9950a101f66a))
+* detect dropdown position on open ([5cdfa3d](https://github.com/ab-devtools/uilibrary/commit/5cdfa3de47d5122440d3d5c33e2e48f2ba81e42a))
+
 ## [1.51.2](https://github.com/ab-devtools/uilibrary/compare/1.51.1...1.51.2) (2025-11-11)
 
 
