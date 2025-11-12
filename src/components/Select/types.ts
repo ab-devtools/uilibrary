@@ -151,6 +151,7 @@ export interface TSingleSelectPropTypes extends IFormCompProps, TSelectBaseProps
   }) => boolean
   renderOptions?: (props: IRenderOptionItemProps) => JSX.Element
   defaultValue?: string
+  shouldRecalculateDropdownPosition?: boolean
 }
 
 export type TSelectFooterPropTypes = {
