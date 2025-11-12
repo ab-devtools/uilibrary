@@ -1,3 +1,10 @@
+# [1.52.0](https://github.com/ab-devtools/uilibrary/compare/1.51.3...1.52.0) (2025-11-12)
+
+
+### Features
+
+* add dataId attributes for input password validation items ([9e1bff4](https://github.com/ab-devtools/uilibrary/commit/9e1bff4050bd43fe303ac398d299a76d2e4bc72a))
+
 ## [1.51.3](https://github.com/ab-devtools/uilibrary/compare/1.51.2...1.51.3) (2025-11-12)
 
 
