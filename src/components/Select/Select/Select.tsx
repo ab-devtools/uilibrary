@@ -8,7 +8,8 @@ import {
   useGetElemSizes,
   useGetHasBottomSpace,
   useGetHasTopSpace,
-  useHideOnResize
+  useHideOnResize,
+  useRecalculateDropdownPosition
 } from '../../../hooks'
 import { Input } from '../../Input'
 import { Text } from '../../Text'
@@ -36,6 +37,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
     isSearchable = false,
     isDynamicSearchable = false,
     trimSearchValue = false,
+    shouldRecalculateDropdownPosition = false,
     disabled,
     dataId = '',
     placeHolder,
@@ -135,6 +137,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
   }
 
   useOnOutsideClick([inputRef.current, dropdownRef], handleOutsideClick, isOpen, useId())
+  useRecalculateDropdownPosition({ shouldRecalculateDropdownPosition, isOpen, inputRef, dropdownRef })
 
   const { bottom, left, top } = useGetElemPositions(inputRef.current)
   const { width } = useGetElemSizes(containerRef.current)
@@ -249,27 +252,6 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
       onItemSelect(defaultValue)
     }
   }, [defaultValue, isCreateOnOutsideClick])
-
-  useEffect(() => {
-    if (!isOpen) return
-    const update = () => {
-      if (!inputRef.current || !dropdownRef) return
-      const rect = inputRef.current.getBoundingClientRect()
-      dropdownRef.style.left = `${rect.left}px`
-      dropdownRef.style.width = `${rect.width}px`
-      dropdownRef.style.top = `${rect.bottom}px`
-    }
-    update()
-    let rafId: number
-    const loop = () => {
-      update()
-      rafId = requestAnimationFrame(loop)
-    }
-    loop()
-    return () => {
-      cancelAnimationFrame(rafId)
-    }
-  }, [isOpen, inputRef.current, dropdownRef])
 
   return (
     <div
