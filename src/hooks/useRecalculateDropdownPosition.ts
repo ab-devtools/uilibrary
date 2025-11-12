@@ -7,7 +7,12 @@ interface Props {
   isOpen: boolean
 }
 
-export const useRecalculateDropdownPosition = ({ isOpen, inputRef, dropdownRef, shouldRecalculateDropdownPosition }: Props) => {
+export const useRecalculateDropdownPosition = ({
+  isOpen,
+  inputRef,
+  dropdownRef,
+  shouldRecalculateDropdownPosition
+}: Props) => {
   useEffect(() => {
     if (!isOpen || !shouldRecalculateDropdownPosition) return
     const update = () => {
