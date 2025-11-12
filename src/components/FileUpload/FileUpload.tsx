@@ -36,7 +36,8 @@ export const FileUpload = (props: TFileUploadProps): JSX.Element | null => {
     labelAddons,
     onError,
     fileAllowedSize,
-    mode = FileUploadMode.attach
+    mode = FileUploadMode.attach,
+    dataId
   } = props
   const files = (value as File[]) || uploadedFiles || []
   const fileInputRef = useRef<HTMLInputElement>(null)
@@ -123,6 +124,7 @@ export const FileUpload = (props: TFileUploadProps): JSX.Element | null => {
           ref={fileInputRef}
           accept={allowedTypes}
           onChange={handleChange}
+          data-id={dataId ? `${dataId}-input` : ''}
         />
         {mode === FileUploadMode.edit && (
           <div
@@ -146,6 +148,7 @@ export const FileUpload = (props: TFileUploadProps): JSX.Element | null => {
             iconProps={{ Component: IconAttach }}
             onClick={onUploadClick}
             buttonText={buttonText}
+            data-id={dataId ? `${dataId}-btn` : ''}
           />
         )}
 
