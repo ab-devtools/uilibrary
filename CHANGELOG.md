@@ -1,3 +1,10 @@
+# [1.53.0](https://github.com/ab-devtools/uilibrary/compare/1.52.0...1.53.0) (2025-11-14)
+
+
+### Features
+
+* add children prop to ModalConfirmation component ([1584af3](https://github.com/ab-devtools/uilibrary/commit/1584af3778bf5ec6798a469c640d29ac11a2ed68))
+
 # [1.52.0](https://github.com/ab-devtools/uilibrary/compare/1.51.3...1.52.0) (2025-11-12)
 
 
