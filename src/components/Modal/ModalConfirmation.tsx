@@ -40,7 +40,8 @@ export const ModalConfirmation = (props: TModalConfirmationPropTypes): ReactElem
     dataIdPrefix,
     closeOnOutsideClick = true,
     iconProps,
-    subtitle
+    subtitle,
+    children
     // type = 'secondary'
   } = props
 
@@ -81,7 +82,7 @@ export const ModalConfirmation = (props: TModalConfirmationPropTypes): ReactElem
                 </Text>
               ) : null}
               {subtitle ? <Text className={'mt-12'}>{subtitle}</Text> : null}
-
+              {children ? <div className={'mt-32'}>{children}</div> : null}
               {buttonProps ? (
                 <div
                   className={`modal__footer mt-32 ${
