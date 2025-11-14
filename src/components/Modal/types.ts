@@ -45,4 +45,5 @@ export interface TModalConfirmationPropTypes {
   isFooterInline?: boolean
   iconProps?: ISVGIconProps
   className?: string
+  children?: ReactNode
 }
