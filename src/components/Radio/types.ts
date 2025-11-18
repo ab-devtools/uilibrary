@@ -9,6 +9,7 @@ export interface TRadioProps extends IFormCompProps {
   iconProps?: ReactElement
   isSelected?: boolean
   onClick?: (isChecked: boolean) => void
+  dataId?: string
 }
 
 export type TRadioOptionItem = {
