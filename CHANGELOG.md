@@ -1,3 +1,10 @@
+## [1.53.1](https://github.com/ab-devtools/uilibrary/compare/1.53.0...1.53.1) (2025-11-18)
+
+
+### Bug Fixes
+
+* add type for redio data id ([f3832db](https://github.com/ab-devtools/uilibrary/commit/f3832db24bcc721b9db6e4f92700373dd85c2954))
+
 # [1.53.0](https://github.com/ab-devtools/uilibrary/compare/1.52.0...1.53.0) (2025-11-14)
 
 
