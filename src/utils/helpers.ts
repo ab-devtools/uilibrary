@@ -93,17 +93,29 @@ export const isSameDay = (date1?: Date, date2?: Date): boolean => {
 }
 
 export const isMobile = () => {
-  const toMatch = [
-    /Android/i,
-    /webOS/i,
-    /iPhone/i,
-    /iPad/i,
-    /iPod/i,
-    /BlackBerry/i,
-    /Windows Phone/i
-  ]
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i,
+        /Tablet/i,
+        /Mobile/i
+    ]
 
-  return toMatch.some((toMatchItem) => {
-    return navigator.userAgent.match(toMatchItem)
-  })
+    // Check user agent
+    const isMatchedDevice = toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem)
+    })
+
+    // Check for iPad (including iPad Air with iPadOS 13+)
+    const isIPad = (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) ||
+        navigator.platform === 'iPad'
+
+    // Check for any touch device with Mac user agent
+    const isTouchMac = /Mac/.test(navigator.userAgent) && 'ontouchend' in document
+
+    return isMatchedDevice || isIPad || isTouchMac
 }
