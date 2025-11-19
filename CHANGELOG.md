@@ -1,3 +1,10 @@
+## [1.53.2](https://github.com/ab-devtools/uilibrary/compare/1.53.1...1.53.2) (2025-11-19)
+
+
+### Bug Fixes
+
+*  update alert ui ([855badf](https://github.com/ab-devtools/uilibrary/commit/855badff88f9baf87348870b6b8ac5710905950d))
+
 ## [1.53.1](https://github.com/ab-devtools/uilibrary/compare/1.53.0...1.53.1) (2025-11-18)
 
 
