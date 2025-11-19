@@ -6,7 +6,7 @@ export const TYPE_MAPPING: { [key: string]: TSVGIconType } = {
   error: 'danger-light',
   information: 'information-light',
   discovery: 'discovery-light',
-  grey: 'disabled'
+  grey: 'tertiary'
 }
 
 export const ICONS_MAPPING: { [key: string]: string } = {

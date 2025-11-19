@@ -5,13 +5,15 @@ import classnames from 'classnames'
 import { Text } from '../Text'
 import { Button } from '../Button'
 import type { TAlertProps } from './types'
-import IconDismissFilled from '../SVGIcons/IconDismissFilled'
 import { IconDynamicComponent } from '../../helperComponents'
 import { Link } from '../Link'
+import { ButtonIcon } from '../ButtonIcon'
+import IconDismiss from '../SVGIcons/IconDismiss'
 
 export const Alert = (props: TAlertProps): ReactElement => {
   const {
     buttonProps,
+    iconProps,
     type = 'information',
     position = 'inline',
     text,
@@ -27,19 +29,23 @@ export const Alert = (props: TAlertProps): ReactElement => {
       <div className={classnames('alert__content')}>
         <div className={'alert__content__inner'}>
           <div className={'alert__content__left'}>
-            <IconDynamicComponent
-              componentName={ICONS_MAPPING[type]}
-              size="small"
-              type={TYPE_MAPPING[type]}
-            />
+            {iconProps?.Component ? (
+              <iconProps.Component size="medium" type={TYPE_MAPPING[type]} />
+            ) : (
+              <IconDynamicComponent
+                componentName={ICONS_MAPPING[type]}
+                size="medium"
+                type={TYPE_MAPPING[type]}
+              />
+            )}
             <div className="alert__text pl-12">
               {text ? (
-                <Text type="primary" weight="regular">
+                <Text type="primary" weight="regular" className={'mt-2'}>
                   {text}
                 </Text>
               ) : null}
               {subtext ? (
-                <Text className={'mt-4'} type="secondary" size="small" weight="regular">
+                <Text className={'mt-2'} type="secondary" size="small" weight="regular">
                   {subtext}
                 </Text>
               ) : null}
@@ -59,12 +65,7 @@ export const Alert = (props: TAlertProps): ReactElement => {
         </div>
 
         {closeIcon ? (
-          <IconDismissFilled
-            type={TYPE_MAPPING[type]}
-            size="xsmall"
-            className="ml-12 cursor-pointer mt-2"
-            onClick={onClose}
-          />
+          <ButtonIcon iconProps={{ Component: IconDismiss }} size={'small'} onClick={onClose} />
         ) : null}
       </div>
     </div>
