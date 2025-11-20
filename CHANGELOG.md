@@ -1,3 +1,11 @@
+## [1.53.3](https://github.com/ab-devtools/uilibrary/compare/1.53.2...1.53.3) (2025-11-20)
+
+
+### Bug Fixes
+
+* fix for isMobile function ([a796497](https://github.com/ab-devtools/uilibrary/commit/a79649778ddf1519579b786fa71297f272f07e87))
+* fix secondary button text color and button icon small size ([9ea228e](https://github.com/ab-devtools/uilibrary/commit/9ea228ed5d4861aaa62c4ae5b53513dca425d7fe))
+
 ## [1.53.2](https://github.com/ab-devtools/uilibrary/compare/1.53.1...1.53.2) (2025-11-19)
 
 
