@@ -1,3 +1,107 @@
+## [1.53.3](https://github.com/ab-devtools/uilibrary/compare/1.53.2...1.53.3) (2025-11-20)
+
+
+### Bug Fixes
+
+* fix for isMobile function ([a796497](https://github.com/ab-devtools/uilibrary/commit/a79649778ddf1519579b786fa71297f272f07e87))
+* fix secondary button text color and button icon small size ([9ea228e](https://github.com/ab-devtools/uilibrary/commit/9ea228ed5d4861aaa62c4ae5b53513dca425d7fe))
+
+## [1.53.2](https://github.com/ab-devtools/uilibrary/compare/1.53.1...1.53.2) (2025-11-19)
+
+
+### Bug Fixes
+
+*  update alert ui ([855badf](https://github.com/ab-devtools/uilibrary/commit/855badff88f9baf87348870b6b8ac5710905950d))
+
+## [1.53.1](https://github.com/ab-devtools/uilibrary/compare/1.53.0...1.53.1) (2025-11-18)
+
+
+### Bug Fixes
+
+* add type for redio data id ([f3832db](https://github.com/ab-devtools/uilibrary/commit/f3832db24bcc721b9db6e4f92700373dd85c2954))
+
+# [1.53.0](https://github.com/ab-devtools/uilibrary/compare/1.52.0...1.53.0) (2025-11-14)
+
+
+### Features
+
+* add children prop to ModalConfirmation component ([1584af3](https://github.com/ab-devtools/uilibrary/commit/1584af3778bf5ec6798a469c640d29ac11a2ed68))
+
+# [1.52.0](https://github.com/ab-devtools/uilibrary/compare/1.51.3...1.52.0) (2025-11-12)
+
+
+### Features
+
+* add dataId attributes for input password validation items ([9e1bff4](https://github.com/ab-devtools/uilibrary/commit/9e1bff4050bd43fe303ac398d299a76d2e4bc72a))
+
+## [1.51.3](https://github.com/ab-devtools/uilibrary/compare/1.51.2...1.51.3) (2025-11-12)
+
+
+### Bug Fixes
+
+* detect dropdown position on open ([4283a57](https://github.com/ab-devtools/uilibrary/commit/4283a572a0f0c2121affbaf8dbe92d7d2cbe0615))
+* detect dropdown position on open ([534ce8b](https://github.com/ab-devtools/uilibrary/commit/534ce8b42f475316b6bcedfa42423a00cfe83e4c))
+* detect dropdown position on open ([0dd6968](https://github.com/ab-devtools/uilibrary/commit/0dd6968efb546e97d742a507db6bccdf580d745b))
+* detect dropdown position on open ([c4a9339](https://github.com/ab-devtools/uilibrary/commit/c4a93391f882b084f60910be418b9950a101f66a))
+* detect dropdown position on open ([5cdfa3d](https://github.com/ab-devtools/uilibrary/commit/5cdfa3de47d5122440d3d5c33e2e48f2ba81e42a))
+
+## [1.51.2](https://github.com/ab-devtools/uilibrary/compare/1.51.1...1.51.2) (2025-11-11)
+
+
+### Bug Fixes
+
+* add default data id for IconDismiss ([4d05ad0](https://github.com/ab-devtools/uilibrary/commit/4d05ad01ab821581d7c00b761bb4565fcae00206))
+
+## [1.51.1](https://github.com/ab-devtools/uilibrary/compare/1.51.0...1.51.1) (2025-11-11)
+
+
+### Bug Fixes
+
+* add data-id prop to multiselect component ([1efe02b](https://github.com/ab-devtools/uilibrary/commit/1efe02b52df09561da649f30b68dcb5e63a704f0))
+
+# [1.51.0](https://github.com/ab-devtools/uilibrary/compare/1.50.0...1.51.0) (2025-11-11)
+
+
+### Features
+
+* add actionAddons support to CardSelectGroup component ([3c76d0b](https://github.com/ab-devtools/uilibrary/commit/3c76d0bc45acccafbe1eff36943a6f0afe20c8ab))
+
+# [1.50.0](https://github.com/ab-devtools/uilibrary/compare/1.49.8...1.50.0) (2025-11-10)
+
+
+### Features
+
+* add actionAddons support to CardSelect component ([53c6ec0](https://github.com/ab-devtools/uilibrary/commit/53c6ec08f8596870e86fbbe20fa7d6a677bd6b15))
+
+## [1.49.8](https://github.com/ab-devtools/uilibrary/compare/1.49.7...1.49.8) (2025-11-03)
+
+
+### Bug Fixes
+
+* select outside click empty value ([dbac1ed](https://github.com/ab-devtools/uilibrary/commit/dbac1ed2fda44cd2d7bf21f39d7c8b78ddc8aa19))
+* select outside click empty value ([44d4492](https://github.com/ab-devtools/uilibrary/commit/44d4492155b6939febf6684d2b955230395fc4ab))
+
+## [1.49.7](https://github.com/ab-devtools/uilibrary/compare/1.49.6...1.49.7) (2025-11-03)
+
+
+### Bug Fixes
+
+* select default value ([2a6f721](https://github.com/ab-devtools/uilibrary/commit/2a6f72147c35f8b9fdc6cddd2701da76d7b143da))
+
+## [1.49.6](https://github.com/ab-devtools/uilibrary/compare/1.49.5...1.49.6) (2025-11-03)
+
+
+### Bug Fixes
+
+* select default value ([7605cf0](https://github.com/ab-devtools/uilibrary/commit/7605cf0b28bdde2f690525e3ef652bec21f13699))
+
+## [1.49.5](https://github.com/ab-devtools/uilibrary/compare/1.49.4...1.49.5) (2025-10-30)
+
+
+### Bug Fixes
+
+* select icon issue ([a11f026](https://github.com/ab-devtools/uilibrary/commit/a11f0269aae71d5569fee5f6fd55563797b969c3))
+
 ## [1.49.4](https://github.com/ab-devtools/uilibrary/compare/1.49.3...1.49.4) (2025-10-23)
 
 

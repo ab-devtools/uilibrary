@@ -11,7 +11,7 @@ export interface TCardSelectProps extends IFormCompProps {
   subtext?: string
   description?: string
   chips?: TChipsProps[]
-  inputProps?: InputCustomProps
+  inputProps?: InputCustomProps | InputCustomProps[]
   className?: string
   disabled?: boolean
   handleCardSelectValue?: (isChecked: boolean) => void
@@ -26,6 +26,7 @@ export interface TCardSelectProps extends IFormCompProps {
   icon?: TSelectIconProps
   popoverAddons?: TPopoverProps
   tooltipAddons?: TTooltipProps
+  actionAddons?: TActionAddons
 }
 export interface TCardSelectGroupProps extends IFormCompProps {
   cards: TCardSelectProps[]
@@ -36,6 +37,10 @@ export interface TCardSelectGroupProps extends IFormCompProps {
   className?: string
 }
 
+export type TActionAddons = {
+  icon: TSelectIconProps
+  onClick: () => void
+}
 export type TInfoList = TInfoListItem[]
 
 export type TInfoListItem = {

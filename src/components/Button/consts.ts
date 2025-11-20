@@ -10,7 +10,7 @@ export const ICON_SIZE_MAPPING: { [key: string]: TSVGIconSize } = {
 
 export const ICON_TYPE_MAPPING: { [key: string]: TSVGIconType } = {
   primary: 'inverse',
-  secondary: 'secondary',
+  secondary: 'primary',
   tertiary: 'primary',
   danger: 'inverse',
   text: 'primary'

@@ -3,25 +3,26 @@
 .alert {
   $this: &;
 
-  --ds-alert-border-radius: var(--ds-border-radius-lg);
+  --ds-alert-border-radius: var(--ds-border-radius-2xl);
   --ds-alert-padding: var(--ds-space-16);
 
   --ds-alert-grey-bg: var(--ds-color-bg-container-light);
+  --ds-alert-grey-border-color: var(--ds-color-border-tertiary);
 
-  --ds-alert-information-bg: var(--ds-color-bg-info-lighter);
-  --ds-alert-information-border-color: var(--ds-color-border-info-dark);
+  --ds-alert-information-bg: var(--ds-color-bg-info-extra-light);
+  --ds-alert-information-border-color: var(--ds-color-border-info-light);
 
-  --ds-alert-success-bg: var(--ds-color-bg-success-lighter);
-  --ds-alert-success-border-color: var(--ds-color-border-success-dark);
+  --ds-alert-success-bg: var(--ds-color-bg-success-extra-light);
+  --ds-alert-success-border-color: var(--ds-color-border-success-light);
 
-  --ds-alert-warning-bg: var(--ds-color-bg-warning-lighter);
-  --ds-alert-warning-border-color: var(--ds-color-border-warning-dark);
+  --ds-alert-warning-bg: var(--ds-color-bg-warning-extra-light);
+  --ds-alert-warning-border-color: var(--ds-color-border-warning-light);
 
-  --ds-alert-danger-bg: var(--ds-color-bg-danger-lighter);
-  --ds-alert-danger-border-color: var(--ds-color-border-danger-dark);
+  --ds-alert-danger-bg: var(--ds-color-bg-danger-extra-light);
+  --ds-alert-danger-border-color: var(--ds-color-border-danger-light);
 
-  --ds-alert-discovery-bg: var(--ds-color-bg-discovery-lighter);
-  --ds-alert-discovery-border-color: var(--ds-color-border-discovery-dark);
+  --ds-alert-discovery-bg: var(--ds-color-bg-discovery-extra-light);
+  --ds-alert-discovery-border-color: var(--ds-color-border-discovery-light);
 
   padding: var(--ds-alert-padding);
 
@@ -38,7 +39,7 @@
 
     #{$this}__actions {
       margin-top: var(--ds-space-12);
-      padding-left: var(--ds-space-32);
+      padding-left: 36px;
     }
   }
 
@@ -55,7 +56,7 @@
 
   &--grey {
     background-color: var(--ds-alert-grey-bg);
-    border: 0;
+    border-color: var(--ds-alert-grey-border-color);
   }
 
   &--information {

@@ -178,6 +178,7 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordsPr
                 size={'small'}
                 className={'pl-4'}
                 key={rule.label}
+                dataId={rule?.dataId || ''}
                 type={getTextType(password, validationResults[rule.label], isFocused)}
               >
                 {rule.label}

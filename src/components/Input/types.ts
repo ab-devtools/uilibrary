@@ -53,6 +53,7 @@ export interface InputCustomProps
 interface IPasswordValidationRule {
   label: string
   test: (password: string) => boolean
+  dataId?: string
 }
 
 export interface InputPasswordsProps extends InputCustomProps {

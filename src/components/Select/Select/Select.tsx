@@ -8,7 +8,8 @@ import {
   useGetElemSizes,
   useGetHasBottomSpace,
   useGetHasTopSpace,
-  useHideOnResize
+  useHideOnResize,
+  useRecalculateDropdownPosition
 } from '../../../hooks'
 import { Input } from '../../Input'
 import { Text } from '../../Text'
@@ -36,6 +37,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
     isSearchable = false,
     isDynamicSearchable = false,
     trimSearchValue = false,
+    shouldRecalculateDropdownPosition = false,
     disabled,
     dataId = '',
     placeHolder,
@@ -62,7 +64,8 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
     labelAddons,
     tooltipAddons,
     renderOptions,
-    isAllowed
+    isAllowed,
+    defaultValue
   } = props
 
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -124,7 +127,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
 
   const handleOutsideClick = () => {
     const selected = getSelectedOption()
-    if (!searchValue && selected) {
+    if (!searchValue && selected && !isCreateOnOutsideClick) {
       setCurrentSelectedLabel()
     } else if (isCreateOnOutsideClick) {
       setSelectedOption({ label: searchValue, value: searchValue })
@@ -134,6 +137,12 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
   }
 
   useOnOutsideClick([inputRef.current, dropdownRef], handleOutsideClick, isOpen, useId())
+  useRecalculateDropdownPosition({
+    shouldRecalculateDropdownPosition,
+    isOpen,
+    inputRef,
+    dropdownRef
+  })
 
   const { bottom, left, top } = useGetElemPositions(inputRef.current)
   const { width } = useGetElemSizes(containerRef.current)
@@ -164,6 +173,10 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
     }
 
     closeDropdown()
+  }
+
+  const isInOptions = (value: string) => {
+    return options.some((item) => `${item.value}` === value)
   }
 
   const onItemDeselect = () => onItemSelect(null)
@@ -223,19 +236,27 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
 
   const rightIconOpenedProps = useMemo(() => {
     return {
-      ...selectRightIconOpenedProps,
       className: 'cursor-pointer pointer-events-unset',
-      onClick: () => setIsOpen(false)
+      onClick: () => setIsOpen(false),
+      ...selectRightIconOpenedProps
     }
   }, [selectRightIconOpenedProps])
 
   const rightIconProps = useMemo(() => {
     return {
-      ...selectRightIconProps,
       className: 'cursor-pointer pointer-events-unset',
-      onClick: () => setIsOpen(true)
+      onClick: () => setIsOpen(true),
+      ...selectRightIconProps
     }
   }, [selectRightIconProps])
+
+  useEffect(() => {
+    if (defaultValue && isCreateOnOutsideClick && !isInOptions(defaultValue)) {
+      setSelectedOption({ label: defaultValue, value: defaultValue })
+      setSearchValue(defaultValue)
+      onItemSelect(defaultValue)
+    }
+  }, [defaultValue, isCreateOnOutsideClick])
 
   return (
     <div

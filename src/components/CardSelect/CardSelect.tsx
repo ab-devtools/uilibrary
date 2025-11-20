@@ -31,7 +31,8 @@ export const CardSelect = (props: TCardSelectProps): ReactElement => {
     icon,
     dataId,
     popoverAddons,
-    tooltipAddons
+    tooltipAddons,
+    actionAddons
   } = props
   const elementId = popoverAddons?.id ?? tooltipAddons?.id ?? ''
   const selected = cardValue === value
@@ -52,6 +53,11 @@ export const CardSelect = (props: TCardSelectProps): ReactElement => {
     if (!disabled && cardValue) {
       handleCardSelectValue(cardValue)
     }
+  }
+
+  const handleActionClick = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    actionAddons?.onClick?.()
   }
 
   return (
@@ -84,9 +90,17 @@ export const CardSelect = (props: TCardSelectProps): ReactElement => {
         <div className={'card-select__content'}>
           <div className="flexbox justify-content--between align-items--start">
             <div className={'card-select__content__left'}>
-              <Text type={disabled ? 'disabled' : 'primary'} size={'medium'} weight={'bold'}>
-                <>{title}</>
-              </Text>
+              <div className={'flexbox align-items--center'}>
+                <Text type={disabled ? 'disabled' : 'primary'} size={'medium'} weight={'bold'}>
+                  {title}
+                </Text>
+                {actionAddons && actionAddons.icon.Component ? (
+                  <div className={'card-select__action-icon ml-8'} onClick={handleActionClick}>
+                    <actionAddons.icon.Component {...actionAddons.icon} />
+                  </div>
+                ) : null}
+              </div>
+
               {subtext ? (
                 <Text type={disabled ? 'disabled' : 'secondary'} className={'mt-8'}>
                   <>{subtext}</>
@@ -98,7 +112,17 @@ export const CardSelect = (props: TCardSelectProps): ReactElement => {
             ) : null}
           </div>
           {chips.length ? <CardChips chips={chips} /> : null}
-          <CardInput inputProps={inputProps} disabled={disabled} />
+          {inputProps ? (
+            Array.isArray(inputProps) ? (
+              <>
+                {inputProps.map((input, index) => (
+                  <CardInput key={index} inputProps={input} disabled={disabled} />
+                ))}
+              </>
+            ) : (
+              <CardInput inputProps={inputProps} disabled={disabled} />
+            )
+          ) : null}
           <CardDescription description={description} disabled={disabled} />
           <CardAdditionalInfo additionalInfo={additionalInfo} disabled={disabled} />
         </div>
