@@ -5,6 +5,7 @@ import { TabItem } from './TabItem'
 import classNames from 'classnames'
 import { IconChevronLeft, IconChevronRight } from '../SVGIcons'
 import { useTabScroll } from '../../hooks'
+import {ButtonIcon} from "../ButtonIcon";
 
 export const Tab = (props: TTabProps): ReactElement => {
   const {
@@ -24,10 +25,9 @@ export const Tab = (props: TTabProps): ReactElement => {
   return (
     <div className={classNames('tabs-wrapper', className)}>
       {showLeftArrow && (
-        <IconChevronLeft
-          onClick={scrollLeft}
-          className={'tabs-scroll-button tabs-scroll-button--left'}
-        />
+          <div className={'tabs-wrapper__arrow tabs-wrapper__arrow--left'}>
+            <ButtonIcon iconProps={{Component: IconChevronLeft}}  onClick={scrollLeft}/>
+          </div>
       )}
 
       <div
@@ -67,10 +67,9 @@ export const Tab = (props: TTabProps): ReactElement => {
       </div>
 
       {showRightArrow && (
-        <IconChevronRight
-          onClick={scrollRight}
-          className={'tabs-scroll-button tabs-scroll-button--right'}
-        />
+          <div className={'tabs-wrapper__arrow tabs-wrapper__arrow--right'}>
+            <ButtonIcon iconProps={{Component: IconChevronRight}}  onClick={scrollRight}/>
+          </div>
       )}
     </div>
   )
