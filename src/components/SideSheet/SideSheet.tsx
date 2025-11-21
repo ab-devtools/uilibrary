@@ -7,11 +7,11 @@ import { AnimatePresenceWrapper } from '../../helperComponents/AnimatePresenceWr
 import type { TSideSheetPropTypes } from './types'
 import { Footer } from './Footer/Footer'
 import IconDismiss from '../SVGIcons/IconDismiss'
-import { Heading } from '../Heading'
 import { ButtonIcon } from '../ButtonIcon'
 import { Tab } from '../Tab'
 import { isMobile } from '../../utils/helpers'
 import { Divider } from '../Divider'
+import {Text} from '../Text';
 
 export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
   const {
@@ -111,12 +111,12 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
             <div className="side-sheet__header">
               <div className="side-sheet__header__top">
                 <div className="side-sheet__header__top__left pr-16">
-                  <Heading className="side-sheet__title" weight="bold" size="xsmall">
+                  <Text className="side-sheet__title" weight="bold" size="large">
                     {title}
-                  </Heading>
+                  </Text>
                   {topLeftActions}
                 </div>
-                <div className="flexbox align-items--center">
+                <div className="side-sheet__header__top__right">
                   {topRightActions}
                   <ButtonIcon
                     size="medium"
@@ -136,7 +136,7 @@ export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
                   className={'side-sheet__tabs'}
                 />
               ) : null}
-              {isWithDivider && <Divider isHorizontal />}
+              {isWithDivider && <Divider isHorizontal color={'light'} />}
             </div>
             <div
               className="side-sheet__content scrollbar scrollbar--vertical"

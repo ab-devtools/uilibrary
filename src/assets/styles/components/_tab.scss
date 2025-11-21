@@ -36,6 +36,7 @@
   background-color: var(--ds-tab-bg-color-default);
   border: 1px solid;
   border-color: var(--ds-tab-border-color-default);
+  flex-shrink: 0; // Prevent tabs from shrinking when scrolling
 
   &:after {
     position: absolute;
@@ -48,6 +49,7 @@
 
   &__label {
     color: var(--ds-tab-color-default);
+    white-space: nowrap; // Prevent text wrapping
   }
 
   &__icon {
@@ -116,6 +118,39 @@
   }
 }
 
+.tabs-wrapper {
+  position: relative;
+  @include mixin.flexbox;
+  @include mixin.align-items(stretch);
+  width: 100%;
+  max-width: 100%; // Ensure it respects parent width
+  overflow: hidden; // Constrain children
+
+  &__arrow {
+    @include mixin.flexbox;
+    @include mixin.align-items(center);
+    @include mixin.absolute(0, unset, unset, unset);
+    height: 100%;
+    width: 90px;
+    z-index: 1;
+    padding: var(--ds-space-4);
+
+    &--left {
+      left: -1px;
+      background: linear-gradient(90deg, #FFFFFF 32.1%, rgba(255, 255, 255, 0) 101.85%);
+      @include mixin.justify-content(flex-start);
+
+    }
+
+    &--right {
+      right: -1px;
+      background: linear-gradient(270deg, #FFFFFF 32.1%, rgba(255, 255, 255, 0) 101.85%);
+      @include mixin.justify-content(flex-end);
+
+    }
+  }
+}
+
 .tabs-container {
   $this: &;
 
@@ -139,6 +174,22 @@
 
   @include mixin.flexbox;
   @include mixin.align-items(stretch);
+  position: relative;
+  width: 100%;
+
+  &--scrollable {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // IE/Edge
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 
   &--large {
     min-height: var(--ds-tabs-size-lg);
@@ -172,7 +223,6 @@
 
     gap: var(--ds-tabs-primary-gap);
     border-bottom: var(--ds-tabs-primary-border);
-    width: fit-content;
 
     &#{$this}--skeleton {
       padding: var(--ds-space-10) 0;
@@ -208,6 +258,12 @@
 
     .tab {
       flex: 1;
+    }
+
+    &#{$this}--scrollable {
+      .tab {
+        flex: 0 0 auto; // Don't flex grow when scrollable
+      }
     }
   }
 
@@ -245,7 +301,7 @@
     --ds-tab-color-disabled: var(--ds-color-text-disabled);
 
     gap: var(--ds-tabs-tertiary-gap);
-    width: fit-content;
+    // Remove width: fit-content to allow overflow detection
 
     &#{$this}--dark {
       --ds-tabs-dark-bg: none;
