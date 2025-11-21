@@ -1,3 +1,17 @@
+# [1.54.0](https://github.com/ab-devtools/uilibrary/compare/1.53.3...1.54.0) (2025-11-21)
+
+
+### Bug Fixes
+
+* conditionally render tab scroll arrows for tertiary type ([0b3d961](https://github.com/ab-devtools/uilibrary/commit/0b3d961787cbe4e2b43efc8822ba8eb4eb69a855))
+* fix tab mobile ui ([e2203e1](https://github.com/ab-devtools/uilibrary/commit/e2203e1d1fcfbf94ac08bc4a0a8dcc6a45c743a8))
+* fixes for sidesheet ([9171f2c](https://github.com/ab-devtools/uilibrary/commit/9171f2cd3d81ef36d3936cb15f7947afadc81572))
+
+
+### Features
+
+* implement scrollable tabs with navigation controls ([aa449e4](https://github.com/ab-devtools/uilibrary/commit/aa449e43c8254911d9585904c6b94fe4d6423c68))
+
 ## [1.53.3](https://github.com/ab-devtools/uilibrary/compare/1.53.2...1.53.3) (2025-11-20)
 
 
