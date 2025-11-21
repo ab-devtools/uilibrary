@@ -120,10 +120,13 @@
       @include mixin.justify-content(space-between);
       padding: var(--ds-side-sheet-header-padding);
 
+      &__left , &__right {
+        @include mixin.flexbox;
+        @include mixin.align-items(center);
+      }
+
       &__left {
         flex: 1;
-        display: flex;
-        align-items: center;
       }
     }
 
