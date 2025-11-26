@@ -71,7 +71,7 @@ export function Table<TData>({
   rowEventsProps,
   activeRowId,
   getRowId,
-  resetExpandedOnPageChange
+  resetExpandedOnPageChange = true
 }: TTableProps<TData>) {
   const [expandedRows, setExpandedRows] = useState<Set<string>>(new Set())
 
