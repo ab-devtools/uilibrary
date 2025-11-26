@@ -1,3 +1,11 @@
+## [1.54.1](https://github.com/ab-devtools/uilibrary/compare/1.54.0...1.54.1) (2025-11-26)
+
+
+### Bug Fixes
+
+* resolve comment ([db82fa7](https://github.com/ab-devtools/uilibrary/commit/db82fa7a55db5d77669a6c4dddcda2d27ffd1cf9))
+* use unique row IDs for collapsible rows and reset on page change ([12db27b](https://github.com/ab-devtools/uilibrary/commit/12db27b4ea25517cacb32223e72b625b77daf56e))
+
 # [1.54.0](https://github.com/ab-devtools/uilibrary/compare/1.53.3...1.54.0) (2025-11-21)
 
 
