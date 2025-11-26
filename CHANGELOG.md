@@ -1,3 +1,17 @@
+# [1.55.0](https://github.com/ab-devtools/uilibrary/compare/1.54.1...1.55.0) (2025-11-26)
+
+
+### Bug Fixes
+
+* added type info ([966cc2f](https://github.com/ab-devtools/uilibrary/commit/966cc2f881df2cc18a5b19c065291ce91cdd217c))
+* fixed framed icon bg ([a468e5f](https://github.com/ab-devtools/uilibrary/commit/a468e5f58602fea2e96fbd00748df868d56070ca))
+* fixed framed icon bg ([6746db1](https://github.com/ab-devtools/uilibrary/commit/6746db1ab794cfb50ea446647c809d8f5979c616))
+
+
+### Features
+
+* update FramedIcon stories with props adjustments ([05c2707](https://github.com/ab-devtools/uilibrary/commit/05c2707d0e25584f9069974f6a616a8afb9312e8))
+
 ## [1.54.1](https://github.com/ab-devtools/uilibrary/compare/1.54.0...1.54.1) (2025-11-26)
 
 
