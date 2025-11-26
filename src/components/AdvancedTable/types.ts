@@ -48,6 +48,8 @@ export type TTableProps<TData> = {
   onRowSelection?: (state: TRowSelectionState) => void
   onColumnSizing?: (state: TColumnSizingState) => void
   onPaginationChange?: (state: TPaginationState) => void
+  getRowId?: (row: TData) => string
+  resetExpandedOnPageChange?: boolean
 }
 
 export type Column<TData> = ColumnDef<TData> & {

@@ -42,7 +42,8 @@ export function useTableControl<TData>({
   onSortChange,
   onRowSelection,
   onColumnSizing,
-  onPaginationChange
+  onPaginationChange,
+  getRowId
 }: TTableProps<TData>) {
   const shouldPersistToStorage = tableSettings?.persistColumnSettings === STORAGE_TYPE.LOCAL
   const shouldEmitExternal = tableSettings?.persistColumnSettings === STORAGE_TYPE.EXTERNAL
@@ -167,6 +168,7 @@ export function useTableControl<TData>({
     data,
     columns: reorderedColumns,
     pageCount: Math.ceil(totalCount / pagination.pageSize),
+    getRowId,
     state: {
       sorting,
       pagination,
