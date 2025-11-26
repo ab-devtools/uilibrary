@@ -15,8 +15,8 @@ export default {
       description: 'Size of the framed icon'
     },
     'iconProps.type': {
-      options: ['warning-light', 'brand-light', 'danger-light'],
-      control: { type: 'select' },
+      options: ['secondary', 'warning-light', 'brand-light', 'danger-light', 'success-light', 'information-light'],
+      control: { type: 'radio' },
       description: 'Icon type/variant'
     }
   }
