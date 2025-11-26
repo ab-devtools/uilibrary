@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react'
+import { type CSSProperties, useEffect } from 'react'
 import type { Column, Row, ColumnDef } from '@tanstack/react-table'
 import type { TableData, TTableProps, ExpandColumnProps } from './types'
 import React, { useState, useCallback, useMemo } from 'react'
@@ -69,7 +69,9 @@ export function Table<TData>({
   onColumnSizing,
   onPaginationChange,
   rowEventsProps,
-  activeRowId
+  activeRowId,
+  getRowId,
+  resetExpandedOnPageChange
 }: TTableProps<TData>) {
   const [expandedRows, setExpandedRows] = useState<Set<string>>(new Set())
 
@@ -122,7 +124,8 @@ export function Table<TData>({
       onSortChange,
       onRowSelection,
       onColumnSizing,
-      onPaginationChange
+      onPaginationChange,
+      getRowId
     })
 
   const header = renderHeader?.(table)
@@ -157,6 +160,12 @@ export function Table<TData>({
   const skeletonRowSize = useMemo(() => {
     return Array.from({ length: table.getState().pagination.pageSize })
   }, [table.getState().pagination.pageSize])
+
+  useEffect(() => {
+    if (resetExpandedOnPageChange) {
+      setExpandedRows(new Set())
+    }
+  }, [table.getState().pagination.pageIndex, resetExpandedOnPageChange])
 
   return (
     <div
