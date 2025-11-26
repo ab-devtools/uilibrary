@@ -38,23 +38,23 @@
     background-color: var(--ds-color-bg-container);
   }
 
-  &--danger {
+  &--danger-light {
     background-color: var(--ds-color-bg-danger-lighter);
   }
 
-  &--success {
+  &--success-light {
     background-color: var(--ds-color-bg-success-lighter);
   }
 
-  &--brand {
+  &--brand-light {
     background-color: var(--ds-color-bg-brand-extra-light);
   }
 
-  &--warning {
+  &--warning-light {
     background-color: var(--ds-color-bg-warning-lighter);
   }
 
-  &--information {
+  &--information-light {
     background-color: var(--ds-color-bg-info-lighter);
   }
 }
