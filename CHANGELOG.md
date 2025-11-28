@@ -1,3 +1,10 @@
+## [1.55.1](https://github.com/ab-devtools/uilibrary/compare/1.55.0...1.55.1) (2025-11-28)
+
+
+### Bug Fixes
+
+* fix for modal mobile view ([d6672ba](https://github.com/ab-devtools/uilibrary/commit/d6672baa1a76a7bc3d0420a18583c88ae1958fb6))
+
 # [1.55.0](https://github.com/ab-devtools/uilibrary/compare/1.54.1...1.55.0) (2025-11-26)
 
 
