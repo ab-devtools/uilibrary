@@ -1,3 +1,10 @@
+## [1.55.2](https://github.com/ab-devtools/uilibrary/compare/1.55.1...1.55.2) (2025-12-08)
+
+
+### Bug Fixes
+
+* ui fix for empty component ([a4e0b99](https://github.com/ab-devtools/uilibrary/commit/a4e0b99f45b3f97e11c28c0705dd8c27de943f5d))
+
 ## [1.55.1](https://github.com/ab-devtools/uilibrary/compare/1.55.0...1.55.1) (2025-11-28)
 
 
