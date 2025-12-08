@@ -15,6 +15,10 @@
     margin: auto;
   }
 
+  &__btn {
+    width: fit-content;
+  }
+
   &--large {
     padding: var(--ds-space-80) var(--ds-space-24);
 
@@ -24,6 +28,10 @@
 
     #{$this}__content {
       gap: 8px;
+    }
+
+    #{$this}__btn {
+      margin-top: var(--ds-space-8);
     }
   }
 
@@ -36,6 +44,10 @@
 
     #{$this}__content {
       gap: 4px;
+    }
+
+    #{$this}__btn {
+      margin-top: var(--ds-space-4);
     }
   }
 }
