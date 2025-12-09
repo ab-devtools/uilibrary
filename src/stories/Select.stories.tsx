@@ -333,6 +333,7 @@ const Template: StoryFn<TSingleSelectPropTypes> = (args) => {
           selectedItem={selectedValue}
           setSelectedItem={setSelectedValue}
           isSearchable={true}
+          isCreateOnOutsideClick
           optionRightIconComponent={(value) => <>{value}</>}
         />
       </div>

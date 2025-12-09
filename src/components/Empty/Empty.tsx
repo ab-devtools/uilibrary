@@ -31,16 +31,18 @@ export const Empty = (props: TEmptyProps): JSX.Element => {
       </div>
       <div className="no-result__content">
         <Text
-            type={'secondary'}
-            size={size == 'large' ? 'large' : 'small'}
-            weight={size == 'large' ? 'bold' : 'semibold'}
+          type={'secondary'}
+          size={size == 'large' ? 'large' : 'small'}
+          weight={size == 'large' ? 'bold' : 'semibold'}
         >
           {mainMessage}
         </Text>
         {paragraphMessage ? (
           <Text size={size == 'large' ? 'small' : 'xsmall'}>{paragraphMessage}</Text>
         ) : null}
-        {buttonProps ? <Button {...buttonProps} size="medium" className={'no-result__btn'}/> : null}
+        {buttonProps ? (
+          <Button {...buttonProps} size="medium" className={'no-result__btn'} />
+        ) : null}
       </div>
     </div>
   )

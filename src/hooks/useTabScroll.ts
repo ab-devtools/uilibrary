@@ -5,7 +5,7 @@ const SCROLL_PERCENTAGE = 0.7
 const INITIAL_CHECK_DELAY = 100
 
 interface UseTabScrollReturn {
-  containerRef: React.RefObject<HTMLDivElement | null>
+  containerRef: React.RefObject<HTMLDivElement>
   showLeftArrow: boolean
   showRightArrow: boolean
   scrollLeft: () => void

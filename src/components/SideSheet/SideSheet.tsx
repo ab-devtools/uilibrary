@@ -11,7 +11,7 @@ import { ButtonIcon } from '../ButtonIcon'
 import { Tab } from '../Tab'
 import { isMobile } from '../../utils/helpers'
 import { Divider } from '../Divider'
-import {Text} from '../Text';
+import { Text } from '../Text'
 
 export const SideSheet = (props: TSideSheetPropTypes): JSX.Element | null => {
   const {

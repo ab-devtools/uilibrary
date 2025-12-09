@@ -52,6 +52,7 @@ export function Table<TData>({
   totalCount = 0,
   emptyTitle,
   emptySubTitle,
+  emptyButtonProps,
   emptyIllustration,
   withSelect = false,
   withBorder = true,
@@ -190,6 +191,7 @@ export function Table<TData>({
                   mainMessage={emptyTitle}
                   paragraphMessage={emptySubTitle}
                   illustration={emptyIllustration}
+                  buttonProps={emptyButtonProps}
                 />
               ) : (
                 <>
