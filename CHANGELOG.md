@@ -1,3 +1,10 @@
+# [1.56.0](https://github.com/ab-devtools/uilibrary/compare/1.55.3...1.56.0) (2025-12-09)
+
+
+### Features
+
+* add transformToUppercase prop to MultiTextareaWithChips ([0aa54b0](https://github.com/ab-devtools/uilibrary/commit/0aa54b08f87f5b6eb1b53182405c476fed4a9fb9))
+
 ## [1.55.3](https://github.com/ab-devtools/uilibrary/compare/1.55.2...1.55.3) (2025-12-09)
 
 
