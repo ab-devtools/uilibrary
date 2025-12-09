@@ -50,6 +50,7 @@ export type TTableProps<TData> = {
   onPaginationChange?: (state: TPaginationState) => void
   getRowId?: (row: TData) => string
   resetExpandedOnPageChange?: boolean
+  rowClassName?: (row: Row<TData>) => string | undefined
 }
 
 export type Column<TData> = ColumnDef<TData> & {

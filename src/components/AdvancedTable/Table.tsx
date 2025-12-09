@@ -71,7 +71,8 @@ export function Table<TData>({
   rowEventsProps,
   activeRowId,
   getRowId,
-  resetExpandedOnPageChange = true
+  resetExpandedOnPageChange = true,
+  rowClassName,
 }: TTableProps<TData>) {
   const [expandedRows, setExpandedRows] = useState<Set<string>>(new Set())
 
@@ -237,7 +238,7 @@ export function Table<TData>({
                           <React.Fragment key={row.id}>
                             <tr
                               {...rowEventsProps}
-                              className={classnames({
+                              className={classnames(rowClassName?.(row), {
                                 selected: row.getIsSelected(),
                                 active: row.id == activeRowId
                               })}
