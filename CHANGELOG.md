@@ -1,3 +1,11 @@
+## [1.56.1](https://github.com/ab-devtools/uilibrary/compare/1.56.0...1.56.1) (2025-12-09)
+
+
+### Bug Fixes
+
+* select outside click issue ([cfff769](https://github.com/ab-devtools/uilibrary/commit/cfff76942274d2c7365f955ba4e53d73618e898d))
+* select outside click issue ([2f19329](https://github.com/ab-devtools/uilibrary/commit/2f193292680498b270c4f8ed58cba181003438ce))
+
 # [1.56.0](https://github.com/ab-devtools/uilibrary/compare/1.55.3...1.56.0) (2025-12-09)
 
 
