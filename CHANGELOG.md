@@ -1,3 +1,10 @@
+## [1.55.3](https://github.com/ab-devtools/uilibrary/compare/1.55.2...1.55.3) (2025-12-09)
+
+
+### Bug Fixes
+
+* add possibility to add classname to table in UI-LIB ([71d1b88](https://github.com/ab-devtools/uilibrary/commit/71d1b88c9c0d34787fbd1104c35a5e4ec42a9175))
+
 ## [1.55.2](https://github.com/ab-devtools/uilibrary/compare/1.55.1...1.55.2) (2025-12-08)
 
 
