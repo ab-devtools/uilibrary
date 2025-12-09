@@ -7,6 +7,7 @@ import type {
   Row
 } from '@tanstack/react-table'
 import type { HTMLAttributes, ReactNode } from 'react'
+import type { TButtonPropTypes } from '../Button/types'
 
 export type TTable<TData> = Table<TData>
 export type TRowSelectionState = RowSelectionState
@@ -25,6 +26,7 @@ export type TTableProps<TData> = {
   hasError?: boolean
   emptyTitle?: string
   emptySubTitle?: string
+  emptyButtonProps?: TButtonPropTypes
   emptyIllustration?: string
   className?: string
   withSelect?: boolean
