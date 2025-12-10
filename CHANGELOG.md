@@ -1,3 +1,14 @@
+## [1.56.2](https://github.com/ab-devtools/uilibrary/compare/1.56.1...1.56.2) (2025-12-10)
+
+
+### Bug Fixes
+
+* fixed tooltip arrow ui ([66a2b95](https://github.com/ab-devtools/uilibrary/commit/66a2b95ebc3cc9e26f1db2733ee9444c0d686b08))
+* fixed tooltip arrow ui ([29f1770](https://github.com/ab-devtools/uilibrary/commit/29f1770dea152056016aada9ed4f73bc1f815ac5))
+* publishing ([d0fda5f](https://github.com/ab-devtools/uilibrary/commit/d0fda5fce1d0e44efe8468eb7b0988c9b9f737b9))
+* ui fix ([cf5ae66](https://github.com/ab-devtools/uilibrary/commit/cf5ae6697130cc7d3de655bb07fee120adcb6626))
+* ui fix ([f3deb9a](https://github.com/ab-devtools/uilibrary/commit/f3deb9ae03e60c8793ba77279f2d86cf9067b64f))
+
 ## [1.56.1](https://github.com/ab-devtools/uilibrary/compare/1.56.0...1.56.1) (2025-12-09)
 
 
