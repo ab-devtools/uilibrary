@@ -73,7 +73,7 @@ export function Table<TData>({
   activeRowId,
   getRowId,
   resetExpandedOnPageChange = true,
-  rowClassName,
+  rowClassName
 }: TTableProps<TData>) {
   const [expandedRows, setExpandedRows] = useState<Set<string>>(new Set())
 
@@ -123,8 +123,8 @@ export function Table<TData>({
       defaultPageIndex,
       defaultPageSize,
       defaultHiddenColumns,
-      onSortChange,
       onRowSelection,
+      onSortChange,
       onColumnSizing,
       onPaginationChange,
       getRowId
