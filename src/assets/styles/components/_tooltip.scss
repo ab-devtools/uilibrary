@@ -12,8 +12,8 @@
   --ds-tooltip-border-radius-sm: var(--ds-border-radius-md);
   --ds-tooltip-max-width: var(--ds-size-240);
 
-  --ds-tooltip-arrow-size-lg: var(--ds-size-12);
-  --ds-tooltip-arrow-size-sm: var(--ds-size-8);
+  --ds-tooltip-arrow-size-lg: var(--ds-size-8);
+  --ds-tooltip-arrow-size-sm: var(--ds-size-4);
   --ds-tooltip-arrow-border-radius-lg: 2px;
   --ds-tooltip-arrow-border-radius-sm: 1.5px;
   --ds-tooltip-arrow-position: var(--ds-space-16);
@@ -32,8 +32,39 @@
 
   &__arrow {
     position: absolute;
-    transform: rotate(45deg);
-    background-color: var(--ds-tooltip-arrow-bg);
+    width: 0;
+    height: 0;
+    color: var(--ds-tooltip-arrow-bg);
+  }
+
+  &#{$this}--top {
+    &-left, &-center, &-right {
+      #{$this}__arrow {
+        transform: rotate(135deg);
+      }
+    }
+  }
+
+  &#{$this}--bottom {
+    &-left, &-center, &-right {
+      #{$this}__arrow {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &#{$this}--middle {
+    &-left {
+      #{$this}__arrow {
+        transform: rotate(45deg);
+      }
+    }
+
+    &-right {
+      #{$this}__arrow {
+        transform: rotate(-135deg);
+      }
+    }
   }
 
   &--large {
@@ -41,24 +72,23 @@
     border-radius: var(--ds-tooltip-border-radius-lg);
 
     #{$this}__arrow {
-      width: var(--ds-tooltip-arrow-size-lg);
-      height: var(--ds-tooltip-arrow-size-lg);
-      border-radius: var(--ds-tooltip-arrow-border-radius-lg);
+      border: var(--ds-tooltip-arrow-size-lg) solid transparent;
+      border-top: var(--ds-tooltip-arrow-size-lg) solid;
+      border-right: var(--ds-tooltip-arrow-size-lg) solid;
     }
 
     &#{$this}--top {
       &-left, &-center, &-right {
         #{$this}__arrow {
-          top: calc(100% - calc(var(--ds-tooltip-arrow-size-lg)/2 + 2px));
+          top: calc(100% - calc(var(--ds-tooltip-arrow-size-lg) + 4px));
         }
       }
     }
 
     &#{$this}--bottom {
       &-left, &-center, &-right {
-
         #{$this}__arrow {
-          bottom: calc(100% - calc(var(--ds-tooltip-arrow-size-lg)/2 + 2px));
+          bottom: calc(100% - calc(var(--ds-tooltip-arrow-size-lg) + 4px));
         }
       }
     }
@@ -66,7 +96,7 @@
     &#{$this}--top, &#{$this}--bottom {
       &-center {
         #{$this}__arrow {
-          left: calc(50% - calc(var(--ds-tooltip-arrow-size-lg)/2));
+          left: calc(50% - var(--ds-tooltip-arrow-size-lg));
         }
       }
     }
@@ -74,19 +104,21 @@
     &#{$this}--middle {
       &-left, &-right {
         #{$this}__arrow {
-          top: calc(50% - calc(var(--ds-tooltip-arrow-size-lg)/2));
+          top: calc(50% - var(--ds-tooltip-arrow-size-lg));
         }
       }
 
       &-left {
         #{$this}__arrow {
-          left: calc(100% - calc(var(--ds-tooltip-arrow-size-lg)/2 + 2px));
+          transform: rotate(45deg);
+          left: calc(100% - calc(var(--ds-tooltip-arrow-size-lg) + 4px));
         }
       }
 
       &-right {
         #{$this}__arrow {
-          right: calc(100% - calc(var(--ds-tooltip-arrow-size-lg)/2 + 2px));
+          transform: rotate(-135deg);
+          right: calc(100% - calc(var(--ds-tooltip-arrow-size-lg) + 4px));
         }
       }
     }
@@ -97,24 +129,23 @@
     border-radius: var(--ds-tooltip-border-radius-sm);
 
     #{$this}__arrow {
-      width: var(--ds-tooltip-arrow-size-sm);
-      height: var(--ds-tooltip-arrow-size-sm);
-      border-radius: var(--ds-tooltip-arrow-border-radius-sm);
+      border: var(--ds-tooltip-arrow-size-sm) solid transparent;
+      border-top: var(--ds-tooltip-arrow-size-sm) solid;
+      border-right: var(--ds-tooltip-arrow-size-sm) solid;
     }
 
     &#{$this}--top {
       &-left, &-center, &-right {
         #{$this}__arrow {
-          top: calc(100% - calc(var(--ds-tooltip-arrow-size-sm)/2 + 1px));
+          top: calc(100% - var(--ds-tooltip-arrow-size-sm));
         }
       }
     }
 
     &#{$this}--bottom {
       &-left, &-center, &-right {
-
         #{$this}__arrow {
-          bottom: calc(100% - calc(var(--ds-tooltip-arrow-size-sm)/2 + 1px));
+          bottom: calc(100% - var(--ds-tooltip-arrow-size-sm));
         }
       }
     }
@@ -122,7 +153,7 @@
     &#{$this}--top, &#{$this}--bottom {
       &-center {
         #{$this}__arrow {
-          left: calc(50% - calc(var(--ds-tooltip-arrow-size-sm)/2));
+          left: calc(50% - var(--ds-tooltip-arrow-size-sm));
         }
       }
     }
@@ -130,19 +161,19 @@
     &#{$this}--middle {
       &-left, &-right {
         #{$this}__arrow {
-          top: calc(50% - calc(var(--ds-tooltip-arrow-size-sm)/2));
+          top: calc(50% - var(--ds-tooltip-arrow-size-sm));
         }
       }
 
       &-left {
         #{$this}__arrow {
-          left: calc(100% - calc(var(--ds-tooltip-arrow-size-sm)/2 + 1px));
+          left: calc(100% - var(--ds-tooltip-arrow-size-sm));
         }
       }
 
       &-right {
         #{$this}__arrow {
-          right: calc(100% - calc(var(--ds-tooltip-arrow-size-sm)/2 + 1px));
+          right: calc(100% - var(--ds-tooltip-arrow-size-sm));
         }
       }
     }
