@@ -84,7 +84,7 @@ export const Tooltip = (props: TTooltipProps): JSX.Element | null => {
       >
         {text}
       </Text>
-      <span className="tooltip__arrow" />
+      <span className="tooltip__arrow"></span>
     </div>
   )
 }
