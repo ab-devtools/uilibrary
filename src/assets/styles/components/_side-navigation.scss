@@ -18,12 +18,6 @@
   bottom: 0;
   height: 100%;
   z-index: 9999;
-
-  @media (max-width: 1024px) {
-    left: -100%;
-    width: 280px;
-    transition: left 0.3s linear;
-  }
   
   &__btn {
     cursor: pointer;
@@ -139,12 +133,10 @@
         }
 
         >.svg-icon + .body {
-          @media (min-width: 1025px) {
-            @include mixin.truncate(0);
-            padding-left: 0;
-            color: var(--ds-color-text-secondary);
-            transition: all 0.3s linear;
-          }
+          @include mixin.truncate(0);
+          padding-left: 0;
+          color: var(--ds-color-text-secondary);
+          transition: all 0.3s linear;
         }
       }
 
@@ -153,17 +145,7 @@
         min-width: var(--ds-size-20);
       }
 
-      @media (min-width: 1025px) {
-        &:hover {
-          background-color: var(--ds-color-bg-container-light);
-
-          #{$this}__actions {
-            @include mixin.flexbox;
-          }
-        }
-      }
-
-      @media (max-width: 1024px) {
+      &:hover {
         background-color: var(--ds-color-bg-container-light);
 
         #{$this}__actions {
