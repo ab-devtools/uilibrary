@@ -1,3 +1,10 @@
+# [1.57.0](https://github.com/ab-devtools/uilibrary/compare/1.56.4...1.57.0) (2025-12-17)
+
+
+### Features
+
+* add autoClose prop to Snackbar ([fdc1cd6](https://github.com/ab-devtools/uilibrary/commit/fdc1cd6ae0063ed291575f64981a53a314c93830))
+
 ## [1.56.4](https://github.com/ab-devtools/uilibrary/compare/1.56.3...1.56.4) (2025-12-17)
 
 
