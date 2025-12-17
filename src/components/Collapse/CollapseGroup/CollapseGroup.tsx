@@ -35,10 +35,11 @@ export const CollapseGroup = forwardRef(
             content,
             iconProps,
             disabled,
+            isHidden,
             reverse
           }) => {
             const isOpen = openValues.indexOf(value) !== -1
-            return (
+            return !isHidden && (
               <CollapseItem
                 className={'collapse-group__item'}
                 id={id}

@@ -27,6 +27,7 @@ export type TCollapseGroupItem = {
   disabled?: boolean
   reverse?: boolean
   id?: string | number
+  isHidden?: boolean
 }
 
 export type TCollapseGroupProps = {
