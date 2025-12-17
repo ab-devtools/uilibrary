@@ -10,6 +10,7 @@ export interface TToastProps {
   closeSnackbar?: (id: number | string) => void
   text: string | JSX.Element
   actionProps?: TButtonPropTypes
+  autoClose?: boolean
 }
 export interface TSnackbarProps extends IFormCompProps {
   duration?: number

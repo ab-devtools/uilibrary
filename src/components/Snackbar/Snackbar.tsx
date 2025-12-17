@@ -39,13 +39,17 @@ const CustomToast = ({ actionProps, toastId, type = 'information', text }: TToas
 }
 
 export const notify = (toastProps: TToastProps): void => {
-  const { toastId, closeSnackbar, actionProps, duration = DEFAULT_DURATION } = toastProps
+  const { toastId, closeSnackbar, actionProps, duration = DEFAULT_DURATION, autoClose } = toastProps
+
+  const shouldAutoClose = autoClose !== undefined ? autoClose : !actionProps
+
   toast(() => CustomToast(toastProps), {
     bodyClassName: '__body',
     className: '_container',
     toastId,
-    autoClose: actionProps ? false : duration
+    autoClose: shouldAutoClose ? duration : false
   })
+
   toast.onChange((payload: ToastItem) => {
     if (payload.status === 'removed') {
       closeSnackbar?.(payload.id)
