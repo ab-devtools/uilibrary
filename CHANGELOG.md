@@ -1,3 +1,11 @@
+## [1.56.4](https://github.com/ab-devtools/uilibrary/compare/1.56.3...1.56.4) (2025-12-17)
+
+
+### Bug Fixes
+
+* group collapse conditional rendering ([a87cec7](https://github.com/ab-devtools/uilibrary/commit/a87cec7a1f5635705e50353a6f5cbd5f8618984a))
+* group collapse conditional rendering ([cc0fd91](https://github.com/ab-devtools/uilibrary/commit/cc0fd911686ff7f029248774cc0eab4ec62a8a27))
+
 ## [1.56.3](https://github.com/ab-devtools/uilibrary/compare/1.56.2...1.56.3) (2025-12-10)
 
 
