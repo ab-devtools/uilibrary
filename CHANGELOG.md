@@ -1,3 +1,10 @@
+## [1.58.3](https://github.com/ab-devtools/uilibrary/compare/1.58.2...1.58.3) (2025-12-23)
+
+
+### Bug Fixes
+
+* select dropdown max-height calculation ([2606a2e](https://github.com/ab-devtools/uilibrary/commit/2606a2e6cefdd0bf96eeaaa0f129de4f26ac8e9f))
+
 ## [1.58.2](https://github.com/ab-devtools/uilibrary/compare/1.58.1...1.58.2) (2025-12-23)
 
 
