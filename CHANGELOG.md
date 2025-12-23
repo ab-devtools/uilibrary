@@ -1,3 +1,11 @@
+## [1.58.1](https://github.com/ab-devtools/uilibrary/compare/1.58.0...1.58.1) (2025-12-23)
+
+
+### Bug Fixes
+
+* select options dropdown height ([92d9a6b](https://github.com/ab-devtools/uilibrary/commit/92d9a6b1bb1497cbad8991439e023c86ed1bb643))
+* select options dropdown height ([ca45978](https://github.com/ab-devtools/uilibrary/commit/ca45978555087897b07ebbb985ff5a65c6748d79))
+
 # [1.58.0](https://github.com/ab-devtools/uilibrary/compare/1.57.1...1.58.0) (2025-12-23)
 
 
