@@ -296,14 +296,8 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
             left,
             width,
             ...(hasBottomSpace
-              ? {
-                  top: bottom,
-                  maxHeight: top - DROPDOWN_AND_INPUT_GAP
-                }
-              : {
-                  bottom: window.innerHeight - top + DROPDOWN_AND_INPUT_GAP,
-                  maxHeight: window.innerHeight - bottom - DROPDOWN_AND_INPUT_GAP
-                })
+              ? { top: bottom }
+              : { bottom: window.innerHeight - top + DROPDOWN_AND_INPUT_GAP })
           }}
           ref={setDropdownRef}
         >
