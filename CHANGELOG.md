@@ -1,3 +1,11 @@
+## [1.57.1](https://github.com/ab-devtools/uilibrary/compare/1.57.0...1.57.1) (2025-12-23)
+
+
+### Bug Fixes
+
+* select option dropdown styles ([fcbb54e](https://github.com/ab-devtools/uilibrary/commit/fcbb54e94563299b64029801a0eb3f4b1fd92884))
+* select option dropdown styles ([b16722c](https://github.com/ab-devtools/uilibrary/commit/b16722c15590757083ae9b93cbf40bd40a8d1481))
+
 # [1.57.0](https://github.com/ab-devtools/uilibrary/compare/1.56.4...1.57.0) (2025-12-17)
 
 
