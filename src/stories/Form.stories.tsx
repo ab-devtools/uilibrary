@@ -155,6 +155,7 @@ const Template = (): JSX.Element => {
   return (
     <div style={{ maxWidth: 300 }}>
       <_FormContainer
+        mode={'onBlur'}
         onSubmit={(data) => console.log('data', data)}
         validationScheme={VALIDATION_SCHEME}
         initialValues={INITIAL_VALUES}
