@@ -1,3 +1,10 @@
+# [1.58.0](https://github.com/ab-devtools/uilibrary/compare/1.57.1...1.58.0) (2025-12-23)
+
+
+### Features
+
+* add yupResolver for schema validation in FormContainer ([a558b77](https://github.com/ab-devtools/uilibrary/commit/a558b771edc9f433a971134d2bfcd8950561cf7c))
+
 ## [1.57.1](https://github.com/ab-devtools/uilibrary/compare/1.57.0...1.57.1) (2025-12-23)
 
 
