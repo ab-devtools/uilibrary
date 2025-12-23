@@ -301,13 +301,16 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
           style={{
             left,
             width,
-            ...(hasBottomSpace || !hasTopSpace
-              ? { top: bottom }
-              : { bottom: window.innerHeight - top + DROPDOWN_AND_INPUT_GAP })
+            ...(hasBottomSpace
+              ? {
+                top: bottom,
+                maxHeight: top - DROPDOWN_AND_INPUT_GAP,
+            } : {
+                bottom: window.innerHeight - top + DROPDOWN_AND_INPUT_GAP,
+                maxHeight: window.innerHeight - bottom - DROPDOWN_AND_INPUT_GAP,
+            })
           }}
-          ref={(ref) => {
-            setDropdownRef(ref)
-          }}
+          ref={setDropdownRef}
         >
           {isLoading ? (
             <Loading />
