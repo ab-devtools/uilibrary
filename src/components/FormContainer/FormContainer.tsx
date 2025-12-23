@@ -6,6 +6,7 @@ import { FormContext } from '../../context'
 import type { FormPropTypes } from './types'
 import { Button } from '../Button'
 import * as yup from 'yup'
+import { yupResolver } from '@hookform/resolvers/yup'
 
 export const FormContainer = (props: FormPropTypes): JSX.Element => {
   const {
@@ -40,7 +41,8 @@ export const FormContainer = (props: FormPropTypes): JSX.Element => {
     mode,
     defaultValues: initialValues,
     shouldFocusError,
-    shouldUnregister
+    shouldUnregister,
+    resolver: yupResolver(validationScheme)
   })
 
   const { errors, isDirty, isSubmitted, isSubmitting, dirtyFields } = formState
