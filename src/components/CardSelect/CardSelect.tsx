@@ -91,9 +91,13 @@ export const CardSelect = (props: TCardSelectProps): ReactElement => {
           <div className="flexbox justify-content--between align-items--start">
             <div className={'card-select__content__left'}>
               <div className={'flexbox align-items--center'}>
-                <Text type={disabled ? 'disabled' : 'primary'} size={'medium'} weight={'bold'}>
-                  {title}
-                </Text>
+                {React.isValidElement(title) ? (
+                  title
+                ) : (
+                  <Text type={disabled ? 'disabled' : 'primary'} size={'medium'} weight={'bold'}>
+                    {title}
+                  </Text>
+                )}
                 {actionAddons && actionAddons.icon.Component ? (
                   <div className={'card-select__action-icon ml-8'} onClick={handleActionClick}>
                     <actionAddons.icon.Component {...actionAddons.icon} />

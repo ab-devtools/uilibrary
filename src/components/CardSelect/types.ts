@@ -7,7 +7,7 @@ import type { TTooltipProps } from '../Tooltip/types'
 export interface TCardSelectProps extends IFormCompProps {
   id?: number | string
   type?: CARD_SELECT_TYPES
-  title: string
+  title: string | React.ReactNode
   subtext?: string
   description?: string
   chips?: TChipsProps[]
@@ -16,7 +16,7 @@ export interface TCardSelectProps extends IFormCompProps {
   disabled?: boolean
   handleCardSelectValue?: (isChecked: boolean) => void
   dataId?: string
-  additionalInfo?: TInfoList
+  additionalInfo?: TInfoList | React.ReactNode
   selectedCard?: number
   value?: number | string
   handleChange?: (selected: number | string) => void
