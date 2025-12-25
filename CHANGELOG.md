@@ -1,3 +1,10 @@
+# [1.59.0](https://github.com/ab-devtools/uilibrary/compare/1.58.3...1.59.0) (2025-12-25)
+
+
+### Features
+
+* enhance CardSelect component with ReactNode support and new SVG icon ([52d7c76](https://github.com/ab-devtools/uilibrary/commit/52d7c76fd30408230054b343933cb42e480d0144))
+
 ## [1.58.3](https://github.com/ab-devtools/uilibrary/compare/1.58.2...1.58.3) (2025-12-23)
 
 
