@@ -1,3 +1,10 @@
+# [1.61.0](https://github.com/ab-devtools/uilibrary/compare/1.60.0...1.61.0) (2025-12-26)
+
+
+### Features
+
+* add new IconBag component and SVG ([f806b5a](https://github.com/ab-devtools/uilibrary/commit/f806b5a0eee362ae1ebb9d8a7ba6867ac184945c))
+
 # [1.60.0](https://github.com/ab-devtools/uilibrary/compare/1.59.0...1.60.0) (2025-12-26)
 
 
