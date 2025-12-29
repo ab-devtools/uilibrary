@@ -28,11 +28,12 @@ export interface TMultiTextareaWithChipsProps extends IFormCompProps {
   helperText?: string
   chips?: ChipValue[]
   onAddChip?: (chip: string) => void
-  onRemoveChip?: (chip: string) => void
+  onRemoveChip?: (chipText: string, index: number) => void
   className?: string
   disabled?: boolean
   availableOptions?: string[]
   allowCustomValues?: boolean
+  allowDuplicates?: boolean
   searchPlaceholder?: string
   chipValidationSchema?: AnySchema
   chipValidationErrorMessage?: string

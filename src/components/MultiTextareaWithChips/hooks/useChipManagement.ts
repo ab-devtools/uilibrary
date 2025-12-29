@@ -10,7 +10,7 @@ interface UseChipManagementProps {
   }
   setValue?: (fieldName: string, value: TFormValue) => void
   onAddChip?: (chip: string) => void
-  onRemoveChip?: (chip: string) => void
+  onRemoveChip?: (chip: string, index: number) => void
 }
 
 export const useChipManagement = ({
@@ -61,15 +61,33 @@ export const useChipManagement = ({
   )
 
   const removeChip = useCallback(
-    (chipText: string) => {
+    (index: number) => {
       isUserInteraction.current = true
-      const newChips = chips.filter((chip) => {
-        const text = typeof chip === 'string' ? chip : chip.text
-        return text !== chipText
-      })
+      const chipToRemove = chips[index]
+      const chipText = typeof chipToRemove === 'string' ? chipToRemove : chipToRemove.text
+
+      const newChips = chips.filter((_, i) => i !== index)
       setChips(newChips)
       updateFormValue(newChips)
-      onRemoveChip?.(chipText)
+      onRemoveChip?.(chipText, index)
+    },
+    [chips, updateFormValue, onRemoveChip]
+  )
+
+  const removeChipByText = useCallback(
+    (chipText: string) => {
+      isUserInteraction.current = true
+      const index = chips.findIndex((chip) => {
+        const text = typeof chip === 'string' ? chip : chip.text
+        return text === chipText
+      })
+
+      if (index !== -1) {
+        const newChips = chips.filter((_, i) => i !== index)
+        setChips(newChips)
+        updateFormValue(newChips)
+        onRemoveChip?.(chipText, index)
+      }
     },
     [chips, updateFormValue, onRemoveChip]
   )
@@ -94,6 +112,7 @@ export const useChipManagement = ({
     chips,
     addChip,
     removeChip,
+    removeChipByText,
     getChipTexts,
     hasErrorChips,
     getErrorMessage
