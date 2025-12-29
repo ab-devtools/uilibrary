@@ -1,3 +1,10 @@
+# [1.62.0](https://github.com/ab-devtools/uilibrary/compare/1.61.0...1.62.0) (2025-12-29)
+
+
+### Features
+
+* enhance MultiTextareaWithChips with new features and improved logic ([29ff7b5](https://github.com/ab-devtools/uilibrary/commit/29ff7b5df8a6aec4a1d479aaaf6d4346c3901750))
+
 # [1.61.0](https://github.com/ab-devtools/uilibrary/compare/1.60.0...1.61.0) (2025-12-26)
 
 
