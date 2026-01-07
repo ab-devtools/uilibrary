@@ -1,3 +1,10 @@
+## [1.62.1](https://github.com/ab-devtools/uilibrary/compare/1.62.0...1.62.1) (2026-01-07)
+
+
+### Bug Fixes
+
+* dom-clobbering vulnerabilitie in prismjs package ([153a31c](https://github.com/ab-devtools/uilibrary/commit/153a31c546c01f9cf4553206f9fa17bd0475305b))
+
 # [1.62.0](https://github.com/ab-devtools/uilibrary/compare/1.61.0...1.62.0) (2025-12-29)
 
 
