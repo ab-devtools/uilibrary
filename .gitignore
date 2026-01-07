@@ -8,3 +8,4 @@ package-lock.json
 ./idea
 build-storybook.log
 /storybook-static
+yarn-error.log
