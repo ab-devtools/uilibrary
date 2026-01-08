@@ -1,3 +1,10 @@
+## [1.62.2](https://github.com/ab-devtools/uilibrary/compare/1.62.1...1.62.2) (2026-01-08)
+
+
+### Bug Fixes
+
+* fix building icon ([b90ed54](https://github.com/ab-devtools/uilibrary/commit/b90ed54b7f7ee177416e2ca6e43ed47fd56f9306))
+
 ## [1.62.1](https://github.com/ab-devtools/uilibrary/compare/1.62.0...1.62.1) (2026-01-07)
 
 
