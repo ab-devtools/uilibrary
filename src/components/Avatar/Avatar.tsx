@@ -4,7 +4,6 @@ import type { TAvatarProps } from './types'
 import classNames from 'classnames'
 import { FileUpload, FileUploadMode } from '../FileUpload'
 import { ICON_SIZE_MAPPING, ICON_TYPE_MAPPING } from './consts'
-import IconPerson from '../SVGIcons/IconPerson'
 
 export const Avatar = ({
   dataId,
