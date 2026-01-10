@@ -1,3 +1,10 @@
+# [1.63.0](https://github.com/ab-devtools/uilibrary/compare/1.62.2...1.63.0) (2026-01-10)
+
+
+### Features
+
+* added new icons ([#279](https://github.com/ab-devtools/uilibrary/issues/279)) ([44d1411](https://github.com/ab-devtools/uilibrary/commit/44d1411269346b07b309a3174bed4c5aa427a0c1))
+
 ## [1.62.2](https://github.com/ab-devtools/uilibrary/compare/1.62.1...1.62.2) (2026-01-08)
 
 
