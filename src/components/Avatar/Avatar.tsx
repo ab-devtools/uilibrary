@@ -3,16 +3,19 @@ import React, { useEffect, useState } from 'react'
 import type { TAvatarProps } from './types'
 import classNames from 'classnames'
 import { FileUpload, FileUploadMode } from '../FileUpload'
+import { ICON_SIZE_MAPPING, ICON_TYPE_MAPPING } from './consts'
+import IconPerson from '../SVGIcons/IconPerson'
 
 export const Avatar = ({
   dataId,
   id,
-  color = 'default',
+  color = 'orange',
   size = 'medium',
   type,
   imagePath = '',
   initials = '',
   className = '',
+  iconProps,
   isEditable = false,
   allowedTypes = '.png, .jpg, .jpeg, image/jpeg, image/png, image/jpg',
   onError,
@@ -44,7 +47,13 @@ export const Avatar = ({
       })}
       style={style}
     >
-      {!image ? initials : null}
+      {!image ? (
+        iconProps?.Component ? (
+          <iconProps.Component size={ICON_SIZE_MAPPING[size]} type={ICON_TYPE_MAPPING[color]} />
+        ) : (
+          initials
+        )
+      ) : null}
       {isEditable && (
         <FileUpload
           onError={onError}

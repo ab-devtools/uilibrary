@@ -17,9 +17,13 @@
   --ds-avatar-font-size-xs: var(--ds-paragraph-xs);
   --ds-avatar-font-size-xxs: var(--ds-paragraph-xxs);
 
-  --ds-avatar-default-bg: var(--yellow-200);
-  --ds-avatar-default-bg-hover: var(--yellow-100);
-  --ds-avatar-default-color: var(--yellow-700);
+  --ds-avatar-grey-bg: rgba(0,0,0,0.05);
+  --ds-avatar-grey-bg-hover: rgba(0,0,0,0.08);
+  --ds-avatar-grey-color: var(--grey-500);
+
+  --ds-avatar-orange-bg: var(--yellow-200);
+  --ds-avatar-orange-bg-hover: var(--yellow-100);
+  --ds-avatar-orange-color: var(--yellow-700);
 
   --ds-avatar-purple-bg: var(--purple-100);
   --ds-avatar-purple-bg-hover: var(--purple-50);
@@ -46,7 +50,7 @@
   --ds-avatar-image-border: var(--ds-border-thin) solid var(--grey-200);
 
   --ds--avtar-border-radius: var(--ds-border-radius-full);
-  --ds-avatar-font: var(--ds-font-weight-default) var(--ds-headline-sm)/1 var(--ds-font-family);
+  --ds-avatar-font: var(--ds-font-weight-orange) var(--ds-headline-sm)/1 var(--ds-font-family);
   --ds-avatar-transition: background-color .3s linear, color .3s linear;
 
   --ds-avatar-icon-size: var(--ds-size-24);
@@ -108,12 +112,21 @@
     font-weight: var(--ds-font-weight-active);
   }
 
-  &--default {
-    background-color: var(--ds-avatar-default-bg);
-    color: var(--ds-avatar-default-color);
+  &--grey {
+    background-color: var(--ds-avatar-grey-bg);
+    color: var(--ds-avatar-grey-color);
 
     &:hover {
-      background-color: var(--ds-avatar-default-bg-hover);
+      background-color: var(--ds-avatar-grey-bg-hover);
+    }
+  }
+
+  &--orange {
+    background-color: var(--ds-avatar-orange-bg);
+    color: var(--ds-avatar-orange-color);
+
+    &:hover {
+      background-color: var(--ds-avatar-orange-bg-hover);
     }
   }
 
