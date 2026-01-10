@@ -5,6 +5,7 @@ import imageFile from '../assets/images/avatar.jpg'
 import { Avatar as _Avatar, AvatarGroup as _AvatarGroup } from '../index'
 import { TAvatarGroupProps, TAvatarProps } from '../components/Avatar/types'
 import type { StoryFn } from '@storybook/react'
+import IconPerson from '../components/SVGIcons/IconPerson'
 
 const image = {
   src: imageFile,
@@ -16,7 +17,7 @@ export default {
   component: _Avatar,
   argTypes: {
     color: {
-      options: ['default', 'purple', 'blue', 'green', 'red'],
+      options: ['grey', 'orange', 'purple', 'blue', 'green', 'red'],
       control: { type: 'radio' }
     },
     type: {
@@ -36,8 +37,11 @@ export const Avatar = Template.bind({})
 
 Avatar.args = {
   initials: 'AG',
-  color: 'default',
+  color: 'orange',
   size: 'large',
+  iconProps: {
+    Component: IconPerson
+  },
   isEditable: true,
   imagePath: image.src,
   onAvatarChange: (file: File) => {

@@ -1,13 +1,18 @@
 import type { ReactElement } from 'react'
 import type { FILE_UPLOAD_ERRORS } from '../../consts'
+import type { TSVGIconType } from '../SVGIcons/types'
 
 export interface TAvatarProps extends IFormCompProps {
   allowedTypes?: string
   id?: string
   dataId?: string
   imagePath?: string
+  iconProps?: {
+    Component: TSVGIconComponent
+    type?: TSVGIconType
+  }
   initials?: string | ReactElement
-  color?: 'default' | 'purple' | 'blue' | 'green' | 'red'
+  color?: 'grey' | 'orange' | 'purple' | 'blue' | 'green' | 'red'
   type?: 'count'
   size?: 'xlarge' | 'large' | 'medium' | 'small' | 'xsmall' | 'xxsmall'
   className?: string
