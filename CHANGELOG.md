@@ -1,3 +1,19 @@
+# [1.64.0](https://github.com/ab-devtools/uilibrary/compare/1.63.0...1.64.0) (2026-01-10)
+
+
+### Bug Fixes
+
+* update and new icons ([27bc090](https://github.com/ab-devtools/uilibrary/commit/27bc090d496f097f7f3fb791314838d9737a7eab))
+* update and new icons ([f46d782](https://github.com/ab-devtools/uilibrary/commit/f46d782815eb54826d34c774b548c5b7d65718bb))
+* update pos filled icon ([c71a0c4](https://github.com/ab-devtools/uilibrary/commit/c71a0c40a5a56719dcfc3b0190203d819d570bd7))
+* update pos filled icon ([95018f8](https://github.com/ab-devtools/uilibrary/commit/95018f80cfc9ceae54e3cde491236b989ae709a6))
+
+
+### Features
+
+* added icon for avatar component ([9987376](https://github.com/ab-devtools/uilibrary/commit/998737656a0c809babefe9a911fe114a747cb3ce))
+* added icon for avatar component ([5c3434a](https://github.com/ab-devtools/uilibrary/commit/5c3434a4dfbe993402de1e17c26bd748bf88ad6c))
+
 # [1.63.0](https://github.com/ab-devtools/uilibrary/compare/1.62.2...1.63.0) (2026-01-10)
 
 
