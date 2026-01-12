@@ -297,7 +297,7 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
             width,
             ...(hasBottomSpace
               ? {
-                  top: bottom,
+                  top: bottom
                 }
               : {
                   bottom: window.innerHeight - top + DROPDOWN_AND_INPUT_GAP,
