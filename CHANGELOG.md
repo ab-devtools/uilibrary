@@ -1,3 +1,11 @@
+## [1.64.1](https://github.com/ab-devtools/uilibrary/compare/1.64.0...1.64.1) (2026-01-12)
+
+
+### Bug Fixes
+
+* select options max height ([82877d2](https://github.com/ab-devtools/uilibrary/commit/82877d26595bda9481439a404a988b2b95755dd4))
+* select options max height ([e38fe2e](https://github.com/ab-devtools/uilibrary/commit/e38fe2efcb9e5f72e8e65d81be86a68068aff698))
+
 # [1.64.0](https://github.com/ab-devtools/uilibrary/compare/1.63.0...1.64.0) (2026-01-10)
 
 
