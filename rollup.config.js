@@ -11,9 +11,10 @@ import generatePackageJson from 'rollup-plugin-generate-package-json'
 import image from '@rollup/plugin-image'
 import postcss from 'rollup-plugin-postcss'
 import { renderSync } from 'sass'
+import dts from 'vite-plugin-dts'
 
 const extensions = ['.ts', '.tsx', '.js', '.jsx']
-const ignoreExtensions = ['.stories.tsx', '.stories.d.ts']
+const ignoreExtensions = ['.stories.tsx', '.d.ts']
 
 const external = [
   ...Object.keys(pkg.peerDependencies || {}),
@@ -37,30 +38,6 @@ const getInputOptions = (localPath = 'src', currentInputOptions = {}) => {
     }
     return initial
   }, currentInputOptions)
-}
-
-// custom plugin to generate declaration files
-const dtsGenerator = function (options) {
-  options = {
-    declarationDir: 'dist',
-    outDir: 'dts-temp',
-    ...(options || {})
-  }
-  return {
-    buildEnd() {
-      exec(
-        `tsc -d --declarationDir ${options.declarationDir} --outDir ${options.outDir} --project ./tsconfig.json`,
-        (err) => {
-          if (err) {
-            console.log(err)
-            throw "Couldn't generate .d.ts files..."
-          }
-          exec(`rimraf ${options.outDir}`)
-          console.log('Declaration files generated successfully')
-        }
-      )
-    }
-  }
 }
 
 function writeCSS() {
@@ -126,7 +103,9 @@ export default [
     external,
     plugins: [
       ...plugins,
-      dtsGenerator(),
+      dts({
+        tsconfigPath: './tsconfig.json'
+      }),
       generatePackageJson({
         inputFolder: '.',
         baseContents: (pkg) => ({

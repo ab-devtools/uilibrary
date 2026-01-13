@@ -8,6 +8,7 @@ import { Actions } from './Actions'
 import IconDismissFilled from '../../SVGIcons/IconDismissFilled'
 import IconSearchFilled from '../../SVGIcons/IconSearchFilled'
 import IconSelectAllOff from '../../SVGIcons/IconSelectAllOff'
+import type { TCallBackFn, TChangeEventType } from '../../../types/globalTypes'
 
 type TProps = {
   searchValue?: string

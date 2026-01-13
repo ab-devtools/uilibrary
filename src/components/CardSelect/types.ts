@@ -3,6 +3,7 @@ import type { TChipsProps } from '../Chips/types'
 import type { CARD_SELECT_TYPES } from '../../consts'
 import type { TPopoverProps } from '../Popover/types'
 import type { TTooltipProps } from '../Tooltip/types'
+import type { IFormCompProps, TSelectIconProps } from '../../types/globalTypes'
 
 export interface TCardSelectProps extends IFormCompProps {
   id?: number | string

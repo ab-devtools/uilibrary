@@ -1,4 +1,5 @@
 import type { AnySchema } from 'yup'
+import type { IFormCompProps, TFormValue } from '../../types/globalTypes'
 
 export interface TChipItem {
   text: string

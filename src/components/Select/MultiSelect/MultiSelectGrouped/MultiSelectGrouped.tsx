@@ -10,6 +10,12 @@ import type { TMultiSelectGroupedProps } from '../../types'
 import { DROPDOWN_MAX_HEIGHT } from '../../constants'
 import IconCaretUpFilled from '../../../SVGIcons/IconCaretUpFilled'
 import IconCaretDownFilled from '../../../SVGIcons/IconCaretDownFilled'
+import type {
+  TSelectedValue,
+  TSelectGroupOption,
+  TSelectGroupOptions,
+  TSelectOption
+} from '../../../../types/globalTypes'
 
 export const MultiSelectGrouped = (props: TMultiSelectGroupedProps): JSX.Element | null => {
   const {

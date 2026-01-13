@@ -14,6 +14,7 @@ import IconAddFilled from '../components/SVGIcons/IconAddFilled'
 import IconMore from '../components/SVGIcons/IconMore'
 import { StoryFn } from '@storybook/react'
 import { LinkPropTypes } from '../components/Link/types'
+import type { TMenuItem } from '../components/Menu/types'
 
 export default {
   title: 'Menu',
@@ -26,7 +27,7 @@ export default {
   }
 }
 
-const items = [
+const items: TMenuItem[] = [
   {
     label: 'Edit',
     iconProps: {
@@ -51,8 +52,7 @@ const items = [
   {
     label: 'Delete',
     iconProps: {
-      Component: IconCheckmark,
-      type: 'selected'
+      Component: IconCheckmark
     },
     handler: () => {
       console.log('delete')
@@ -63,8 +63,7 @@ const items = [
     label: 'logout',
     value: 1,
     iconProps: {
-      Component: IconArrowExit,
-      type: 'selected'
+      Component: IconArrowExit
     },
     handler: () => {}
   }

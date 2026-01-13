@@ -7,6 +7,7 @@ import type { FormPropTypes } from './types'
 import { Button } from '../Button'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
+import type { TFormData } from '../../types/globalTypes'
 
 export const FormContainer = (props: FormPropTypes): JSX.Element => {
   const {

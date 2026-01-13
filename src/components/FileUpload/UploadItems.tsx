@@ -4,14 +4,14 @@ import { Text } from '../Text'
 import type { IUploadItemPropTypes } from './types'
 import { useFormProps } from '../../hooks'
 import { openFileInNewWindow } from '../../utils/helpers'
-import { ErrorMessage } from '../../helperComponents'
+import { ErrorMessage } from '../../helperComponents/ErrorMessage'
 import { Button } from '../Button'
 import IconDelete from '../SVGIcons/IconDelete'
 
 export const UploadItems = (props: IUploadItemPropTypes): JSX.Element => {
   const { files, onRemove, withFilePreview, handleFileClick } = props
   const { errors } = useFormProps()
-  const filesErrors = errors && errors.files && errors.files.length > 0
+  const filesErrors = errors && Array.isArray(errors.files) && errors.files.length > 0
 
   return (
     <>
@@ -19,7 +19,9 @@ export const UploadItems = (props: IUploadItemPropTypes): JSX.Element => {
         return (
           <div
             className={`upload-item mt-4 ${
-              filesErrors && errors.files[index]?.message ? 'upload-item--error' : ''
+              filesErrors && Array.isArray(errors?.files) && errors.files[index]?.message
+                ? 'upload-item--error'
+                : ''
             }`}
             key={index}
           >
@@ -40,7 +42,11 @@ export const UploadItems = (props: IUploadItemPropTypes): JSX.Element => {
                   >
                     {file.name}
                   </Text>
-                  {filesErrors && <ErrorMessage message={errors.files[index]?.message} />}
+                  {filesErrors && (
+                    <ErrorMessage
+                      message={Array.isArray(errors?.files) ? errors.files[index]?.message : ''}
+                    />
+                  )}
                 </div>
                 <Button
                   type="tertiary"

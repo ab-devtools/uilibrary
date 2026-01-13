@@ -10,6 +10,13 @@ import { getStringWidth } from '../../../utils/helpers'
 import { SELECTED_VISIBLE_MIN_COUNT, TRANSLATIONS_DEFAULT_VALUES } from '../constants'
 import { useGetElemSizes, useGetHasBottomSpace, useGetHasTopSpace } from '../../../hooks'
 import type { TSelectTranslations } from '../types'
+import type {
+  TClickEventType,
+  TSelectedValue,
+  TSelectGroupOption,
+  TSelectGroupOptions,
+  TSelectOptions
+} from '../../../types/globalTypes'
 
 type TProps = {
   isLoading?: boolean

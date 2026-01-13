@@ -2,6 +2,7 @@ import { createContext } from 'react'
 import type {
   Control,
   FieldValues,
+  FieldErrors,
   UseFormRegister,
   UseFormGetValues,
   UseFormWatch,
@@ -13,6 +14,7 @@ import type {
   UseFormUnregister
 } from 'react-hook-form'
 import { noop } from '../utils/helpers'
+import type { TDirtyFields, TFormData, TSetValue } from '../types/globalTypes'
 
 export type TFormContextProps = {
   register?: UseFormRegister<TFormData>

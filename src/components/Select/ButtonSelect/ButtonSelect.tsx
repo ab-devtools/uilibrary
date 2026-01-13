@@ -5,6 +5,7 @@ import { OptionItem } from '../../../helperComponents'
 import { useGetElemSizes, useOnOutsideClick } from '../../../hooks'
 import { Loading, ButtonSelectWrapper } from '../SharedComponents'
 import type { TButtonSelectPropTypes } from '../types'
+import type { TItemValue, TSelectedValue, TSelectOption } from '../../../types/globalTypes'
 
 export const ButtonSelect = (props: TButtonSelectPropTypes): ReactElement => {
   const {

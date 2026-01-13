@@ -6,6 +6,7 @@ import classNames from 'classnames'
 import { noop } from '../../utils/helpers'
 import IconAdd from '../SVGIcons/IconAdd'
 import IconSubtract from '../SVGIcons/IconSubtract'
+import type { TChangeEventType } from '../../types/globalTypes'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const Counter = forwardRef((props: ICounterProps, ref): JSX.Element => {

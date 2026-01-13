@@ -6,6 +6,7 @@ import { Footer, InputSelectWrapper, ButtonSelectWrapper } from '../SharedCompon
 import { useOnOutsideClick } from '../../../hooks'
 import { TRANSLATIONS_DEFAULT_VALUES } from '../constants'
 import type { TMultiSelectPropTypes } from '../types'
+import type { TSelectedValue } from '../../../types/globalTypes'
 
 export const MultiSelect = (props: TMultiSelectPropTypes): ReactElement => {
   const {

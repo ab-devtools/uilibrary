@@ -6,6 +6,7 @@ import { InputCustomProps } from '../components/Input/types'
 import type { InputPasswordsProps } from '../components/Input/types'
 import IconCalendarRight from '../components/SVGIcons/IconCalendarRight'
 import { Positions } from '../components/Tooltip/types'
+import type { TChangeEventType } from '../types/globalTypes'
 
 export default {
   title: 'Input',

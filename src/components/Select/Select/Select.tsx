@@ -20,6 +20,13 @@ import { IconCaretUpFilled } from '../../SVGIcons/IconCaretUpFilled'
 import { IconCaretDownFilled } from '../../SVGIcons/IconCaretDownFilled'
 import { noop } from '../../../utils/helpers'
 import { DROPDOWN_AND_INPUT_GAP } from '../../../consts'
+import type {
+  TChangeEventType,
+  TClickEventType,
+  TItemValue,
+  TSelectedValue,
+  TSelectOption
+} from '../../../types/globalTypes'
 
 export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
   const {

@@ -2,6 +2,7 @@ import type { JSX } from 'react'
 import React from 'react'
 import type { TFilterGroupDropdownContentProps } from '../types'
 import { FilterDropdownContent } from './FilterDropdown'
+import type { TSelectGroupOption } from '../../../types/globalTypes'
 
 export const FilterGroupDropdownContent = (
   props: TFilterGroupDropdownContentProps

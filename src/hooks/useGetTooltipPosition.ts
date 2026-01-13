@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { useGetElemPositions } from './useGetElemPositions'
 import { useGetElemSizes } from './useGetElemSizes'
+import type { TTooltipInfo, TTooltipPosition } from '../types/globalTypes'
 
 const GAP = 20
 const ARROW_DISTANCE = 20

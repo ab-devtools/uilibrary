@@ -3,6 +3,7 @@ import { useGetElemSizes } from './useGetElemSizes'
 import { useGetElemPositions } from './useGetElemPositions'
 import { useGetTooltipPosition } from './useGetTooltipPosition'
 import { Positions } from '../components/Tooltip/types'
+import type { TTooltipPosition } from '../types/globalTypes'
 
 const TOOLTIP_GAP = 8
 

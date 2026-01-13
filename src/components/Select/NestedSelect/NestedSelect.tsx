@@ -6,6 +6,7 @@ import { useGetElemPositions, useGetElemSizes, useOnOutsideClick } from '../../.
 import type { TNestedSelectProps } from '../types'
 import IconCaretUpFilled from '../../SVGIcons/IconCaretUpFilled'
 import IconCaretDownFilled from '../../SVGIcons/IconCaretDownFilled'
+import type { TClickEventType, TItemValue, TSelectOption } from '../../../types/globalTypes'
 
 const LEVEL_LEFT_MARGIN = 10
 

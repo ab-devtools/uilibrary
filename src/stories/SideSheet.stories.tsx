@@ -13,6 +13,12 @@ import IconPerson from '../components/SVGIcons/IconPerson'
 import IconInfo from '../components/SVGIcons/IconInfo'
 import { StoryFn } from '@storybook/react'
 import { TSideSheetPropTypes } from '../components/SideSheet/types'
+import type {
+  TClickEventType,
+  TSelectedValue,
+  TSelectGroupOptions,
+  TSelectOptions
+} from '../types/globalTypes'
 
 export default {
   title: 'Side Sheet',

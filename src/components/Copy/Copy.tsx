@@ -5,6 +5,7 @@ import type { TCopyProps } from './types'
 import { IconCopy } from '../SVGIcons/IconCopy'
 import { ButtonIcon } from '../ButtonIcon'
 import { useHideOnScroll } from '../../hooks'
+import type { TClickEventType } from '../../types/globalTypes'
 
 export const Copy = ({
   textAfterCopy,

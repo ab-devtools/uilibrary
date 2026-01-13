@@ -1,4 +1,5 @@
 import type { JSX } from 'react'
+import type { IFormCompProps, TChangeEventType } from '../../types/globalTypes'
 
 export interface TTextAreaTypeProps extends IFormCompProps {
   className?: string

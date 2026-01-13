@@ -9,6 +9,13 @@ import { Input } from '../../Input'
 import type { TFilterProps } from '../types'
 import IconSearchFilled from '../../SVGIcons/IconSearchFilled'
 import IconDismissFilled from '../../SVGIcons/IconDismissFilled'
+import type {
+  TChangeEventType,
+  TItemValue,
+  TSelectedValue,
+  TSelectGroupOptions,
+  TSelectOptions
+} from '../../../types/globalTypes'
 
 export const FilterSelect = (props: TFilterProps): ReactElement | null => {
   const {

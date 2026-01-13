@@ -3,6 +3,19 @@ import type { TButtonPropTypes } from '../Button/types'
 import type { TTooltipProps } from '../Tooltip/types'
 import type { TMenuItem } from '../Menu/types'
 import type { TSelectItemProps } from '../../helperComponents/OptionItem/types'
+import type {
+  IFormCompProps,
+  TClickHandler,
+  TIconSize,
+  TItemValue,
+  TSelectedValue,
+  TSelectGroupOptions,
+  TSelectIconProps,
+  TSelectOption,
+  TSelectOptions,
+  TSelectTreeOptions,
+  TSVGIconComponent
+} from '../../types/globalTypes'
 
 interface TSelectBaseProps {
   dataIdPrefix?: string

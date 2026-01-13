@@ -11,6 +11,7 @@ import {
   RIGHT_ICON_SIZE_MAPPING,
   TEXT_SIZE_MAPPING
 } from './consts'
+import type { TClickEventType } from '../../types/globalTypes'
 
 export const Chips = (props: TChipsProps): ReactElement => {
   const {

@@ -1,6 +1,7 @@
 import type { ReactElement } from 'react'
 import type { FILE_UPLOAD_ERRORS } from '../../consts'
 import type { TSVGIconType } from '../SVGIcons/types'
+import type { IFormCompProps, TSVGIconComponent } from '../../types/globalTypes'
 
 export interface TAvatarProps extends IFormCompProps {
   allowedTypes?: string

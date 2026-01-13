@@ -1,5 +1,6 @@
 import type { JSX } from 'react'
 import type { TSVGIconType } from '../SVGIcons/types'
+import type { TIconSize, TSVGIconComponent } from '../../types/globalTypes'
 
 export interface LinkPropTypes {
   type?: 'primary' | 'secondary'

@@ -7,6 +7,7 @@ import { Text } from '../Text'
 import IconArrowDown from '../SVGIcons/IconArrowDown'
 import IconArrowUp from '../SVGIcons/IconArrowUp'
 import type { TSVGIconType } from '../SVGIcons/types'
+import type { TIconSize, TSVGIconComponent } from '../../types/globalTypes'
 
 type Props = {
   fixedHeader?: boolean

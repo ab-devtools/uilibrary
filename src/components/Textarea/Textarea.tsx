@@ -5,6 +5,7 @@ import type { TTextAreaTypeProps } from './types'
 import { Text } from '../Text'
 import classNames from 'classnames'
 import IconCheckmarkCircleFilled from '../SVGIcons/IconCheckmarkCircleFilled'
+import type { TChangeEventType } from '../../types/globalTypes'
 
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TTextAreaTypeProps>(
   (

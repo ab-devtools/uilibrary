@@ -1,4 +1,5 @@
 import type { ReactElement } from 'react'
+import type { IFormCompProps, TSelectIconProps } from '../../types/globalTypes'
 export interface TItemSelectProps extends IFormCompProps {
   id?: number | string
   image?: string

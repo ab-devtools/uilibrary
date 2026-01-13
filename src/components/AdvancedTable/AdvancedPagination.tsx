@@ -11,6 +11,7 @@ import IconChevronRight from '../SVGIcons/IconChevronRight'
 import IconChevronDoubleLeft from '../SVGIcons/IconChevronDoubleLeft'
 import IconChevronDoubleRight from '../SVGIcons/IconChevronDoubleRight'
 import IconMore from '../SVGIcons/IconMore'
+import type { TItemValue } from '../../types/globalTypes'
 
 interface PaginationProps<T> {
   table: Table<T>
