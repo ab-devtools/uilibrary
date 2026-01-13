@@ -26,7 +26,7 @@ const Template: StoryFn<TCollapseProps> = (args) => {
       toggle={isOpen ? close : open}
       additionalInfo={
         <Status
-          type={'success'}
+          type={'success-light'}
           text={'Additional info'}
           size={'medium'}
           rightIconProps={<IconHeart size={'xsmall'} className={'ml-8'} />}

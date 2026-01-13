@@ -8,6 +8,11 @@ import { OptionItem } from '../../../../helperComponents'
 import { ContentTop } from '../../SharedComponents'
 import type { TMultiSelectGroupedProps } from '../../types'
 import { DROPDOWN_MAX_HEIGHT } from '../../constants'
+import type {
+  TSelectedValue,
+  TSelectGroupOption,
+  TSelectOption
+} from '../../../../types/globalTypes'
 
 export const MultiSelectWithTabs = (props: TMultiSelectGroupedProps): JSX.Element => {
   const {

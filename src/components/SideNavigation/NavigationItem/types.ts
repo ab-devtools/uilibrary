@@ -1,6 +1,7 @@
 import type { JSX, ReactNode } from 'react'
 import type { ISVGIconProps } from '../../SVGIcons/types'
 import type { ReactElement } from 'react'
+import type { TSVGIconComponent } from '../../../types/globalTypes'
 
 export enum NavigationItemTypes {
   MAIN = 'main',

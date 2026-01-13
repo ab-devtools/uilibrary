@@ -33,7 +33,7 @@ export const Tab = (props: TTabProps): ReactElement => {
       )}
 
       <div
-        ref={containerRef as RefObject<HTMLDivElement>}
+        ref={containerRef as React.RefObject<HTMLDivElement>}
         className={classNames(
           'tabs-container',
           `tabs-container--${type}`,

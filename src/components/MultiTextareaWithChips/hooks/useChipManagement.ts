@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import type { ChipValue, TChipItem } from '../types'
+import type { TFormValue } from '../../../types/globalTypes'
 
 interface UseChipManagementProps {
   initialChips: ChipValue[]

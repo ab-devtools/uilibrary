@@ -6,7 +6,7 @@ import { Link } from '../Link'
 import { Text } from '../Text'
 import type { TCheckboxProps } from './types'
 import IconInfo from '../SVGIcons/IconInfo'
-import { IconDynamicComponent } from '../../helperComponents'
+import { IconDynamicComponent } from '../../helperComponents/IconDynamicComponent'
 
 export const Checkbox = forwardRef(
   (props: TCheckboxProps, ref: ForwardedRef<HTMLInputElement>): ReactElement | null => {

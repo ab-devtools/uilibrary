@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { FormContext } from '../context'
-import type { Control, FieldValues, UseFormRegister } from 'react-hook-form'
+import type { Control, FieldValues, FieldErrors, UseFormRegister } from 'react-hook-form'
+import type { TFormData, TSetValue } from '../types/globalTypes'
 
 type TFormContextProps = {
   register?: UseFormRegister<TFormData> //TRegister | CallbackFnType

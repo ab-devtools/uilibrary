@@ -4,6 +4,7 @@ import type { TButtonPropTypes } from '../../Button/types'
 import { Button } from '../../Button'
 import type { TCheckboxInfo } from '../types'
 import { Checkbox } from '../../Checkbox'
+import type { TClickEventType } from '../../../types/globalTypes'
 
 type TProps = {
   isLoading?: boolean

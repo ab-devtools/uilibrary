@@ -2,7 +2,7 @@ import type { JSX } from 'react'
 import React, { forwardRef } from 'react'
 import { Radio } from './Radio'
 import type { TRadioGroupProps, TRadioOptionItem } from './types'
-import { Label } from '../../helperComponents'
+import { Label } from '../../helperComponents/Label'
 import classnames from 'classnames'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

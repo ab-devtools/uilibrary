@@ -1,4 +1,5 @@
 import type { InputHTMLAttributes, ReactElement, RefObject } from 'react'
+import type { IFormCompProps, TChangeEventType, TClickEventType } from '../../types/globalTypes'
 export interface OtpCustomProps
   extends IFormCompProps,
     Omit<

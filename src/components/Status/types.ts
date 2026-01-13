@@ -1,22 +1,13 @@
 import type { ReactElement, ReactNode } from 'react'
-import type { ISVGIconProps } from '../SVGIcons/types'
-
-export type TStatusTypes =
-  | 'primary'
-  | 'disabled'
-  | 'brand'
-  | 'danger'
-  | 'warning'
-  | 'success'
-  | 'information'
-  | 'discovery'
+import type { ISVGIconProps, TSVGIconType } from '../SVGIcons/types'
+import type { IFormCompProps } from '../../types/globalTypes'
 
 export interface TStatusProps extends IFormCompProps {
   text?: string
   children?: ReactNode
   leftIconProps?: ISVGIconProps
   rightIconProps?: ReactElement
-  type?: TStatusTypes
+  type?: TSVGIconType
   size?: 'large' | 'medium' | 'small'
   className?: string
   withCircle?: boolean

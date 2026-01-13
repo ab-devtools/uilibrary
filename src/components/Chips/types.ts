@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import type { ISVGIconProps } from '../SVGIcons/types'
+import type { IFormCompProps, TClickEventType } from '../../types/globalTypes'
 
 export type TChipsColors =
   | 'primary'

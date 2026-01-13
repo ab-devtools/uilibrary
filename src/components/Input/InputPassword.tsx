@@ -13,6 +13,7 @@ import type { ISVGIconProps } from '../SVGIcons/types'
 import { Popover } from '../Popover'
 import { Positions } from '../Tooltip/types'
 import classNames from 'classnames'
+import type { TClickEventType } from '../../types/globalTypes'
 
 const getTextType = (password: string, isValid: boolean, isFocused: boolean) => {
   if (password.length === 0) return 'tertiary'

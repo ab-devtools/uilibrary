@@ -30,6 +30,7 @@ import IconGb from '../components/SVGIcons/IconGb'
 import IconChevronDown from '../components/SVGIcons/IconChevronDown'
 import IconChevronUp from '../components/SVGIcons/IconChevronUp'
 import IconQuestionCircle from '../components/SVGIcons/IconQuestionCircle'
+import type { TSelectedValue, TSelectTreeOptions } from '../types/globalTypes'
 
 type TItemValue = string | number | null
 declare type TItemLabel = string

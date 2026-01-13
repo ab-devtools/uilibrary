@@ -1,5 +1,11 @@
 import type { ReactElement } from 'react'
 import type { TTooltipProps } from '../../components/Tooltip/types'
+import type {
+  TItemValue,
+  TSelectedValue,
+  TSelectIconProps,
+  TSelectOption
+} from '../../types/globalTypes'
 
 export type TSelectItemProps = {
   isSelected?: boolean

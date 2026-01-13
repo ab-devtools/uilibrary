@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Text } from '../Text'
 import type { TMorePropTypes } from './types'
 import { Button } from '../Button'
+import type { TClickEventType } from '../../types/globalTypes'
 
 export const More = (props: TMorePropTypes): JSX.Element => {
   const {

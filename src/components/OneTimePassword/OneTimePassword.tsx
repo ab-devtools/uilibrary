@@ -7,6 +7,7 @@ import type { OtpCustomProps } from './types'
 import { ErrorMessage, Label } from '../../helperComponents'
 import { Text } from '../Text'
 import IconCheckmarkCircleFilled from '../SVGIcons/IconCheckmarkCircleFilled'
+import type { TChangeEventType } from '../../types/globalTypes'
 
 export const OneTimePassword = React.forwardRef<HTMLInputElement, OtpCustomProps>(
   ({

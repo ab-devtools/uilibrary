@@ -7,6 +7,7 @@ import type { TSelectItemProps } from './types'
 import classNames from 'classnames'
 import { IconCheckmark } from '../../components/SVGIcons/IconCheckmark'
 import { Radio } from '../../components/Radio'
+import type { TClickEventType } from '../../types/globalTypes'
 
 export const OptionItem = (props: TSelectItemProps): JSX.Element => {
   const {

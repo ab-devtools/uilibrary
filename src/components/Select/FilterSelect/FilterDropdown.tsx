@@ -2,6 +2,7 @@ import type { JSX } from 'react'
 import React, { useMemo } from 'react'
 import { OptionItem } from '../../../helperComponents'
 import type { TFilterDropdownContentProps } from '../types'
+import type { TSelectOption } from '../../../types/globalTypes'
 
 export const FilterDropdownContent = (props: TFilterDropdownContentProps): JSX.Element => {
   const {

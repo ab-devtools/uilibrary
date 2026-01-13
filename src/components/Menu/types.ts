@@ -1,4 +1,11 @@
 import type { ReactNode } from 'react'
+import type {
+  TCallBackFn,
+  TItemLabel,
+  TItemValue,
+  TSelectIconProps,
+  TTooltipPosition
+} from '../../types/globalTypes'
 
 export type TMenuItem = {
   label: TItemLabel

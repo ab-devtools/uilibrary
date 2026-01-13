@@ -1,4 +1,5 @@
 import dayjs from 'dayjs'
+import type { TClickEventType, TSelectOptions } from '../types/globalTypes'
 
 export const noop = (): void => {
   return undefined

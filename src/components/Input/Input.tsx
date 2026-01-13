@@ -8,6 +8,7 @@ import { Label, ErrorMessage } from '../../helperComponents'
 import { Text } from '../Text'
 
 import IconCheckmarkCircleFilled from '../SVGIcons/IconCheckmarkCircleFilled'
+import type { TChangeEventType } from '../../types/globalTypes'
 
 export const Input = React.forwardRef<HTMLInputElement, InputCustomProps>(
   (

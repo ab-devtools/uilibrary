@@ -1,3 +1,5 @@
+import type { TSelectOptions } from '../../../types/globalTypes'
+
 export const STORAGE_TYPE = {
   LOCAL: 'localStorage',
   EXTERNAL: 'external'

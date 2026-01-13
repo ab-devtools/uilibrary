@@ -8,6 +8,7 @@ import { getYearOptions, noop } from '../../../utils/helpers'
 import './styles.scss'
 import IconChevronLeft from '../../SVGIcons/IconChevronLeft'
 import IconChevronRight from '../../SVGIcons/IconChevronRight'
+import type { TSelectOptions } from '../../../types/globalTypes'
 
 interface TProps extends ReactDatePickerCustomHeaderProps {
   months: TSelectOptions

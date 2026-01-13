@@ -8,6 +8,13 @@ import type { TMultiSelectTreeProps } from '../../types'
 import IconCaretUpFilled from '../../../SVGIcons/IconCaretUpFilled'
 import IconCaretDownFilled from '../../../SVGIcons/IconCaretDownFilled'
 import { Checkbox } from '../../../Checkbox'
+import type {
+  TSelectedValue,
+  TSelectGroupOption,
+  TSelectGroupOptions,
+  TSelectOption,
+  TSelectTreeOptions
+} from '../../../../types/globalTypes'
 
 export const MultiSelectTree = (props: TMultiSelectTreeProps): JSX.Element | null => {
   const {

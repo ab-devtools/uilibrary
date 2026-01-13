@@ -7,6 +7,7 @@ import { OptionItem } from '../../../../helperComponents'
 import { ContentTop } from '../../SharedComponents'
 import type { TMultySingleTabPropTypes } from '../../types'
 import { DROPDOWN_MAX_HEIGHT } from '../../constants'
+import type { TItemValue, TSelectedValue, TSelectOption } from '../../../../types/globalTypes'
 
 export const MultiBase = (props: TMultySingleTabPropTypes): JSX.Element | null => {
   const {

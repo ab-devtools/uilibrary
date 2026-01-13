@@ -6,6 +6,7 @@ import { OptionItem } from '../../../../helperComponents'
 import type { TMultiSelectGroupedProps } from '../../types'
 import IconCaretUpFilled from '../../../SVGIcons/IconCaretUpFilled'
 import IconCaretDownFilled from '../../../SVGIcons/IconCaretDownFilled'
+import type { TSelectedValue } from '../../../../types/globalTypes'
 
 export const RadioSelectGrouped = ({
   avatar,
