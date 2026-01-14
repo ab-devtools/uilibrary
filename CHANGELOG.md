@@ -1,3 +1,11 @@
+## [1.64.2](https://github.com/ab-devtools/uilibrary/compare/1.64.1...1.64.2) (2026-01-14)
+
+
+### Bug Fixes
+
+* fixs for  modal-confirmation footer ui ([9e79969](https://github.com/ab-devtools/uilibrary/commit/9e799697356b818492215e0bda196d1a455a06a4))
+* update itemselect selected state ui ([dfa6104](https://github.com/ab-devtools/uilibrary/commit/dfa61047c4287e31b523d0770ae5894b9a08cc94))
+
 ## [1.64.1](https://github.com/ab-devtools/uilibrary/compare/1.64.0...1.64.1) (2026-01-12)
 
 
