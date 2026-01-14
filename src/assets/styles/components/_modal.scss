@@ -98,14 +98,6 @@
   &__footer {
     @include mixin.flexbox;
     @include mixin.align-items(center);
-    min-height: var(--ds-modal-footer-height);
-    padding: var(--ds-modal-footer-padding-lg);
-    border-top: var(--ds-modal-footer-border-width) solid var(--ds-modal-footer-border-color);
-
-    @include mixin.screen('phablet', max) {
-      @include mixin.justify-content(space-between);
-      padding: var(--ds-modal-footer-padding-sm);
-    }
 
     &__btn {
       @include mixin.screen('phablet', max) {
@@ -159,6 +151,17 @@
       margin-right: var(--ds-space-10);
     }
 
+    #{$this}__footer {
+      min-height: var(--ds-modal-footer-height);
+      padding: var(--ds-modal-footer-padding-lg);
+      border-top: var(--ds-modal-footer-border-width) solid var(--ds-modal-footer-border-color);
+
+      @include mixin.screen('phablet', max) {
+        @include mixin.justify-content(space-between);
+        padding: var(--ds-modal-footer-padding-sm);
+      }
+    }
+
     &#{$this}--small {
       #{$this}__header {
         padding: var(--ds-modal-header-padding-sm);
@@ -189,8 +192,6 @@
 
   &--confirmation {
     #{$this}__footer {
-      padding: 0;
-      border-top: 0;
       gap: var(--ds-space-16);
 
       &__btn {
