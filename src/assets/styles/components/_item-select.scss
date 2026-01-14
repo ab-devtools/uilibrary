@@ -10,7 +10,7 @@
   --ds-item-select-border-radius: var(--ds-border-radius-2xl);
   --ds-item-select-border-color: var(--ds-color-border-tertiary);
   --ds-item-select-border-color-hover: var(--ds-color-border-tertiary);
-  --ds-item-select-border-color-selected: var(--ds-color-border-brand-dark);
+  --ds-item-select-border-color-selected: var(--ds-color-border-primary-dark);
   --ds-item-select-border-color-disabled: var(--ds-color-border-disabled);
 
   --ds-item-select-shadow-active: var(--ds-shadow-brand-2);
@@ -26,6 +26,17 @@
   padding: var(--ds-item-select-padding);
   background-color: var(--ds-item-select-bg-default);
   border: 1px solid var(--ds-item-select-border-color);
+  position: relative;
+
+  &:after {
+    @include mixin.absolute(0,0,0,0);
+    content: "";
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    border-radius: var(--ds-item-select-border-radius);
+    transition: border-color 0.1s linear;
+  }
 
   &:not(&#{$this}--disabled, &#{$this}--selected) {
     &:hover {
@@ -37,12 +48,19 @@
     &:active {
       background-color: var(--ds-item-select-bg-active);
       box-shadow: var(--ds-item-select-shadow-active);
+
+      &:after {
+        border-color: var(--ds-item-select-border-color-selected);
+      }
     }
   }
 
   &--selected {
     cursor: default;
-    border-color: var(--ds-item-select-border-color-selected);
+
+    &:after {
+      border-color: var(--ds-item-select-border-color-selected);
+    }
   }
 
   &--disabled {
