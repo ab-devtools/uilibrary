@@ -16,11 +16,12 @@ export const Popover = (props: TPopoverProps): JSX.Element | null => {
     children,
     elemRef,
     id,
-    clicked = false
+    clicked = false,
+    popoverContent,
   } = props
+
   const [isClicked, setIsClicked] = useState(clicked)
   const [popoverRef, setPopoverRef] = useState<HTMLElement | null>(null)
-
   const [parent, setElement] = useState<HTMLElement | null>(elemRef || null)
 
   const { tooltipPosition: popoverPosition, tooltipStyles: popoverStyles } = useGetTooltipStyles({
@@ -30,7 +31,6 @@ export const Popover = (props: TPopoverProps): JSX.Element | null => {
   })
 
   const showMessage = () => setIsClicked(true)
-
   const hideMessage = () => setIsClicked(false)
 
   useHideOnScroll(hideMessage)
@@ -49,6 +49,35 @@ export const Popover = (props: TPopoverProps): JSX.Element | null => {
     }
   }, [parent])
 
+
+
+  const renderDefaultContent = () => {
+    if (linkAddons) {
+      return (
+        <Link
+          dataId={linkAddons.dataId}
+          url={linkAddons.url}
+          beforeLink={linkAddons.beforeLink}
+          afterLink={linkAddons.afterLink}
+          target={linkAddons.target}
+          className={'popover__link'}
+        >
+          {text}
+        </Link>
+      )
+    }
+
+    return (
+      <Text dataId={`${dataId}-text`} type="primary" weight="regular" size="small">
+        {text}
+      </Text>
+    )
+  }
+
+  const renderCustomContent = () => {
+    return <>{popoverContent}</>
+  }
+
   return (
     <>
       {isClicked && (
@@ -59,22 +88,7 @@ export const Popover = (props: TPopoverProps): JSX.Element | null => {
           style={popoverStyles}
         >
           <div className="popover__inner scrollbar scrollbar--vertical pr-8">
-            {linkAddons ? (
-              <Link
-                dataId={linkAddons.dataId}
-                url={linkAddons.url}
-                beforeLink={linkAddons.beforeLink}
-                afterLink={linkAddons.afterLink}
-                target={linkAddons.target}
-                className={'popover__link'}
-              >
-                {text}
-              </Link>
-            ) : (
-              <Text dataId={`${dataId}-text`} type="primary" weight="regular" size="small">
-                {text}
-              </Text>
-            )}
+            {popoverContent ? renderCustomContent() : renderDefaultContent()}
           </div>
           <span className="popover__arrow"></span>
         </div>
