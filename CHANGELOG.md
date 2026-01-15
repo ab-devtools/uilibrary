@@ -1,3 +1,12 @@
+# [1.65.0](https://github.com/ab-devtools/uilibrary/compare/1.64.2...1.65.0) (2026-01-15)
+
+
+### Features
+
+* add reValidateMode prop to FormContainer ([545a528](https://github.com/ab-devtools/uilibrary/commit/545a52878e74d5b44148d10364ed8fa1ba3a080b))
+* add support for custom popover content and enhance storybook examples ([b94a1c6](https://github.com/ab-devtools/uilibrary/commit/b94a1c6b97a6e252d3909b05d0693aab0a43c102))
+* enhance CardSelect types and stories with custom content and optional title ([#285](https://github.com/ab-devtools/uilibrary/issues/285)) ([505396b](https://github.com/ab-devtools/uilibrary/commit/505396b75c5065744d074ebc646b3949d0caf1c5))
+
 ## [1.64.2](https://github.com/ab-devtools/uilibrary/compare/1.64.1...1.64.2) (2026-01-14)
 
 
