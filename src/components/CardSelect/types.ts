@@ -3,11 +3,12 @@ import type { TChipsProps } from '../Chips/types'
 import type { CARD_SELECT_TYPES } from '../../consts'
 import type { TPopoverProps } from '../Popover/types'
 import type { TTooltipProps } from '../Tooltip/types'
+import type React from 'react'
 
 export interface TCardSelectProps extends IFormCompProps {
   id?: number | string
   type?: CARD_SELECT_TYPES
-  title: string | React.ReactNode
+  title?: string | React.ReactNode
   subtext?: string
   description?: string
   chips?: TChipsProps[]
@@ -27,6 +28,8 @@ export interface TCardSelectProps extends IFormCompProps {
   popoverAddons?: TPopoverProps
   tooltipAddons?: TTooltipProps
   actionAddons?: TActionAddons
+  customContent?: React.ReactNode
+  children?: React.ReactNode
 }
 export interface TCardSelectGroupProps extends IFormCompProps {
   cards: TCardSelectProps[]
