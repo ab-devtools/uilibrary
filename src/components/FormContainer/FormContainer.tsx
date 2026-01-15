@@ -15,6 +15,7 @@ export const FormContainer = (props: FormPropTypes): JSX.Element => {
     shouldUnregister,
     shouldFocusError = true,
     mode = 'onBlur',
+    reValidateMode,
     initialValues,
     validationScheme,
     validationContext,
@@ -39,6 +40,7 @@ export const FormContainer = (props: FormPropTypes): JSX.Element => {
     unregister
   } = useForm({
     mode,
+    reValidateMode,
     defaultValues: initialValues,
     shouldFocusError,
     shouldUnregister,
