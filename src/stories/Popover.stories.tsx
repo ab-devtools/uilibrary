@@ -33,10 +33,9 @@ const TriggerBox: React.FC<{ id: string; label?: string }> = ({ id, label = 'Cli
       position: 'absolute',
       left: '50%',
       top: '50%',
-      transform: 'translate(-50%, -50%)',
+      transform: 'translate(-50%, -50%)'
     }}
     id={id}
-
   >
     <Button buttonText={label} />
   </div>
@@ -96,9 +95,7 @@ SimpleCustomContent.args = {
   position: 'top-center',
   popoverContent: (
     <div style={{ padding: '8px' }}>
-      <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 'bold' }}>
-        Custom Popover
-      </h4>
+      <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 'bold' }}>Custom Popover</h4>
       <p style={{ margin: '0', fontSize: '13px', color: '#666' }}>
         This is completely custom content inside the popover.
       </p>
@@ -111,49 +108,49 @@ RichContentPopover.args = {
   position: 'bottom-center',
   popoverContent: (
     <div style={{ padding: '12px', minWidth: '250px' }}>
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '12px',
-        marginBottom: '12px'
-      }}>
-        <div style={{
-          width: '40px',
-          height: '40px',
-          borderRadius: '50%',
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      <div
+        style={{
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center',
-          color: 'white',
-          fontSize: '18px',
-          fontWeight: 'bold'
-        }}>
+          gap: '12px',
+          marginBottom: '12px'
+        }}
+      >
+        <div
+          style={{
+            width: '40px',
+            height: '40px',
+            borderRadius: '50%',
+            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'white',
+            fontSize: '18px',
+            fontWeight: 'bold'
+          }}
+        >
           JD
         </div>
         <div>
-          <h4 style={{ margin: '0 0 4px 0', fontSize: '14px', fontWeight: 'bold' }}>
-            John Doe
-          </h4>
-          <p style={{ margin: 0, fontSize: '12px', color: '#666' }}>
-            john.doe@example.com
-          </p>
+          <h4 style={{ margin: '0 0 4px 0', fontSize: '14px', fontWeight: 'bold' }}>John Doe</h4>
+          <p style={{ margin: 0, fontSize: '12px', color: '#666' }}>john.doe@example.com</p>
         </div>
       </div>
-      <div style={{
-        padding: '8px',
-        background: '#f5f5f5',
-        borderRadius: '4px',
-        fontSize: '12px',
-        color: '#555'
-      }}>
+      <div
+        style={{
+          padding: '8px',
+          background: '#f5f5f5',
+          borderRadius: '4px',
+          fontSize: '12px',
+          color: '#555'
+        }}
+      >
         <strong>Role:</strong> Administrator
       </div>
     </div>
   )
 }
-
-
 
 const PositionTemplate: StoryFn<TPopoverProps> = (args) => {
   const positions: Array<TPopoverProps['position']> = [
@@ -168,19 +165,23 @@ const PositionTemplate: StoryFn<TPopoverProps> = (args) => {
   ]
 
   return (
-    <div style={{
-      position: 'relative',
-      height: '600px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
-    }}>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
-        gap: '16px',
-        padding: '20px'
-      }}>
+    <div
+      style={{
+        position: 'relative',
+        height: '600px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}
+    >
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: '16px',
+          padding: '20px'
+        }}
+      >
         {positions.map((pos, index) => (
           <div key={index} style={{ position: 'relative' }}>
             <_Popover
@@ -221,5 +222,3 @@ const PositionTemplate: StoryFn<TPopoverProps> = (args) => {
 
 export const AllPositions = PositionTemplate.bind({})
 AllPositions.args = {}
-
-

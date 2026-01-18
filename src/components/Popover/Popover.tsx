@@ -17,7 +17,7 @@ export const Popover = (props: TPopoverProps): JSX.Element | null => {
     elemRef,
     id,
     clicked = false,
-    popoverContent,
+    popoverContent
   } = props
 
   const [isClicked, setIsClicked] = useState(clicked)
@@ -48,8 +48,6 @@ export const Popover = (props: TPopoverProps): JSX.Element | null => {
       parent.addEventListener('click', showMessage)
     }
   }, [parent])
-
-
 
   const renderDefaultContent = () => {
     if (linkAddons) {
