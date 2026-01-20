@@ -1,3 +1,10 @@
+# [1.67.0](https://github.com/ab-devtools/uilibrary/compare/1.66.0...1.67.0) (2026-01-20)
+
+
+### Features
+
+* add customContent prop to CardSelectGroup ([00d0460](https://github.com/ab-devtools/uilibrary/commit/00d04601ef1ebf26b6e0d0e123a23e1ff217fe9f))
+
 # [1.66.0](https://github.com/ab-devtools/uilibrary/compare/1.65.0...1.66.0) (2026-01-18)
 
 
