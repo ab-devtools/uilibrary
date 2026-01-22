@@ -1,0 +1,308 @@
+import React, { useState, useEffect, useMemo } from 'react'
+import type { TRangeValue, TCalendarPropTypes, TCalendarValue, TValuePiece } from './types'
+import { Button } from '../Button'
+import { Switcher } from '../Switcher'
+import { isSameDay } from 'date-fns'
+import dayjs from 'dayjs'
+import { Text } from '../Text'
+import classNames from 'classnames'
+import { formatDateByPattern, isSameDate, isSameRange, isValidDate } from '../../utils/helpers'
+import { MobileView } from './MobileView'
+import { DesktopView } from './DesktopView'
+import { Input } from '../Input'
+import { IconArrowRight } from '../SVGIcons'
+
+export const Calendar = ({
+  isRange,
+  dataId,
+  onChange,
+  canControlRange,
+  hasInputs,
+  withTime,
+  fastActions,
+  selectedValue,
+  showApplyButtons,
+  resetButtonText = 'Reset',
+  applyButtonText = 'Apply',
+  rangeControlText = 'Apply range',
+  locale = 'en-US',
+  maxYear = new Date().getFullYear(),
+  ...props
+}: TCalendarPropTypes) => {
+  const [canRangeSelect, setCanRangeSelect] = useState(isRange)
+  const [value, setValue] = useState<TCalendarValue>()
+  const [draftValue, setDraftValue] = useState<TValuePiece>()
+  const [draftRange, setDraftRange] = useState<TRangeValue>([null, null])
+  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 768)
+  const [startDate, setStartDate] = useState<string>()
+  const [startTime, setStartTime] = useState<string>()
+  const [endDate, setEndDate] = useState<string>()
+  const [endTime, setEndTime] = useState<string>()
+
+  const hasPendingChanges = useMemo(() => {
+    if (canRangeSelect) {
+      const [draftStart, draftEnd] = draftRange
+      if (Array.isArray(value)) {
+        const [valueStart, valueEnd] = value
+
+        if (!draftStart || !draftEnd) return true
+
+        return (
+          isSameDay(draftStart as Date, valueStart as Date) &&
+          isSameDay(draftEnd as Date, valueEnd as Date)
+        )
+      } else {
+        return !draftStart || !draftEnd
+      }
+    } else {
+      return !draftValue || isSameDay(draftValue, value as Date)
+    }
+  }, [canRangeSelect, draftRange, draftValue, value])
+
+  const canReset = useMemo(() => {
+    if (canRangeSelect) {
+      const [draftStart, draftEnd] = draftRange
+      return !draftStart && !draftEnd
+    } else {
+      return !draftValue
+    }
+  }, [canRangeSelect, draftRange, draftValue])
+
+  const handleChange = (date: TCalendarValue) => {
+    if (canRangeSelect) {
+      setDraftRange(date as TRangeValue)
+    } else {
+      setDraftValue(date as TValuePiece)
+    }
+    if (onChange && !showApplyButtons) {
+      onChange(date)
+      setValue(date)
+    }
+  }
+
+  const handleDayClick = (date: Date) => {
+    if (!canRangeSelect) {
+      handleChange(date)
+      return
+    }
+    setDraftRange(([start, end]) => {
+      if (!start) {
+        return [date, null]
+      }
+      if (start && !end) {
+        return dayjs(date).isBefore(dayjs(start)) ? [date, start] : [start, date]
+      }
+      return [date, null]
+    })
+  }
+
+  const handleReset = () => {
+    setValue(null)
+    setDraftValue(null)
+    setDraftRange([null, null])
+  }
+
+  const handleApply = () => {
+    const date = canRangeSelect ? draftRange : draftValue
+    setValue(date)
+    if (onChange) {
+      onChange(date as TCalendarValue)
+    }
+  }
+
+  const getTileClassName = (date: Date) => {
+    if (!canRangeSelect) return null
+    const [start, end] = draftRange
+    if (!start) return null
+    if (!end && dayjs(date).isSame(start, 'day')) {
+      return 'react-calendar__tile--rangeStart react-calendar__tile--rangeEnd'
+    }
+    if (end && dayjs(date).isSame(start, 'day')) {
+      return 'react-calendar__tile--active react-calendar__tile--range react-calendar__tile--rangeStart'
+    }
+    if (end && dayjs(date).isSame(end, 'day')) {
+      return 'react-calendar__tile--active react-calendar__tile--range react-calendar__tile--rangeEnd'
+    }
+    if (end && dayjs(date).isAfter(start, 'day') && dayjs(date).isBefore(end, 'day')) {
+      return 'react-calendar__tile--active react-calendar__tile--range'
+    }
+    return null
+  }
+
+  const onFastActionSelect = (value: Date | [Date, Date]) => {
+    if (Array.isArray(value)) {
+      setDraftRange(value)
+    } else {
+      setDraftValue(value)
+    }
+  }
+
+  const isSelectedFastAction = (date: Date | [Date, Date]) => {
+    if (Array.isArray(date)) {
+      return isSameRange(date, draftRange)
+    } else {
+      if (!draftValue) return false
+      return isSameDate(date, draftValue as Date)
+    }
+  }
+
+  const onChangeRangeControl = () => {
+    setCanRangeSelect((prev) => !prev)
+    setValue(null)
+    setDraftRange([null, null])
+    setDraftValue(null)
+  }
+
+  const onStartDateChange = (value: string) => {
+    const date = formatDateByPattern(value)
+    setStartDate(date)
+  }
+
+  const onEndDateChange = (value: string) => {
+    const date = formatDateByPattern(value)
+    setEndDate(date)
+  }
+
+  const onStartDateBlur = (value: string) => {
+    const isValid = isValidDate(value)
+    if (!isValid) {
+      setStartDate('')
+    }
+  }
+
+  const onEndDateBlur = (value: string) => {
+    const isValid = isValidDate(value)
+    if (!isValid) {
+      setEndDate('')
+    }
+  }
+
+  useEffect(() => {
+    if (!showApplyButtons) {
+      setValue(draftValue || draftRange)
+    }
+  }, [draftValue, draftRange, showApplyButtons])
+
+  useEffect(() => {
+    if (!selectedValue) return
+    if (canRangeSelect) {
+      if (Array.isArray(selectedValue)) {
+        setDraftRange(selectedValue)
+      } else {
+        setDraftValue(selectedValue)
+      }
+    }
+  }, [selectedValue])
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  return (
+    <div className="react-calendar-wrapper">
+      {canControlRange && (
+        <div className="header-control-wrapper">
+          <Switcher
+            size="small"
+            selectedValue={canRangeSelect}
+            label={rangeControlText}
+            onClick={() => onChangeRangeControl()}
+          />
+        </div>
+      )}
+      <div className="react-calendar-container">
+        {fastActions?.length && (
+          <div className="calendar-fast-actions">
+            {fastActions.map((item, i) => (
+              <div
+                key={i}
+                className={classNames('fast-action', {
+                  ['fast-action-active']: isSelectedFastAction(item.value)
+                })}
+                onClick={() => onFastActionSelect(item.value)}
+              >
+                <Text className="fast-action__text" type="secondary">
+                  {item.label}
+                </Text>
+              </div>
+            ))}
+          </div>
+        )}
+        <div className="flexbox flex-direction--column calendar-wrapper">
+          {hasInputs && (
+            <div className="date-input-wrapper">
+              <div className="date-input-wrapper__left flexbox flex-wrap--nowrap">
+                <Input
+                  className={classNames('date-input', {
+                    ['date-input-full']: !withTime
+                  })}
+                  placeholder="MM/DD/YYYY"
+                  value={startDate}
+                  onChange={(e) => onStartDateChange(e.target.value)}
+                  onBlur={(e) => onStartDateBlur(e.target.value)}
+                />
+                {withTime && <Input className="time-input" placeholder="00:00" />}
+              </div>
+              <div className="date-input-middle-arrow">
+                <IconArrowRight type="tertiary" size="small" />
+              </div>
+              <div className="date-input-wrapper__right flexbox flex-wrap--nowrap">
+                <Input
+                  className={classNames('date-input', {
+                    ['date-input-full']: !withTime
+                  })}
+                  placeholder="MM/DD/YYYY"
+                  value={endDate}
+                  onChange={(e) => onEndDateChange(e.target.value)}
+                  onBlur={(e) => onEndDateBlur(e.target.value)}
+                />
+                {withTime && <Input className="time-input" placeholder="00:00" />}
+              </div>
+            </div>
+          )}
+          {isMobile ? (
+            <MobileView
+              {...props}
+              locale={locale}
+              dataId={dataId}
+              draftRange={draftRange}
+              draftValue={draftValue}
+              handleDayClick={handleDayClick}
+              getTileClassName={getTileClassName}
+            />
+          ) : (
+            <DesktopView
+              {...props}
+              locale={locale}
+              dataId={dataId}
+              maxYear={maxYear}
+              draftRange={draftRange}
+              draftValue={draftValue}
+              canRangeSelect={canRangeSelect}
+              handleDayClick={handleDayClick}
+              getTileClassName={getTileClassName}
+            />
+          )}
+        </div>
+      </div>
+      {showApplyButtons && (
+        <div className="calendar-actions">
+          <Button
+            type="tertiary"
+            disabled={canReset}
+            buttonText={resetButtonText}
+            onClick={handleReset}
+          />
+          <Button
+            type="primary"
+            disabled={hasPendingChanges}
+            buttonText={applyButtonText}
+            onClick={handleApply}
+          />
+        </div>
+      )}
+    </div>
+  )
+}
