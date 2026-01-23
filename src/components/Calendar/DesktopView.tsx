@@ -24,7 +24,6 @@ export const DesktopView = ({
 }: IDesktopViewProp) => {
   const didInitScrollRef = useRef<boolean>(false)
   const [activeStartDate, setActiveStartDate] = useState<Date>(new Date())
-
   const nextMonthStartDate = dayjs(activeStartDate).add(1, 'month').startOf('month').toDate()
 
   const handleMonthChange = (month?: TItemValue) => {
@@ -35,6 +34,15 @@ export const DesktopView = ({
   const handleYearChange = (year?: TItemValue) => {
     if (!year) return
     setActiveStartDate((prev) => new Date(+year, prev.getMonth(), 1))
+  }
+
+  const handleNextYearChange = (year?: TItemValue) => {
+    if (!year) return
+    setActiveStartDate(() =>
+      dayjs(new Date(Number(year), nextMonthStartDate.getMonth(), 1))
+        .subtract(1, 'month')
+        .toDate()
+    );
   }
 
   const goToPrevMonth = () => {
@@ -72,7 +80,6 @@ export const DesktopView = ({
         target = dayjs(draftRange[0]).startOf('month')
       }
     }
-
     return target.toDate()
   }
 
@@ -84,6 +91,7 @@ export const DesktopView = ({
     didInitScrollRef.current = true
     setActiveStartDate(dayjs(date).startOf('month').toDate())
   }, [selectedValue, draftValue, draftRange])
+
   return (
     <div className="desktop-calendar">
       <div className="desktop-navigation">
@@ -122,11 +130,7 @@ export const DesktopView = ({
               <Select
                 size="small"
                 selectedItem={nextMonthStartDate.getFullYear()}
-                setSelectedItem={(y) => {
-                  if (y) {
-                    handleYearChange(activeStartDate.getFullYear() - 1)
-                  }
-                }}
+                setSelectedItem={(y) => handleNextYearChange(Number(y))}
                 options={yearOptions}
               />
             </div>

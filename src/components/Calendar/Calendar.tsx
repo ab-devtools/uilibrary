@@ -6,7 +6,14 @@ import { isSameDay } from 'date-fns'
 import dayjs from 'dayjs'
 import { Text } from '../Text'
 import classNames from 'classnames'
-import { formatDateByPattern, isSameDate, isSameRange, isValidDate } from '../../utils/helpers'
+import {
+  combineDateTime,
+  formatDateByPattern,
+  formatTime,
+  isSameDate,
+  isSameRange,
+  orderRangeDate
+} from '../../utils/helpers'
 import { MobileView } from './MobileView'
 import { DesktopView } from './DesktopView'
 import { Input } from '../Input'
@@ -34,10 +41,10 @@ export const Calendar = ({
   const [draftValue, setDraftValue] = useState<TValuePiece>()
   const [draftRange, setDraftRange] = useState<TRangeValue>([null, null])
   const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 768)
-  const [startDate, setStartDate] = useState<string>()
-  const [startTime, setStartTime] = useState<string>()
-  const [endDate, setEndDate] = useState<string>()
-  const [endTime, setEndTime] = useState<string>()
+  const [startDate, setStartDate] = useState<string>('')
+  const [startTime, setStartTime] = useState<string>('')
+  const [endDate, setEndDate] = useState<string>('')
+  const [endTime, setEndTime] = useState<string>('')
 
   const hasPendingChanges = useMemo(() => {
     if (canRangeSelect) {
@@ -90,7 +97,7 @@ export const Calendar = ({
         return [date, null]
       }
       if (start && !end) {
-        return dayjs(date).isBefore(dayjs(start)) ? [date, start] : [start, date]
+        return orderRangeDate(date, start)
       }
       return [date, null]
     })
@@ -151,6 +158,20 @@ export const Calendar = ({
     setValue(null)
     setDraftRange([null, null])
     setDraftValue(null)
+    setStartTime('')
+    setEndTime('')
+    setStartDate('')
+    setEndDate('')
+  }
+
+  const onStartTimeChange = (value: string) => {
+    const time = formatTime(value)
+    setStartTime(time)
+  }
+
+  const onEndTimeChange = (value: string) => {
+    const time = formatTime(value)
+    setEndTime(time)
   }
 
   const onStartDateChange = (value: string) => {
@@ -163,17 +184,31 @@ export const Calendar = ({
     setEndDate(date)
   }
 
-  const onStartDateBlur = (value: string) => {
-    const isValid = isValidDate(value)
-    if (!isValid) {
+  const onStartDateBlur = () => {
+    const dateTime = combineDateTime({ date: startDate, time: startTime })
+    if (!dateTime) {
       setStartDate('')
+      setStartTime('')
+      return
+    }
+   if (canRangeSelect) {
+     setDraftRange(orderRangeDate(dateTime, combineDateTime({ date: endDate, time: endTime })))
+    } else {
+      setDraftValue(dateTime)
     }
   }
 
-  const onEndDateBlur = (value: string) => {
-    const isValid = isValidDate(value)
-    if (!isValid) {
+  const onEndDateBlur = () => {
+    const dateTime = combineDateTime({ date: endDate, time: endTime })
+    if (!dateTime) {
       setEndDate('')
+      setEndTime('')
+      return
+    }
+    if (canRangeSelect) {
+      setDraftRange(orderRangeDate(combineDateTime({ date: startDate, time: startTime }), dateTime))
+    } else {
+      setDraftValue(dateTime)
     }
   }
 
@@ -233,7 +268,10 @@ export const Calendar = ({
         <div className="flexbox flex-direction--column calendar-wrapper">
           {hasInputs && (
             <div className="date-input-wrapper">
-              <div className="date-input-wrapper__left flexbox flex-wrap--nowrap">
+              <div className={
+                classNames('date-input-wrapper__left flexbox flex-wrap--nowrap', {
+                ['full-left-section']: !canRangeSelect
+              })}>
                 <Input
                   className={classNames('date-input', {
                     ['date-input-full']: !withTime
@@ -241,25 +279,45 @@ export const Calendar = ({
                   placeholder="MM/DD/YYYY"
                   value={startDate}
                   onChange={(e) => onStartDateChange(e.target.value)}
-                  onBlur={(e) => onStartDateBlur(e.target.value)}
+                  onBlur={onStartDateBlur}
                 />
-                {withTime && <Input className="time-input" placeholder="00:00" />}
+                {withTime && (
+                  <Input
+                    className="time-input"
+                    placeholder="00:00"
+                    value={startTime}
+                    onChange={(e) => onStartTimeChange(e.target.value)}
+                    onBlur={onStartDateBlur}
+                  />
+                )}
               </div>
-              <div className="date-input-middle-arrow">
-                <IconArrowRight type="tertiary" size="small" />
-              </div>
-              <div className="date-input-wrapper__right flexbox flex-wrap--nowrap">
-                <Input
-                  className={classNames('date-input', {
-                    ['date-input-full']: !withTime
-                  })}
-                  placeholder="MM/DD/YYYY"
-                  value={endDate}
-                  onChange={(e) => onEndDateChange(e.target.value)}
-                  onBlur={(e) => onEndDateBlur(e.target.value)}
-                />
-                {withTime && <Input className="time-input" placeholder="00:00" />}
-              </div>
+              {canRangeSelect && (
+                <>
+                  <div className="date-input-middle-arrow">
+                    <IconArrowRight type="tertiary" size="small" />
+                  </div>
+                  <div className="date-input-wrapper__right flexbox flex-wrap--nowrap">
+                    <Input
+                      className={classNames('date-input', {
+                        ['date-input-full']: !withTime
+                      })}
+                      placeholder="MM/DD/YYYY"
+                      value={endDate}
+                      onChange={(e) => onEndDateChange(e.target.value)}
+                      onBlur={onEndDateBlur}
+                    />
+                    {withTime && (
+                      <Input
+                        className="time-input"
+                        placeholder="00:00"
+                        value={endTime}
+                        onChange={(e) => onEndTimeChange(e.target.value)}
+                        onBlur={onEndDateBlur}
+                      />
+                    )}
+                  </div>
+                </>
+              )}
             </div>
           )}
           {isMobile ? (

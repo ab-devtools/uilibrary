@@ -2,6 +2,19 @@ import dayjs from 'dayjs'
 
 type TDateFormat = 'MM/DD/YYYY' | 'DD/MM/YYYY' | 'YYYY-MM-DD' | 'MM.DD.YYYY' | 'DD.MM.YYYY'
 
+type TDateValidationProp = {
+  date: string
+  format?: TDateFormat
+  minYear?: number
+  maxYear?: number
+}
+
+type TCombineDateProp = {
+  date: string
+  time?: string
+  format?: TDateFormat
+}
+
 export const noop = (): void => {
   return undefined
 }
@@ -168,8 +181,54 @@ export const formatDateByPattern = (value: string, format?: TDateFormat): string
   return result.join(separator)
 }
 
-export const isValidDate = (value: string, format?: TDateFormat): boolean => {
-  if (!value) return false
+export const formatTime = (value: string): string => {
+  const digits = value.replace(/\D/g, '').slice(0, 4)
+  if (!digits) return ''
+
+  const hours = digits.slice(0, 2)
+  const minutes = digits.slice(2, 4)
+
+  if (digits.length <= 2) {
+    return hours
+  }
+  return `${hours}:${minutes}`
+}
+
+export const isValidDate = ({ date, format, minYear, maxYear }: TDateValidationProp) => {
+  if (!date) return false
+
   const dateFormat = format || 'MM/DD/YYYY'
-  return dayjs(value, dateFormat, true).isValid()
+  const parsed = dayjs(date, dateFormat, true)
+
+  if (!parsed.isValid()) return false
+
+  const year = parsed.year()
+  const min = minYear ?? 1900
+  const max = maxYear ?? 2050
+
+  return year >= min && year <= max
+}
+
+export const orderRangeDate = (
+  start: Date | null,
+  end: Date | null
+): [Date | null, Date | null] => {
+  const s: Date | null = start && !isNaN(start.getTime()) ? start : null;
+  const e: Date | null = end && !isNaN(end.getTime()) ? end : null;
+
+  if (!s && e) return [e, null];
+  if (!e) return [s, null];
+
+  return dayjs(s).isBefore(e) || dayjs(s).isSame(e, 'day') ? [s, e] : [e, s];
+};
+
+export const combineDateTime = ({ date, time, format }: TCombineDateProp) => {
+  if (!date) return null
+
+  const dateFormat = format || 'MM/DD/YYYY'
+  const timePart = time?.trim() || '00:00'
+
+  const dateTime = dayjs(`${date} ${timePart}`, `${dateFormat} HH:mm`, true)
+
+  return dateTime.isValid() ? dateTime.toDate() : null
 }
