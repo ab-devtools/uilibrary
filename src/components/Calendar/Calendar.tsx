@@ -12,6 +12,7 @@ import {
   formatTime,
   isSameDate,
   isSameRange,
+  isValidDate,
   orderRangeDate
 } from '../../utils/helpers'
 import { MobileView } from './MobileView'
@@ -33,7 +34,7 @@ export const Calendar = ({
   applyButtonText = 'Apply',
   rangeControlText = 'Apply range',
   locale = 'en-US',
-  maxYear = new Date().getFullYear(),
+  maxYear = 2050,
   ...props
 }: TCalendarPropTypes) => {
   const [canRangeSelect, setCanRangeSelect] = useState(isRange)
@@ -164,29 +165,9 @@ export const Calendar = ({
     setEndDate('')
   }
 
-  const onStartTimeChange = (value: string) => {
-    const time = formatTime(value)
-    setStartTime(time)
-  }
-
-  const onEndTimeChange = (value: string) => {
-    const time = formatTime(value)
-    setEndTime(time)
-  }
-
-  const onStartDateChange = (value: string) => {
-    const date = formatDateByPattern(value)
-    setStartDate(date)
-  }
-
-  const onEndDateChange = (value: string) => {
-    const date = formatDateByPattern(value)
-    setEndDate(date)
-  }
-
   const onStartDateBlur = () => {
     const dateTime = combineDateTime({ date: startDate, time: startTime })
-    if (!dateTime) {
+    if (!dateTime || !isValidDate({ date: startDate })) {
       setStartDate('')
       setStartTime('')
       return
@@ -200,7 +181,7 @@ export const Calendar = ({
 
   const onEndDateBlur = () => {
     const dateTime = combineDateTime({ date: endDate, time: endTime })
-    if (!dateTime) {
+    if (!dateTime || !isValidDate({ date: endDate })) {
       setEndDate('')
       setEndTime('')
       return
@@ -279,7 +260,7 @@ export const Calendar = ({
                   })}
                   placeholder="MM/DD/YYYY"
                   value={startDate}
-                  onChange={(e) => onStartDateChange(e.target.value)}
+                  handleChange={(e) => setStartDate(formatDateByPattern(e.target.value))}
                   onBlur={onStartDateBlur}
                 />
                 {withTime && (
@@ -287,7 +268,7 @@ export const Calendar = ({
                     className="time-input"
                     placeholder="00:00"
                     value={startTime}
-                    onChange={(e) => onStartTimeChange(e.target.value)}
+                    handleChange={(e) => setStartTime(formatTime(e.target.value))}
                     onBlur={onStartDateBlur}
                   />
                 )}
@@ -304,7 +285,7 @@ export const Calendar = ({
                       })}
                       placeholder="MM/DD/YYYY"
                       value={endDate}
-                      onChange={(e) => onEndDateChange(e.target.value)}
+                      handleChange={(e) => setEndDate(formatDateByPattern(e.target.value))}
                       onBlur={onEndDateBlur}
                     />
                     {withTime && (
@@ -312,7 +293,7 @@ export const Calendar = ({
                         className="time-input"
                         placeholder="00:00"
                         value={endTime}
-                        onChange={(e) => onEndTimeChange(e.target.value)}
+                        handleChange={(e) => setEndTime(formatTime(e.target.value))}
                         onBlur={onEndDateBlur}
                       />
                     )}
@@ -326,6 +307,7 @@ export const Calendar = ({
               {...props}
               locale={locale}
               dataId={dataId}
+              maxYear={maxYear}
               draftRange={draftRange}
               draftValue={draftValue}
               handleDayClick={handleDayClick}

@@ -6,8 +6,8 @@ import { Text } from '../Text'
 import { getMonthByIndex } from '../../utils/helpers'
 import { useVirtualizer } from '@tanstack/react-virtual'
 
-const TOTAL_MONTHS = 10000
-const MIDDLE_INDEX = Math.floor(TOTAL_MONTHS / 2)
+const MIN_YEAR = 1971
+const MIDDLE_INDEX = dayjs().diff(dayjs(`${MIN_YEAR}-01-01`), 'month')
 
 export const MobileView = ({
   draftRange,
@@ -16,13 +16,14 @@ export const MobileView = ({
   dataId,
   handleDayClick,
   getTileClassName,
+  maxYear,
   ...props
 }: IMobileViewProp) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const didInitScrollRef = useRef<boolean>(false)
 
   const virtualizer = useVirtualizer({
-    count: TOTAL_MONTHS,
+    count: (maxYear - MIN_YEAR + 1) * 12,
     getScrollElement: () => containerRef.current,
     estimateSize: () => 340,
     overscan: 3
@@ -54,8 +55,8 @@ export const MobileView = ({
     if (!containerRef.current) return
 
     const index = getSelectedMonthIndex()
-    console.log(index)
     if (!index) return
+
     didInitScrollRef.current = true
     scrollToSelectedMonth(index)
   }, [draftValue, draftRange])

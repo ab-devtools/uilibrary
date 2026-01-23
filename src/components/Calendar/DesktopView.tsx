@@ -8,7 +8,7 @@ import { IconChevronLeft, IconChevronRight } from '../SVGIcons'
 import classNames from 'classnames'
 import { getYearOptions } from '../../utils/helpers'
 
-const MIN_YEAR = 1900
+const MIN_YEAR = 1971
 
 export const DesktopView = ({
   dataId,
@@ -19,7 +19,7 @@ export const DesktopView = ({
   getTileClassName,
   locale = 'en-US',
   selectedValue,
-  maxYear = new Date().getFullYear(),
+  maxYear,
   ...props
 }: IDesktopViewProp) => {
   const didInitScrollRef = useRef<boolean>(false)

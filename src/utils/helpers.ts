@@ -135,17 +135,14 @@ export const isMobile = () => {
     /Mobile/i
   ]
 
-  // Check user agent
   const isMatchedDevice = toMatch.some((toMatchItem) => {
     return navigator.userAgent.match(toMatchItem)
   })
 
-  // Check for iPad (including iPad Air with iPadOS 13+)
   const isIPad =
     (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) ||
     navigator.platform === 'iPad'
 
-  // Check for any touch device with Mac user agent
   const isTouchMac = /Mac/.test(navigator.userAgent) && 'ontouchend' in document
 
   return isMatchedDevice || isIPad || isTouchMac
@@ -203,7 +200,7 @@ export const isValidDate = ({ date, format, minYear, maxYear }: TDateValidationP
   if (!parsed.isValid()) return false
 
   const year = parsed.year()
-  const min = minYear ?? 1900
+  const min = minYear ?? 1971
   const max = maxYear ?? 2050
 
   return year >= min && year <= max
