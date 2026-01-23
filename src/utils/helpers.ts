@@ -213,14 +213,14 @@ export const orderRangeDate = (
   start: Date | null,
   end: Date | null
 ): [Date | null, Date | null] => {
-  const s: Date | null = start && !isNaN(start.getTime()) ? start : null;
-  const e: Date | null = end && !isNaN(end.getTime()) ? end : null;
+  const s: Date | null = start && !isNaN(start.getTime()) ? start : null
+  const e: Date | null = end && !isNaN(end.getTime()) ? end : null
 
-  if (!s && e) return [e, null];
-  if (!e) return [s, null];
+  if (!s && e) return [e, null]
+  if (!e) return [s, null]
 
-  return dayjs(s).isBefore(e) || dayjs(s).isSame(e, 'day') ? [s, e] : [e, s];
-};
+  return dayjs(s).isBefore(e) || dayjs(s).isSame(e, 'day') ? [s, e] : [e, s]
+}
 
 export const combineDateTime = ({ date, time, format }: TCombineDateProp) => {
   if (!date) return null

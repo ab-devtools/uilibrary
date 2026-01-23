@@ -191,8 +191,8 @@ export const Calendar = ({
       setStartTime('')
       return
     }
-   if (canRangeSelect) {
-     setDraftRange(orderRangeDate(dateTime, combineDateTime({ date: endDate, time: endTime })))
+    if (canRangeSelect) {
+      setDraftRange(orderRangeDate(dateTime, combineDateTime({ date: endDate, time: endTime })))
     } else {
       setDraftValue(dateTime)
     }
@@ -268,10 +268,11 @@ export const Calendar = ({
         <div className="flexbox flex-direction--column calendar-wrapper">
           {hasInputs && (
             <div className="date-input-wrapper">
-              <div className={
-                classNames('date-input-wrapper__left flexbox flex-wrap--nowrap', {
-                ['full-left-section']: !canRangeSelect
-              })}>
+              <div
+                className={classNames('date-input-wrapper__left flexbox flex-wrap--nowrap', {
+                  ['full-left-section']: !canRangeSelect
+                })}
+              >
                 <Input
                   className={classNames('date-input', {
                     ['date-input-full']: !withTime

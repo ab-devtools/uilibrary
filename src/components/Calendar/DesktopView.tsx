@@ -42,7 +42,7 @@ export const DesktopView = ({
       dayjs(new Date(Number(year), nextMonthStartDate.getMonth(), 1))
         .subtract(1, 'month')
         .toDate()
-    );
+    )
   }
 
   const goToPrevMonth = () => {
