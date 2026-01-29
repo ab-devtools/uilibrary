@@ -1,18 +1,9 @@
 import dayjs from 'dayjs'
-import type { TDateFormat } from '../components/Calendar/types'
-
-type TDateValidationProp = {
-  date: string
-  format?: TDateFormat
-  minYear?: number
-  maxYear?: number
-}
-
-type TCombineDateProp = {
-  date: string
-  time?: string
-  format?: TDateFormat
-}
+import type {
+  TCombineDateProp,
+  TDateFormat,
+  TDateValidationProp
+} from '../components/Calendar/types'
 
 export const noop = (): void => {
   return undefined

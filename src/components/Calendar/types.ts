@@ -7,6 +7,19 @@ export type TCalendarValue = TValuePiece | [TValuePiece, TValuePiece]
 
 export type TRangeValue = [TValuePiece, TValuePiece]
 
+export type TDateValidationProp = {
+  date: string
+  format?: TDateFormat
+  minYear?: number
+  maxYear?: number
+}
+
+export type TCombineDateProp = {
+  date: string
+  time?: string
+  format?: TDateFormat
+}
+
 export type TDateFormat = 'MM/DD/YYYY' | 'DD/MM/YYYY' | 'YYYY-MM-DD' | 'MM.DD.YYYY' | 'DD.MM.YYYY'
 
 export interface ICalendarProp extends CalendarProps {
