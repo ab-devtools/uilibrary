@@ -1,6 +1,5 @@
 import dayjs from 'dayjs'
-
-type TDateFormat = 'MM/DD/YYYY' | 'DD/MM/YYYY' | 'YYYY-MM-DD' | 'MM.DD.YYYY' | 'DD.MM.YYYY'
+import type { TDateFormat } from '../components/Calendar/types'
 
 type TDateValidationProp = {
   date: string

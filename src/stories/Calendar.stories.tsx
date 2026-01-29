@@ -1,4 +1,4 @@
-import { Calendar as _Calendar } from '../index'
+import { Calendar as _Calendar, Input } from '../index'
 import type { StoryFn } from '@storybook/react'
 import dayjs from 'dayjs'
 
@@ -38,12 +38,13 @@ const Template: StoryFn<any> = (args) => {
     <div
       style={{
         display: 'flex',
-        justifyContent: 'center',
         width: '100%',
         paddingTop: '20px'
       }}
     >
-      <_Calendar {...args} />
+      <_Calendar {...args}>
+        <Input />
+      </_Calendar>
     </div>
   )
 }

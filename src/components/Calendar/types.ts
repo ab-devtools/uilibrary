@@ -1,10 +1,13 @@
 import type { CalendarProps } from 'react-calendar'
+import type { ReactNode } from 'react'
 
 export type TValuePiece = Date | null
 
 export type TCalendarValue = TValuePiece | [TValuePiece, TValuePiece]
 
 export type TRangeValue = [TValuePiece, TValuePiece]
+
+export type TDateFormat = 'MM/DD/YYYY' | 'DD/MM/YYYY' | 'YYYY-MM-DD' | 'MM.DD.YYYY' | 'DD.MM.YYYY'
 
 export interface ICalendarProp extends CalendarProps {
   isRange?: boolean
@@ -20,6 +23,9 @@ export interface ICalendarProp extends CalendarProps {
   rangeControlText?: string
   selectedValue?: TCalendarValue
   locale?: 'en-US' | 'ru' | 'hy'
+  formatDate?: TDateFormat
+  children?: ReactNode
+  shouldRecalculatePosition?: boolean
 }
 
 export interface IMobileViewProp extends CalendarProps {

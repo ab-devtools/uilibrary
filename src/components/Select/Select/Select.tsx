@@ -137,10 +137,10 @@ export const Select = (props: TSingleSelectPropTypes): JSX.Element | null => {
 
   useOnOutsideClick([inputRef.current, dropdownRef], handleOutsideClick, isOpen, useId())
   useRecalculateDropdownPosition({
-    shouldRecalculateDropdownPosition,
+    shouldRecalculatePosition: shouldRecalculateDropdownPosition,
     isOpen,
-    inputRef,
-    dropdownRef
+    anchorRef: inputRef,
+    floatingRef: dropdownRef
   })
 
   const { bottom, left, top } = useGetElemPositions(inputRef.current)
