@@ -1,3 +1,10 @@
+## [1.67.1](https://github.com/ab-devtools/uilibrary/compare/1.67.0...1.67.1) (2026-01-30)
+
+
+### Bug Fixes
+
+* one time password copy past ([b538dfd](https://github.com/ab-devtools/uilibrary/commit/b538dfd79dd6d74a335b1ff6573e989370c8c79d))
+
 # [1.67.0](https://github.com/ab-devtools/uilibrary/compare/1.66.0...1.67.0) (2026-01-20)
 
 
