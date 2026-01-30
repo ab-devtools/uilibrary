@@ -1,26 +1,26 @@
 import { type RefObject, useEffect } from 'react'
 
 interface Props {
-  inputRef: RefObject<HTMLInputElement | null>
-  dropdownRef: HTMLDivElement | null
-  shouldRecalculateDropdownPosition: boolean
+  anchorRef: RefObject<HTMLInputElement | HTMLDivElement | null>
+  floatingRef: HTMLDivElement | null
+  shouldRecalculatePosition: boolean
   isOpen: boolean
 }
 
 export const useRecalculateDropdownPosition = ({
   isOpen,
-  inputRef,
-  dropdownRef,
-  shouldRecalculateDropdownPosition
+  anchorRef,
+  floatingRef,
+  shouldRecalculatePosition
 }: Props) => {
   useEffect(() => {
-    if (!isOpen || !shouldRecalculateDropdownPosition) return
+    if (!isOpen || !shouldRecalculatePosition) return
     const update = () => {
-      if (!inputRef.current || !dropdownRef) return
-      const rect = inputRef.current.getBoundingClientRect()
-      dropdownRef.style.left = `${rect.left}px`
-      dropdownRef.style.width = `${rect.width}px`
-      dropdownRef.style.top = `${rect.bottom}px`
+      if (!anchorRef.current || !floatingRef) return
+      const rect = anchorRef.current.getBoundingClientRect()
+      floatingRef.style.left = `${rect.left}px`
+      floatingRef.style.width = `${rect.width}px`
+      floatingRef.style.top = `${rect.bottom}px`
     }
     update()
     let rafId: number
@@ -32,5 +32,5 @@ export const useRecalculateDropdownPosition = ({
     return () => {
       cancelAnimationFrame(rafId)
     }
-  }, [isOpen, inputRef.current, dropdownRef])
+  }, [isOpen, anchorRef.current, floatingRef])
 }

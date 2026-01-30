@@ -1,0 +1,582 @@
+@use "../helpers/mixin";
+
+.calendar {
+  position: relative;
+  .calendar-popup-container {
+    position: fixed;
+    z-index: 3;
+    .react-calendar-wrapper {
+      max-width: min(764px, 100%);
+      width: fit-content;
+      box-shadow: 0 0 40px 0 #4E4E4E0F;
+      border-radius: var(--ds-border-radius-2xl);
+      border: 1px solid var(--ds-color-border-quintary);
+      background-color: var(--ds-color-bg-white);
+      .header-control-wrapper {
+        @include mixin.flexbox;
+        @include mixin.justify-content(space-between);
+        padding: var(--ds-space-16);
+        height: var(--ds-size-56);
+        border-bottom: 1px solid var(--ds-color-border-quintary);
+        .switcher {
+          @include mixin.flexbox;
+          @include mixin.align-items(center);
+          .label {
+            margin-bottom: var(--ds-space-0);
+            padding-right: var(--ds-space-16);
+          }
+        }
+      }
+      .react-calendar-container {
+        @include mixin.flexbox;
+        @include mixin.justify-content(center);
+        padding-inline: var(--ds-space-16);
+        @media (max-width: 768px) {
+          @include mixin.flex-direction(column);
+        }
+        .calendar-wrapper {
+          padding-left: var(--ds-space-16);
+          @media (max-width: 768px) {
+            padding-left: var(--ds-space-0);
+          }
+        }
+        .date-input-wrapper {
+          padding: var(--ds-space-16) var(--ds-space-0);
+          @include mixin.flexbox;
+          @include mixin.align-items(center);
+          &__left,
+          &__right {
+            width: 50%;
+            min-width: 256px;
+            @include mixin.flexbox;
+            @include mixin.flex-wrap(nowrap);
+            gap: var(--ds-space-8);
+            .time-input {
+              width: 25%;
+            }
+            .date-input {
+              width: calc(75% - var(--ds-space-8));
+            }
+            .date-input-full {
+              width: 100%;
+            }
+          }
+          .date-input-middle-arrow {
+            padding-inline: var(--ds-space-8);
+          }
+          .full-left-section {
+            width: 100%;
+          }
+          @media (max-width: 768px) {
+            @include mixin.flex-direction(column);
+            gap: var(--ds-space-20);
+            &__left,
+            &__right {
+              width: 100%;
+              min-width: unset;
+            }
+            .date-input-middle-arrow {
+              display: none;
+            }
+          }
+        }
+        .mobile-infinite-calendar {
+          max-height: 350px;
+          overflow-y: auto;
+          padding: 1rem 0;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+          &::-webkit-scrollbar { display: none; }
+          .mobile-calendar-month {
+            position: absolute;
+            top: var(--ds-space-0);
+            left: var(--ds-space-0);
+            padding-bottom: var(--ds-space-40);
+            box-sizing: border-box;
+            width: 100%;
+            .month-title {
+              padding-left: var(--ds-space-12);
+              text-transform: capitalize;
+            }
+            .react-calendar {
+              border: none;
+              width: 100%;
+              &__navigation {
+                display: none;
+              }
+            }
+          }
+        }
+        .desktop-calendar {
+          padding-block: var(--ds-space-16);
+          .desktop-navigation {
+            width: 100%;
+            padding-inline: var(--ds-space-8);
+            @include mixin.flexbox;
+            @include mixin.justify-content(center);
+            @include mixin.align-items(center);
+            .navigation-selects {
+              @include mixin.flexbox;
+              @include mixin.justify-content(center);
+              width: 100%;
+              padding-inline: var(--ds-space-8);
+            }
+            &__left,
+            &__right {
+              @include mixin.flexbox;
+              @include mixin.justify-content(center);
+              width: 50%;
+              gap: var(--ds-space-16);
+              .input__inner {
+                max-width: var(--ds-size-120);
+                input {
+                  border: 0;
+                }
+              }
+            }
+            .single-calendar {
+              width: 100%;
+              padding-right: var(--ds-space-0);
+            }
+          }
+          .desktop-calendar-month {
+            @include mixin.flexbox;
+            gap: var(--ds-space-24);
+            .react-calendar {
+              max-width: 356px;
+            }
+          }
+        }
+
+        .calendar-fast-actions {
+          @include mixin.flexbox;
+          @include mixin.flex-direction(column);
+          border-right: 1px solid var(--grey-40);
+          width: 100%;
+          padding-block: var(--ds-space-16);
+          padding-right: var(--ds-space-16);
+          max-width: var(--ds-size-140);
+          gap: var(--ds-space-12);
+          @media (max-width: 768px) {
+            @include mixin.flex-direction(row);
+            @include mixin.flex-wrap(nowrap);
+            border-right: 0;
+            gap: var(--ds-space-10);
+            border-bottom: 1px solid var(--grey-40);
+            padding-right: var(--ds-space-0);
+            max-width: 768px;
+            overflow-y: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            &::-webkit-scrollbar { display: none; }
+          }
+          .fast-action {
+            @include mixin.flexbox;
+            @include mixin.justify-content(center);
+            @include mixin.align-items(center);
+            cursor: pointer;
+            max-width: var(--ds-size-120);
+            border: 1px solid var(--ds-color-border-quintary);
+            border-radius: var(--ds-border-radius-2xl);
+            padding: var(--ds-space-6);
+            &__text {
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              padding-inline: var(--ds-space-6);
+            }
+          }
+          .fast-action-active {
+            border: 1.5px solid var(--ds-color-border-primary-dark);
+            background: var(--ds-color-bg-container-light);
+          }
+        }
+
+        .react-calendar {
+          $this: &;
+          button[disabled], html input[disabled] {
+            cursor: default;
+            color: var(--ds-color-text-disabled);
+            background-color: transparent;
+
+            abbr {
+              &:hover {
+                background-color: transparent;
+              }
+            }
+
+            svg {
+              path {
+                fill: var(--ds-color-text-disabled);
+              }
+            }
+          }
+
+          &__navigation {
+            @include mixin.flexbox;
+            padding: 0 var(--ds-space-8);
+
+            &__arrow, &__label {
+              width: var(--ds-size-24);
+              height: var(--ds-size-24);
+              background-color: transparent;
+              border: 0;
+              outline: none;
+
+              &__prev2-button {
+
+              }
+            }
+
+            &__arrow {
+              @include mixin.flexbox;
+              @include mixin.align-items(center);
+              @include mixin.justify-content(center);
+            }
+
+            &__label {
+              width: initial;
+              max-width: 152px;
+              height: var(--ds-size-32);
+              margin: auto;
+              border-radius: var(--ds-border-radius-lg);
+
+              &:hover {
+                background-color: var(--ds-color-bg-container-light);
+              }
+
+              &__labelText {
+                font-size: var(--font-size-12);
+                font-weight: var(--font-weight-500);
+                text-transform: capitalize;
+              }
+            }
+          }
+
+          &__viewContainer {
+            @include mixin.flexbox;
+            gap: clamp(var(--ds-space-16),  var(--ds-space-20), var(--ds-space-24));
+            @media (max-width: 768px) {
+              @include mixin.flex-direction(column);
+            }
+          }
+
+          &__month-view {
+            &__weekdays {
+              @include mixin.justify-content(center);
+              border-bottom: 1px solid var(--grey-40);
+              padding-bottom: var(--ds-space-8);
+              margin: var(--ds-space-8) 0;
+
+              &__weekday {
+                @include mixin.flexbox;
+                @include mixin.align-items(center);
+                @include mixin.justify-content(center);
+                height: var(--ds-size-32);
+                text-transform: capitalize;
+
+                abbr {
+                  text-decoration: none;
+                  font-size: var(--font-size-12) !important;
+                  font-weight: 300 !important;
+                }
+              }
+            }
+
+            &__days {
+              gap: var(--ds-space-6) 0;
+
+              &__day {
+                font-size: var(--font-size-12);
+                background-color: transparent;
+                border: 0;
+                outline: none;
+                padding: var(--ds-space-4);
+
+                abbr {
+                  @include mixin.flexbox;
+                  @include mixin.align-items(center);
+                  @include mixin.justify-content(center);
+                  border-radius: 50%;
+                  width: 30px;
+                  height: 30px;
+                  margin: auto;
+                  border: 1px solid transparent;
+
+                  &:hover {
+                    background-color: var(--ds-color-bg-container);
+                    font-weight: 500;
+                  }
+                }
+
+                &--neighboringMonth {
+                  color: var(--ds-color-text-disabled);
+                }
+              }
+            }
+          }
+
+          &__tile {
+            &--now {
+              abbr {
+                color: var(--ds-color-text-brand);
+                border-color: var(--ds-color-border-brand);
+                font-weight: 500;
+              }
+            }
+
+            &--range {
+              position: relative;
+              border-color: var(--ds-color-bg-brand-lighter);
+
+              &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: var(--ds-color-bg-container-lighter);
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+              }
+
+              abbr {
+                position: relative;
+                z-index: 2;
+              }
+
+              &.react-calendar__tile--now {
+                abbr {
+                  border-color: transparent;
+                }
+              }
+
+              &.react-calendar__tile--rangeStart {
+                border-top-left-radius: var(--ds-border-radius-3xl);
+                border-bottom-left-radius: var(--ds-border-radius-3xl);
+              }
+
+              &.react-calendar__tile--rangeEnd {
+                border-top-right-radius: var(--ds-border-radius-3xl);
+                border-bottom-right-radius: var(--ds-border-radius-3xl);
+              }
+            }
+
+            &--rangeStart, &--rangeEnd {
+              abbr {
+                background-color: var(--ds-color-bg-grey-extra-darker);
+                font-weight: 500;
+                color: var(--ds-color-text-inverse) !important;
+
+                &:hover {
+                  background-color: var(--ds-color-bg-grey);
+                  color: var(--ds-color-text-brand-dark) !important;
+                }
+              }
+            }
+
+            &--rangeBothEnds {
+              border-color: transparent;
+
+              &:before {
+                background-color: transparent;
+              }
+            }
+          }
+
+          &__year-view {
+            border-top: 1px solid var(--grey-40);
+            padding-top: 8px;
+            margin-top: var(--ds-space-4);
+
+            &__months {
+              gap: 12px;
+
+              &__month {
+                border: 0;
+                height: var(--ds-size-32);
+                border-radius: var(--ds-border-radius-lg);
+                background-color: var(--ds-color-bg-container-lighter);
+                flex: calc(33.333% - 8px) !important;
+
+                &:hover {
+                  background-color: var(--ds-color-bg-container-light);
+                  color: var(--ds-color-text-brand-dark) !important;
+                }
+
+                &.react-calendar__tile {
+                  &:before {
+                    content: none;
+                  }
+                  &--now {
+                    border: 1px solid var(--ds-color-border-brand);
+                    background-color: transparent;
+                    abbr {
+                      color: var(--ds-color-text-brand);
+                      font-weight: 500;
+                      border-color: var(--ds-color-border-brand);
+                    }
+                  }
+
+                  &--hasActive {
+                    border: 1px solid var(--ds-color-border-brand);
+                    background-color: var(--ds-color-bg-brand-lighter);
+                    font-weight: 500;
+
+                    abbr {
+                      color: var(--ds-color-text-primary);
+                      font-weight: 500;
+                    }
+                  }
+
+
+                  &--range {
+                    &.react-calendar__tile--rangeStart,
+                    &.react-calendar__tile--rangeEnd {
+                      border-radius: var(--ds-border-radius-lg);
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          &__decade-view__years {
+            border-top: 1px solid var(--grey-40);
+            padding-top: 8px;
+            margin-top: var(--ds-space-4);
+            gap: 12px;
+
+            &__year {
+              border: 0;
+              height: var(--ds-size-32);
+              border-radius: var(--ds-border-radius-lg);
+              background-color: var(--ds-color-bg-container-lighter);
+              flex: calc(33.333% - 8px) !important;
+
+              &:hover {
+                background-color: var(--ds-color-bg-container-light);
+                color: var(--ds-color-text-brand-dark) !important;
+              }
+
+              &.react-calendar__tile {
+                &:before {
+                  content: none;
+                }
+                &--hasActive {
+                  border: 1px solid var(--ds-color-border-brand);
+                  background-color: var(--ds-color-bg-brand-lighter);
+                  font-weight: 500;
+                }
+
+                &--range {
+                  &.react-calendar__tile--rangeStart,
+                  &.react-calendar__tile--rangeEnd {
+                    border-radius: var(--ds-border-radius-lg);
+                  }
+                }
+              }
+            }
+          }
+
+          &__century-view {
+            &__decades {
+              border-top: 1px solid var(--grey-40);
+              padding-top: 8px;
+              margin-top: var(--ds-space-4);
+              gap: 12px;
+
+              &__decade {
+                border: 0;
+                height: var(--ds-size-32);
+                border-radius: var(--ds-border-radius-lg);
+                background-color: var(--ds-color-bg-container-lighter);
+                flex: calc(33.333% - 8px) !important;
+
+                &:hover {
+                  background-color: var(--ds-color-bg-container-light);
+                }
+
+                &.react-calendar__tile {
+                  &--hasActive {
+                    border: 1px solid var(--ds-color-border-brand);
+                    background-color: var(--ds-color-bg-brand-lighter);
+                    font-weight: 500;
+                  }
+                }
+              }
+            }
+          }
+
+          &--selectRange {
+            .react-calendar__tile {
+              &--rangeStart, &--rangeEnd {
+                abbr {
+                  background-color: var(--ds-color-bg-grey-extra-darker);
+                  color: var(--ds-color-text-inverse) !important;
+
+                  &:hover {
+                    background-color: var(--ds-color-bg-container-light);
+                    color: var(--ds-color-text-brand-dark) !important;
+                  }
+                }
+              }
+            }
+
+            .react-calendar__year-view {
+              &__months {
+                &__month {
+                  &.react-calendar__tile {
+                    &--range {
+                      &.react-calendar__tile--rangeStart,
+                      &.react-calendar__tile--rangeEnd {
+                        background-color: var(--ds-color-bg-brand) !important;
+                        color: var(--ds-color-text-inverse) !important;
+
+                        &:hover {
+                          background-color: var(--ds-color-bg-brand);
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .react-calendar__decade-view__years {
+              &__year {
+                &.react-calendar__tile {
+                  &--range {
+                    &.react-calendar__tile--rangeStart,
+                    &.react-calendar__tile--rangeEnd {
+                      background-color: var(--ds-color-bg-brand) !important;
+                      color: var(--ds-color-text-inverse) !important;
+
+                      &:hover {
+                        background-color: var(--ds-color-bg-brand);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .calendar-actions {
+        @include mixin.flexbox;
+        @include mixin.justify-content(flex-end);
+        padding: var(--ds-space-12) var(--ds-space-16);
+        gap: var(--ds-space-8);
+        height: var(--ds-size-64);
+        border-top: 1px solid var(--ds-color-border-quintary);
+        @media (max-width: 426px) {
+          @include mixin.justify-content(center);
+          button {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+}
