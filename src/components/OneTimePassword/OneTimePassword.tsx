@@ -73,6 +73,40 @@ export const OneTimePassword = React.forwardRef<HTMLInputElement, OtpCustomProps
       }
     }
 
+    const handlePaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
+      e.preventDefault()
+      const pastedText = e.clipboardData.getData('text')
+
+      if (!pastedText) return
+
+      const sanitized = allowLetters
+        ? pastedText.replace(/\s+/g, '')
+        : pastedText.replace(/\D/g, '')
+
+      if (!sanitized) return
+
+      const chars = sanitized.slice(0, count).split('')
+      const newOtp = [...otp]
+      chars.forEach((char, i) => {
+        newOtp[i] = char
+      })
+
+      setOtp(newOtp)
+
+      const currentValue = newOtp.join('')
+
+      if (handleChange) {
+        handleChange(e as unknown as TChangeEventType, currentValue)
+      }
+
+      if (setFieldValue && name) {
+        setFieldValue(name, currentValue)
+      }
+
+      const nextIndex = Math.min(chars.length, count - 1)
+      inputRefs.current[nextIndex]?.focus()
+    }
+
     const setInputRef = useCallback((el: HTMLInputElement | null, index: number) => {
       inputRefs.current[index] = el
     }, [])
@@ -88,6 +122,7 @@ export const OneTimePassword = React.forwardRef<HTMLInputElement, OtpCustomProps
               ref={(el) => setInputRef(el, index)}
               max={1}
               type={type}
+              onPaste={handlePaste}
               pattern={pattern}
               hasError={hasError}
               isValid={isValid}
