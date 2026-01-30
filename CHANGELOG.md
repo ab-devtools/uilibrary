@@ -1,3 +1,16 @@
+# [1.68.0](https://github.com/ab-devtools/uilibrary/compare/1.67.1...1.68.0) (2026-01-30)
+
+
+### Features
+
+* calendar input funcional fix ([8e1d79c](https://github.com/ab-devtools/uilibrary/commit/8e1d79c2b91b6816ba41f58020ceb9c914b05f96))
+* calendar input funcional fix ([3936a87](https://github.com/ab-devtools/uilibrary/commit/3936a87364d29a94813bf5dc239e1a1637d32655))
+* calendar new version ([e67480d](https://github.com/ab-devtools/uilibrary/commit/e67480d2a4782b0daad742ae17c851012c48ce11))
+* calendar new version ([b3d2f84](https://github.com/ab-devtools/uilibrary/commit/b3d2f84feaf31da423741cfa13cb0850ce77d547))
+* calendar new version ([aa738b6](https://github.com/ab-devtools/uilibrary/commit/aa738b662ce56dfaf36f9d4da6fc5dd1917d03b3))
+* react calendar ([69909ac](https://github.com/ab-devtools/uilibrary/commit/69909ac4a6c680d649547f457964098447449071))
+* react calendar ([d076c07](https://github.com/ab-devtools/uilibrary/commit/d076c07120516ba4d3a955e03125f637fb9d9936))
+
 ## [1.67.1](https://github.com/ab-devtools/uilibrary/compare/1.67.0...1.67.1) (2026-01-30)
 
 
