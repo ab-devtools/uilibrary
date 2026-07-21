@@ -99,13 +99,6 @@ export interface TScrollableCarouselProps {
 
 export interface TFileTypeConfig {
   Icon: TSVGIconComponent
-  color:
-  | 'brand'
-  | 'danger'
-  | 'warning'
-  | 'success'
-  | 'info'
-  | 'discovery'
-  | 'grey'
+  color: 'brand' | 'danger' | 'warning' | 'success' | 'info' | 'discovery' | 'grey'
   label: string
 }

@@ -14,8 +14,7 @@ import { getFileTypeConfig, formatFileSize } from '../utils'
 import { UploadFileStatus } from '../types'
 import type { TAttachmentCardProps } from '../types'
 
-const clampProgress = (value: number): number =>
-  Math.max(0, Math.min(100, Math.round(value)))
+const clampProgress = (value: number): number => Math.max(0, Math.min(100, Math.round(value)))
 
 export const AttachmentCard = (props: TAttachmentCardProps): ReactElement => {
   const {
@@ -86,8 +85,7 @@ export const AttachmentCard = (props: TAttachmentCardProps): ReactElement => {
         'attachment-card--disabled': disabled,
         'attachment-card--error': isError,
         'attachment-card--uploading': isUploading,
-        'attachment-card--interactive':
-          Boolean(onClick) && !disabled && !isUploading && !isError
+        'attachment-card--interactive': Boolean(onClick) && !disabled && !isUploading && !isError
       })}
       onClick={handleClick}
     >

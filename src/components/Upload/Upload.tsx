@@ -15,9 +15,7 @@ import { useUploadFiles } from './hooks'
 import type { TUploadFile, TUploadProps } from './types'
 import { DEFAULT_ALLOWED_TYPES } from './consts'
 
-const toDownloadedSet = (
-  downloadedIds: TUploadProps['downloadedIds']
-): Set<string> | undefined => {
+const toDownloadedSet = (downloadedIds: TUploadProps['downloadedIds']): Set<string> | undefined => {
   if (!downloadedIds) return undefined
   return downloadedIds instanceof Set ? downloadedIds : new Set(downloadedIds)
 }
@@ -106,14 +104,11 @@ const UploadComponent = (props: TUploadProps): ReactElement => {
     [disabled, isDragging]
   )
 
-  const handleDragLeave = useCallback(
-    (event: DragEvent<HTMLDivElement>) => {
-      event.preventDefault()
-      event.stopPropagation()
-      setIsDragging(false)
-    },
-    []
-  )
+  const handleDragLeave = useCallback((event: DragEvent<HTMLDivElement>) => {
+    event.preventDefault()
+    event.stopPropagation()
+    setIsDragging(false)
+  }, [])
 
   const handleDrop = useCallback(
     (event: DragEvent<HTMLDivElement>) => {
@@ -269,9 +264,7 @@ const UploadComponent = (props: TUploadProps): ReactElement => {
         </div>
       ) : null}
 
-      {hasError && typeof helperText === 'string' ? (
-        <ErrorMessage message={helperText} />
-      ) : null}
+      {hasError && typeof helperText === 'string' ? <ErrorMessage message={helperText} /> : null}
     </div>
   )
 }

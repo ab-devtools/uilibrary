@@ -6,9 +6,7 @@ interface TUploadIllustrationProps {
   className?: string
 }
 
-export const UploadIllustration = ({
-  className = ''
-}: TUploadIllustrationProps): ReactElement => {
+export const UploadIllustration = ({ className = '' }: TUploadIllustrationProps): ReactElement => {
   const uid = useId().replace(/[^a-zA-Z0-9]/g, '')
 
   const filter0 = `upload-illu-f0-${uid}`
@@ -160,14 +158,7 @@ export const UploadIllustration = ({
             fill="#DDDDDD"
           />
         </g>
-        <rect
-          x="100.193"
-          y="87.1506"
-          width="45.391"
-          height="5.44692"
-          rx="2.72346"
-          fill="#ECECEC"
-        />
+        <rect x="100.193" y="87.1506" width="45.391" height="5.44692" rx="2.72346" fill="#ECECEC" />
         <rect
           x="109.271"
           y="98.0444"
@@ -295,7 +286,12 @@ export const UploadIllustration = ({
           />
         </clipPath>
         <clipPath id={clip2}>
-          <rect width="23.5012" height="23.5012" fill="white" transform="translate(111.138 55.428)" />
+          <rect
+            width="23.5012"
+            height="23.5012"
+            fill="white"
+            transform="translate(111.138 55.428)"
+          />
         </clipPath>
       </defs>
     </svg>

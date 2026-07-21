@@ -1,15 +1,7 @@
 import React, { JSX, useCallback, useMemo, useRef, useState } from 'react'
 import type { StoryFn } from '@storybook/react'
-import {
-  AttachmentCard,
-  ScrollableCarousel,
-  Upload as _Upload
-} from '../components/Upload'
-import type {
-  TUploadError,
-  TUploadFile,
-  TUploadProps
-} from '../components/Upload'
+import { AttachmentCard, ScrollableCarousel, Upload as _Upload } from '../components/Upload'
+import type { TUploadError, TUploadFile, TUploadProps } from '../components/Upload'
 import { UploadFileStatus, generateFileId } from '../components/Upload'
 import { Input } from '../components/Input'
 import { Button } from '../components/Button'
@@ -74,9 +66,7 @@ const trackFileProgress = (
 
   reader.onload = (): void => {
     setFiles((prev) =>
-      prev.map((f) =>
-        f.id === id ? { ...f, progress: 100, status: UploadFileStatus.success } : f
-      )
+      prev.map((f) => (f.id === id ? { ...f, progress: 100, status: UploadFileStatus.success } : f))
     )
   }
 
@@ -410,27 +400,21 @@ export const ChatComposer = (): JSX.Element => {
   const [message, setMessage] = useState('')
   const [files, setFiles] = useState<TUploadFile[]>(COMPOSER_PRESET_FILES)
   const fileInputRef = useRef<HTMLInputElement>(null)
-  const downloadedIds = useMemo(
-    () => new Set<string>(['composer-2', 'composer-3']),
-    []
-  )
+  const downloadedIds = useMemo(() => new Set<string>(['composer-2', 'composer-3']), [])
 
   const openFileDialog = useCallback(() => {
     fileInputRef.current?.click()
   }, [])
 
-  const handleFilesChange = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      if (!event.target.files) return
-      const enriched = Array.from(event.target.files).map(fromNativeFile)
-      setFiles((prev) => [...prev, ...enriched])
-      enriched.forEach((entry) => {
-        if (entry.file) trackFileProgress(entry.id, entry.file, setFiles)
-      })
-      event.target.value = ''
-    },
-    []
-  )
+  const handleFilesChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+    if (!event.target.files) return
+    const enriched = Array.from(event.target.files).map(fromNativeFile)
+    setFiles((prev) => [...prev, ...enriched])
+    enriched.forEach((entry) => {
+      if (entry.file) trackFileProgress(entry.id, entry.file, setFiles)
+    })
+    event.target.value = ''
+  }, [])
 
   const handleRemove = useCallback((file: TUploadFile) => {
     setFiles((prev) => prev.filter((f) => f.id !== file.id))
